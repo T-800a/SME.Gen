@@ -1,0 +1,66 @@
+Author = "T-800a";
+onLoadName = "CO20|SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V007";
+OnLoadMission = "Small Military Encounter Genenerator";
+loadScreen = "images\usoc.paa";
+
+enableDebugConsole			= 1;
+disabledAI					= true;
+disableChannels[]			= { 0, 4, 5 };
+
+respawn						= 3;
+respawnDelay				= 30;
+respawnVehicleDelay			= 30;
+respawnDialog				= 0;
+respawnOnStart				= 1;
+respawnButton				= 1;
+
+corpseManagerMode			= 1;
+corpseLimit					= 25;
+corpseRemovalMinTime		= 300;
+corpseRemovalMaxTime		= 600;
+
+wreckManagerMode			= 1;
+wreckLimit					= 10;
+wreckRemovalMinTime			= 600;
+wreckRemovalMaxTime			= 1200;
+
+respawnTemplates[]			= { "MenuPosition" };
+respawnTemplatesWest[]		= { "MenuPosition" };
+respawnTemplatesEast[]		= { "MenuPosition" };
+respawnTemplatesGuer[]		= { "MenuPosition" };
+respawnTemplatesCiv[]		= { "MenuPosition" };
+respawnTemplatesVirtual[]	= { "MenuPosition" };
+
+taskManagement_markers2D	= 1;
+taskManagement_markers3D	= 1;
+taskManagement_propagate	= 1;
+taskManagement_drawDist		= 1500;
+
+class CfgDebriefing
+{  
+	class RestrictedSlot
+	{
+		title				= "SLOT RESTRICTION";
+		subtitle			= "you selected a restricted player slot";
+		description			= "";
+		pictureBackground	= "";
+		picture				= "o_inf";
+		pictureColor[]		= { 1, 0.2, 0.2, 0.8 };
+	};
+};
+
+class Header
+{
+	gameType		= COOP;
+	minPlayers		= 1;
+	maxPlayers		= 20;
+};
+
+class CfgORBAT
+{
+	#include "ORBAT\west.hpp"
+	#include "ORBAT\east.hpp"
+	#include "ORBAT\inde.hpp"
+};
+
+#include "@randomMission\cfgRandomMissions.hpp"
