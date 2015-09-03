@@ -1,7 +1,5 @@
-<p align="center">
-    <h1>SME.Gen SME.Gen</h1>
-	<h3>SmallMilitaryEncounter Generator</h3>
-</p>
+<h2 align="center">SME.Gen SME.Gen</h2>
+<h3 align="center">SmallMilitaryEncounter Generator</h3>
 <p align="center">
     <a href="#">
         <img src="https://img.shields.io/badge/SME.Gen-V.007-green.svg?style=flat-square" alt="SME.Gen: V.007">
