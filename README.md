@@ -1,5 +1,5 @@
 <p align="center">
-    <h1><strong>SME.Gen SME.Gen - SmallMilitaryEncounter Generator</strong>/h1>
+    <h2><strong>SME.Gen SME.Gen - SmallMilitaryEncounter Generator</strong></h2>
 </p>
 <p align="center">
     <a href="#">
