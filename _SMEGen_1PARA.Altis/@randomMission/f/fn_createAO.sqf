@@ -17,7 +17,7 @@
 #define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
 
 private [	"_ftxt", "_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc", "_siteType",
-			"_typeTask", "_typeTaskShort", "_typeName", "_typeCond", "_setTaskName", "_setTaskDesc", "_condSize", "_spawnedUnits" ];
+			"_typeTask", "_typeTaskShort", "_typeName", "_typeCond", "_setTaskName", "_setTaskDesc", "_condSize", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions" ];
 
 _site			= _this;
 _inf			= [];
@@ -42,6 +42,9 @@ _typeTaskShort	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionT
 _typeName		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "name" );
 _typeCond		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "condition" );
 _typeDesc		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "description" );
+
+_modPlayer		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModPlayer" );
+_modGroup		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModGroup" );
 
 _setTaskName 	= format [ "%1: %2", _typeTaskShort, _siteName ];
 _setTaskDesc 	= format [ "<t align = 'left' shadow = '1' size = '1.0'>Task: %1</t><br /><t align = 'left' shadow = '1' size = '0.8'>Location: %2</t><br /><br />%3", _typeTask, _siteName, _typeDesc ];
@@ -113,9 +116,26 @@ _configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( mis
 _ftxt = format [ "T8RMG >> fn_createAO.sqf >>>>> %1 >> _arrayGroups >> %2", ( round diag_fps ), _arrayGroups ]; conFile( _ftxt );
 
 {
-	private [ "_task", "_units", "_subArray" ];
-	_task	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "task" ),
-	_units	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "units" ),
+	private [ "_task", "_units", "_unitsFiller", "_subArray" ];
+	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "task" );
+	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "units" );
+	_unitsFiller	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "units" );
+	
+	// if filler units available adjust groupsize on playercount
+	if ( count _unitsFiller > 0 ) then 
+	{
+		private [ "_playerCount", "_groupCount", "_mod" ];
+		_playerCount = if ( isMultiplayer ) then { count allPlayers } else { count ( units ( group player ))};
+		_groupCount = count _units;
+		_mod = ceil( _groupCount + (( _playerCount /_modPlayer )*(( _groupCount / _modGroup )*1,25)) * 2 );
+		
+		for "_i" from 1 to _mod do
+		{
+			private [ "_filler" ];
+			_filler = _unitsFiller call BIS_fnc_selectRandom;
+			_units pushBack _filler;
+		};
+	};
 	
 	if ( _task isEqualTo "GARRISON" OR _task isEqualTo "DEFEND" OR _task isEqualTo "DEFEND_BASE" ) then
 	{
@@ -135,8 +155,6 @@ _ftxt = format [ "T8RMG >> fn_createAO.sqf >>>>> %1 >> _inf >> %2", ( round diag
 
 // spawn the units
 _spawnedUnits = [ _inf ] call T8U_fnc_Spawn;
-
-_ftxt = format [ "T8RMG >> fn_createAO.sqf >>>>> %1 >> _spawnedUnits >> %2", ( round diag_fps ), _spawnedUnits ]; conFile( _ftxt );
 T8RMG_var_arrayCleanup pushBack _spawnedUnits;
 
 // create a task
@@ -154,7 +172,21 @@ T8RMG_var_arrayCleanup pushBack _spawnedUnits;
 ] call BIS_fnc_setTask; 
 
 // add task to condition-loop
-T8RMG_var_checkMissions pushBack [ _siteMkr, _typeCond ];
+// T8RMG_var_arrayConditions pushBack [ _siteMkr, _typeCond ];
+
+//_typeCond		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" );
+
+_conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" );
+
+{
+	private [ "_con", "_fnc" ];
+	_con = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _x >> "condition" );
+	_fnc = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _x >> "function" );
+	
+	T8RMG_var_arrayConditions pushBack [ _x, _siteMkr, _con, _fnc ];
+	
+	false
+} count _conditions;
 
 // Return
 true

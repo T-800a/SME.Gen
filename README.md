@@ -9,13 +9,28 @@
 </p>
 <p align="center"><sup><strong>A dynamic mission for ARMA3 that generates small military encounters.</strong></sup></p>
 
-### main header
-- lorem ipsum
-- lorem ipsum
-- lorem ipsum
-- lorem ipsum
+The intent of the mission is to have something similiar to an Invade & Annex type missions, but in a smaler more infantry focused scope. There are always two tasks available. If both tasks are finished a cleanup will happen and 2 new tasks will be generated.
 
-#### header
-- lorem ipsum
-- lorem ipsum
-- lorem ipsum
+### Currently there are 3 types of mission-sites available:
+#####Towns
+- clear occupied town
+- destroy 2 mortars
+- destroy 2 resupply vehicles
+
+#####Military Bases
+- clear occupied base
+- destroy 2 mortars
+- destroy 2 resupply vehicles
+
+#####Road-Positions
+- clear broken down convoy
+- clear road block / checkpoint
+
+### Rewards for completing a set (2) of missions:
+- MobileHQ / mobile respawn (Landrover Ambulance)
+- MWMIK Jackal (with HMG)
+- AH-6M Littlebird (with GAU-19 and 19x Hydra 70)
+
+### After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
+
+### The time is accelerated ( 4h IRL = 24h in game )

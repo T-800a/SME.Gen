@@ -9,7 +9,7 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
-	T8RMG_var_checkMissions		// tasks to delete
+	T8RMG_var_arrayConditions		// tasks to delete
 	T8RMG_var_arrayCleanup		// objs to delete
 	
  =======================================================================================================================
@@ -40,10 +40,16 @@ _ftxt = format [ "T8RMG >> fn_cleanUP.sqf >>>>> %1 >> INIT", ( round diag_fps )]
 
 } forEach T8RMG_var_arrayCleanup;
 
-{ [ _x select 0 ] call BIS_fnc_deleteTask; false } count T8RMG_var_checkMissions;
+T8RMG_var_arrayCleanup		= [];
+
+{ [ _x select 0 ] call BIS_fnc_deleteTask; false } count T8RMG_var_arrayConditions;
 
 [ 1, "New mission sites will be created in 1 minute!", 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
 
 sleep ( _spawnDelay * _baseTime );
 
-[] execVM "@randomMission\init.sqf";
+// start new tasks set
+[] call T8RMG_fnc_handleNewTasks;
+
+// return
+true

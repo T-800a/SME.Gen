@@ -24,6 +24,10 @@ class cfgRandomMissions
 		spawnedSitesCount			= 2;
 		missionCleanDelay			= 1;	// minutes
 		missionSpawnDelay			= 2;	// minutes
+		
+		// modificators will 
+		spawnModPlayer				= 4;
+		spawnModGroup				= 12;
 
 
 	// slot restrictions	
@@ -367,48 +371,79 @@ class cfgRandomMissions
 			condition		= "";
 			description		= ".....";
 			
+			class conditions
+			{
+				class win
+				{
+					condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '%1' ) nearEntities %2 )) < 5 )";
+					function	= "BIS_fnc_taskSetState";
+				};
+			};
+			
 			class groups
 			{
 				class base_garrison 
 				{
-					scope		= 0;
-					units[]		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F" };
-					task		= "GARRISON";
+					scope			= 0;
+					units[] 		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					task			= "GARRISON";
 				};
 				
 				class base_defend 
 				{
-					scope		= 0;
-					units[]		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
-					task		= "DEFEND";
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
+					task			= "DEFEND";
 				};
-
-				class base_defend_base 
+				
+				class base_defend_small
 				{
-					scope		= 0;
-					units[]		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F" };
-					task		= "DEFEND_BASE";
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
+					task			= "DEFEND";
+				};
+				
+				class base_defendBase
+				{
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
+					task			= "DEFEND_BASE";
+				};
+				
+				class base_defendBase_small 
+				{
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
+					task			= "DEFEND_BASE";
 				};
 				
 				class base_squad 
 				{
-					scope		= 0;
-					units[]		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F" };
-					task		= "PATROL";
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_GL_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					task			= "PATROL";
 				};
 				
 				class base_fireteam 
 				{
-					scope		= 0;
-					units[]		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_AT_F" };
-					task		= "PATROL";
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AT_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					task			= "PATROL";
 				};
 				
 				class base_vehicle 
 				{
-					scope		= 0;
-					units[]		= { "ASC_O_AS_Offroad_armed_F", "ASC_O_AS_Offroad_armed_F" };
-					task		= "PATROL";
+					scope			= 0;
+					units[]			= { "ASC_O_AS_Offroad_armed_F", "ASC_O_AS_Offroad_armed_F" };
+					unitsFiller[] 	= {};
+					task			= "PATROL";
 				};
 			};
 		};
@@ -445,7 +480,7 @@ class cfgRandomMissions
 
 			class groups : groups
 			{
-				class group01 : base_defend_base { scope = 1; };
+				class group01 : base_defendBase { scope = 1; };
 				class group02 : base_fireteam { scope = 1; };
 				class group03 : base_fireteam { scope = 1; };
 				class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
@@ -463,7 +498,7 @@ class cfgRandomMissions
 
 			class groups : groups
 			{
-				class group01 : base_defend { scope = 1; };
+				class group01 : base_defend_small { scope = 1; };
 				class group02 : base_garrison { scope = 1; };
 				class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 				class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
@@ -480,8 +515,8 @@ class cfgRandomMissions
 
 			class groups : groups
 			{
-				class group01 : base_defend { scope = 1; };
-				class group02 : base_defend_base { scope = 1; units[] = { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" }; };
+				class group01 : base_defend_small { scope = 1; };
+				class group02 : base_defendBase_small { scope = 1; };
 				class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 				class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 			};
@@ -494,12 +529,21 @@ class cfgRandomMissions
 			task		= "Destroy the Mortars";
 			taskShort	= "Destroy Mortars";
 			condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
+			
+			class conditions
+			{
+				class win
+				{
+					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
+					function	= "BIS_fnc_taskSetState";
+				};
+			};
 
 			class groups : groups
 			{
-				class group01 : base_defend { scope = 1; units[] = { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" }; };
-				class group02 : base_fireteam { scope = 1; task = "PATROL"; };
-				class group03 : base_fireteam { scope = 1; task = "PATROL"; };
+				class group01 : base_defend { scope = 1; };
+				class group02 : base_fireteam { scope = 1; };
+				class group03 : base_fireteam { scope = 1; };
 				class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 				class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 			};
@@ -512,12 +556,21 @@ class cfgRandomMissions
 			task		= "Destroy the Resupply Installations";
 			taskShort	= "Destroy Resupplies";
 			condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
-
+			
+			class conditions
+			{
+				class win
+				{
+					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
+					function	= "BIS_fnc_taskSetState";
+				};
+			};
+			
 			class groups : groups
 			{
 				class group01 : base_garrison { scope = 1; };
-				class group02 : base_fireteam { scope = 1; task = "PATROL"; };
-				class group03 : base_fireteam { scope = 1; task = "PATROL"; };
+				class group02 : base_fireteam { scope = 1; };
+				class group03 : base_fireteam { scope = 1; };
 				class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 				class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 			};
