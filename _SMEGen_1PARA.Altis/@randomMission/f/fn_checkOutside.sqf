@@ -12,7 +12,9 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
+
 
 private [ "_pos", "_posGroundASL", "_posSkyASL", "_return" ];
 

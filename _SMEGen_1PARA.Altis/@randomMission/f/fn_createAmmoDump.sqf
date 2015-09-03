@@ -11,10 +11,12 @@
 	
 	Reutns:		Object
 	
- =======================================================================================================================
+ ============================8===========================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
+	
 
 private [ "_pos", "_dir", "_dirCor", "_objects", "_mappedObj", "_return" ];
 
@@ -38,7 +40,8 @@ T8RMG_var_arrayCleanup pushBack _mappedObj;
 _return = ( _mappedObj select 0 );
 _return setVehicleLock "LOCKED";
 { _x addCuratorEditableObjects [ [ _return ], true ]; false } count allCurators;
-_ftxt = format [ "T8RMG >> fn_createMortarPos.sqf >>>>> %1 >> _return >> %2", ( round diag_fps ), _return ]; conFile( _ftxt );
+
+DEBUG( __FILE__, "_return", _return );
 
 // Return
 _return

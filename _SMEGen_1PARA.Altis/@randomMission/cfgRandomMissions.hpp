@@ -26,8 +26,8 @@ class cfgRandomMissions
 		missionSpawnDelay			= 2;	// minutes
 		
 		// modificators will 
-		spawnModPlayer				= 4;
-		spawnModGroup				= 12;
+		spawnModPlayer				= 5;
+		spawnModGroup				= 15;
 
 
 	// slot restrictions	
@@ -375,7 +375,7 @@ class cfgRandomMissions
 			{
 				class win
 				{
-					condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '%1' ) nearEntities %2 )) < 5 )";
+					condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) < 5 )";
 					function	= "BIS_fnc_taskSetState";
 				};
 			};
@@ -385,15 +385,15 @@ class cfgRandomMissions
 				class base_garrison 
 				{
 					scope			= 0;
-					units[] 		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
-					unitsFiller[] 	= { "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					units[] 		= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
 					task			= "GARRISON";
 				};
 				
 				class base_defend 
 				{
 					scope			= 0;
-					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_F" };
 					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
 					task			= "DEFEND";
 				};
@@ -409,7 +409,7 @@ class cfgRandomMissions
 				class base_defendBase
 				{
 					scope			= 0;
-					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F" };
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_marksman_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F" };
 					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
 					task			= "DEFEND_BASE";
 				};
@@ -417,7 +417,7 @@ class cfgRandomMissions
 				class base_defendBase_small 
 				{
 					scope			= 0;
-					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F" };
 					unitsFiller[] 	= { "ASC_O_AS_soldier_F" };
 					task			= "DEFEND_BASE";
 				};
@@ -425,8 +425,8 @@ class cfgRandomMissions
 				class base_squad 
 				{
 					scope			= 0;
-					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_soldier_GL_F" };
-					unitsFiller[] 	= { "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_marksman_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
 					task			= "PATROL";
 				};
 				
@@ -434,7 +434,7 @@ class cfgRandomMissions
 				{
 					scope			= 0;
 					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AT_F" };
-					unitsFiller[] 	= { "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					unitsFiller[] 	= {  "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
 					task			= "PATROL";
 				};
 				
@@ -534,7 +534,7 @@ class cfgRandomMissions
 			{
 				class win
 				{
-					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
+					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 					function	= "BIS_fnc_taskSetState";
 				};
 			};
@@ -561,7 +561,7 @@ class cfgRandomMissions
 			{
 				class win
 				{
-					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
+					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 					function	= "BIS_fnc_taskSetState";
 				};
 			};

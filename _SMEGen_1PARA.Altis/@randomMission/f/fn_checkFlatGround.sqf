@@ -12,7 +12,8 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
 
 private [ "_pos", "_normal", "_check", "_return" ];
 
@@ -23,7 +24,6 @@ _check		= ( _normal select 2 ) * 1000;
 
 _return = if ( _check > 995 ) then { true } else { false };
 
-// _ftxt = format [ "T8RMG >> fn_checkFlatGround.sqf >>>>> %1 >> _return / _check >> %2 / %3", ( round diag_fps ), _return, _check ]; conFile( _ftxt );
 
 // Return
 _return

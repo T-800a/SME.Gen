@@ -13,13 +13,7 @@
 */
 
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-
 // );
-
-
-T8RMG_var_arrayConditions	= [];
-T8RMG_var_arraySites		= [];
-T8RMG_var_arrayTypes		= [];
 
 private [ "_arraySites", "_arrayTypes", "_arraySitesUsed" ];
 
@@ -41,7 +35,7 @@ T8RMG_var_arraySitesBlacklist = _arraySitesUsed;									DEBUG( __FILE__, "_arra
 
 {
 	_x call T8RMG_fnc_createAO;
-	DEBUG( __FILE__, "_x", _x );
+	DEBUG( __FILE__, "_arraySitesUsed > _x", _x );
 	
 	false
 } count _arraySitesUsed;

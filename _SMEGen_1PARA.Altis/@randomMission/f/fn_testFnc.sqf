@@ -12,9 +12,12 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
 
-private [ "_playerPos", "_playerDir", "_objectPos", "_object" ];
+private [ "_playerPos", "_playerDir", "_objectPos", "_object", "_debug" ];
+DEBUG( __FILE__, "INIT", _this );
+
 
 _playerPos = getPos player;
 _playerDir = getDir player;
@@ -29,7 +32,8 @@ while { count _objectPos < 1 } do
 	_relPos = [ _playerPos , random 300 , random 360 ] call BIS_fnc_relPos;
 	_tmpPos = _relPos findEmptyPosition [ 5, 50, "Land_VR_Block_02_F" ];
 	
-	_ftxt = format [ "T8RMG >> fn_testFnc.sqf >>>>> %1 >> _this >> %2 >> %3", ( round diag_fps ), _n, [ _tmpPos, isOnRoad _tmpPos, surfaceIsWater _tmpPos ] ]; conFile( _ftxt );
+	_debug = [_n, [ _tmpPos, isOnRoad _tmpPos, surfaceIsWater _tmpPos, [ _tmpPos ] call T8RMG_fnc_checkFlatGround, [ _tmpPos ] call T8RMG_fnc_checkOutside ]];
+	DEBUG( __FILE__, "_debug", _debug );
 	
 	if ( count _tmpPos > 1 AND { !isOnRoad _tmpPos } AND { !surfaceIsWater _tmpPos }) then { _objectPos = _tmpPos; };
 	if ( _n > 100 ) exitWith {};

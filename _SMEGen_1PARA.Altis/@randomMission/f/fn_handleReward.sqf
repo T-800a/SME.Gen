@@ -27,7 +27,8 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
 
 private [ "_skip", "_classReward01", "_classReward02", "_classReward03", "_restrictionReward01", "_restrictionReward02", "_restrictionReward03" ];
 
@@ -39,9 +40,13 @@ _restrictionReward01	= getText ( missionConfigFile >> "cfgRandomMissions" >> "mi
 _restrictionReward02	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction02" );
 _restrictionReward03	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
 
-_ftxt = format [ "T8RMG >> fn_handleReward.sqf >>>>> %1 >> _restrictionReward01 >> %2", ( round diag_fps ), _restrictionReward01 ]; conFile( _ftxt );
-_ftxt = format [ "T8RMG >> fn_handleReward.sqf >>>>> %1 >> _restrictionReward02 >> %2", ( round diag_fps ), _restrictionReward02 ]; conFile( _ftxt );
-_ftxt = format [ "T8RMG >> fn_handleReward.sqf >>>>> %1 >> _restrictionReward03 >> %2", ( round diag_fps ), _restrictionReward03 ]; conFile( _ftxt );
+DEBUG( __FILE__, "_classReward01", _classReward01 );
+DEBUG( __FILE__, "_classReward02", _classReward02 );
+DEBUG( __FILE__, "_classReward03", _classReward03 );
+
+DEBUG( __FILE__, "_restrictionReward01", _restrictionReward01 );
+DEBUG( __FILE__, "_restrictionReward02", _restrictionReward02 );
+DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
 
 _skip = false;
 

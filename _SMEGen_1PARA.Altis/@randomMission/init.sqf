@@ -12,7 +12,9 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
+
 
 waitUntil { !isNil "T8U_var_InitDONE" };
 
@@ -47,6 +49,10 @@ T8RMG_var_arrayConditions	= [];
 T8RMG_var_arraySites		= [];
 T8RMG_var_arrayCleanup		= [];
 T8RMG_var_arrayTypes		= [];
+
+DEBUG( __FILE__, "=======================================================================================================================", "" );
+DEBUG( __FILE__, "MAIN INIT", "SEM.Gen" );
+DEBUG( __FILE__, "=======================================================================================================================", "" );
 
 // spawn loop to handle conditions of created tasks
 [] spawn T8RMG_fnc_handleConditions;

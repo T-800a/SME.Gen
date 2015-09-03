@@ -12,7 +12,9 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
+
 
 private [ "_pos", "_dir", "_dirCor", "_convoyObj", "_mappedObj" ];
 
@@ -34,7 +36,9 @@ _convoyObj =
 	["ASC_O_AS_Offroad_armed_F",[0.279053,-23.8953,-0.030436],144.135,1,0,[-0.479337,-0.114638],"","",true,false]
 ];
 
-
 _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;
 { sleep 0.5; if ( _x isKindOf "LandVehicle" ) then { _x setVehicleLock "LOCKED"; }; false } count _mappedObj;
 T8RMG_var_arrayCleanup pushBack _mappedObj;
+
+// return
+true

@@ -76,7 +76,7 @@ class Mission
 	randomSeed=5609333;
 	class Intel
 	{
-		briefingName="CO20|SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V007";
+		briefingName="CO20 | SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V009";
 		overviewText="T-800a";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -1017,7 +1017,7 @@ class Mission
 					position[]={21346.977,-185.97,30646.93};
 					class args
 					{
-						items=12;
+						items=13;
 						class Item0
 						{
 							value="1";
@@ -1070,21 +1070,27 @@ class Mission
 						{
 							value="1";
 							parentCls="ACE_moduleMedicalSettings";
-							typeName="preventInstaDeath";
+							typeName="remoteControlledAI";
 						};
 						class Item9
 						{
 							value="1";
 							parentCls="ACE_moduleMedicalSettings";
-							typeName="bleedingCoefficient";
+							typeName="preventInstaDeath";
 						};
 						class Item10
 						{
 							value="1";
 							parentCls="ACE_moduleMedicalSettings";
-							typeName="painCoefficient";
+							typeName="bleedingCoefficient";
 						};
 						class Item11
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="painCoefficient";
+						};
+						class Item12
 						{
 							value="1";
 							parentCls="ACE_moduleMedicalSettings";
@@ -1114,7 +1120,7 @@ class Mission
 						items=2;
 						class Item0
 						{
-							value="0";
+							value="1";
 							parentCls="ACE_ModuleRespawn";
 							typeName="SavePreDeathGear";
 						};

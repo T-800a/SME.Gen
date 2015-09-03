@@ -1,5 +1,5 @@
 Author = "T-800a";
-onLoadName = "CO20|SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V007";
+onLoadName = "CO20 | SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V009";
 OnLoadMission = "Small Military Encounter Genenerator";
 loadScreen = "images\usoc.paa";
 
