@@ -19,7 +19,10 @@ T8U_fnc_BroadcastHint =
 {
 	private [ "_hint", "_text" ];
 	_text = _this select 0;
-	[ [ _text ], "T8U_fnc_Hint" ] spawn BIS_fnc_MP;
+	
+	// [ [ _text ], "T8U_fnc_Hint" ] spawn BIS_fnc_MP;
+	
+	[ 2, _text, 2 ] remoteExec [ "T8C_fnc_hintProcess", -2 ];
 };
 
 

@@ -1,9 +1,9 @@
 /*
  =======================================================================================================================
 
-	@randomMission
+	@client
 	SME.Gen - Small Military Encounter Genenerator
- 
+
 	File:		fn_debug.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net

@@ -1,9 +1,8 @@
 /*
  =======================================================================================================================
 
-	1PARA - Random Missions "Generator"
-
- =======================================================================================================================
+	@randomMission
+	SME.Gen - Small Military Encounter Genenerator
  
 	File:		fn_createAO.sqf
 	Author:		T-800a
@@ -17,7 +16,7 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc", "_siteType",
+private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeTask", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_condSize", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions" ];
 
 _site			= _this;
@@ -32,7 +31,6 @@ _sitePos			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSite
 _siteName			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "name" );
 _siteSize			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "size" );
 _siteAngle			= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "angle" );
-_siteType			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "type" );
 _siteAllowedTypes	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "allowedTypes" );
 _type				= _siteAllowedTypes call BIS_fnc_selectRandom;
 

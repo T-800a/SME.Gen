@@ -45,9 +45,6 @@ waitUntil { !isNil "ASC_NH_var_initDONE" };
 
 ////// Client AND Server
 
-// T8 Units
-[] execVM "T8_UnitsINIT.sqf";
-
 
 
 

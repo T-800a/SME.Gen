@@ -1,9 +1,8 @@
 /*
  =======================================================================================================================
 
-	1PARA - Random Missions "Generator"
-
- =======================================================================================================================
+	@randomMission
+	SME.Gen - Small Military Encounter Genenerator
  
 	File:		fn_handleConditions.sqf
 	Author:		T-800a
@@ -39,16 +38,20 @@ while { true } do
 			if ( call compile ( _x select 2 )) then 
 			{
 				private [ "_arg" ];
-				switch ( _x select 0 ) do 
+				switch ( toUpper ( _x select 0 )) do 
 				{ 
-					case "win":		{ _arg = [ ( _x select 1 ), "SUCCEEDED", true ]; };
-					case "fail":	{ _arg = [ ( _x select 1 ), "FAILED", true ]; };
+					case "WIN":		{ _arg = [ ( _x select 1 ), "SUCCEEDED", true ]; };
+					case "FAIL":	{ _arg = [ ( _x select 1 ), "FAILED", true ]; };
 					default			{ _arg = [ ( _x select 1 ) ]; };
 				};
 				
 				DEBUG( __FILE__, "CONDITION __TRUE__ > _arg", _arg );
 				
+				// spawn the function defined in the condition
 				_arg spawn ( missionNamespace getVariable [ ( _x select 3 ), "T8RMG_fnc_debug" ]);
+				
+				// if condition is a win > communicate a !player! reward / levelup
+				if ( toUpper ( _x select 0 ) isEqualTo "WIN" ) then { remoteExec [ "T8C_fnc_handleReward", -2 ]; };
 				
 				_x set [ 0, true ];
 			};
@@ -66,15 +69,15 @@ while { true } do
 	{
 		// handle rewards
 		[] call T8RMG_fnc_handleReward;
-	
-		[ 1, "New mission sites will be created in 3 minutes!<br /><br />Cleanup will start in 2 miuntes!", 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
+
+		[ 1, 3, 0 ] remoteExec [ "T8C_fnc_hintProcess", -2 ]; 
 
 		sleep ( _cleanDelay * _baseTime );
-		
+
 		// clean up all stuff
 		[] call T8RMG_fnc_cleanUP;
-		
-		[ 1, "New mission sites will be created in 1 minute!", 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
+
+		[ 1, 4, 0 ] remoteExec [ "T8C_fnc_hintProcess", -2 ]; 
 
 		sleep ( _spawnDelay * _baseTime );
 

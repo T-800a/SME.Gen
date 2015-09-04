@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="SMEGen">
+
 	<Package name="Main">
+		<Key ID="STR_SMEGen_vehicleRestricted">
+			<Original>This vehicle is restricted.&lt;br /&gt;&lt;t size='0.95'&gt;You can only get in a cargo slot.&lt;/t&gt;</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_upcommingCleanUp">
+			<Original>New mission sites will be created in %1 minutes!&lt;br /&gt;&lt;br /&gt;Cleanup will start in %2 miuntes!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_upcommingNewTasks">
+			<Original>New mission sites will be created in %1 minute!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_errorNewTasks">
+			<Original>ERROR:&lt;br /&gt;Could not create new tasks!&lt;br /&gt;Players please return to the main base to clrea possible positions.&lt;br /&gt;If this does not help contact a admin.</Original>
+		</Key>
+	</Package>
+	
+	
+	<Package name="Rewards">
+		<Key ID="STR_SMEGen_hint_playerRankUp">
+			<Original>&lt;img image='%1'/&gt;&lt;br/&gt;&lt;br /&gt;Congratulations you ranked up!&lt;br /&gt;Your new rank is:&lt;br /&gt;%2</Original>
+		</Key>
+		
 		<Key ID="STR_SMEGen_hint_Reward01">
 			<Original>U.SOC rewarded you with a Mobile HQ!&lt;br /&gt;&lt;br /&gt;This vehicle is a mobile respawn position.</Original>
 		</Key>
@@ -20,10 +44,6 @@
 		<Key ID="STR_SMEGen_mapName_Reward03">
 			<Original>AH-6M Littlebird</Original>
 		</Key>
-		
-		<Key ID="STR_SMEGen_vehicleRestricted">
-			<Original>This vehicle is restricted.&lt;br /&gt;&lt;t size='0.95'&gt;You can only get in a cargo slot.&lt;/t&gt;</Original>
-		</Key>
-		
 	</Package>
+	
 </Project>

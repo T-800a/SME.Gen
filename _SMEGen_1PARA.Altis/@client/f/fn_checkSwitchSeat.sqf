@@ -2,6 +2,7 @@
  =======================================================================================================================
 
 	@client
+	SME.Gen - Small Military Encounter Genenerator
 	
 	File:		fn_checkSwitchSeat.sqf
 	Author:		T-800a
@@ -11,8 +12,11 @@
     unit1: Object - Unit switching seat.
     unit2: Object - Unit switching seat.
 
-=======================================================================================================================
+ =======================================================================================================================
 */
+
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
 
 private [ "_vehicle", "_position", "_unit", "_type", "_classes", "_whiteListCheck", "_msg" ];
 

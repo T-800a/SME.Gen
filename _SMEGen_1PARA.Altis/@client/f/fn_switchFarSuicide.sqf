@@ -1,13 +1,18 @@
 /*
  =======================================================================================================================
 
-	T8 Units Script
+	@client
+	SME.Gen - Small Military Encounter Genenerator
 	
 	Funktion:	fn_switchFarSuicide.sqf
 	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
 
-=======================================================================================================================
+ =======================================================================================================================
 */
+
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+// );
 
 private [ "_switch", "_msg" ];
 _switch = [ _this, 0, 2, [123] ] call BIS_fnc_param;

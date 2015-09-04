@@ -1,9 +1,8 @@
 /*
  =======================================================================================================================
 
-	1PARA - Random Missions "Generator"
-
- =======================================================================================================================
+	@randomMission
+	SME.Gen - Small Military Encounter Genenerator
  
 	File:		cfgRandomMissions.hpp
 	Author:		T-800a
@@ -25,7 +24,7 @@ class cfgRandomMissions
 		missionCleanDelay			= 1;	// minutes
 		missionSpawnDelay			= 2;	// minutes
 		
-		// modificators will 
+	// modificators will 
 		spawnModPlayer				= 5;
 		spawnModGroup				= 15;
 
@@ -55,10 +54,39 @@ class cfgRandomMissions
 		missionRewardRestriction02	= "";
 		missionRewardRestriction03	= "whitelistHelicopter";
 	
+	// starting gear (in arsenal)
+		class startingGear
+		{
+			Backpack[]	= {};
+			Item[]		= {};
+			Magazine[]	= {};
+			Weapon[]	= {};
+		};
+	
 	
 	// --------------------------------------------------------------
 	};
 
+		
+	class playerRewards
+	{
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class CORPORAL : base_reward {};
+		class SERGEANT : base_reward {};
+		class LIEUTENANT : base_reward {};
+		class CAPTAIN : base_reward {};
+		class MAJOR : base_reward {};
+		class COLONEL : base_reward {};
+		class GENERAL : base_reward {};
+	};
+	
 	
 	class missionSites
 	{
@@ -368,7 +396,7 @@ class cfgRandomMissions
 			scope			= 0;
 			name			= "";
 			task			= "";
-			condition		= "";
+			taskShort		= "";
 			description		= ".....";
 			
 			class conditions
