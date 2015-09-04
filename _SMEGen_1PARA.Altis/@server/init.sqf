@@ -18,17 +18,6 @@ if ( !isServer ) exitWith {};
 
 T8S_var_initDONE = true;
 
-
-
-
-// Prepare VR-Ammobox
-[ "AmmoboxInit", [ mission_obj_arsenal_post, true ]] spawn BIS_fnc_arsenal;
-
-// set base textures for signs / billboards
-mission_obj_arsenal_sign	setObjectTextureGlobal [ 0, "images\vr-arsenal.paa" ];
-mission_obj_usoc_sign		setObjectTextureGlobal [ 0, "images\usoc.paa" ];
-
-
 // Remove DiscoBodies
 addMissionEventHandler [ "HandleDisconnect", { _this spawn { sleep 2; deleteVehicle ( _this select 0 ); }; } ];
 

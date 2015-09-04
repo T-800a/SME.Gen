@@ -28,7 +28,7 @@ DEBUG( __FILE__, "INIT", "INIT" );
 
 } forEach T8RMG_var_arrayCleanup;
 
-{ [ _x select 0 ] call BIS_fnc_deleteTask; false } count T8RMG_var_arrayConditions;
+{ [ _x select 1 ] call BIS_fnc_deleteTask; false } count T8RMG_var_arrayConditions;
 
 // reset variables
 T8RMG_var_arrayCleanup		= [];

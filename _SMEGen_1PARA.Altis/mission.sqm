@@ -62,7 +62,6 @@ class Mission
 		"ace_microdagr",
 		"ace_medical",
 		"ace_hearing",
-		"A3_Modules_F_StrategicMap",
 		"A3_Modules_F_Multiplayer",
 		"A3_Modules_F_Curator_Environment",
 		"A3_Characters_F_EPC",
@@ -93,7 +92,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=30;
+		items=29;
 		class Item0
 		{
 			side="LOGIC";
@@ -1176,52 +1175,6 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14159.241,19.667015,16243.533};
-					class args
-					{
-						items=4;
-						class Item0
-						{
-							value="missionConfigFile >> ""CfgORBAT"" >> ""1PARA"" >> ""SAG""";
-							parentCls="ModuleStrategicMapORBAT_F";
-							typeName="Path";
-						};
-						class Item1
-						{
-							value="missionConfigFile >> ""CfgORBAT"" >> ""1PARA""";
-							parentCls="ModuleStrategicMapORBAT_F";
-							typeName="Parent";
-						};
-						class Item2
-						{
-							value="";
-							parentCls="ModuleStrategicMapORBAT_F";
-							typeName="Tags";
-						};
-						class Item3
-						{
-							value="";
-							parentCls="ModuleStrategicMapORBAT_F";
-							typeName="Tiers";
-						};
-					};
-					id=42;
-					side="LOGIC";
-					vehicle="ModuleStrategicMapORBAT_F";
-					leader=1;
-					lock="UNLOCKED";
-					skill=0.60000002;
-				};
-			};
-		};
-		class Item26
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
 					position[]={14264.6,19.431389,16278.689};
 					azimut=7.1731501;
 					class args
@@ -1288,7 +1241,7 @@ class Mission
 							typeName="RespawnWhenDisabled";
 						};
 					};
-					id=43;
+					id=42;
 					side="LOGIC";
 					vehicle="ModuleRespawnVehicle_F";
 					leader=1;
@@ -1299,7 +1252,7 @@ class Mission
 				};
 			};
 		};
-		class Item27
+		class Item26
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1318,7 +1271,7 @@ class Mission
 							typeName="TimeMultiplier";
 						};
 					};
-					id=44;
+					id=43;
 					side="LOGIC";
 					vehicle="ModuleTimeMultiplier_F";
 					leader=1;
@@ -1327,7 +1280,7 @@ class Mission
 				};
 			};
 		};
-		class Item28
+		class Item27
 		{
 			side="CIV";
 			class Vehicles
@@ -1337,7 +1290,7 @@ class Mission
 				{
 					position[]={8495.6953,88.798004,25248.234};
 					special="NONE";
-					id=45;
+					id=44;
 					side="CIV";
 					vehicle="C_journalist_F";
 					player="PLAYER COMMANDER";
@@ -1348,7 +1301,7 @@ class Mission
 				};
 			};
 		};
-		class Item29
+		class Item28
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1422,7 +1375,7 @@ class Mission
 							typeName="RespawnWhenDisabled";
 						};
 					};
-					id=46;
+					id=45;
 					side="LOGIC";
 					vehicle="ModuleRespawnVehicle_F";
 					leader=1;
@@ -1442,12 +1395,11 @@ class Mission
 			position[]={14257.4,19.601126,16266.566};
 			azimut=320;
 			special="NONE";
-			id=47;
+			id=46;
 			side="EMPTY";
 			vehicle="Land_HelipadSquare_F";
 			leader=1;
 			skill=0.60000002;
-			text="mission_garage_spawn_02";
 			init="this setVariable [ ""ASC_CIM_isRepairPad"", true ];";
 			description="Alpha Squad Leader";
 		};
@@ -1455,7 +1407,7 @@ class Mission
 		{
 			position[]={14197.973,19.55345,16274.721};
 			azimut=40;
-			id=48;
+			id=47;
 			side="EMPTY";
 			vehicle="BAF_Offroad_W";
 			skill=0.60000002;
@@ -1466,7 +1418,7 @@ class Mission
 		{
 			position[]={14193.822,19.543039,16278.249};
 			azimut=40;
-			id=49;
+			id=48;
 			side="EMPTY";
 			vehicle="BAF_Offroad_W_HMG";
 			skill=0.60000002;
@@ -1477,7 +1429,7 @@ class Mission
 		{
 			position[]={14201.831,19.597748,16271.35};
 			azimut=40;
-			id=50;
+			id=49;
 			side="EMPTY";
 			vehicle="BAF_Offroad_W";
 			skill=0.60000002;
@@ -1489,7 +1441,7 @@ class Mission
 		{
 			position[]={14257.496,19.608763,16266.229};
 			azimut=138.37601;
-			id=51;
+			id=50;
 			side="EMPTY";
 			vehicle="MELB_MH6M";
 			skill=0.60000002;
@@ -1501,7 +1453,7 @@ class Mission
 		{
 			position[]={14246.351,19.586538,16267.41};
 			azimut=320;
-			id=52;
+			id=51;
 			side="EMPTY";
 			vehicle="PortableHelipadLight_01_red_F";
 			skill=0.60000002;
@@ -1510,7 +1462,7 @@ class Mission
 		{
 			position[]={14160.147,19.558506,16279.029};
 			azimut=45;
-			id=53;
+			id=52;
 			side="EMPTY";
 			vehicle="ASC_B_box_weapons";
 			skill=0.60000002;
@@ -1519,20 +1471,20 @@ class Mission
 		{
 			position[]={14162.68,19.347628,16293.624};
 			special="NONE";
-			id=54;
+			id=53;
 			side="EMPTY";
 			vehicle="Land_JumpTarget_F";
 			leader=1;
 			skill=0.60000002;
-			text="mission_garage_spawn_01";
+			text="mission_homebase";
 			init="this setVariable [ ""ASC_CIM_isRepairPad"", true ];";
-			description="Alpha Squad Leader";
+			description="used for return home missions";
 		};
 		class Item8
 		{
 			position[]={14258.23,19.463512,16277.033};
 			azimut=320;
-			id=55;
+			id=54;
 			side="EMPTY";
 			vehicle="PortableHelipadLight_01_red_F";
 			skill=0.60000002;
@@ -1541,7 +1493,7 @@ class Mission
 		{
 			position[]={14256.4,19.786022,16255.669};
 			azimut=320;
-			id=56;
+			id=55;
 			side="EMPTY";
 			vehicle="PortableHelipadLight_01_red_F";
 			skill=0.60000002;
@@ -1550,7 +1502,7 @@ class Mission
 		{
 			position[]={14268.081,19.527271,16265.701};
 			azimut=320;
-			id=57;
+			id=56;
 			side="EMPTY";
 			vehicle="PortableHelipadLight_01_red_F";
 			skill=0.60000002;
@@ -1560,7 +1512,7 @@ class Mission
 			position[]={14230.069,19.377106,16302.335};
 			azimut=140;
 			special="NONE";
-			id=58;
+			id=57;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			leader=1;
@@ -1572,7 +1524,7 @@ class Mission
 			position[]={14254.288,19.341928,16318.552};
 			azimut=155;
 			special="NONE";
-			id=59;
+			id=58;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			leader=1;
@@ -1583,7 +1535,7 @@ class Mission
 		{
 			position[]={14252.455,20.119019,16230.591};
 			special="NONE";
-			id=60;
+			id=59;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			leader=1;

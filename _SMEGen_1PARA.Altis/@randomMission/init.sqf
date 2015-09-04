@@ -24,15 +24,19 @@ if ( isnil "T8RMG_fnc_checkOutside" )		then { T8RMG_fnc_checkOutside		= CFPPFLN 
 if ( isnil "T8RMG_fnc_cleanUP" )			then { T8RMG_fnc_cleanUP			= CFPPFLN ( ROOTDIR + "fn_cleanUP.sqf" ); };
 if ( isnil "T8RMG_fnc_createMarker" )		then { T8RMG_fnc_createMarker		= CFPPFLN ( ROOTDIR + "fn_createMarker.sqf" ); };
 if ( isnil "T8RMG_fnc_createAO" )			then { T8RMG_fnc_createAO			= CFPPFLN ( ROOTDIR + "fn_createAO.sqf" ); };
+if ( isnil "T8RMG_fnc_createAttack" )		then { T8RMG_fnc_createAttack		= CFPPFLN ( ROOTDIR + "fn_createAttack.sqf" ); };
 if ( isnil "T8RMG_fnc_createConvoy" )		then { T8RMG_fnc_createConvoy		= CFPPFLN ( ROOTDIR + "fn_createConvoy.sqf" ); };
 if ( isnil "T8RMG_fnc_createAmmoDump" )		then { T8RMG_fnc_createAmmoDump		= CFPPFLN ( ROOTDIR + "fn_createAmmoDump.sqf" ); };
 if ( isnil "T8RMG_fnc_createFuelDump" )		then { T8RMG_fnc_createFuelDump		= CFPPFLN ( ROOTDIR + "fn_createFuelDump.sqf" ); };
+if ( isnil "T8RMG_fnc_createRadioTower" )	then { T8RMG_fnc_createRadioTower	= CFPPFLN ( ROOTDIR + "fn_createRadioTower.sqf" ); };
+if ( isnil "T8RMG_fnc_createRecoverUAV" )	then { T8RMG_fnc_createRecoverUAV	= CFPPFLN ( ROOTDIR + "fn_createRecoverUAV.sqf" ); };
 if ( isnil "T8RMG_fnc_createRoadblock" )	then { T8RMG_fnc_createRoadblock	= CFPPFLN ( ROOTDIR + "fn_createRoadblock.sqf" ); };
 if ( isnil "T8RMG_fnc_createMortarPos" )	then { T8RMG_fnc_createMortarPos	= CFPPFLN ( ROOTDIR + "fn_createMortarPos.sqf" ); };
 if ( isnil "T8RMG_fnc_findObjectivePos" )	then { T8RMG_fnc_findObjectivePos	= CFPPFLN ( ROOTDIR + "fn_findObjectivePos.sqf" ); };
 if ( isnil "T8RMG_fnc_handleReward" )		then { T8RMG_fnc_handleReward		= CFPPFLN ( ROOTDIR + "fn_handleReward.sqf" ); };
 if ( isnil "T8RMG_fnc_handleConditions" )	then { T8RMG_fnc_handleConditions	= CFPPFLN ( ROOTDIR + "fn_handleConditions.sqf" ); };
 if ( isnil "T8RMG_fnc_handleNewTasks" )		then { T8RMG_fnc_handleNewTasks		= CFPPFLN ( ROOTDIR + "fn_handleNewTasks.sqf" ); };
+if ( isnil "T8RMG_fnc_handleDisplays" )		then { T8RMG_fnc_handleDisplays		= CFPPFLN ( ROOTDIR + "fn_handleDisplays.sqf" ); };
 
 // for temp testing
 if ( isnil "T8RMG_fnc_testFnc" )			then { T8RMG_fnc_testFnc			= CFPPFLN ( ROOTDIR + "fn_testFnc.sqf" ); };
@@ -54,11 +58,27 @@ DEBUG( __FILE__, "==============================================================
 DEBUG( __FILE__, "MAIN INIT", "SEM.Gen" );
 DEBUG( __FILE__, "=======================================================================================================================", "" );
 
+
+// handle textures for signs / billboards
+[] spawn T8RMG_fnc_handleDisplays;
+
+// Prepare VR-Ammobox
+[ "AmmoboxInit", [ mission_obj_arsenal_post, true ]] spawn BIS_fnc_arsenal;
+
+
 // spawn loop to handle conditions of created tasks
 [] spawn T8RMG_fnc_handleConditions;
+
 
 // start initial tasks set
 [] call T8RMG_fnc_handleNewTasks;
 
+
 T8RMG_var_INITDONE = true;
 publicVariable "T8RMG_var_INITDONE";
+
+
+
+
+
+

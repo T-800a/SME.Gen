@@ -8,7 +8,7 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
-	_mkr = [ "markerName", [ 10, 10, 0 ], "markerText" ] call T8RMG_fnc_createMarker;
+	_mkr = [ "markerName", [ 10, 10, 0 ], "markerText", [100,100], 0, "ELLIPSE", "empty" ] call T8RMG_fnc_createMarker;
 	
  =======================================================================================================================
 */
@@ -45,4 +45,4 @@ _m setMarkerDirLocal _mdir;
 T8RMG_var_arrayCleanup pushBack _m;
 
 // Return
-true
+_m

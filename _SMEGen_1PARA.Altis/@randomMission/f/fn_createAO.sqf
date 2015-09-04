@@ -94,6 +94,24 @@ switch ( _type ) do
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
 	};
 	
+	case "radiotower":
+	{
+		private [ "_obj" ];
+		_obj = [ _sitePos ] call T8RMG_fnc_createRadioTower; 
+		
+		_varName = format [ "OBJECTIVE_radiotower_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
+	case "recoverUAV":
+	{
+		private [ "_obj" ];
+		_obj = [ _sitePos ] call T8RMG_fnc_createRecoverUAV; 
+		
+		_varName = format [ "OBJECTIVE_recoverUAV_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
 	default {};
 };
 

@@ -39,15 +39,18 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 		_site = _x;
 		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "position" );
 		
-		if (({( _sitePos distance ( getPos _x )) < 600 } count _players ) count < 1 AND !( _site in _arraySitesUsed )) then { _arraySitesUsed pushBack _site; };
+		if ( !( _site in _arraySitesUsed ) AND { ({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesUsed pushBack _site; };
 		
 		false
 	} count _arraySitesAvailable; 
 
+	DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+	
 	// worst case
-	if ( count _arraySitesUsed ) < T8RMG_var_amountSites ) then
+	if (( count _arraySitesUsed ) < T8RMG_var_amountSites ) then
 	{
-		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", -2 ]; 
+		DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
+		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
 		sleep 30;
 	};
 };

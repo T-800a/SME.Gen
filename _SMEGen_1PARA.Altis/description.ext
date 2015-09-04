@@ -11,10 +11,10 @@
 
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen | V.010";
+onLoadName					= "SME.Gen | V.011";
 OnLoadMission				= "Small Military Encounter Genenerator";
-loadScreen					= "images\usoc.paa";
-overviewPicture				= "images\usoc.paa";
+loadScreen					= "images\SMEGen_logo.paa";
+overviewPicture				= "images\SMEGen_logo.paa";
 
 enableDebugConsole			= 1;
 disabledAI					= true;
@@ -71,15 +71,6 @@ class Header
 	gameType		= COOP;
 	minPlayers		= 1;
 	maxPlayers		= 20;
-};
-
-
-
-class CfgORBAT
-{
-	#include "ORBAT\west.hpp"
-	#include "ORBAT\east.hpp"
-	#include "ORBAT\inde.hpp"
 };
 
 

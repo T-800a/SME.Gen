@@ -111,11 +111,23 @@ class cfgRandomMissions
 		{
 			scope		= 0;
 			name		= "";
-			type		= "mil";
+			type		= "military";
 			allowedTypes[]	= { "occupy_mil", "mortars", "resupplies" };
 			marker		= "";
 			position[]	= { 0, 0, 0 };
 			size[]		= { 200, 200 };
+			angle		= 0;
+		};
+		
+		class base_comp
+		{
+			scope		= 0;
+			name		= "";
+			type		= "compound";
+			allowedTypes[]	= { "radiotower", "recoverUAV" };
+			marker		= "";
+			position[]	= { 0, 0, 0 };
+			size[]		= { 250, 250 };
 			angle		= 0;
 		};
 		
@@ -130,6 +142,8 @@ class cfgRandomMissions
 			size[]		= { 200, 80 };
 			angle		= 0;
 		};
+		
+
 		
 	// --------------------------------------------------------------
 	//	missionSites - USED CLASSES
@@ -372,8 +386,50 @@ class cfgRandomMissions
 			position[]	= { 12761.6, 15918.1, 0 };
 			angle		= 175;
 		};
-	};
 
+	// --------------------------------------------------------------
+	// missionSites - COMPOUND POSITIONS
+	
+		class comp_01 : base_comp
+		{
+			scope		= 1;
+			name		= "Lakka Military Area"; 
+			marker		= "site_comp_01";
+			position[]	= { 12803.2, 17414.4, 0 };
+		};
+		
+		class comp_02 : base_comp
+		{
+			scope		= 1;
+			name		= "Neochori Area"; 
+			marker		= "site_comp_02";
+			position[]	= { 11636.3, 14573.1, 0 };
+		};
+		
+		class comp_03 : base_comp
+		{
+			scope		= 1;
+			name		= "Kalithea Bay Area"; 
+			marker		= "site_comp_03";
+			position[]	= { 16796.1, 18174.7, 0 };
+		};
+		
+		class comp_04 : base_comp
+		{
+			scope		= 1;
+			name		= "Athira Area"; 
+			marker		= "site_comp_04";
+			position[]	= { 13870.8, 19629.6, 0 };
+		};
+		
+		class comp_05 : base_comp
+		{
+			scope		= 1;
+			name		= "Charkia Area"; 
+			marker		= "site_comp_05";
+			position[]	= { 19035.3, 14845.7, 0 };
+		};
+	};
 	// --------------------------------------------------------------
 	
 	
@@ -473,6 +529,22 @@ class cfgRandomMissions
 					unitsFiller[] 	= {};
 					task			= "PATROL";
 				};
+				
+				class base_attackFireteam 
+				{
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_AT_F" };
+					unitsFiller[] 	= {  "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					task			= "ATTACK";
+				};
+				
+				class base_attackSquad 
+				{
+					scope			= 0;
+					units[]			= { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_HMG_F", "ASC_O_AS_soldier_AR_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_AT_F", "ASC_O_AS_marksman_F" };
+					unitsFiller[] 	= { "ASC_O_AS_soldier_GL_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" };
+					task			= "ATTACK";
+				};
 			};
 		};
 
@@ -486,7 +558,6 @@ class cfgRandomMissions
 			name		= "Occupy";
 			task		= "Search and Secure";
 			taskShort	= "Secure";
-			condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '%1' ) nearEntities %2 )) < 5 )";
 
 			class groups : groups
 			{
@@ -504,7 +575,6 @@ class cfgRandomMissions
 			name		= "Occupy";
 			task		= "Search and Secure";
 			taskShort	= "Secure";
-			condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '%1' ) nearEntities %2 )) < 5 )";
 
 			class groups : groups
 			{
@@ -522,7 +592,6 @@ class cfgRandomMissions
 			name		= "Convoy";
 			task		= "Raid the Convoy";
 			taskShort	= "Raid Convoy";
-			condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '%1' ) nearEntities %2 )) < 5 )";
 
 			class groups : groups
 			{
@@ -539,7 +608,6 @@ class cfgRandomMissions
 			name		= "Roadblock";
 			task		= "Clear the Roadblock";
 			taskShort	= "Clear Roadblock";
-			condition	= "(({ side _x isEqualTo EAST } count (( getMarkerPos '%1' ) nearEntities %2 )) < 5 )";
 
 			class groups : groups
 			{
@@ -556,7 +624,6 @@ class cfgRandomMissions
 			name		= "Mortars";
 			task		= "Destroy the Mortars";
 			taskShort	= "Destroy Mortars";
-			condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
 			
 			class conditions
 			{
@@ -583,7 +650,6 @@ class cfgRandomMissions
 			name		= "Resupplies";
 			task		= "Destroy the Resupply Installations";
 			taskShort	= "Destroy Resupplies";
-			condition	= "(({ alive _x } count ( missionNamespace getVariable [ '%1', []])) < 1 )";
 			
 			class conditions
 			{
@@ -601,6 +667,97 @@ class cfgRandomMissions
 				class group03 : base_fireteam { scope = 1; };
 				class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 				class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			};
+		};
+		
+		class radiotower : base_type
+		{
+			scope		= 1;
+			name		= "Radiotower";
+			task		= "Destroy the Radiotower";
+			taskShort	= "Destroy Radiotower";
+			
+			class conditions
+			{
+				class win
+				{
+					condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
+					function	= "BIS_fnc_taskSetState";
+				};
+				
+				class counter_attack
+				{
+					condition	= "(({ side _x isEqualTo WEST } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
+					function	= "T8RMG_fnc_createAttack";
+				};
+			};
+
+			class groups : groups
+			{
+				class group01 : base_defendBase { scope = 1; units[] = { "ASC_O_AS_soldier_SL_F", "ASC_O_AS_soldier_CM_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F", "ASC_O_AS_soldier_F" }; };
+				class group02 : base_fireteam { scope = 1; };
+				class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			};
+		};
+
+		class recoverUAV : base_type
+		{
+			scope		= 1;
+			name		= "RecoverUAV";
+			task		= "Recover a UAV and return it to our Base";
+			taskShort	= "Recover a UAV";
+			
+			class conditions
+			{
+				class win
+				{
+					condition	= "( missionNamespace getVariable [ '#__VARIABLE__#', mission_homebase ] distance mission_homebase < 50 )";
+					function	= "BIS_fnc_taskSetState";
+				};
+				
+				class fail
+				{
+					condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', mission_homebase ]))";
+					function	= "BIS_fnc_taskSetState";
+				};
+				
+				class support
+				{
+					condition	= "(({ side _x isEqualTo WEST } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";
+					function	= "T8RMG_fnc_createAttack";
+				};
+				
+				class counter_attack
+				{
+					condition	= "(({ side _x isEqualTo WEST } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 0.4 ))) > 3 )";
+					function	= "T8RMG_fnc_createAttack";
+				};
+			};
+
+			class groups : groups
+			{
+				class group01 : base_garrison { scope = 1; };
+			};
+		};
+		
+		
+		// --------------------------------------------------------------
+		// not for "task creation" - fixed tasks started by events
+		
+		class attack : base_type
+		{
+			scope		= 1;
+			name		= "Attack";
+			task		= "Attack";
+			taskShort	= "Attack";
+			
+			class conditions {};
+
+			class groups : groups
+			{
+				class group01 : base_attackFireteam { scope = 1; };
+				class group03 : base_attackSquad { scope = 1; };
+				class group04 : base_attackSquad { scope = 1; };
 			};
 		};
 	};

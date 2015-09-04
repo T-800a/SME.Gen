@@ -22,7 +22,7 @@ T8U_fnc_BroadcastHint =
 	
 	// [ [ _text ], "T8U_fnc_Hint" ] spawn BIS_fnc_MP;
 	
-	[ 2, _text, 2 ] remoteExec [ "T8C_fnc_hintProcess", -2 ];
+	[ 2, _text, 2 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
 };
 
 

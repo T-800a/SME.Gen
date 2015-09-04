@@ -14,15 +14,16 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_skip", "_classReward01", "_classReward02", "_classReward03", "_restrictionReward01", "_restrictionReward02", "_restrictionReward03" ];
+private [ "_icon" ];
 
-_classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward01" );
-_restrictionReward03	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
+// _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward01" );
+// _restrictionReward03		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
 
-DEBUG( __FILE__, "_classReward01", _classReward01 );
-DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
+// DEBUG( __FILE__, "_classReward01", _classReward01 );
+// DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
 
 if ( isNil "T8C_var_playerRank" ) then { T8C_var_playerRank = "PRIVATE"; };
+_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa"; 
 
 switch ( T8C_var_playerRank ) do
 {
