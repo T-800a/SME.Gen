@@ -1,3 +1,6 @@
+<p align="center">
+    <img src="https://github.com/T-800a/SME.Gen/blob/master/SMEGen_logo_tp.png" width="512">
+</p>
 <h2 align="center">SME.Gen - SmallMilitaryEncounter Generator</h2>
 <p align="center">
     <a href="#">
