@@ -1,7 +1,5 @@
-<p align="center">
-    <img src="https://github.com/T-800a/SME.Gen/blob/master/SMEGen_logo_tp.png" width="512">
-</p>
-<h2 align="center">SME.Gen - SmallMilitaryEncounter Generator</h2>
+<p align="center"><img src="https://github.com/T-800a/SME.Gen/blob/master/SMEGen_logo_tp.png" width="512"></p>
+<h2 align="center">SmallMilitaryEncounter Generator</h2>
 <p align="center">
     <a href="#">
         <img src="https://img.shields.io/badge/SME.Gen-V.007-green.svg?style=flat-square" alt="SME.Gen: V.007">
@@ -29,11 +27,16 @@ The intent of the mission is to have something similiar to an Invade & Annex typ
 - clear broken down convoy
 - clear road block / checkpoint
 
-### Rewards for completing a set (2) of missions:
+#####Installations
+- destroy communication base (radiotower)
+- recover a UAV (and return to base)
+
+### Rewards
+for completing a set (2) of missions:
 - MobileHQ / mobile respawn (Landrover Ambulance)
 - MWMIK Jackal (with HMG)
 - AH-6M Littlebird (with GAU-19 and 19x Hydra 70)
 
-### After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
+After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
 
 ### The time is accelerated ( 4h IRL = 24h in game )
