@@ -16,7 +16,7 @@
 
 private [ "_group", "_pos", "_wpArray", "_wp" ];
 
-_group		= [ _this, 0, objNull ] call BIS_fnc_param;
+_group		= param [ 0, objNull, [objNull]];
 _pos		= getPos ( leader _group );
 
 if ( T8U_var_DEBUG ) then { [ "fn_groupRegroup.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };

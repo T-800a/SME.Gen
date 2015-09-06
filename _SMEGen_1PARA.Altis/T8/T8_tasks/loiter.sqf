@@ -51,8 +51,8 @@
 
 private [ "_group", "_marker", "_pos", "_areaSizeX", "_areaSizeY", "_pos", "_range", "_units", "_unitLeader", "_unitsCount" , "_seats", "_seat", "_n", "_movePos", "_newGroup", "_wp1", "_wp2", "_behaviour" ];
 
-_group		= [ _this, 0, objNull ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER-SET", [ "" ] ] call BIS_fnc_param; 
+_group		= param [ 0, grpNull, [grpNull]];
+_marker		= param [ 1, "NO-MARKER-SET", [""]]; 
 
 if ( isNull _group OR { str ( getMarkerPos _marker ) == str ([0,0,0]) } ) exitWith { if ( T8U_var_DEBUG ) then { [ ">> %1 >>>>>>>>>> loiter.sqf >> Missing Parameters", time ] call BIS_fnc_error; }; false };
 if ( T8U_var_DEBUG ) then { [ ">> %1 >>>>>>>>>> loiter.sqf >> EXEC >> %2 >> %3", time, _marker ] call BIS_fnc_error; };

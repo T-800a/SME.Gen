@@ -16,14 +16,16 @@
 
 private [ "_unitsArray", "_marker", "_owner", "_distance", "_actSide", "_actType", "_onAct", "_onDeAct", "_condition", "_trigger", "_onActCompiled", "_onDeactCompiled", "_onActDebug", "_onDeActDebug" ];
 
-_unitsArray		= [ _this, 0, "NO-UNITS-SET", [ "" ] ] call BIS_fnc_param;
-_marker			= [ _this, 1, "NO-MARKER-SET", [ "" ] ] call BIS_fnc_param;
-_owner			= toUpper ( [ _this, 2, "NO-SIDE-SET", [ "" ] ] call BIS_fnc_param );
-_actSide		= [ _this, 3, "ANY", [ "" ] ] call BIS_fnc_param;
-_distance		= [ _this, 4, 1000, [ 123 ] ] call BIS_fnc_param;
-_condition		= [ _this, 5, "this", [ "" ] ] call BIS_fnc_param;
-_onAct			= [ _this, 6, "", [ "" ] ] call BIS_fnc_param;
-_onDeAct		= [ _this, 7, "", [ "" ] ] call BIS_fnc_param;
+_unitsArray		= param [ 0, "NO-UNITS-SET", [ "" ]];
+_marker			= param [ 1, "NO-MARKER-SET", [ "" ]];
+_owner			= param [ 2, "NO-SIDE-SET", [ "" ]];
+_actSide		= param [ 3, "ANY", [ "" ]];
+_distance		= param [ 4, 1000, [ 123 ]];
+_condition		= param [ 5, "this", [ "" ]];
+_onAct			= param [ 6, "", [ "" ]];
+_onDeAct		= param [ 7, "", [ "" ]];
+
+_owner			= toUpper _owner;
 
 _actType = "PRESENT";
 _actRepeat = true;

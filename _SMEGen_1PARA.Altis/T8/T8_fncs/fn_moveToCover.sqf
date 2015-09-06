@@ -14,7 +14,7 @@
 
 private [ "_unit", "_cover", "_cObj", "_rm", "_rmR", "_coverPos", "_watchPos", "_dir", "_cm" ];
 
-_unit		= [ _this, 0, objNull ] call BIS_fnc_param;
+_unit		= param [ 0, objNull, [objNull]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_getInCover.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

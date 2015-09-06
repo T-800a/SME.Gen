@@ -29,10 +29,10 @@ private [ "_caller", "_target", "_units", "_useSide", "_callerPos", "_spawnPos",
 
 waitUntil { !isNil "bis_fnc_init" };
 
-_caller			= [ _this, 0, objNull, [objNull,[]] ] call BIS_fnc_param;
-_target			= [ _this, 1, objNull, [objNull,[]] ] call BIS_fnc_param;
-_units			= [ _this, 2, [], [[]] ] call BIS_fnc_param;
-_useSide		= [ _this, 3, T8U_var_EnemySide, [WEST] ] call BIS_fnc_param;
+_caller			= param [ 0, objNull, [objNull,[]]];
+_target			= param [ 1, objNull, [objNull,[]]];
+_units			= param [ 2, [], [[]]];
+_useSide		= param [ 3, T8U_var_EnemySide, [WEST]];
 
 if ( T8U_var_DEBUG ) then { [ "supportHALO.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

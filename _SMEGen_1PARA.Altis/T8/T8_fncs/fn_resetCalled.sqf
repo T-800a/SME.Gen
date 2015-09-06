@@ -14,8 +14,8 @@
 
 private [ "_unit", "_time" ];
 
-_unit = [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
-_time = [ _this, 1, 0, [123] ] call BIS_fnc_param;
+_unit = param [ 0, objNull, [objNull]];
+_time = param [ 1, 0, [123]];
 
 sleep ( T8U_var_CallForHelpTimeout + _time );
 

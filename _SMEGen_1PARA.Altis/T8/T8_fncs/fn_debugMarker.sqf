@@ -21,16 +21,16 @@ if ( !T8U_var_DEBUG_marker ) exitWith {};
 
 private [ "_mp", "_ms", "_mt", "_mg", "_mc", "_ma", "_mtxt", "_m", "_mn" ];
 
-_mp		= [ _this, 0, [], [[]] ] call BIS_fnc_param;
+_mp		= param [ 0, [], [[]]];
 
 if ( count _mp < 2 ) exitWith {};
 
-_ms		= [ _this, 1, "ICON", [""] ] call BIS_fnc_param;
-_mt		= [ _this, 2, "waypoint", [""] ] call BIS_fnc_param;
-_mg		= [ _this, 3, 1, [123] ] call BIS_fnc_param;
-_mc		= [ _this, 4, "ColorBlack", [""] ] call BIS_fnc_param;
-_ma		= [ _this, 5, 0.66, [123] ] call BIS_fnc_param;
-_mtxt	= [ _this, 6, "", [""] ] call BIS_fnc_param;
+_ms		= param [ 1, "ICON", [""]];
+_mt		= param [ 2, "waypoint", [""]];
+_mg		= param [ 3, 1, [123]];
+_mc		= param [ 4, "ColorBlack", [""]];
+_ma		= param [ 5, 0.66, [123]];
+_mtxt	= param [ 6, "", [""]] ;
 
 _mn = format ["dM_%1_%2", _mp, ( random time ) ]; 
 _m = createMarker [ _mn, _mp ]; 

@@ -17,7 +17,7 @@
 
 private [ "_unit", "_return", "_b", "_p1", "_p2" ];
 
-_unit		= [ _this, 0, [] ] call BIS_fnc_param;
+_unit		= param [ 0, [], [[],objNull]];
 _return		= false;
 
 if ( T8U_var_DEBUG ) then { [ "fn_inBuilding.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };

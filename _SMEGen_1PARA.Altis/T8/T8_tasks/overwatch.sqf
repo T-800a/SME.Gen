@@ -31,11 +31,11 @@
 
 private [ "_group", "_marker", "_infGroup", "_originUnits", "_formation", "_statement", "_wpArray", "_selectPos", "_overwatchPos", "_wp", "_behaviour" ];
 
-_group			= [ _this, 0, objNull ] call BIS_fnc_param;
-_marker			= [ _this, 1, "NO-MARKER-SET", [ "" ] ] call BIS_fnc_param;
-_minDist		= [ _this, 2, 250, [ 123 ] ] call BIS_fnc_param;
-_range			= [ _this, 3, 300, [ 123 ] ] call BIS_fnc_param;
-_infGroup		= [ _this, 4, true, [ true ] ] call BIS_fnc_param;
+_group			= param [ 0, grpNull, [grpNull]];
+_marker			= param [ 1, "NO-MARKER-SET", [""]];
+_minDist		= param [ 2, 250, [123]];
+_range			= param [ 3, 300, [123]];
+_infGroup		= param [ 4, true, [true]];
 
 if ( T8U_var_DEBUG ) then { [ "overwatch.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

@@ -29,8 +29,8 @@
 
 private [ "_group", "_marker", "_leader", "_n", "_speedMode", "_formation", "_statementGetIn", "_statementGetOut", "_range", "_wp", "_wpArray", "_behaviour" ];
 
-_group		= [ _this, 0, objNull ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER-SET", [""] ] call BIS_fnc_param;
+_group		= param [ 0, grpNull, [grpNull]];
+_marker		= param [ 1, "NO-MARKER-SET", [""]];
 _leader		= leader _group;
 
 if ( T8U_var_DEBUG ) then { [ "patrolGarrison.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };

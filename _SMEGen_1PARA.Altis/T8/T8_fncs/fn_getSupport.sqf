@@ -14,7 +14,7 @@
 
 private [ "_support", "_unit", "_side" ];
 
-_unit = [ _this, 0, objNull ] call BIS_fnc_param;
+_unit = param [ 0, objNull, [objNull]];
 _side = side _unit;
 _support = [];
 

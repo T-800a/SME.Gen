@@ -11,10 +11,10 @@
 
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen | V.011";
+onLoadName					= "SME.Gen | V.012";
 OnLoadMission				= "Small Military Encounter Genenerator";
-loadScreen					= "images\SMEGen_logo.paa";
-overviewPicture				= "images\SMEGen_logo.paa";
+loadScreen					= "images\sme_logo.paa";
+overviewPicture				= "";
 
 enableDebugConsole			= 1;
 disabledAI					= true;

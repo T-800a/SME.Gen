@@ -29,9 +29,9 @@
 
 private [ "_group", "_marker", "_infGroup", "_speedMode", "_formation", "_statement", "_range", "_wp", "_wpArray", "_cycle", "_behaviour" ];
 
-_group		= [ _this, 0, objNull ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER-SET", [ "" ] ] call BIS_fnc_param; 
-_infGroup	= [ _this, 2, true, [ true ] ] call BIS_fnc_param; 
+_group		= param [ 0, grpNull, [grpNull]];
+_marker		= param [ 1, "NO-MARKER-SET", [""]]; 
+_infGroup	= param [ 2, true, [true]]; 
 
 if ( T8U_var_DEBUG ) then { [ "patrol.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

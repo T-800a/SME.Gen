@@ -14,7 +14,7 @@
 
 private [ "_unit", "_pos", "_wait", "_oldGroup" ];
 
-_unit		= [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
+_unit		= param [ 0, objNull, [objNull]];
 _pos		= [];
 _wait		= true;
 

@@ -27,10 +27,10 @@
 
 private [ "_group", "_infGroup", "_target", "_time", "_sEP", "_holdPosArray", "_holdPos" ];
 
-_group		= [ _this, 0, grpNull, [ grpNull ] ] call BIS_fnc_param;
-_infGroup	= [ _this, 1, true, [ true ] ] call BIS_fnc_param; 
-_target		= [ _this, 2, [], [[]] ] call BIS_fnc_param; 
-_time		= [ _this, 3, 10, [123] ] call BIS_fnc_param;
+_group		= param [ 0, grpNull, [grpNull]];
+_infGroup	= param [ 1, true, [true]]; 
+_target		= param [ 2, [], [[]]]; 
+_time		= param [ 3, 10, [123]];
 
 if ( T8U_var_DEBUG ) then { [ "hold.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

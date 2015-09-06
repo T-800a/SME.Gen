@@ -14,7 +14,7 @@
 
 private [ "_group", "_presetSkill", "_presetBehavior" ];
 
-_group = [ _this, 0, objNull ] call BIS_fnc_param;
+_group = param [ 0, objNull, [objNull]];
 // _units = ( units _group ) - [ ( leader _group ) ];
 
 switch ( side _group ) do

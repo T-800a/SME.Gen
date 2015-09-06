@@ -119,8 +119,8 @@ T8U_var_SkillSets =
 	
 // 3 - custom
 	[
-		[ "aimingAccuracy",		0.25 ],
-		[ "aimingShake",		0.20 ],
+		[ "aimingAccuracy",		0.45 ],
+		[ "aimingShake",		0.30 ],
 		[ "aimingSpeed",		0.45 ],
 		[ "spotDistance",		1.00 ],
 		[ "spotTime",			0.95 ],

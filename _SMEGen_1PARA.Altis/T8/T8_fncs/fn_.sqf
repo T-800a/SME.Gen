@@ -9,6 +9,9 @@
 	
 	if ( T8U_var_DEBUG ) then { [ ".sqf", "some msg", [ _varstoshare ] ] spawn T8U_fnc_DebugLog; };
 	if ( T8U_var_DEBUG AND { T8U_var_DEBUG_marker } ) then { [ getPos _unitCaller, "ICON", "mil_start_noShadow", 1, "ColorBlack", 0.33 ] call T8U_fnc_DebugMarker; };
+	
+	_var01		= param [ 0, objNull, [objNull]];
+	_var02		= param [ 2, "DC_ASSIST", [""]];
 
  =======================================================================================================================
 */

@@ -20,9 +20,9 @@
 
 private [ "_fnc", "_txt", "_vars", "_ftxt" ];
 
-_fnc	= [ _this, 0, "fn_debugLog.sqf", [ "" ] ] call BIS_fnc_param;
-_txt	= [ _this, 1, "No msg recieved", [ "" ] ] call BIS_fnc_param;
-_vars	= [ _this, 2, [], [[]] ] call BIS_fnc_param;
+_fnc	= param [ 0, "fn_debugLog.sqf", [ "" ]];
+_txt	= param [ 1, "No msg recieved", [ "" ]];
+_vars	= param [ 2, [], [[]]];
 
 _ftxt	= format [ "%1 >>>> %2 >> %3 >> %4", ( round diag_fps ), _fnc, _txt, _vars ];
 

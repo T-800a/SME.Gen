@@ -75,7 +75,7 @@ class Mission
 	randomSeed=5609333;
 	class Intel
 	{
-		briefingName="CO20 | SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V010";
+		briefingName="CO20 | SME.Gen | ACE3 | TFAR | hq1para.org.uk | join our TS: TS.1PARA.COM:10017 | V012";
 		overviewText="T-800a";
 		resistanceWest=0;
 		resistanceEast=1;

@@ -4,7 +4,7 @@
 	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
-	File:		fn_createRecoverUAV.sqf
+	File:		fn_createrecoverUGV.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 	
@@ -22,7 +22,6 @@ _dir = random 360;
 _objArray =
 [
 	["B_UGV_01_F",[4.58569,-0.884521,0.0105033],90.9202,1,0,[-0.0914309,-0.0938325],"","",true,false], 
-	["CamoNet_OPFOR_open_Curator_F",[4.97461,-1.95459,0],0,1,0,[0,0],"","",true,false], 
 	["Land_d_Stone_HouseSmall_V1_F",[1.44214,11.3896,2.00272e-005],0,1,0,[0,0],"","",true,false], 
 	["Land_d_Windmill01_F",[10.8306,-10.061,0],191.363,1,0,[0,0],"","",true,false], 
 	["Land_Wreck_Ural_F",[-10.7944,-0.873047,0.00151062],0.0422635,1,0,[0,0],"","",true,false], 

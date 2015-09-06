@@ -14,8 +14,8 @@
 
 private [ "_leader", "_marker", "_group", "_side", "_areaSizeX", "_areaSizeY", "_range", "_pos", "_units", "_buildingList", "_buildingPos", "_moveAround" ];
 
-_leader		= [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER", ["", []], [2,3] ] call BIS_fnc_param; 
+_leader		= param [ 0, objNull, 		[objNull]			];
+_marker		= param [ 1, "NO-MARKER",	["", []],	[2,3]	]; 
 
 _group = group _leader;
 _side = side _leader;
@@ -36,7 +36,7 @@ if ( _side == CIVILIAN ) then { _units = ( units ( group _leader) ); } else { _u
 
 if ( T8U_var_DEBUG ) then { [ "fn_garrisonBuildings.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 
-if ( !(( count _units ) > 1 ) OR { str ( _pos ) == str ([0,0,0]) } ) exitWith { _units };
+if ( !(( count _units ) > 0 ) OR { str ( _pos ) == str ([0,0,0]) } ) exitWith { _units };
 
 _buildingList = _pos nearObjects [ "House", _range ];
 _buildingPos = [];
@@ -75,7 +75,7 @@ if (( count _buildingPos ) > 0 ) then
 		_b = _x select 1;
 		_p = _x select 0;
 			
-		if (( count _units ) > 1 ) then 
+		if (( count _units ) > 0 ) then 
 		{
 			_unit = _units call BIS_fnc_arrayPop;
 			[ _unit, _p ] spawn T8U_fnc_MoveToPos;
@@ -90,14 +90,14 @@ if (( count _buildingPos ) > 0 ) then
 	} count _buildingPos;
 };
 
-if (( count _units ) > 1 OR {( count _moveAround ) <= 19 } ) then
+if (( count _units ) > 0 OR {( count _moveAround ) <= 19 } ) then
 {
 	private [ "_coverArray" ];
 	_coverArray = [ _pos, _range ] call T8U_fnc_GetCoverPos;
 	_coverArray = _coverArray call BIS_fnc_arrayShuffle;
 
 	{
-		if (( count _units ) > 1 ) then 
+		if (( count _units ) > 0 ) then 
 		{
 			_unit = _units call BIS_fnc_arrayPop;
 			[ _unit, _x, true ] spawn T8U_fnc_MoveToPos;

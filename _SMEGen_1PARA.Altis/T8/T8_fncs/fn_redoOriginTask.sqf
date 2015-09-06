@@ -15,8 +15,8 @@
 private [	"_group", "_oldTask", "_newTask", "_originArray", "_posMkr", "_type", "_PatrolMarkerArray", "_infGroup", "_PatrolMarkerDoSAD", "_overwatchMarker", "_overwatchMinDist",
 			"_overwatchRange", "_attackMarker", "_presetBehavior" ];
 
-_group		= [ _this, 0, grpNull, [grpNull] ] call BIS_fnc_param;
-_time		= [ _this, 1, 10, [123] ] call BIS_fnc_param;
+_group		= param [ 0, grpNull, [grpNull]];
+_time		= param [ 1, 10, [123]];
 _oldTask	= _group getVariable [ "T8U_gvar_Assigned", "NO_TASK" ];
 
 if ( T8U_var_DEBUG ) then { [ "fn_redoOriginTask.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };

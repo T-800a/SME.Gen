@@ -22,8 +22,8 @@ private [ "_icon" ];
 // DEBUG( __FILE__, "_classReward01", _classReward01 );
 // DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
 
-if ( isNil "T8C_var_playerRank" ) then { T8C_var_playerRank = "PRIVATE"; };
-_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa"; 
+if ( isNil "T8C_var_playerRank" ) then { T8C_var_playerRank = "PRIVATE"; }; if ( T8C_var_playerRank isEqualTo "GENERAL" ) exitWith {};
+_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa";
 
 switch ( T8C_var_playerRank ) do
 {
@@ -35,6 +35,8 @@ switch ( T8C_var_playerRank ) do
 	case "CORPORAL" :		{ T8C_var_playerRank = "SERGEANT";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; };
 	default					{ T8C_var_playerRank = "CORPORAL";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa"; };
 };
+
+
 
 // hint new Rank
 _msg = format [ localize "STR_SMEGen_hint_playerRankUp", _icon, T8C_var_playerRank ]; 

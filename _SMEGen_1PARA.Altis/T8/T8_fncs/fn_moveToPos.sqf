@@ -17,7 +17,7 @@ private [ "_unit", "_group", "_abort", "_pos", "_stance", "_move", "_reached", "
 
 _unit		= _this select 0;
 _pos		= _this select 1; if ( ( typeName _pos ) != "ARRAY" ) then { _pos = ( getPosATL _pos ) };
-_stance		= [ _this, 2, false, [true] ] call BIS_fnc_param;
+_stance		= param [ 2, false, [true]];
 
 _unit setUnitPos "AUTO";
 _unit setUnitPos "UP";

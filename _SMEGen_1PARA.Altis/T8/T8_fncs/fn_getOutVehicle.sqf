@@ -16,7 +16,7 @@
 
 private [ "_unit" ];
 
-_unit		= [ _this, 0, objNull ] call BIS_fnc_param;
+_unit		= param [ 0, objNull, [objNull]];
 
 // if ( T8U_var_DEBUG ) then { [ "fn_getOutVehicle.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

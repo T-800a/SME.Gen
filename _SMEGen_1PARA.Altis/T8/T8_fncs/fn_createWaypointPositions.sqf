@@ -25,12 +25,12 @@
 private [	"_marker", "_infGroup", "_inside", "_useRoad", "_centerX", "_centerY", "_areaSizeX", "_areaSizeY", "_markerShape", "_maxDistance",
 			"_chkV", "_wpCount", "_angle", "_wpArray", "_markerDir", "_findPosFEP" ];
 
-_marker		= [ _this, 0, "NO-MARKER-SET", [ "" ] ] call BIS_fnc_param;
-_infGroup	= [ _this, 1, true, [ true ] ] call BIS_fnc_param;
-_useRoad	= [ _this, 2, false, [ true ] ] call BIS_fnc_param;
-_inside		= [ _this, 3, true, [ true ] ] call BIS_fnc_param;
+_marker		= param [ 0, "NO-MARKER-SET", [ "" ]];
+_infGroup	= param [ 1, true, [ true ]];
+_useRoad	= param [ 2, false, [ true ]];
+_inside		= param [ 3, true, [ true ]];
 
-if ( str ( getMarkerPos _marker ) == str ([0,0,0]) ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_createWaypointPositions.sqf", "NO MARKER", _this ] spawn T8U_fnc_DebugLog; }; false };
+if (( getMarkerPos _marker ) isEqualTo [0,0,0]) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_createWaypointPositions.sqf", "NO MARKER", _this ] spawn T8U_fnc_DebugLog; }; false };
 if ( T8U_var_DEBUG ) then { [ "fn_createWaypointPositions.sqf", "EXEC", _this ] spawn T8U_fnc_DebugLog; };
 
 if ( _infGroup ) then { _chkV = "CAManBase"; } else { _chkV = "B_Truck_01_covered_F"; };

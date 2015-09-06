@@ -27,10 +27,10 @@
 
 private [ "_group", "_markerArray", "_infGroup", "_doSAD", "_formation", "_statement", "_range", "_speed", "_behaviour", "_wp", "_chkV", "_behaviour" ];
 
-_group			= [ _this, 0, objNull ] call BIS_fnc_param;
-_markerArray	= [ _this, 1, [], [[]] ] call BIS_fnc_param;
-_infGroup		= [ _this, 2, true, [ true ] ] call BIS_fnc_param; 
-_doSAD			= [ _this, 3, true, [ true ] ] call BIS_fnc_param;
+_group			= param [ 0, grpNull, [grpNull]];
+_markerArray	= param [ 1, [], [[]]];
+_infGroup		= param [ 2, true, [ true ]];
+_doSAD			= param [ 3, true, [ true ]];
 
 if ( T8U_var_DEBUG ) then { [ "patrolMarker.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

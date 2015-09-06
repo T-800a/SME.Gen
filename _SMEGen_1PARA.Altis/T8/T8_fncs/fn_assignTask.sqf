@@ -14,11 +14,11 @@
 
 private [	"_unitCaller", "_unitHelper", "_unitTarget", "_time", "_groupCaller", "_groupHelper", "_infGroup", "_type", "_typeTask", "_posToGo", "_sFPlvb", "_sEP", "_wpArray", "_wpAdd" ];
 
-_unitCaller		= [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
-_unitHelper		= [ _this, 1, objNull, [objNull] ] call BIS_fnc_param;
-_unitTarget		= [ _this, 2, objNull, [objNull] ] call BIS_fnc_param;
-_typeTask		= [ _this, 3, "DC_ASSIST", [""] ] call BIS_fnc_param;
-_time			= [ _this, 4, 10, [123] ] call BIS_fnc_param;
+_unitCaller		= param [ 0, objNull, [objNull]];
+_unitHelper		= param [ 1, objNull, [objNull]];
+_unitTarget		= param [ 2, objNull, [objNull]];
+_typeTask		= param [ 3, "DC_ASSIST", [""]];
+_time			= param [ 4, 10, [123]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_assignTask.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 if ( _unitCaller == objNull OR { _unitHelper == objNull } OR { _unitTarget == objNull } ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_assignTask.sqf", "ERROR WITH UNITS" ] spawn T8U_fnc_DebugLog; }; };

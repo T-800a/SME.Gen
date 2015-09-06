@@ -63,6 +63,14 @@ if ( isnil "T8U_fnc_Zone" ) then {						T8U_fnc_Zone = compile preProcessFileLin
 if ( isnil "T8U_fnc_ZoneCreate" ) then {				T8U_fnc_ZoneCreate = compile preProcessFileLineNumbers					( T8U_dir_ROOT + T8U_dir_FNCS + "fn_zoneCreate.sqf" ); };
 if ( isnil "T8U_fnc_ZoneNotAktiv" ) then {				T8U_fnc_ZoneNotAktiv = compile preProcessFileLineNumbers				( T8U_dir_ROOT + T8U_dir_FNCS + "fn_zoneNotAktiv.sqf" ); };
 
+// polygon stuff
+if ( isnil "T8U_fnc_getPolygon" ) then {				T8U_fnc_getPolygon = compile preProcessFileLineNumbers					( T8U_dir_ROOT + T8U_dir_FNCS + "fn_getPolygon.sqf" ); };
+if ( isnil "T8U_fnc_drawPolygon" ) then {				T8U_fnc_drawPolygon = compile preProcessFileLineNumbers					( T8U_dir_ROOT + T8U_dir_FNCS + "fn_drawPolygon.sqf" ); };
+if ( isnil "T8U_fnc_findExtreme" ) then {				T8U_fnc_findExtreme = compile preProcessFileLineNumbers					( T8U_dir_ROOT + T8U_dir_FNCS + "fn_findExtreme.sqf" ); };
+if ( isnil "T8U_fnc_checkPolygon" ) then {				T8U_fnc_checkPolygon = compile preProcessFileLineNumbers				( T8U_dir_ROOT + T8U_dir_FNCS + "fn_checkPolygon.sqf" ); };
+if ( isnil "T8U_fnc_checkFlatGround" ) then {			T8U_fnc_checkFlatGround = compile preProcessFileLineNumbers				( T8U_dir_ROOT + T8U_dir_FNCS + "fn_checkFlatGround.sqf" ); };
+if ( isnil "T8U_fnc_checkOutside" ) then {				T8U_fnc_checkOutside = compile preProcessFileLineNumbers				( T8U_dir_ROOT + T8U_dir_FNCS + "fn_checkOutside.sqf" ); };
+
 
 ///// T8 Units TASKS /////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -14,10 +14,10 @@
 
 private [ "_range", "_units", "_building", "_buildingList", "_buildingPos", "_buildingPosArray", "_ocBuild" ];
 
-_units		= [ _this, 0, [] ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER", [ "" ] ] call BIS_fnc_param; 
-_range		= [ _this, 2, 20 ] call BIS_fnc_param;
-_building	= [ _this, 3, "Cargo_Patrol_base_F" ] call BIS_fnc_param;
+_units		= param [ 0, []];
+_marker		= param [ 1, "NO-MARKER", [""]]; 
+_range		= param [ 2, 20, [123]];
+_building	= param [ 3, "Cargo_Patrol_base_F", [""]];
 
 _ocBuild = [];
 

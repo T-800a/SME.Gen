@@ -18,10 +18,10 @@
 private [	"_basePos", "_minDist", "_range", "_skipLos", "_posArray", "_losArray", "_returnArray", "_wpPos", "_loopMain", "_newangle", "_heightDiff", "_radiusIncr",
 			"_angleIncr", "_centerX", "_centerY", "_hT", "_watchPos", "_watchPosASL", "_maxDistance", "_tmpMaxDist" ];
 
-_basePos			= [ _this, 0, "NO-MARKER-SET", [[], ""]] call BIS_fnc_param;
-_minDist			= [ _this, 1, 25, [ 123 ]] call BIS_fnc_param;
-_range				= [ _this, 2, 50, [ 123 ]] call BIS_fnc_param;
-_skipLos			= [ _this, 3, false, [ false ]] call BIS_fnc_param;
+_basePos			= param [ 0, "NO-MARKER-SET", [[], ""]];
+_minDist			= param [ 1, 25, [ 123 ]];
+_range				= param [ 2, 50, [ 123 ]];
+_skipLos			= param [ 3, false, [ false ]];
 
 
 if ( T8U_var_DEBUG ) then { [ "fn_findOverwatch.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };

@@ -14,14 +14,14 @@
 
 private [ "_group", "_pos", "_wpType", "_combatBehave", "_statement", "_statementIL", "_compRadius", "_speed", "_timeout", "_wp", "_n" ];
 
-_group				= [ _this, 0, grpNull, [grpNull] ] call BIS_fnc_param;
-_pos				= [ _this, 1, [], [[]] ] call BIS_fnc_param;
-_wpType				= [ _this, 2, "MOVE", [""] ] call BIS_fnc_param;
-_combatBehave		= [ _this, 3, "AWARE", [""] ] call BIS_fnc_param;
-_statement			= [ _this, 4, "", [""] ] call BIS_fnc_param;
-_compRadius			= [ _this, 5, 50, [123] ] call BIS_fnc_param;
-_speed				= [ _this, 6, "FULL", [""] ] call BIS_fnc_param;
-_timeout			= [ _this, 7, [ 2, 4, 6 ], [[]] ] call BIS_fnc_param;
+_group				= param [ 0, grpNull, [grpNull]];
+_pos				= param [ 1, [], [[]]];
+_wpType				= param [ 2, "MOVE", [""]];
+_combatBehave		= param [ 3, "AWARE", [""]];
+_statement			= param [ 4, "", [""]];
+_compRadius			= param [ 5, 50, [123]];
+_speed				= param [ 6, "FULL", [""]];
+_timeout			= param [ 7, [ 2, 4, 6 ], [[]]];
 
 if ( isNull _group OR { ( count _pos ) < 2 } ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_createWaypoint.sqf", "Can't create Waypoint", _this ] spawn T8U_fnc_DebugLog; }; false };
 

@@ -16,9 +16,9 @@
 
 private [ "_unit", "_range", "_array", "_friendly", "_base", "_parray", "_return" ];
 
-_unit		= [ _this, 0, objNull, [objNull] ] call BIS_fnc_param;
-_range		= [ _this, 1, 1000, [123] ] call BIS_fnc_param;
-_friendly	= [ _this, 2, false, [true] ] call BIS_fnc_param;
+_unit		= param [ 0, objNull, [objNull]];
+_range		= param [ 1, 1000, [123]];
+_friendly	= param [ 2, false, [true]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_filterEntities.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 if ( isNull _unit ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_filterEntities.sqf", "INPUT ERROR" ] spawn T8U_fnc_DebugLog; }; };

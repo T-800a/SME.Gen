@@ -38,22 +38,22 @@ _return = [];
 	_overwatchMinDist	= 50;
 	_overwatchRange		= 50;
 	
-	_groupArray = [ _x, 0, [], [[]] ] call BIS_fnc_param;
-	_taskArray = [ _x, 1, [], [[]] ] call BIS_fnc_param;
-
-	_cAM = [ _x, 2, [ true, true ], [[]] ] call BIS_fnc_param;
-	_cA0 = [ _cAM, 0, true, [true] ] call BIS_fnc_param;
-	_cA1 = [ _cAM, 1, true, [true] ] call BIS_fnc_param;
-	_cA2 = [ _cAM, 2, true, [true] ] call BIS_fnc_param;
-	_commArray = [ _cA0, _cA1, _cA2 ];
+	_groupArray			= _x param [ 0, [], [[]]];
+	_taskArray			= _x param [ 1, [], [[]]];
+	_cAM				= _x param [ 2, [ true, true ], [[]]];
 	
-	_type = [ _taskArray, 0, "NO-TASK-GIVEN", [""] ] call BIS_fnc_param;
+	_cA0				= _cAM param [ 0, true, [true]];
+	_cA1				= _cAM param [ 1, true, [true]];
+	_cA2				= _cAM param [ 2, true, [true]];
+	_commArray			= [ _cA0, _cA1, _cA2 ];
 	
-	_cacheArray = [ _x, 3, [], [[]] ] call BIS_fnc_param;
-	_cachePos = [ _cacheArray, 0, [], [[]] ] call BIS_fnc_param;
+	_type				= _taskArray param [ 0, "NO-TASK-GIVEN", [""]];
 	
-	_vehicleArray = [ _groupArray, 0, [], [[]] ] call BIS_fnc_param;
-	_posMkr = [ _groupArray, 1, "NO-POS-GIVEN", [""] ] call BIS_fnc_param;	_posMkrArray pushBack _posMkr;
+	_cacheArray			= _x param [ 3, [], [[]]];
+	_cachePos			= _cacheArray param [ 0, [], [[]]];
+	
+	_vehicleArray		= _groupArray param [ 0, [], [[]]];
+	_posMkr				= _groupArray param [ 1, "NO-POS-GIVEN", [""]];	_posMkrArray pushBack _posMkr;
 	
 	_infGroup	= true;
 	_groupSide	= T8U_var_EnemySide;
@@ -63,9 +63,9 @@ _return = [];
 	{
 		switch ( typeName ( _groupArray select 2) ) do 
 		{ 
-			case "BOOL":	{ _infGroup		= [ _groupArray, 2, true, [true] ] call BIS_fnc_param; };
-			case "SIDE":	{ _groupSide	= [ _groupArray, 2, T8U_var_EnemySide ] call BIS_fnc_param; };
-			case "STRING":	{ _customFNC	= [ _groupArray, 2, "NO-FUNC-GIVEN", ["123"] ] call BIS_fnc_param; };
+			case "BOOL":	{ _infGroup		= _groupArray param [ 2, true, [true]]; };
+			case "SIDE":	{ _groupSide	= _groupArray param [ 2, T8U_var_EnemySide ]; };
+			case "STRING":	{ _customFNC	= _groupArray param [ 2, "NO-FUNC-GIVEN", ["123"]]; };
 			default { _type = "NO-TASK-GIVEN"; };
 		};
 	};
@@ -74,9 +74,9 @@ _return = [];
 	{
 		switch ( typeName ( _groupArray select 3) ) do 
 		{ 
-			case "BOOL":	{ _infGroup		= [ _groupArray, 3, true, [true] ] call BIS_fnc_param; };
-			case "SIDE":	{ _groupSide	= [ _groupArray, 3, T8U_var_EnemySide ] call BIS_fnc_param; };
-			case "STRING":	{ _customFNC	= [ _groupArray, 3, "NO-FUNC-GIVEN", ["123"] ] call BIS_fnc_param; };
+			case "BOOL":	{ _infGroup		= _groupArray param [ 3, true, [true]]; };
+			case "SIDE":	{ _groupSide	= _groupArray param [ 3, T8U_var_EnemySide ]; };
+			case "STRING":	{ _customFNC	= _groupArray param [ 3, "NO-FUNC-GIVEN", ["123"]]; };
 			default { _type = "NO-TASK-GIVEN"; };
 		};
 	};
@@ -85,9 +85,9 @@ _return = [];
 	{
 		switch ( typeName ( _groupArray select 4) ) do 
 		{ 
-			case "BOOL":	{ _infGroup		= [ _groupArray, 4, true, [true] ] call BIS_fnc_param; };
-			case "SIDE":	{ _groupSide	= [ _groupArray, 4, T8U_var_EnemySide ] call BIS_fnc_param; };
-			case "STRING":	{ _customFNC	= [ _groupArray, 4, "NO-FUNC-GIVEN", ["123"] ] call BIS_fnc_param; };
+			case "BOOL":	{ _infGroup		= _groupArray param [ 4, true, [true]]; };
+			case "SIDE":	{ _groupSide	= _groupArray param [ 4, T8U_var_EnemySide ]; };
+			case "STRING":	{ _customFNC	= _groupArray param [ 4, "NO-FUNC-GIVEN", ["123"]]; };
 			default { _type = "NO-TASK-GIVEN"; };
 		};
 	};
@@ -162,8 +162,8 @@ _return = [];
 		case "PATROL_MARKER": 
 		{
 
-			_PatrolMarkerArray = [ _taskArray, 1, [], [[]] ] call BIS_fnc_param;
-			_PatrolMarkerDoSAD = [ _taskArray, 2, true, [true] ] call BIS_fnc_param;				
+			_PatrolMarkerArray = _taskArray param [ 1, [], [[]]];
+			_PatrolMarkerDoSAD = _taskArray param [ 2, true, [true]];				
 			_group = [ _spawnPos, _groupSide, _vehicleArray, _relPos ] call BIS_fnc_spawnGroup;
 			[ _group, _PatrolMarkerArray, _infGroup, _PatrolMarkerDoSAD ] spawn T8U_task_PatrolMarker;
 		};
@@ -188,9 +188,9 @@ _return = [];
 			
 		case "OVERWATCH": 
 		{
-			_overwatchMarker	= [ _taskArray, 1, "NO-POS-GIVEN", [""] ] call BIS_fnc_param;
-			_overwatchMinDist	= [ _taskArray, 2, 250, [ 123 ] ] call BIS_fnc_param;
-			_overwatchRange		= [ _taskArray, 3, 200, [ 123 ] ] call BIS_fnc_param;
+			_overwatchMarker	= _taskArray param [ 1, "NO-POS-GIVEN", [""]];
+			_overwatchMinDist	= _taskArray param [ 2, 250, [ 123 ]];
+			_overwatchRange		= _taskArray param [ 3, 200, [ 123 ]];
 			if ( _overwatchMarker == "NO-POS-GIVEN" ) then { _overwatchMarker = _posMkr; };
 				
 			_group = [ _spawnPos , _groupSide, _vehicleArray, _relPos ] call BIS_fnc_spawnGroup;
@@ -205,7 +205,7 @@ _return = [];
 		
 		case "ATTACK": 
 		{
-			_attackMarker	= [ _taskArray, 1, "NO-POS-GIVEN", [""] ] call BIS_fnc_param;
+			_attackMarker	= _taskArray param [ 1, "NO-POS-GIVEN", [""]];
 			if ( _attackMarker == "NO-POS-GIVEN" ) then { _attackMarker = _posMkr; };
 				
 			_group = [ _spawnPos , _groupSide, _vehicleArray, _relPos ] call BIS_fnc_spawnGroup;
@@ -284,12 +284,12 @@ _return = [];
 				// EXEC a custom Function for units
 				if ( _customFNC	!= "NO-FUNC-GIVEN" ) then 
 				{
-					_x call ( missionNamespace getVariable _customFNC );
+					_tmpUnit call ( missionNamespace getVariable _customFNC );
 				};
 				
 				// enable / disable fatigue
-				_x enableFatigue T8U_var_enableFatigue;
-				
+				_tmpUnit enableFatigue T8U_var_enableFatigue;
+
 				// add units to return array
 				_return pushBack _tmpUnit;
 
@@ -389,7 +389,7 @@ _return = [];
 				
 				// add units to return array
 				_return pushBack _x;
-				
+
 			} foreach units _group;
 		};		
 	
@@ -404,8 +404,9 @@ _return = [];
 			{
 				private [ "_v" ];
 				_v = assignedVehicle _x;
-				if ( !isNull _v AND { !(  _v in _vehicles ) } ) then { _vehicles pushBack _v; };
 				
+				if ( !isNull _v AND { !(  _v in _vehicles ) } ) then { _vehicles pushBack _v; };
+
 				false
 			} count _units;
 			
@@ -422,6 +423,8 @@ _return = [];
 if ( _error ) exitWith { false };
 
 if ( T8U_var_DEBUG_hints ) then { private [ "_msg" ]; _msg = format [ "Your Units at %1 are spawned", _posMkrArray ]; [ _msg ] call T8U_fnc_BroadcastHint; };
+
+
 
 // return created units
 _return

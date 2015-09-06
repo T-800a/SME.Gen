@@ -15,9 +15,10 @@
 private [	"_unitsArray", "_marker", "_owner", "_zoneDone", "_areaSizeX", "_areaSizeY", "_nearUnits", "_groupsAll", "_groups", "_compiledArray",
 			"_unitsToDelete", "_unitsArrayOld", "_unitsArrayNew", "_b" ];
 
-_unitsArray		= [ _this, 0, "NO-ARRAY-SET" ] call BIS_fnc_param;
-_marker			= [ _this, 1, "NO-MARKER-SET" ] call BIS_fnc_param;
-_owner			= toUpper ( [ _this, 2, "NO-SIDE-SET" ] call BIS_fnc_param );
+_unitsArray		= param [ 0, "NO-ARRAY-SET" ];
+_marker			= param [ 1, "NO-MARKER-SET" ];
+_owner			= param [ 2, "NO-SIDE-SET" ];
+_owner			= toUpper _owner;
 
 _zoneDone = missionNamespace getVariable str( _unitsArray + "_created" );
 _zoneAktiv = missionNamespace getVariable str( _unitsArray + "_active" );

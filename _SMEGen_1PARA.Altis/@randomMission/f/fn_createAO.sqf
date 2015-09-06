@@ -16,8 +16,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
-			"_typeTask", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_condSize", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions" ];
+private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
+			"_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
+			"_missionSideN", "_missionSide", "_missionSideString", "_missionFaction", "_missionPlayerSideN", "_missionPlayerSide", "_missionPlayerSideString" ];
 
 _site			= _this;
 _inf			= [];
@@ -33,6 +34,8 @@ _siteSize			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSit
 _siteAngle			= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "angle" );
 _siteAllowedTypes	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "allowedTypes" );
 _type				= _siteAllowedTypes call BIS_fnc_selectRandom;
+
+_taskPos			= [( _sitePos select 0 ), ( _sitePos select 1 ), 25 ];
 
 DEBUG( __FILE__, "SITE _siteMkr", _siteMkr );
 DEBUG( __FILE__, "SITE _sitePos", _sitePos );
@@ -52,11 +55,30 @@ _modGroup		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionCon
 _setTaskName 	= format [ "%1: %2", _typeTaskShort, _siteName ];
 _setTaskDesc 	= format [ "<t align = 'left' shadow = '1' size = '1.0'>Task: %1</t><br /><t align = 'left' shadow = '1' size = '0.8'>Location: %2</t><br /><br />%3", _typeTask, _siteName, _typeDesc ];
 
-_condSize		= if (( _siteSize select 0 ) > ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
+_range			= if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
 _varName		= "NO_VAR_SET";
 
-// create marker (local to server only)
-[ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8RMG_fnc_createMarker;
+// get the faction
+_missionFaction	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> _missionFaction >> "spawnUnitsSide" );
+
+switch ( _missionSideN ) do
+{
+	case 0 :	{ _missionSide = EAST;			_missionSideString = "EAST"; };
+	case 1 :	{ _missionSide = WEST;			_missionSideString = "WEST"; };
+	case 2 :	{ _missionSide = INDEPENDENT;	_missionSideString = "INDEPENDENT" };
+	default		{ _missionSide = WEST;			_missionSideString = "WEST" };
+};
+
+_missionPlayerSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
+switch ( _missionPlayerSideN ) do
+{
+	case 0 :	{ _missionPlayerSide = EAST;		_missionPlayerSideString = "EAST"; };
+	case 1 :	{ _missionPlayerSide = WEST;		_missionPlayerSideString = "WEST"; };
+	case 2 :	{ _missionPlayerSide = INDEPENDENT;	_missionPlayerSideString = "INDEPENDENT" };
+	default		{ _missionPlayerSide = WEST;		_missionPlayerSideString = "WEST" };
+};
+
 
 
 // missionType specific stuff
@@ -74,10 +96,10 @@ switch ( _type ) do
 	
 	case "mortars":
 	{
-		private [ "_range", "_obj01", "_obj02" ];
-		_range = if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
-		_obj01 = [( [ _sitePos, ( _range * 0.7 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
-		_obj02 = [( [ _sitePos, ( _range * 0.7 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
+		private [ "_obj01", "_obj02" ];
+		
+		_obj01 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
+		_obj02 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
 		
 		_varName = format [ "OBJECTIVE_mortars_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
@@ -85,10 +107,10 @@ switch ( _type ) do
 	
 	case "resupplies":
 	{
-		private [ "_range", "_obj01", "_obj02" ];
-		_range = if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
-		_obj01 = [( [ _sitePos, ( _range * 0.7 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createFuelDump;
-		_obj02 = [( [ _sitePos, ( _range * 0.7 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createAmmoDump;
+		private [ "_obj01", "_obj02" ];
+
+		_obj01 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createFuelDump;
+		_obj02 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createAmmoDump;
 		
 		_varName = format [ "OBJECTIVE_resupplies_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
@@ -103,17 +125,32 @@ switch ( _type ) do
 		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
-	case "recoverUAV":
+	case "recoverUGV":
 	{
 		private [ "_obj" ];
-		_obj = [ _sitePos ] call T8RMG_fnc_createRecoverUAV; 
+		_obj = [ _sitePos ] call T8RMG_fnc_createrecoverUGV; 
 		
-		_varName = format [ "OBJECTIVE_recoverUAV_%1", _siteMkr ];	
+		_varName = format [ "OBJECTIVE_recoverUGV_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
+	case "killHVT":
+	{
+		private [ "_objs" ];
+		_siteSize = ( _range * 0.8 );
+		_objs = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
+		
+		_sitePos = getPos ( _objs select 0 );
+		
+		_varName = format [ "OBJECTIVE_killHVT_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _objs ];
+	};	
+	
 	default {};
 };
+
+// create marker (local to server only)
+[ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8RMG_fnc_createMarker;
 
 // build unit array
 _configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" );
@@ -153,11 +190,13 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 		DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
 	};
 	
+	_units = [ _units ] call T8RMG_fnc_buildUnitArray;
+	
 	if ( _task isEqualTo "GARRISON" OR _task isEqualTo "DEFEND" OR _task isEqualTo "DEFEND_BASE" ) then
 	{
-		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" ) ], [ _task ], [ true, false, false ] ];
+		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ];
 	} else {
-		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" ) ], [ _task ] ];
+		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" ), _missionSide ], [ _task ] ];
 	};
 	
 	_inf pushBack _subArray;
@@ -175,7 +214,7 @@ T8RMG_var_arrayCleanup pushBack _spawnedUnits;
 	_siteMkr,
 	true,
 	[ _setTaskDesc, _setTaskName, "" ],
-	getMarkerPos ( _siteMkr ),
+	_taskPos,
 	"CREATED", 
 	10,
 	true,
@@ -201,8 +240,10 @@ _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >>
 	{
 		_newcon set [ _forEachIndex, _x ];
 		if ( _x isEqualTo "__MARKER_NAME__" )	then { _newcon set [ _forEachIndex, _siteMkr ]; };
-		if ( _x isEqualTo "__MARKER_SIZE__" )	then { _newcon set [ _forEachIndex, _condSize ]; };
+		if ( _x isEqualTo "__MARKER_SIZE__" )	then { _newcon set [ _forEachIndex, _range ]; };
 		if ( _x isEqualTo "__VARIABLE__" )		then { _newcon set [ _forEachIndex, _varName ]; };
+		if ( _x isEqualTo "__SIDEAI__" )		then { _newcon set [ _forEachIndex, _missionSideString ]; };
+		if ( _x isEqualTo "__SIDEPLAYER__" )	then { _newcon set [ _forEachIndex, _missionPlayerSideString ]; };
 	} forEach _con;	
 	
 	_con = _newcon joinString "";

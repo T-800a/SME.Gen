@@ -27,8 +27,8 @@
 
 private [ "_group", "_units", "_marker", "_areaSizeX", "_areaSizeY", "_range", "_originUnits", "_formation", "_statement", "_range", "_wp", "_ocBuild" ];
 
-_group		= [ _this, 0, grpNull, [grpNull] ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER-SET", [ "" ] ] call BIS_fnc_param; 
+_group		= param [ 0, grpNull, [grpNull]];
+_marker		= param [ 1, "NO-MARKER-SET", [""]]; 
 
 _ocBuild = [];
 

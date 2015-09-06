@@ -14,10 +14,10 @@
 
 private [ "_units", "_marker", "_range", "_objects", "_vehicleList", "_staticWeapons" ];
 
-_units		= [ _this, 0, [] ] call BIS_fnc_param;
-_marker		= [ _this, 1, "NO-MARKER-SET" ] call BIS_fnc_param;
-_range		= [ _this, 2, 30 ] call BIS_fnc_param;
-_objects	= [ _this, 3, "StaticWeapon" ] call BIS_fnc_param;
+_units		= param [ 0, [], [[]]];
+_marker		= param [ 1, "NO-MARKER-SET", [""]];
+_range		= param [ 2, 30, [123]];
+_objects	= param [ 3, "StaticWeapon", [""]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_getInGunner.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

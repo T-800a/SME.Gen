@@ -16,7 +16,7 @@
 
 
 private [	"_attackMarker", "_attackMarkerPos", "_objectPos", "_n", "_players", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
-			"_spawnedUnits", "_modPlayer", "_modGroup" ];
+			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN", "_missionFaction" ];
 
 _attackMarker		= _this select 0;
 _attackMarkerPos	= getMarkerPos _attackMarker;
@@ -53,6 +53,18 @@ _modGroup		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionCon
 _configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" );
 { _arrayGroups pushback ( configName _x ); false } count _configArrayGroups;
 
+// get the faction
+_missionFaction	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> _missionFaction >> "spawnUnitsSide" );
+
+switch ( _missionSideN ) do
+{
+	case 0 :	{ _missionSide = EAST };
+	case 1 :	{ _missionSide = WEST };
+	case 2 :	{ _missionSide = INDEPENDENT };
+	default		{ _missionSide = EAST };
+};
+
 DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 
 {
@@ -87,7 +99,8 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 		DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
 	};
 	
-	_subArray = [ [ _units, _spawnMarker ], [ "ATTACK", _attackMarker ]];
+	_units = [ _units ] call T8RMG_fnc_buildUnitArray;
+	_subArray = [ [ _units, _spawnMarker, _missionSide ], [ "ATTACK", _attackMarker ]];
 	
 	_inf pushBack _subArray;
 

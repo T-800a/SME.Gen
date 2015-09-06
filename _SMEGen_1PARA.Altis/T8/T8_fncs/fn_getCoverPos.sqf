@@ -14,8 +14,8 @@
 
 private [ "_pos", "_range", "_cObj", "_rm", "_rmR", "_cover", "_coverPos", "_watchPos", "_dir", "_cm" ];
 
-_pos		= [ _this, 0, [0,0,0], [[]], [2,3] ] call BIS_fnc_param;
-_range		= [ _this, 1, 25, [123] ] call BIS_fnc_param;
+_pos		= param [ 0, [0,0,0], [[]], [2,3]];
+_range		= param [ 1, 25, [123]];
 
 if ( _range < 10 ) then { _range = 10; };
 

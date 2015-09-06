@@ -26,8 +26,9 @@
 waitUntil { !isNil "bis_fnc_init" };
 
 private [ "_group", "_unit", "_markerColor", "_markerType", "_markerName", "_marker", "_tail", "_markerTailName", "_allowTail", "_onPlayer", "_markerAlpha", "_timeout", "_doLoop" ];
-_group = [ _this, 0, objNull ] call BIS_fnc_param;
-_allowTail = [ _this, 1, true ] call BIS_fnc_param;
+
+_group			= param [ 0, grpNull, [grpNull]];
+_allowTail		= param [ 1, true, [true]];
 
 sleep 2;
 
