@@ -1,14 +1,16 @@
 /*
  =======================================================================================================================
-	
-	SME.Gen
-	
+
+	@randomMission
+	SME.Gen - Small Military Encounter Genenerator
+ 
+	File:		description.ext
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
+
 	
  =======================================================================================================================
 */
-
 
 Author						= "T-800a";
 onLoadName					= "SME.Gen | V.012";
@@ -50,7 +52,6 @@ taskManagement_propagate	= 1;
 taskManagement_drawDist		= 1500;
 
 
-
 class CfgDebriefing
 {  
 	class RestrictedSlot
@@ -65,7 +66,6 @@ class CfgDebriefing
 };
 
 
-
 class Header
 {
 	gameType		= COOP;
@@ -73,6 +73,13 @@ class Header
 	maxPlayers		= 20;
 };
 
+
+// include mission parameter
+#include <params.hpp>
+
+
+// include mission config
+#include <@randomMission\cfgRandomMissions.hpp>
 
 
 class CfgRemoteExec
@@ -118,4 +125,4 @@ class CfgRemoteExec
    }; 
 }; 
 
-#include "@randomMission\cfgRandomMissions.hpp"
+

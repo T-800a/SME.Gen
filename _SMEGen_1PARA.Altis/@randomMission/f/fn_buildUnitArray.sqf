@@ -14,14 +14,13 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_originArray", "_faction", "_returnArray" ];
+private [ "_originArray", "_returnArray" ];
 _originArray	= param [ 0, [], [[]]];
-_faction		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" );
 _returnArray	= [];
 
 {
 	private [ "_class" ];
-	_class = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> _faction >> "units" >> _x );
+	_class = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> "units" >> _x );
 	_returnArray pushBack _class;
 	false
 } count _originArray;

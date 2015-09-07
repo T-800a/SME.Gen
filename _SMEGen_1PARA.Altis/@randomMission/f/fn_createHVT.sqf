@@ -17,7 +17,7 @@
 // );
 
 private [	"_findBuildingPos", "_site", "_range", "_typeHVT", "_typeGuard", "_building", "_vehicleArray", "_spawnPos", "_group", 
-			"_units", "_missionSide", "_missionFaction", "_missionSideN" ];
+			"_units", "_missionSide", "_missionSideN" ];
 
 _pos				= _this select 0;
 _range				= _this select 1;
@@ -31,8 +31,7 @@ _vehicleArray		= [ _typeHVT ];
 _building			= [];
 
 // get the faction
-_missionFaction	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" );
-_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> _missionFaction >> "spawnUnitsSide" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> "spawnUnitsSide" );
 
 switch ( _missionSideN ) do
 {

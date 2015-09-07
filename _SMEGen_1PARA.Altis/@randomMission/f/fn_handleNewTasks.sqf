@@ -16,7 +16,7 @@
 
 private [ "_arraySites", "_arrayTypes", "_arraySitesAvailable", "_arraySitesUsed", "_players" ];
 
-_arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" );
+_arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
 _arrayTypes = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" );
 
 { T8RMG_var_arraySites pushback ( configName _x ); false } count _arraySites;
@@ -37,7 +37,7 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 	{
 		private [ "_site", "_sitePos" ];
 		_site = _x;
-		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "position" );
+		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
 		
 		if ( !( _site in _arraySitesUsed ) AND { ({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesUsed pushBack _site; };
 		

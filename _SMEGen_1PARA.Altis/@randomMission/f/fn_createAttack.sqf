@@ -16,7 +16,7 @@
 
 
 private [	"_attackMarker", "_attackMarkerPos", "_objectPos", "_n", "_players", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
-			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN", "_missionFaction" ];
+			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN" ];
 
 _attackMarker		= _this select 0;
 _attackMarkerPos	= getMarkerPos _attackMarker;
@@ -54,8 +54,7 @@ _configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( mis
 { _arrayGroups pushback ( configName _x ); false } count _configArrayGroups;
 
 // get the faction
-_missionFaction	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" );
-_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> _missionFaction >> "spawnUnitsSide" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> "spawnUnitsSide" );
 
 switch ( _missionSideN ) do
 {

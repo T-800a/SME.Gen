@@ -18,7 +18,7 @@
 
 private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
-			"_missionSideN", "_missionSide", "_missionSideString", "_missionFaction", "_missionPlayerSideN", "_missionPlayerSide", "_missionPlayerSideString" ];
+			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString" ];
 
 _site			= _this;
 _inf			= [];
@@ -27,12 +27,12 @@ _arrayGroups	= [];
 DEBUG( __FILE__, "INIT!", _this );
 if ( _site isEqualTo "" ) exitWith { DEBUG( __FILE__, "_____ERROR!", "wrong_site" ); };
 
-_siteMkr			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" );
-_sitePos			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "position" );
-_siteName			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "name" );
-_siteSize			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "size" );
-_siteAngle			= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "angle" );
-_siteAllowedTypes	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "allowedTypes" );
+_siteMkr			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
+_sitePos			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
+_siteName			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "name" );
+_siteSize			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "size" );
+_siteAngle			= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "angle" );
+_siteAllowedTypes	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "allowedTypes" );
 _type				= _siteAllowedTypes call BIS_fnc_selectRandom;
 
 _taskPos			= [( _sitePos select 0 ), ( _sitePos select 1 ), 25 ];
@@ -59,8 +59,7 @@ _range			= if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize 
 _varName		= "NO_VAR_SET";
 
 // get the faction
-_missionFaction	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" );
-_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> _missionFaction >> "spawnUnitsSide" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> "spawnUnitsSide" );
 
 switch ( _missionSideN ) do
 {
@@ -70,8 +69,7 @@ switch ( _missionSideN ) do
 	default		{ _missionSide = WEST;			_missionSideString = "WEST" };
 };
 
-_missionPlayerSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
-switch ( _missionPlayerSideN ) do
+switch ( T8RMG_var_playerFaction ) do
 {
 	case 0 :	{ _missionPlayerSide = EAST;		_missionPlayerSideString = "EAST"; };
 	case 1 :	{ _missionPlayerSide = WEST;		_missionPlayerSideString = "WEST"; };
@@ -194,9 +192,9 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 	
 	if ( _task isEqualTo "GARRISON" OR _task isEqualTo "DEFEND" OR _task isEqualTo "DEFEND_BASE" ) then
 	{
-		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ];
+		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ];
 	} else {
-		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> _site >> "marker" ), _missionSide ], [ _task ] ];
+		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ] ];
 	};
 	
 	_inf pushBack _subArray;

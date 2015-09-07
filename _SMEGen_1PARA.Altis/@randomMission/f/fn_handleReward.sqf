@@ -31,9 +31,9 @@
 
 private [ "_skip", "_classReward01", "_classReward02", "_classReward03", "_restrictionReward01", "_restrictionReward02", "_restrictionReward03" ];
 
-_classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward01" );
-_classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward02" );
-_classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward03" );
+_classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "missionReward01" );
+_classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "missionReward02" );
+_classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "missionReward03" );
 
 _restrictionReward01	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction01" );
 _restrictionReward02	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction02" );
