@@ -71,7 +71,7 @@ T8U_var_enableFatigue			= false;		// enable/disable Fatigue for all spawned unit
 T8U_var_Presets =
 [
 //	[ --index from T8U_var_SkillSets--, --index from T8U_var_BehaviorSets-- ],
-	[ 2, 1 ],		// 0 for WEST
+	[ 3, 1 ],		// 0 for WEST
 	[ 3, 0 ],		// 1 for EAST
 	[ 3, 2 ]		// 2 for RESISTANCE
 ];
