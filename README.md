@@ -33,9 +33,9 @@ The intent of the mission is to have something similiar to an Invade & Annex typ
 
 ### Rewards
 for completing a set (2) of missions:
-- MobileHQ / mobile respawn (Landrover Ambulance)
-- MWMIK Jackal (with HMG)
-- AH-6M Littlebird (with GAU-19 and 19x Hydra 70)
+- MobileHQ / mobile respawn
+- armed MRAP
+- armed light helicopter
 
 After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
 
