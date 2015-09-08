@@ -2,7 +2,7 @@
 <h2 align="center">SmallMilitaryEncounter Generator</h2>
 <p align="center">
     <a href="#">
-        <img src="https://img.shields.io/badge/SME.Gen-V013-green.svg?style=flat-square" alt="SME.Gen: V.013">
+        <img src="https://img.shields.io/badge/SME.Gen-V.013-green.svg?style=flat-square" alt="SME.Gen: V.013">
     </a>
     <a href="#">
         <img src="http://img.shields.io/badge/Author-T--800a-blue.svg?style=flat-square" alt="Author: T-800a">
@@ -12,11 +12,12 @@
 
 The intent of the mission is to have something similiar to an Invade & Annex type missions, but in a smaler more infantry focused scope. There are always two tasks available. If both tasks are finished a cleanup will happen and 2 new tasks will be generated.
 
-### Currently there are 3 types of mission-sites available:
+### Currently there are 4 types of mission-sites with different tasks available:
 #####Towns
 - clear occupied town
 - destroy 2 mortars
 - destroy 2 resupply vehicles
+- kill HVT and his Guards
 
 #####Military Bases
 - clear occupied base
@@ -29,7 +30,8 @@ The intent of the mission is to have something similiar to an Invade & Annex typ
 
 #####Installations
 - destroy communication base (radiotower)
-- recover a UAV (and return to base)
+- recover UGV and return it to base (stomper)
+- gather Intel from a compound
 
 ### Rewards
 for completing a set (2) of missions:
