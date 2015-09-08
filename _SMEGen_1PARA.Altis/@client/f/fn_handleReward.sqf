@@ -54,5 +54,7 @@ switch ( T8C_var_playerRank ) do
 	default {};
 };
 
+[] call T8C_fnc_updateArsenal;
+
 // or bool
 true

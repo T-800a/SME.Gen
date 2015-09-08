@@ -53,6 +53,13 @@ _objArray =
 
 _mappedObj = [ _pos, _dir, _objArray ] call BIS_fnc_objectsMapper;
 
+{
+	sleep 0.2;
+	if ( _x isKindOf "Land_d_Stone_HouseSmall_V1_F" ) then { _x allowDamage false; };
+	if ( _x isKindOf "Land_d_Windmill01_F" ) then { _x allowDamage false; };
+	false
+} count _mappedObj;
+
 T8RMG_var_arrayCleanup pushBack _mappedObj;
 
 _return = ( _mappedObj select 0 );

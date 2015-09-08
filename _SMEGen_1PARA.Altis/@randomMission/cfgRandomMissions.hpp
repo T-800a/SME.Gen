@@ -31,14 +31,13 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "ASC_opfor_guerilla";
+		spawnUnitsFaction			= "vanilla_OPFOR_GUER";
 		
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "SAG_gear";
-	//	playerRewardSet				= "vanilla_BLUFOR";
+		playerRewardSet				= "vanilla_BLUFOR";
 
 
 	// amount of spawned mission AOs
@@ -54,7 +53,10 @@ class cfgRandomMissions
 
 
 	// modificators will affect spawned group sizes 
-
+	//
+	// _mod = ceil(((( _playerCount / !spawnModPlayer! ) * 2 ) * (( _groupCount / !spawnModGroup! ) * 2 )) * 2 );
+	//
+	
 		spawnModPlayer				= 5;
 		spawnModGroup				= 15;
 

@@ -36,6 +36,7 @@ if ( isNil "T8C_fnc_updateArsenal" )		then { T8C_fnc_updateArsenal		= CFPPFLN ( 
 
 if ( isnil "T8C_fnc_handleReward" )			then { T8C_fnc_handleReward			= CFPPFLN ( ROOTDIR + "fn_handleReward.sqf" ); };
 if ( isnil "T8C_fnc_debug" )				then { T8C_fnc_debug				= CFPPFLN ( ROOTDIR + "fn_debug.sqf" ); };
+if ( isnil "T8C_fnc_welcome" )				then { T8C_fnc_welcome				= CFPPFLN ( ROOTDIR + "fn_welcome.sqf" ); };
 
 
 // hint config
@@ -69,7 +70,7 @@ if ( _arsenalAccess isEqualTo 1 ) then
 	[ "AmmoboxInit", mission_obj_arsenal_post ] spawn BIS_fnc_arsenal;
 };
 
-
+// [] spawn T8C_fnc_welcome;
 
 
 

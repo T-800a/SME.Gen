@@ -15,10 +15,11 @@
 // );
 
 
-private [ "_pos", "_dir", "_objArray", "_mappedObj" ];
+private [ "_pos", "_JIPID", "_dir", "_objArray", "_mappedObj" ];
 
-_pos = _this select 0;
-_dir = random 360;
+_pos		= _this select 0;
+_JIPID		= _this select 1;
+_dir		= random 360;
 
 DEBUG( __FILE__, "INIT > _this", _this );
 waitUntil { T8L_var_INITDONE };
@@ -82,7 +83,7 @@ T8RMG_var_arrayCleanup pushBack _mappedObj;
 _return = ( _mappedObj select (( count _mappedObj ) - 1));
 { _x addCuratorEditableObjects [[ _return ], true ]; false } count allCurators;
 
-[ _return ] remoteExec [ "T8L_fnc_addActionLaptop", 0, true ];
+[ _return ] remoteExec [ "T8L_fnc_addActionLaptop", 0, _JIPID ];
 
 DEBUG( __FILE__, "_return", _return );
 

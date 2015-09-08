@@ -13,8 +13,10 @@
 if ( !isServer ) exitWith {};
 
 
-// 1PARA SAG HQ
-#include <sites\mainbase.sqf>
+// build base via SQF (XCam export)
+if ( worldName isEqualTo "Altis" ) then {
+#include <sites\altis_mainbase.sqf>
+};
 
 T8S_var_initDONE = true;
 

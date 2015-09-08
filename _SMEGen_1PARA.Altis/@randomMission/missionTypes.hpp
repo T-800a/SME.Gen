@@ -341,6 +341,7 @@ class missionTypes
 		class groups : groups
 		{
 			class group01 : base_garrison { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
 		};
 	};
 

@@ -35,10 +35,10 @@ DEBUG( __FILE__,"_itemCargo", _itemCargo );
 DEBUG( __FILE__,"_magazineCargo", _magazineCargo );
 DEBUG( __FILE__,"_weaponCargo", _weaponCargo );
 
-[ mission_obj_arsenal_post, _backpackCargo,		false, true ] call BIS_fnc_addVirtualBackpackCargo;
-[ mission_obj_arsenal_post, _itemCargo,			false, true ] call BIS_fnc_addVirtualItemCargo;
-[ mission_obj_arsenal_post, _magazineCargo,		false, true ] call BIS_fnc_addVirtualMagazineCargo;
-[ mission_obj_arsenal_post, _weaponCargo,		false, true ] call BIS_fnc_addVirtualWeaponCargo;
+if (( count _backpackCargo	) > 0 ) then { [ mission_obj_arsenal_post, _backpackCargo,		false, true ] call BIS_fnc_addVirtualBackpackCargo; };
+if (( count _itemCargo		) > 0 ) then { [ mission_obj_arsenal_post, _itemCargo,			false, true ] call BIS_fnc_addVirtualItemCargo; };
+if (( count _magazineCargo	) > 0 ) then { [ mission_obj_arsenal_post, _magazineCargo,		false, true ] call BIS_fnc_addVirtualMagazineCargo; };
+if (( count _weaponCargo	) > 0 ) then { [ mission_obj_arsenal_post, _weaponCargo,		false, true ] call BIS_fnc_addVirtualWeaponCargo; };
 
 // return
 true

@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="SMEGen">
 
+	<Package name="welcome">
+		<Key ID="STR_SMEGen_welcome_titel">
+			<Original>SME.Gen - Infantry COOP</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_welcome_01">
+			<Original>SME.Gen is a infantry focused mission generator for COOP gameplay.</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_welcome_02">
+			<Original>When a set of active missions is completed a new set will be genereated after some time. Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).</Original>
+		</Key>
+	</Package>
+
 	<Package name="Main">
 		<Key ID="STR_SMEGen_vehicleRestricted">
 			<Original>This vehicle is restricted.&lt;br /&gt;&lt;t size='0.95'&gt;You can only get in a cargo slot.&lt;/t&gt;</Original>
@@ -19,7 +33,6 @@
 		</Key>
 	</Package>
 	
-	
 	<Package name="Rewards">
 		<Key ID="STR_SMEGen_hint_playerRankUp">
 			<Original>&lt;t size='3' color='#FAAC58' align='center'&gt;&lt;img image='%1'/&gt;&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1' color='#E6E6E6' align='center'&gt;Congratulations you ranked up!&lt;br /&gt;Your new rank is:&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1.5' color='#FAAC58' align='center'&gt;%2&lt;/t&gt;</Original>
@@ -36,14 +49,44 @@
 		</Key>
 
 		<Key ID="STR_SMEGen_mapName_Reward01">
-			<Original>MobileHQ</Original>
+			<Original> MobileHQ</Original>
 		</Key>
 		<Key ID="STR_SMEGen_mapName_Reward02">
-			<Original>MRAP</Original>
+			<Original> MRAP</Original>
 		</Key>
 		<Key ID="STR_SMEGen_mapName_Reward03">
-			<Original>ARH</Original>
+			<Original> ARH</Original>
 		</Key>
 	</Package>
-	
+
+	<Package name="downloadData">
+		<Key ID="STR_downloadData_01">
+			<Original>Download aborted!</Original>
+			<German>Download abgebrochen!</German>
+		</Key>
+		<Key ID="STR_downloadData_02">
+			<Original>Download already in progress by someone else!</Original>
+			<German>Wird bereits ausgefuehrt!</German>
+		</Key>
+		<Key ID="STR_downloadData_03">
+			<Original>Download started!</Original>
+			<German>Download gestarted!</German>
+		</Key>
+		<Key ID="STR_downloadData_04">
+			<Original>Download finished!</Original>
+			<German>Download abgeschlossen!</German>
+		</Key>
+		<Key ID="STR_downloadData_05">
+			<Original>##  Download INTEL  ##</Original>
+			<German>##  Download INTEL  ##</German>
+		</Key>
+		<Key ID="STR_downloadData_06">
+			<Original>Connecting ...</Original>
+			<German>Verbinden ...</German>
+		</Key>
+		<Key ID="STR_downloadData_07">
+			<Original>Connected:</Original>
+			<German>Verbunden:</German>
+		</Key>
+	</Package>
 </Project>

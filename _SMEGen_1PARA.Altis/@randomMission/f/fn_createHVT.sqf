@@ -103,6 +103,7 @@ _units		= ( units _group );
 
 
 { _x addCuratorEditableObjects [ _units, true ]; false } count allCurators;
+T8RMG_var_arrayCleanup pushBack _units;
 
 DEBUG( __FILE__, "_return", _units );
 
