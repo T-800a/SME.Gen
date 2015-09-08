@@ -38,6 +38,7 @@ class cfgRandomMissions
 	// find in < missionPlayerRewards.hpp > to change
 
 		playerRewardSet				= "SAG_gear";
+	//	playerRewardSet				= "vanilla_BLUFOR";
 
 
 	// amount of spawned mission AOs

@@ -30,10 +30,10 @@ while { count _objectPos < 1 } do
 {
 	private [ "_relPos", "_tmpPos" ];
 	
-	_relPos = [ _attackMarkerPos, ( 1250 + ( random 250 )), random 360 ] call BIS_fnc_relPos;
+	_relPos = [ _attackMarkerPos, 1200, random 360 ] call BIS_fnc_relPos;
 	_tmpPos = _relPos findEmptyPosition [ 5, 50, "Land_VR_Block_02_F" ];
 	
-	if ( count _tmpPos > 1 AND { !surfaceIsWater _tmpPos } AND { ({( _tmpPos distance ( getPos _x )) < 1500 } count _players ) < 1 } ) then { _objectPos = _tmpPos; };
+	if ( count _tmpPos > 1 AND { !surfaceIsWater _tmpPos } AND { ({( _tmpPos distance ( getPos _x )) < 1100 } count _players ) < 1 } ) then { _objectPos = _tmpPos; };
 	if ( _n > 100 ) exitWith {};
 	_n = _n + 1;
 };

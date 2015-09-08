@@ -26,23 +26,23 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_hint_Reward01">
-			<Original>U.SOC rewarded you with a Mobile HQ!&lt;br /&gt;&lt;br /&gt;This vehicle is a mobile respawn position.</Original>
+			<Original>U.SOC provided you with a Mobile HQ!&lt;br /&gt;&lt;br /&gt;This vehicle is a mobile respawn position.</Original>
 		</Key>
 		<Key ID="STR_SMEGen_hint_Reward02">
-			<Original>U.SOC rewarded you with a Jackel!</Original>
+			<Original>U.SOC provided you with a MRAP!</Original>
 		</Key>
 		<Key ID="STR_SMEGen_hint_Reward03">
-			<Original>U.SOC rewarded you with a AH-6M Littlebird!</Original>
+			<Original>U.SOC provided you with a Armed Recon Helicopter!</Original>
 		</Key>
 
 		<Key ID="STR_SMEGen_mapName_Reward01">
 			<Original>MobileHQ</Original>
 		</Key>
 		<Key ID="STR_SMEGen_mapName_Reward02">
-			<Original>MWMIK Jackal</Original>
+			<Original>MRAP</Original>
 		</Key>
 		<Key ID="STR_SMEGen_mapName_Reward03">
-			<Original>AH-6M Littlebird</Original>
+			<Original>ARH</Original>
 		</Key>
 	</Package>
 	

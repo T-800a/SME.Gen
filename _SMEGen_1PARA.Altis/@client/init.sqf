@@ -13,7 +13,7 @@
 
 #define ROOTDIR "@client\f\"
 #define CFPPFLN compileFinal preProcessFileLineNumbers
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
 // if ( isNil "T8C_fnc_execServer" ) then { T8C_fnc_execServer = CFPPFLN ( ROOTDIR + "fn_execServer.sqf" ); };
@@ -32,6 +32,7 @@ if ( isNil "T8C_fnc_checkSlots" )			then { T8C_fnc_checkSlots			= CFPPFLN ( ROOT
 if ( isNil "T8C_fnc_restricVehicle" )		then { T8C_fnc_restricVehicle		= CFPPFLN ( ROOTDIR + "fn_restricVehicle.sqf" ); };
 if ( isNil "T8C_fnc_checkGetIn" )			then { T8C_fnc_checkGetIn			= CFPPFLN ( ROOTDIR + "fn_checkGetIn.sqf" ); };
 if ( isNil "T8C_fnc_checkSwitchSeat" )		then { T8C_fnc_checkSwitchSeat		= CFPPFLN ( ROOTDIR + "fn_checkSwitchSeat.sqf" ); };
+if ( isNil "T8C_fnc_updateArsenal" )		then { T8C_fnc_updateArsenal		= CFPPFLN ( ROOTDIR + "fn_updateArsenal.sqf" ); };
 
 if ( isnil "T8C_fnc_handleReward" )			then { T8C_fnc_handleReward			= CFPPFLN ( ROOTDIR + "fn_handleReward.sqf" ); };
 if ( isnil "T8C_fnc_debug" )				then { T8C_fnc_debug				= CFPPFLN ( ROOTDIR + "fn_debug.sqf" ); };
@@ -51,11 +52,25 @@ T8C_var_initDONE = true;
 [] call T8C_fnc_checkSlots;
 
 
+
 // create vehicle restrictions
 [ mission_heli_01, "whitelistHelicopter" ] call T8C_fnc_restricVehicle;
 
 
+// Prepare VR-Ammobox
+private [ "_arsenalAccess" ];
 _arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "fullArsenal" );
+DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
+if ( _arsenalAccess isEqualTo 1 ) then 
+{
+	[ "AmmoboxInit", [ mission_obj_arsenal_post, true ]] spawn BIS_fnc_arsenal;
+} else {
+	[ "INIT" ] call T8C_fnc_updateArsenal;
+	[ "AmmoboxInit", mission_obj_arsenal_post ] spawn BIS_fnc_arsenal;
+};
+
+
+
 
 
 // 1PARA Relic!

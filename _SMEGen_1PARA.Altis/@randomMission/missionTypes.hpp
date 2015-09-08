@@ -122,7 +122,7 @@ class missionTypes
 	
 // --------------------------------------------------------------
 //	missionTypes - USED CLASSES
-	
+
 	class occupy : base_type
 	{
 		scope		= 1;
@@ -139,7 +139,7 @@ class missionTypes
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
-	
+
 	class killHVT : base_type
 	{
 		scope		= 1;
@@ -247,7 +247,7 @@ class missionTypes
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
-	
+
 	class resupplies : base_type
 	{
 		scope		= 1;
@@ -273,7 +273,7 @@ class missionTypes
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
-	
+
 	class radiotower : base_type
 	{
 		scope		= 1;
@@ -341,6 +341,47 @@ class missionTypes
 		class groups : groups
 		{
 			class group01 : base_garrison { scope = 1; };
+		};
+	};
+
+	class getIntel : base_type
+	{
+		scope		= 1;
+		name		= "Get Intel";
+		task		= "Download the Intel in the camp.";
+		taskShort	= "Get the Intel";
+		
+		class conditions
+		{
+			class win
+			{
+				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ] ) getVariable [ 'T8L_pvar_dataDownloaded', false ] )";
+				function	= "BIS_fnc_taskSetState";
+			};
+			
+			class fail
+			{
+				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]))";
+				function	= "BIS_fnc_taskSetState";
+			};
+			
+			class support
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 2 )) > 3 )";
+				function	= "T8RMG_fnc_createAttack";
+			};
+			
+			class counter_attack
+			{
+				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ] ) getVariable [ 'T8L_pvar_inUse', false ] )";
+				function	= "T8RMG_fnc_createAttack";
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_garrison { scope = 1; };
+			class group02 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
 	

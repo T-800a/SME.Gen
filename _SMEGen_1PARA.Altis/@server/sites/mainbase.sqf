@@ -19,6 +19,8 @@ _cString =
 	};
 	if(count (_dat select 6) > 0) then {{call _x} foreach (_dat select 6)};
 	
+	_obj allowDamage false;
+	
 	//Return
 	_obj
 };
@@ -138,9 +140,6 @@ _dat = ["SignAd_Sponsor_F","[14168.269531,16274.0390625,-0.446128]",-136.076,-10
 
 // U.SOC Sign
 _dat = ["SignAd_Sponsor_F","[14162.836914,16263.65332,-0.628479]",197.361,-100,1,0,[],[0,0]];			mission_obj_usoc_sign = [] call _cString;
-
-// VR-Arsenal Post (for addAction)
-_dat = ["Land_InfoStand_V2_F","[14163.484375,16265.829102,0]",197.361,-100,1,0,[],[0,0]];				mission_obj_arsenal_post = [] call _cString;
 
 // Billboard Objects
 _dat = ["Land_Billboard_F","[14165.645508,16278.996094,-1.07318]",223.788,20.2344,1,0,[],[0,0]];		mission_obj_billboard_01 = [] call  _cString;

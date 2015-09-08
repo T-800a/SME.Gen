@@ -13,7 +13,7 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen | V.012";
+onLoadName					= "SME.Gen | V.013";
 OnLoadMission				= "Small Military Encounter Genenerator";
 loadScreen					= "images\sme_logo.paa";
 overviewPicture				= "";
@@ -121,8 +121,13 @@ class CfgRemoteExec
 
 		class T8C_fnc_hintProcess { allowedTargets = 1; };
 		class T8C_fnc_handleReward { allowedTargets = 1; };
-
+		
+		class T8L_fnc_addActionLaptop { allowedTargets = 1; };
+		class T8L_fnc_removeActionLaptop { allowedTargets = 1; };
    }; 
 }; 
 
+
+// inlcude downloadData dialog for intel tasks
+#include <scripts\downloadData.hpp>
 

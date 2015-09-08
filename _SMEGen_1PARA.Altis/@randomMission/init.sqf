@@ -25,6 +25,7 @@ if ( isnil "T8RMG_fnc_checkOutside" )		then { T8RMG_fnc_checkOutside		= CFPPFLN 
 if ( isnil "T8RMG_fnc_cleanUP" )			then { T8RMG_fnc_cleanUP			= CFPPFLN ( ROOTDIR + "fn_cleanUP.sqf" ); };
 if ( isnil "T8RMG_fnc_createMarker" )		then { T8RMG_fnc_createMarker		= CFPPFLN ( ROOTDIR + "fn_createMarker.sqf" ); };
 if ( isnil "T8RMG_fnc_createAO" )			then { T8RMG_fnc_createAO			= CFPPFLN ( ROOTDIR + "fn_createAO.sqf" ); };
+if ( isnil "T8RMG_fnc_createGetIntel" )		then { T8RMG_fnc_createGetIntel		= CFPPFLN ( ROOTDIR + "fn_createGetIntel.sqf" ); };
 if ( isnil "T8RMG_fnc_createHVT" )			then { T8RMG_fnc_createHVT			= CFPPFLN ( ROOTDIR + "fn_createHVT.sqf" ); };
 if ( isnil "T8RMG_fnc_createAttack" )		then { T8RMG_fnc_createAttack		= CFPPFLN ( ROOTDIR + "fn_createAttack.sqf" ); };
 if ( isnil "T8RMG_fnc_createConvoy" )		then { T8RMG_fnc_createConvoy		= CFPPFLN ( ROOTDIR + "fn_createConvoy.sqf" ); };
@@ -63,9 +64,6 @@ DEBUG( __FILE__, "==============================================================
 
 // handle textures for signs / billboards
 [] spawn T8RMG_fnc_handleDisplays;
-
-// Prepare VR-Ammobox
-[ "AmmoboxInit", [ mission_obj_arsenal_post, true ]] spawn BIS_fnc_arsenal;
 
 
 // spawn loop to handle conditions of created tasks

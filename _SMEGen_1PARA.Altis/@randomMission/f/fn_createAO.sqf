@@ -142,7 +142,17 @@ switch ( _type ) do
 		
 		_varName = format [ "OBJECTIVE_killHVT_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, _objs ];
-	};	
+	};
+	
+	case "getIntel":
+	{
+		private [ "_obj" ];
+		_siteSize = ( _range * 0.4 );
+		_obj = [ _sitePos ] call T8RMG_fnc_createGetIntel; 
+		
+		_varName = format [ "OBJECTIVE_getIntel_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
 	
 	default {};
 };

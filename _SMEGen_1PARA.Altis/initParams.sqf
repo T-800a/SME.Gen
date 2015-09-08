@@ -25,7 +25,7 @@ switch ( paramsArray select 0 ) do
 	case 3 :	{ T8RMG_var_enemyFaction = "vanilla_INDEP"; };
 	case 4 :	{ T8RMG_var_enemyFaction = "vanilla_INDEP_GUER"; };
 	case 5 :	{ T8RMG_var_enemyFaction = "ASC_opfor_guerilla"; };
-	default		{ T8RMG_var_enemyFaction = 	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" ); };
+	default		{ T8RMG_var_enemyFaction = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" ); };
 };
 
 // reward / gearset

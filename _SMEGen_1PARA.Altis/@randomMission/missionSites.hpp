@@ -48,7 +48,7 @@ class missionSites
 			scope		= 0;
 			name		= "";
 			type		= "compound";
-			allowedTypes[]	= { "radiotower", "recoverUGV" };
+			allowedTypes[]	= { "radiotower", "recoverUGV", "getIntel" };
 			marker		= "";
 			position[]	= { 0, 0, 0 };
 			size[]		= { 250, 250 };
@@ -331,7 +331,7 @@ class missionSites
 			scope		= 1;
 			name		= "Neochori Area"; 
 			marker		= "site_comp_02";
-			position[]	= { 11636.3, 14573.1, 0 };
+			position[]	= { 11646.3, 14587.8, 0 };
 		};
 		
 		class comp_03 : base_comp
@@ -356,6 +356,62 @@ class missionSites
 			name		= "Charkia Area"; 
 			marker		= "site_comp_05";
 			position[]	= { 19035.3, 14845.7, 0 };
+		};
+		
+		class comp_06 : base_comp
+		{
+			scope		= 1;
+			name		= "Katalaki Bay Area"; 
+			marker		= "site_comp_06";
+			position[]	= { 12112.3, 12700.9, 0 };
+		};
+		
+		class comp_07 : base_comp
+		{
+			scope		= 1;
+			name		= "Therisa Area"; 
+			marker		= "site_comp_07";
+			position[]	= { 10842.2, 12664.7, 0 };
+		};
+		
+		class comp_08 : base_comp
+		{
+			scope		= 1;
+			name		= "Agios Dionysios"; 
+			marker		= "site_comp_08";
+			position[]	= { 9983.2, 16769.3, 0 };
+		};
+		
+		class comp_09 : base_comp
+		{
+			scope		= 1;
+			name		= "Frini Area"; 
+			marker		= "site_comp_09";
+			position[]	= { 13853.2, 20954.9, 0 };
+		};
+		
+		class comp_10 : base_comp
+		{
+			scope		= 1;
+			name		= "Agios Petros Area"; 
+			marker		= "site_comp_10";
+			position[]	= { 19162.4, 17810.3, 0 };
+		};
+		
+		class comp_11 : base_comp
+		{
+			scope		= 1;
+			name		= "Limni Swamp Area"; 
+			marker		= "site_comp_11";
+			position[]	= { 20385.0, 14957.4, 0 };
+		};
+		
+		class comp_12 : base_comp
+		{
+			scope		= 1;
+			name		= "Anthrakia Area"; 
+			marker		= "site_comp_12";
+			position[]	= { 17106.6, 15446.7, 0 };
 		};
 	};
 };
