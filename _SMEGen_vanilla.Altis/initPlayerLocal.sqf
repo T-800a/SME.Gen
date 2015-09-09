@@ -24,3 +24,10 @@ waitUntil { !isNull player AND { isPlayer player } AND { alive player }};
 // initialize @client
 [] execVM "@client\init.sqf";
 
+
+// clear players inventory
+removeVest player;
+removeBackpack player;
+removeAllWeapons player:
+removeAllItems player;
+removeAllAssignedItems player;

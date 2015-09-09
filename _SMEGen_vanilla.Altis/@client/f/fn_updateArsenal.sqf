@@ -20,7 +20,7 @@ _rank = param [ 0, T8RMG_var_playerRewardSet, [""]];
 switch ( _rank ) do
 {
 	case "INIT" :	{ _itemSet = "startingGear"; };
-	default			{ _itemSet = T8RMG_var_playerRewardSet; };
+	default			{ _itemSet = T8C_var_playerRank; };
 };
 
 _backpackCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> _itemSet >> "BackpackReward" );

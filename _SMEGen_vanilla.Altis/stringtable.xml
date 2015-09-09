@@ -24,6 +24,10 @@
 			<Original>New mission sites will be created in %1 minutes!&lt;br /&gt;&lt;br /&gt;Cleanup will start in %2 miuntes!</Original>
 		</Key>
 		
+		<Key ID="STR_SMEGen_unlockUGV">
+			<Original>Found wirless connection to the UGV, you should be ablte to connect to it now.</Original>
+		</Key>
+		
 		<Key ID="STR_SMEGen_upcommingNewTasks">
 			<Original>New mission sites will be created in %1 minute!</Original>
 		</Key>

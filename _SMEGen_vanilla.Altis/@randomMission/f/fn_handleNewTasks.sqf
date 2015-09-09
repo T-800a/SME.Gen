@@ -14,34 +14,66 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_configArraySites", "_arraySites", "_arraySitesAvailable", "_arraySitesUsed", "_players" ];
+private [ "_configArraySites", "_arraySites", "_arrayShuff", "_arraySitesAvailable", "_arraySitesFree", "_arraySitesUsed", "_players" ];
+
+_arraySites			= [];
+_arraySitesFree		= [];
+_arraySitesUsed		= [];
 
 _configArraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
 
 { _arraySites pushback ( configName _x ); false } count _configArraySites;
-DEBUG( __FILE__, "_arraySites", _arraySites );
+
 DEBUG( __FILE__, "T8RMG_var_arraySitesBlacklist", T8RMG_var_arraySitesBlacklist );
+DEBUG( __FILE__, "T8RMG_var_amountSites", T8RMG_var_amountSites );
+DEBUG( __FILE__, "_arraySites", _arraySites );
 
 _arraySites = _arraySites - T8RMG_var_arraySitesBlacklist;
 DEBUG( __FILE__, "_arraySites", _arraySites );
 
-_arraySitesUsed = [];
-_arraySites = _arraySites call BIS_fnc_arrayShuffle;					DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+_arrayShuff = _arraySites call BIS_fnc_arrayShuffle;	
+DEBUG( __FILE__, "_arrayShuff", _arrayShuff );
+
 _players = if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
 
 while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 {
+	DEBUG( __FILE__, "MAIN WHILE", "___" );
+	private [ "_first", "_firstSitePos" ];
+	
 	// build useable sites
 	{
 		private [ "_site", "_sitePos" ];
 		_site = _x;
 		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
 		
-		if ( !( _site in _arraySitesUsed ) AND { ({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesUsed pushBack _site; };
+		if ( !( _site in _arraySitesFree ) AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
 		
 		false
-	} count _arraySites; 
+	} count _arrayShuff; 
 
+	DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
+	
+	_first = _arraySitesFree select 0;
+	_arraySitesFree deleteAt 0;
+	_arraySitesUsed pushBack _first;
+	_firstSitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "position" );
+	
+	DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
+	DEBUG( __FILE__, "_first", _first );
+	DEBUG( __FILE__, "_firstSitePos", _firstSitePos );
+	
+	
+	{
+		private [ "_site", "_sitePos" ];
+		_site = _x;
+		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
+		
+		if ( !( _site in _arraySitesUsed ) AND {( _sitePos distance _firstSitePos ) < 2500 }) then { _arraySitesUsed pushBack _site; };
+		
+		false
+	} count _arraySitesFree; 
+	
 	DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 	
 	// worst case

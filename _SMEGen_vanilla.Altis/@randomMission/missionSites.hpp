@@ -166,7 +166,33 @@ class missionSites
 			position[]	= { 12954.1, 15006.7, 0 };
 		};
 
-
+		class town_frini : base_town
+		{
+			scope		= 1;
+			name		= "Frini"; 
+			marker		= "site_town_frini";
+			position[]	= { 14600.1, 20776.4, 0 };
+			size[]		= { 240, 240 };
+		};
+		
+		class town_athira : base_town
+		{
+			scope		= 1;
+			name		= "Athira"; 
+			marker		= "site_town_athira";
+			position[]	= { 14016.7, 18695.6, 0 };
+		};
+		
+		class town_athira_factory : base_town
+		{
+			scope		= 1;
+			name		= "Athira Factory"; 
+			marker		= "site_town_athira_factory";
+			position[]	= { 14351.4, 18946.2, 0 };
+			size[]		= { 150, 150 };
+		};
+		
+		
 	// --------------------------------------------------------------
 	// missionSites - MILITARY
 		

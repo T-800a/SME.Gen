@@ -18,11 +18,10 @@
 
 class cfgFunctions
 {
-	class SMEGen
+	class T8C
 	{
 		class client
 		{
-			tag = "T8C";
 			file = "@client\f";
 			
 			addFunction(addMapClick);
@@ -41,10 +40,12 @@ class cfgFunctions
 			addFunction(debug);
 			addFunction(welcome);
 		};
-		
+	};
+
+	class T8RMG
+	{	
 		class randomMission
 		{
-			tag = "T8RMG";
 			file = "@randomMission\f";
 			
 			addFunction(buildUnitArray);
@@ -70,12 +71,15 @@ class cfgFunctions
 			addFunction(handleNewTasks);
 			addFunction(handleReward);
 			addFunction(testFnc);
+			addFunction(unlockUGV);
 		
 		};
-		
+	};
+	
+	class T8L
+	{
 		class downloadData
 		{
-			tag = "T8L";
 			file = "scripts\downloadData";
 
 			addFunction(abortActionLaptop);

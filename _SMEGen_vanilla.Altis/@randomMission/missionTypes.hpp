@@ -325,6 +325,12 @@ class missionTypes
 				function	= "BIS_fnc_taskSetState";
 			};
 			
+			class unlockUGV
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 0.1 ))) >=  1 )";
+				function	= "T8RMG_fnc_unlockUGV";
+			};
+			
 			class support
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";

@@ -49,7 +49,8 @@ T8C_var_hintTextArray =
 	localize "STR_SMEGen_hint_Reward03",												// 2
 	format [ localize "STR_SMEGen_upcommingCleanUp", ( _timeC + _timeS ), _timeS ],		// 3
 	format [ localize "STR_SMEGen_upcommingNewTasks", _timeS ],							// 4
-	localize "STR_SMEGen_errorNewTasks"												// 5
+	localize "STR_SMEGen_errorNewTasks",												// 5
+	localize "STR_SMEGen_unlockUGV"														// 6
 ];
 
 
