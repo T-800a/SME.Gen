@@ -32,7 +32,8 @@ switch ( paramsArray select 0 ) do
 switch ( paramsArray select 1 ) do
 {
 	case 0 :	{ T8RMG_var_playerRewardSet = "vanilla_BLUFOR"; };
-	case 1 :	{ T8RMG_var_playerRewardSet = "SAG_gear"; };
+	case 1 :	{ T8RMG_var_playerRewardSet = "vanilla_BLUFOR_fullArsenal"; };
+	case 2 :	{ T8RMG_var_playerRewardSet = "SAG_gear"; };
 	default		{ T8RMG_var_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
 };
 

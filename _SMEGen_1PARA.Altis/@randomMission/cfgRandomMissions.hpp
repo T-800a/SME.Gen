@@ -48,7 +48,7 @@ class cfgRandomMissions
 	// delays in minutes between a finished set of AOs will be cleanded, 
 	// and a new set will be spawned
 
-		missionCleanDelay			= 1;	// minutes
+		missionCleanDelay			= 5;	// minutes
 		missionSpawnDelay			= 2;	// minutes
 
 

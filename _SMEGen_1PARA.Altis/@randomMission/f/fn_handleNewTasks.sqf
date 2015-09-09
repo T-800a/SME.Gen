@@ -14,21 +14,19 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_arraySites", "_arrayTypes", "_arraySitesAvailable", "_arraySitesUsed", "_players" ];
+private [ "_configArraySites", "_arraySites", "_arraySitesAvailable", "_arraySitesUsed", "_players" ];
 
-_arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
-_arrayTypes = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" );
+_configArraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
 
-{ T8RMG_var_arraySites pushback ( configName _x ); false } count _arraySites;
-{ T8RMG_var_arrayTypes pushback ( configName _x ); false } count _arrayTypes;
-
-DEBUG( __FILE__, "T8RMG_var_arraySites", T8RMG_var_arraySites );
+{ _arraySites pushback ( configName _x ); false } count _configArraySites;
+DEBUG( __FILE__, "_arraySites", _arraySites );
 DEBUG( __FILE__, "T8RMG_var_arraySitesBlacklist", T8RMG_var_arraySitesBlacklist );
 
-T8RMG_var_arraySites = T8RMG_var_arraySites - T8RMG_var_arraySitesBlacklist;			DEBUG( __FILE__, "T8RMG_var_arraySites", T8RMG_var_arraySites );
+_arraySites = _arraySites - T8RMG_var_arraySitesBlacklist;
+DEBUG( __FILE__, "_arraySites", _arraySites );
 
 _arraySitesUsed = [];
-_arraySitesAvailable = T8RMG_var_arraySites call BIS_fnc_arrayShuffle;					DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+_arraySites = _arraySites call BIS_fnc_arrayShuffle;					DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 _players = if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
 
 while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
@@ -42,7 +40,7 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 		if ( !( _site in _arraySitesUsed ) AND { ({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesUsed pushBack _site; };
 		
 		false
-	} count _arraySitesAvailable; 
+	} count _arraySites; 
 
 	DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 	
@@ -54,6 +52,8 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 		sleep 30;
 	};
 };
+
+
 
 // resize to defined (in config) amount of targets
 _arraySitesUsed resize T8RMG_var_amountSites;

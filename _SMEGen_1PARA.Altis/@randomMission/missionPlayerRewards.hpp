@@ -111,4 +111,6 @@ class missionPlayerRewards
 			ItemReward[]		= { "V_PlateCarrierGL_blk", "V_PlateCarrierGL_mtp", "V_PlateCarrierSpec_blk", "V_PlateCarrierGL_mtp" };
 		};
 	};
+	
+	class vanilla_BLUFOR_fullArsenal : vanilla_BLUFOR { fullArsenal = 0; };
 };
