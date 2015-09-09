@@ -151,6 +151,7 @@ _cFnc =
 ["Land_GymBench_01_F","[14180.480469,16276.753906,0]",43.99,-100,1,0,[],[0,0]] call _cFnc;
 ["Land_GymBench_01_F","[14181.967773,16273.848633,0]",61.288,-100,1,0,[],[0,0]] call _cFnc;
 
+// align preplaced objects from normal editor
 // VR-Arsenal Sign
 ["SignAd_Sponsor_F","[14168.269531,16274.0390625,-0.446128]",-136.076,-100,1,0,[],[0,0],mission_obj_arsenal_sign] call _cFnc;
 

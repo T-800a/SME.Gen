@@ -11,37 +11,12 @@
  =======================================================================================================
 */ 
 
-#define ROOTDIR "@client\f\"
-#define CFPPFLN compileFinal preProcessFileLineNumbers
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
-
-// if ( isNil "T8C_fnc_execServer" ) then { T8C_fnc_execServer = CFPPFLN ( ROOTDIR + "fn_execServer.sqf" ); };
-
-if ( isNil "T8C_fnc_addMapClick" )			then { T8C_fnc_addMapClick			= CFPPFLN ( ROOTDIR + "fn_addMapClick.sqf" ); };
-if ( isNil "T8C_fnc_removeMapClick" )		then { T8C_fnc_removeMapClick		= CFPPFLN ( ROOTDIR + "fn_removeMapClick.sqf" ); };
-if ( isNil "T8C_fnc_onMapClick" )			then { T8C_fnc_onMapClick			= CFPPFLN ( ROOTDIR + "fn_onMapClick.sqf" ); };
-if ( isNil "T8C_fnc_switchFarSuicide" )		then { T8C_fnc_switchFarSuicide		= CFPPFLN ( ROOTDIR + "fn_switchFarSuicide.sqf" ); };
-
-if ( isNil "T8C_fnc_hintProcess" )			then { T8C_fnc_hintProcess			= CFPPFLN ( ROOTDIR + "fn_hintProcess.sqf" ); };
-if ( isNil "T8C_fnc_hintShow" )				then { T8C_fnc_hintShow				= CFPPFLN ( ROOTDIR + "fn_hintShow.sqf" ); };
-
-if ( isNil "T8C_fnc_drawMapIcons" )			then { T8C_fnc_drawMapIcons			= CFPPFLN ( ROOTDIR + "fn_drawMapIcons.sqf" ); };
-
-if ( isNil "T8C_fnc_checkSlots" )			then { T8C_fnc_checkSlots			= CFPPFLN ( ROOTDIR + "fn_checkSlots.sqf" ); };
-if ( isNil "T8C_fnc_restricVehicle" )		then { T8C_fnc_restricVehicle		= CFPPFLN ( ROOTDIR + "fn_restricVehicle.sqf" ); };
-if ( isNil "T8C_fnc_checkGetIn" )			then { T8C_fnc_checkGetIn			= CFPPFLN ( ROOTDIR + "fn_checkGetIn.sqf" ); };
-if ( isNil "T8C_fnc_checkSwitchSeat" )		then { T8C_fnc_checkSwitchSeat		= CFPPFLN ( ROOTDIR + "fn_checkSwitchSeat.sqf" ); };
-if ( isNil "T8C_fnc_updateArsenal" )		then { T8C_fnc_updateArsenal		= CFPPFLN ( ROOTDIR + "fn_updateArsenal.sqf" ); };
-
-if ( isnil "T8C_fnc_handleReward" )			then { T8C_fnc_handleReward			= CFPPFLN ( ROOTDIR + "fn_handleReward.sqf" ); };
-if ( isnil "T8C_fnc_debug" )				then { T8C_fnc_debug				= CFPPFLN ( ROOTDIR + "fn_debug.sqf" ); };
-if ( isnil "T8C_fnc_welcome" )				then { T8C_fnc_welcome				= CFPPFLN ( ROOTDIR + "fn_welcome.sqf" ); };
 
 
 // hint config
 #include <hintConfig.sqf>
-
 
 
 T8C_var_initDONE = true;
