@@ -22,8 +22,6 @@ _JIPID		= _this select 1;
 _dir		= random 360;
 
 DEBUG( __FILE__, "INIT > _this", _this );
-waitUntil { T8L_var_INITDONE };
-DEBUG( __FILE__, "INIT >>>", "DONE" );
 
 _objArray =
 [

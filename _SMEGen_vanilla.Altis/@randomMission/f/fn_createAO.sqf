@@ -126,6 +126,7 @@ switch ( _type ) do
 	case "recoverUGV":
 	{
 		private [ "_obj" ];
+		_siteSize = ( _range * 0.7 );
 		_obj = [ _sitePos ] call T8RMG_fnc_createrecoverUGV; 
 		
 		_varName = format [ "OBJECTIVE_recoverUGV_%1", _siteMkr ];	

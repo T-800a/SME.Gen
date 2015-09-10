@@ -40,6 +40,7 @@ class cfgFunctions
 			addFunction(debug);
 			addFunction(debugKeysAdd);
 			addFunction(debugKeysPress);
+			addFunction(debugSiteMarkers);
 			addFunction(welcome);
 		};
 	};

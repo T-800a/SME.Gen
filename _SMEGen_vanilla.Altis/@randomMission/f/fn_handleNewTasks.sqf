@@ -39,7 +39,9 @@ _players = if ( isMultiplayer ) then { allPlayers } else { units ( group player 
 while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 {
 	DEBUG( __FILE__, "MAIN WHILE", "___" );
-	private [ "_first", "_firstSitePos" ];
+	private [ "_first", "_firstSitePos", "_firstSiteType", "_siteMaxDist" ];
+	
+	_siteMaxDist = 1750;
 	
 	// build useable sites
 	{
@@ -58,6 +60,7 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 	_arraySitesFree deleteAt 0;
 	_arraySitesUsed pushBack _first;
 	_firstSitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "position" );
+	_firstSiteType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "type" );
 	
 	DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
 	DEBUG( __FILE__, "_first", _first );
@@ -65,11 +68,12 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 	
 	
 	{
-		private [ "_site", "_sitePos" ];
+		private [ "_site", "_sitePos", "_firstType" ];
 		_site = _x;
 		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
+		_firstType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "type" );
 		
-		if ( !( _site in _arraySitesUsed ) AND {( _sitePos distance _firstSitePos ) < 2500 }) then { _arraySitesUsed pushBack _site; };
+		if ( !( _site in _arraySitesUsed ) AND {( _sitePos distance _firstSitePos ) < _siteMaxDist } AND { !(_firstSiteType isEqualTo _firstType )}) then { _arraySitesUsed pushBack _site; };
 		
 		false
 	} count _arraySitesFree; 
@@ -81,6 +85,7 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 	{
 		DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
 		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
+		_siteMaxDist = _siteMaxDist + 1000;
 		sleep 30;
 	};
 };

@@ -192,7 +192,66 @@ class missionSites
 			size[]		= { 150, 150 };
 		};
 		
-		
+		class town_alikampos : base_town 
+		{
+			scope		= 1;
+			name		= "Alikampos";
+			marker		= "site_town_alikampos";
+			position[]	= { 11130.2, 14561, 0 };
+		};
+
+		class town_neochori : base_town 
+		{
+			scope		= 1;
+			name 		= "Neochori";
+			marker		= "site_town_neochori";
+			position[]	= { 12551.6, 14406.2, 0 };
+			size[]		= { 350, 350 };
+		};
+
+		class town_katalaki : base_town 
+		{
+			scope		= 1;
+			name		= "Katalaki";
+			marker		= "site_town_katalaki";
+			position[]	= { 11750.4, 13688.9, 0 };
+		};
+
+		class town_poliakko : base_town 
+		{
+			scope		= 1;
+			name		= "Poliakko";
+			marker		= "site_town_poliakko";
+			position[]	= { 10992.5, 13425.6, 0 };
+		};
+
+		class town_charkia_storage : base_town 
+		{
+			scope		= 1;
+			name		= "Charkia Storage Depot";
+			marker		= "town_charkia_storage";
+			position[]	= { 18326.8, 15531.9, 0 };
+			size[]		= { 150, 150 };
+		};
+
+		class town_charkia : base_town 
+		{
+			scope		= 1;
+			name		= "Charkia";
+			marker		= "site_town_charkia";
+			position[]	= { 18139.8, 15223.1, 0 };
+		};
+
+		class town_ifestiona : base_town 
+		{
+			scope		= 1;
+			name		= "Ifestiona";
+			marker		= "site_town_ifestiona";
+			position[]	= { 12856.1, 19681.1, 0 };
+		};
+
+
+
 	// --------------------------------------------------------------
 	// missionSites - MILITARY
 		
@@ -218,7 +277,6 @@ class missionSites
 			name		= "Pyrgos Gulf Harbour"; 
 			marker		= "site_mil_pyrgos_gulf_harbour";
 			position[]	= { 15394.5, 15955.1, 0 };
-			size[]		= { 250, 250 };
 		};
 		
 		class mil_lakka : base_mil
@@ -227,6 +285,14 @@ class missionSites
 			name		= "Lakka Military Base"; 
 			marker		= "site_mil_lakka";
 			position[]	= { 12831.3, 16712.3, 0 };
+		};
+		
+		class mil_sagonisi : base_mil 
+		{
+			scope		= 1;
+			name		= "Sagonisi Military Base";
+			marker		= "site_mil_sagonisi";
+			position[]	= { 14282.5, 13029, 0 };
 		};
 
 	// --------------------------------------------------------------
@@ -314,11 +380,11 @@ class missionSites
 			angle		= 180;
 		};
 
-		class road_lakka_SW : base_road
+		class road_lakka_S : base_road
 		{
 			scope		= 1;
-			name		= "Road south-north of Lakka"; 
-			marker		= "site_road_lakka_SW";
+			name		= "Road south of Lakka"; 
+			marker		= "site_road_lakka_S";
 			position[]	= { 12026.9, 15132.7, 0 };
 			angle		= 110;
 		};
@@ -339,6 +405,96 @@ class missionSites
 			marker		= "site_road_lakka_E";
 			position[]	= { 12761.6, 15918.1, 0 };
 			angle		= 175;
+		};
+		
+		class road_neochori_WSW : base_road 
+		{
+			scope		= 1;
+			name		= "Road WSW of Neochori";
+			marker		= "site_road_neochori_WSW";
+			position[] 	= { 12129.2, 14095.7, 0 };
+			angle		= 158;
+		};
+
+		class road_katalaki_SW : base_road 
+		{
+			scope		= 1;
+			name		= "Road SW of Katalaki";
+			marker		= "site_road_katalaki_SW";
+			position[]	= { 11485.3, 13417.4, 0 };
+			angle		= 314;
+		};
+
+		class road_katalaki_NNW : base_road 
+		{
+			scope		= 1;
+			name		= "Road NNW of Katalaki";
+			marker		= "site_road_katalaki_NNW";
+			position[]	= { 11561.3, 13913.7, 0 };
+			angle		= 225;
+		};
+
+		class road_katalakibay_SSW : base_road 
+		{
+			scope		= 1;
+			name		= "Road SSW of Katalaki Bay";
+			marker		= "site_road_katalakibay_SSW";
+			position[]	= { 12005.4, 13239, 0 };
+			angle		= 372;
+		};
+		
+		class road_athira_SW : base_road 
+		{
+			scope = 1;
+			name = "Road SW of Athira";
+			marker = "site_road_athira_SW";
+			position[] = { 13433.2, 18065, 0 };
+			angle = 293;
+		};
+
+		class road_factory_SE : base_road 
+		{
+			scope = 1;
+			name = "Road SE of factory";
+			marker = "site_road_factory_SE";
+			position[] = { 14575.9, 18550.4, 0 };
+			angle = 193;
+		};
+
+		class road_frini_SSW : base_road 
+		{
+			scope = 1;
+			name = "Road SSW of Frini";
+			marker = "site_road_frini_SSW";
+			position[] = { 14398, 20296.3, 0 };
+			angle = 296;
+		};
+
+		class road_paros_SW : base_road 
+		{
+			scope = 1;
+			name = "Road SW of Paros";
+			marker = "site_road_paros_SW";
+			position[] = { 20338, 16221.9, 0 };
+			angle = 320;
+		};
+		
+		class road_kalochori_NNW : base_road 
+		{
+			scope = 1;
+			name = "Road NNW of Kalochori";
+			marker = "site_road_kalochori_NNW";
+			position[] = { 21316.8, 16535.1, 0 };
+			angle = 237;
+		};
+
+		class road_nifi_w : base_road 
+		{
+			scope = 1;
+			name = "Road west of Nifi";
+			marker = "site_road_nifi_w";
+			position[] = { 20182.4, 15296.8, 0 };
+			angle = 369;
 		};
 
 	// --------------------------------------------------------------
@@ -403,7 +559,7 @@ class missionSites
 		class comp_08 : base_comp
 		{
 			scope		= 1;
-			name		= "Agios Dionysios"; 
+			name		= "Agios Dionysios Area"; 
 			marker		= "site_comp_08";
 			position[]	= { 9983.2, 16769.3, 0 };
 		};

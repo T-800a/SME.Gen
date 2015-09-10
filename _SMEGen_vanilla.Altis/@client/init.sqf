@@ -49,9 +49,10 @@ if ( _arsenalAccess isEqualTo 1 ) then
 
 
 
-// 1PARA Relic!
-#include <CIM_admin.sqf>
-
-
 waitUntil {sleep 0.1; !(isNull (findDisplay 12))};
 ( ( findDisplay 12 ) displayCtrl 51 ) ctrlAddEventHandler [ "Draw", T8C_fnc_drawMapIcons ];
+
+
+
+// debug add keys for missionSites export
+if !( isMultiplayer ) exitWith { waitUntil { !isNil "t8rmg_var_arraycleanup" }; [] spawn T8C_fnc_debugKeysAdd; [] spawn T8C_fnc_debugSiteMarkers; };
