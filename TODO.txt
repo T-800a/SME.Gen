@@ -1,17 +1,117 @@
 MSKE Sites
 =================================================
 
-class Saint_Phillippe
+class MSKE : base_map
 {
-	name="Saint Phillippe";
-	position[]={4670.27,23497.62};
-	type="NameCity";
+// --------------------------------------------------------------
+// missionSites - TOWNS
+
+	class town_saint_phillippe : base_town
+	{
+		scope		= 1;
+		name		= "Saint Phillippe"; 
+		marker		= "site_town_saint_phillippe";
+		position[]	= { 4670.27, 23497.62, 0 };
+	};
+
+	class town_meaux : base_town
+	{
+		scope		= 1;
+		name		= "Meaux"; 
+		marker		= "site_town_meaux";
+		position[]	= { 4525.65, 22310.91, 0 };
+	};
 	
-	radiusA=100.00;
-	radiusB=200.00;
-	angle=0.000;
+	class town_tyrone : base_town
+	{
+		scope		= 1;
+		name		= "Tyrone"; 
+		marker		= "site_town_tyrone";
+		position[]	= { 4946.39, 21833.59, 0 };
+	};
+	
+	class town_gravette : base_town
+	{
+		scope		= 1;
+		name		= "Gravette"; 
+		marker		= "site_town_gravette";
+		position[]	= { 4145.05, 20594.07, 0 };
+	};
+	
+	class town_montignac : base_town
+	{
+		scope		= 1;
+		name		= "Montignac"; 
+		marker		= "site_town_montignac";
+		position[]	= { 4917.70, 19762.68, 0 };
+	};
+	
+	class town_entredeux : base_town
+	{
+		scope		= 1;
+		name		= "Entre Deux"; 
+		marker		= "site_town_entredeux";
+		position[]	= { 5727.83, 19865.73, 0 };
+	};
+	
+	class town_provins : base_town
+	{
+		scope		= 1;
+		name		= "Provins"; 
+		marker		= "site_town_provins";
+		position[]	= { 5519.60, 18861.61, 0 };
+	};
+	
+	class town_lamentin : base_town
+	{
+		scope		= 1;
+		name		= "Lamentin"; 
+		marker		= "site_town_lamentin";
+		position[]	= { 1290.14, 18747.95, 0 };
+	};
+	
+	class town_morton : base_town
+	{
+		scope		= 1;
+		name		= "Morton"; 
+		marker		= "site_town_morton";
+		position[]	= { 5053.89, 16763.62, 0 };
+	};
+	
+	class town_le_moule : base_town
+	{
+		scope		= 1;
+		name		= "Le Moule"; 
+		marker		= "site_town_le_moule";
+		position[]	= { 2621.75, 18202.06, 0 };
+	};
+	
+	class town_chotain : base_town
+	{
+		scope		= 1;
+		name		= "Chotain"; 
+		marker		= "site_town_chotain";
+		position[]	= { 7063.88, 18820.82, 0 };
+	};
+	
+	class town_laruns : base_town
+	{
+		scope		= 1;
+		name		= "Laruns"; 
+		marker		= "site_town_laruns";
+		position[]	= { 7536.71, 18386.07, 0 };
+	};
+
+	class town_levie : base_town
+	{
+		scope		= 1;
+		name		= "Levie"; 
+		marker		= "site_town_levie";
+		position[]	= { 7539.18, 17501.24, 0 };
+	};
 };
-class everon_airport
+
+class 
 {
 	name="Everon Airport";
 	position[]={4811.59,24353.16};
@@ -21,126 +121,7 @@ class everon_airport
 	radiusB=1100.00;
 	angle=0.000;
 };
-class meaux
-{
-	name="Meaux";
-	position[]={4525.65,22310.91};
-	type="NameCity";
-	
-	radiusA=100.00;
-	radiusB=200.00;
-	angle=0.000;
-};
-class tyrone
-{
-	name="Tyrone";
-	position[]={4946.39,21833.59};
-	type="NameCity";
-	
-	radiusA=121.60;
-	radiusB=110.00;
-	angle=0.000;
-};
-class gravette
-{
-	name="Gravette";
-	position[]={4145.05,20594.07};
-	type="NameCity";
-	
-	radiusA=100.00;
-	radiusB=100.00;
-	angle=0.000;
-};
-class montignac
-{
-	name="Montignac";
-	position[]={4917.70,19762.68};
-	type="NameCityCapital";
-	
-	radiusA=200.00;
-	radiusB=200.00;
-	angle=0.000;
-};
-class EntreDeux
-{
-	name="Entre Deux";
-	position[]={5727.83,19865.73};
-	type="NameCity";
-	
-	radiusA=150.00;
-	radiusB=100.00;
-	angle=0.000;
-};
-class provins
-{
-	name="Provins";
-	position[]={5519.60,18861.61};
-	type="NameCity";
-	
-	radiusA=120.00;
-	radiusB=100.00;
-	angle=0.000;
-};
-class lamentin
-{
-	name="Lamentin";
-	position[]={1290.14,18747.95};
-	type="NameCity";
-	
-	radiusA=200.00;
-	radiusB=250.00;
-	angle=0.000;
-};
-class morton
-{
-	name="Morton";
-	position[]={5053.89,16763.62};
-	type="NameCity";
-	
-	radiusA=300.00;
-	radiusB=250.00;
-	angle=0.000;
-};
-class le_moule
-{
-	name="Le Moule";
-	position[]={2621.75,18202.06};
-	type="NameCity";
-	
-	radiusA=100.00;
-	radiusB=100.00;
-	angle=0.000;
-};
-class chotain
-{
-	name="Chotain";
-	position[]={7063.88,18820.82};
-	type="NameCity";
-	
-	radiusA=100.00;
-	radiusB=100.00;
-	angle=0.000;
-};
-class laruns
-{
-	name="Laruns";
-	position[]={7536.71,18386.07};
-	type="NameCity";
-	
-	radiusA=49.81;
-	radiusB=50.00;
-	angle=0.000;
-};
-class levie
-{
-	name="Levie";
-	position[]={7539.18,17501.24};
-	type="NameCity";
-	
-	radiusA=110.00;
-	radiusB=100.00;
-	angle=0.000;
-};
+
 class regina
 {
 	name="Regina";

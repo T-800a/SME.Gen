@@ -38,6 +38,8 @@ class cfgFunctions
 			addFunction(updateArsenal);
 			addFunction(handleReward);
 			addFunction(debug);
+			addFunction(debugKeysAdd);
+			addFunction(debugKeysPress);
 			addFunction(welcome);
 		};
 	};

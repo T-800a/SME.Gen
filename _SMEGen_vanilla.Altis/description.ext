@@ -74,15 +74,15 @@ class Header
 
 
 // include mission parameter
-#include <params.hpp>
+#include <config\params.hpp>
 
 
 // include cfgFunctions
-#include <cfgFunctions.hpp>
+#include <config\cfgFunctions.hpp>
 
 
 // include mission config
-#include <@randomMission\cfgRandomMissions.hpp>
+#include <config\cfgRandomMissions.hpp>
 
 
 class CfgRemoteExec
