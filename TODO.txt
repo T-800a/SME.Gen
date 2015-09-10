@@ -1,4 +1,4 @@
-MSKE Dörfer
+MSKE Sites
 =================================================
 
 class Saint_Phillippe
@@ -221,496 +221,9 @@ class radio
 	radiusB=50.00;
 	angle=0.000;
 };
-class DefaultKeyPoint1
-{
-	name="";
-	position[]={3667.22,18293.64};
-	type="VegetationFir";
-	
-	radiusA=600.00;
-	radiusB=400.00;
-	angle=0.000;
-};
-class DefaultKeyPoint2
-{
-	name="";
-	position[]={3455.84,18994.78};
-	type="VegetationFir";
-	
-	radiusA=500.00;
-	radiusB=400.00;
-	angle=0.000;
-};
-class DefaultKeyPoint3
-{
-	name="";
-	position[]={4066.79,19536.15};
-	type="VegetationFir";
-	
-	radiusA=681.71;
-	radiusB=600.00;
-	angle=0.000;
-};
-class DefaultKeyPoint4
-{
-	name="";
-	position[]={2811.65,18662.09};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint5
-{
-	name="";
-	position[]={2479.00,19778.09};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=800.00;
-	angle=0.000;
-};
-class DefaultKeyPoint6
-{
-	name="";
-	position[]={4102.62,20202.93};
-	type="VegetationFir";
-	
-	radiusA=300.00;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint7
-{
-	name="";
-	position[]={4214.15,21363.97};
-	type="VegetationFir";
-	
-	radiusA=436.29;
-	radiusB=800.00;
-	angle=0.000;
-};
-class DefaultKeyPoint8
-{
-	name="";
-	position[]={4990.36,21336.87};
-	type="VegetationFir";
-	
-	radiusA=436.29;
-	radiusB=800.00;
-	angle=0.000;
-};
-class DefaultKeyPoint9
-{
-	name="";
-	position[]={5053.74,22358.56};
-	type="VegetationFir";
-	
-	radiusA=300.00;
-	radiusB=550.00;
-	angle=0.000;
-};
-class DefaultKeyPoint10
-{
-	name="";
-	position[]={4312.48,23004.24};
-	type="VegetationFir";
-	
-	radiusA=436.29;
-	radiusB=700.00;
-	angle=0.000;
-};
-class DefaultKeyPoint11
-{
-	name="";
-	position[]={5402.26,23353.63};
-	type="VegetationFir";
-	
-	radiusA=300.00;
-	radiusB=260.00;
-	angle=0.000;
-};
-class DefaultKeyPoint12
-{
-	name="";
-	position[]={5109.59,23513.12};
-	type="VegetationFir";
-	
-	radiusA=250.00;
-	radiusB=228.56;
-	angle=0.000;
-};
-class DefaultKeyPoint13
-{
-	name="";
-	position[]={5253.61,23850.70};
-	type="VegetationFir";
-	
-	radiusA=300.00;
-	radiusB=400.00;
-	angle=0.000;
-};
-class DefaultKeyPoint14
-{
-	name="";
-	position[]={5069.33,24456.17};
-	type="VegetationFir";
-	
-	radiusA=280.00;
-	radiusB=500.00;
-	angle=0.000;
-};
-class DefaultKeyPoint15
-{
-	name="";
-	position[]={4456.14,24659.56};
-	type="VegetationFir";
-	
-	radiusA=200.00;
-	radiusB=300.00;
-	angle=0.000;
-};
-class DefaultKeyPoint16
-{
-	name="";
-	position[]={6560.27,20714.63};
-	type="VegetationFir";
-	
-	radiusA=545.37;
-	radiusB=750.00;
-	angle=0.000;
-};
-class DefaultKeyPoint17
-{
-	name="";
-	position[]={6419.07,19540.28};
-	type="VegetationFir";
-	
-	radiusA=545.37;
-	radiusB=450.00;
-	angle=0.000;
-};
-class DefaultKeyPoint18
-{
-	name="";
-	position[]={6573.01,18953.54};
-	type="VegetationFir";
-	
-	radiusA=600.00;
-	radiusB=350.00;
-	angle=0.000;
-};
-class DefaultKeyPoint19
-{
-	name="";
-	position[]={7162.78,18454.51};
-	type="VegetationFir";
-	
-	radiusA=500.00;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint20
-{
-	name="";
-	position[]={4726.26,18667.88};
-	type="VegetationFir";
-	
-	radiusA=800.00;
-	radiusB=400.00;
-	angle=0.000;
-};
-class DefaultKeyPoint21
-{
-	name="";
-	position[]={4556.83,17713.49};
-	type="VegetationFir";
-	
-	radiusA=681.71;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint22
-{
-	name="";
-	position[]={3809.79,16996.70};
-	type="VegetationFir";
-	
-	radiusA=600.00;
-	radiusB=600.00;
-	angle=0.000;
-};
-class DefaultKeyPoint23
-{
-	name="";
-	position[]={3026.88,17318.54};
-	type="VegetationFir";
-	
-	radiusA=700.00;
-	radiusB=600.00;
-	angle=0.000;
-};
-class DefaultKeyPoint24
-{
-	name="";
-	position[]={1856.80,17888.13};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=500.00;
-	angle=0.000;
-};
-class DefaultKeyPoint25
-{
-	name="";
-	position[]={2660.39,17912.96};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=285.70;
-	angle=0.000;
-};
-class DefaultKeyPoint26
-{
-	name="";
-	position[]={2240.45,18460.81};
-	type="VegetationFir";
-	
-	radiusA=545.37;
-	radiusB=450.00;
-	angle=0.000;
-};
-class DefaultKeyPoint27
-{
-	name="";
-	position[]={4522.70,16485.24};
-	type="VegetationFir";
-	
-	radiusA=300.00;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint28
-{
-	name="";
-	position[]={5306.04,17316.97};
-	type="VegetationFir";
-	
-	radiusA=681.71;
-	radiusB=600.00;
-	angle=0.000;
-};
-class DefaultKeyPoint29
-{
-	name="";
-	position[]={6051.00,17957.18};
-	type="VegetationFir";
-	
-	radiusA=800.00;
-	radiusB=700.00;
-	angle=0.000;
-};
-class DefaultKeyPoint30
-{
-	name="";
-	position[]={6848.52,18042.44};
-	type="VegetationFir";
-	
-	radiusA=350.00;
-	radiusB=350.00;
-	angle=0.000;
-};
-class DefaultKeyPoint31
-{
-	name="";
-	position[]={7390.47,17915.23};
-	type="VegetationFir";
-	
-	radiusA=436.29;
-	radiusB=350.00;
-	angle=0.000;
-};
-class DefaultKeyPoint32
-{
-	name="";
-	position[]={7856.95,17899.75};
-	type="VegetationFir";
-	
-	radiusA=350.00;
-	radiusB=240.00;
-	angle=0.000;
-};
-class DefaultKeyPoint33
-{
-	name="";
-	position[]={5595.40,16749.43};
-	type="VegetationFir";
-	
-	radiusA=200.00;
-	radiusB=150.00;
-	angle=0.000;
-};
-class DefaultKeyPoint34
-{
-	name="";
-	position[]={7223.65,16983.86};
-	type="VegetationFir";
-	
-	radiusA=500.00;
-	radiusB=800.00;
-	angle=0.000;
-};
-class DefaultKeyPoint35
-{
-	name="";
-	position[]={7780.29,16467.14};
-	type="VegetationFir";
-	
-	radiusA=200.00;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint36
-{
-	name="";
-	position[]={7601.85,16001.37};
-	type="VegetationFir";
-	
-	radiusA=450.00;
-	radiusB=446.41;
-	angle=0.000;
-};
-class DefaultKeyPoint37
-{
-	name="";
-	position[]={9056.04,17421.92};
-	type="VegetationFir";
-	
-	radiusA=250.00;
-	radiusB=300.00;
-	angle=0.000;
-};
-class DefaultKeyPoint38
-{
-	name="";
-	position[]={8890.65,16963.53};
-	type="VegetationFir";
-	
-	radiusA=450.00;
-	radiusB=500.00;
-	angle=0.000;
-};
-class DefaultKeyPoint39
-{
-	name="";
-	position[]={9187.17,16171.97};
-	type="VegetationFir";
-	
-	radiusA=800.00;
-	radiusB=550.00;
-	angle=0.000;
-};
-class DefaultKeyPoint40
-{
-	name="";
-	position[]={8401.54,15864.80};
-	type="VegetationFir";
-	
-	radiusA=200.00;
-	radiusB=871.89;
-	angle=0.000;
-};
-class DefaultKeyPoint41
-{
-	name="";
-	position[]={8881.49,14887.87};
-	type="VegetationFir";
-	
-	radiusA=250.00;
-	radiusB=558.01;
-	angle=0.000;
-};
-class DefaultKeyPoint42
-{
-	name="";
-	position[]={9157.46,14324.56};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=558.01;
-	angle=0.000;
-};
-class DefaultKeyPoint43
-{
-	name="";
-	position[]={9906.01,15092.02};
-	type="VegetationFir";
-	
-	radiusA=600.00;
-	radiusB=558.01;
-	angle=0.000;
-};
-class DefaultKeyPoint44
-{
-	name="";
-	position[]={7536.41,14515.49};
-	type="VegetationFir";
-	
-	radiusA=545.37;
-	radiusB=250.00;
-	angle=0.000;
-};
-class DefaultKeyPoint45
-{
-	name="";
-	position[]={7913.85,14653.40};
-	type="VegetationFir";
-	
-	radiusA=300.00;
-	radiusB=357.13;
-	angle=0.000;
-};
-class DefaultKeyPoint46
-{
-	name="";
-	position[]={7504.46,15125.66};
-	type="VegetationFir";
-	
-	radiusA=436.29;
-	radiusB=400.00;
-	angle=0.000;
-};
-class DefaultKeyPoint47
-{
-	name="";
-	position[]={6871.51,15472.14};
-	type="VegetationFir";
-	
-	radiusA=436.29;
-	radiusB=400.00;
-	angle=0.000;
-};
-class DefaultKeyPoint48
-{
-	name="";
-	position[]={6867.63,14827.57};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=300.00;
-	angle=0.000;
-};
-class DefaultKeyPoint49
-{
-	name="";
-	position[]={4604.95,21802.18};
-	type="VegetationFir";
-	
-	radiusA=250.00;
-	radiusB=200.00;
-	angle=0.000;
-};
+
+
+
 class DefaultKeyPoint50
 {
 	name="Military Train Center";
@@ -791,16 +304,7 @@ class DefaultKeyPoint55
 	radiusB=59.65;
 	angle=0.000;
 };
-class DefaultKeyPoint56
-{
-	name="Elecante";
-	position[]={19992.02,19407.99};
-	type="Hill";
-	
-	radiusA=100.00;
-	radiusB=100.00;
-	angle=0.000;
-};
+
 class DefaultKeyPoint57
 {
 	name="Tormes";
@@ -821,6 +325,7 @@ class DefaultKeyPoint58
 	radiusB=15.64;
 	angle=0.000;
 };
+
 class DefaultKeyPoint59
 {
 	name="Boulade";
@@ -841,16 +346,7 @@ class DefaultKeyPoint60
 	radiusB=100.00;
 	angle=0.000;
 };
-class DefaultKeyPoint61
-{
-	name="Saint Bieuc";
-	position[]={20908.40,18869.27};
-	type="Hill";
-	
-	radiusA=100.00;
-	radiusB=200.00;
-	angle=0.000;
-};
+
 class DefaultKeyPoint62
 {
 	name="Internia";
@@ -871,16 +367,7 @@ class DefaultKeyPoint63
 	radiusB=350.00;
 	angle=0.000;
 };
-class DefaultKeyPoint64
-{
-	name="Porvoo";
-	position[]={20674.64,17475.26};
-	type="Hill";
-	
-	radiusA=50.00;
-	radiusB=50.00;
-	angle=0.000;
-};
+
 class DefaultKeyPoint65
 {
 	name="Vadora";
@@ -951,16 +438,7 @@ class DefaultKeyPoint71
 	radiusB=250.00;
 	angle=0.000;
 };
-class DefaultKeyPoint72
-{
-	name="";
-	position[]={17561.10,15220.01};
-	type="ViewPoint";
-	
-	radiusA=37.70;
-	radiusB=38.18;
-	angle=0.000;
-};
+
 class DefaultKeyPoint73
 {
 	name="Meridan";
@@ -981,376 +459,7 @@ class DefaultKeyPoint74
 	radiusB=80.00;
 	angle=0.000;
 };
-class DefaultKeyPoint75
-{
-	name="Lebrija";
-	position[]={15603.27,15339.25};
-	type="Hill";
-	
-	radiusA=100.00;
-	radiusB=100.00;
-	angle=0.000;
-};
-class DefaultKeyPoint76
-{
-	name="";
-	position[]={15997.84,14882.79};
-	type="ViewPoint";
-	
-	radiusA=50.00;
-	radiusB=50.00;
-	angle=0.000;
-};
-class DefaultKeyPoint77
-{
-	name="";
-	position[]={15006.42,16525.18};
-	type="VegetationBroadleaf";
-	
-	radiusA=179.78;
-	radiusB=182.05;
-	angle=0.000;
-};
-class DefaultKeyPoint78
-{
-	name="";
-	position[]={16401.92,17430.13};
-	type="VegetationBroadleaf";
-	
-	radiusA=438.90;
-	radiusB=444.46;
-	angle=0.000;
-};
-class DefaultKeyPoint79
-{
-	name="";
-	position[]={16408.69,15652.24};
-	type="VegetationFir";
-	
-	radiusA=700.00;
-	radiusB=1000.00;
-	angle=0.000;
-};
-class DefaultKeyPoint80
-{
-	name="";
-	position[]={17610.24,14132.92};
-	type="VegetationFir";
-	
-	radiusA=438.90;
-	radiusB=444.46;
-	angle=0.000;
-};
-class DefaultKeyPoint81
-{
-	name="";
-	position[]={18468.79,14389.46};
-	type="VegetationFir";
-	
-	radiusA=500.00;
-	radiusB=500.00;
-	angle=0.000;
-};
-class DefaultKeyPoint82
-{
-	name="";
-	position[]={20189.37,15773.03};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint83
-{
-	name="";
-	position[]={20223.97,16450.00};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=500.00;
-	angle=0.000;
-};
-class DefaultKeyPoint84
-{
-	name="";
-	position[]={20503.58,16556.76};
-	type="VegetationFir";
-	
-	radiusA=143.82;
-	radiusB=145.64;
-	angle=0.000;
-};
-class DefaultKeyPoint85
-{
-	name="";
-	position[]={20866.66,16022.79};
-	type="VegetationFir";
-	
-	radiusA=179.78;
-	radiusB=182.05;
-	angle=0.000;
-};
-class DefaultKeyPoint86
-{
-	name="";
-	position[]={18656.78,17514.17};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint87
-{
-	name="";
-	position[]={18951.57,17629.52};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint88
-{
-	name="";
-	position[]={19241.70,19029.82};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint89
-{
-	name="";
-	position[]={19745.47,19396.52};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint90
-{
-	name="";
-	position[]={19750.81,19677.77};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint91
-{
-	name="";
-	position[]={20233.20,19476.62};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint92
-{
-	name="";
-	position[]={20840.22,19727.61};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint93
-{
-	name="";
-	position[]={21009.75,20854.13};
-	type="VegetationBroadleaf";
-	
-	radiusA=400.00;
-	radiusB=350.00;
-	angle=0.000;
-};
-class DefaultKeyPoint94
-{
-	name="";
-	position[]={21414.20,19037.21};
-	type="VegetationFir";
-	
-	radiusA=179.78;
-	radiusB=182.05;
-	angle=0.000;
-};
-class DefaultKeyPoint95
-{
-	name="";
-	position[]={21915.07,18431.13};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint96
-{
-	name="";
-	position[]={22192.56,18442.52};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint97
-{
-	name="";
-	position[]={21594.45,18330.02};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint98
-{
-	name="";
-	position[]={22384.81,18006.76};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint99
-{
-	name="";
-	position[]={23589.33,19581.25};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint100
-{
-	name="";
-	position[]={24121.56,19543.87};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint101
-{
-	name="";
-	position[]={23683.67,19269.74};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint102
-{
-	name="";
-	position[]={23815.39,18905.21};
-	type="VegetationFir";
-	
-	radiusA=400.00;
-	radiusB=200.00;
-	angle=0.000;
-};
-class DefaultKeyPoint103
-{
-	name="";
-	position[]={23147.90,17646.77};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=227.57;
-	angle=0.000;
-};
-class DefaultKeyPoint104
-{
-	name="";
-	position[]={22407.39,17112.74};
-	type="VegetationFir";
-	
-	radiusA=224.72;
-	radiusB=700.00;
-	angle=0.000;
-};
-class DefaultKeyPoint105
-{
-	name="";
-	position[]={23003.58,16893.69};
-	type="VegetationFir";
-	
-	radiusA=179.78;
-	radiusB=182.05;
-	angle=0.000;
-};
-class DefaultKeyPoint106
-{
-	name="";
-	position[]={15195.00,21952.30};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint107
-{
-	name="";
-	position[]={15428.19,21528.65};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint108
-{
-	name="";
-	position[]={15235.94,20980.38};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint109
-{
-	name="";
-	position[]={16006.72,20873.58};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint110
-{
-	name="";
-	position[]={16198.97,20156.21};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
-class DefaultKeyPoint111
-{
-	name="";
-	position[]={15798.45,19684.48};
-	type="VegetationFir";
-	
-	radiusA=280.89;
-	radiusB=284.46;
-	angle=0.000;
-};
+
 class DefaultKeyPoint112
 {
 	name="Saint Louis";
@@ -1511,376 +620,239 @@ class DefaultKeyPoint127
 	radiusB=59.73;
 	angle=0.000;
 };
-class DefaultKeyPoint128
-{
-	name="";
-	position[]={5470.16,4461.67};
-	type="VegetationBroadleaf";
-	
-	radiusA=300.00;
-	radiusB=300.00;
-	angle=0.000;
-};
-class DefaultKeyPoint129
-{
-	name="";
-	position[]={4851.69,4754.86};
-	type="VegetationBroadleaf";
-	
-	radiusA=350.00;
-	radiusB=250.00;
-	angle=0.000;
-};
-class DefaultKeyPoint130
-{
-	name="";
-	position[]={24209.91,10567.67};
-	type="NameCity";
-	
-	radiusA=30.89;
-	radiusB=19.70;
-	angle=0.000;
-};
-class DefaultKeyPoint131
-{
-	name="";
-	position[]={23976.92,10232.77};
-	type="NameCity";
-	
-	radiusA=48.27;
-	radiusB=30.79;
-	angle=0.000;
-};
-class DefaultKeyPoint132
-{
-	name="";
-	position[]={23524.36,10033.21};
-	type="NameCity";
-	
-	radiusA=30.89;
-	radiusB=19.70;
-	angle=0.000;
-};
-class DefaultKeyPoint133
-{
-	name="";
-	position[]={23272.58,9703.88};
-	type="NameCity";
-	
-	radiusA=38.61;
-	radiusB=24.63;
-	angle=0.000;
-};
-class DefaultKeyPoint134
-{
-	name="";
-	position[]={22550.53,9433.92};
-	type="NameCity";
-	
-	radiusA=75.42;
-	radiusB=48.11;
-	angle=0.000;
-};
-class DefaultKeyPoint135
-{
-	name="";
-	position[]={22411.19,10035.61};
-	type="NameCity";
-	
-	radiusA=94.28;
-	radiusB=60.13;
-	angle=0.000;
-};
-class DefaultKeyPoint136
-{
-	name="";
-	position[]={22023.55,9446.09};
-	type="NameCity";
-	
-	radiusA=184.13;
-	radiusB=117.45;
-	angle=0.000;
-};
-class DefaultKeyPoint137
-{
-	name="";
-	position[]={22263.41,8611.73};
-	type="NameCity";
-	
-	radiusA=94.28;
-	radiusB=60.13;
-	angle=0.000;
-};
-class DefaultKeyPoint138
-{
-	name="";
-	position[]={21287.81,9302.57};
-	type="NameCity";
-	
-	radiusA=75.42;
-	radiusB=48.11;
-	angle=0.000;
-};
-class DefaultKeyPoint140
-{
-	name="";
-	position[]={20303.14,4917.03};
-	type="NameCity";
-	
-	radiusA=287.70;
-	radiusB=183.52;
-	angle=0.000;
-};
-class DefaultKeyPoint141
-{
-	name="";
-	position[]={18842.92,6202.92};
-	type="NameCity";
-	
-	radiusA=147.31;
-	radiusB=93.96;
-	angle=0.000;
-};
-class DefaultKeyPoint142
-{
-	name="";
-	position[]={19643.72,6768.45};
-	type="NameCity";
-	
-	radiusA=230.16;
-	radiusB=146.81;
-	angle=0.000;
-};
-class DefaultKeyPoint143
-{
-	name="";
-	position[]={19048.98,8062.23};
-	type="NameCity";
-	
-	radiusA=94.28;
-	radiusB=60.13;
-	angle=0.000;
-};
-class DefaultKeyPoint144
-{
-	name="";
-	position[]={18429.45,6816.71};
-	type="NameCity";
-	
-	radiusA=75.42;
-	radiusB=48.11;
-	angle=0.000;
-};
-class DefaultKeyPoint145
-{
-	name="";
-	position[]={16081.08,6832.01};
-	type="NameCity";
-	
-	radiusA=147.31;
-	radiusB=93.96;
-	angle=0.000;
-};
-class DefaultKeyPoint146
-{
-	name="";
-	position[]={15497.08,6943.36};
-	type="BorderCrossing";
-	
-	radiusA=147.31;
-	radiusB=93.96;
-	angle=0.000;
-};
-class DefaultKeyPoint147
-{
-	name="";
-	position[]={15041.50,7338.70};
-	type="NameCity";
-	
-	radiusA=147.31;
-	radiusB=93.96;
-	angle=0.000;
-};
-class DefaultKeyPoint148
-{
-	name="";
-	position[]={15513.02,5660.20};
-	type="NameCity";
-	
-	radiusA=117.84;
-	radiusB=75.17;
-	angle=0.000;
-};
-class DefaultKeyPoint149
-{
-	name="";
-	position[]={17358.52,3471.82};
-	type="NameCity";
-	
-	radiusA=449.53;
-	radiusB=286.74;
-	angle=0.000;
-};
-class DefaultKeyPoint150
-{
-	name="";
-	position[]={17186.94,2906.50};
-	type="NameCity";
-	
-	radiusA=230.16;
-	radiusB=146.81;
-	angle=0.000;
-};
-class DefaultKeyPoint151
-{
-	name="";
-	position[]={18103.73,3374.30};
-	type="NameCity";
-	
-	radiusA=449.53;
-	radiusB=286.74;
-	angle=0.000;
-};
-class DefaultKeyPoint152
-{
-	name="";
-	position[]={19460.61,3569.22};
-	type="NameCity";
-	
-	radiusA=230.16;
-	radiusB=146.81;
-	angle=0.000;
-};
-class DefaultKeyPoint153
-{
-	name="";
-	position[]={19909.20,5984.10};
-	type="NameLocal";
-	
-	radiusA=230.16;
-	radiusB=146.81;
-	angle=0.000;
-};
-class DefaultKeyPoint154
-{
-	name="";
-	position[]={24671.94,10530.29};
-	type="NameMarine";
-	
-	radiusA=75.42;
-	radiusB=48.11;
-	angle=0.000;
-};
-class DefaultKeyPoint155
-{
-	name="";
-	position[]={20572.77,8095.16};
-	type="NameLocal";
-	
-	radiusA=94.28;
-	radiusB=60.13;
-	angle=0.000;
-};
-class DefaultKeyPoint156
-{
-	name="";
-	position[]={15678.56,7283.56};
-	type="VegetationFir";
-	
-	radiusA=184.13;
-	radiusB=117.45;
-	angle=0.000;
-};
-class DefaultKeyPoint157
-{
-	name="";
-	position[]={16185.69,7350.69};
-	type="VegetationFir";
-	
-	radiusA=359.63;
-	radiusB=229.39;
-	angle=0.000;
-};
-class DefaultKeyPoint158
-{
-	name="";
-	position[]={16883.13,7249.87};
-	type="VegetationFir";
-	
-	radiusA=359.63;
-	radiusB=229.39;
-	angle=0.000;
-};
-class DefaultKeyPoint159
-{
-	name="";
-	position[]={16654.82,6419.65};
-	type="VegetationFir";
-	
-	radiusA=702.39;
-	radiusB=448.04;
-	angle=0.000;
-};
-class DefaultKeyPoint160
-{
-	name="";
-	position[]={17863.83,5527.73};
-	type="VegetationFir";
-	
-	radiusA=449.53;
-	radiusB=286.74;
-	angle=0.000;
-};
-class DefaultKeyPoint161
-{
-	name="";
-	position[]={18953.14,4761.98};
-	type="VegetationFir";
-	
-	radiusA=702.39;
-	radiusB=448.04;
-	angle=0.000;
-};
-class DefaultKeyPoint162
-{
-	name="";
-	position[]={20876.61,8741.09};
-	type="VegetationFir";
-	
-	radiusA=702.39;
-	radiusB=448.04;
-	angle=0.000;
-};
-class DefaultKeyPoint163
-{
-	name="";
-	position[]={23297.11,10183.49};
-	type="VegetationFir";
-	
-	radiusA=449.53;
-	radiusB=286.74;
-	angle=0.000;
-};
-class DefaultKeyPoint164
-{
-	name="";
-	position[]={19245.80,6699.52};
-	type="VegetationFir";
-	
-	radiusA=359.62;
-	radiusB=229.39;
-	angle=0.000;
-};
-class DefaultKeyPoint165
-{
-	name="";
-	position[]={17861.78,6380.44};
-	type="Hill";
-	
-	radiusA=147.31;
-	radiusB=93.96;
-	angle=0.000;
-};
+
+		class DefaultKeyPoint130
+		{
+			name="";
+			position[]={24209.91,10567.67};
+			type="NameCity";
+			
+			radiusA=30.89;
+			radiusB=19.70;
+			angle=0.000;
+		};
+		class DefaultKeyPoint131
+		{
+			name="";
+			position[]={23976.92,10232.77};
+			type="NameCity";
+			
+			radiusA=48.27;
+			radiusB=30.79;
+			angle=0.000;
+		};
+		class DefaultKeyPoint132
+		{
+			name="";
+			position[]={23524.36,10033.21};
+			type="NameCity";
+			
+			radiusA=30.89;
+			radiusB=19.70;
+			angle=0.000;
+		};
+		class DefaultKeyPoint133
+		{
+			name="";
+			position[]={23272.58,9703.88};
+			type="NameCity";
+			
+			radiusA=38.61;
+			radiusB=24.63;
+			angle=0.000;
+		};
+		class DefaultKeyPoint134
+		{
+			name="";
+			position[]={22550.53,9433.92};
+			type="NameCity";
+			
+			radiusA=75.42;
+			radiusB=48.11;
+			angle=0.000;
+		};
+		class DefaultKeyPoint135
+		{
+			name="";
+			position[]={22411.19,10035.61};
+			type="NameCity";
+			
+			radiusA=94.28;
+			radiusB=60.13;
+			angle=0.000;
+		};
+		class DefaultKeyPoint136
+		{
+			name="";
+			position[]={22023.55,9446.09};
+			type="NameCity";
+			
+			radiusA=184.13;
+			radiusB=117.45;
+			angle=0.000;
+		};
+		class DefaultKeyPoint137
+		{
+			name="";
+			position[]={22263.41,8611.73};
+			type="NameCity";
+			
+			radiusA=94.28;
+			radiusB=60.13;
+			angle=0.000;
+		};
+		class DefaultKeyPoint138
+		{
+			name="";
+			position[]={21287.81,9302.57};
+			type="NameCity";
+			
+			radiusA=75.42;
+			radiusB=48.11;
+			angle=0.000;
+		};
+		class DefaultKeyPoint140
+		{
+			name="";
+			position[]={20303.14,4917.03};
+			type="NameCity";
+			
+			radiusA=287.70;
+			radiusB=183.52;
+			angle=0.000;
+		};
+		class DefaultKeyPoint141
+		{
+			name="";
+			position[]={18842.92,6202.92};
+			type="NameCity";
+			
+			radiusA=147.31;
+			radiusB=93.96;
+			angle=0.000;
+		};
+		class DefaultKeyPoint142
+		{
+			name="";
+			position[]={19643.72,6768.45};
+			type="NameCity";
+			
+			radiusA=230.16;
+			radiusB=146.81;
+			angle=0.000;
+		};
+		class DefaultKeyPoint143
+		{
+			name="";
+			position[]={19048.98,8062.23};
+			type="NameCity";
+			
+			radiusA=94.28;
+			radiusB=60.13;
+			angle=0.000;
+		};
+		class DefaultKeyPoint144
+		{
+			name="";
+			position[]={18429.45,6816.71};
+			type="NameCity";
+			
+			radiusA=75.42;
+			radiusB=48.11;
+			angle=0.000;
+		};
+		class DefaultKeyPoint145
+		{
+			name="";
+			position[]={16081.08,6832.01};
+			type="NameCity";
+			
+			radiusA=147.31;
+			radiusB=93.96;
+			angle=0.000;
+		};
+		class DefaultKeyPoint146
+		{
+			name="";
+			position[]={15497.08,6943.36};
+			type="BorderCrossing";
+			
+			radiusA=147.31;
+			radiusB=93.96;
+			angle=0.000;
+		};
+		class DefaultKeyPoint147
+		{
+			name="";
+			position[]={15041.50,7338.70};
+			type="NameCity";
+			
+			radiusA=147.31;
+			radiusB=93.96;
+			angle=0.000;
+		};
+		class DefaultKeyPoint148
+		{
+			name="";
+			position[]={15513.02,5660.20};
+			type="NameCity";
+			
+			radiusA=117.84;
+			radiusB=75.17;
+			angle=0.000;
+		};
+		class DefaultKeyPoint149
+		{
+			name="";
+			position[]={17358.52,3471.82};
+			type="NameCity";
+			
+			radiusA=449.53;
+			radiusB=286.74;
+			angle=0.000;
+		};
+		class DefaultKeyPoint150
+		{
+			name="";
+			position[]={17186.94,2906.50};
+			type="NameCity";
+			
+			radiusA=230.16;
+			radiusB=146.81;
+			angle=0.000;
+		};
+		class DefaultKeyPoint151
+		{
+			name="";
+			position[]={18103.73,3374.30};
+			type="NameCity";
+			
+			radiusA=449.53;
+			radiusB=286.74;
+			angle=0.000;
+		};
+		class DefaultKeyPoint152
+		{
+			name="";
+			position[]={19460.61,3569.22};
+			type="NameCity";
+			
+			radiusA=230.16;
+			radiusB=146.81;
+			angle=0.000;
+		};
+
+		class DefaultKeyPoint154
+		{
+			name="";
+			position[]={24671.94,10530.29};
+			type="NameMarine";
+			
+			radiusA=75.42;
+			radiusB=48.11;
+			angle=0.000;
+		};
+
 class DefaultKeyPoint166
 {
 	name="Mil Air";
