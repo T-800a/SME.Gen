@@ -29,7 +29,7 @@ class missionTypes
 		{
 			class win
 			{
-				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) < 5 )";
+				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 5 )";
 				function	= "BIS_fnc_taskSetState";
 			};
 		};
@@ -217,6 +217,22 @@ class missionTypes
 		{
 			class group01 : base_defend_small { scope = 1; };
 			class group02 : base_defendBase_small { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
+	
+	class roadblockHouse : base_type
+	{
+		scope		= 1;
+		name		= "Roadblock";
+		task		= "Clear the Roadblock";
+		taskShort	= "Clear Roadblock";
+
+		class groups : groups
+		{
+			class group01 : base_defend_small { scope = 1; };
+			class group02 : base_garrison { scope = 1; };
 			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};

@@ -67,6 +67,7 @@ class cfgFunctions
 			addFunction(createRadioTower);
 			addFunction(createRecoverUGV);
 			addFunction(createRoadblock);
+			addFunction(createRoadblockHouse);
 			addFunction(debug);
 			addFunction(findObjectivePos);
 			addFunction(handleConditions);

@@ -92,6 +92,11 @@ switch ( _type ) do
 		[ _sitePos, _siteAngle ] call T8RMG_fnc_createRoadblock;
 	};
 	
+	case "roadblockHouse":
+	{
+		[ _sitePos, _siteAngle ] call T8RMG_fnc_createRoadblockHouse;
+	};	
+	
 	case "mortars":
 	{
 		private [ "_obj01", "_obj02" ];

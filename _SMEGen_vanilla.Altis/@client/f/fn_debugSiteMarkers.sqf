@@ -22,9 +22,10 @@ private [ "_arraySites" ];
 _arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
 
 {
-	private [ "_siteMkr", "_sitePos", "_siteName", "_siteType", "_siteAngle", "_icon", "_color" ];
+	private [ "_siteMkr", "_sitePos", "_siteSize", "_siteName", "_siteType", "_siteAngle", "_icon", "_color" ];
 	_siteMkr			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> configName _x >> "marker" );
 	_sitePos			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> configName _x >> "position" );
+	_siteSize			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> configName _x >> "size" );
 	_siteName			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> configName _x >> "name" );
 	_siteType			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> configName _x >> "type" );
 	_siteAngle			= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> configName _x >> "angle" );
@@ -40,6 +41,10 @@ _arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionCon
 	};
 	
 	[ _siteMkr, _sitePos, _siteName, [1,1], ( _siteAngle + 90 ), "ICON", _icon, _color, 1 ] call T8RMG_fnc_createMarker;
+	
+	_siteMkr = format [ "debug_%1_%2", _siteMkr, random time ];
+	[ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8RMG_fnc_createMarker;
+	
 	
 	false
 } count _arraySites; 

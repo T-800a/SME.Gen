@@ -18,6 +18,10 @@ if ( worldName isEqualTo "Altis" ) then {
 #include <sites\altis_mainbase.sqf>
 };
 
+if ( worldName isEqualTo "mske" ) then {
+#include <sites\mske_mainbase.sqf>
+};
+
 T8S_var_initDONE = true;
 
 // Remove DiscoBodies
