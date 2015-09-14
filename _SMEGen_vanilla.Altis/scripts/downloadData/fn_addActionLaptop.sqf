@@ -42,7 +42,7 @@
 */
 
 
-T8L_var_fileSize = 102048;  							// Filesize ... smaller files will take shorter time to download!
+T8L_var_fileSize = 154056;  							// Filesize ... smaller files will take shorter time to download!
 
 T8L_var_TLine01 = localize ( "STR_downloadData_01" ); 	// download aborted
 T8L_var_TLine02 = localize ( "STR_downloadData_02" ); 	// download already in progress by someone else

@@ -30,8 +30,8 @@ if ( isMultiplayer ) then
 {
 	// clear players inventory
 	removeVest player;
+	removeHeadgear player;	
 	removeBackpack player;
 	removeAllWeapons player:
 	removeAllItems player;
-	removeAllAssignedItems player;
 };

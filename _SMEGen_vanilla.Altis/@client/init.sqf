@@ -45,12 +45,13 @@ if ( _arsenalAccess isEqualTo 1 ) then
 	[ "AmmoboxInit", mission_obj_arsenal_post ] spawn BIS_fnc_arsenal;
 };
 
-[] spawn T8C_fnc_welcome;
-
 
 // add key presses
 [] spawn T8C_fnc_keysAdd;
 
+
+// add diary entries
+[] call T8C_fnc_addDiary;
 
 waitUntil {sleep 0.1; !(isNull (findDisplay 12))};
 ( ( findDisplay 12 ) displayCtrl 51 ) ctrlAddEventHandler [ "Draw", T8C_fnc_drawMapIcons ];

@@ -43,7 +43,7 @@ _arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionCon
 	[ _siteMkr, _sitePos, _siteName, [1,1], ( _siteAngle + 90 ), "ICON", _icon, _color, 1 ] call T8RMG_fnc_createMarker;
 	
 	_siteMkr = format [ "debug_%1_%2", _siteMkr, random time ];
-	[ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8RMG_fnc_createMarker;
+	[ _siteMkr, _sitePos, "", _siteSize, _siteAngle, "ELLIPSE", "empty", "ColorUNKNOWN" ] call T8RMG_fnc_createMarker;
 	
 	
 	false

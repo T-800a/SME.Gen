@@ -11,7 +11,7 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen | V.018";
+onLoadName					= "SME.Gen | V.020";
 OnLoadMission				= "Small Military Encounter Genenerator";
 loadScreen					= "images\sme_logo.paa";
 overviewPicture				= "";
@@ -21,7 +21,7 @@ disabledAI					= true;
 disableChannels[]			= { 0, 4, 5, 6 };
 
 respawn						= 3;
-respawnDelay				= 30;
+respawnDelay				= 10;
 respawnVehicleDelay			= 30;
 respawnDialog				= 0;
 respawnOnStart				= 1;

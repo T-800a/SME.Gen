@@ -25,6 +25,7 @@ class cfgFunctions
 			file = "@client\f";
 			
 			addFunction(addMapClick);
+			addFunction(addDiary);
 			addFunction(removeMapClick);
 			addFunction(onMapClick);
 			addFunction(switchFarSuicide);

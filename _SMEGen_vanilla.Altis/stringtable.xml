@@ -3,15 +3,15 @@
 
 	<Package name="welcome">
 		<Key ID="STR_SMEGen_welcome_titel">
-			<Original>SME.Gen - Infantry COOP</Original>
+			<Original>SME.Gen - infantry focused COOP</Original>
 		</Key>
 		
-		<Key ID="STR_SMEGen_welcome_01">
-			<Original>SME.Gen is a infantry focused mission generator for COOP gameplay.</Original>
+		<Key ID="STR_SMEGen_welcome_text">
+			<Original>Find more information about the SME.Gen mission in your diary!</Original>
 		</Key>
 		
-		<Key ID="STR_SMEGen_welcome_02">
-			<Original>When a set of active missions is completed a new set will be genereated after some time. Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).</Original>
+		<Key ID="STR_SMEGen_welcome_signature">
+			<Original>   Cheers, T-800a</Original>
 		</Key>
 	</Package>
 	
@@ -21,14 +21,7 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_desc_text">
-			<Original>
-				&lt;font face="PuristaBold"&gt;SME.Gen - infantry focused COOP&lt;/font&gt;  &lt;br /&gt;
-				SME.Gen is a infantry focused mission generator for COOP gameplay. &lt;br /&gt;
-				When a set of active missions is completed a new set will be genereated after some time.  &lt;br /&gt;
-				After completing a set of mission, you will be rewarded with a vehicle. There a three types of vehicle available (MobileHQ, MRAP, light attach Helicopter).  &lt;br /&gt;
-				Only one of those vehicles will be spawned on completion of a mission set. There won't be multiple instances of the same vehicle. Helicopters may have slot restirctions (admin decission). &lt;br /&gt;
-				Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).
-			</Original>
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;SME.Gen - infantry focused COOP&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt;SME.Gen is a infantry focused mission generator for COOP gameplay. &lt;br /&gt;When a set of active missions is completed a new set will be genereated after some time. After completing a set of mission, you will be rewarded with a vehicle. There a three types of vehicle available (MobileHQ, MRAP, light attach Helicopter). Only one of those vehicles will be spawned on completion of a mission set. There won't be multiple instances of the same vehicle. Helicopters may have slot restirctions (admin decission). Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).</Original>
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_keys_titel">
@@ -36,24 +29,15 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_keys_text">
-			<Original>
-				&lt;font face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt;
-				&lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the service area will start a full vehicle service
-			</Original>
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt;&lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the &lt;marker name="mission_marker_service"&gt;service area&lt;/marker&gt; will start a full vehicle service</Original>
 		</Key>
 		
-		<Key ID="STR_SMEGen_diary_keys_titel">
+		<Key ID="STR_SMEGen_diary_server_titel">
 			<Original>Server</Original>
 		</Key>
 		
-		<Key ID="STR_SMEGen_diary_keys_text">
-			<Original>
-				&lt;font face="PuristaBold"&gt;1PARA - public SME.Gen COOP server&lt;/font&gt;  &lt;br /&gt;
-				Welcome to the 1PARA Public server running the SME.Gen COOP mission for infantry focused teamplay.&lt;br /&gt;
-				&lt;br /&gt;
-				you are welcome to join our Teamspeak for communication with TFAR: ts.1para.com:10017 &lt;br /&gt;
-				visit our Homepage: www.hq1para.co.uk &lt;br /&gt;	
-			</Original>
+		<Key ID="STR_SMEGen_diary_server_text">
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;1PARA - public SME.Gen COOP server&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt;Welcome to the 1PARA Public server running the SME.Gen COOP mission for infantry focused teamplay.&lt;br /&gt;&lt;br /&gt;you are welcome to join our Teamspeak for communication with TFAR: &lt;font color="#00FF00"&gt;ts.1para.com:10017&lt;/font&gt;&lt;br /&gt;visit our Homepage: &lt;font color="#00FF00"&gt;www.hq1para.co.uk&lt;/font&gt;&lt;br /&gt;</Original>
 		</Key>		
 	</Package>
 
