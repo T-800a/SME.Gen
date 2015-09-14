@@ -32,6 +32,9 @@ class cfgFunctions
 			addFunction(hintShow);
 			addFunction(drawMapIcons);
 			addFunction(checkSlots);
+			addFunction(keysAdd);
+			addFunction(keysPress);
+			addFunction(serviceVehicle);
 			addFunction(restricVehicle);
 			addFunction(checkGetIn);
 			addFunction(checkSwitchSeat);

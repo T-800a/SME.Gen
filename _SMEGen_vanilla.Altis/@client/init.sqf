@@ -48,6 +48,9 @@ if ( _arsenalAccess isEqualTo 1 ) then
 // [] spawn T8C_fnc_welcome;
 
 
+// add key presses
+[] spawn T8C_fnc_keysAdd;
+
 
 waitUntil {sleep 0.1; !(isNull (findDisplay 12))};
 ( ( findDisplay 12 ) displayCtrl 51 ) ctrlAddEventHandler [ "Draw", T8C_fnc_drawMapIcons ];

@@ -2,7 +2,7 @@
  =======================================================================================================================
 
 	@randomMission
-	SME.Gen - Small Military Encounter Genenerator==
+	SME.Gen - Small Military Encounter Genenerator
  
 	File:		fn_handleDisplays.sqf
 	Author:		T-800a
@@ -26,6 +26,7 @@
 
 mission_obj_arsenal_sign	setObjectTextureGlobal [ 0, "images\vr-arsenal.paa" ];
 mission_obj_usoc_sign		setObjectTextureGlobal [ 0, "images\usoc.paa" ];
+mission_obj_repair_sign		setObjectTextureGlobal [ 0, "images\service_station.paa" ];
 
 private [ "_chart", "_newchart" ];
 _newchart = "chart_01";

@@ -44,11 +44,13 @@ class Mission
 		"A3_Air_F_Heli_Light_01",
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_EPC",
+		"3DEN",
 		"task_force_radio_items"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Modules_F",
+		"3DEN",
 		"a3_modules_f_curator_curator",
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
@@ -1085,7 +1087,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14264.6,19.431389,16278.689};
+					position[]={14272.271,19.66881,16257.181};
 					azimut=7.1731501;
 					class args
 					{
@@ -1581,7 +1583,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=20;
+		items=26;
 		class Item0
 		{
 			position[]={14257.4,19.601126,16266.566};
@@ -1592,7 +1594,6 @@ class Mission
 			vehicle="Land_HelipadSquare_F";
 			leader=1;
 			skill=0.60000002;
-			init="this setVariable [ ""ASC_CIM_isRepairPad"", true ];";
 			description="Alpha Squad Leader";
 		};
 		class Item1
@@ -1669,7 +1670,6 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="mission_homebase";
-			init="this setVariable [ ""ASC_CIM_isRepairPad"", true ];";
 			description="used for return home missions";
 		};
 		class Item8
@@ -1725,11 +1725,12 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={14252.455,20.119019,16230.591};
+			position[]={14278.37,19.361649,16283.511};
+			azimut=320;
 			special="NONE";
 			id=61;
 			side="EMPTY";
-			vehicle="Land_HelipadEmpty_F";
+			vehicle="Land_HelipadSquare_F";
 			leader=1;
 			skill=0.60000002;
 			text="mission_reward_spawn_03";
@@ -1747,7 +1748,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={14196.371,20.498159,16196.677};
+			position[]={14220.022,20.660572,16172.84};
 			id=63;
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
@@ -1756,7 +1757,7 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={14189.896,20.543501,16191.053};
+			position[]={14213.456,20.790491,16165.753};
 			id=64;
 			side="EMPTY";
 			vehicle="Land_Billboard_F";
@@ -1765,7 +1766,7 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={14189.744,20.513231,16198.021};
+			position[]={14213.304,20.664059,16172.722};
 			id=65;
 			side="EMPTY";
 			vehicle="Land_Billboard_F";
@@ -1774,7 +1775,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={14189.781,20.522213,16194.766};
+			position[]={14213.341,20.730768,16169.466};
 			id=66;
 			side="EMPTY";
 			vehicle="Land_Billboard_F";
@@ -1783,12 +1784,69 @@ class Mission
 		};
 		class Item19
 		{
-			position[]={14196.405,20.521854,16192.45};
+			position[]={14219.965,20.748901,16169.438};
 			id=67;
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
 			skill=0.60000002;
 			text="mission_obj_usoc_sign";
+		};
+		class Item20
+		{
+			position[]={14233.196,20.766672,16169.108};
+			special="NONE";
+			id=68;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			text="mission_repairpad";
+			init="this setVariable [ ""mission_var_isRepairPad"", true ]; this setVariable [ ""ASC_CIM_isRepairPad"", true ];";
+		};
+		class Item21
+		{
+			position[]={14267.526,19.394331,16284.585};
+			azimut=320;
+			id=69;
+			side="EMPTY";
+			vehicle="PortableHelipadLight_01_red_F";
+			skill=0.60000002;
+		};
+		class Item22
+		{
+			position[]={14279.406,19.331146,16294.208};
+			azimut=320;
+			id=70;
+			side="EMPTY";
+			vehicle="PortableHelipadLight_01_red_F";
+			skill=0.60000002;
+		};
+		class Item23
+		{
+			position[]={14277.576,19.385555,16272.844};
+			azimut=320;
+			id=71;
+			side="EMPTY";
+			vehicle="PortableHelipadLight_01_red_F";
+			skill=0.60000002;
+		};
+		class Item24
+		{
+			position[]={14289.257,19.38858,16282.876};
+			azimut=320;
+			id=72;
+			side="EMPTY";
+			vehicle="PortableHelipadLight_01_red_F";
+			skill=0.60000002;
+		};
+		class Item25
+		{
+			position[]={14220.16,20.809151,16165.691};
+			id=73;
+			side="EMPTY";
+			vehicle="SignAd_Sponsor_ION_F";
+			skill=0.60000002;
+			text="mission_obj_repair_sign";
 		};
 	};
 	class Markers

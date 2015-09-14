@@ -84,6 +84,9 @@ class Header
 // include mission config
 #include <config\cfgRandomMissions.hpp>
 
+// include ui elements
+#include <config\ui.hpp>
+
 
 class CfgRemoteExec
 {        

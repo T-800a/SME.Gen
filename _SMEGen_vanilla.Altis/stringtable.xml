@@ -93,4 +93,26 @@
 			<German>Verbunden:</German>
 		</Key>
 	</Package>
+	
+	<Package name="vehicleService">
+		<Key ID="STR_SMEGen_init">
+			<Original>initalize full service ...</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_servicetime">
+			<Original>full service will take %1 seconds</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_progress">
+			<Original>full service: %1%2</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_abort">
+			<Original>full service aborted!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_finish">
+			<Original>full service finished!</Original>
+		</Key>
+	</Package>
 </Project>
