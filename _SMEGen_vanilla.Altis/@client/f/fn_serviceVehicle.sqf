@@ -15,21 +15,18 @@
 
 disableSerialization;
 
-private [ "_vehicle", "_repairPad", "_uiText", "_uiBar", "_txt", "_repairTime", "_sleepTime", "_progress", "_step" ];
+private [ "_vehicle", "_serviceObj", "_uiText", "_uiBar", "_txt", "_repairTime", "_sleepTime", "_progress", "_step" ];
 
 if ( dialog ) exitWith {};
 if ( T8C_var_inAction ) exitWith {};
 
+_serviceObj = param [ 0, objNull, [ objNull ]];
 _vehicle = vehicle player;
 
 if ( _vehicle isEqualTo player ) exitWith {};
 if ! (( driver _vehicle ) isEqualTo player ) exitWith {};
+if ( isnull _serviceObj ) exitWith {};
  
-_repairPad = nearestObject [ player, "Helipad_base_F" ];
-if !( _repairPad getVariable [ "mission_var_isRepairPad", false ]) exitWith {};
-if (( _vehicle distance _repairPad ) > 11 ) exitWith {};
-
-
 T8C_var_inAction = true;
 
 ( "SME_progressbar" call BIS_fnc_rscLayer ) cutRsc [ "SME_progressbar", "PLAIN" ]; 
@@ -51,7 +48,7 @@ _uiText ctrlSetText _txt; _uiText ctrlCommit 0;
 
 sleep 2;
 
-while { alive player AND { alive _vehicle } AND {( _vehicle distance _repairPad ) < 12 } AND {( driver _vehicle ) isEqualTo player } AND { _progress <= 100 }} do
+while { alive player AND { alive _vehicle } AND {( _vehicle distance _serviceObj ) < 12 } AND {( driver _vehicle ) isEqualTo player } AND { _progress <= 100 }} do
 {
 	_txt = format [ localize "STR_SMEGen_progress", floor _progress, "%" ];
 	_uiText ctrlSetText _txt; _uiText ctrlCommit 0;
@@ -62,7 +59,7 @@ while { alive player AND { alive _vehicle } AND {( _vehicle distance _repairPad 
 };
 
 
-if ( !( alive player ) OR { !( alive _vehicle )} OR { !(( _vehicle distance _repairPad ) < 12 )} OR { !(( driver _vehicle ) isEqualTo player )} OR { _progress <= 100 }) exitWith 
+if ( !( alive player ) OR { !( alive _vehicle )} OR { !(( _vehicle distance _serviceObj ) < 12 )} OR { !(( driver _vehicle ) isEqualTo player )} OR { _progress <= 100 }) exitWith 
 {
 	_txt = localize "STR_SMEGen_abort";
 	_uiText ctrlSetText _txt; _uiText ctrlCommit 0;

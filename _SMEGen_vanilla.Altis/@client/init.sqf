@@ -45,7 +45,7 @@ if ( _arsenalAccess isEqualTo 1 ) then
 	[ "AmmoboxInit", mission_obj_arsenal_post ] spawn BIS_fnc_arsenal;
 };
 
-// [] spawn T8C_fnc_welcome;
+[] spawn T8C_fnc_welcome;
 
 
 // add key presses

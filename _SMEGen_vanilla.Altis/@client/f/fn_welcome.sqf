@@ -13,6 +13,10 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
+player createDiarySubject [ "smegen", "SME.Gen" ];
+player createDiaryRecord  [ "smegen", [ localize "STR_SMEGen_diary_desc_titel", localize "STR_SMEGen_diary_desc_text" ]];
+player createDiaryRecord  [ "smegen", [ localize "STR_SMEGen_diary_keys_titel", localize "STR_SMEGen_diary_keys_text" ]];
+
 waitUntil { sleep 2; !dialog };
 
 private [ "_title", "_text01", "_text02", "_output" ];
@@ -24,3 +28,4 @@ _text02	= parseText format [ "<t size='1.1' color='#58ACFA' align='left'>%1</t>"
 _output = composeText [ _text01, _text02 ];
 
 // [ _output, _title, true, false ] call BIS_fnc_guiMessage;
+

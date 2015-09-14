@@ -14,6 +14,48 @@
 			<Original>When a set of active missions is completed a new set will be genereated after some time. Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).</Original>
 		</Key>
 	</Package>
+	
+	<Package name="diary">
+		<Key ID="STR_SMEGen_diary_desc_titel">
+			<Original>Description</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_desc_text">
+			<Original>
+				&lt;font face="PuristaBold"&gt;SME.Gen - infantry focused COOP&lt;/font&gt;  &lt;br /&gt;
+				SME.Gen is a infantry focused mission generator for COOP gameplay. &lt;br /&gt;
+				When a set of active missions is completed a new set will be genereated after some time.  &lt;br /&gt;
+				After completing a set of mission, you will be rewarded with a vehicle. There a three types of vehicle available (MobileHQ, MRAP, light attach Helicopter).  &lt;br /&gt;
+				Only one of those vehicles will be spawned on completion of a mission set. There won't be multiple instances of the same vehicle. Helicopters may have slot restirctions (admin decission). &lt;br /&gt;
+				Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).
+			</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_keys_titel">
+			<Original>Keys</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_keys_text">
+			<Original>
+				&lt;font face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt;
+				&lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the service area will start a full vehicle service
+			</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_keys_titel">
+			<Original>Server</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_keys_text">
+			<Original>
+				&lt;font face="PuristaBold"&gt;1PARA - public SME.Gen COOP server&lt;/font&gt;  &lt;br /&gt;
+				Welcome to the 1PARA Public server running the SME.Gen COOP mission for infantry focused teamplay.&lt;br /&gt;
+				&lt;br /&gt;
+				you are welcome to join our Teamspeak for communication with TFAR: ts.1para.com:10017 &lt;br /&gt;
+				visit our Homepage: www.hq1para.co.uk &lt;br /&gt;	
+			</Original>
+		</Key>		
+	</Package>
 
 	<Package name="Main">
 		<Key ID="STR_SMEGen_vehicleRestricted">

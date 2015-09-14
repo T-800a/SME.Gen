@@ -13,7 +13,7 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
-private [ "_dispaly", "_key", "_shift", "_ctrl", "_alt", "_return" ];
+private [ "_dispaly", "_key", "_shift", "_ctrl", "_alt", "_return", "_helipadObj" ];
 
 _dispaly	= _this select 0;
 _key		= _this select 1;
@@ -23,10 +23,15 @@ _alt		= _this select 4;
 
 _return		= false;
 
+_helipadObj = nearestObject [ player, "Helipad_base_F" ];
+
+
 if ( T8C_var_inAction ) exitWith {};
 
 switch ( _key ) do 
 {
+
+/*
 	case 19 : 
 	{
 		if ( ! _shift AND { ! _ctrl } AND { _alt }) then 
@@ -36,16 +41,19 @@ switch ( _key ) do
 			_return = true;
 		};
 	};
-	
+*/
+
+	// F4
 	case 62 : 
 	{
 		if ( ! _shift AND { ! _ctrl } AND { ! _alt }) then 
 		{
-			hint "<< REPAIR - F4 >>";
-			[] spawn T8C_fnc_serviceVehicle;
+			if ( !isnull _helipadObj AND {( player distance _helipadObj ) < 11 } AND { _helipadObj getVariable [ "mission_var_isRepairPad", false ] }) then { [ _helipadObj ] spawn T8C_fnc_serviceVehicle; };
 			_return = true;
 		};
 	};
+	
+	default {};
 };
 
 // RETURN: true/false (needed for keyevent!)
