@@ -55,10 +55,12 @@ _laptop setVariable [ "T8L_pvar_inUse", true, true ];
 	
 [ _laptop, _id ] spawn 
 {
-	private [ "_laptop", "_id", "_newFile", "_dlRate", "_percent" ];
+	private [ "_laptop", "_id", "_newFile", "_dlRate", "_percent", "_fileSize" ];
 	
 	_laptop		= _this select 0;
 	_id			= _this select 1;
+	
+	_fileSize = _laptop getVariable [ "T8L_pvar_fileSize", 32768 ];
 	
 	_newFile = 0;
 	T8L_var_DialogAbort = false;
@@ -70,7 +72,7 @@ _laptop setVariable [ "T8L_pvar_inUse", true, true ];
 	ctrlSetText [ 8001, T8L_var_TLine06 ];
 	sleep 0.5;
 	ctrlSetText [ 8001, T8L_var_TLine07 ];		
-	ctrlSetText [ 8003, format [ "%1 kb", T8L_var_FileSize ] ];		
+	ctrlSetText [ 8003, format [ "%1 kb", _fileSize ] ];		
 	ctrlSetText [ 8004, format [ "%1 kb", _newFile ] ];		
 	
 	while { !T8L_var_DialogAbort } do
@@ -78,10 +80,10 @@ _laptop setVariable [ "T8L_pvar_inUse", true, true ];
 		_dlRate = 200 + random 80;
 		_newFile = _newFile + _dlRate;
 
-		if ( _newFile > T8L_var_FileSize ) then 
+		if ( _newFile > _fileSize ) then 
 		{
 			_dlRate = 0;		
-			_newFile = T8L_var_FileSize;
+			_newFile = _fileSize;
 			
 			ctrlSetText [ 8001, T8L_var_TLine04 ];			
 			cutText [ T8L_var_TLine04, "PLAIN" ];
@@ -96,7 +98,7 @@ _laptop setVariable [ "T8L_pvar_inUse", true, true ];
 		
 		// percentage part by cuel!
 		ctrlSetText [ 8002, format [ "%1 kb/t", _dlRate ] ];        
-		_percent =  ( _newFile / T8L_var_FileSize );
+		_percent =  ( _newFile / _fileSize );
 		_percent = toArray str _percent;
 		{ _percent set [_x,-1] } forEach [ 0, 1 ]; 
 		_percent = _percent - [-1];

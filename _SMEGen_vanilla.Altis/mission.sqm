@@ -1108,7 +1108,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="[ _this select 0, ""whitelistHelicopter"" ] remoteExec [ ""T8C_fnc_restricVehicle"", 0, ""JIPID_restrictMissionHeli01"" ];";
+							value="[ _this select 0, ""whitelistHelicopter"" ] remoteExec [ ""T8C_fnc_handleVehicle"", 0, ""JIPID_restrictMissionHeli01"" ];";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="Init";
 						};

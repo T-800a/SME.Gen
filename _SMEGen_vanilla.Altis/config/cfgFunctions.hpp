@@ -41,6 +41,7 @@ class cfgFunctions
 			addFunction(checkSwitchSeat);
 			addFunction(updateArsenal);
 			addFunction(handleReward);
+			addFunction(handleVehicle);
 			addFunction(debug);
 			addFunction(debugKeysAdd);
 			addFunction(debugKeysPress);

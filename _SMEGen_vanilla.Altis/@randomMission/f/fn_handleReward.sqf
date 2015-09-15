@@ -61,7 +61,7 @@ if ((( isNull T8RMG_var_objectReward01 ) AND ( isNull T8RMG_var_objectReward02 )
 	missionNamespace setVariable [ "T8RMG_var_objectReward01", T8RMG_var_objectReward01, true ];
 	[ 1, 0, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
 	
-	if !( _restrictionReward01 isEqualTo "" ) then { [ T8RMG_var_objectReward01, _restrictionReward01 ] remoteExec [ "T8C_fnc_restricVehicle", 0, "JIPID_restrictReward03" ]; };
+	if !( _restrictionReward01 isEqualTo "" ) then { [ T8RMG_var_objectReward01, _restrictionReward01 ] remoteExec [ "T8C_fnc_handleVehicle", 0, "JIPID_restrictReward03" ]; };
 	_skip = true;
 };
 
@@ -76,7 +76,7 @@ if (((( !isNull T8RMG_var_objectReward01 ) AND ( isNull T8RMG_var_objectReward02
 	missionNamespace setVariable [ "T8RMG_var_objectReward02", T8RMG_var_objectReward02, true ];
 	[ 1, 1, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
 	
-	if !( _restrictionReward02 isEqualTo "" ) then { [ T8RMG_var_objectReward02, _restrictionReward02 ] remoteExec [ "T8C_fnc_restricVehicle", 0, "JIPID_restrictReward03" ]; };
+	if !( _restrictionReward02 isEqualTo "" ) then { [ T8RMG_var_objectReward02, _restrictionReward02 ] remoteExec [ "T8C_fnc_handleVehicle", 0, "JIPID_restrictReward03" ]; };
 	_skip = true;
 };
 
@@ -91,7 +91,7 @@ if (((( !isNull T8RMG_var_objectReward01 ) AND ( !isNull T8RMG_var_objectReward0
 	missionNamespace setVariable [ "T8RMG_var_objectReward03", T8RMG_var_objectReward03, true ];
 	[ 1, 2, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
 	
-	if !( _restrictionReward03 isEqualTo "" ) then { [ T8RMG_var_objectReward03, _restrictionReward03 ] remoteExec [ "T8C_fnc_restricVehicle", 0, "JIPID_restrictReward03" ]; };
+	if !( _restrictionReward03 isEqualTo "" ) then { [ T8RMG_var_objectReward03, _restrictionReward03 ] remoteExec [ "T8C_fnc_handleVehicle", 0, "JIPID_restrictReward03" ]; };
 };
 
 

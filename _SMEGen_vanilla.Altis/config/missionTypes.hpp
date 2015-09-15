@@ -194,9 +194,18 @@ class missionTypes
 	{
 		scope		= 1;
 		name		= "Convoy";
-		task		= "Raid the Convoy";
+		task		= "Destroy the Transports";
 		taskShort	= "Raid Convoy";
 
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
+				function	= "BIS_fnc_taskSetState";
+			};
+		};
+		
 		class groups : groups
 		{
 			class group01 : base_defend_small { scope = 1; };

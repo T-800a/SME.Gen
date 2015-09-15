@@ -54,8 +54,7 @@ waitUntil { !isNil "ASC_NH_var_initDONE" };
 
 ////// Client AND Server
 
-// init downloadData script for intel tasks
-[] execVM "scripts\downloadData.sqf"
+
 
 
 

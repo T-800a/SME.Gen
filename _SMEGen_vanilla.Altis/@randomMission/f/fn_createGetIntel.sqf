@@ -81,7 +81,7 @@ T8RMG_var_arrayCleanup pushBack _mappedObj;
 _return = ( _mappedObj select (( count _mappedObj ) - 1));
 { _x addCuratorEditableObjects [[ _return ], true ]; false } count allCurators;
 
-[ _return ] remoteExec [ "T8L_fnc_addActionLaptop", 0, _JIPID ];
+[ _return, 163840 ] remoteExec [ "T8L_fnc_addActionLaptop", 0, _JIPID ];
 
 DEBUG( __FILE__, "_return", _return );
 

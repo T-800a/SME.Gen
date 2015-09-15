@@ -41,9 +41,6 @@
  =======================================================================================================================
 */
 
-
-T8L_var_fileSize = 154056;  							// Filesize ... smaller files will take shorter time to download!
-
 T8L_var_TLine01 = localize ( "STR_downloadData_01" ); 	// download aborted
 T8L_var_TLine02 = localize ( "STR_downloadData_02" ); 	// download already in progress by someone else
 T8L_var_TLine03 = localize ( "STR_downloadData_03" ); 	// download started
@@ -55,9 +52,11 @@ T8L_var_TLine07 = localize ( "STR_downloadData_07" );
 T8L_var_DialogAbort = false;
 T8L_var_DialogSucce = false;
 
+_laptop		= param [ 0, objNull, [objNull]];
+_fileSize	= param [ 1, 32768, [123]];
+
+if !( _laptop getVariable [ "T8L_pvar_dataDownloaded", false ] ) then
 {
-	if !( _x getVariable [ "T8L_pvar_dataDownloaded", false ] ) then
-	{
-		_x addAction [ T8L_var_TLine05, { call T8L_fnc_ActionLaptop; }, [], 10, false, false ];
-	};
-} forEach _this;	
+	_laptop setVariable [ "T8L_pvar_fileSize", _fileSize ];
+	_laptop addAction [ T8L_var_TLine05, { call T8L_fnc_ActionLaptop; }, [], 10, true, true ];
+};

@@ -84,7 +84,11 @@ switch ( _type ) do
 { 
 	case "convoy":
 	{
-		[ _sitePos, _siteAngle ] call T8RMG_fnc_createConvoy;
+		private [ "_obj" ];
+		_obj = [ _sitePos, _siteAngle ] call T8RMG_fnc_createConvoy;
+		
+		_varName = format [ "OBJECTIVE_convoy_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
 	case "roadblock":
