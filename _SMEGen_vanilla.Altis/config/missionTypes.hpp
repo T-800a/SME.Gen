@@ -125,10 +125,12 @@ class missionTypes
 
 	class occupy : base_type
 	{
-		scope		= 1;
-		name		= "Occupy";
-		task		= "Search and Secure";
-		taskShort	= "Secure";
+		scope			= 1;
+		name			= "Occupy";
+		
+		taskShort		= "$STR_SMEGen_type_occupy_shrt";
+		task			= "$STR_SMEGen_type_occupy_task";
+		description		= "$STR_SMEGen_type_occupy_desc";
 
 		class groups : groups
 		{
@@ -142,13 +144,15 @@ class missionTypes
 
 	class killHVT : base_type
 	{
-		scope		= 1;
-		name		= "HVT";
-		task		= "Kill the HVT and his guards.";
-		taskShort	= "Kill the HVT";
+		scope			= 1;
+		name			= "HVT";
 		
-		typeHVT		= "OFFICER";
-		typeGuard	= "RIFLEMAN";
+		taskShort		= "$STR_SMEGen_type_killHVT_shrt";
+		task			= "$STR_SMEGen_type_killHVT_task";
+		description		= "$STR_SMEGen_type_killHVT_desc";
+		
+		typeHVT			= "OFFICER";
+		typeGuard		= "RIFLEMAN";
 		
 		class conditions
 		{
@@ -175,10 +179,12 @@ class missionTypes
 
 	class occupy_mil : base_type
 	{
-		scope		= 1;
-		name		= "Occupy";
-		task		= "Search and Secure";
-		taskShort	= "Secure";
+		scope			= 1;
+		name			= "Occupy";
+
+		taskShort		= "$STR_SMEGen_type_occupy_mil_shrt";
+		task			= "$STR_SMEGen_type_occupy_mil_task";
+		description		= "$STR_SMEGen_type_occupy_mil_desc";
 
 		class groups : groups
 		{
@@ -192,10 +198,12 @@ class missionTypes
 
 	class convoy : base_type
 	{
-		scope		= 1;
-		name		= "Convoy";
-		task		= "Destroy the Transports";
-		taskShort	= "Raid Convoy";
+		scope			= 1;
+		name			= "Convoy";
+
+		taskShort		= "$STR_SMEGen_type_convoy_shrt";
+		task			= "$STR_SMEGen_type_convoy_task";
+		description		= "$STR_SMEGen_type_convoy_desc";
 
 		class conditions
 		{
@@ -217,10 +225,12 @@ class missionTypes
 
 	class roadblock : base_type
 	{
-		scope		= 1;
-		name		= "Roadblock";
-		task		= "Clear the Roadblock";
-		taskShort	= "Clear Roadblock";
+		scope			= 1;
+		name			= "Roadblock";
+		
+		taskShort		= "$STR_SMEGen_type_roadblock_shrt";
+		task			= "$STR_SMEGen_type_roadblock_task";
+		description		= "$STR_SMEGen_type_roadblock_desc";
 
 		class groups : groups
 		{
@@ -233,10 +243,12 @@ class missionTypes
 	
 	class roadblockHouse : base_type
 	{
-		scope		= 1;
-		name		= "Roadblock";
-		task		= "Clear the Roadblock";
-		taskShort	= "Clear Roadblock";
+		scope			= 1;
+		name			= "Roadblock";
+		
+		taskShort		= "$STR_SMEGen_type_roadblock_shrt";
+		task			= "$STR_SMEGen_type_roadblock_task";
+		description		= "$STR_SMEGen_type_roadblock_desc";
 
 		class groups : groups
 		{
@@ -249,11 +261,13 @@ class missionTypes
 
 	class mortars : base_type
 	{
-		scope		= 1;
-		name		= "Mortars";
-		task		= "Destroy the Mortars";
-		taskShort	= "Destroy Mortars";
-		
+		scope			= 1;
+		name			= "Mortars";
+
+		taskShort		= "$STR_SMEGen_type_mortars_shrt";
+		task			= "$STR_SMEGen_type_mortars_task";
+		description		= "$STR_SMEGen_type_mortars_desc";
+
 		class conditions
 		{
 			class win
@@ -275,11 +289,13 @@ class missionTypes
 
 	class resupplies : base_type
 	{
-		scope		= 1;
-		name		= "Resupplies";
-		task		= "Destroy the Resupply Installations";
-		taskShort	= "Destroy Resupplies";
-		
+		scope			= 1;
+		name			= "Resupplies";
+
+		taskShort		= "$STR_SMEGen_type_resupplies_shrt";
+		task			= "$STR_SMEGen_type_resupplies_task";
+		description		= "$STR_SMEGen_type_resupplies_desc";
+
 		class conditions
 		{
 			class win
@@ -301,10 +317,12 @@ class missionTypes
 
 	class radiotower : base_type
 	{
-		scope		= 1;
-		name		= "Radiotower";
-		task		= "Destroy the Radiotower";
-		taskShort	= "Destroy Radiotower";
+		scope			= 1;
+		name			= "Radiotower";
+		
+		taskShort		= "$STR_SMEGen_type_radiotower_shrt";
+		task			= "$STR_SMEGen_type_radiotower_task";
+		description		= "$STR_SMEGen_type_radiotower_desc";
 		
 		class conditions
 		{
@@ -331,10 +349,12 @@ class missionTypes
 
 	class recoverUGV : base_type
 	{
-		scope		= 1;
-		name		= "RecoverUGV";
-		task		= "Recover a UGV and return it to our Base";
-		taskShort	= "Recover a UGV";
+		scope			= 1;
+		name			= "RecoverUGV";
+		
+		taskShort		= "$STR_SMEGen_type_recoverUGV_shrt";
+		task			= "$STR_SMEGen_type_recoverUGV_task";
+		description		= "$STR_SMEGen_type_recoverUGV_desc";
 		
 		class conditions
 		{
@@ -378,11 +398,13 @@ class missionTypes
 
 	class getIntel : base_type
 	{
-		scope		= 1;
-		name		= "Get Intel";
-		task		= "Download the Intel in the camp.";
-		taskShort	= "Get the Intel";
-		
+		scope			= 1;
+		name			= "GetIntel";
+
+		taskShort		= "$STR_SMEGen_type_getIntel_shrt";
+		task			= "$STR_SMEGen_type_getIntel_task";
+		description		= "$STR_SMEGen_type_getIntel_desc";
+
 		class conditions
 		{
 			class win
@@ -416,11 +438,12 @@ class missionTypes
 			class group02 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
-	
-	
-	// --------------------------------------------------------------
-	// not for "task creation" - fixed tasks started by events
-	
+
+
+
+// --------------------------------------------------------------
+// not for "new task creation" - fixed tasks started by events
+
 	class attack : base_type
 	{
 		scope		= 1;
@@ -434,7 +457,7 @@ class missionTypes
 		{
 			class group01 : base_attackFireteam { scope = 1; };
 			class group02 : base_attackFireteam { scope = 1; };
-			class group03 : base_attackSquad { scope = 1; };
+			class group03 : base_attackFireteam { scope = 1; };
 		};
 	};
 };

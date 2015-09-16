@@ -141,4 +141,115 @@
 			<Original>full service finished!</Original>
 		</Key>
 	</Package>
+	
+	<Package name="missionTypes">
+		<Key ID="STR_SMEGen_type_occupy_shrt">
+			<Original>Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_task">
+			<Original>Search and Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_desc">
+			<Original>Enemy forces have occupied #__LOCATION__#. Search #__LOCATION__# for all enemies and clear them out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_occupy_mil_shrt">
+			<Original>Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_mil_task">
+			<Original>Search and Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_mil_desc">
+			<Original>Enemy forces have occupied #__LOCATION__#. Search #__LOCATION__# for all enemies and clear them out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_killHVT_shrt">
+			<Original>Kill the HVT</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_killHVT_task">
+			<Original>Kill the HVT and his guards</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_killHVT_desc">
+			<Original>An enemy officer has been loacted near #__LOCATION__#. Your task is to take him, and his guards out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_convoy_shrt">
+			<Original>Raid Convoy</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_convoy_task">
+			<Original>Destroy the Transports</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_convoy_desc">
+			<Original>A borken down convoy hasb been located near #__LOCATION__#. Your task is to destroy the transport trucks.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_roadblock_shrt">
+			<Original>Clear Roadblock</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadblock_task">
+			<Original>Clear the Roadblock</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadblock_desc">
+			<Original>The enemy has set up a Roadblock at the #__LOCATION__#. Your task is to clear the roadblock of enemies.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_mortars_shrt">
+			<Original>Destroy Mortars</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_mortars_task">
+			<Original>Destroy the Mortars</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_mortars_desc">
+			<Original>The enemy has set up two mortar pits at #__LOCATION__#. Your task is to find and destroy the two mortar pits.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_resupplies_shrt">
+			<Original>Destroy Resupplies</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_resupplies_task">
+			<Original>Destroy the Resupply Positions</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_resupplies_desc">
+			<Original>The enemy has set up two resupply positions at #__LOCATION__#. Your task is to find and destroy the two resupply positions.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_radiotower_shrt">
+			<Original>Destroy Radiotower</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radiotower_task">
+			<Original>Destroy the Radiotower</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radiotower_desc">
+			<Original>The enemy has set up a fortified communication base in the #__LOCATION__#. Your task is to destroy the radiotower and its transformator.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_recoverUGV_shrt">
+			<Original>Recover a UGV</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_recoverUGV_task">
+			<Original>Recover a UGV and return it to our Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_recoverUGV_desc">
+			<Original>The enemy has captured an unarmed UGV. Your task is to find the UGV at #__LOCATION__# and bring it back to our base safely.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_getIntel_shrt">
+			<Original>Get the Intel</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_getIntel_task">
+			<Original>Download the Intel</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_getIntel_desc">
+			<Original>We have located a enemie surveillance camp in the #__LOCATION__#. Your task is to get into the camp and download all gathered data for our intelligence service.</Original>
+		</Key>
+	</Package>
 </Project>

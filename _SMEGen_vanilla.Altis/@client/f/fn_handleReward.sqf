@@ -14,13 +14,18 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_icon" ];
+private [ "_icon", "_arsenalAccess" ];
+
+// no need for Rewards if full arsenal
+_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "fullArsenal" );
+if ( _arsenalAccess isEqualTo 1 ) exitWith {};
 
 // _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward01" );
 // _restrictionReward03		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
 
 // DEBUG( __FILE__, "_classReward01", _classReward01 );
 // DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
+
 
 if ( isNil "T8C_var_playerRank" ) then { T8C_var_playerRank = "PRIVATE"; }; if ( T8C_var_playerRank isEqualTo "GENERAL" ) exitWith {};
 _icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa";

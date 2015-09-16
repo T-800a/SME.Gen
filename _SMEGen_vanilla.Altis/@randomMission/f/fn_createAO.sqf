@@ -17,7 +17,7 @@
 // );
 
 private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
-			"_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
+			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
 			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString" ];
 
 _site			= _this;
@@ -48,12 +48,16 @@ _typeTask		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes
 _typeTaskShort	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "taskShort" );
 _typeName		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "name" );
 _typeDesc		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "description" );
+_typeDesc = _typeDesc splitString "#";
+_typeDescNew = [];
+{ _typeDescNew set [ _forEachIndex, _x ]; if ( _x isEqualTo "__LOCATION__" ) then { _typeDescNew set [ _forEachIndex, _siteName ]; }; } forEach _typeDesc;
+_typeDesc = _typeDescNew joinString "";
 
 _modPlayer		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModPlayer" );
 _modGroup		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModGroup" );
 
 _setTaskName 	= format [ "%1: %2", _typeTaskShort, _siteName ];
-_setTaskDesc 	= format [ "<t align = 'left' shadow = '1' size = '1.0'>Task: %1</t><br /><t align = 'left' shadow = '1' size = '0.8'>Location: %2</t><br /><br />%3", _typeTask, _siteName, _typeDesc ];
+_setTaskDesc 	= format [ "<br /><font align = 'left' size='20' face='PuristaBold'>Task: %1</font><br /><font align = 'left'  size='16' face='PuristaMedium'>%2</font><br /><br />%3", _typeTask, _siteName, _typeDesc ];
 
 _range			= if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
 _varName		= "NO_VAR_SET";
