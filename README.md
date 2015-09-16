@@ -2,7 +2,7 @@
 <h2 align="center">SmallMilitaryEncounter Generator</h2>
 <p align="center">
     <a href="#">
-        <img src="https://img.shields.io/badge/SME.Gen-V.017-green.svg?style=flat-square" alt="SME.Gen: V.017">
+        <img src="https://img.shields.io/badge/SME.Gen-V.020-green.svg?style=flat-square" alt="SME.Gen: V.020">
     </a>
     <a href="#">
         <img src="http://img.shields.io/badge/Author-T--800a-blue.svg?style=flat-square" alt="Author: T-800a">
