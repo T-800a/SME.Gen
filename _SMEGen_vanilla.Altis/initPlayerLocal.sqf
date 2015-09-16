@@ -35,3 +35,4 @@ if ( isMultiplayer ) then
 	removeAllWeapons player:
 	removeAllItems player;
 };
+

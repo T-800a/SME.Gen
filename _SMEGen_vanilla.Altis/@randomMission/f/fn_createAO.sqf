@@ -57,7 +57,7 @@ _modPlayer		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionCo
 _modGroup		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModGroup" );
 
 _setTaskName 	= format [ "%1: %2", _typeTaskShort, _siteName ];
-_setTaskDesc 	= format [ "<br /><font align = 'left' size='20' face='PuristaBold'>Task: %1</font><br /><font align = 'left'  size='16' face='PuristaMedium'>%2</font><br /><br />%3", _typeTask, _siteName, _typeDesc ];
+_setTaskDesc 	= format [ "<br /><font align='left' size='20' face='PuristaBold'>Task: %1</font><br /><font align='left' size='20' face='PuristaMedium'>%2</font><br /><br />%3", _typeTask, _siteName, _typeDesc ];
 
 _range			= if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
 _varName		= "NO_VAR_SET";

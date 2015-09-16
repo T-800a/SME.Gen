@@ -28,11 +28,6 @@ T8C_var_initDONE = true;
 [] call T8C_fnc_checkSlots;
 
 
-
-// create vehicle restrictions
-[ mission_heli_01, "whitelistHelicopter" ] call T8C_fnc_restricVehicle;
-
-
 // Prepare VR-Ammobox
 private [ "_arsenalAccess" ];
 _arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "fullArsenal" );

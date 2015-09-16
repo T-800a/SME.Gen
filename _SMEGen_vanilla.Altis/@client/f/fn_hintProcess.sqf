@@ -22,8 +22,6 @@ _indexHead		= param [ 0, 0, [ 123, "" ]];
 _indexText		= param [ 1, 0, [ 123, "" ]];
 _indexPreset	= param [ 2, 0, [ 123, "" ]];
 
-waitUntil { !isNil "ASC_NH_var_initDONE" };
-
 if ( T8C_var_hintActive OR { count T8C_var_hintBuffer > 0 } ) exitWith
 {
 	T8C_var_hintBuffer pushBack [ _indexHead, _indexText, _indexPreset ];

@@ -15,6 +15,7 @@
 // );
 
 private [ "_icons", "_players" ];
+if ( isNil "T8C_var_drawVehiclesMap" ) then { T8C_var_drawVehiclesMap = []; };
 
 _icons		= [];
 _players	= if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
@@ -24,8 +25,10 @@ _players	= if ( isMultiplayer ) then { allPlayers } else { units ( group player 
 	if ( !isNull ( _x select 0 )) then
 	{
 		private [ "_c" ];
-		_c = if ( alive ( _x select 0 )) then { [ 0, 0.3, 0.6, 1 ] } else { [ 0, 0, 0, 1 ] };
+		_c = [ 0, 0.3, 0.6, 1 ];
 		if ( !canMove ( _x select 0 )) then { _c = [ 1, 0.1, 0.1, 1 ] };
+		if ( !alive ( _x select 0 )) then { _c = [ 0, 0, 0, 1 ] };
+		
 		_icons pushBack [( getPos ( _x select 0 ) ), 32, ( _x select 1 ), _c, "iconModule", ( getDir ( _x select 0 ))];
 	};
 
@@ -37,8 +40,10 @@ _players	= if ( isMultiplayer ) then { allPlayers } else { units ( group player 
 	if ( !isNull _x ) then
 	{
 		private [ "_c", "_n" ];
-		_c = if ( alive _x ) then { [ 0, 0.3, 0.6, 1 ] } else { [ 0, 0, 0, 1 ] };
+		_c = [ 0, 0.3, 0.6, 1 ];
 		if ( !canMove _x ) then { _c = [ 1, 0.1, 0.1, 1 ] };
+		if ( !alive _x ) then { _c = [ 0, 0, 0, 1 ] };
+		
 		_n = if !( isNull ( driver _x )) then { name ( driver _x )} else { "" };
 		_icons pushBack [( getPos _x ), 32, _n, _c, "iconModule", ( getDir _x )];
 	};
@@ -48,13 +53,17 @@ _players	= if ( isMultiplayer ) then { allPlayers } else { units ( group player 
 
 // show players
 {
-	private [ "_c", "_i" ];
-	_c = [ 0, 0.3, 0.6, 1 ];
-	_i = "mil_triangle";
-	if ( _x getVariable [ "ACE_isUnconscious", false ] ) then { _c = [ 1, 0, 0, 1 ]; _i = "KIA"; };
+	if ( vehicle _x isEqualTo _x ) then
+	{
+		private [ "_c", "_i", "_d" ];
+		_c = [ 0, 0.3, 0.6, 1 ];
+		_d = ( getDir _x );
+		_i = "\A3\ui_f\data\map\markers\military\triangle_CA.paa";
+		if ( _x getVariable [ "ACE_isUnconscious", false ] ) then { _c = [ 1, 0, 0, 1 ]; _d = 0; _i = "\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa"; };
 
-	_icons pushBack [( getPos _x ), 32, ( name _x ), _c, _i, ( getDir _x )];
-
+		_icons pushBack [( getPos _x ), 32, ( name _x ), _c, _i, _d ];
+	};
+	
 	false
 } count _players;
 
