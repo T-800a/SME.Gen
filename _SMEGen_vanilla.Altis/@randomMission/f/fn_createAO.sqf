@@ -16,15 +16,16 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [	"_site", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
+private [	"_site", "_followUp", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
 			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString" ];
 
-_site			= _this;
+_site			= param [ 0, "" [""]];
+_followUp		= param [ 1, "" [""]];
 _inf			= [];
 _arrayGroups	= [];
 
-DEBUG( __FILE__, "INIT!", _this );
+DEBUG( __FILE__, "INIT: _this", _this );
 if ( _site isEqualTo "" ) exitWith { DEBUG( __FILE__, "_____ERROR!", "wrong_site" ); };
 
 _siteMkr			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
@@ -33,8 +34,8 @@ _siteName			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSite
 _siteSize			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "size" );
 _siteAngle			= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "angle" );
 _siteAllowedTypes	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "allowedTypes" );
-_type				= _siteAllowedTypes call BIS_fnc_selectRandom;
 
+_type				=  if ( _followUp isEqualTo "" ) then { _siteAllowedTypes call BIS_fnc_selectRandom; } else { _followUp };
 _taskPos			= [( _sitePos select 0 ), ( _sitePos select 1 ), 25 ];
 
 DEBUG( __FILE__, "SITE _siteMkr", _siteMkr );
@@ -250,13 +251,13 @@ T8RMG_var_arrayCleanup pushBack _spawnedUnits;
 _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" );
 
 {
-	private [ "_name", "_con", "_newcon", "_fnc" ];
+	private [ "_name", "_con", "_newcon", "_fnc", "_fin" ];
 	
 	_name = configName ( _x );
 	_newcon = [];
 	_con = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "condition" );
 	_fnc = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "function" );
-	
+
 	_con = _con splitString "#";
 	
 	{
@@ -271,7 +272,8 @@ _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >>
 	_con = _newcon joinString "";
 	DEBUG( __FILE__, "_conditions > _con", _con );
 	
-	T8RMG_var_arrayConditions pushBack [ configName ( _x ), _siteMkr, _con, _fnc ];
+	_fin = if ( getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "isFinal" ) isEqualTo 1 ) then { true } else { false };
+	T8RMG_var_arrayConditions pushBack [ configName ( _x ), _siteMkr, _con, _fnc, _fin ];
 	
 	false
 } count _conditions;

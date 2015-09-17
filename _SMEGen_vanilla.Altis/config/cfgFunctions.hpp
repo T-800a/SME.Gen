@@ -26,6 +26,7 @@ class cfgFunctions
 			
 			addFunction(addMapClick);
 			addFunction(addDiary);
+			addFunction(addActionIntel);
 			addFunction(removeMapClick);
 			addFunction(onMapClick);
 			addFunction(switchFarSuicide);

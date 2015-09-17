@@ -31,6 +31,10 @@ class missionTypes
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 5 )";
 				function	= "BIS_fnc_taskSetState";
+				
+			// if 1 then task will count against tasks needed to complete a mission
+			// if 0 then wont count against it
+				isFinal		= 1;
 			};
 		};
 		
@@ -160,12 +164,14 @@ class missionTypes
 			{
 				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
 			};
 		};
 		
@@ -211,6 +217,7 @@ class missionTypes
 			{
 				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 		};
 		
@@ -274,6 +281,7 @@ class missionTypes
 			{
 				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 		};
 
@@ -302,6 +310,7 @@ class missionTypes
 			{
 				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 		};
 		
@@ -330,12 +339,14 @@ class missionTypes
 			{
 				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
 			};
 		};
 
@@ -362,30 +373,35 @@ class missionTypes
 			{
 				condition	= "( missionNamespace getVariable [ '#__VARIABLE__#', mission_homebase ] distance mission_homebase < 50 )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 			
 			class fail
 			{
 				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', mission_homebase ]))";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 			
 			class unlockUGV
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 0.1 ))) >=  1 )";
 				function	= "T8RMG_fnc_unlockUGV";
+				isFinal		= 0;
 			};
 			
 			class support
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 0.4 ))) > 3 )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
 			};
 		};
 
@@ -411,24 +427,28 @@ class missionTypes
 			{
 				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ] ) getVariable [ 'T8L_pvar_dataDownloaded', false ] )";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 			
 			class fail
 			{
 				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]))";
 				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
 			};
 			
 			class support
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 2 )) > 3 )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ] ) getVariable [ 'T8L_pvar_inUse', false ] )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
 			};
 		};
 

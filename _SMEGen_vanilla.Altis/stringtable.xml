@@ -61,6 +61,10 @@
 		<Key ID="STR_SMEGen_errorNewTasks">
 			<Original>ERROR:&lt;br /&gt;Could not create new tasks!&lt;br /&gt;Players please return to the main base to clrea possible positions.&lt;br /&gt;If this does not help contact a admin.</Original>
 		</Key>
+		
+		<Key ID="STR_SMEGen_addActionIntel">
+			<Original>## Search for Intel ##</Original>
+		</Key>
 	</Package>
 	
 	<Package name="Rewards">
