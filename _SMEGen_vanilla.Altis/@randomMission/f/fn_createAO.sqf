@@ -16,17 +16,21 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
+DEBUG( __FILE__, "INIT: _this", _this );
+
 private [	"_site", "_followUp", "_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
 			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString" ];
 
-_site			= param [ 0, "" [""]];
-_followUp		= param [ 1, "" [""]];
+_site			= param [ 0, "NO-SITE", [""]];
+_followUp		= param [ 1, "", [""]];
 _inf			= [];
 _arrayGroups	= [];
 
-DEBUG( __FILE__, "INIT: _this", _this );
-if ( _site isEqualTo "" ) exitWith { DEBUG( __FILE__, "_____ERROR!", "wrong_site" ); };
+if ( _site isEqualTo "NO-SITE" ) exitWith 
+{ 
+DEBUG( __FILE__, "_____ERROR!", "wrong_site" ); 
+};
 
 _siteMkr			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
 _sitePos			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );

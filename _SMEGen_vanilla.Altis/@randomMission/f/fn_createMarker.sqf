@@ -28,8 +28,6 @@ _mt		= param [ 6, "waypoint",	[""]];
 _mc		= param [ 7, "ColorOrange",	[""]];
 _ma		= param [ 8, 0.50,			[123]];
 
-DEBUG( __FILE__, "_this", _this );
-
 if ( _mn isEqualTo "" ) exitWith { false };
 if ( _mp isEqualTo [0,0,0] ) exitWith { false };
 

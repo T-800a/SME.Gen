@@ -42,8 +42,7 @@ T8U_var_AllowCBM				= false;
 
 // Options to register units with ZEUS
 // this may slow down spawning
-T8U_var_AllowZEUS				= true;			// Register spawned units with ZEUS
-T8U_var_ZeusModules				= [ zeus_t8, zeus_god, zeus_singleplayer ];	// name of the Zeusmodul to sync all units to (Gamemaster Modul)
+T8U_var_AllowZEUS				= true;			// Register spawned units with ZEUS (allCurators)
 
 // Options to work with DAC
 T8U_var_AllowDAC				= true;			// Allow DAC

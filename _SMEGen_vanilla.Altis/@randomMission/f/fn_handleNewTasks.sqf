@@ -97,7 +97,7 @@ _arraySitesUsed resize T8RMG_var_amountSites;
 T8RMG_var_arraySitesBlacklist = _arraySitesUsed;									DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 
 {
-	_x call T8RMG_fnc_createAO;
+	[ _x ] call T8RMG_fnc_createAO;
 	DEBUG( __FILE__, "_arraySitesUsed > _x", _x );
 	
 	false

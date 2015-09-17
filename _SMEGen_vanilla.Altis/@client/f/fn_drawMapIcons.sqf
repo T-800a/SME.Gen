@@ -22,29 +22,34 @@ _players	= if ( isMultiplayer ) then { allPlayers } else { units ( group player 
 
 // show rewards vehicles on map	
 {
-	if ( !isNull ( _x select 0 )) then
+	if ( !isNull _x ) then
 	{
-		private [ "_c" ];
+		private [ "_c", "_v", "_n" ];
 		_c = [ 0, 0.3, 0.6, 1 ];
-		if ( !canMove ( _x select 0 )) then { _c = [ 1, 0.1, 0.1, 1 ] };
-		if ( !alive ( _x select 0 )) then { _c = [ 0, 0, 0, 1 ] };
+		if ( !canMove _x ) then { _c = [ 1, 0.1, 0.1, 1 ] };
+		if ( !alive _x ) then { _c = [ 0, 0, 0, 1 ] };
 		
-		_icons pushBack [( getPos ( _x select 0 ) ), 32, ( _x select 1 ), _c, "iconModule", ( getDir ( _x select 0 ))];
+		_v = getText ( configfile >> "CfgVehicles" >> typeOf _x >> "displayName" );
+		_n = if !( isNull ( driver _x )) then { format [ "%1:%2", _v, ( name ( driver _x ))]} else { _v };
+		
+		_icons pushBack [( getPos _x ), 32, _n, _c, "iconModule", ( getDir _x )];
 	};
 
 	false
-} count [[ T8RMG_var_objectReward01, localize "STR_SMEGen_mapName_Reward01" ], [ T8RMG_var_objectReward02, localize "STR_SMEGen_mapName_Reward02" ], [ T8RMG_var_objectReward03, localize "STR_SMEGen_mapName_Reward03" ]];
+} count [ T8RMG_var_objectReward01, T8RMG_var_objectReward02, T8RMG_var_objectReward03 ];
 
 // show vehicles that were -added-
 {
 	if ( !isNull _x ) then
 	{
-		private [ "_c", "_n" ];
+		private [ "_c", "_v", "_n" ];
 		_c = [ 0, 0.3, 0.6, 1 ];
 		if ( !canMove _x ) then { _c = [ 1, 0.1, 0.1, 1 ] };
 		if ( !alive _x ) then { _c = [ 0, 0, 0, 1 ] };
 		
-		_n = if !( isNull ( driver _x )) then { name ( driver _x )} else { "" };
+		_v = getText ( configfile >> "CfgVehicles" >> typeOf _x >> "displayName" );
+		_n = if !( isNull ( driver _x )) then { format [ "%1:%2", _v, ( name ( driver _x ))]} else { _v };
+		
 		_icons pushBack [( getPos _x ), 32, _n, _c, "iconModule", ( getDir _x )];
 	};
 

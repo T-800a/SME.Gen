@@ -192,6 +192,22 @@ class Altis : base_map
 		position[]	= { 12856.1, 19681.1, 0 };
 	};
 
+	class town_orino : base_town 
+	{
+		scope		= 1;
+		name		= "Orino";
+		marker		= "site_town_orino";
+		position[]	= { 10459.4, 17243.4, 0 };
+	};
+
+	class town_koroni : base_town 
+	{
+		scope		= 1;
+		name		= "Koroni";
+		marker		= "site_town_koroni";
+		position[]	= { 11746.1, 18271, 0 };
+	};
+
 
 
 // --------------------------------------------------------------
@@ -280,7 +296,7 @@ class Altis : base_map
 	{
 		scope		= 1;
 		name		= "Road to telos"; 
-		marker		= "site_road_airfield";
+		marker		= "site_road_telos";
 		position[]	= { 15919.1, 17414.3, 0 };
 		angle		= 5;
 	};
@@ -438,6 +454,81 @@ class Altis : base_map
 		position[] = { 20182.4, 15296.8, 0 };
 		angle = 369;
 	};
+	
+	class road_sagonisi_WSW : base_road 
+	{
+		scope = 1;
+		name = "Road WSW of Sagonisi";
+		marker = "site_road_sagonisi_WSW";
+		position[] = { 13452.2, 13183.4, 0 };
+		angle = 231;
+	};
+
+
+	class road_katalakibay_ESE : base_road 
+	{
+		scope = 1;
+		name = "Road ESE of Katalaki Bay";
+		marker = "site_road_katalakibay_ESE";
+		position[] = { 12764, 13420.5, 0 };
+		angle = 149;
+	};
+
+	class road_orino_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Orino";
+		marker = "site_road_orino_SW";
+		position[] = { 10265.8, 17029, 0 };
+		angle = 289;
+	};
+
+	class road_koroni_SSW : base_road 
+	{
+		scope = 1;
+		name = "Road SSW of Koroni";
+		marker = "site_road_koroni_SSW";
+		position[] = { 11578.8, 17845.2, 0 };
+		angle = 311;
+	};
+
+	class road_orino_E : base_road 
+	{
+		scope = 1;
+		name = "Road E of Orino";
+		marker = "site_road_orino_E";
+		position[] = { 11138.9, 17229.4, 0 };
+		angle = 120;
+	};
+
+	class road_koroni_NE : base_road 
+	{
+		scope = 1;
+		name = "Road NE of Koroni";
+		marker = "site_road_koroni_NE";
+		position[] = { 12309.7, 18796.5, 0 };
+		angle = 190;
+	};
+
+	class road_ifestiona_S : base_road 
+	{
+		scope = 1;
+		name = "Road S of Ifestiona";
+		marker = "site_road_ifestiona_S";
+		position[] = { 12842.2, 19217.8, 0 };
+		angle = 94;
+	};
+
+	class road_athira_WSW : base_road 
+	{
+		scope = 1;
+		name = "Road WSW of Athira";
+		marker = "site_road_athira_WSW";
+		position[] = { 12989.7, 18296.3, 0 };
+		angle = 150;
+	};
+
+
 
 // --------------------------------------------------------------
 // missionSites - COMPOUND POSITIONS
@@ -537,4 +628,21 @@ class Altis : base_map
 		marker		= "site_comp_12";
 		position[]	= { 17106.6, 15446.7, 0 };
 	};
+
+	class comp_katalakibay_ESE : base_comp 
+	{
+		scope		= 1;
+		name		= "Katalaki Bay Area";
+		marker		= "site_comp_katalakibay_ESE";
+		position[]	= { 13194.6, 13474, 0 };
+	};
+	
+	class comp_athira_WSW : base_comp 
+	{
+		scope		= 1;
+		name		= "Athira Area";
+		marker		= "site_comp_athira_WSW";
+		position[]	= { 12996.3, 18187.1, 0 };
+	};
+
 };

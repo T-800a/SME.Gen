@@ -410,8 +410,8 @@ _return = [];
 				false
 			} count _units;
 			
-			{ _x addCuratorEditableObjects [ _units, true ]; } count T8U_var_ZeusModules;
-			if ( count _vehicles > 0 ) then { { _x addCuratorEditableObjects [ _vehicles, true ]; } count T8U_var_ZeusModules; };
+			{ _x addCuratorEditableObjects [ _units, true ]; } count allCurators;
+			if ( count _vehicles > 0 ) then { { _x addCuratorEditableObjects [ _vehicles, true ]; } count allCurators; };
 		};
 	};
 	

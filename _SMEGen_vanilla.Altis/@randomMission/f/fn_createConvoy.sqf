@@ -40,6 +40,7 @@ _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper
 T8RMG_var_arrayCleanup pushBack _mappedObj;
 
 _return = [( _mappedObj select 0 ), ( _mappedObj select 1 ), ( _mappedObj select 2 )];
+{ _x addCuratorEditableObjects [ _return, true ]; false } count allCurators;
 
 // return
 _return

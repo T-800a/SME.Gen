@@ -11,7 +11,7 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen | V.021";
+onLoadName					= "SME.Gen | V.022";
 OnLoadMission				= "Small Military Encounter Genenerator";
 loadScreen					= "images\sme_logo.paa";
 overviewPicture				= "";

@@ -95,7 +95,7 @@ if ( T8U_var_AllowZEUS ) then
 {
 	private [ "_ua" ];
 	_ua = units _group;
-	{ _x addCuratorEditableObjects [ _ua, true ]; } count T8U_var_ZeusModules;
+	{ _x addCuratorEditableObjects [ _ua, true ]; } count allCurators;
 };
 
 if ( T8U_var_DEBUG_marker ) then { [ _group  ] spawn T8U_fnc_Track; };
@@ -155,7 +155,7 @@ if ( T8U_var_AllowZEUS ) then
 {
 	private [ "_units" ];
 	_units = units _group;	
-	{ _x addCuratorEditableObjects [ _units, true ]; } count T8U_var_ZeusModules;
+	{ _x addCuratorEditableObjects [ _units, true ]; } count allCurators;
 };
 
 _formation = ["STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "DIAMOND"] call BIS_fnc_selectRandom;

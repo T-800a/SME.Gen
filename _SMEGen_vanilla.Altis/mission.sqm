@@ -44,13 +44,11 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_EPC",
 		"ace_repair",
-		"ace_cargo",
-		"3DEN"
+		"ace_cargo"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Modules_F",
-		"3DEN",
 		"a3_modules_f_curator_curator",
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
@@ -85,7 +83,7 @@ class Mission
 	randomSeed=5609333;
 	class Intel
 	{
-		briefingName="CO20 | SME.Gen | infantry focused COOP | ACE3 | V.021";
+		briefingName="CO20 | SME.Gen | infantry focused COOP | ACE3 | V.022";
 		overviewText="T-800a";
 		resistanceWest=0;
 		resistanceEast=1;
