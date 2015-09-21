@@ -65,6 +65,7 @@ class cfgFunctions
 			addFunction(createAmmoDump);
 			addFunction(createAttack);
 			addFunction(createConvoy);
+			addFunction(createFollowingTask);
 			addFunction(createFuelDump);
 			addFunction(createGetIntel);
 			addFunction(createHVT);
@@ -80,6 +81,7 @@ class cfgFunctions
 			addFunction(handleDisplays);
 			addFunction(handleNewTasks);
 			addFunction(handleReward);
+			addFunction(surrenderHVT);
 			addFunction(testFnc);
 			addFunction(unlockUGV);
 		

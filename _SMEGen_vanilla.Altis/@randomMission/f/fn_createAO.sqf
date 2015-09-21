@@ -13,14 +13,14 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 DEBUG( __FILE__, "INIT: _this", _this );
 
 private [	"_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
-			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString" ];
+			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString", "_varName", "_varName02" ];
 
 params [
 	[ "_site", "NO-SITE", [""]],
@@ -69,6 +69,7 @@ _setTaskDesc 	= format [ "<br /><font align='left' size='20' face='PuristaBold'>
 
 _range			= if (( _siteSize select 0 ) < ( _siteSize select 1)) then { _siteSize select 0 } else { _siteSize select 1 };
 _varName		= "NO_VAR_SET";
+_varName02		= "NO_VAR_SET";
 
 // get the faction
 _missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> "spawnUnitsSide" );
@@ -166,11 +167,27 @@ switch ( _type ) do
 		missionNamespace setVariable [ _varName, _objs ];
 	};
 	
+	case "intelHVT":
+	{
+		private [ "_objs" ];
+		_siteSize = ( _range * 0.8 );
+		_objs = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
+		
+		[( _objs select 0 )] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_intelHVT_actionID_%1", _siteMkr ]) ];
+		
+		_sitePos = getPos ( _objs select 0 );
+		
+		_varName = format [ "OBJECTIVE_intelHVT_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _objs ];
+	};
+	
 	case "getIntel":
 	{
 		private [ "_obj" ];
 		_siteSize = ( _range * 0.4 );
-		_obj = [ _sitePos, ( format [ "OBJECTIVE_getIntel_actionID_%1", _siteMkr ])] call T8RMG_fnc_createGetIntel; 
+		_obj = [ _sitePos ] call T8RMG_fnc_createGetIntel; 
+		
+		[ _obj, 245670 ] remoteExec [ "T8L_fnc_addActionLaptop", 0, ( format [ "OBJECTIVE_getIntel_actionID_%1", _siteMkr ]) ];
 		
 		_varName = format [ "OBJECTIVE_getIntel_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, _obj ];
@@ -272,6 +289,7 @@ _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >>
 		if ( _x isEqualTo "__MARKER_NAME__" )	then { _newcon set [ _forEachIndex, _siteMkr ]; };
 		if ( _x isEqualTo "__MARKER_SIZE__" )	then { _newcon set [ _forEachIndex, _range ]; };
 		if ( _x isEqualTo "__VARIABLE__" )		then { _newcon set [ _forEachIndex, _varName ]; };
+		if ( _x isEqualTo "__VARIABLE_02__" )	then { _newcon set [ _forEachIndex, _varName02 ]; };
 		if ( _x isEqualTo "__SIDEAI__" )		then { _newcon set [ _forEachIndex, _missionSideString ]; };
 		if ( _x isEqualTo "__SIDEPLAYER__" )	then { _newcon set [ _forEachIndex, _missionPlayerSideString ]; };
 	} forEach _con;	

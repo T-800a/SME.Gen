@@ -100,7 +100,6 @@ _units		= ( units _group );
 	_x setDir (([ (( _building select 0 ) select _forEachIndex ), ( _building select 1 ) ] call BIS_fnc_dirTo ) + 180 );
 } forEach _units;
 
-
 { _x addCuratorEditableObjects [ _units, true ]; false } count allCurators;
 T8RMG_var_arrayCleanup pushBack _units;
 

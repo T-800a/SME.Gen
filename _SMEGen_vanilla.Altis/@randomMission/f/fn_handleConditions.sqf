@@ -30,9 +30,11 @@ while { true } do
 	_allTasks		= [];
 
 	{
-		DEBUG( __FILE__, "T8RMG_var_arrayConditions > _x", _x );
+		private [ "_debugArray" ];
+		_debugArray = [( _x select 0 ), ( _x select 1 ), ( _x select 3 ), ( _x select 4 ), ( _x select 2 )];
+		DEBUG( __FILE__, "T8RMG_var_arrayConditions > _x", _debugArray );
 		
-		if !(( typeName ( _x select 0 )) isEqualTo ( typeName true )) then
+		if !(( typeName ( _x select 3 )) isEqualTo ( typeName true )) then
 		{
 			if ( call compile ( _x select 2 )) then 
 			{
@@ -53,10 +55,11 @@ while { true } do
 				// if condition is a win > communicate a !player! reward / levelup
 				if ( toUpper ( _x select 0 ) isEqualTo "WIN" AND ( _x select 4 )) then { remoteExec [ "T8C_fnc_handleReward", 0 ]; };
 				
-				_x set [ 0, true ];
+				_x set [ 3, true ];
 			};
 		};
-		if (( _x select 4 ) AND { !(( _x select 1 ) in _allTasks )}) then { _allTasks pushBack ( _x select 1 ); };
+		
+		if (( _x select 4 ) AND {( typeName ( _x select 3 )) isEqualTo ( typeName true )} AND {[( _x select 1 )] call BIS_fnc_taskCompleted } AND { !(( _x select 1 ) in _allTasks )}) then { _allTasks pushBack ( _x select 1 ); };
 	} forEach T8RMG_var_arrayConditions;
 	
 	DEBUG( __FILE__, "_allTasks", _allTasks );

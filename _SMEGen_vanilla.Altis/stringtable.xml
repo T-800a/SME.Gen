@@ -65,6 +65,10 @@
 		<Key ID="STR_SMEGen_addActionIntel">
 			<Original>## Search for Intel ##</Original>
 		</Key>
+		
+		<Key ID="STR_SMEGen_hint_intelHVT">
+			<Original>U.SOC will now evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You will recieve a new target soon.</Original>
+		</Key>
 	</Package>
 	
 	<Package name="Rewards">
@@ -177,6 +181,17 @@
 		</Key>
 		<Key ID="STR_SMEGen_type_killHVT_desc">
 			<Original>An enemy officer has been loacted near #__LOCATION__#. Your task is to take him, and his guards out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_intelHVT_shrt">
+			<Original>Collect INTEL</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_intelHVT_task">
+			<Original>Collect INTEL from a HVT</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_killHVT_desc">
+			<Original>An enemy officer has been loacted near #__LOCATION__#. Your task is to secure him and take the INTEL he has.</Original>
 		</Key>
 
 

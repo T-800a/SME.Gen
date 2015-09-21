@@ -13,7 +13,7 @@
 
 class missionTypes
 {
-	
+
 // --------------------------------------------------------------
 //	missionTypes - BASE CLASSES
 
@@ -32,8 +32,8 @@ class missionTypes
 				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 5 )";
 				function	= "BIS_fnc_taskSetState";
 				
-			// if 1 then task will count against tasks needed to complete a mission
-			// if 0 then wont count against it
+		//		if 1 then task will count against tasks needed to complete a mission
+		//		if 0 then wont count against it
 				isFinal		= 1;
 			};
 		};
@@ -171,6 +171,52 @@ class missionTypes
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";
 				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
+			};
+		};
+		
+		class groups : groups
+		{
+			class group01 : base_garrison { scope = 1; };
+			class group03 : base_fireteam { scope = 1; };
+			class group04 : base_fireteam { scope = 1; };
+		};
+	};
+	
+	class intelHVT : base_type
+	{
+		scope			= 1;
+		name			= "intelHVT";
+		
+		taskShort		= "$STR_SMEGen_type_intelHVT_shrt";
+		task			= "$STR_SMEGen_type_intelHVT_task";
+		description		= "$STR_SMEGen_type_intelHVT_desc";
+		
+		typeHVT			= "OFFICER";
+		typeGuard		= "RIFLEMAN";
+		
+		
+		
+		class conditions
+		{
+			class followup
+			{
+				condition	= "((( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 ) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
+				function	= "T8RMG_fnc_createFollowingTask";
+				isFinal		= 0;
+			};
+
+			class fail
+			{
+				condition	= "(!( alive (( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 )) AND !((( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 ) getVariable [ 'OBJECTIVE_intel_gathered', false ]))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+			
+			class surrender
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities 50 )) > 0 )";
+				function	= "T8RMG_fnc_surrenderHVT";
 				isFinal		= 0;
 			};
 		};

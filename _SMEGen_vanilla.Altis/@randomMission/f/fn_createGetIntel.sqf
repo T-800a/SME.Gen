@@ -17,7 +17,7 @@
 
 private [ "_dir", "_objArray", "_mappedObj" ];
 
-params [ "_pos", "_JIPID" ];
+params [ "_pos" ];
 
 _dir		= random 360;
 
@@ -80,8 +80,6 @@ T8RMG_var_arrayCleanup pushBack _mappedObj;
 
 _return = ( _mappedObj select (( count _mappedObj ) - 1));
 { _x addCuratorEditableObjects [[ _return ], true ]; false } count allCurators;
-
-[ _return, 245670 ] remoteExec [ "T8L_fnc_addActionLaptop", 0, _JIPID ];
 
 DEBUG( __FILE__, "_return", _return );
 

@@ -19,5 +19,5 @@ if ( isNull _obj ) exitWith {};
 
 if !( _obj getVariable [ "OBJECTIVE_intel_gathered", false ] ) then
 {
-	_obj addAction [ localize ( "STR_SMEGen_addActionIntel" ), {( _this select 0 ) setVariable [ "OBJECTIVE_intel_gathered", true, true ]; }, nil, 10, true, true, "!( _target getVariable [ 'OBJECTIVE_intel_gathered', false ])" ];
+	_obj addAction [ localize ( "STR_SMEGen_addActionIntel" ), {( _this select 0 ) setVariable [ "OBJECTIVE_intel_gathered", true, true ]; [ 1, 7, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; }, nil, 10, true, true, "", "!( _target getVariable [ 'OBJECTIVE_intel_gathered', false ])" ];
 };
