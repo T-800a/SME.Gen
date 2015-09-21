@@ -14,18 +14,22 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_configArraySites", "_arraySites", "_arrayShuff", "_arraySitesAvailable", "_arraySitesFree", "_arraySitesUsed", "_players" ];
+private [ "_configArraySites", "_arraySites", "_arrayShuff", "_arraySitesAvailable", "_arraySitesFree", "_arraySitesUsed", "_amountSites", "_players" ];
+
+params [[ "_returnSite", false, [true]]];
 
 _arraySites			= [];
 _arraySitesFree		= [];
 _arraySitesUsed		= [];
+
+_amountSites = if ( _returnSite ) then { 1 } else { T8RMG_var_amountSites; };
 
 _configArraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
 
 { _arraySites pushback ( configName _x ); false } count _configArraySites;
 
 DEBUG( __FILE__, "T8RMG_var_arraySitesBlacklist", T8RMG_var_arraySitesBlacklist );
-DEBUG( __FILE__, "T8RMG_var_amountSites", T8RMG_var_amountSites );
+DEBUG( __FILE__, "_amountSites", _amountSites );
 DEBUG( __FILE__, "_arraySites", _arraySites );
 
 _arraySites = _arraySites - T8RMG_var_arraySitesBlacklist;
@@ -36,7 +40,7 @@ DEBUG( __FILE__, "_arrayShuff", _arrayShuff );
 
 _players = if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
 
-while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
+while {( count _arraySitesUsed ) < _amountSites } do
 {
 	DEBUG( __FILE__, "MAIN WHILE", "___" );
 	private [ "_first", "_firstSitePos", "_firstSiteType", "_siteMaxDist" ];
@@ -81,7 +85,7 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 	DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 	
 	// worst case
-	if (( count _arraySitesUsed ) < T8RMG_var_amountSites ) then
+	if (( count _arraySitesUsed ) < _amountSites ) then
 	{
 		DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
 		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
@@ -93,8 +97,12 @@ while {( count _arraySitesUsed ) < T8RMG_var_amountSites } do
 
 
 // resize to defined (in config) amount of targets
-_arraySitesUsed resize T8RMG_var_amountSites;
-T8RMG_var_arraySitesBlacklist = _arraySitesUsed;									DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+_arraySitesUsed resize _amountSites;
+T8RMG_var_arraySitesBlacklist = _arraySitesUsed;
+DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+
+// return site if _returnSite (used for multistage objectives follow ups)
+if ( _returnSite ) exitWith {( _arraySitesUsed select 0 )}; 
 
 {
 	[ _x ] call T8RMG_fnc_createAO;
@@ -102,3 +110,6 @@ T8RMG_var_arraySitesBlacklist = _arraySitesUsed;									DEBUG( __FILE__, "_arra
 	
 	false
 } count _arraySitesUsed;
+
+// return
+true
