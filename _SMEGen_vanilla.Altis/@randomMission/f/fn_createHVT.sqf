@@ -16,11 +16,10 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [	"_findBuildingPos", "_site", "_range", "_typeHVT", "_typeGuard", "_building", "_vehicleArray", "_spawnPos", "_group", 
+private [	"_findBuildingPos", "_site", "_typeHVT", "_typeGuard", "_building", "_vehicleArray", "_spawnPos", "_group", 
 			"_units", "_missionSide", "_missionSideN" ];
 
-_pos				= _this select 0;
-_range				= _this select 1;
+params [ "_pos", "_range" ];
 
 DEBUG( __FILE__, "INIT > _this", _this );
 

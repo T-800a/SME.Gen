@@ -15,10 +15,10 @@
 // );
 
 
-private [ "_pos", "_JIPID", "_dir", "_objArray", "_mappedObj" ];
+private [ "_dir", "_objArray", "_mappedObj" ];
 
-_pos		= _this select 0;
-_JIPID		= _this select 1;
+params [ "_pos", "_JIPID" ];
+
 _dir		= random 360;
 
 DEBUG( __FILE__, "INIT > _this", _this );

@@ -19,11 +19,13 @@
 
 if ( isMultiplayer ) exitWith {};
 
-private [ "_f", "_t", "_v", "_o" ];
+private [ "_o" ];
 
-_f = param [ 0, "___no_file_!!___" ];
-_t = param [ 1, "___no_func_!!___" ];
-_v = param [ 2, "___no_vars_!!___" ];
+params [
+	[ "_f", "___no_file_!!___" ],
+	[ "_t", "___no_func_!!___" ],
+	[ "_v", "___no_vars_!!___" ]
+];
 
 
 _f = _f splitString "\";

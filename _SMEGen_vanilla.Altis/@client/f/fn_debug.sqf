@@ -19,18 +19,16 @@
 
 if ( isMultiplayer ) exitWith {};
 
-private [ "_f", "_t", "_v", "_o" ];
+private [ "_o" ];
 
-_f = param [ 0, "___no_file_!!___" ];
-_t = param [ 1, "___no_func_!!___" ];
-_v = param [ 2, "___no_vars_!!___" ];
+params [
+	[ "_f", "___no_file_!!___" ],
+	[ "_t", "___no_func_!!___" ],
+	[ "_v", "___no_vars_!!___" ]
+];
 
-
-_f = _f splitString "\";
-reverse _f;
-
+_f = _f splitString "\"; reverse _f;
 _o = format [ "T8RMG >> %1 >> %2 >>>>> %3 >> %4", ( round diag_fps ), ( _f select 0 ), _t, _v ]; 
 
-conFile( _o );
-	
+conFile( _o );	
 

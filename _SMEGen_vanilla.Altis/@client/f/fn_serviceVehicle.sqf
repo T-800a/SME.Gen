@@ -13,14 +13,13 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
-disableSerialization;
-
-private [ "_vehicle", "_serviceObj", "_uiText", "_uiBar", "_txt", "_repairTime", "_sleepTime", "_progress", "_step" ];
-
 if ( dialog ) exitWith {};
 if ( T8C_var_inAction ) exitWith {};
 
-_serviceObj = param [ 0, objNull, [ objNull ]];
+disableSerialization;
+private [ "_vehicle", "_uiText", "_uiBar", "_txt", "_repairTime", "_sleepTime", "_progress", "_step" ];
+params [[ "_serviceObj", objNull, [ objNull ]]];
+
 _vehicle = vehicle player;
 
 if ( _vehicle isEqualTo player ) exitWith {};

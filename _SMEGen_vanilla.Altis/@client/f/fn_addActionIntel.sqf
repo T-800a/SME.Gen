@@ -14,10 +14,7 @@
 // );
 
 
-private [ "_obj" ];
-
-_obj	= param [ 0, objNull, [objNull]];
-
+params [[ "_obj", objNull, [objNull]]];
 if ( isNull _obj ) exitWith {};
 
 if !( _obj getVariable [ "OBJECTIVE_intel_gathered", false ] ) then

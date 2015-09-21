@@ -16,17 +16,19 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_mp", "_ms", "_mt", "_mg", "_mc", "_ma", "_mtxt", "_m", "_mn", "_ftxt" ];
+private [ "_m" ];
 
-_mn		= param [ 0, "",			[""]];
-_mp		= param [ 1, [0,0,0],		[[]]];
-_mtxt	= param [ 2, "",			[""]];
-_mg		= param [ 3, [100,100],		[[]]];
-_mdir	= param [ 4, 0,				[123]];
-_ms		= param [ 5, "ELLIPSE",		[""]];
-_mt		= param [ 6, "waypoint",	[""]];
-_mc		= param [ 7, "ColorOrange",	[""]];
-_ma		= param [ 8, 0.50,			[123]];
+params [
+	[ "_mn",	"",				[""]],
+	[ "_mp",	[0,0,0],		[[]]],
+	[ "_mtxt",	"",				[""]],
+	[ "_mg",	[100,100],		[[]]],
+	[ "_mdir",	0,				[123]],
+	[ "_ms",	"ELLIPSE",		[""]],
+	[ "_mt",	"waypoint",		[""]],
+	[ "_mc",	"ColorOrange",	[""]],
+	[ "_ma",	0.50,			[123]]
+];
 
 if ( _mn isEqualTo "" ) exitWith { false };
 if ( _mp isEqualTo [0,0,0] ) exitWith { false };

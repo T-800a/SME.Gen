@@ -15,10 +15,11 @@
 // );
 
 
-private [	"_attackMarker", "_attackMarkerPos", "_objectPos", "_n", "_players", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
+private [	"_attackMarkerPos", "_objectPos", "_n", "_players", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
 			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN" ];
 
-_attackMarker		= _this select 0;
+params [ "_attackMarker" ];
+
 _attackMarkerPos	= getMarkerPos _attackMarker;
 _objectPos			= [];
 _n					= 1;

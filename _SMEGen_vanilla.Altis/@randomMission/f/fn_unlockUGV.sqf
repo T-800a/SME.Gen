@@ -14,10 +14,11 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_siteMkr", "_var", "_ugv" ];
+private [ "_var", "_ugv" ];
 DEBUG( __FILE__, "INIT", _this );
 
-_siteMkr = _this select 0;
+params [ "_siteMkr" ];
+
 _var = format [ "OBJECTIVE_recoverUGV_%1", _siteMkr ];
 
 _ugv = missionNamespace getVariable [ _var, objNull ];

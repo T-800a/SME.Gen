@@ -16,11 +16,13 @@
 
 if ( isDedicated OR !hasInterface ) exitWith {};
 
-private [ "_indexHead", "_indexText", "_indexPreset", "_head", "_text", "_preset" ];
+private [ "_head", "_text", "_preset" ];
 
-_indexHead		= param [ 0, 0, [ 123, "" ]];
-_indexText		= param [ 1, 0, [ 123, "" ]];
-_indexPreset	= param [ 2, 0, [ 123, "" ]];
+params [
+	[ "_indexHead",		0, [ 123, "" ]],
+	[ "_indexText",		0, [ 123, "" ]],
+	[ "_indexPreset",	0, [ 123, "" ]]
+];
 
 waitUntil { !isNil "T8C_var_initDONE" };
 

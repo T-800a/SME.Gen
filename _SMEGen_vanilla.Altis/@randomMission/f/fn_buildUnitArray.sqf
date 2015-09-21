@@ -14,8 +14,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_originArray", "_returnArray" ];
-_originArray	= param [ 0, [], [[]]];
+private [ "_returnArray" ];
+
+params [[ "_originArray", [], [[]]]];
 _returnArray	= [];
 
 {

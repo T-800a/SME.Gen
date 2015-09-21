@@ -14,8 +14,8 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
-private [ "_rank", "_itemSet" ];
-_rank = param [ 0, T8RMG_var_playerRewardSet, [""]];
+private [ "_itemSet" ];
+params [[ "_rank", T8RMG_var_playerRewardSet, [""]]];
 
 switch ( _rank ) do
 {

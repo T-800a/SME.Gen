@@ -16,11 +16,13 @@
 
 if ( isDedicated OR !hasInterface ) exitWith {};
 
-private [ "_indexHead", "_indexText", "_indexPreset", "_firstRun" ];
+private [ "_firstRun" ];
 
-_indexHead		= param [ 0, 0, [ 123, "" ]];
-_indexText		= param [ 1, 0, [ 123, "" ]];
-_indexPreset	= param [ 2, 0, [ 123, "" ]];
+params [
+	[ "_indexHead",		0, [ 123, "" ]],
+	[ "_indexText",		0, [ 123, "" ]],
+	[ "_indexPreset",	0, [ 123, "" ]]
+];
 
 if ( T8C_var_hintActive OR { count T8C_var_hintBuffer > 0 } ) exitWith
 {

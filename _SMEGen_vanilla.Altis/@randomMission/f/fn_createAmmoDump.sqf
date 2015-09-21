@@ -17,9 +17,10 @@
 // );
 	
 
-private [ "_pos", "_dir", "_dirCor", "_objects", "_mappedObj", "_return" ];
+private [ "_dir", "_dirCor", "_objects", "_mappedObj", "_return" ];
 
-_pos = _this select 0;
+params [ "_pos" ];
+
 _dir = random 360;
 
 _objects = 

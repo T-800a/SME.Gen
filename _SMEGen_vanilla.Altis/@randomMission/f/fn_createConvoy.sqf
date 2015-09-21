@@ -14,11 +14,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
+params [ "_pos", "_dir" ];
 
-private [ "_pos", "_dir", "_dirCor", "_convoyObj", "_mappedObj", "_return" ];
-
-_pos = _this select 0;
-_dir = _this select 1;
+private [ "_dirCor", "_convoyObj", "_mappedObj", "_return" ];
 
 _dirCor = if ( random 100 > 50 ) then { 270 } else { 90 };
 

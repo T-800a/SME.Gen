@@ -14,9 +14,10 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_pos", "_dir", "_objArray", "_mappedObj" ];
+private [ "_dir", "_objArray", "_mappedObj" ];
 
-_pos = _this select 0;
+params [ "_pos" ];
+
 _dir = random 360;
 
 _objArray =

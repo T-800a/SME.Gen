@@ -14,10 +14,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_pos", "_range", "_playerDir", "_objectPos", "_object", "_debug" ];
+private [ "_playerDir", "_objectPos", "_object", "_debug" ];
 
-_pos		= _this select 0;
-_range		= _this select 1;
+params [ "_pos", "_range" ];
 
 _objectPos = [];
 _n = 1;

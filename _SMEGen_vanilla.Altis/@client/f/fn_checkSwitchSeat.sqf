@@ -18,11 +18,13 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_vehicle", "_position", "_unit", "_type", "_classes", "_whiteListCheck", "_msg" ];
+private [ "_position", "_type", "_classes", "_whiteListCheck", "_msg" ];
 
-_vehicle	= param [ 0, objNull, [ objNull ]];
-_unit1		= param [ 1, objNull, [ objNull ]];
-_unit2		= param [ 2, objNull, [ objNull ]];
+params [
+	[ "_vehicle",	objNull, [ objNull ]],
+	[ "_unit1",		objNull, [ objNull ]],
+	[ "_unit2",		objNull, [ objNull ]]
+];
 
 hint str _this;
 

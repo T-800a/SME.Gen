@@ -15,15 +15,11 @@
 
 if ( isMultiplayer ) exitWith {};
 
-private [ "_dispaly", "_key", "_shift", "_ctrl", "_alt", "_cursor", "_return", "_exportSite" ];
+private [ "_cursor", "_return", "_exportSite" ];
 
-_dispaly	= _this select 0;
-_key		= _this select 1;
-_shift		= _this select 2;
-_ctrl		= _this select 3;
-_alt		= _this select 4;
+params [ "_dispaly", "_key", "_shift", "_ctrl", "_alt" ];
+
 _cursor		= cursorTarget;
-
 _return		= false;
 
 /*

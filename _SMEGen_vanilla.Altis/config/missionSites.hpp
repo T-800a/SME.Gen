@@ -69,7 +69,7 @@ class missionSites
 	};
 
 	// --------------------------------------------------------------
-	//	BASE MAP
+	//	MAPS
 	//
 	
 	#include <maps\altis.hpp>

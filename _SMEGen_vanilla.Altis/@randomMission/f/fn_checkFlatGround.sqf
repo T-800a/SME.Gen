@@ -14,9 +14,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_pos", "_normal", "_check", "_return" ];
+private [ "_normal", "_check", "_return" ];
 
-_pos = _this select 0;
+params [ "_pos" ];
 
 _normal		= surfaceNormal _pos;
 _check		= ( _normal select 2 ) * 1000;

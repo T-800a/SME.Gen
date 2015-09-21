@@ -14,8 +14,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_switch", "_msg" ];
-_switch = [ _this, 0, 2, [123] ] call BIS_fnc_param;
+private [ "_msg" ];
+
+params [[ "_switch", 0, 2, [123]]];
 
 switch ( _switch ) do 
 { 

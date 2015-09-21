@@ -15,9 +15,9 @@
 // );
 
 
-private [ "_pos", "_posGroundASL", "_posSkyASL", "_return" ];
+private [ "_posGroundASL", "_posSkyASL", "_return" ];
 
-_pos = _this select 0;
+params [ "_pos" ];
 
 _posGroundASL	= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 2 ];
 _posSkyASL		= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 50 ];

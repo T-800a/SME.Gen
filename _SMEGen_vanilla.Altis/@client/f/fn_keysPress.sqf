@@ -13,13 +13,9 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
-private [ "_dispaly", "_key", "_shift", "_ctrl", "_alt", "_return", "_helipadObj" ];
+private [ "_return", "_helipadObj" ];
 
-_dispaly	= _this select 0;
-_key		= _this select 1;
-_shift		= _this select 2;
-_ctrl		= _this select 3;
-_alt		= _this select 4;
+params [ "_dispaly", "_key", "_shift", "_ctrl", "_alt" ];
 
 _return		= false;
 

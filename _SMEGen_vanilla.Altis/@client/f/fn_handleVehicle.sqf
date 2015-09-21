@@ -14,10 +14,12 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_vehicle", "_vehicles", "_restric" ];
+private [ "_vehicles"  ];
 
-_vehicle = param [ 0, objNull, [ objNull ]];
-_restric = param [ 1, "", [ "" ]];
+params [
+	[ "_vehicle", objNull, [ objNull ]],
+	[ "_restric", "", [ "" ]]
+];
 
 DEBUG( __FILE__, "INIT: _this", _this );
 

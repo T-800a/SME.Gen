@@ -14,10 +14,10 @@
 #define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_vehicle", "_type" ];
-
-_vehicle	= param [ 0, objNull, [ objNull ]];
-_type		= param [ 1, "", [""]];
+params [
+	[ "_vehicle", objNull, [ objNull ]],
+	[ "_type", "", [""]]
+];
 
 if ( isNull _vehicle ) exitWith {};
 if ( _type isEqualTo "" ) exitWith {};
