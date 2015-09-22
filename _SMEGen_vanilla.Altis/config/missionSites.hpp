@@ -74,7 +74,8 @@ class missionSites
 			scope			= 0;
 			name			= "";
 			type			= "road";
-			allowedTypes[]	= { "convoy", "roadblock", "roadblockHouse" };
+			allowedTypes[]	= { "convoy", "roadblock", "roadblockHouse", "roadIED", "roadIEDintel" };
+		//	allowedTypes[]	= { "roadIEDintel" };
 			marker			= "";
 			position[]		= { 0, 0, 0 };
 			size[]			= { 200, 80 };

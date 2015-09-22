@@ -112,7 +112,29 @@ switch ( _type ) do
 	case "roadblockHouse":
 	{
 		[ _sitePos, _siteAngle ] call T8RMG_fnc_createRoadblockHouse;
-	};	
+	};
+
+	case "roadIED":
+	{
+		private [ "_objs" ];
+		_objs = [ _sitePos, _siteAngle ] call T8RMG_fnc_createRoadIED; 
+		
+		_varName = format [ "OBJECTIVE_roadIED_%1", _siteMkr ];
+		missionNamespace setVariable [ _varName, _objs ];
+	};
+	
+	case "roadIEDintel":
+	{
+		private [ "_objs" ];
+		_objs = [ _sitePos, _siteAngle, true ] call T8RMG_fnc_createRoadIED;
+		
+		[( _objs select 0 )] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_roadIEDintel_actionID_%1", _siteMkr ]) ];
+		
+		_varName = format [ "OBJECTIVE_roadIEDintel_%1", _siteMkr ];
+		missionNamespace setVariable [ _varName, ( _objs select 0 )];
+		
+		missionNamespace setVariable [( format [ "OBJECTIVE_roadIEDintel_IED_%1", _siteMkr ]), ( _objs select 1 )];
+	};
 	
 	case "mortars":
 	{

@@ -217,6 +217,17 @@
 		</Key>
 
 
+		<Key ID="STR_SMEGen_type_roadIED_shrt">
+			<Original>Roadside IEDs</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadIED_task">
+			<Original>Clear the roadside IEDs</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadIED_desc">
+			<Original>The enemy is planting roadside IEDs at the #__LOCATION__#. Your task is to clear the roadside IEDs or find further INTEL.</Original>
+		</Key>
+
+
 		<Key ID="STR_SMEGen_type_mortars_shrt">
 			<Original>Destroy Mortars</Original>
 		</Key>

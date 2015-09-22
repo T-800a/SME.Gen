@@ -311,6 +311,87 @@ class missionTypes
 			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
+	
+	class roadIED : base_type
+	{
+		scope			= 1;
+		name			= "roadIED";
+
+		taskShort		= "$STR_SMEGen_type_roadIED_shrt";
+		task			= "$STR_SMEGen_type_roadIED_task";
+		description		= "$STR_SMEGen_type_roadIED_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+			
+			class counter_attack
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
+				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_garrison { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
+	
+	class roadIEDintel : base_type
+	{
+		scope			= 1;
+		name			= "roadIEDintel";
+
+		taskShort		= "$STR_SMEGen_type_roadIED_shrt";
+		task			= "$STR_SMEGen_type_roadIED_task";
+		description		= "$STR_SMEGen_type_roadIED_desc";
+
+		class conditions
+		{
+			class followup
+			{
+				condition	= "(( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND {( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]})";
+				function	= "T8RMG_fnc_createFollowingTask";
+				isFinal		= 0;
+			};
+
+			class fail
+			{
+				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};		
+		
+			class blowIED
+			{
+				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
+				function	= "T8RMG_fnc_blowIED";
+				isFinal		= 0;
+			};
+			
+			class counter_attack
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 0 )";
+				function	= "T8RMG_fnc_createAttack";
+				isFinal		= 0;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_garrison { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+		};
+	};
 
 	class mortars : base_type
 	{

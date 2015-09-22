@@ -57,6 +57,7 @@ class cfgFunctions
 		{
 			file = "@randomMission\f";
 			
+			addFunction(blowIED);
 			addFunction(buildUnitArray);
 			addFunction(checkFlatGround);
 			addFunction(checkOutside);
@@ -75,6 +76,7 @@ class cfgFunctions
 			addFunction(createRecoverUGV);
 			addFunction(createRoadblock);
 			addFunction(createRoadblockHouse);
+			addFunction(createRoadIED);
 			addFunction(debug);
 			addFunction(findObjectivePos);
 			addFunction(handleConditions);
