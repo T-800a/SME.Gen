@@ -15,6 +15,8 @@
 		</Key>
 	</Package>
 	
+
+
 	<Package name="diary">
 		<Key ID="STR_SMEGen_diary_desc_titel">
 			<Original>Description</Original>
@@ -41,6 +43,8 @@
 		</Key>		
 	</Package>
 
+
+
 	<Package name="Main">
 		<Key ID="STR_SMEGen_vehicleRestricted">
 			<Original>This vehicle is restricted.&lt;br /&gt;&lt;t size='0.95'&gt;You can only get in a cargo slot.&lt;/t&gt;</Original>
@@ -66,11 +70,17 @@
 			<Original>## Search for Intel ##</Original>
 		</Key>
 		
-		<Key ID="STR_SMEGen_hint_intelHVT">
-			<Original>U.SOC will now evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You will recieve a new target soon.</Original>
+		<Key ID="STR_SMEGen_hint_intelProcess">
+			<Original>&lt;br /&gt;Captured INTEL recieved.&lt;br /&gt;&lt;br /&gt;U.SOC will now evaluate the INTEL.</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_hint_followingTask">
+			<Original>&lt;br /&gt;U.SOC has evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You recieved a new task.</Original>
 		</Key>
 	</Package>
 	
+
+
 	<Package name="Rewards">
 		<Key ID="STR_SMEGen_hint_playerRankUp">
 			<Original>&lt;t size='3' color='#FAAC58' align='center'&gt;&lt;img image='%1'/&gt;&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1' color='#E6E6E6' align='center'&gt;Congratulations you ranked up!&lt;br /&gt;Your new rank is:&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1.5' color='#FAAC58' align='center'&gt;%2&lt;/t&gt;</Original>

@@ -67,6 +67,8 @@ _findBuildingPos =
 	_tmpArray = _tmpArray call BIS_fnc_arrayShuffle;
 	_return = if ( count _tmpArray > 5 ) then { [ _tmpArray, _nb ] } else { _return };
 	
+	_nb setVariable [ "occupied", true ];
+	
 	DEBUG( __FILE__, "call _findBuildingPos > _return", _return );
 	_return
 };

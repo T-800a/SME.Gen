@@ -66,7 +66,6 @@ class cfgFunctions
 			addFunction(createAmmoDump);
 			addFunction(createAttack);
 			addFunction(createConvoy);
-			addFunction(createFollowingTask);
 			addFunction(createFuelDump);
 			addFunction(createGetIntel);
 			addFunction(createHVT);
@@ -81,6 +80,7 @@ class cfgFunctions
 			addFunction(findObjectivePos);
 			addFunction(handleConditions);
 			addFunction(handleDisplays);
+			addFunction(handleFollowingTask);
 			addFunction(handleNewTasks);
 			addFunction(handleReward);
 			addFunction(surrenderHVT);

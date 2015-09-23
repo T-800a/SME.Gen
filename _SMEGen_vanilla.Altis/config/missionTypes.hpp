@@ -202,7 +202,7 @@ class missionTypes
 			class followup
 			{
 				condition	= "((( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 ) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
-				function	= "T8RMG_fnc_createFollowingTask";
+				function	= "T8RMG_fnc_handleFollowingTask";
 				isFinal		= 0;
 			};
 
@@ -360,7 +360,7 @@ class missionTypes
 			class followup
 			{
 				condition	= "(( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND {( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]})";
-				function	= "T8RMG_fnc_createFollowingTask";
+				function	= "T8RMG_fnc_handleFollowingTask";
 				isFinal		= 0;
 			};
 

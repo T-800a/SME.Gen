@@ -4,7 +4,7 @@
 	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
-	File:		fn_createFollowingTask.sqf
+	File:		fn_handleFollowingTask.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 	
@@ -27,3 +27,5 @@ DEBUG( __FILE__, "_oldSite", _oldSite );
 DEBUG( __FILE__, "_newSite", _newSite );
 
 [ _newSite ] call T8RMG_fnc_createAO;
+
+[ 1, 8, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
