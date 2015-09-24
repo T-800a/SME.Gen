@@ -2,10 +2,13 @@
 <h2 align="center">SmallMilitaryEncounter Generator</h2>
 <p align="center">
     <a href="#">
-        <img src="https://img.shields.io/badge/SME.Gen-V.023-green.svg?style=flat-square" alt="SME.Gen: V.023">
+        <img src="https://img.shields.io/badge/SME.Gen-V.024-green.svg?style=flat-square" alt="SME.Gen: V.024">
     </a>
     <a href="#">
         <img src="http://img.shields.io/badge/Author-T--800a-blue.svg?style=flat-square" alt="Author: T-800a">
+    </a>
+    <a href="https://github.com/acemod/ACE3" target="_blank">
+        <img src="http://img.shields.io/badge/Requires-ACE3-red.svg?style=flat-square" alt="Requires: ACE3">
     </a>
 </p>
 <p align="center"><sup><strong>A dynamic mission for ARMA3 that generates small military encounters.</strong></sup></p>
@@ -18,20 +21,24 @@ The intent of the mission is to have something similiar to an Invade & Annex typ
 - destroy 2 mortars
 - destroy 2 resupply vehicles
 - kill HVT and his Guards
+- gather INTEL from HVT
 
 #####Military Bases
 - clear occupied base
 - destroy 2 mortars
 - destroy 2 resupply vehicles
+- kill HVT and his Guards
+- collect INTEL from HVT
 
 #####Road-Positions
 - clear broken down convoy
 - clear road block / checkpoint
+- IED site - clear / gather INTEL
 
 #####Installations
 - destroy communication base (radiotower)
 - recover UGV and return it to base (stomper)
-- gather Intel from a compound
+- download INTEL in a compound
 
 #### Rewards
 for completing a set (2) of missions:
