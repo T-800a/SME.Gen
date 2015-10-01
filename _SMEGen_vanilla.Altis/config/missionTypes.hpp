@@ -585,6 +585,41 @@ class missionTypes
 			class group02 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
+	
+	
+	class getIntelFollowUP : base_type
+	{
+		scope			= 1;
+		name			= "getIntelFollowUP";
+
+		taskShort		= "$STR_SMEGen_type_getIntel_shrt";
+		task			= "$STR_SMEGen_type_getIntel_task";
+		description		= "$STR_SMEGen_type_getIntel_desc";
+
+		class conditions
+		{
+			class followup
+			{
+				condition	= "(( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND {( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]})";
+				function	= "T8RMG_fnc_handleFollowingTask";
+				isFinal		= 0;
+			};
+			
+			class fail
+			{
+				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_garrison { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
 
 
 

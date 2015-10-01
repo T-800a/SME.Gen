@@ -62,7 +62,8 @@ class missionSites
 			scope			= 0;
 			name			= "";
 			type			= "compound";
-			allowedTypes[]	= { "radiotower", "recoverUGV", "getIntel" };
+			allowedTypes[]	= { "radiotower", "recoverUGV", "getIntel", "getIntelFollowUP" };
+		//	allowedTypes[]	= { "getIntelFollowUP" };
 			marker			= "";
 			position[]		= { 0, 0, 0 };
 			size[]			= { 250, 250 };

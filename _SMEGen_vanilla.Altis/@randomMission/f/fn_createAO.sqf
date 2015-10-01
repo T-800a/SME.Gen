@@ -215,6 +215,18 @@ switch ( _type ) do
 		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
+	case "getIntelFollowUP":
+	{
+		private [ "_obj" ];
+		_siteSize = ( _range * 0.4 );
+		_obj = [ _sitePos ] call T8RMG_fnc_createGetIntel;
+		
+		[ _obj ] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_getIntelFollowUP_actionID_%1", _siteMkr ])];
+		
+		_varName = format [ "OBJECTIVE_getIntelFollowUP_%1", _siteMkr ];
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
 	default {};
 };
 
