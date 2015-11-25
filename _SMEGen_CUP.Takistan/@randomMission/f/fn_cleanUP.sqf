@@ -14,13 +14,13 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 
-DEBUG( __FILE__, "INIT", "INIT" );
+__DEBUG( __FILE__, "INIT", "INIT" );
 {
-	DEBUG( __FILE__, "T8RMG_var_arrayCleanup > _x", _x );
+	__DEBUG( __FILE__, "T8RMG_var_arrayCleanup > _x", _x );
 	
 	if (( typeName _x ) isEqualTo ( typeName "STRING" ))	then { deleteMarkerLocal _x; };
 	if (( typeName _x ) isEqualTo ( typeName [] ))			then {{ if ( !isNull _x ) then { deleteVehicle _x;  sleep 0.20; }; false } count _x; };

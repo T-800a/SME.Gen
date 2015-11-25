@@ -31,13 +31,13 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "vanilla_OPFOR_GUER";
+		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
 		
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "vanilla_BLUFOR";
+		playerRewardSet				= "CUP_BLUFOR_USMC";
 
 
 	// amount of spawned mission AOs

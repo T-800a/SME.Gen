@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 params [ "_pos", "_dir", [ "_intel", false, [true]]];
@@ -48,7 +48,7 @@ _return = [( _mappedObjs select 0 ), ( _mappedObjs select 1 )];
 
 { _x addCuratorEditableObjects [ _return, true ]; false } count allCurators;
 
-DEBUG( __FILE__, "_return", _return);
+__DEBUG( __FILE__, "_return", _return);
 
 // return
 _return

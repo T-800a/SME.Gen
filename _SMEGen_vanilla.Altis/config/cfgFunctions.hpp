@@ -18,6 +18,9 @@
 
 class cfgFunctions
 {
+	// T8 Units
+	#include <..\T8\FUNCTIONS.hpp>
+	
 	class T8C
 	{
 		class client

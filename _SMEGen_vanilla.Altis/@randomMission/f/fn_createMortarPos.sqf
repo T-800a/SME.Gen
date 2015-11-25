@@ -13,7 +13,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_dir", "_dirCor", "_mortarObj", "_return", "_mappedObj" ];
@@ -39,13 +39,24 @@ _mortarObj =
 ];
 
 _mappedObj = [ _pos, _dir, _mortarObj ] call BIS_fnc_objectsMapper;
+
+{
+	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
+	{
+		_x setVectorUp ( surfaceNormal( getPos _x ));
+	};
+	
+	sleep 0.05;
+	false
+} count _mappedObj;
+
 { if ( _x isKindOf "LandVehicle" ) then { _x setVehicleLock "LOCKEDPLAYER"; }; false } count _mappedObj;
 T8RMG_var_arrayCleanup pushBack _mappedObj;
 
 _return = ( _mappedObj select 0 );
 { _x addCuratorEditableObjects [ [ _return ], true ]; false } count allCurators;
 
-DEBUG( __FILE__, "_return", _return );
+__DEBUG( __FILE__, "_return", _return );
 
 // Return
 _return

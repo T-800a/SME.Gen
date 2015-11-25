@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_configArraySites", "_arraySites", "_arrayShuff", "_arraySitesAvailable", "_arraySitesFree", "_arraySitesUsed", "_amountSites", "_players" ];
@@ -28,21 +28,21 @@ _configArraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( miss
 
 { _arraySites pushback ( configName _x ); false } count _configArraySites;
 
-DEBUG( __FILE__, "T8RMG_var_arraySitesBlacklist", T8RMG_var_arraySitesBlacklist );
-DEBUG( __FILE__, "_amountSites", _amountSites );
-DEBUG( __FILE__, "_arraySites", _arraySites );
+__DEBUG( __FILE__, "T8RMG_var_arraySitesBlacklist", T8RMG_var_arraySitesBlacklist );
+__DEBUG( __FILE__, "_amountSites", _amountSites );
+__DEBUG( __FILE__, "_arraySites", _arraySites );
 
 _arraySites = _arraySites - T8RMG_var_arraySitesBlacklist;
-DEBUG( __FILE__, "_arraySites", _arraySites );
+__DEBUG( __FILE__, "_arraySites", _arraySites );
 
 _arrayShuff = _arraySites call BIS_fnc_arrayShuffle;	
-DEBUG( __FILE__, "_arrayShuff", _arrayShuff );
+__DEBUG( __FILE__, "_arrayShuff", _arrayShuff );
 
 _players = if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
 
 while {( count _arraySitesUsed ) < _amountSites } do
 {
-	DEBUG( __FILE__, "MAIN WHILE", "___" );
+	__DEBUG( __FILE__, "MAIN WHILE", "___" );
 	private [ "_first", "_firstSitePos", "_firstSiteType", "_siteMaxDist" ];
 	
 	_siteMaxDist = 1750;
@@ -58,7 +58,7 @@ while {( count _arraySitesUsed ) < _amountSites } do
 		false
 	} count _arrayShuff; 
 
-	DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
+	__DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
 	
 	_first = _arraySitesFree select 0;
 	_arraySitesFree deleteAt 0;
@@ -66,9 +66,9 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	_firstSitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "position" );
 	_firstSiteType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "type" );
 	
-	DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
-	DEBUG( __FILE__, "_first", _first );
-	DEBUG( __FILE__, "_firstSitePos", _firstSitePos );
+	__DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
+	__DEBUG( __FILE__, "_first", _first );
+	__DEBUG( __FILE__, "_firstSitePos", _firstSitePos );
 	
 	
 	{
@@ -82,12 +82,12 @@ while {( count _arraySitesUsed ) < _amountSites } do
 		false
 	} count _arraySitesFree; 
 	
-	DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+	__DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 	
 	// worst case
 	if (( count _arraySitesUsed ) < _amountSites ) then
 	{
-		DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
+		__DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
 		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
 		_siteMaxDist = _siteMaxDist + 1000;
 		sleep 30;
@@ -99,14 +99,14 @@ while {( count _arraySitesUsed ) < _amountSites } do
 // resize to defined (in config) amount of targets
 _arraySitesUsed resize _amountSites;
 T8RMG_var_arraySitesBlacklist = _arraySitesUsed;
-DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+__DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
 
 // return site if _returnSite (used for multistage objectives follow ups)
 if ( _returnSite ) exitWith {( _arraySitesUsed select 0 )}; 
 
 {
 	[ _x ] call T8RMG_fnc_createAO;
-	DEBUG( __FILE__, "_arraySitesUsed > _x", _x );
+	__DEBUG( __FILE__, "_arraySitesUsed > _x", _x );
 	
 	false
 } count _arraySitesUsed;

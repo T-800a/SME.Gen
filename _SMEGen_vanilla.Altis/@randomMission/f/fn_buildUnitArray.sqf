@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_returnArray" ];
@@ -26,8 +26,8 @@ _returnArray	= [];
 	false
 } count _originArray;
 
-DEBUG( __FILE__, "_originArray", _originArray );
-DEBUG( __FILE__, "_returnArray", _returnArray );
+__DEBUG( __FILE__, "_originArray", _originArray );
+__DEBUG( __FILE__, "_returnArray", _returnArray );
 
 // return
 _returnArray

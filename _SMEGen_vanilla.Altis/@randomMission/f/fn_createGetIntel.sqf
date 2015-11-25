@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 
@@ -21,7 +21,7 @@ params [ "_pos" ];
 
 _dir		= random 360;
 
-DEBUG( __FILE__, "INIT > _this", _this );
+__DEBUG( __FILE__, "INIT > _this", _this );
 
 _objArray =
 [
@@ -75,13 +75,23 @@ _objArray =
 
 _mappedObj = [ _pos, _dir, _objArray ] call BIS_fnc_objectsMapper;
 
+{
+	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
+	{
+		_x setVectorUp ( surfaceNormal( getPos _x ));
+	};
+	
+	sleep 0.05;
+	false
+} count _mappedObj;
+
 
 T8RMG_var_arrayCleanup pushBack _mappedObj;
 
 _return = ( _mappedObj select (( count _mappedObj ) - 1));
 { _x addCuratorEditableObjects [[ _return ], true ]; false } count allCurators;
 
-DEBUG( __FILE__, "_return", _return );
+__DEBUG( __FILE__, "_return", _return );
 
 // Return
 _return

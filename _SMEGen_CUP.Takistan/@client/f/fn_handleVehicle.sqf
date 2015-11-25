@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_vehicles"  ];
@@ -21,7 +21,7 @@ params [
 	[ "_restric", "", [ "" ]]
 ];
 
-DEBUG( __FILE__, "INIT: _this", _this );
+__DEBUG( __FILE__, "INIT: _this", _this );
 
 if ( isNull _vehicle ) exitWith {};
 

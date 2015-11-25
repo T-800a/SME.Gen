@@ -10,7 +10,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
 if ( isMultiplayer ) exitWith {};
@@ -136,7 +136,7 @@ _exportVehicle =
 			) then
 		{
 			( text ( format [ "%1  -  %2", ( configName _x ), getText ( _x >> "displayName" )])) call _fnc_makeFile; 
-			DEBUG( __FILE__, ( configName _x ), getText ( _x >> "displayName" ));
+			__DEBUG( __FILE__, ( configName _x ), getText ( _x >> "displayName" ));
 		};
 		
 		false 

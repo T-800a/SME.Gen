@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 waitUntil { !isNil "T8U_var_InitDONE" };
@@ -22,15 +22,14 @@ if ( isNil "T8RMG_var_objectReward01" )			then { T8RMG_var_objectReward01 = objN
 if ( isNil "T8RMG_var_objectReward02" )			then { T8RMG_var_objectReward02 = objNull; };
 if ( isNil "T8RMG_var_objectReward03" )			then { T8RMG_var_objectReward03 = objNull; };
 
-T8RMG_var_amountSites		= getNumber	( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" );
 T8RMG_var_arrayConditions	= [];
 T8RMG_var_arraySites		= [];
 T8RMG_var_arrayCleanup		= [];
 T8RMG_var_arrayTypes		= [];
 
-DEBUG( __FILE__, "=======================================================================================================================", "" );
-DEBUG( __FILE__, "MAIN INIT", "SEM.Gen" );
-DEBUG( __FILE__, "=======================================================================================================================", "" );
+__DEBUG( __FILE__, "=======================================================================================================================", "" );
+__DEBUG( __FILE__, "MAIN INIT", "SEM.Gen" );
+__DEBUG( __FILE__, "=======================================================================================================================", "" );
 
 
 // handle textures for signs / billboards

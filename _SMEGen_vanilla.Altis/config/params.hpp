@@ -18,16 +18,32 @@ class Params
 	class enemyFaction
 	{
 		title		= "Enemy Faction";
-		values[]	= { 0,      1,            2,               3,     4,                5,                    999 };
-		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "Altian State (SAG)", "DEFAULT" };
+		values[]	= { 0,      1,            2,               3,     4,                5,                		999 };
+		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"DEFAULT" };
 		default		= 999;
 	};
 	
 	class rewardSet
 	{
 		title		= "Reward Set";
-		values[]	= { 0,        1,                       2,             999 };
-		texts[]		= { "BLUFOR", "BLUFOR - full Arsenal", "1PARA - SAG", "DEFAULT" };
+		values[]	= { 0,        1,                       2,          			999 };
+		texts[]		= { "BLUFOR", "BLUFOR - full Arsenal", "CUP - USMC", 		"DEFAULT" };
+		default		= 999;
+	};
+	
+	class amountMissionSites
+	{
+		title		= "Simultaneous Mission Sites";
+		values[]	= { 0,          1,			2,			3,			999 };
+		texts[]		= { "1 Site",	"2 Sites",	"3 Sites",	"4 Sites",	"DEFAULT" };
+		default		= 999;
+	};
+	
+	class AISkill
+	{
+		title		= "AI Skill";
+		values[]	= { 0,          1,			2,					999 };
+		texts[]		= { "Militia",	"Army",		"Special Forces",	"DEFAULT" };
 		default		= 999;
 	};
 };

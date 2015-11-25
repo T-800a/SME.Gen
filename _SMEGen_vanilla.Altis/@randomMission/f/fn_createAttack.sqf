@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 
@@ -25,7 +25,7 @@ _objectPos			= [];
 _n					= 1;
 _players			= if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
 
-DEBUG( __FILE__, "_this", _this );
+__DEBUG( __FILE__, "_this", _this );
 
 while { count _objectPos < 1 } do
 {
@@ -65,7 +65,7 @@ switch ( _missionSideN ) do
 	default		{ _missionSide = EAST };
 };
 
-DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
+__DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 
 {
 	private [ "_task", "_units", "_unitsFiller", "_subArray" ];
@@ -81,11 +81,11 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 		_groupCount = count _units;
 		_mod = ceil(((( _playerCount /_modPlayer ) * 2 ) * (( _groupCount / _modGroup ) * 2 )) * 2 );
 		
-		DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
 		
 		for "_i" from 1 to _mod do
 		{
@@ -93,10 +93,10 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 			private [ "_filler" ];
 			_filler = _unitsFiller call BIS_fnc_selectRandom;
 			_units pushBack _filler;
-			DEBUG( __FILE__, "ADD UNIT TO GROUP", _filler );
+			__DEBUG( __FILE__, "ADD UNIT TO GROUP", _filler );
 		};
 		
-		DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
+		__DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
 	};
 	
 	_units = [ _units ] call T8RMG_fnc_buildUnitArray;

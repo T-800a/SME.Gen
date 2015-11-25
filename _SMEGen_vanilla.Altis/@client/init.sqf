@@ -11,7 +11,7 @@
  =======================================================================================================
 */ 
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
 
@@ -31,7 +31,7 @@ T8C_var_initDONE = true;
 // Prepare VR-Ammobox
 private [ "_arsenalAccess" ];
 _arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "fullArsenal" );
-DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
+__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
 if ( _arsenalAccess isEqualTo 1 ) then 
 {
 	[ "AmmoboxInit", [ mission_obj_arsenal_post, true ]] spawn BIS_fnc_arsenal;

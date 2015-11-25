@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8C_fnc_debug
 // );
 
 private [ "_itemSet" ];
@@ -28,12 +28,12 @@ _itemCargo		= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPla
 _magazineCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> _itemSet >> "MagazineReward" );
 _weaponCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> _itemSet >> "WeaponReward" );
 
-DEBUG( __FILE__,"T8RMG_var_playerRewardSet", T8RMG_var_playerRewardSet );
-DEBUG( __FILE__,"_itemSet", _itemSet );
-DEBUG( __FILE__,"_backpackCargo", _backpackCargo );
-DEBUG( __FILE__,"_itemCargo", _itemCargo );
-DEBUG( __FILE__,"_magazineCargo", _magazineCargo );
-DEBUG( __FILE__,"_weaponCargo", _weaponCargo );
+__DEBUG( __FILE__,"T8RMG_var_playerRewardSet", T8RMG_var_playerRewardSet );
+__DEBUG( __FILE__,"_itemSet", _itemSet );
+__DEBUG( __FILE__,"_backpackCargo", _backpackCargo );
+__DEBUG( __FILE__,"_itemCargo", _itemCargo );
+__DEBUG( __FILE__,"_magazineCargo", _magazineCargo );
+__DEBUG( __FILE__,"_weaponCargo", _weaponCargo );
 
 if (( count _backpackCargo	) > 0 ) then { [ mission_obj_arsenal_post, _backpackCargo,		false, true ] call BIS_fnc_addVirtualBackpackCargo; };
 if (( count _itemCargo		) > 0 ) then { [ mission_obj_arsenal_post, _itemCargo,			false, true ] call BIS_fnc_addVirtualItemCargo; };

@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_dirCor", "_convoyObj", "_mappedObj" ];
@@ -47,12 +47,22 @@ _convoyObj =
 	["B_G_Van_01_transport_F",[7.29028,-4.53613,0.0135589],267.766,1,0,[-1.48218,2.18792],"","",true,false]
 ];
 
-
 _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;
+
+{
+	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
+	{
+		_x setVectorUp ( surfaceNormal( getPos _x ));
+	};
+	
+	sleep 0.05;
+	false
+} count _mappedObj;
+
 { sleep 0.5; if ( _x isKindOf "LandVehicle" ) then { _x setVehicleLock "LOCKED"; }; false } count _mappedObj;
 T8RMG_var_arrayCleanup pushBack _mappedObj;
 
-DEBUG( __FILE__, "_mappedObj", _mappedObj );
+__DEBUG( __FILE__, "_mappedObj", _mappedObj );
 
 // Return
 _mappedObj

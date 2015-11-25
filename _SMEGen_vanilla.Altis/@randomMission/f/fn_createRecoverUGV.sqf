@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_dir", "_objArray", "_mappedObj" ];
@@ -35,7 +35,6 @@ _objArray =
 	["Land_BarrelWater_grey_F",[-0.428467,7.96997,5.81741e-005],27.9372,1,0,[-0.0136287,-0.0134152],"","",true,false], 
 	["Land_BagFence_Long_F",[8.16675,4.75684,0.00088644],180,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Long_F",[-8.75415,5.89282,-0.000999928],120.362,1,0,[0,0],"","",true,false], 
-	["Land_ShelvesWooden_khaki_F",[3.36011,10.1055,-0.0260429],167.931,1,0,[-0.0749796,0.246498],"","",true,false], 
 	["Land_BagFence_Long_F",[-10.0154,3.74097,-0.000999928],120.362,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Round_F",[1.26953,11.6619,-0.00130129],142.007,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Round_F",[1.16699,11.2219,-0.00130129],53.0067,1,0,[0,0],"","",true,false], 
@@ -45,14 +44,20 @@ _objArray =
 	["Land_Sacks_heap_F",[4.71753,-12.4817,0],273.462,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Short_F",[11.3425,7.50684,0.000999451],268,1,0,[0,0],"","",true,false], 
 	["Land_Sacks_heap_F",[6.02197,-12.6145,0],12.4623,1,0,[0,0],"","",true,false], 
-	["Land_ChairWood_F",[8.47729,11.8545,1.24118],163.926,1,0,[0.0773291,0.246771],"","",true,false], 
-	["Land_WoodenTable_large_F",[8.0769,12.7761,-0.0249972],268.992,1,0,[-0.254752,0.00345962],"","",true,false], 
-	["Land_ChairWood_F",[7.68457,13.6045,1.23765],342.94,1,0,[-0.0667202,-0.245187],"","",true,false], 
-	["Land_FireExtinguisher_F",[10.3059,14.5327,-0.0248737],28.8644,1,0,[0.0460268,-0.259977],"","",true,false], 
 	["Land_GarbagePallet_F",[-5.78027,18.397,0],221,1,0,[0,0],"","",true,false]
 ];
 
 _mappedObj = [ _pos, _dir, _objArray ] call BIS_fnc_objectsMapper;
+
+{
+	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
+	{
+		_x setVectorUp ( surfaceNormal( getPos _x ));
+	};
+	
+	sleep 0.05;
+	false
+} count _mappedObj;
 
 {
 	sleep 0.2;
@@ -66,7 +71,7 @@ T8RMG_var_arrayCleanup pushBack _mappedObj;
 _return = ( _mappedObj select 0 );
 { _x addCuratorEditableObjects [[ _return ], true ]; false } count allCurators;
 
-DEBUG( __FILE__, "_return", _return );
+__DEBUG( __FILE__, "_return", _return );
 
 // Return
 _return

@@ -11,11 +11,11 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_var", "_ugv" ];
-DEBUG( __FILE__, "INIT", _this );
+__DEBUG( __FILE__, "INIT", _this );
 
 params [ "_siteMkr" ];
 

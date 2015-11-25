@@ -13,7 +13,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_dir", "_dirCor", "_mortarObj", "_return", "_mappedObj" ];
@@ -56,7 +56,7 @@ T8RMG_var_arrayCleanup pushBack _mappedObj;
 _return = ( _mappedObj select 0 );
 { _x addCuratorEditableObjects [ [ _return ], true ]; false } count allCurators;
 
-DEBUG( __FILE__, "_return", _return );
+__DEBUG( __FILE__, "_return", _return );
 
 // Return
 _return

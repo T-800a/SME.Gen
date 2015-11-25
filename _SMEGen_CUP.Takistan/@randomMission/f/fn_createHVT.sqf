@@ -13,7 +13,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [	"_findBuildingPos", "_site", "_typeHVT", "_typeGuard", "_building", "_vehicleArray", "_spawnPos", "_group", 
@@ -21,7 +21,7 @@ private [	"_findBuildingPos", "_site", "_typeHVT", "_typeGuard", "_building", "_
 
 params [ "_pos", "_range" ];
 
-DEBUG( __FILE__, "INIT > _this", _this );
+__DEBUG( __FILE__, "INIT > _this", _this );
 
 _typeHVT			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "killHVT" >> "typeHVT" );
 _typeGuard			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "killHVT" >> "typeGuard" );
@@ -69,7 +69,7 @@ _findBuildingPos =
 	
 	_nb setVariable [ "occupied", true ];
 	
-	DEBUG( __FILE__, "call _findBuildingPos > _return", _return );
+	__DEBUG( __FILE__, "call _findBuildingPos > _return", _return );
 	_return
 };
 
@@ -80,13 +80,13 @@ while {( count _building ) < 1 } do
 	_building	= _p call _findBuildingPos;
 };
 
-DEBUG( __FILE__, "_building", _building );
+__DEBUG( __FILE__, "_building", _building );
 
 _n = ( count ( _building select 0 )) - 2;
-DEBUG( __FILE__, "_n", _n );
+__DEBUG( __FILE__, "_n", _n );
 
 for "_i" from 1 to _n do { _vehicleArray pushBack _typeGuard; };
-DEBUG( __FILE__, "_vehicleArray", _vehicleArray );
+__DEBUG( __FILE__, "_vehicleArray", _vehicleArray );
 
 _vehicleArray = [ _vehicleArray ] call T8RMG_fnc_buildUnitArray;
 
@@ -105,7 +105,7 @@ _units		= ( units _group );
 { _x addCuratorEditableObjects [ _units, true ]; false } count allCurators;
 T8RMG_var_arrayCleanup pushBack _units;
 
-DEBUG( __FILE__, "_return", _units );
+__DEBUG( __FILE__, "_return", _units );
 
 // Return
 _units

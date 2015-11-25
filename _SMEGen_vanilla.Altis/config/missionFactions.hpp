@@ -13,38 +13,6 @@
 
 class missionFactions 
 {
-	class ASC_opfor_guerilla
-	{
-
-	// side of this faction
-	// 0 - East 
-	// 1 - West 
-	// 2 - Indep
-		spawnUnitsSide	= 0;
-		
-	// placeholder classes and their matching config class
-		class units
-		{
-			SQUADLEADER = "ASC_O_AS_soldier_SL_F";
-			TEAMLEADER	= "ASC_O_AS_soldier_SL_F";
-			CORPSMAN	= "ASC_O_AS_soldier_CM_F";
-			MARKSMAN	= "ASC_O_AS_marksman_F";
-			HEAVYMG		= "ASC_O_AS_soldier_HMG_F";
-			LIGHTMG		= "ASC_O_AS_soldier_AR_F";
-			ANTITANK	= "ASC_O_AS_soldier_AT_F";
-			ANTIPERSON	= "ASC_O_AS_soldier_AT_F";
-			ANTIAIR		= "ASC_O_AS_soldier_AT_F";
-			GRENADIER	= "ASC_O_AS_soldier_GL_F";
-			RIFLEMAN	= "ASC_O_AS_soldier_F";
-			
-			OFFICER		= "O_officer_F";
-			
-			OFFROAD		= "ASC_O_AS_Offroad_F";
-			OFFROAD_A	= "ASC_O_AS_Offroad_armed_F";
-		};
-	};
-
-
 	// --------------------------------------------------------------
 	//	vanilla OPFOR
 	//
@@ -176,6 +144,37 @@ class missionFactions
 			
 			OFFROAD		= "I_G_Offroad_01_F";
 			OFFROAD_A	= "I_G_Offroad_01_armed_F";
+		};
+	};
+	
+	
+	
+	// --------------------------------------------------------------
+	//	CUP Factions
+	//
+	
+	class CUP_OPFOR_TAKarmy
+	{
+		spawnUnitsSide	= 0;	// 0 > East / 1 > West / 2 > Indep
+		
+		class units
+		{
+			SQUADLEADER = "CUP_O_TK_Soldier_SL";
+			TEAMLEADER	= "CUP_O_TK_Spotter";
+			CORPSMAN	= "CUP_O_TK_Medic";
+			MARKSMAN	= "CUP_O_TK_Sniper";
+			HEAVYMG		= "CUP_O_TK_Soldier_MG";
+			LIGHTMG		= "CUP_O_TK_Soldier_AR";
+			ANTITANK	= "CUP_O_TK_Soldier_HAT";
+			ANTIPERSON	= "CUP_O_TK_Soldier_LAT";
+			ANTIAIR		= "CUP_O_TK_Soldier_AA";
+			GRENADIER	= "CUP_O_TK_Soldier_GL";
+			RIFLEMAN	= "CUP_O_TK_Soldier";
+			
+			OFFICER		= "CUP_O_TK_Officer";
+			
+			OFFROAD		= "CUP_O_UAZ_Open_TKA";
+			OFFROAD_A	= "CUP_O_UAZ_MG_TKA";
 		};
 	};
 };

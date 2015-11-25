@@ -25,16 +25,8 @@ waitUntil { !isNil "bis_fnc_init" };
 waitUntil { !isNil "T8S_var_initDONE" };
 
 
-// initialize T8 Units Script
-[] execVM "T8_UnitsINIT.sqf";
-
-
 // initialize the mission generator
 [] execVM "@randomMission\init.sqf";
-
-
-// not really needed here ...
-[] execVM "T8_missionEXEC.sqf";
 
 
 // initialize garbage collecting ( bodies / wrecks now handled via BIS/description )

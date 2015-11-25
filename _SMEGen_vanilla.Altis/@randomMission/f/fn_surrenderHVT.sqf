@@ -11,12 +11,12 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_var", "_objs" ];
+private [ "_var", "_objs", "_unit" ];
 
-DEBUG( __FILE__, "INIT", _this );
+__DEBUG( __FILE__, "INIT", _this );
 
 params [[ "_site", "", [""]]];
 
@@ -24,5 +24,23 @@ if ( _site isEqualTo "" ) exitWith {};
 
 _var = format [ "OBJECTIVE_intelHVT_%1", _site ];	
 _objs = missionNamespace getVariable [ _var, []];
+_unit = ( _objs select 0 );
 
-[( _objs select 0 ), true ] call ACE_captives_fnc_setSurrendered;
+if ( !isNil "ACE_captives_fnc_setSurrendered" ) then 
+{
+	[ _unit, true ] call ACE_captives_fnc_setSurrendered;
+	
+} else {
+
+	if ( local _unit ) then
+	{
+		_unit setCaptive true;
+		[ _unit ] join grpNull;		
+		_unit disableAI "ANIM";
+		_unit disableAI "TARGET";
+		_unit disableAI "AUTOTARGET";
+	};
+	
+	_unit switchMove "";
+	_unit playActionNow "Surrender";
+};

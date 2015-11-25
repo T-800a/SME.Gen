@@ -8,9 +8,9 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 	
-	#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+	#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 	// );
-	DEBUG( __FILE__, "_var", _var );
+	__DEBUG( __FILE__, "_var", _var );
 	
  =======================================================================================================================
 */

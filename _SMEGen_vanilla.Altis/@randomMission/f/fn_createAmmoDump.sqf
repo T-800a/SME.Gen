@@ -13,7 +13,7 @@
  ============================8===========================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 	
 
@@ -41,7 +41,7 @@ _return = ( _mappedObj select 0 );
 _return setVehicleLock "LOCKED";
 { _x addCuratorEditableObjects [ [ _return ], true ]; false } count allCurators;
 
-DEBUG( __FILE__, "_return", _return );
+__DEBUG( __FILE__, "_return", _return );
 
 // Return
 _return

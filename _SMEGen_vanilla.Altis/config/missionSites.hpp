@@ -91,5 +91,7 @@ class missionSites
 	#include <maps\altis.hpp>
 	
 	#include <maps\mske.hpp>
+	
+	#include <maps\takistan.hpp>
 
 };

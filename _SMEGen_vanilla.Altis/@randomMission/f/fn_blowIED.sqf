@@ -11,7 +11,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_var", "_obj" ];
@@ -23,7 +23,7 @@ if ( _site isEqualTo "" ) exitWith {};
 _var = format [ "OBJECTIVE_roadIEDintel_IED_%1", _site ];	
 _obj = missionNamespace getVariable [ _var, objNull ];
 
-DEBUG( __FILE__, "_var", _var );
-DEBUG( __FILE__, "_obj", _obj );
+__DEBUG( __FILE__, "_var", _var );
+__DEBUG( __FILE__, "_obj", _obj );
 
 _obj setDamage 1;

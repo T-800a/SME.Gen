@@ -13,7 +13,7 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
 private [ "_baseTime", "_cleanDelay", "_spawnDelay" ];
@@ -32,7 +32,7 @@ while { true } do
 	{
 		private [ "_debugArray" ];
 		_debugArray = [( _x select 0 ), ( _x select 1 ), ( _x select 3 ), ( _x select 4 ), ( _x select 2 )];
-		DEBUG( __FILE__, "T8RMG_var_arrayConditions > _x", _debugArray );
+		__DEBUG( __FILE__, "T8RMG_var_arrayConditions > _x", _debugArray );
 		
 		if !(( typeName ( _x select 3 )) isEqualTo ( typeName true )) then
 		{
@@ -46,7 +46,7 @@ while { true } do
 					default			{ _arg = [ ( _x select 1 ) ]; };
 				};
 
-				DEBUG( __FILE__, "CONDITION __TRUE__ > _arg", _arg );
+				__DEBUG( __FILE__, "CONDITION __TRUE__ > _arg", _arg );
 
 				// spawn the function defined in the condition
 
@@ -62,8 +62,8 @@ while { true } do
 		if (( _x select 4 ) AND {( typeName ( _x select 3 )) isEqualTo ( typeName true )} AND {[( _x select 1 )] call BIS_fnc_taskCompleted } AND { !(( _x select 1 ) in _allTasks )}) then { _allTasks pushBack ( _x select 1 ); };
 	} forEach T8RMG_var_arrayConditions;
 	
-	DEBUG( __FILE__, "_allTasks", _allTasks );
-	DEBUG( __FILE__, "_allTasks > DONE", ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks ));
+	__DEBUG( __FILE__, "_allTasks", _allTasks );
+	__DEBUG( __FILE__, "_allTasks > DONE", ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks ));
 
 	// start new tasks if needed	
 	if ( T8RMG_var_amountSites isEqualTo  ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks )) then 

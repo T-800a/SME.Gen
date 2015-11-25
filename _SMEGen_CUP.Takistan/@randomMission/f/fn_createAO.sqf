@@ -13,10 +13,10 @@
  =======================================================================================================================
 */
 
-#define DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-DEBUG( __FILE__, "INIT: _this", _this );
+__DEBUG( __FILE__, "INIT: _this", _this );
 
 private [	"_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
@@ -32,7 +32,7 @@ _arrayGroups	= [];
 
 if ( _site isEqualTo "NO-SITE" ) exitWith 
 { 
-DEBUG( __FILE__, "_____ERROR!", "wrong_site" ); 
+__DEBUG( __FILE__, "_____ERROR!", "wrong_site" ); 
 };
 
 _siteMkr			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
@@ -45,12 +45,12 @@ _siteAllowedTypes	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "miss
 _type				=  if ( _followUp isEqualTo "" ) then { _siteAllowedTypes call BIS_fnc_selectRandom; } else { _followUp };
 _taskPos			= [( _sitePos select 0 ), ( _sitePos select 1 ), 25 ];
 
-DEBUG( __FILE__, "SITE _siteMkr", _siteMkr );
-DEBUG( __FILE__, "SITE _sitePos", _sitePos );
-DEBUG( __FILE__, "SITE _siteName", _siteName );
-DEBUG( __FILE__, "SITE _siteSize", _siteSize );
-DEBUG( __FILE__, "SITE _siteAngle", _siteAngle );
-DEBUG( __FILE__, "SELECTED _type", _type );
+__DEBUG( __FILE__, "SITE _siteMkr", _siteMkr );
+__DEBUG( __FILE__, "SITE _sitePos", _sitePos );
+__DEBUG( __FILE__, "SITE _siteName", _siteName );
+__DEBUG( __FILE__, "SITE _siteSize", _siteSize );
+__DEBUG( __FILE__, "SITE _siteAngle", _siteAngle );
+__DEBUG( __FILE__, "SELECTED _type", _type );
 
 _typeTask		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "task" );
 _typeTaskShort	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "taskShort" );
@@ -237,7 +237,7 @@ switch ( _type ) do
 _configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" );
 { _arrayGroups pushback ( configName _x ); false } count _configArrayGroups;
 
-DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
+__DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 
 {
 	private [ "_task", "_units", "_unitsFiller", "_subArray" ];
@@ -253,11 +253,11 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 		_groupCount = count _units;
 		_mod = ceil(((( _playerCount /_modPlayer ) * 2 ) * (( _groupCount / _modGroup ) * 2 )) * 2 );
 		
-		DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
-		DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
+		__DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
 		
 		for "_i" from 1 to _mod do
 		{
@@ -265,10 +265,10 @@ DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 			private [ "_filler" ];
 			_filler = _unitsFiller call BIS_fnc_selectRandom;
 			_units pushBack _filler;
-			DEBUG( __FILE__, "ADD UNIT TO GROUP", _filler );
+			__DEBUG( __FILE__, "ADD UNIT TO GROUP", _filler );
 		};
 		
-		DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
+		__DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
 	};
 	
 	_units = [ _units ] call T8RMG_fnc_buildUnitArray;
@@ -329,7 +329,7 @@ _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >>
 	} forEach _con;	
 	
 	_con = _newcon joinString "";
-	DEBUG( __FILE__, "_conditions > _con", _con );
+	__DEBUG( __FILE__, "_conditions > _con", _con );
 	
 	_fin = if ( getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "isFinal" ) isEqualTo 1 ) then { true } else { false };
 	T8RMG_var_arrayConditions pushBack [ configName ( _x ), _siteMkr, _con, _fnc, _fin ];
