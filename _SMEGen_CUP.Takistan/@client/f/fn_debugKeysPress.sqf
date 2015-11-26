@@ -120,8 +120,9 @@ _exportSite =
 
 _exportVehicle =
 {
-	private [ "_configVehiclesArray" ];
-	_configVehiclesArray = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( configFile >> "cfgVehicles" );
+	private [ "_configVehiclesArray", "_configWeaponArray" ];
+	_configVehiclesArray	= "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( configFile >> "cfgVehicles" );
+	_configWeaponArray		= "(( getText ( _x >> 'dlc' )) isEqualTo 'CUP_Weapons' )" configClasses ( configFile >> "cfgWeapons" );
 	
 	// vehicleClass = "";
 	
@@ -141,8 +142,16 @@ _exportVehicle =
 		
 		false 
 	} count _configVehiclesArray;	
+
+	{
+		( text ( format [ "%1  -  %2", ( configName _x ), getText ( _x >> "displayName" )])) call _fnc_makeFile; 
+		__DEBUG( __FILE__, ( configName _x ), getText ( _x >> "displayName" ));
+		
+		false 
+	} count _configWeaponArray;	
 	
-	( "export_cfgVehicles.txt" ) call _fnc_makeFile;
+	( "export_CUP_vehicles.txt" ) call _fnc_makeFile;
+	( "export_CUP_weapons.txt" ) call _fnc_makeFile;
 };
 
 switch ( _key ) do 

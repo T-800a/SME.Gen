@@ -25,14 +25,3 @@ waitUntil { !isNull player AND { isPlayer player } AND { alive player }};
 [] execVM "@client\init.sqf";
 
 
-
-if ( isMultiplayer ) then
-{
-	// clear players inventory
-	removeVest player;
-	removeHeadgear player;
-	removeBackpack player;
-	removeAllWeapons player:
-	removeAllItems player;
-};
-

@@ -56,6 +56,8 @@ _convoyObj =
 	["B_G_Offroad_01_armed_F",[1.62915,5.41431,-0.030448],90.9962,1,0,[-0.480568,-0.106524],"","",true,false]
 ];
 
+_mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;
+
 {
 	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
 	{
@@ -66,7 +68,7 @@ _convoyObj =
 	false
 } count _mappedObj;
 
-_mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;
+
 { sleep 0.5; if ( _x isKindOf "LandVehicle" ) then { _x setVehicleLock "LOCKED"; }; false } count _mappedObj;
 T8RMG_var_arrayCleanup pushBack _mappedObj;
 

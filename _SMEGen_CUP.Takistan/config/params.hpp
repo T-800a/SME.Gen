@@ -46,4 +46,12 @@ class Params
 		texts[]		= { "Militia",	"Army",		"Special Forces",	"DEFAULT" };
 		default		= 999;
 	};
+	
+	class RespawnLoadout
+	{
+		title		= "Keep Loadout After Respawn";
+		values[]	= { 0,		1,		999 };
+		texts[]		= { "YES",	"NO",	"DEFAULT" };
+		default		= 999;
+	};
 };

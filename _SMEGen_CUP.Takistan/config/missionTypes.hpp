@@ -43,7 +43,7 @@ class missionTypes
 			class base_garrison 
 			{
 				scope			= 0;
-				units[] 		= { "SQUADLEADER", "LIGHTMG", "LIGHTMG", "HEAVYMG", "HEAVYMG", "CORPSMAN", "ANTITANK", "CORPSMAN", "ANTIPERSON", "ANTIPERSON", "RIFLEMAN", "RIFLEMAN" };
+				units[] 		= { "SQUADLEADER", "LIGHTMG", "LIGHTMG", "HEAVYMG", "CORPSMAN", "ANTITANK", "CORPSMAN", "ANTIPERSON", "GRENADIER", "RIFLEMAN", "RIFLEMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "GARRISON";
 			};
@@ -52,7 +52,7 @@ class missionTypes
 			{
 				scope			= 0;
 				units[]			= { "SQUADLEADER", "CORPSMAN", "HEAVYMG", "LIGHTMG", "LIGHTMG", "RIFLEMAN" };
-				unitsFiller[] 	= { "RIFLEMAN" };
+				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND";
 			};
 			
@@ -60,15 +60,15 @@ class missionTypes
 			{
 				scope			= 0;
 				units[]			= { "SQUADLEADER", "CORPSMAN", "RIFLEMAN" };
-				unitsFiller[] 	= { "RIFLEMAN" };
+				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND";
 			};
 			
 			class base_defendBase
 			{
 				scope			= 0;
-				units[]			= { "SQUADLEADER", "SQUADLEADER", "CORPSMAN", "CORPSMAN", "HEAVYMG", "HEAVYMG", "LIGHTMG", "LIGHTMG", "LIGHTMG", "MARKSMAN", "ANTITANK", "ANTIPERSON", "GRENADIER", "GRENADIER", "RIFLEMAN" };
-				unitsFiller[] 	= { "RIFLEMAN" };
+				units[]			= { "SQUADLEADER", "SQUADLEADER", "CORPSMAN", "CORPSMAN", "HEAVYMG", "LIGHTMG", "LIGHTMG", "MARKSMAN", "ANTITANK", "ANTIPERSON", "GRENADIER", "GRENADIER", "RIFLEMAN" };
+				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND_BASE";
 			};
 			
@@ -76,7 +76,7 @@ class missionTypes
 			{
 				scope			= 0;
 				units[]			= { "SQUADLEADER", "CORPSMAN", "RIFLEMAN" };
-				unitsFiller[] 	= { "RIFLEMAN" };
+				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND_BASE";
 			};
 			

@@ -72,13 +72,13 @@ T8U_var_KilledLeaderTimeout		= 20;			// if group leader killed, x sec no communi
 T8U_var_FiredEventTimeout		= 10;			// if fired near event triggered, pause it for XX sec ... spam reduce
 T8U_var_CallForHelpTimeout		= 60;			// a group can only call one other group each x sec for help
 T8U_var_SupportTimeout			= 180;			// every X sec a group (with a SL or Officer) can call in for a Support (e.g. para drop)
-T8U_var_OvSuperiority			= 333;			// if enemy units have a overwhelming superiority of 3 : 1 they wont call for help ( checked at that moment when they call for help )
+T8U_var_OvSuperiority			= 3;			// if enemy units have a overwhelming superiority of 3 : 1 they wont call for help ( checked at that moment when they call for help )
 T8U_var_enableFatigue			= false;		// enable/disable Fatigue for all spawned units
 
 T8U_var_Presets =
 [
 //	[ --index from T8U_var_SkillSets--, --index from T8U_var_BehaviorSets-- ],
-	[ 2, 2 ],		// 0 for WEST
+	[ 0, 1 ],		// 0 for WEST
 	[ 0, 1 ],		// 1 for EAST
 	[ 0, 1 ]		// 2 for RESISTANCE
 ];
@@ -87,8 +87,8 @@ T8U_var_SkillSets =
 [
 // 0 - militia ( untrained )
 	[
-		[ "aimingAccuracy",		0.20 ],
-		[ "aimingShake",		0.15 ],
+		[ "aimingAccuracy",		0.15 ],
+		[ "aimingShake",		0.10 ],
 		[ "aimingSpeed",		0.20 ],
 		[ "spotDistance",		0.75 ],
 		[ "spotTime",			0.70 ],
@@ -101,7 +101,7 @@ T8U_var_SkillSets =
 // 1 - regular forces
 	[
 		[ "aimingAccuracy",		0.30 ],
-		[ "aimingShake",		0.25 ],
+		[ "aimingShake",		0.20 ],
 		[ "aimingSpeed",		0.30 ],
 		[ "spotDistance",		0.85 ],
 		[ "spotTime",			0.75 ],
@@ -122,19 +122,6 @@ T8U_var_SkillSets =
 		[ "reloadSpeed",		0.60 ],
 		[ "commanding",			0.90 ],
 		[ "general",			0.90 ]
-	],
-	
-// 3 - custom
-	[
-		[ "aimingAccuracy",		0.45 ],
-		[ "aimingShake",		0.30 ],
-		[ "aimingSpeed",		0.45 ],
-		[ "spotDistance",		1.00 ],
-		[ "spotTime",			0.95 ],
-		[ "courage",			0.50 ],
-		[ "reloadSpeed",		0.40 ],
-		[ "commanding",			0.80 ],
-		[ "general",			0.50 ]
 	]
 ];
 

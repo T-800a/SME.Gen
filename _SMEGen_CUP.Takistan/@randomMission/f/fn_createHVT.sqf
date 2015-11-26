@@ -26,7 +26,7 @@ __DEBUG( __FILE__, "INIT > _this", _this );
 _typeHVT			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "killHVT" >> "typeHVT" );
 _typeGuard			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "killHVT" >> "typeGuard" );
 
-_vehicleArray		= [ _typeHVT ];
+_vehicleArray		= [];
 _building			= [];
 
 // get the faction
@@ -85,7 +85,9 @@ __DEBUG( __FILE__, "_building", _building );
 _n = ( count ( _building select 0 )) - 2;
 __DEBUG( __FILE__, "_n", _n );
 
+if ( 9 < _n ) then { _n = 9; };
 for "_i" from 1 to _n do { _vehicleArray pushBack _typeGuard; };
+_vehicleArray pushBack _typeHVT;
 __DEBUG( __FILE__, "_vehicleArray", _vehicleArray );
 
 _vehicleArray = [ _vehicleArray ] call T8RMG_fnc_buildUnitArray;

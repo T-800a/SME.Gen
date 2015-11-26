@@ -56,7 +56,7 @@ _a		= ( 1 * ( 1 - _scale * 50 ));	if ( _a < 0 ) then { _a = 0; };
 		if ( !alive _x ) then { _c = [ 0, 0, 0, 1 ] };
 		
 		_v = getText ( configfile >> "CfgVehicles" >> typeOf _x >> "displayName" );
-		_n = if !( isNull ( driver _x )) then { format [ "%1:%2", _v, ( name ( driver _x ))]} else { _v };
+		_n = if !( isNull ( driver _x )) then { format [ "%1:%2 (%3)", _v, ( name ( driver _x )), ( count crew _x )]} else { _v };
 		
 		_icons pushBack [( getPos _x ), 32, _n, _c, "iconModule", ( getDir _x )];
 	};
@@ -82,12 +82,14 @@ _a		= ( 1 * ( 1 - _scale * 50 ));	if ( _a < 0 ) then { _a = 0; };
 	
 	if ( _x isEqualTo ( leader ( group _x ))) then
 	{
-		private [ "_c", "_i", "_p" ];
+		private [ "_c", "_i", "_p", "_pa" ];
 		_c = [ 0, 0.3, 0.6, 1 ];
 		_i = "\A3\ui_f\data\map\markers\nato\b_inf.paa";
-		_p = ( getPos _x );
+		_p = ( getPos vehicle _x );
+		
+		_pa = if ( vehicle _x isEqualTo _x ) then { [( _p select 0 ), ( _p select 1 ) + _o, 0 ] } else { [( _p select 0 ) + ( 1.5 * _o ), ( _p select 1 ) + ( 1.5 * _o ), 0 ] };
 
-		_icons pushBack [[( _p select 0 ), ( _p select 1 ) + _o, 0 ], 32, ( groupId ( group _x )), _c, _i, 0 ];
+		_icons pushBack [ _pa, 32, ( groupId ( group _x )), _c, _i, 0 ];
 	};
 	
 	false

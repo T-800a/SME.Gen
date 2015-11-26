@@ -51,6 +51,9 @@ class cfgFunctions
 			addFunction(debugKeysPress);
 			addFunction(debugSiteMarkers);
 			addFunction(welcome);
+			
+			addFunction(getGear);
+			addFunction(setGear);
 		};
 	};
 

@@ -220,6 +220,311 @@ class Takistan : base_map
 	// --------------------------------------------------------------
 	// missionSites - ROADS
 
+	class road_timurkalay_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Timurkalay";
+		marker = "site_road_timurkalay_SW";
+		position[] = { 8730.24, 4949.63, 0 };
+		angle = 273;
+	};
+
+	class road_timurkalay_NNE : base_road 
+	{
+		scope = 1;
+		name = "Road NNE of Timurkalay";
+		marker = "site_road_timurkalay_NNE";
+		position[] = { 9067.14, 5937.4, 0 };
+		angle = 317;
+	};
+
+	class road_garmarud_ESE : base_road 
+	{
+		scope = 1;
+		name = "Road ESE of Garmarud";
+		marker = "site_road_garmarud_ESE";
+		position[] = { 9776.04, 6483.76, 0 };
+		angle = 378;
+	};
+
+	class road_ravanay_N : base_road 
+	{
+		scope = 1;
+		name = "Road N of Ravanay";
+		marker = "site_road_ravanay_N";
+		position[] = { 11594.3, 8635.46, 0 };
+		angle = 98;
+	};
+
+	class road_karachinar_WNW : base_road 
+	{
+		scope = 1;
+		name = "Road WNW of Karachinar";
+		marker = "site_road_karachinar_WNW";
+		position[] = { 11341.4, 10925.3, 0 };
+		angle = 177;
+	};
+
+	class road_zavarak_SSE : base_road 
+	{
+		scope = 1;
+		name = "Road SSE of Zavarak";
+		marker = "site_road_zavarak_SSE";
+		position[] = { 10126.2, 11351.5, 0 };
+		angle = 214;
+	};
+
+	class road_sagram_NE : base_road 
+	{
+		scope = 1;
+		name = "Road NE of Sagram";
+		marker = "site_road_sagram_NE";
+		position[] = { 9665.79, 10369.5, 0 };
+		angle = 309;
+	};
+
+	class road_sagram_S : base_road 
+	{
+		scope = 1;
+		name = "Road S of Sagram";
+		marker = "site_road_sagram_S";
+		position[] = { 9302.75, 9002.14, 0 };
+		angle = 289;
+	};
+
+	class road_rasman_S : base_road 
+	{
+		scope = 1;
+		name = "Road S of Rasman";
+		marker = "site_road_rasman_S";
+		position[] = { 6088.54, 10841.6, 0 };
+		angle = 295;
+	};
+
+	class road_lalezar_NE : base_road 
+	{
+		scope = 1;
+		name = "Road NE of Lalezar";
+		marker = "site_road_lalezar_NE";
+		position[] = { 4898.29, 9814.89, 0 };
+		angle = 346;
+	};
+
+	class road_bastam_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Bastam";
+		marker = "site_road_bastam_SW";
+		position[] = { 5666.26, 8579.44, 0 };
+		angle = 249;
+	};
+
+	class road_imarat_SE : base_road 
+	{
+		scope = 1;
+		name = "Road SE of Imarat";
+		marker = "site_road_imarat_SE";
+		position[] = { 8468.36, 7545.34, 0 };
+		angle = 410;
+	};
+
+	class road_nar_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Nar";
+		marker = "site_road_nar_SW";
+		position[] = { 7371.21, 8453.62, 0 };
+		angle = 424;
+	};
+
+	class road_falar_ESE : base_road 
+	{
+		scope = 1;
+		name = "Road ESE of Falar";
+		marker = "site_road_falar_ESE";
+		position[] = { 6808.53, 7048.17, 0 };
+		angle = 105;
+	};
+
+	class road_anar_SSE : base_road 
+	{
+		scope = 1;
+		name = "Road SSE of Anar";
+		marker = "site_road_anar_SSE";
+		position[] = { 6299.7, 5169.4, 0 };
+		angle = 391;
+	};
+
+	class road_daryache_ENE : base_road 
+	{
+		scope = 1;
+		name = "Road ENE of Daryache";
+		marker = "site_road_daryache_ENE";
+		position[] = { 5271.65, 5053.61, 0 };
+		angle = 422;
+	};
+
+	class road_feruzabad_WSW : base_road 
+	{
+		scope = 1;
+		name = "Road WSW of Feruz Abad";
+		marker = "site_road_feruzabad_WSW";
+		position[] = { 4042.05, 5650.22, 0 };
+		angle = 363;
+	};
+
+	class road_jilavur_NE : base_road 
+	{
+		scope = 1;
+		name = "Road NE of Jilavur";
+		marker = "site_road_jilavur_NE";
+		position[] = { 2925.01, 5363.93, 0 };
+		angle = 328;
+	};
+
+	class road_sakhe_NNE : base_road 
+	{
+		scope = 1;
+		name = "Road NNE of Sakhe";
+		marker = "site_road_sakhe_NNE";
+		position[] = { 3603.75, 4313.84, 0 };
+		angle = 323;
+	};
+
+	class road_jilavur_SSW : base_road 
+	{
+		scope = 1;
+		name = "Road SSW of Jilavur";
+		marker = "site_road_jilavur_SSW";
+		position[] = { 2182.5, 4468.77, 0 };
+		angle = 316;
+	};
+
+	class road_khushab_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Khushab";
+		marker = "site_road_khushab_SW";
+		position[] = { 1020.39, 5163.6, 0 };
+		angle = 307;
+	};
+
+	class road_shukurkalay_NW : base_road 
+	{
+		scope = 1;
+		name = "Road NW of Shukurkalay";
+		marker = "site_road_shukurkalay_NW";
+		position[] = { 815.196, 4299.28, 0 };
+		angle = 220;
+	};
+
+	class road_mulladost_ENE : base_road 
+	{
+		scope = 1;
+		name = "Road ENE of Mulladost";
+		marker = "site_road_mulladost_ENE";
+		position[] = { 2611.09, 7827.89, 0 };
+		angle = 352;
+	};
+
+	class road_lalezar_W : base_road 
+	{
+		scope = 1;
+		name = "Road W of Lalezar";
+		marker = "site_road_lalezar_W";
+		position[] = { 3938.52, 9243.77, 0 };
+		angle = 314;
+	};
+
+	class road_nagara_oilfield_E : base_road 
+	{
+		scope = 1;
+		name = "Road E of Nagara Oilfield";
+		marker = "site_road_nagara_oilfield_E";
+		position[] = { 4155.67, 11016.4, 0 };
+		angle = 301;
+	};
+
+	class road_nagara_ESE : base_road 
+	{
+		scope = 1;
+		name = "Road ESE of Nagara";
+		marker = "site_road_nagara_ESE";
+		position[] = { 3367.42, 9608.58, 0 };
+		angle = 423;
+	};
+
+	class road_nur_SE : base_road 
+	{
+		scope = 1;
+		name = "Road SE of Nur";
+		marker = "site_road_nur_SE";
+		position[] = { 2409.82, 11195.2, 0 };
+		angle = 253;
+	};
+
+	class road_loymanaraoilfield_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Loy Manara oilfield";
+		marker = "site_road_loymanaraoilfield_SW";
+		position[] = { 6639.72, 1234.56, 0 };
+		angle = 365;
+	};
+
+	class road_chakchak_E : base_road 
+	{
+		scope = 1;
+		name = "Road E of Chak Chak";
+		marker = "site_road_chakchak_E";
+		position[] = { 5081.51, 871.659, 0 };
+		angle = 346;
+	};
+
+	class road_chakchak_WSW : base_road 
+	{
+		scope = 1;
+		name = "Road WSW of Chak Chak";
+		marker = "site_road_chakchak_WSW";
+		position[] = { 3958.85, 522.643, 0 };
+		angle = 363;
+	};
+
+	class road_ahmaday_NE : base_road 
+	{
+		scope = 1;
+		name = "Road NE of Ahmaday";
+		marker = "site_road_ahmaday_NE";
+		position[] = { 4113.64, 1728.15, 0 };
+		angle = 114;
+	};
+
+	class road_shukurkalay_SW : base_road 
+	{
+		scope = 1;
+		name = "Road SW of Shukurkalay";
+		marker = "site_road_shukurkalay_SW";
+		position[] = { 1108.42, 3215.93, 0 };
+		angle = 143;
+	};
+
+	class road_saresangpass_SSE : base_road 
+	{
+		scope = 1;
+		name = "Road SSE of Sare Sang pass";
+		marker = "site_road_saresangpass_SSE";
+		position[] = { 4172.01, 2302.97, 0 };
+		angle = 254;
+	};
+
+	class road_darbangpass_W : base_road 
+	{
+		scope = 1;
+		name = "Road W of Darbang pass";
+		marker = "site_road_darbangpass_W";
+		position[] = { 5243.59, 3670.24, 0 };
+		angle = 148;
+	};
 
 
 

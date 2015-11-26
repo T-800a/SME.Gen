@@ -11,7 +11,7 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen | V.024";
+onLoadName					= "SME.Gen | V.030";
 OnLoadMission				= "Small Military Encounter Genenerator";
 loadScreen					= "images\sme_logo.paa";
 overviewPicture				= "";
@@ -27,6 +27,17 @@ respawnDialog				= 0;
 respawnOnStart				= 1;
 respawnButton				= 1;
 
+reviveDelay					= 10;
+reviveForceRespawnDelay		= 5;
+reviveBleedOutDelay			= 240;
+
+respawnTemplates[]			= { "Revive", "MenuPosition" };
+respawnTemplatesWest[]		= { "Revive", "MenuPosition" };
+respawnTemplatesEast[]		= { "Revive", "MenuPosition" };
+respawnTemplatesGuer[]		= { "Revive", "MenuPosition" };
+respawnTemplatesCiv[]		= { "Revive", "MenuPosition" };
+respawnTemplatesVirtual[]	= { "Revive", "MenuPosition" };
+
 corpseManagerMode			= 1;
 corpseLimit					= 25;
 corpseRemovalMinTime		= 300;
@@ -36,13 +47,6 @@ wreckManagerMode			= 1;
 wreckLimit					= 10;
 wreckRemovalMinTime			= 600;
 wreckRemovalMaxTime			= 1200;
-
-respawnTemplates[]			= { "MenuPosition" };
-respawnTemplatesWest[]		= { "MenuPosition" };
-respawnTemplatesEast[]		= { "MenuPosition" };
-respawnTemplatesGuer[]		= { "MenuPosition" };
-respawnTemplatesCiv[]		= { "MenuPosition" };
-respawnTemplatesVirtual[]	= { "MenuPosition" };
 
 taskManagement_markers2D	= 1;
 taskManagement_markers3D	= 1;
