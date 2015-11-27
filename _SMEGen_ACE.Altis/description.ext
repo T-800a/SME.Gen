@@ -31,12 +31,12 @@ reviveDelay					= 10;
 reviveForceRespawnDelay		= 5;
 reviveBleedOutDelay			= 240;
 
-respawnTemplates[]			= { "Revive", "MenuPosition" };
-respawnTemplatesWest[]		= { "Revive", "MenuPosition" };
-respawnTemplatesEast[]		= { "Revive", "MenuPosition" };
-respawnTemplatesGuer[]		= { "Revive", "MenuPosition" };
-respawnTemplatesCiv[]		= { "Revive", "MenuPosition" };
-respawnTemplatesVirtual[]	= { "Revive", "MenuPosition" };
+respawnTemplates[]			= { "MenuPosition" };
+respawnTemplatesWest[]		= { "MenuPosition" };
+respawnTemplatesEast[]		= { "MenuPosition" };
+respawnTemplatesGuer[]		= { "MenuPosition" };
+respawnTemplatesCiv[]		= { "MenuPosition" };
+respawnTemplatesVirtual[]	= { "MenuPosition" };
 
 corpseManagerMode			= 1;
 corpseLimit					= 25;

@@ -15,7 +15,7 @@
 
 The intent of the mission is to have something similiar to an Invade & Annex type missions, but in a smaler more infantry focused scope. There are always two tasks available. If both tasks are finished a cleanup will happen and 2 new tasks will be generated.
 
-
+The mission uses BIS tasks, BIS dynamic groups, BIS Respawn Menu and BIS Revive (not the ACE mission). 
 
 #### Currently there are 4 types of mission-sites with different tasks available:
 #####Towns

@@ -64,7 +64,7 @@ switch ( paramsArray select 4 ) do
 {
 	case 0 :	{ T8RMG_var_keepRespawnLoadout = true; };
 	case 1 :	{ T8RMG_var_keepRespawnLoadout = false; };
-	default		{ T8RMG_var_keepRespawnLoadout = true; };
+	default		{ T8RMG_var_keepRespawnLoadout = false; };
 };
 
 
