@@ -52,8 +52,9 @@ _convoyObj =
 	["Land_BagFence_Long_F",[-13.6152,-5.6145,-0.0712385],92.2883,1,0,[0,-0],"","",true,false], 
 	["Land_Razorwire_F",[-6.46216,-15.6462,-2.38419e-006],352,1,0,[0,-0],"","",true,false], 
 	["Land_Razorwire_F",[-11.0986,-15.1389,-2.38419e-006],207.229,1,0,[0,0],"","",true,false],
-	["B_G_Offroad_01_armed_F",[2.17749,-7.51001,-0.0311103],69.6755,1,0,[-0.50201,-0.0780464],"","",true,false], 
-	["B_G_Offroad_01_armed_F",[1.62915,5.41431,-0.030448],90.9962,1,0,[-0.480568,-0.106524],"","",true,false]
+	
+	[( "EMPTY_OFFROAD_A" call T8RMG_fnc_getVehicleClass ),[2.17749,-7.51001,-0.0311103],69.6755,1,0,[-0.50201,-0.0780464],"","",true,false], 
+	[( "EMPTY_OFFROAD_A" call T8RMG_fnc_getVehicleClass ),[1.62915,5.41431,-0.030448],90.9962,1,0,[-0.480568,-0.106524],"","",true,false]
 ];
 
 _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;

@@ -16,7 +16,7 @@ private [ "_unit", "_target", "_switch", "_dir", "_vehicle" ];
 
 _unit		= param [ 0, objNull, [objNull]];
 _target		= param [ 1, objNull, [objNull,[]]];
-_switch		= param [ 2, "THROW", [""]];
+_switch		= param [ 2, "CREATE", [""]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_smokeScreen.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 if ( ( typeName _unit ) == ( typename objNull ) AND { isNull _unit } ) exitWith {};

@@ -85,7 +85,7 @@ class Mission
 	randomSeed=5609333;
 	class Intel
 	{
-		briefingName="CO20 | SME.Gen | infantry focused COOP | ACE3 | V.024";
+		briefingName="CO20 | SME.Gen X ACE3 | infantry focused COOP | V.030";
 		overviewText="T-800a";
 		resistanceWest=0;
 		resistanceEast=1;

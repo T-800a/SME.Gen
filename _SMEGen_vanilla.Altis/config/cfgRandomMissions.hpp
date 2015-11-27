@@ -73,8 +73,8 @@ class cfgRandomMissions
 
 	// vehicle restrictions
 
-		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "ASC_B_helipilot_F" };
-		whitelistJet[]				= { "B_Pilot_F" };
+		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
+		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
 		whitelistCar[]				= {  };
 		whitelistAPC[]				= {  };
 		whitelistTruck[]			= {  };

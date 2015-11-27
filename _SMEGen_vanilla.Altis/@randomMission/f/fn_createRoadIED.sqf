@@ -34,8 +34,8 @@ if ( _intel ) then
 };
 
 _objs append [
-	["B_G_Van_01_transport_F",[-5.43018,6.02368,0.0133648],346.653,1,0,[0,0],"","",true,false], 
-	["B_G_Offroad_01_F",[-5.49683,16.5974,-0.0289812],23.5285,1,0,[0,0],"","",true,false], 
+	[( "EMPTY_TRUCK" call T8RMG_fnc_getVehicleClass ),[-5.43018,6.02368,0.0133648],346.653,1,0,[0,0],"","",true,false], 
+	[( "EMPTY_OFFROAD" call T8RMG_fnc_getVehicleClass ),[-5.49683,16.5974,-0.0289812],23.5285,1,0,[0,0],"","",true,false], 
 	["Land_PlasticCase_01_medium_F",[-4.68384,1.18384,4.76837e-007],249.214,1,0,[0,0],"","",true,false], 
 	["Land_PlasticCase_01_large_F",[-5.34644,1.70313,1.90735e-006],255.521,1,0,[0,0],"","",true,false]
 ];

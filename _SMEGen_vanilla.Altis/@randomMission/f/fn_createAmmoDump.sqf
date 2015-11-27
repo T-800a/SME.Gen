@@ -25,7 +25,7 @@ _dir = random 360;
 
 _objects = 
 [
-	["O_Truck_02_Ammo_F",[2.14526,0.0107422,-9.34601e-005],0.0116753,1,0,[0.535266,0.825714],"","",true,false],
+	[( "EMPTY_TRUCK_AMMO" call T8RMG_fnc_getVehicleClass ),[2.14526,0.0107422,-9.34601e-005],0.0116753,1,0,[0.535266,0.825714],"","",true,false],
 	["Land_Pallet_MilBoxes_F",[-0.852783,-1.26514,0],0,1,0,[0,0],"","",true,false], 
 	["Land_PaperBox_open_full_F",[-0.545654,1.71045,0],309.383,1,0,[0,0],"","",true,false], 
 	["Land_PlasticCase_01_large_F",[-2.37256,-1.15918,-4.76837e-007],359.3,1,0,[-0.00102196,0.00172207],"","",true,false], 

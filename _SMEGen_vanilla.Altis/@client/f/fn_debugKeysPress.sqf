@@ -15,7 +15,7 @@
 
 if ( isMultiplayer ) exitWith {};
 
-private [ "_cursor", "_return", "_exportSite" ];
+private [ "_cursor", "_return", "_exportSite", "_exportVehicle" ];
 
 params [ "_dispaly", "_key", "_shift", "_ctrl", "_alt" ];
 
@@ -118,6 +118,42 @@ _exportSite =
 	};
 };
 
+_exportVehicle =
+{
+	private [ "_configVehiclesArray", "_configWeaponArray" ];
+	_configVehiclesArray	= "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( configFile >> "cfgVehicles" );
+	_configWeaponArray		= "(( getText ( _x >> 'dlc' )) isEqualTo 'CUP_Weapons' )" configClasses ( configFile >> "cfgWeapons" );
+	
+	// vehicleClass = "";
+	
+	{
+		if	(	getText ( _x >> "vehicleClass" ) isEqualTo "Air" OR
+				getText ( _x >> "vehicleClass" ) isEqualTo "Armored" OR
+				getText ( _x >> "vehicleClass" ) isEqualTo "Car" OR
+				getText ( _x >> "vehicleClass" ) isEqualTo "Ship" OR
+				getText ( _x >> "vehicleClass" ) isEqualTo "Support" OR
+				getText ( _x >> "vehicleClass" ) isEqualTo "Submarine" OR
+				getText ( _x >> "vehicleClass" ) isEqualTo "Static"
+			) then
+		{
+			( text ( format [ "%1  -  %2", ( configName _x ), getText ( _x >> "displayName" )])) call _fnc_makeFile; 
+			__DEBUG( __FILE__, ( configName _x ), getText ( _x >> "displayName" ));
+		};
+		
+		false 
+	} count _configVehiclesArray;	
+
+	{
+		( text ( format [ "%1  -  %2", ( configName _x ), getText ( _x >> "displayName" )])) call _fnc_makeFile; 
+		__DEBUG( __FILE__, ( configName _x ), getText ( _x >> "displayName" ));
+		
+		false 
+	} count _configWeaponArray;	
+	
+	( "export_CUP_vehicles.txt" ) call _fnc_makeFile;
+	( "export_CUP_weapons.txt" ) call _fnc_makeFile;
+};
+
 switch ( _key ) do 
 {
 	// F5
@@ -154,6 +190,13 @@ switch ( _key ) do
 		hint "<< WRITE: EXPORT_LOCATION FILE >>";
 		
 		( format [ "export_locations_%1_%2.hpp", worldName, diag_tickTime ] ) call _fnc_makeFile;
+		_return = true;
+	};
+	
+	// F10
+	case 68 : 
+	{
+		call _exportVehicle;
 		_return = true;
 	};
 };	

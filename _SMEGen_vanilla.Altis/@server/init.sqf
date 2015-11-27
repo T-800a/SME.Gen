@@ -22,6 +22,10 @@ if ( worldName isEqualTo "mske" ) then {
 #include <sites\mske_mainbase.sqf>
 };
 
+if ( worldName isEqualTo "Takistan" ) then {
+#include <sites\takistan_mainbase.sqf>
+};
+
 T8S_var_initDONE = true;
 
 // Remove DiscoBodies

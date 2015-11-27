@@ -15,8 +15,8 @@
 ASC_PlayerArray		= [ "s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s14","s15","s16","s17","s18","mission_pilot_01","mission_pilot_02" ];
 
 mission_respawn_west			= [ WEST,		"mission_marker_west" ]		call BIS_fnc_addRespawnPosition;
-// mission_respawn_east			= [ EAST,		"mission_marker_east" ]		call BIS_fnc_addRespawnPosition;
-// mission_respawn_indi			= [ RESISTANCE,	"mission_marker_indep" ]		call BIS_fnc_addRespawnPosition;
+mission_respawn_east			= [ EAST,		"mission_marker_east" ]		call BIS_fnc_addRespawnPosition;
+mission_respawn_indi			= [ RESISTANCE,	"mission_marker_indep" ]	call BIS_fnc_addRespawnPosition;
 mission_respawn_civi			= [ CIVILIAN,	"mission_marker_civi" ]		call BIS_fnc_addRespawnPosition;
 
 // TFAR Settings

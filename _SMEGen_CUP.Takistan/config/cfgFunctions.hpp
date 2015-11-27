@@ -84,6 +84,7 @@ class cfgFunctions
 			addFunction(createRoadIED);
 			addFunction(debug);
 			addFunction(findObjectivePos);
+			addFunction(getVehicleClass);
 			addFunction(handleConditions);
 			addFunction(handleDisplays);
 			addFunction(handleFollowingTask);

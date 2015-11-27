@@ -51,6 +51,9 @@ class cfgFunctions
 			addFunction(debugKeysPress);
 			addFunction(debugSiteMarkers);
 			addFunction(welcome);
+			
+			addFunction(getGear);
+			addFunction(setGear);
 		};
 	};
 
@@ -81,6 +84,7 @@ class cfgFunctions
 			addFunction(createRoadIED);
 			addFunction(debug);
 			addFunction(findObjectivePos);
+			addFunction(getVehicleClass);
 			addFunction(handleConditions);
 			addFunction(handleDisplays);
 			addFunction(handleFollowingTask);

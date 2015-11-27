@@ -15,6 +15,8 @@
 
 The intent of the mission is to have something similiar to an Invade & Annex type missions, but in a smaler more infantry focused scope. There are always two tasks available. If both tasks are finished a cleanup will happen and 2 new tasks will be generated.
 
+
+
 #### Currently there are 4 types of mission-sites with different tasks available:
 #####Towns
 - clear occupied town
@@ -47,6 +49,13 @@ for completing a set (2) of missions:
 - armed light helicopter
 
 After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
+
+#### Mission Parameter
+- select the enemy faction
+- select a reward set
+- select the amount of simultaneous mission sites
+- select the AI skill level ( militia / regular / special forces ( for details check T8/config.hpp ))
+- seelct if you want to keep your gear after respawning
 
 #### The time is accelerated ( 4h IRL = 24h in game )
 

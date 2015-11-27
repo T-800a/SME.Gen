@@ -42,15 +42,15 @@ _convoyObj =
 	["Land_CncBarrier_stripes_F",[-4.24805,-21.6938,0],0,1,0,[0,0],"","",true,false], 
 	["Land_CncBarrier_stripes_F",[1.40479,24.2209,0],0,1,0,[0,0],"","",true,false], 
 	["Land_CncBarrier_stripes_F",[4.31543,24.2036,0],0,1,0,[0,0],"","",true,false],
-	["B_G_Offroad_01_armed_F",[-3.68262,14.575,-0.0180426],268.704,1,0,[-0.512406,-0.101331],"","",true,false],
-	["B_G_Offroad_01_armed_F",[3.47852,-12.27,-0.0202475],89.5946,1,0,[-0.505112,-0.107737],"","",true,false], 
-	["B_G_Van_01_transport_F",[7.29028,-4.53613,0.0135589],267.766,1,0,[-1.48218,2.18792],"","",true,false]
+	[( "EMPTY_OFFROAD_A" call T8RMG_fnc_getVehicleClass ),[-3.68262,14.575,-0.0180426],268.704,1,0,[-0.512406,-0.101331],"","",true,false],
+	[( "EMPTY_OFFROAD_A" call T8RMG_fnc_getVehicleClass ),[3.47852,-12.27,-0.0202475],89.5946,1,0,[-0.505112,-0.107737],"","",true,false], 
+	[( "EMPTY_TRUCK" call T8RMG_fnc_getVehicleClass ),[7.29028,-4.53613,0.0135589],267.766,1,0,[-1.48218,2.18792],"","",true,false]
 ];
 
 _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;
 
 {
-	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
+	if (( typeOf _x ) in [ "Land_CncBarrier_stripes_F", "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
 	{
 		_x setVectorUp ( surfaceNormal( getPos _x ));
 	};

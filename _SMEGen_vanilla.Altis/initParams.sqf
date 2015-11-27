@@ -40,7 +40,7 @@ switch ( paramsArray select 1 ) do
 	default		{ T8RMG_var_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
 };
 
-// reward / gearset
+// Simultaneous Mission Sites
 switch ( paramsArray select 2 ) do
 {
 	case 0 :	{ T8RMG_var_amountSites = 1; };
@@ -50,7 +50,7 @@ switch ( paramsArray select 2 ) do
 	default		{ T8RMG_var_amountSites = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" ); };
 };
 
-// reward / gearset
+// AI Skill
 switch ( paramsArray select 3 ) do
 {
 	case 0 :	{ _AIskill = 0; };
@@ -59,9 +59,17 @@ switch ( paramsArray select 3 ) do
 	default		{ _AIskill = 0; };
 };
 
+// Keep Loadout After Respawn
+switch ( paramsArray select 4 ) do
+{
+	case 0 :	{ T8RMG_var_keepRespawnLoadout = true; };
+	case 1 :	{ T8RMG_var_keepRespawnLoadout = false; };
+	default		{ T8RMG_var_keepRespawnLoadout = true; };
+};
+
 
 // faction used by the players (set in the cfgRandomMissions.hpp)
 T8RMG_var_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
 
 // overwrite T8U base settings
-T8U_var_Presets = [[ _AIskill, 2 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];
+T8U_var_Presets = [[ _AIskill, 1 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];

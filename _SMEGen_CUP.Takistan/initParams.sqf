@@ -40,7 +40,7 @@ switch ( paramsArray select 1 ) do
 	default		{ T8RMG_var_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
 };
 
-// reward / gearset
+// Simultaneous Mission Sites
 switch ( paramsArray select 2 ) do
 {
 	case 0 :	{ T8RMG_var_amountSites = 1; };
@@ -50,7 +50,7 @@ switch ( paramsArray select 2 ) do
 	default		{ T8RMG_var_amountSites = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" ); };
 };
 
-// reward / gearset
+// AI Skill
 switch ( paramsArray select 3 ) do
 {
 	case 0 :	{ _AIskill = 0; };
