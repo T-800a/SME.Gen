@@ -79,7 +79,7 @@ _objArray =
 	[( "EMPTY_HMG_HIGH" call T8RMG_fnc_getVehicleClass ),[-21.7869,-1.42847,-0.0871158],270.188,1,0,[-0.000156599,-0.000534332],"","",true,false], 
 	[( "EMPTY_HMG_HIGH" call T8RMG_fnc_getVehicleClass ),[-0.412109,9.71606,-0.0871172],359.999,1,0,[-9.76822e-005,-8.85073e-005],"","",true,false], 
 	[( "EMPTY_OFFROAD" call T8RMG_fnc_getVehicleClass ),[11.8252,-0.272705,-0.0295324],0.0127271,1,0,[-0.623239,-0.074203],"","",true,false], 
-	["B_G_Van_01_transport_F",[16.1133,0.494385,0.013546],0.0128864,1,0,[-1.44623,2.15437],"","",true,false] 
+	[( "EMPTY_OFFROAD" call T8RMG_fnc_getVehicleClass ),[16.1133,0.494385,0.013546],0.0128864,1,0,[-1.44623,2.15437],"","",true,false] 
 ];
 
 _mappedObj = [ _pos, _dir, _objArray ] call BIS_fnc_objectsMapper;

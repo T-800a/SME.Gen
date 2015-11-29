@@ -200,7 +200,7 @@
 		<Key ID="STR_SMEGen_type_intelHVT_task">
 			<Original>Collect INTEL from a HVT</Original>
 		</Key>
-		<Key ID="STR_SMEGen_type_killHVT_desc">
+		<Key ID="STR_SMEGen_type_intelHVT_desc">
 			<Original>An enemy officer has been loacted near #__LOCATION__#. Your task is to secure him and take the INTEL he has.</Original>
 		</Key>
 

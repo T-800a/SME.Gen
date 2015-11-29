@@ -44,7 +44,7 @@ _convoyObj =
 	["Land_CncBarrier_stripes_F",[4.31543,24.2036,0],0,1,0,[0,0],"","",true,false],
 	[( "EMPTY_OFFROAD_A" call T8RMG_fnc_getVehicleClass ),[-3.68262,14.575,-0.0180426],268.704,1,0,[-0.512406,-0.101331],"","",true,false],
 	[( "EMPTY_OFFROAD_A" call T8RMG_fnc_getVehicleClass ),[3.47852,-12.27,-0.0202475],89.5946,1,0,[-0.505112,-0.107737],"","",true,false], 
-	[( "EMPTY_TRUCK" call T8RMG_fnc_getVehicleClass ),[7.29028,-4.53613,0.0135589],267.766,1,0,[-1.48218,2.18792],"","",true,false]
+	[( "EMPTY_TRUCK" call T8RMG_fnc_getVehicleClass ),[6.0,-4.0,0.0135589],267.766,1,0,[-1.48218,2.18792],"","",true,false]
 ];
 
 _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call BIS_fnc_objectsMapper;
