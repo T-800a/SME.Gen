@@ -94,6 +94,6 @@ You will need the following extension for SP debugging:
 ##### Keys:
 - F5: log current player position as 'town'
 - F6: log current player position as 'military base'
-- F7: log current player position as 'road' (direction of the player matters! please look down the road)
-- F8: log current player position as 'compound' (use open space, mostly leveled. approx. 75m x 75m )
+- F7: log current player position as 'road' (direction of the player matters! look down the road)
+- F8: log current player position as 'compound' (use open, even space approx. 75m x 75m )
 - F9: exports the logged positions to a file with arma-config formating.
