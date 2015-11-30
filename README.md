@@ -15,34 +15,53 @@
 
 The intent of the mission is to have something similiar to an Domination / Invade & Annex type COOP missions, but in a smaler and more infantry focused scope. There is always a set of tasks available. If those tasks are finished a cleanup will happen and a new set of tasks will be generated.
 
-The mission uses various vanilla systems:
+#### Missions:
+##### _SMEGen_CUP.Takistan
+- Default Enemy: CUP Takistan Army
+- Default Gear Set: CUP USMC
+- no ACE modules placed
+
+##### _SMEGen_ACE.Altis		
+- Default Enemy: Vanilla OPFOR Guerillas
+- Default Gear Set: Vanilla BLUFOR with ACE itmes
+- ACE modules placed in the Mission
+
+#### Mission Parameters
+- select the enemy faction
+- select a reward set
+- select the amount of simultaneous mission sites
+- select the AI skill level ( militia / regular / special forces ( for details check T8/config.hpp ))
+- seelct if you want to keep your gear after respawning
+
+#### Vanilla Systems
+The missions uss various vanilla systems:
 - BIS tasks
 - BIS dynamic groups
 - BIS virtual arsenal
 - BIS respawn menu
-- BIS revive
+- BIS revive (not the ACE mission)
 
 #### Currently there are 4 types of mission-sites with different tasks available:
-#####Towns
+##### Towns
 - clear occupied town
 - destroy 2 mortars
 - destroy 2 resupply vehicles
 - kill HVT and his Guards
 - gather INTEL from HVT
 
-#####Military Bases
+##### Military Bases
 - clear occupied base
 - destroy 2 mortars
 - destroy 2 resupply vehicles
 - kill HVT and his Guards
 - collect INTEL from HVT
 
-#####Road-Positions
+##### Road-Positions
 - destroy broken down convoy
 - clear road block / checkpoint
 - IED site: clear IEDs or gather INTEL
 
-#####Installations
+##### Installations
 - destroy communication base (radiotower)
 - recover UGV and return it to base (stomper)
 - download INTEL in a compound
@@ -59,16 +78,22 @@ for completing a set (2) of missions:
 
 After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
 
-#### Mission Parameter
-- select the enemy faction
-- select a reward set
-- select the amount of simultaneous mission sites
-- select the AI skill level ( militia / regular / special forces ( for details check T8/config.hpp ))
-- seelct if you want to keep your gear after respawning
-
 #### Time Acceleration
 The time is accelerated: 4h IRL = 24h in game. If you want to change this, there is a module placed in the mission.
 
 #### MISC
 AI is spawned by my T8-Units script:
 https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/
+
+#### Singleplayer
+I use the Singleplayer mostly for debugging. There are also some Keys preset to help with porting the mission to a new map. 
+You will need the following extension for SP debugging:
+http://killzonekid.com/arma-extension-make_file-dll-v1-0/
+http://killzonekid.com/arma-console-extension-debug_console-dll-v2-0/
+
+##### Keys:
+- F5: log current player position as 'town'
+- F6: log current player position as 'military base'
+- F7: log current player position as 'road' (direction of the player matters! please look down the road)
+- F8: log current player position as 'compound' (use open space, mostly leveled. approx. 75m x 75m )
+- F9: exports the logged positions to a file with arma-config formating.
