@@ -83,13 +83,13 @@ The time is accelerated: 4h IRL = 24h in game. If you want to change this, there
 
 #### MISC
 AI is spawned by my T8-Units script:
-https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/
+- https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/
 
 #### Singleplayer
 I use the Singleplayer mostly for debugging. There are also some Keys preset to help with porting the mission to a new map. 
 You will need the following extension for SP debugging:
-http://killzonekid.com/arma-extension-make_file-dll-v1-0/
-http://killzonekid.com/arma-console-extension-debug_console-dll-v2-0/
+- http://killzonekid.com/arma-extension-make_file-dll-v1-0/
+- http://killzonekid.com/arma-console-extension-debug_console-dll-v2-0/
 
 ##### Keys:
 - F5: log current player position as 'town'
