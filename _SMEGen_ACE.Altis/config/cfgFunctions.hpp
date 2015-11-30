@@ -82,6 +82,7 @@ class cfgFunctions
 			addFunction(createRoadblock);
 			addFunction(createRoadblockHouse);
 			addFunction(createRoadIED);
+			addFunction(createSmallCamp);
 			addFunction(debug);
 			addFunction(findObjectivePos);
 			addFunction(getVehicleClass);

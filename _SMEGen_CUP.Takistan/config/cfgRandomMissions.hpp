@@ -61,17 +61,14 @@ class cfgRandomMissions
 		spawnModGroup				= 15;
 
 
-	// slot restrictions	
+	// slot restrictions
 
-		adminWhitelist[]			= { "76561197962343988", "76561198027698781" }; // T8, God
+		adminWhitelist[]			= { "76561197962343988" }; // T-800a
 		pilotWhitelist01[]			= {};
-		pilotWhitelist02[]			= {	"76561197962343988",	// T8
-										"76561198027698781",	// God
-										"76561198025642702" 	// JT
-									};
+		pilotWhitelist02[]			= {	"76561197962343988"	};
 
 
-	// vehicle restrictions
+	// vehicle driver restrictions
 
 		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
 		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };

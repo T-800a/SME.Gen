@@ -15,6 +15,7 @@
 class Takistan : base_map
 {
 
+	class base_town_tak : base_town		{ size[] = { 250, 250 }; };
 	class base_mil_tak : base_mil		{ size[] = { 150, 150 }; };
 	class base_comp_tak : base_comp		{ size[] = { 100, 100 }; };
 	
@@ -22,7 +23,7 @@ class Takistan : base_map
 	// --------------------------------------------------------------
 	// missionSites - TOWNS
 
-	class town_timurkalay : base_town 
+	class town_timurkalay : base_town_tak 
 	{
 		scope = 1;
 		name = "Timurkalay";
@@ -30,7 +31,7 @@ class Takistan : base_map
 		position[] = { 8911.36, 5320.67, 0 };
 	};
 
-	class town_garmarud : base_town 
+	class town_garmarud : base_town_tak 
 	{
 		scope = 1;
 		name = "Garmarud";
@@ -38,7 +39,7 @@ class Takistan : base_map
 		position[] = { 9123.36, 6753.96, 0 };
 	};
 
-	class town_garmsar : base_town 
+	class town_garmsar : base_town_tak 
 	{
 		scope = 1;
 		name = "Garmsar";
@@ -46,7 +47,7 @@ class Takistan : base_map
 		position[] = { 10876.3, 6302.07, 0 };
 	};
 
-	class town_imarat : base_town 
+	class town_imarat : base_town_tak 
 	{
 		scope = 1;
 		name = "Imarat";
@@ -54,7 +55,7 @@ class Takistan : base_map
 		position[] = { 8249.79, 7782.63, 0 };
 	};
 
-	class town_bastam : base_town 
+	class town_bastam : base_town_tak 
 	{
 		scope = 1;
 		name = "Bastam";
@@ -62,7 +63,7 @@ class Takistan : base_map
 		position[] = { 5686.21, 8948.05, 0 };
 	};
 
-	class town_falar : base_town 
+	class town_falar : base_town_tak 
 	{
 		scope = 1;
 		name = "Falar";
@@ -70,7 +71,7 @@ class Takistan : base_map
 		position[] = { 5991.5, 7288.02, 0 };
 	};
 
-	class town_feruzabad : base_town 
+	class town_feruzabad : base_town_tak 
 	{
 		scope = 1;
 		name = "Feruz Abad";
@@ -78,7 +79,7 @@ class Takistan : base_map
 		position[] = { 5258.86, 6196.55, 0 };
 	};
 
-	class town_anar : base_town 
+	class town_anar : base_town_tak 
 	{
 		scope = 1;
 		name = "Anar";
@@ -86,7 +87,7 @@ class Takistan : base_map
 		position[] = { 5884.28, 5696.47, 0 };
 	};
 
-	class town_kakaru : base_town 
+	class town_kakaru : base_town_tak 
 	{
 		scope = 1;
 		name = "Kakaru";
@@ -94,7 +95,7 @@ class Takistan : base_map
 		position[] = { 5299.5, 4752.44, 0 };
 	};
 
-	class town_sakhe : base_town 
+	class town_sakhe : base_town_tak 
 	{
 		scope = 1;
 		name = "Sakhe";
@@ -102,7 +103,7 @@ class Takistan : base_map
 		position[] = { 3786.44, 4439.73, 0 };
 	};
 
-	class town_huzrutimam : base_town 
+	class town_huzrutimam : base_town_tak 
 	{
 		scope = 1;
 		name = "Huzrutimam";
@@ -110,7 +111,7 @@ class Takistan : base_map
 		position[] = { 6090.75, 1162.47, 0 };
 	};
 
-	class town_chakchak : base_town 
+	class town_chakchak : base_town_tak 
 	{
 		scope = 1;
 		name = "Chak Chak";
@@ -118,7 +119,7 @@ class Takistan : base_map
 		position[] = { 4428.45, 678.773, 0 };
 	};
 
-	class town_ahmaday : base_town 
+	class town_ahmaday : base_town_tak 
 	{
 		scope = 1;
 		name = "Ahmaday";
@@ -126,7 +127,7 @@ class Takistan : base_map
 		position[] = { 3574.33, 1251.21, 0 };
 	};
 
-	class town_jilavur : base_town 
+	class town_jilavur : base_town_tak 
 	{
 		scope = 1;
 		name = "Jilavur";
@@ -134,7 +135,7 @@ class Takistan : base_map
 		position[] = { 2511.97, 5097.01, 0 };
 	};
 
-	class town_khushab : base_town 
+	class town_khushab : base_town_tak 
 	{
 		scope = 1;
 		name = "Khushab";
@@ -142,7 +143,7 @@ class Takistan : base_map
 		position[] = { 1565.08, 5720.88, 0 };
 	};
 
-	class town_mulladost : base_town 
+	class town_mulladost : base_town_tak 
 	{
 		scope = 1;
 		name = "Mulladost";
@@ -150,7 +151,7 @@ class Takistan : base_map
 		position[] = { 2045.85, 7695.78, 0 };
 	};
 
-	class town_gospandi : base_town 
+	class town_gospandi : base_town_tak 
 	{
 		scope = 1;
 		name = "Gospandi";
@@ -158,7 +159,7 @@ class Takistan : base_map
 		position[] = { 3649.58, 8591.53, 0 };
 	};
 
-	class town_nagara : base_town 
+	class town_nagara : base_town_tak 
 	{
 		scope = 1;
 		name = "Nagara";
@@ -166,7 +167,7 @@ class Takistan : base_map
 		position[] = { 3082.68, 9952.6, 0 };
 	};
 
-	class town_nur : base_town 
+	class town_nur : base_town_tak 
 	{
 		scope = 1;
 		name = "Nur";
@@ -174,7 +175,7 @@ class Takistan : base_map
 		position[] = { 1841.74, 11877.8, 0 };
 	};
 
-	class town_rasman : base_town 
+	class town_rasman : base_town_tak 
 	{
 		scope = 1;
 		name = "Rasman";
@@ -182,7 +183,7 @@ class Takistan : base_map
 		position[] = { 6328.99, 11292.7, 0 };
 	};
 
-	class town_zavarak : base_town 
+	class town_zavarak : base_town_tak 
 	{
 		scope = 1;
 		name = "Zavarak";
@@ -190,7 +191,7 @@ class Takistan : base_map
 		position[] = { 9858.55, 11470.2, 0 };
 	};
 
-	class town_karachinar : base_town 
+	class town_karachinar : base_town_tak 
 	{
 		scope = 1;
 		name = "Karachinar";
@@ -198,7 +199,7 @@ class Takistan : base_map
 		position[] = { 12330.3, 10457.3, 0 };
 	};
 
-	class town_ravanay : base_town 
+	class town_ravanay : base_town_tak 
 	{
 		scope = 1;
 		name = "Ravanay";
@@ -206,7 +207,7 @@ class Takistan : base_map
 		position[] = { 11525.5, 8369.75, 0 };
 	};
 
-	class town_chaman : base_town 
+	class town_chaman : base_town_tak 
 	{
 		scope = 1;
 		name = "Chaman";
@@ -314,7 +315,7 @@ class Takistan : base_map
 	{
 		scope = 1;
 		name = "Road SW of Bastam";
-		marker = "site_road_bastam_SW";
+		marker = "site_road_w_SW";
 		position[] = { 5666.26, 8579.44, 0 };
 		angle = 249;
 	};

@@ -26,8 +26,8 @@ class Params
 	class rewardSet
 	{
 		title		= "Reward Set";
-		values[]	= { 0,        1,                       2,          			999 };
-		texts[]		= { "BLUFOR", "BLUFOR - full Arsenal", "CUP - USMC", 		"DEFAULT" };
+		values[]	= { 0,        1,				2,				900,				999 };
+		texts[]		= { "BLUFOR", "BLUFOR - ACE",	"CUP - USMC",	"full Arsenal",		"DEFAULT" };
 		default		= 999;
 	};
 	

@@ -20,7 +20,10 @@ _switch		= param [ 2, "CREATE", [""]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_smokeScreen.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 if ( ( typeName _unit ) == ( typename objNull ) AND { isNull _unit } ) exitWith {};
-if ([ _unit ] call T8U_fnc_InBuilding ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_smokeScreen.sqf", "NO SMOKE", _this ] spawn T8U_fnc_DebugLog; }; };
+
+if !( alive _unit )							exitWith { if ( T8U_var_DEBUG ) then { [ "fn_smokeScreen.sqf", "NO SMOKE > DEAD", _this ] spawn T8U_fnc_DebugLog; }; };
+if !( _unit isEqualTo ( vehicle _unit ))	exitWith { if ( T8U_var_DEBUG ) then { [ "fn_smokeScreen.sqf", "NO SMOKE > IN VEHICLE", _this ] spawn T8U_fnc_DebugLog; };};
+if ([ _unit ] call T8U_fnc_InBuilding )		exitWith { if ( T8U_var_DEBUG ) then { [ "fn_smokeScreen.sqf", "NO SMOKE > IN BUILDING", _this ] spawn T8U_fnc_DebugLog; }; };
 
 if ( ( ( typeName _target ) == ( typename objNull ) AND { isNull _target } ) OR ( ( typeName _target ) == ( typeName [] ) AND { count _target < 2 } ) ) exitWith {};
 if ( typeName _target == typename objNull ) then { _target = getPosATL _target; };

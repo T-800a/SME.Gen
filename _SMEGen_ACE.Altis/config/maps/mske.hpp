@@ -18,8 +18,8 @@ class mske : base_map
 	// --------------------------------------------------------------
 	// missionSites - TOWNS
 	
-	// mske towns without HVT, because not always_noconv entreable buildings / buildings with positions
-	class base_town_mske : base_town { size[] = { 150, 150 }; allowedTypes[] = { "occupy", "mortars", "resupplies" }; };
+	// MSKE towns and mil. bases are usually a bit smaller
+	class base_town_mske : base_town { size[] = { 150, 150 }; };
 	class base_mil_mske : base_mil { size[] = { 150, 150 }; };
 
 	class town_saintpierre : base_town_mske

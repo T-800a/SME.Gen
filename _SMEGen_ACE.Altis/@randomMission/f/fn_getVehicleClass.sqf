@@ -14,14 +14,22 @@
 #define __DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-params [[ "_type", "ERROR", [""]]];
+params [[ "_type", "ERROR", [""]], [ "_switch", "DEFAULT", [""]]];
 
-private [ "_return" ];
+private [ "_return", "_class" ];
 _return	= "";
+_class = "";
 
 if ( _type isEqualTo "ERROR" ) exitWith { _return };
 
-_return = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> "vehicles" >> _type );
+switch ( _switch ) do
+{
+	case "vehicles" :	{ _class = "vehicles"; };
+	case "units" :		{ _class = "units"; };
+	default				{ _class = "vehicles"; };
+};
+
+_return = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8RMG_var_enemyFaction >> _class >> _type );
 
 
 // return

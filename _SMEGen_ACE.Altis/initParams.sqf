@@ -35,8 +35,10 @@ switch ( paramsArray select 0 ) do
 switch ( paramsArray select 1 ) do
 {
 	case 0 :	{ T8RMG_var_playerRewardSet = "vanilla_BLUFOR"; };
-	case 1 :	{ T8RMG_var_playerRewardSet = "vanilla_BLUFOR_fullArsenal"; };
+	case 1 :	{ T8RMG_var_playerRewardSet = "vanilla_BLUFOR_ACE"; };
 	case 2 :	{ T8RMG_var_playerRewardSet = "CUP_BLUFOR_USMC"; };
+
+	case 900 :	{ T8RMG_var_playerRewardSet = "vanilla_fullArsenal"; };
 	default		{ T8RMG_var_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
 };
 
@@ -64,7 +66,7 @@ switch ( paramsArray select 4 ) do
 {
 	case 0 :	{ T8RMG_var_keepRespawnLoadout = true; };
 	case 1 :	{ T8RMG_var_keepRespawnLoadout = false; };
-	default		{ T8RMG_var_keepRespawnLoadout = false; };
+	default		{ T8RMG_var_keepRespawnLoadout = true; };
 };
 
 

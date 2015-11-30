@@ -20,9 +20,9 @@
  =======================================================================================================================
 */
 
-#DEFINE REDFOR 0
-#DEFINE BLUFOR 1
-#DEFINE GRNFOR 2
+#define REDFOR 0
+#define BLUFOR 1
+#define GRNFOR 2
 
 class missionFactions 
 {
@@ -198,6 +198,10 @@ class missionFactions
 		{
 			EMPTY_OFFROAD		= "CUP_O_UAZ_Open_TKA";
 			EMPTY_OFFROAD_A		= "CUP_O_UAZ_MG_TKA";
+			EMPTY_TRUCK			= "CUP_O_Ural_TKA";
+			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_TKA";
+			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_TKA";			
+			
 		};
 	};
 };

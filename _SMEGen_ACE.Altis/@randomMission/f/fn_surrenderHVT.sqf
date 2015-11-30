@@ -14,7 +14,7 @@
 #define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_var", "_objs", "_unit" ];
+private [ "_var", "_unit" ];
 
 __DEBUG( __FILE__, "INIT", _this );
 
@@ -23,8 +23,7 @@ params [[ "_site", "", [""]]];
 if ( _site isEqualTo "" ) exitWith {};
 
 _var = format [ "OBJECTIVE_intelHVT_%1", _site ];	
-_objs = missionNamespace getVariable [ _var, []];
-_unit = ( _objs select 0 );
+_unit = missionNamespace getVariable [ _var, objNull ];
 
 if ( !isNil "ACE_captives_fnc_setSurrendered" ) then 
 {

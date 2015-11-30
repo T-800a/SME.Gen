@@ -31,13 +31,13 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
+		spawnUnitsFaction			= "vanilla_OPFOR_GUER";
 		
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "CUP_BLUFOR_USMC";
+		playerRewardSet				= "vanilla_BLUFOR_ACE";
 
 
 	// amount of spawned mission AOs
@@ -63,12 +63,9 @@ class cfgRandomMissions
 
 	// slot restrictions	
 
-		adminWhitelist[]			= { "76561197962343988", "76561198027698781" }; // T8, God
+		adminWhitelist[]			= { "76561197962343988" }; // T-800a
 		pilotWhitelist01[]			= {};
-		pilotWhitelist02[]			= {	"76561197962343988",	// T8
-										"76561198027698781",	// God
-										"76561198025642702" 	// JT
-									};
+		pilotWhitelist02[]			= {	"76561197962343988"	};
 
 
 	// vehicle restrictions

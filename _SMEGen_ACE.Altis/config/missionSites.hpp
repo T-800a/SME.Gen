@@ -37,7 +37,7 @@ class missionSites
 			name			= "";
 			type			= "town";
 			allowedTypes[]	= { "occupy", "mortars", "resupplies", "killHVT", "intelHVT" };
-		//	allowedTypes[]	= { "intelHVT" };
+		//	allowedTypes[]	= { "intelHVT", "killHVT" };
 			marker			= "";
 			position[]		= { 0, 0, 0 };
 			size[]			= { 300, 300 };
@@ -50,7 +50,7 @@ class missionSites
 			name			= "";
 			type			= "military";
 			allowedTypes[]	= { "occupy_mil", "mortars", "resupplies", "killHVT", "intelHVT" };
-		//	allowedTypes[]	= { "intelHVT" };
+		//	allowedTypes[]	= { "intelHVT", "killHVT" };
 			marker			= "";
 			position[]		= { 0, 0, 0 };
 			size[]			= { 200, 200 };

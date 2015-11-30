@@ -179,28 +179,28 @@ switch ( _type ) do
 	
 	case "killHVT":
 	{
-		private [ "_objs" ];
+		private [ "_obj" ];
 		_siteSize = ( _range * 0.8 );
-		_objs = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
+		_obj = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
 		
-		_sitePos = getPos ( _objs select 0 );
+		_sitePos = getPos _obj;
 		
 		_varName = format [ "OBJECTIVE_killHVT_%1", _siteMkr ];	
-		missionNamespace setVariable [ _varName, _objs ];
+		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
 	case "intelHVT":
 	{
-		private [ "_objs" ];
+		private [ "_obj" ];
 		_siteSize = ( _range * 0.8 );
-		_objs = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
+		_obj = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
 		
-		[( _objs select 0 )] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_intelHVT_actionID_%1", _siteMkr ]) ];
+		[ _obj ] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_intelHVT_actionID_%1", _siteMkr ]) ];
 		
-		_sitePos = getPos ( _objs select 0 );
+		_sitePos = getPos _obj;
 		
 		_varName = format [ "OBJECTIVE_intelHVT_%1", _siteMkr ];	
-		missionNamespace setVariable [ _varName, _objs ];
+		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
 	case "getIntel":

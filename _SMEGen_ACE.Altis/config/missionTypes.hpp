@@ -44,7 +44,7 @@ class missionTypes
 			{
 				scope			= 0;
 				units[] 		= { "SQUADLEADER", "LIGHTMG", "LIGHTMG", "HEAVYMG", "CORPSMAN", "ANTITANK", "CORPSMAN", "ANTIPERSON", "GRENADIER", "RIFLEMAN", "RIFLEMAN" };
-				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
+				unitsFiller[] 	= { "RIFLEMAN", "RIFLEMAN", "RIFLEMAN", "GRENADIER" };
 				task			= "GARRISON";
 			};
 			
@@ -162,7 +162,7 @@ class missionTypes
 		{
 			class win
 			{
-				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
+				condition	= "(!( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])))";
 				function	= "BIS_fnc_taskSetState";
 				isFinal		= 1;
 			};
@@ -201,14 +201,14 @@ class missionTypes
 		{
 			class followup
 			{
-				condition	= "((( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 ) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
+				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
 				function	= "T8RMG_fnc_handleFollowingTask";
 				isFinal		= 0;
 			};
 
 			class fail
 			{
-				condition	= "(!( alive (( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 )) AND !((( missionNamespace getVariable [ '#__VARIABLE__#', []]) select 0 ) getVariable [ 'OBJECTIVE_intel_gathered', false ]))";
+				condition	= "(!( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND !(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]))";
 				function	= "BIS_fnc_taskSetState";
 				isFinal		= 1;
 			};
