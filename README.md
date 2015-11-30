@@ -7,19 +7,20 @@
     <a href="#">
         <img src="http://img.shields.io/badge/Author-T--800a-blue.svg?style=flat-square" alt="Author: T-800a">
     </a>
-    <a href="https://github.com/acemod/ACE3" target="_blank">
-        <img src="http://img.shields.io/badge/Requires-CUP-orange.svg?style=flat-square" alt="Requires: ACE3">
+    <a href="http://www.cup-arma3.org/" target="_blank">
+        <img src="http://img.shields.io/badge/Requires-CUP-orange.svg?style=flat-square" alt="Requires: CUP">
     </a>
 </p>
 <p align="center"><sup><strong>A dynamic mission for ARMA3 that generates small military encounters.</strong></sup></p>
 
-The intent of the mission is to have something similiar to an Invade & Annex type missions, but in a smaler more infantry focused scope. There are always two tasks available. If both tasks are finished a cleanup will happen and 2 new tasks will be generated.
+The intent of the mission is to have something similiar to an Domination / Invade & Annex type COOP missions, but in a smaler and more infantry focused scope. There is always a set of tasks available. If those tasks are finished a cleanup will happen and a new set of tasks will be generated.
 
 The mission uses various vanilla systems:
 - BIS tasks
 - BIS dynamic groups
-- BIS Respawn Menu
-- BIS Revive (not in the ACE mission). 
+- BIS virtual arsenal
+- BIS respawn menu
+- BIS revive
 
 #### Currently there are 4 types of mission-sites with different tasks available:
 #####Towns
@@ -69,5 +70,5 @@ After completing two mission one vehicle will be spawned, starting with the MHQ.
 The time is accelerated: 4h IRL = 24h in game. If you want to change this, there is a module placed in the mission.
 
 #### MISC
-- AI is spawned by my T8-Units script
+AI is spawned by my T8-Units script:
 https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/
