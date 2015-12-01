@@ -18,15 +18,15 @@ The intent of the mission is to have something similiar to an Domination / Invad
 
 #### Missions:
 ##### _SMEGen_CUP.Takistan
-- Default Enemy: CUP Takistan Army
-- Default Gear Set: CUP USMC
-- no ACE modules placed
+* Default Enemy: CUP Takistan Army
+* Default Gear Set: CUP USMC
+* no ACE modules placed
 
 
 ##### _SMEGen_ACE.Altis		
-- Default Enemy: Vanilla OPFOR Guerillas
-- Default Gear Set: Vanilla BLUFOR with ACE itmes
-- ACE modules placed in the Mission
+* Default Enemy: Vanilla OPFOR Guerillas
+* Default Gear Set: Vanilla BLUFOR with ACE itmes
+* ACE modules placed in the Mission
 
 
 #### Mission Parameters
@@ -93,20 +93,20 @@ The time is accelerated: 4h IRL = 24h in game. If you want to change this, there
 
 
 #### MISC
-AI is spawned by my T8-Units script:
-- https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/
+AI is spawned by my script:
+* [T8-Units Script](https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/)
 
 
 #### Singleplayer
 I use the Singleplayer mostly for debugging. There are also some Keys preset to help with porting the mission to a new map. 
 You will need the following extension for SP debugging:
-- http://killzonekid.com/arma-extension-make_file-dll-v1-0/
-- http://killzonekid.com/arma-console-extension-debug_console-dll-v2-0/
+* (KillzoneKids MakeFile extension)[http://killzonekid.com/arma-extension-make_file-dll-v1-0/]
+* (KillzoneKids DebugConsole extension)[http://killzonekid.com/arma-console-extension-debug_console-dll-v2-0/]
 
 
 ##### Keys:
-- F5: log current player position as 'town'
-- F6: log current player position as 'military base'
-- F7: log current player position as 'road' (direction of the player matters! look down the road)
-- F8: log current player position as 'compound' (use open, even space approx. 75m x 75m )
-- F9: exports the logged positions to a file with arma-config formating.
+* F5: log current player position as 'town'
+* F6: log current player position as 'military base'
+* F7: log current player position as 'road' (direction of the player matters! look down the road)
+* F8: log current player position as 'compound' (use open, even space approx. 75m x 75m )
+* F9: exports the logged positions to a file with arma-config formating.
