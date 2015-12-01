@@ -660,12 +660,12 @@ class Takistan : base_map
 		position[] = { 1731.82, 3752.64, 0 };
 	};
 
-	class comp_mulladost_SSW : base_comp_tak 
+	class comp_mulladost_W : base_comp_tak 
 	{
 		scope = 1;
-		name = "SSW of Mulladost";
-		marker = "site_comp_mulladost_SSW";
-		position[] = { 2000.76, 7655.45, 0 };
+		name = "W of Mulladost";
+		marker = "site_comp_mulladost_W";
+		position[] = { 1340.5, 7744.2, 0 };
 	};
 
 	class comp_lalezar_W : base_comp_tak 

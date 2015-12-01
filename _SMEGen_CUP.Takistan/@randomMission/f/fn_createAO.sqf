@@ -140,8 +140,8 @@ switch ( _type ) do
 	{
 		private [ "_obj01", "_obj02" ];
 		
-		_obj01 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
-		_obj02 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
+		_obj01 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
+		_obj02 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
 		
 		_varName = format [ "OBJECTIVE_mortars_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
@@ -151,8 +151,8 @@ switch ( _type ) do
 	{
 		private [ "_obj01", "_obj02" ];
 
-		_obj01 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createFuelDump;
-		_obj02 = [( [ _sitePos, ( _range * 0.6 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createAmmoDump;
+		_obj01 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createFuelDump;
+		_obj02 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createAmmoDump;
 		
 		_varName = format [ "OBJECTIVE_resupplies_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
@@ -180,7 +180,7 @@ switch ( _type ) do
 	case "killHVT":
 	{
 		private [ "_obj" ];
-		_siteSize = ( _range * 0.8 );
+		_siteSize = ( _range * 0.7 );
 		_obj = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
 		
 		_sitePos = getPos _obj;

@@ -14,34 +14,58 @@
 #define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_playerPos", "_playerDir", "_objectPos", "_object", "_debug" ];
+private [ "_inputPos", "_areaSize", "_loop", "_pX", "_pY", "_n" ];
 __DEBUG( __FILE__, "INIT", _this );
 
 
-_playerPos = getPos player;
-_playerDir = getDir player;
+_inputPos	= getPos player;
+_areaSize	= 400;
 
-_objectPos = [];
+_pX = (( _inputPos select 0 ) - ( _areaSize / 2 ));
+_pY = (( _inputPos select 1 ) - ( _areaSize / 2 ));
+
+_loop = true;
 _n = 1;
 
-while { count _objectPos < 1 } do
+while { _loop } do
 {
-	private [ "_relPos", "_tmpPos" ];
+	_tmpPos = [ _pX, _pY, 0 ];
 	
-	_relPos = [ _playerPos , random 300 , random 360 ] call BIS_fnc_relPos;
-	_tmpPos = _relPos findEmptyPosition [ 5, 50, "Land_VR_Block_02_F" ];
+	private [ "_m" ]; 
+	_m = [( format [ "%1_%2_%3", _pX, _pY, _n ]), _tmpPos, "", [1,1], 0, "ICON", "mil_dot", "ColorBlack", 0.25 ] call T8RMG_fnc_createMarker; 
 	
-	_debug = [_n, [ _tmpPos, isOnRoad _tmpPos, surfaceIsWater _tmpPos, [ _tmpPos ] call T8RMG_fnc_checkFlatGround, [ _tmpPos ] call T8RMG_fnc_checkOutside ]];
-	__DEBUG( __FILE__, "_debug", _debug );
-	
-	if ( count _tmpPos > 1 AND { !isOnRoad _tmpPos } AND { !surfaceIsWater _tmpPos }) then { _objectPos = _tmpPos; };
-	if ( _n > 100 ) exitWith {};
 	_n = _n + 1;
+	
+	if ([ _tmpPos ] call T8RMG_fnc_checkOutside ) then				{ _m setMarkerColorLocal "colorCivilian"; };
+	if (( _tmpPos distance2D _inputPos ) > ( _areaSize / 2 )) then	{ _m setMarkerColorLocal "ColorGrey"; };
+	
+	if ( 	count _tmpPos > 1 
+			AND { ( _tmpPos distance2D _inputPos ) < ( _areaSize / 2 ) }
+			AND { !isOnRoad _tmpPos }
+			AND { !surfaceIsWater _tmpPos }
+			AND { [ _tmpPos ] call T8RMG_fnc_checkFlatGround }
+			AND { !([ _tmpPos ] call T8RMG_fnc_checkOutside )}
+	) then {
+	
+		private [ "_skip" ];
+		_skip = true;
+		
+		if (( _tmpPos distance2D ( nearestObject _tmpPos )) >  5 ) then	{ _m setMarkerColorLocal "ColorRed"; };
+		if (( _tmpPos distance2D ( nearestObject _tmpPos )) > 10 ) then	{ _m setMarkerColorLocal "ColorOrange"; };
+		if (( _tmpPos distance2D ( nearestObject _tmpPos )) > 15 ) then	{ _m setMarkerColorLocal "ColorYellow"; };
+		if (( _tmpPos distance2D ( nearestObject _tmpPos )) > 30 ) then	{ _m setMarkerColorLocal "ColorGreen"; };	
+	};
+	
+	_pX = _pX + 5;
+	
+	if ( _pX > (( _inputPos select 0 ) + ( _areaSize / 2 ))) then
+	{
+		_pX = (( _inputPos select 0 ) - ( _areaSize / 2 ));
+		_pY = _pY + 5;
+		
+		if ( _pY > (( _inputPos select 1 ) + ( _areaSize / 2 ))) then
+		{
+			_loop = false;
+		};
+	};
 };
-
-
-// return position
-if ( count _objectPos > 1 ) exitWith { _objectPos };
-
-// or bool
-false
