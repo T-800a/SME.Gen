@@ -23,7 +23,6 @@ class Mission
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Signs_F_AD",
 		"A3_Characters_F_EPC",
-		"3DEN",
 		"aia_takistan_config",
 		"CUP_WheeledVehicles_HMMWV",
 		"CUP_AirVehciles_UH1Y",
@@ -32,8 +31,7 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
-		"3DEN",
-		"a3_modules_f_curator_curator",
+		"A3_Modules_F_Curator_Curator",
 		"CUP_Creatures_Military_USMC",
 		"A3_Modules_F_Multiplayer",
 		"A3_Modules_F_Curator_Environment",

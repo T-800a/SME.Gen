@@ -170,7 +170,7 @@ switch ( _type ) do
 	case "recoverUGV":
 	{
 		private [ "_obj" ];
-		_siteSize = ( _range * 0.7 );
+		_siteSize = [( _range * 0.7 ), ( _range * 0.7 )];
 		_obj = [ _sitePos ] call T8RMG_fnc_createrecoverUGV; 
 		
 		_varName = format [ "OBJECTIVE_recoverUGV_%1", _siteMkr ];	
@@ -180,8 +180,8 @@ switch ( _type ) do
 	case "killHVT":
 	{
 		private [ "_obj" ];
-		_siteSize = ( _range * 0.7 );
-		_obj = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
+		_siteSize = [( _range * 0.7 ), ( _range * 0.7 )];
+		_obj = [ _sitePos, ( _range * 0.7 ) ] call T8RMG_fnc_createHVT; 
 		
 		_sitePos = getPos _obj;
 		
@@ -192,8 +192,8 @@ switch ( _type ) do
 	case "intelHVT":
 	{
 		private [ "_obj" ];
-		_siteSize = ( _range * 0.8 );
-		_obj = [ _sitePos, _siteSize ] call T8RMG_fnc_createHVT; 
+		_siteSize = [( _range * 0.8 ), ( _range * 0.8 )];
+		_obj = [ _sitePos, ( _range * 0.8 ) ] call T8RMG_fnc_createHVT; 
 		
 		[ _obj ] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_intelHVT_actionID_%1", _siteMkr ]) ];
 		
@@ -206,7 +206,7 @@ switch ( _type ) do
 	case "getIntel":
 	{
 		private [ "_obj" ];
-		_siteSize = ( _range * 0.4 );
+		_siteSize = [( _range * 0.4 ), ( _range * 0.4 )];
 		_obj = [ _sitePos ] call T8RMG_fnc_createGetIntel; 
 		
 		[ _obj, 245670 ] remoteExec [ "T8L_fnc_addActionLaptop", 0, ( format [ "OBJECTIVE_getIntel_actionID_%1", _siteMkr ]) ];
@@ -218,7 +218,7 @@ switch ( _type ) do
 	case "getIntelFollowUP":
 	{
 		private [ "_obj" ];
-		_siteSize = ( _range * 0.4 );
+		_siteSize = [( _range * 0.4 ), ( _range * 0.4 )];
 		_obj = [ _sitePos ] call T8RMG_fnc_createGetIntel;
 		
 		[ _obj ] remoteExec [ "T8C_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_getIntelFollowUP_actionID_%1", _siteMkr ])];
