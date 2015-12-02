@@ -21,7 +21,8 @@ params [ "_pos" ];
 _normal		= surfaceNormal _pos;
 _check		= ( _normal select 2 ) * 1000;
 
-_return = if ( _check > 995 ) then { true } else { false };
+
+_return = if ( _check > 985 ) then { true } else { false };
 
 
 // Return

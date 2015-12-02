@@ -22,9 +22,9 @@ __DEBUG( __FILE__, "INIT", "INIT" );
 {
 	__DEBUG( __FILE__, "T8RMG_var_arrayCleanup > _x", _x );
 	
-	if (( typeName _x ) isEqualTo ( typeName "STRING" ))	then { deleteMarkerLocal _x; };
+	if (( typeName _x ) isEqualTo ( typeName "STR" ))		then { deleteMarkerLocal _x; };
 	if (( typeName _x ) isEqualTo ( typeName [] ))			then {{ if ( !isNull _x ) then { deleteVehicle _x;  sleep 0.20; }; false } count _x; };
-	if (( typeName _x ) isEqualTo ( "OBJECT" ))				then { if ( !isNull _x ) then { deleteVehicle _x;  sleep 0.20; }; };
+	if (( typeName _x ) isEqualTo ( typeName objNull ))		then { if ( !isNull _x ) then { deleteVehicle _x;  sleep 0.20; }; };
 
 } forEach T8RMG_var_arrayCleanup;
 
