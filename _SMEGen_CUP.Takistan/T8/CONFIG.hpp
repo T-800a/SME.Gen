@@ -1,7 +1,7 @@
 /*
  =======================================================================================================================
 
-	___ T8 Units _______________________________________________________________________________________________________
+	T8 Units Script
 	
 	Unit Spawn & Communication Script
 	
@@ -41,6 +41,13 @@ T8U_var_DEBUG_hints				= false;		// show Debug Hints
 T8U_var_DEBUG_marker			= false;		// create Debug Markers
 T8U_var_DEBUG_useCon			= false;		// send Debug MSGs to Killzone Kids console instead of RPT file ( http://killzonekid.com/arma-console-extension-debug_console-dll-v3-0/ )
 
+/*
+	T8U_var_DEBUG			= true;
+	T8U_var_DEBUG_hints		= true;
+	T8U_var_DEBUG_marker	= true;
+	T8U_var_DEBUG_useCon	= true;
+*/
+
 // Options to register units with ZEUS
 // this may slow down spawning
 T8U_var_AllowZEUS				= true;			// Register spawned units with "allCurators"
@@ -78,17 +85,17 @@ T8U_var_enableFatigue			= false;		// enable/disable Fatigue for all spawned unit
 T8U_var_Presets =
 [
 //	[ --index from T8U_var_SkillSets--, --index from T8U_var_BehaviorSets-- ],
-	[ 0, 1 ],		// 0 for WEST
-	[ 0, 1 ],		// 1 for EAST
-	[ 0, 1 ]		// 2 for RESISTANCE
+	[ 2, 1 ],		// 0 for WEST
+	[ 1, 0 ],		// 1 for EAST
+	[ 1, 2 ]		// 2 for RESISTANCE
 ];
 
 T8U_var_SkillSets = 
 [
 // 0 - militia ( untrained )
 	[
-		[ "aimingAccuracy",		0.15 ],
-		[ "aimingShake",		0.10 ],
+		[ "aimingAccuracy",		0.20 ],
+		[ "aimingShake",		0.15 ],
 		[ "aimingSpeed",		0.20 ],
 		[ "spotDistance",		0.75 ],
 		[ "spotTime",			0.70 ],
@@ -101,7 +108,7 @@ T8U_var_SkillSets =
 // 1 - regular forces
 	[
 		[ "aimingAccuracy",		0.30 ],
-		[ "aimingShake",		0.20 ],
+		[ "aimingShake",		0.25 ],
 		[ "aimingSpeed",		0.30 ],
 		[ "spotDistance",		0.85 ],
 		[ "spotTime",			0.75 ],
