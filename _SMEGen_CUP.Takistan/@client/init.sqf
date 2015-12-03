@@ -48,8 +48,13 @@ if ( _arsenalAccess isEqualTo 1 ) then
 // add diary entries
 [] call T8C_fnc_addDiary;
 
-waitUntil {sleep 0.1; !(isNull (findDisplay 12))};
-( ( findDisplay 12 ) displayCtrl 51 ) ctrlAddEventHandler [ "Draw", T8C_fnc_drawMapIcons ];
+
+// start map markers if enabled
+if ( T8RMG_var_allowMapMarker ) then
+{
+	waitUntil {sleep 0.1; !(isNull (findDisplay 12))};
+	( ( findDisplay 12 ) displayCtrl 51 ) ctrlAddEventHandler [ "Draw", T8C_fnc_drawMapIcons ];
+};
 
 
 

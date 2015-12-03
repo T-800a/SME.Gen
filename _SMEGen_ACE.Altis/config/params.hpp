@@ -54,4 +54,12 @@ class Params
 		texts[]		= { "YES",	"NO",	"DEFAULT" };
 		default		= 999;
 	};
+	
+	class allowMapMarker
+	{
+		title		= "Show Map Marker for Players and Vehicles";
+		values[]	= { 0,			1,			999 };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT" };
+		default		= 999;
+	};
 };

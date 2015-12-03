@@ -69,6 +69,14 @@ switch ( paramsArray select 4 ) do
 	default		{ T8RMG_var_keepRespawnLoadout = true; };
 };
 
+// Show Map Marker for Players and Vehicles
+switch ( paramsArray select 5 ) do
+{
+	case 0 :	{ T8RMG_var_allowMapMarker = true; };
+	case 1 :	{ T8RMG_var_allowMapMarker = false; };
+	default		{ T8RMG_var_allowMapMarker = true; };
+};
+
 
 // faction used by the players (set in the cfgRandomMissions.hpp)
 T8RMG_var_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );

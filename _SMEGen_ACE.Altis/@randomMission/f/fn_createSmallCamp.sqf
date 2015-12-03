@@ -25,7 +25,7 @@ __DEBUG( __FILE__, "INIT > _this", _this );
 
 _objArray =
 [
-	["Land_d_Stone_HouseBig_V1_F",[-0.128418,-0.370605,0],0,1,0,[0,0],"","",true,false], 
+	["Land_d_Stone_HouseBig_V1_F",[-0.128418,-0.370605,0.5],0,1,0,[0,0],"","",true,false], 
 	["Land_HBarrier_5_F",[-1.19531,5.14307,0],0,1,0,[0,0],"","",true,false], 
 	["Land_HBarrier_5_F",[4.35352,5.17871,0],90,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Long_F",[3.10986,-5.28125,0],270,1,0,[0,0],"","",true,false], 
@@ -39,7 +39,7 @@ _objArray =
 _mappedObj = [ _pos, _dir, _objArray ] call BIS_fnc_objectsMapper;
 
 {
-	if (( typeOf _x ) in [ "Land_HBarrierBig_F", "Land_HBarrier_1_F", "Land_BagFence_Round_F", "Land_BagFence_Corner_F", "Land_BagFence_Long_F", "Land_BagFence_Short_F", "Land_Razorwire_F" ]) then
+	if (( typeOf _x ) in [ "Land_HBarrier_5_F", "Land_BagFence_Long_F" ]) then
 	{
 		_x setVectorUp ( surfaceNormal( getPos _x ));
 	};

@@ -196,7 +196,8 @@ switch ( _key ) do
 	// F10
 	case 68 : 
 	{
-		call _exportVehicle;
+		[] spawn T8RMG_fnc_testFnc;
+		// call _exportVehicle;
 		_return = true;
 	};
 };	

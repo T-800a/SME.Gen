@@ -25,7 +25,7 @@
 
 #include <..\MACRO.hpp>
 
-private [ "_group", "_marker", "_infGroup", "_speedMode", "_formation", "_statement", "_range" ];
+private [ "_group", "_marker", "_infGroup", "_speedMode", "_formation", "_statement", "_range", "_behaviour" ];
 
 _group		= param [ 0, grpNull, [grpNull]];
 _marker		= param [ 1, "NO-MARKER-SET", [""]]; 
@@ -39,12 +39,11 @@ _formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
 _statement = "";
 _range = 50;
 _speedMode = "FULL";
+_behaviour = "AWARE";
 
 _group setBehaviour "AWARE";
 _group setSpeedMode _speedMode;
 _group setFormation _formation;
-
-[ _group, getPos ( leader _group ), "TALK", "AWARE", "", 25, _speedMode, [ 15, 15, 15 ]] call T8U_fnc_CreateWaypoint;
 
 if ( random 100 > 50 ) then
 {

@@ -14,18 +14,31 @@
 #define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
 // );
 
-private [ "_inputPos", "_areaSize", "_rad", "_arrayBasePos", "_arrayRoadPos", "_arrayBuildingPos", "_loop", "_pX", "_pY", "_n" ];
-__DEBUG( __FILE__, "INIT", _this );
 
+private [ "_msg", "_startTime", "_posTime", "_inputPos", "_areaSize", "_amount", "_useRoad", "_distance", "_return", "_rad", "_arrayBasePos", "_arrayRoadPos", "_arrayBuildingPos", "_arrayPosGRN", "_arrayPosYEL", "_arrayPosORA", "_arrayPosRED", "_loop", "_pX", "_pY", "_n" ];
+__DEBUG( __FILE__, "INIT", _this );
+_msg = format [ "~~~~ POS CREATION STARTED ~~~~", diag_tickTime ];
+__DEBUG( __FILE__, _msg, _this );
+
+_startTime = diag_tickTime;
 
 _inputPos	= getPos player;
 _areaSize	= 300;
+_useRoad	= true;
+_amount		= 3;
+_distance	= 50;
+_return		= [];
+
 _rad		= (( _areaSize / 2 ) + 5 );
-_useRoad	= false;
+
 
 _arrayBasePos		= [];
 _arrayRoadPos		= [];
 _arrayBuildingPos	= [];
+_arrayPosGRN		= [];
+_arrayPosYEL		= [];
+_arrayPosORA		= [];
+_arrayPosRED		= [];
 
 _pX = (( _inputPos select 0 ) - _rad );
 _pY = (( _inputPos select 1 ) - _rad );
@@ -47,9 +60,6 @@ _fnc_getNearest =
 	_return
 };
 
-
-
-
 while { _loop } do
 {
 	private [ "_tmpPos" ]; 
@@ -59,19 +69,18 @@ while { _loop } do
 	{
 		if ( _useRoad ) then 
 		{
-		
-			if ( isOnRoad _tmpPos ) then { _arrayRoadPos pushBack _tmpPos; [( format [ "%1_%2_%3", ( _tmpPos select 0 ), ( _tmpPos select 1 ), time ]), _tmpPos, "", [1,1], 0, "ICON", "mil_dot", "colorGreen", 0.75 ] call T8RMG_fnc_createMarker; } else { _arrayBasePos pushBack _tmpPos; };
+			if ( isOnRoad _tmpPos ) then { _arrayRoadPos pushBack _tmpPos; } else { _arrayBasePos pushBack _tmpPos; };
 		} else {
-			if ( !isOnRoad _tmpPos ) then { _arrayBasePos pushBack _tmpPos; } else { _arrayBuildingPos pushBack _tmpPos; [( format [ "%1_%2_%3", ( _tmpPos select 0 ), ( _tmpPos select 1 ), time ]), _tmpPos, "", [1,1], 0, "ICON", "mil_dot", "colorCivilian", 0.75 ] call T8RMG_fnc_createMarker; };
+			if ( !isOnRoad _tmpPos ) then { _arrayBasePos pushBack _tmpPos; } else { _arrayBuildingPos pushBack _tmpPos; };
 		};
 	};
 	
-	_pX = _pX + 5;
+	_pX = _pX + 10;
 	
 	if ( _pX > (( _inputPos select 0 ) + _rad)) then
 	{
 		_pX = (( _inputPos select 0 ) - _rad);
-		_pY = _pY + 5;
+		_pY = _pY + 10;
 		
 		if ( _pY > (( _inputPos select 1 ) + _rad)) then
 		{
@@ -80,43 +89,69 @@ while { _loop } do
 	};
 };
 
-{
-	
-	if ([ _x ] call T8RMG_fnc_checkOutside ) then 
-	{
-		_arrayBuildingPos pushBack _x;
-		[( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), time ]), _x, "", [1,1], 0, "ICON", "mil_dot", "colorCivilian", 0.75 ] call T8RMG_fnc_createMarker;
-	};
-	
-	false
-} count _arrayBasePos;
+{ if ([ _x ] call T8RMG_fnc_checkOutside ) then { _arrayBuildingPos pushBack _x; }; false } count _arrayBasePos; 
+
 
 _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 
+
 {
-	private [ "_tmpPos", "_m" ]; 
+	if ([ _x ] call T8RMG_fnc_checkFlatGround ) then {
 
-	_tmpPos = _x;
-
-	_m = [( format [ "%1_%2_%3", _pX, _pY, _n ]), _tmpPos, "", [1,1], 0, "ICON", "mil_dot", "ColorBlack", 0.75 ] call T8RMG_fnc_createMarker; 
-	
-	_n = _n + 1;
-	
-	if ( 	count _tmpPos > 1 
-			AND { [ _tmpPos ] call T8RMG_fnc_checkFlatGround }
-	) then {
-
-		_no = nearestObject _tmpPos;
+		private [ "_no", "_nod", "_nbd", "_skip" ];
+		_no = nearestObject _x;
 		
 		if ( !isNull _no ) then
 		{
-			if (( _tmpPos distance2D ( _no )) >  5 AND {( [ _tmpPos, _arrayBuildingPos ] call _fnc_getNearest ) >  5 }) then	{ _m setMarkerColorLocal "ColorRed"; };
-			if (( _tmpPos distance2D ( _no )) > 10 AND {( [ _tmpPos, _arrayBuildingPos ] call _fnc_getNearest ) > 10 }) then	{ _m setMarkerColorLocal "ColorOrange"; };
-			if (( _tmpPos distance2D ( _no )) > 15 AND {( [ _tmpPos, _arrayBuildingPos ] call _fnc_getNearest ) > 15 }) then	{ _m setMarkerColorLocal "ColorYellow"; };
-			if (( _tmpPos distance2D ( _no )) > 30 AND {( [ _tmpPos, _arrayBuildingPos ] call _fnc_getNearest ) > 30 }) then	{ _m setMarkerColorLocal "ColorGreen"; };
-		};
+			_nod = _x distance2D _no;
+			_nbd = [ _x, _arrayBuildingPos ] call _fnc_getNearest;
+			
+			_skip = true;
+			
+			if ( _nod > 25 AND { _nbd > 25 }) then					{ _arrayPosGRN pushBack _x; _skip = false; };
+			if ( _skip AND { _nod > 20 } AND { _nbd > 20 }) then	{ _arrayPosYEL pushBack _x; _skip = false; };
+			if ( _skip AND { _nod > 15 } AND { _nbd > 15 }) then	{ _arrayPosORA pushBack _x; _skip = false; };
+			if ( _skip AND { _nod > 10 } AND { _nbd > 10 }) then	{ _arrayPosRED pushBack _x; _skip = false; };
+
+		} else { _arrayPosGRN pushBack _x; };
 	};
 	
 	false
-
 } count _arrayBasePos;
+
+
+_posTime = diag_tickTime;
+
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "1" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8RMG_fnc_createMarker; false } count _arrayRoadPos;
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "2" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8RMG_fnc_createMarker; false } count _arrayBuildingPos;
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "3" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorGreen",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosGRN;
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "4" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorYellow",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosYEL;
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "5" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorOrange",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosORA;
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "6" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorRed",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosRED;
+
+_msg = format [ " START: %1 ~~~ POSITIONS: %2 ~~~ END: %3 ~~~ RUNTIME: %4", _startTime, _posTime, diag_tickTime, ( _posTime - _startTime )];
+__DEBUG( __FILE__, _msg, _this );
+
+{
+	private [ "_arr" ];
+	_arr = _x;
+	
+	{
+		if ( count _return < _amount ) then
+		{
+			if (( [ _x, _return ] call _fnc_getNearest ) > _distance ) then
+			{
+				_return pushBack _x;
+			};
+		};
+		
+		false
+	} count ( _arr call BIS_fnc_arrayShuffle );
+	
+	__DEBUG( __FILE__, "_return", _return );
+	
+	if ( count _return isEqualTo _amount ) exitWith {};
+	false
+} count [ _arrayPosGRN, _arrayPosYEL, _arrayPosORA, _arrayPosRED, _arrayRoadPos ];
+
+{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "RETURN" ]), _x, "", [1,1], 0, "ICON", "mil_circle", "ColorPink", 0.75 ] call T8RMG_fnc_createMarker; [ _x ] call T8RMG_fnc_createSmallCamp; false } count _return;
