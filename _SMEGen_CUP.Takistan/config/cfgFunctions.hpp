@@ -63,6 +63,8 @@ class cfgFunctions
 		{
 			file = "@randomMission\f";
 			
+			addFunction(INIT);
+			
 			addFunction(blowIED);
 			addFunction(buildUnitArray);
 			addFunction(checkFlatGround);
@@ -85,6 +87,7 @@ class cfgFunctions
 			addFunction(createSmallCamp);
 			addFunction(debug);
 			addFunction(findObjectivePos);
+			addFunction(findObjectivePositions);
 			addFunction(getVehicleClass);
 			addFunction(handleConditions);
 			addFunction(handleDisplays);

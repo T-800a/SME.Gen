@@ -13,8 +13,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 private [	"_findBuildingPos", "_site", "_typeHVT", "_typeGuard", "_building", "_finalArray", "_vehicleArray", "_spawnPos", "_group", 
 			"_units", "_missionSide", "_missionSideN", "_officer", "_i" ];
@@ -95,7 +94,17 @@ while {( count _building ) < 1 AND ! _noBuilding } do
 
 if ( _noBuilding ) then 
 {
-	_campBuilding	= [( [ _pos, _range ] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createSmallCamp;
+	private [ "_objPos", "_relPos" ];
+	
+	_objPos = [];
+	
+	while { count _objPos < 2 } do 
+	{
+		_relPos = [ _sitePos, ( _range * 0.25 ), random 360 ] call BIS_fnc_relPos;
+		_objPos = [ _relPos, _range, 1 ] call T8RMG_fnc_findObjectivePositions;
+	};
+
+	_campBuilding	= [ _objPos select 0 ] call T8RMG_fnc_createSmallCamp;
 	_building		= _campBuilding call _findBuildingPos;
 };
 

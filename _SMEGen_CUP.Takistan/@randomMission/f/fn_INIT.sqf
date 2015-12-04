@@ -4,15 +4,14 @@
 	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
-	File:		init.sqf
+	File:		fn_INIT.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 	
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 waitUntil { !isNil "T8U_var_InitDONE" };
 

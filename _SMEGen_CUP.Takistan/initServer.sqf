@@ -26,7 +26,7 @@ waitUntil { !isNil "T8S_var_initDONE" };
 
 
 // initialize the mission generator
-[] execVM "@randomMission\init.sqf";
+[] spawn T8RMG_fnc_INIT;
 
 
 // initialize garbage collecting ( bodies / wrecks now handled via BIS/description )

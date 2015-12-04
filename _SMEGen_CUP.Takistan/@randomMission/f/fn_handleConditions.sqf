@@ -13,8 +13,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 private [ "_baseTime", "_cleanDelay", "_spawnDelay" ];
 _baseTime = if ( isMultiplayer ) then { 60 } else { 1 };

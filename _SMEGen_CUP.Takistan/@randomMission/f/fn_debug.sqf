@@ -15,7 +15,7 @@
  =======================================================================================================================
 */
 
-#define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
+#include <..\MACRO.hpp>
 
 if ( isMultiplayer ) exitWith {};
 
@@ -33,6 +33,5 @@ reverse _f;
 
 _o = format [ "T8RMG >> %1 >> %2 >>>>> %3 >> %4", ( round diag_fps ), ( _f select 0 ), _t, _v ]; 
 
-conFile( _o );
-	
+__DEBUGCON( _o );
 

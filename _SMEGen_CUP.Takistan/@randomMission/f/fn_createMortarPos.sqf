@@ -13,8 +13,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 private [ "_dir", "_dirCor", "_mortarObj", "_return", "_mappedObj" ];
 

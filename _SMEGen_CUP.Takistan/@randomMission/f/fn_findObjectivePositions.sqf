@@ -4,31 +4,45 @@
 	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
-	File:		fn_findObjectivePos.sqf
+	File:		fn_findObjectivePositions.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
+	
+	!!!   W A R N I N G   !!!
+	this function is slow as fuck!
+	Especially in populated areas / towns!
+	Use with caution!
+	
+	NEVERNEVEREVER use it as call in non-scheduled enviroment, it will freeze the game for seconds!
+	
+	The function is intended to find a safe, flat and empty spawn positon for objects / small object compilations 
+	without the risk of spawning these objects in other map objects.
 	
  =======================================================================================================================
 */
 
 #include <..\MACRO.hpp>
 
-private [ "_msg", "_startTime", "_posTime", "_inputPos", "_areaSize", "_amount", "_useRoad", "_distance", "_return", "_rad", "_arrayBasePos", "_arrayRoadPos", "_arrayBuildingPos", "_arrayPosGRN", "_arrayPosYEL", "_arrayPosORA", "_arrayPosRED", "_loop", "_pX", "_pY", "_n" ];
+private [	"_msg", "_startTime", "_posTime", "_return", "_rad", "_arrayBasePos", "_arrayRoadPos", "_arrayBuildingPos", 
+			"_arrayPosGRN", "_arrayPosYEL", "_arrayPosORA", "_arrayPosRED", "_loop", "_pX", "_pY" ];
+
 __DEBUG( __FILE__, "INIT", _this );
 _msg = format [ "~~~~ POS CREATION STARTED ~~~~", diag_tickTime ];
 __DEBUG( __FILE__, _msg, _this );
-
 _startTime = diag_tickTime;
 
-_inputPos	= getPos player;
-_areaSize	= 300;
-_useRoad	= true;
-_amount		= 3;
-_distance	= 50;
+params [
+	[ "_inputPos",		[],		[[]]],
+	[ "_areaSize",		200,	[123]],
+	[ "_amount", 		2,		[123]],
+	[ "_level", 		"ALL",	[""]],
+	[ "_useRoad",		false,	[true]],
+	[ "_distance",		50,		[123]]
+];
+
 _return		= [];
 
-_rad		= (( _areaSize / 2 ) + 5 );
-
+if ( _inputPos isEqualTo [] ) exitWith { _return };
 
 _arrayBasePos		= [];
 _arrayRoadPos		= [];
@@ -38,11 +52,9 @@ _arrayPosYEL		= [];
 _arrayPosORA		= [];
 _arrayPosRED		= [];
 
-_pX = (( _inputPos select 0 ) - _rad );
-_pY = (( _inputPos select 1 ) - _rad );
-
-_loop = true;
-_n = 1;
+_rad	= (( _areaSize / 2 ) + 5 );
+_pX		= (( _inputPos select 0 ) - _rad );
+_pY		= (( _inputPos select 1 ) - _rad );
 
 _fnc_getNearest = 
 {
@@ -58,6 +70,7 @@ _fnc_getNearest =
 	_return
 };
 
+_loop = true;
 while { _loop } do
 {
 	private [ "_tmpPos" ]; 
@@ -73,6 +86,7 @@ while { _loop } do
 		};
 	};
 	
+	// + 5 generated way to many positons in a 300m dia. circle ... ~15s exec time in towns
 	_pX = _pX + 10;
 	
 	if ( _pX > (( _inputPos select 0 ) + _rad)) then
@@ -88,10 +102,7 @@ while { _loop } do
 };
 
 { if ([ _x ] call T8RMG_fnc_checkOutside ) then { _arrayBuildingPos pushBack _x; }; false } count _arrayBasePos; 
-
-
 _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
-
 
 {
 	if ([ _x ] call T8RMG_fnc_checkFlatGround ) then {
@@ -117,18 +128,18 @@ _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 	false
 } count _arrayBasePos;
 
+/*
+	_posTime = diag_tickTime;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "1" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8RMG_fnc_createMarker; false } count _arrayRoadPos;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "2" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8RMG_fnc_createMarker; false } count _arrayBuildingPos;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "3" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorGreen",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosGRN;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "4" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorYellow",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosYEL;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "5" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorOrange",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosORA;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "6" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorRed",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosRED;
 
-_posTime = diag_tickTime;
-
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "1" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8RMG_fnc_createMarker; false } count _arrayRoadPos;
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "2" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8RMG_fnc_createMarker; false } count _arrayBuildingPos;
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "3" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorGreen",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosGRN;
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "4" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorYellow",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosYEL;
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "5" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorOrange",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosORA;
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "6" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorRed",		0.75 ] call T8RMG_fnc_createMarker; false } count _arrayPosRED;
-
-_msg = format [ " START: %1 ~~~ POSITIONS: %2 ~~~ END: %3 ~~~ RUNTIME: %4", _startTime, _posTime, diag_tickTime, ( _posTime - _startTime )];
-__DEBUG( __FILE__, _msg, _this );
+	_msg = format [ " START: %1 ~~~ POSITIONS: %2 ~~~ END: %3 ~~~ RUNTIME: %4", _startTime, _posTime, diag_tickTime, ( _posTime - _startTime )];
+	__DEBUG( __FILE__, _msg, _this );
+*/
 
 {
 	private [ "_arr" ];
@@ -152,4 +163,9 @@ __DEBUG( __FILE__, _msg, _this );
 	false
 } count [ _arrayPosGRN, _arrayPosYEL, _arrayPosORA, _arrayPosRED, _arrayRoadPos ];
 
-{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "RETURN" ]), _x, "", [1,1], 0, "ICON", "mil_circle", "ColorPink", 0.75 ] call T8RMG_fnc_createMarker; [ _x ] call T8RMG_fnc_createSmallCamp; false } count _return;
+/*
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "RETURN" ]), _x, "", [1,1], 0, "ICON", "mil_circle", "ColorPink", 0.75 ] call T8RMG_fnc_createMarker; [ _x ] call T8RMG_fnc_createSmallCamp; false } count _return;
+*/
+
+// return
+_return

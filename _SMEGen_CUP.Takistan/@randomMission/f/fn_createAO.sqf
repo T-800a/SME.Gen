@@ -13,8 +13,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) // [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 __DEBUG( __FILE__, "INIT: _this", _this );
 
@@ -138,10 +137,18 @@ switch ( _type ) do
 	
 	case "mortars":
 	{
-		private [ "_obj01", "_obj02" ];
+		private [ "_objPos", "_relPos", "_obj01", "_obj02" ];
 		
-		_obj01 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
-		_obj02 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createMortarPos;
+		_objPos = [];
+		
+		while { count _objPos < 2 } do 
+		{
+			_relPos = [ _sitePos, ( _range * 0.25 ), random 360 ] call BIS_fnc_relPos;
+			_objPos = [ _relPos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePositions;
+		};
+		
+		_obj01 = [ _objPos select 0 ] call T8RMG_fnc_createMortarPos;
+		_obj02 = [ _objPos select 1 ] call T8RMG_fnc_createMortarPos;
 		
 		_varName = format [ "OBJECTIVE_mortars_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
@@ -149,10 +156,18 @@ switch ( _type ) do
 	
 	case "resupplies":
 	{
-		private [ "_obj01", "_obj02" ];
-
-		_obj01 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createFuelDump;
-		_obj02 = [( [ _sitePos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createAmmoDump;
+		private [ "_objPos", "_relPos", "_obj01", "_obj02" ];
+		
+		_objPos = [];
+		
+		while { count _objPos < 2 } do 
+		{
+			_relPos = [ _sitePos, ( _range * 0.25 ), random 360 ] call BIS_fnc_relPos;
+			_objPos = [ _relPos, ( _range * 0.8 )] call T8RMG_fnc_findObjectivePositions;
+		};
+		
+		_obj01 = [ _objPos select 0 ] call T8RMG_fnc_createFuelDump;
+		_obj02 = [ _objPos select 1 ] call T8RMG_fnc_createAmmoDump;
 		
 		_varName = format [ "OBJECTIVE_resupplies_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
