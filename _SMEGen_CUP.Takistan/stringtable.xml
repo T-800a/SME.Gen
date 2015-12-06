@@ -59,7 +59,7 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_upcommingNewTasks">
-			<Original>New mission sites will be created in %1 minute!</Original>
+			<Original>New mission sites will be created in %1 minutes!</Original>
 		</Key>
 		
 		<Key ID="STR_SMEGen_errorNewTasks">

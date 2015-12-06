@@ -28,12 +28,12 @@ FAR_ReviveAllowCAM				= true;
 FAR_SaveGearWhenUnconscious		= true;
 FAR_EnableDeathMessages			= true;
 FAR_BleedOut					= 240;
-FAR_ReviveDamage				= 0.25;
+FAR_ReviveDamage				= 0.50;
 FAR_ReviveMode					= 2;
 FAR_RequireFAK					= false;
 FAR_AllowSUICIDE				= true;
 FAR_DamageModifier				= 0.80;
-FAR_Debugging					= false;
+FAR_Debugging					= true;
 
 // missionNamespace setvariable [ "FAR_AllowSUICIDE", true, true ];
 
@@ -72,8 +72,6 @@ if ( isDedicated ) exitWith {};
 			[] spawn FAR_fnc_playerINIT;
 		}
 	];
-	
-	if ( !isNil "ASC_NH_fnc_sendHint" ) then { [ "S.A.G. - Medical Service", "FAR Revive initialising!", 0 ] spawn ASC_NH_fnc_sendHint; };
 };
 
 ////////////////////////////////////////////////

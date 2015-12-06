@@ -35,9 +35,9 @@ if( !alive player OR _isPlayerUnconscious == 1 OR FAR_isDragging OR FAR_isCarryi
 };
 
 // Target of the action
-_isTargetUnconscious	= _x getVariable [ "FAR_isUnconscious", 0 ];
-_isTargetDragged		= _x getVariable [ "FAR_isDragged", 0 ];
-_isTargetCarried		= _x getVariable [ "FAR_isCarried", 0 ];
+_isTargetUnconscious	= _target getVariable [ "FAR_isUnconscious", 0 ];
+_isTargetDragged		= _target getVariable [ "FAR_isDragged", 0 ];
+_isTargetCarried		= _target getVariable [ "FAR_isCarried", 0 ];
 
 if( _isTargetUnconscious == 1 AND _isTargetDragged == 0 AND _isTargetCarried == 0 ) then
 {

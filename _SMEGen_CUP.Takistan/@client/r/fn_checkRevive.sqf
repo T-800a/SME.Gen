@@ -41,9 +41,9 @@ if( !alive player OR _isPlayerUnconscious == 1 OR FAR_isDragging OR FAR_isCarryi
 _isMedic = player call FAR_fnc_checkIsMedic;
 _needFAK = player call FAR_fnc_checkFAK;
 
-_isTargetUnconscious	= _x getVariable [ "FAR_isUnconscious", 0 ];
-_isTargetDragged		= _x getVariable [ "FAR_isDragged", 0 ];
-_isTargetCarried		= _x getVariable [ "FAR_isCarried", 0 ];
+_isTargetUnconscious	= _target getVariable [ "FAR_isUnconscious", 0 ];
+_isTargetDragged		= _target getVariable [ "FAR_isDragged", 0 ];
+_isTargetCarried		= _target getVariable [ "FAR_isCarried", 0 ];
 
 // Make sure target is unconscious and player is a medic 
 if ( _isTargetUnconscious == 1 AND _isTargetDragged == 0 AND _isTargetCarried == 0 AND _isMedic AND _needFAK ) then
