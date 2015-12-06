@@ -49,7 +49,6 @@ class Mission
 	randomSeed=5609333;
 	class Intel
 	{
-		briefingName="CO20 | SME.Gen X CUP | infantry focused COOP | V.030";
 		overviewText="T-800a";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -75,7 +74,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9451.5938,415.4173,747.75995};
+					position[]={9350.9688,468.93085,746.33325};
 					class args
 					{
 						items=4;
@@ -122,7 +121,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9349.3857,470.20093,750.46344};
+					position[]={9248.7607,511.79742,749.03674};
 					class args
 					{
 						items=4;
@@ -169,7 +168,7 @@ class Mission
 				items=9;
 				class Item0
 				{
-					position[]={9335.0342,475.46045,663.30243};
+					position[]={9325.9893,479.52719,660.50018};
 					id=2;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_SL";
@@ -178,11 +177,10 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="s1";
-					description="Viking - Section Commander";
 				};
 				class Item1
 				{
-					position[]={9333.3057,476.30405,629.78949};
+					position[]={9311.7559,484.68607,638.44965};
 					id=3;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_TL";
@@ -190,84 +188,76 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="s2";
-					description="Viking - 2iC";
 				};
 				class Item2
 				{
-					position[]={9370.417,458.93332,630.20917};
+					position[]={9344.167,471.47153,637.6936};
 					id=4;
 					side="WEST";
 					vehicle="CUP_B_USMC_Medic";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s3";
-					description="Medic";
 				};
 				class Item3
 				{
-					position[]={9398.7363,445.61411,632.06683};
+					position[]={9368.5693,458.65201,637.20142};
 					id=5;
 					side="WEST";
 					vehicle="CUP_B_USMC_Medic";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s4";
-					description="Medic";
 				};
 				class Item4
 				{
-					position[]={9425.4678,435.09204,628.80145};
+					position[]={9392.168,447.18497,637.85303};
 					id=6;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_AR";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s5";
-					description="Light Machine Gunner";
 				};
 				class Item5
 				{
-					position[]={9447.6553,425.72787,625.95807};
+					position[]={9416.7051,436.89362,638.14301};
 					id=7;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_AR";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s6";
-					description="Light Machine Gunner";
 				};
 				class Item6
 				{
-					position[]={9474.0928,414.14166,624.28571};
+					position[]={9442.751,426.31812,638.03693};
 					id=8;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_AT";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s7";
-					description="AT Specialist";
 				};
 				class Item7
 				{
-					position[]={9500.5283,402.16199,625.55756};
+					position[]={9466.4463,416.35101,638.91821};
 					id=9;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s8";
-					description="Rifleman";
 				};
 				class Item8
 				{
-					position[]={9521.6768,390.79474,626.12665};
+					position[]={9487.9854,407.4585,639.09442};
 					id=10;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s9";
-					description="Rifleman";
 				};
 			};
 		};
@@ -279,7 +269,7 @@ class Mission
 				items=9;
 				class Item0
 				{
-					position[]={9341.4189,475.74771,573.07025};
+					position[]={9327.2168,479.74631,558.73993};
 					id=11;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_SL";
@@ -288,11 +278,10 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="s10";
-					description="Pathfinder - Section Commander";
 				};
 				class Item1
 				{
-					position[]={9338.7646,471.73959,521.11749};
+					position[]={9314.6152,480.01431,535.17389};
 					id=12;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_TL";
@@ -300,84 +289,76 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="s11";
-					description="Pathfinder - 2iC";
 				};
 				class Item2
 				{
-					position[]={9366.835,460.80582,521.35114};
+					position[]={9341.9033,472.46884,535.4082};
 					id=13;
 					side="WEST";
 					vehicle="CUP_B_USMC_Medic";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s12";
-					description="Medic";
 				};
 				class Item3
 				{
-					position[]={9393.6787,448.4928,522.81451};
+					position[]={9365.6123,462.77567,534.91467};
 					id=14;
 					side="WEST";
 					vehicle="CUP_B_USMC_Medic";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s13";
-					description="Medic";
 				};
 				class Item4
 				{
-					position[]={9426.5127,431.2095,521.72345};
+					position[]={9390.6133,451.45374,533.82208};
 					id=15;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_AR";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s14";
-					description="Light Machine Gunner";
 				};
 				class Item5
 				{
-					position[]={9461.6357,412.14322,521.56549};
+					position[]={9414.7695,439.66656,534.44843};
 					id=16;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_AR";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s15";
-					description="Light Machine Gunner";
 				};
 				class Item6
 				{
-					position[]={9493.3955,397.47211,520.38971};
+					position[]={9439.4805,426.08304,534.44684};
 					id=17;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier_AT";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s16";
-					description="AT Specialist";
 				};
 				class Item7
 				{
-					position[]={9521.7881,383.59467,520.68341};
+					position[]={9463.1729,413.04245,533.56555};
 					id=18;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s17";
-					description="Rifleman";
 				};
 				class Item8
 				{
-					position[]={9547.8975,370.21268,519.65594};
+					position[]={9487.3232,401.04541,532.9295};
 					id=19;
 					side="WEST";
 					vehicle="CUP_B_USMC_Soldier";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="s18";
-					description="Rifleman";
 				};
 			};
 		};
@@ -389,7 +370,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={9340.1436,455.28421,449.6767};
+					position[]={9244.2178,500.25424,554.08423};
 					id=20;
 					side="WEST";
 					vehicle="CUP_B_USMC_Pilot";
@@ -398,11 +379,10 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="mission_pilot_01";
-					description="Pilot";
 				};
 				class Item1
 				{
-					position[]={9376.6611,442.90762,448.60785};
+					position[]={9267.79,492.09491,536.08649};
 					id=21;
 					side="WEST";
 					vehicle="CUP_B_USMC_Pilot";
@@ -422,7 +402,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8215.3564,296.04001,1997.1819};
+					position[]={8219.2734,296.04001,1998.5918};
 					class args
 					{
 						items=10;
@@ -506,7 +486,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9552.2783,364.17389,746.29388};
+					position[]={9451.6533,414.63754,744.86719};
 					class args
 					{
 						items=1;
@@ -618,7 +598,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9354.4385,409.28024,349.63293};
+					position[]={9250.3369,506.34857,651.72565};
 					special="NONE";
 					id=25;
 					side="CIV";
@@ -996,7 +976,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=13;
+		items=10;
 		class Item0
 		{
 			position[]={10153.982,462.00818,652.68921};
@@ -1031,34 +1011,13 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={8245.4766,296.04001,2114.1436};
-			name="mission_marker_indep";
-			type="Empty";
-			colorName="ColorGUER";
-		};
-		class Item5
-		{
 			position[]={8309.0088,296.04001,2086.2715};
 			name="mission_marker_hq";
 			text=" HQ Airport";
 			type="o_recon";
 			colorName="ColorWEST";
 		};
-		class Item6
-		{
-			position[]={8246.6719,296.04001,2115.5188};
-			name="mission_marker_civi";
-			type="Empty";
-			colorName="ColorCIV";
-		};
-		class Item7
-		{
-			position[]={8247.71,296.04001,2114.051};
-			name="mission_marker_east";
-			type="Empty";
-			colorName="ColorEAST";
-		};
-		class Item8
+		class Item5
 		{
 			position[]={8186.4541,296.04001,2025.5331};
 			name="mission_marker_rewards";
@@ -1066,7 +1025,7 @@ class Mission
 			type="o_support";
 			colorName="ColorWEST";
 		};
-		class Item9
+		class Item6
 		{
 			position[]={8206.1787,296.04001,2108.0645};
 			name="mission_marker_service";
@@ -1074,14 +1033,7 @@ class Mission
 			type="o_maint";
 			colorName="ColorWEST";
 		};
-		class Item10
-		{
-			position[]={8246.7461,296.04001,2112.6597};
-			name="mission_marker_west";
-			type="Empty";
-			colorName="ColorWEST";
-		};
-		class Item11
+		class Item7
 		{
 			position[]={8278.9229,296.04001,2117.6558};
 			name="mission_marker_armory";
@@ -1089,13 +1041,20 @@ class Mission
 			type="o_service";
 			colorName="ColorWEST";
 		};
-		class Item12
+		class Item8
 		{
 			position[]={8351.1074,296.04001,2033.1589};
 			name="missionbuilder_hint_01";
 			text=" these objects are relocated by script ( @server/... )";
 			type="Empty";
 			colorName="ColorGrey";
+		};
+		class Item9
+		{
+			position[]={8263.5029,296.04001,2111.1111};
+			name="respawn_west";
+			type="Empty";
+			colorName="ColorWEST";
 		};
 	};
 };

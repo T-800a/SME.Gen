@@ -11,16 +11,14 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
-
+#include <..\MACRO.hpp>
 
 private [ "_posGroundASL", "_posSkyASL", "_return" ];
 
 params [ "_pos" ];
 
-_posGroundASL	= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 2 ];
-_posSkyASL		= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 50 ];
+_posGroundASL	= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 0.2 ];
+_posSkyASL		= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 40 ];
 
 _return = lineIntersects [ _posGroundASL, _posSkyASL ];
 

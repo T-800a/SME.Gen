@@ -19,7 +19,7 @@ __DEBUG( __FILE__, "INIT: _this", _this );
 
 private [	"_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
-			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString", "_varName", "_varName02" ];
+			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString", "_varName", "_varName02", "_index", "_objPos" ];
 
 params [
 	[ "_site", "NO-SITE", [""]],
@@ -28,6 +28,7 @@ params [
 
 _inf			= [];
 _arrayGroups	= [];
+_objPos			= [];
 
 if ( _site isEqualTo "NO-SITE" ) exitWith 
 { 
@@ -137,9 +138,7 @@ switch ( _type ) do
 	
 	case "mortars":
 	{
-		private [ "_objPos", "_relPos", "_obj01", "_obj02" ];
-		
-		_objPos = [];
+		private [ "_relPos", "_obj01", "_obj02" ];
 		
 		while { count _objPos < 2 } do 
 		{
@@ -156,9 +155,7 @@ switch ( _type ) do
 	
 	case "resupplies":
 	{
-		private [ "_objPos", "_relPos", "_obj01", "_obj02" ];
-		
-		_objPos = [];
+		private [ "_relPos", "_obj01", "_obj02" ];
 		
 		while { count _objPos < 2 } do 
 		{
@@ -245,14 +242,27 @@ switch ( _type ) do
 	default {};
 };
 
-// create marker (local to server only)
+// create markers (local to server only)
 [ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8RMG_fnc_createMarker;
+__DEBUG( __FILE__, "MARKER", _siteMkr );
+
+if ( count _objPos > 0 ) then
+{
+	{
+		private [ "_m" ];
+		_m = format [ "%1_%2", _siteMkr, _forEachIndex ];
+		__DEBUG( __FILE__, "MARKER", _m );
+		[ _m, _x, "", [1,1], 0, "ICON" ] call T8RMG_fnc_createMarker; 
+	} forEach _objPos;
+};
 
 // build unit array
 _configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" );
 { _arrayGroups pushback ( configName _x ); false } count _configArrayGroups;
 
 __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
+
+_index = 0;
 
 {
 	private [ "_task", "_units", "_unitsFiller", "_subArray" ];
@@ -268,11 +278,13 @@ __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 		_groupCount = count _units;
 		_mod = ceil(((( _playerCount /_modPlayer ) * 2 ) * (( _groupCount / _modGroup ) * 2 )) * 2 );
 		
-		__DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
-		__DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
-		__DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
-		__DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
-		__DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
+		/*
+			__DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
+			__DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
+			__DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
+			__DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
+			__DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
+		*/
 		
 		for "_i" from 1 to _mod do
 		{
@@ -288,13 +300,30 @@ __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 	
 	_units = [ _units ] call T8RMG_fnc_buildUnitArray;
 	
-	if ( _task isEqualTo "GARRISON" OR _task isEqualTo "DEFEND" OR _task isEqualTo "DEFEND_BASE" ) then
+	switch ( _task ) do
 	{
-		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ];
-	} else {
-		_subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ] ];
+		case "DEFEND_BASE" :
+		{ 
+			private [ "_marker" ];
+			if ( count _objPos > 0 AND { _index < ( count _objPos )}) then
+			{
+				_marker = format [ "%1_%2", _siteMkr, _index ];
+				_index = _index + 1;
+				
+				if (( markerPos _marker ) isEqualTo [0,0,0]) then { _marker = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ); };
+			} else {
+				_marker = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
+			};
+		
+			_subArray = [ [ _units,  _marker, _missionSide ], [ _task ], [ true, false, false ] ];	
+		};
+		
+		case "DEFEND" :			{ _subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ]; };
+		case "GARRISON" :		{ _subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ]; };
+		default					{ _subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ] ]; };
 	};
 	
+	__DEBUG( __FILE__, "GROUP ARRAY", _subArray );
 	_inf pushBack _subArray;
 
 	false

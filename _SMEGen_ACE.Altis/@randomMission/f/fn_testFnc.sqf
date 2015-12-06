@@ -11,9 +11,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
-
+#include <..\MACRO.hpp>
 
 private [ "_msg", "_startTime", "_posTime", "_inputPos", "_areaSize", "_amount", "_useRoad", "_distance", "_return", "_rad", "_arrayBasePos", "_arrayRoadPos", "_arrayBuildingPos", "_arrayPosGRN", "_arrayPosYEL", "_arrayPosORA", "_arrayPosRED", "_loop", "_pX", "_pY", "_n" ];
 __DEBUG( __FILE__, "INIT", _this );

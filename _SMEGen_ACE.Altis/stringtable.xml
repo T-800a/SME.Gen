@@ -31,7 +31,7 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_keys_text">
-			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt;&lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the &lt;marker name="mission_marker_service"&gt;service area&lt;/marker&gt; will start a full vehicle service</Original>
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F3 ]&lt;/font&gt; pressing F3 in the &lt;marker name="mission_marker_arsenal"&gt;arsenal area&lt;/marker&gt; will open the arsenal  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the &lt;marker name="mission_marker_service"&gt;service area&lt;/marker&gt; will start a full vehicle service</Original>
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_server_titel">

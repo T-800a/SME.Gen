@@ -28,17 +28,8 @@ T8C_var_initDONE = true;
 [] call T8C_fnc_checkSlots;
 
 
-// Prepare VR-Ammobox
-private [ "_arsenalAccess" ];
-_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "fullArsenal" );
-__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
-if ( _arsenalAccess isEqualTo 1 ) then 
-{
-	[ "AmmoboxInit", [ mission_obj_arsenal_post, true ]] spawn BIS_fnc_arsenal;
-} else {
-	[ "INIT" ] call T8C_fnc_updateArsenal;
-	[ "AmmoboxInit", mission_obj_arsenal_post ] spawn BIS_fnc_arsenal;
-};
+// INIT Arsenal
+[ "INIT" ] call T8C_fnc_updateArsenal;
 
 
 // add key presses

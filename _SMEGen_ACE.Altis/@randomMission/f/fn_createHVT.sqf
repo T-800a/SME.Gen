@@ -13,8 +13,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 private [	"_findBuildingPos", "_site", "_typeHVT", "_typeGuard", "_building", "_finalArray", "_vehicleArray", "_spawnPos", "_group", 
 			"_units", "_missionSide", "_missionSideN", "_officer", "_i" ];
@@ -52,6 +51,13 @@ _findBuildingPos =
 	if (( typeName _this ) isEqualTo ( typeName [] ))		then { _nb = nearestBuilding _this; };
 	if (( typeName _this ) isEqualTo ( typeName objNull ))	then { _nb = _this; };
 	
+	if (( _nb distance2D _this ) > 500 ) exitWith 
+	{
+//		[( format [ "%1_%2_%3", _nb, random time, random time]), ( getPos _nb ), str ( _nb distance2D _this ), [1,1], 0, "ICON", "mil_circle", "ColorPink", 1 ] call T8RMG_fnc_createMarker;
+		__DEBUG( __FILE__, "_findBuildingPos: ABORT", ( _nb distance2D _this ) );
+		[]
+	};
+	
 	__DEBUG( __FILE__, "call _findBuildingPos > _nb", _nb );
 	
 	_tmpArray	= [];
@@ -78,7 +84,6 @@ _findBuildingPos =
 	
 	_nb setVariable [ "occupied", true ];
 	
-	__DEBUG( __FILE__, "call _findBuildingPos > _return", _return );
 	_return
 };
 
@@ -92,13 +97,20 @@ while {( count _building ) < 1 AND ! _noBuilding } do
 	if ( _i > 200 ) then { _noBuilding = true; };
 };
 
+__DEBUG( __FILE__, "_building", _building );
 
 if ( _noBuilding ) then 
 {
-	_campBuilding	= [( [ _pos, _range ] call T8RMG_fnc_findObjectivePos )] call T8RMG_fnc_createSmallCamp;
+	private [ "_objPos", "_relPos" ];
+	
+	_objPos = [];
+	_objPos = [ _pos, _range, 1 ] call T8RMG_fnc_findObjectivePositions;
+	__DEBUG( __FILE__, "_objPos", _objPos );
+	if ( _objPos isEqualTo [] ) then { _objPos = [ _pos, _range ] call T8RMG_fnc_findObjectivePos; __DEBUG( __FILE__, "_objPos", _objPos ); };
+
+	_campBuilding	= [ _objPos select 0 ] call T8RMG_fnc_createSmallCamp;
 	_building		= _campBuilding call _findBuildingPos;
 };
-
 
 __DEBUG( __FILE__, "_building", _building );
 
@@ -116,6 +128,8 @@ __DEBUG( __FILE__, "_finalArray", _finalArray );
 _spawnPos	= [ _pos, 200 ] call T8RMG_fnc_findObjectivePos;
 _group		= [ _spawnPos, _missionSide, _finalArray ] call BIS_fnc_spawnGroup;
 _units		= ( units _group );
+
+__SetOVAR(( _building select 1 ),"occupied",true);
 
 {
 	// _x disableAI "MOVE";

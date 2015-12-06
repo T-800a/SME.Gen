@@ -414,10 +414,10 @@ class missionTypes
 
 		class groups : groups
 		{
-			class group01 : base_defend { scope = 1; };
-			class group02 : base_fireteam { scope = 1; };
-			class group03 : base_fireteam { scope = 1; };
-			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_defendBase_small { scope = 1; };
+			class group03 : base_garrison { scope = 1; };
+			class group04 : base_fireteam { scope = 1; };
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
@@ -443,10 +443,10 @@ class missionTypes
 		
 		class groups : groups
 		{
-			class group01 : base_garrison { scope = 1; };
-			class group02 : base_fireteam { scope = 1; };
-			class group03 : base_fireteam { scope = 1; };
-			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_defendBase_small { scope = 1; };
+			class group03 : base_garrison { scope = 1; };
+			class group04 : base_fireteam { scope = 1; };
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};

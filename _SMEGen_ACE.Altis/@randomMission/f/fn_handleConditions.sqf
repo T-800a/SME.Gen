@@ -13,8 +13,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
+#include <..\MACRO.hpp>
 
 private [ "_baseTime", "_cleanDelay", "_spawnDelay" ];
 _baseTime = if ( isMultiplayer ) then { 60 } else { 1 };
@@ -63,7 +62,7 @@ while { true } do
 	} forEach T8RMG_var_arrayConditions;
 	
 //	__DEBUG( __FILE__, "_allTasks", _allTasks );
-//	__DEBUG( __FILE__, "_allTasks > DONE", ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks ));
+	__DEBUG( __FILE__, "_allTasks > DONE", ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks ));
 
 	// start new tasks if needed	
 	if ( T8RMG_var_amountSites isEqualTo  ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks )) then 

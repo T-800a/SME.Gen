@@ -11,9 +11,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
-
+#include <..\MACRO.hpp>
 
 private [	"_attackMarkerPos", "_objectPos", "_n", "_players", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
 			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN" ];

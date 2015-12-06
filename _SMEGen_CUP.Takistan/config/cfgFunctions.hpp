@@ -57,6 +57,39 @@ class cfgFunctions
 		};
 	};
 
+	class FAR
+	{
+		class revive
+		{
+			file = "@client\r";
+			
+			addFunctionPost(INIT);
+
+			addFunction(playerINIT);
+			addFunction(handleActions);
+			addFunction(playerActions);
+			addFunction(handleDamage);
+			addFunction(playerUnconscious);
+			addFunction(handleRevive);
+			addFunction(disconnectMe);
+			addFunction(drag);
+			addFunction(carry);
+			addFunction(release);
+			addFunction(publicEH);
+			addFunction(checkRevive);
+			addFunction(checkSuicide);
+			addFunction(checkDragging);
+			addFunction(checkCarrying);
+			addFunction(checkIsMedic);
+			addFunction(checkFAK);
+			addFunction(isFriendlyMedic);
+			addFunction(checkFriendlies);
+			addFunction(broadcastDeath);
+			addFunction(deadCam);
+			addFunction(killMe);
+		};
+	};
+	
 	class T8RMG
 	{	
 		class randomMission

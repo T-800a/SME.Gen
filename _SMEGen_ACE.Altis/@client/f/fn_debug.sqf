@@ -17,7 +17,7 @@
 
 #define conFile(_msg) "debug_console" callExtension (_msg + "~0000")
 
-if ( isMultiplayer ) exitWith {};
+// if ( isMultiplayer ) exitWith {};
 
 private [ "_o" ];
 

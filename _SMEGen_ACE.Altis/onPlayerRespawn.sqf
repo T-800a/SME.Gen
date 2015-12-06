@@ -35,7 +35,7 @@ if ( isMultiplayer ) then
 		_newUnit unlinkItem "NVGoggles_INDEP";
 	} else {
 	
-		if ( T8RMG_var_keepRespawnLoadout AND { !isNil "T8C_var_playerLoadout" } AND { !( player getVariable [ "bis_revive_incapacitated", true ])} ) then 
+		if ( T8RMG_var_keepRespawnLoadout AND { !isNil "T8C_var_playerLoadout" }) then 
 		{
 			[ _newUnit, T8C_var_playerLoadout ] call T8C_fnc_setGear;
 			T8C_var_playerLoadout = nil;

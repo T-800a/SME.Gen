@@ -14,9 +14,7 @@
  =======================================================================================================================
 */
 
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-// );
-
+#include <..\MACRO.hpp>
 
 __DEBUG( __FILE__, "INIT", "INIT" );
 {

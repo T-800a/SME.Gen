@@ -19,8 +19,9 @@ class mske : base_map
 	// missionSites - TOWNS
 	
 	// MSKE towns and mil. bases are usually a bit smaller
-	class base_town_mske : base_town { size[] = { 150, 150 }; };
-	class base_mil_mske : base_mil { size[] = { 150, 150 }; };
+	class base_town_mske :			base_town	{ size[] = { 250, 250 }; };
+	class base_town_small_mske :	base_town	{ allowedTypes[] = { "occupy" }; size[] = { 250, 250 }; };
+	class base_mil_mske :			base_mil	{ size[] = { 200, 200 }; };
 
 	class town_saintpierre : base_town_mske
 	{
@@ -28,15 +29,6 @@ class mske : base_map
 		name = "Saint Pierre";
 		marker = "site_town_saintpierre";
 		position[] = { 9599.92, 14375.4, 0 };
-		size[] = { 250, 250 };
-	};
-
-	class town_casteleveron : base_town_mske 
-	{
-		scope = 1;
-		name = "Castel Everon";
-		marker = "site_town_casteleveron";
-		position[] = { 9381.04, 13872.7, 0 };
 	};
 
 	class town_vernon : base_town_mske 
@@ -71,7 +63,7 @@ class mske : base_map
 		position[] = { 7552.95, 17539.8, 0 };
 	};
 
-	class town_laruns : base_town_mske 
+	class town_laruns : base_town_small_mske 
 	{
 		scope = 1;
 		name = "Laruns";
@@ -101,14 +93,6 @@ class mske : base_map
 		name = "Figari";
 		marker = "site_town_figari";
 		position[] = { 5314.02, 18176.1, 0 };
-	};
-
-	class town_provins : base_town_mske 
-	{
-		scope = 1;
-		name = "Provins";
-		marker = "site_town_provins";
-		position[] = { 5500.12, 18891.1, 0 };
 	};
 
 	class town_montignac : base_town_mske 
@@ -141,7 +125,6 @@ class mske : base_map
 		name = "Lamentin";
 		marker = "site_town_lamentin";
 		position[] = { 1287.86, 18771.1, 0 };
-		size[] = { 250, 250 };
 	};
 
 	class town_gravette : base_town_mske 
@@ -174,15 +157,6 @@ class mske : base_map
 		name = "Saint Phillippe";
 		marker = "site_town_saintphillippe";
 		position[] = { 4690.91, 23534.3, 0 };
-		size[] = { 250, 250 };
-	};
-
-	class town_everon_airport : base_town 
-	{
-		scope = 1;
-		name = "Everon Airport";
-		marker = "site_town_everon_airport";
-		position[] = { 4861.92, 24627.1, 0 };
 	};
 
 

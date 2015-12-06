@@ -38,6 +38,29 @@ switch ( _key ) do
 		};
 	};
 */
+	// F3
+	case 61 : 
+	{
+		if ( ! _shift AND { ! _ctrl } AND { ! _alt }) then 
+		{
+			if ( !isnull mission_obj_arsenal_sign AND {( player distance mission_obj_arsenal_sign ) < 10 } AND {( vehicle player ) isEqualTo player }) then 
+			{
+				// Prepare VR-Ammobox
+				private [ "_arsenalAccess" ];
+				_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8RMG_var_playerRewardSet >> "fullArsenal" );
+				__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
+
+				if ( _arsenalAccess isEqualTo 1 ) then 
+				{
+					[ "Open", true	] spawn BIS_fnc_arsenal;
+				} else {
+					[ "Open", false	] spawn BIS_fnc_arsenal;
+				};
+			};
+			_return = true;
+		};
+	};
+
 
 	// F4
 	case 62 : 
