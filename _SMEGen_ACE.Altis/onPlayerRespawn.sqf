@@ -61,7 +61,7 @@ if ( _newUnit getVariable [ "mission_var_firedEH", true ]) then
 	_newUnit setVariable [ "mission_var_firedEH", false ];
 	_newUnit addEventHandler [ "fired", {
 		private [ "_safeZonePosition", "_range" ];
-		_safeZonePosition = ( getMarkerPos "mission_marker_west" );
+		_safeZonePosition = ( getMarkerPos "mission_marker_arsenal" );
 		_range = 150;
 		if (((_this select 0) distance _safeZonePosition <= _range) || ((screenToWorld [0.5, 0.5]) distance _safeZonePosition <= _range)) exitWith { deleteVehicle (_this select 6 );};
 	}];

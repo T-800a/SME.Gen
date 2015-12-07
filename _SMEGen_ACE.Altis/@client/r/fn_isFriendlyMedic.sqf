@@ -21,10 +21,12 @@
  =======================================================================================================================
 */
 
-private [ "_return", "_unit", "_isMedic", "_needFAK" ];
+private [ "_return", "_isMedic", "_needFAK" ];
+
+params [[ "_unit", objNull, [ objNull ]]];
+if ( isNull _unit ) exitWith { false };
 
 _return = false;
-_unit = _this;
 
 _isMedic = _unit call FAR_fnc_checkIsMedic;
 _needFAK = _unit call FAR_fnc_checkFAK;

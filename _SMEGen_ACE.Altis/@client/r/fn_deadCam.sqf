@@ -25,8 +25,7 @@
 private ["_victim","_killer","_pos","_deadcam"];
 if (!isDedicated && {!hasInterface}) exitWith {};
 
-_victim = _this select 0;
-_killer = _this select 1;
+params [ "_victim", "_killer" ];
 
 if ( player != _victim ) exitWith {};
 

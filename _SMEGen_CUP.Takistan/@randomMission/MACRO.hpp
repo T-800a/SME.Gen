@@ -6,15 +6,13 @@
 	File:		MACRO.hpp
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
-	
-	Open < T8\CONFIG.hpp > to change basic variables !
 
  =======================================================================================================================
 */
 
 // #define __DEBUG(FILE,TEXT,VAR)
-#define __DEBUG(FILE,TEXT,VAR) [FILE,TEXT,VAR] call T8RMG_fnc_debug
-#define __DEBUGCON(TEXT) "debug_console" callExtension (TEXT + "~0000")
+#define __DEBUG(FILE,TEXT,VAR)			[FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUGCON(TEXT)				"debug_console" callExtension (TEXT + "~0000")
 
 #define __GetMVAR(VAR,VAL)				missionNamespace getVariable [ VAR, VAL ]
 #define __GetOVAR(OBJ,VAR,VAL)			OBJ getVariable [ VAR, VAL ]

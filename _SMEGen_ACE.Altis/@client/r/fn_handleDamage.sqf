@@ -18,6 +18,13 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
+	
+	_this select 0: Unit the EH is assigned to
+	_this select 1: Selection (=body part) that was hit
+	_this select 2: Damage to the above selection (sum of dealt and prior damage)
+	_this select 3: Source of damage (returns the unit if no source)
+	_this select 4: Ammo classname of the projectile that dealt the damage (returns "" if no projectile)
+	
  =======================================================================================================================
 */
 

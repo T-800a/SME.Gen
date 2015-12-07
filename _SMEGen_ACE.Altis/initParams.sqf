@@ -7,12 +7,6 @@
 	File:		initParams.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
-
- =======================================================================================================================
- 
-	T8RMG_var_enemyFaction
-	T8RMG_var_playerFaction
-	T8RMG_var_amountSites
  
  =======================================================================================================================
 */
@@ -53,6 +47,7 @@ switch ( paramsArray select 2 ) do
 };
 
 // AI Skill
+// overwrite T8U base settings
 switch ( paramsArray select 3 ) do
 {
 	case 0 :	{ _AIskill = 0; };
@@ -60,6 +55,7 @@ switch ( paramsArray select 3 ) do
 	case 2 :	{ _AIskill = 2; };
 	default		{ _AIskill = 0; };
 };
+T8U_var_Presets = [[ _AIskill, 1 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];
 
 // Keep Loadout After Respawn
 switch ( paramsArray select 4 ) do
@@ -77,9 +73,59 @@ switch ( paramsArray select 5 ) do
 	default		{ T8RMG_var_allowMapMarker = true; };
 };
 
-
 // faction used by the players (set in the cfgRandomMissions.hpp)
 T8RMG_var_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
 
-// overwrite T8U base settings
-T8U_var_Presets = [[ _AIskill, 1 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];
+
+
+// REVIVE SETTINGS
+// global on/off for revive
+switch ( paramsArray select 21 ) do
+{
+	case 0 :	{ FAR_isEnabled = true; };
+	case 1 :	{ FAR_isEnabled = false; };
+	default		{ FAR_isEnabled = true; };
+};
+
+// FAR_ReviveMode
+switch ( paramsArray select 22 ) do
+{
+	case 0 :	{ FAR_ReviveMode	= 0; };
+	case 1 :	{ FAR_ReviveMode	= 1; };
+	case 2 :	{ FAR_ReviveMode	= 2; };
+	case 3 :	{ FAR_ReviveMode	= 3; };
+	default		{ FAR_ReviveMode	= 1; };
+};
+
+// FAR_RequireFAK
+switch ( paramsArray select 23 ) do
+{
+	case 0 :	{ FAR_RequireFAK	= true; };
+	case 1 :	{ FAR_RequireFAK	= false; };
+	default		{ FAR_RequireFAK	= false; };
+};
+
+// FAR_BleedOut
+switch ( paramsArray select 24 ) do
+{
+	case 0 :	{ FAR_BleedOut	= 60; };
+	case 1 :	{ FAR_BleedOut	= 120; };
+	case 2 :	{ FAR_BleedOut	= 180; };
+	case 3 :	{ FAR_BleedOut	= 240; };
+	case 4 :	{ FAR_BleedOut	= 300; };
+	case 5 :	{ FAR_BleedOut	= 360; };
+	default		{ FAR_BleedOut	= 240; };
+};
+
+// FAR_ReviveDamage
+switch ( paramsArray select 25 ) do
+{
+	case 0 :	{ FAR_ReviveDamage	= 0.00; };
+	case 1 :	{ FAR_ReviveDamage	= 0.25; };
+	case 2 :	{ FAR_ReviveDamage	= 0.50; };
+	case 3 :	{ FAR_ReviveDamage	= 0.75; };
+	default		{ FAR_ReviveDamage	= 0.50; };
+};
+
+// other scripts can check this 
+T8RMG_var_INITparams = true;

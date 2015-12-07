@@ -23,16 +23,15 @@
 
 private ["_target", "_id"];
 
-FAR_isDragging = true;
-
 params [[ "_target", objNull, [ objNull ]]];
 if ( isNull _target ) exitWith { false };
 
+FAR_isDragging = true;
 
 player playAction "grabDrag";
 _target attachTo [ player, [ 0, 1.1, 0.092 ] ];
 
-if ( !isNil "ASC_NH_fnc_sendHint" ) then { [ "S.A.G. - Medical Service", "You can only drag backwards!<br />Press [ C ] if you can not move.", 0 ] spawn ASC_NH_fnc_sendHint; } else { hint "You can only drag backwards! Press [ C ] if you can not move."; };
+hint "You can only drag backwards! Press [ C ] if you can not move.";
 
 _target setDir 180;
 _target setVariable ["FAR_isDragged", 1, true];	
@@ -40,12 +39,6 @@ _target setVariable ["FAR_isDragged", 1, true];
 // Rotation fix
 FAR_isDragging_EH = _target;
 publicVariable "FAR_isDragging_EH";
-
-// Add release action and save its id so it can be removed
-if ( isNil "ASC_CIM_fnc_OpenMenu" ) then 
-{
-	_id = player addAction ["<t color=""#C90000"">" + "Stop dragging" + "</t>", { ( _this select 3 ) call FAR_fnc_handleActions; }, ["action_release"], 10, true, true, "", "true"];
-};
 
 // Wait until release action is used
 waitUntil 
@@ -62,9 +55,4 @@ if ( !isNull _target AND alive _target ) then
 {
 	_target setVariable [ "FAR_isDragged", 0, true ];
 	detach _target;
-};
-
-if ( isNil "ASC_CIM_fnc_OpenMenu" ) then 
-{
-	player removeAction _id;
 };

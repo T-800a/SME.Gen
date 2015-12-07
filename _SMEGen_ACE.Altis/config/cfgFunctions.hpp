@@ -57,7 +57,6 @@ class cfgFunctions
 		};
 	};
 
-/*
 	class FAR
 	{
 		class revive
@@ -90,7 +89,6 @@ class cfgFunctions
 			addFunction(killMe);
 		};
 	};
-*/
 	
 	class T8RMG
 	{	

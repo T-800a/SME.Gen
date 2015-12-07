@@ -21,11 +21,10 @@
  =======================================================================================================================
 */
 
-private ["_target"];
+params [[ "_target", objNull, [ objNull ]]];
+if ( isNull _target ) exitWith { false };
 
-_target = _this select 0;
-
-if ( alive _target  AND ( "FirstAidKit" in ( items player ) ) ) then
+if ( alive _target ) then
 {
 	player playActionNow "Medic";
 
@@ -44,5 +43,5 @@ if ( alive _target  AND ( "FirstAidKit" in ( items player ) ) ) then
 		_target playMove "amovppnemstpsraswrfldnon";
 	};
 
-	player removeItem "FirstAidKit";
+	if ( FAR_RequireFAK ) then { player removeItem "FirstAidKit"; };
 };

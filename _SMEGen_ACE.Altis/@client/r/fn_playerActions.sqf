@@ -21,14 +21,11 @@
  =======================================================================================================================
 */
 
-if ( isNil "ASC_CIM_fnc_OpenMenu" ) then 
+if ( alive player && player isKindOf "Man" ) then 
 {
-	if ( alive player && player isKindOf "Man" ) then 
-	{
 	//	player addAction args: title, filename, (arguments, priority, showWindow, hideOnUse, shortcut, condition, positionInModel, radius, radiusView, showIn3D, available, textDefault, textToolTip)
 		player addAction ["<t color=""#C90000"">" + "R E V I V E" + "</t>",		{ ( _this select 3 ) call FAR_fnc_handleActions; }, ["action_revive"],	10,	true,	true, "", "call FAR_fnc_checkRevive" ];
 		player addAction ["<t color=""#C90000"">" + "Suicide" + "</t>",			{ ( _this select 3 ) call FAR_fnc_handleActions; }, ["action_suicide"],	9,	false,	true, "", "call FAR_fnc_checkSuicide" ];
 		player addAction ["<t color=""#C90000"">" + "Drag" + "</t>",			{ ( _this select 3 ) call FAR_fnc_handleActions; }, ["action_drag"],	9,	false,	true, "", "call FAR_fnc_checkDragging" ];
 		player addAction ["<t color=""#C90000"">" + "Carry" + "</t>",			{ ( _this select 3 ) call FAR_fnc_handleActions; }, ["action_carry"],	9,	false,	true, "", "call FAR_fnc_checkCarrying" ];
-	};
 };

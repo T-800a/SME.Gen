@@ -31,7 +31,7 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_keys_text">
-			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F3 ]&lt;/font&gt; pressing F3 in the &lt;marker name="mission_marker_arsenal"&gt;arsenal area&lt;/marker&gt; will open the arsenal  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the &lt;marker name="mission_marker_service"&gt;service area&lt;/marker&gt; will start a full vehicle service</Original>
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F1 ]&lt;/font&gt; pressing F1 near a unconscious player will revive him  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F2 ]&lt;/font&gt; pressing F2 near a unconscious player will start dragging him  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ ALT + F2 ]&lt;/font&gt; pressing ALT + F2 near a unconscious player will start carrying him  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F3 ]&lt;/font&gt; pressing F3 in the &lt;marker name="mission_marker_arsenal"&gt;arsenal area&lt;/marker&gt; will open the arsenal  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the &lt;marker name="mission_marker_service"&gt;service area&lt;/marker&gt; will start a full vehicle service</Original>
 		</Key>
 		
 		<Key ID="STR_SMEGen_diary_server_titel">
@@ -59,7 +59,7 @@
 		</Key>
 		
 		<Key ID="STR_SMEGen_upcommingNewTasks">
-			<Original>New mission sites will be created in %1 minute!</Original>
+			<Original>New mission sites will be created in %1 minutes!</Original>
 		</Key>
 		
 		<Key ID="STR_SMEGen_errorNewTasks">
@@ -83,7 +83,7 @@
 
 	<Package name="Rewards">
 		<Key ID="STR_SMEGen_hint_playerRankUp">
-			<Original>&lt;t size='3' color='#FAAC58' align='center'&gt;&lt;img image='%1'/&gt;&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1' color='#E6E6E6' align='center'&gt;Congratulations you ranked up!&lt;br /&gt;Your new rank is:&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1.5' color='#FAAC58' align='center'&gt;%2&lt;/t&gt;</Original>
+			<Original>&lt;font size='3' color='#FAAC58' align='center'&gt;&lt;img image='%1'/&gt;&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1' color='#E6E6E6' align='center'&gt;Congratulations you ranked up!&lt;br /&gt;Your new rank is:&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1.5' color='#FAAC58' align='center'&gt;%2&lt;/t&gt;</Original>
 		</Key>
 		
 		<Key ID="STR_SMEGen_hint_Reward01">
@@ -290,6 +290,25 @@
 		</Key>
 		<Key ID="STR_SMEGen_type_getIntel_desc">
 			<Original>We have located a enemie surveillance camp in the #__LOCATION__#. Your task is to get into the camp and download all gathered data for our intelligence service.</Original>
+		</Key>
+	</Package>
+	
+	
+	<Package name="FAR_Revive">
+		<Key ID="STR_FAR_revive">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;REVIVING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;</Original>
+		</Key>
+		
+		<Key ID="STR_FAR_drag">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;DRAGGING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;You can only drag backwards!&lt;br /&gt;Press [ C ] if you can not move.</Original>
+		</Key>
+		
+		<Key ID="STR_FAR_carry">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;CARRYING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;YOU NEED A PRIMARY WEAPON!&lt;br /&gt;(otherwise the animation will make you stuck)</Original>
+		</Key>
+		
+		<Key ID="STR_FAR_released">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;RELEASED&lt;/t&gt;</Original>
 		</Key>
 	</Package>
 </Project>

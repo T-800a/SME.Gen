@@ -28,12 +28,13 @@
 private [ "_id", "_pos", "_blockRelaodKEY" ];
 params [ "_target" ];
 
- if ( primaryWeapon player == "" ) exitWith { titleText [ "YOU NEED A PRIMARY WEAPON! (otherwise the animation will make you Stuck)", "PLAIN"]; false };
+if ( primaryWeapon player == "" ) exitWith { titleText [ "YOU NEED A PRIMARY WEAPON! (otherwise the animation will make you Stuck)", "PLAIN"]; false };
+
+FAR_isCarrying = true;
 player selectWeapon ( primaryWeapon player );
 
 sleep 0.5;
 
-FAR_isCarrying = true;
 _target setVariable [ "FAR_isCarried", 1, true ];
 
 _blockRelaodKEY = ( findDisplay 46 ) displayAddEventHandler [ "KeyDown", "if (( _this select 1 ) in ( actionKeys 'ReloadMagazine' )) then { true };" ];
@@ -66,12 +67,6 @@ _target attachTo [ player, [0.1, -0.1, -1.25], "LeftShoulder" ];
 
 if ( !isPlayer _target ) then { _target enableSimulation false; };
 
-
-// Add release action and save its id so it can be removed
-if ( isNil "ASC_CIM_fnc_OpenMenu" ) then 
-{
-	_id = player addAction ["<t color=""#C90000"">" + "Stop dragging" + "</t>", { ( _this select 3 ) call FAR_fnc_handleActions; }, ["action_release"], 10, true, true, "", "true"];
-};
 
 // Wait until release action is used
 waitUntil 
@@ -106,9 +101,4 @@ if ( !isNull _target AND alive _target ) then
 	
 	
 	if ( !isPlayer _target ) then { sleep 2; _target enableSimulation false; };
-};
-
-if ( isNil "ASC_CIM_fnc_OpenMenu" ) then 
-{
-	player removeAction _id;
 };

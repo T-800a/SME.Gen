@@ -33,7 +33,8 @@ T8C_var_hintPresetArray =
 	"<t size='6' color='#FFFFFF' align='left'>%1</t><br /><t size='1.2' color='#E6E6E6' align='left'>%2</t>",		// 0 - for U.SOC image header
 	"<t size='1' color='#2ECCFA' align='right'>%1</t><br /><t size='1.2' color='#58ACFA' align='left'>%2</t>",		// 1
 	"<t size='1.5' color='#FE9A2E' align='center'>%1</t><br /><t size='1' color='#FE9A2E' align='left'>%2</t>",		// 2 - for T8U
-	"<t size='6' color='#FFFFFF' align='left'>%1</t><br />%2"														// 3 - centred main text for RankUp
+	"<t size='6' color='#FFFFFF' align='left'>%1</t><br />%2",														// 3 - centred main text for RankUp
+	"%1 %2"																											// 4 - empty
 ];
 
 
@@ -47,7 +48,7 @@ T8C_var_hintTextArray =
 	localize "STR_SMEGen_hint_Reward01",												// 0
 	localize "STR_SMEGen_hint_Reward02",												// 1
 	localize "STR_SMEGen_hint_Reward03",												// 2
-	format [ localize "STR_SMEGen_upcommingCleanUp", ( _timeC + _timeS ), _timeS ],		// 3
+	format [ localize "STR_SMEGen_upcommingCleanUp", ( _timeC + _timeS ), _timeC ],		// 3
 	format [ localize "STR_SMEGen_upcommingNewTasks", _timeS ],							// 4
 	localize "STR_SMEGen_errorNewTasks",												// 5
 	localize "STR_SMEGen_unlockUGV",													// 6

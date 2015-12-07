@@ -27,13 +27,13 @@ params [
 ];
 
 if ( isNull _target ) then { _target = cursorTarget; };
-if ( isNull _target ) exitWith { false };
 
 ////////////////////////////////////////////////
 // Handle actions
 ////////////////////////////////////////////////
 if ( _action == "action_revive" ) then
 {
+	if ( isNull _target ) exitWith { false };
 	[ _target ] spawn FAR_fnc_handleRevive;
 };
 
@@ -47,15 +47,17 @@ if ( _action == "action_suicide" ) then
 
 if ( _action == "action_drag" ) then
 {
+	if ( isNull _target ) exitWith { false };
 	[ _target ] spawn FAR_fnc_drag;
 };
 
 if ( _action == "action_carry" ) then
 {
+	if ( isNull _target ) exitWith { false };
 	[ _target ] spawn FAR_fnc_carry;
 };
 
 if ( _action == "action_release" ) then
 {
-	[] spawn FAR_fnc_release;
+	[] call FAR_fnc_release;
 };

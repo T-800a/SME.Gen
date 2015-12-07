@@ -33,7 +33,8 @@ T8C_var_hintPresetArray =
 	"<t size='6' color='#FFFFFF' align='left'>%1</t><br /><t size='1.2' color='#E6E6E6' align='left'>%2</t>",		// 0 - for U.SOC image header
 	"<t size='1' color='#2ECCFA' align='right'>%1</t><br /><t size='1.2' color='#58ACFA' align='left'>%2</t>",		// 1
 	"<t size='1.5' color='#FE9A2E' align='center'>%1</t><br /><t size='1' color='#FE9A2E' align='left'>%2</t>",		// 2 - for T8U
-	"<t size='6' color='#FFFFFF' align='left'>%1</t><br />%2"														// 3 - centred main text for RankUp
+	"<t size='6' color='#FFFFFF' align='left'>%1</t><br />%2",														// 3 - centred main text for RankUp
+	"%1 %2"																											// 4 - empty
 ];
 
 

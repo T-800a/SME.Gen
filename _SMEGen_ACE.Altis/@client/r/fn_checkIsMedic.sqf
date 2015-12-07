@@ -21,30 +21,36 @@
  =======================================================================================================================
 */
 
-private [ "_items", "_return" ];
-_items = items _this;
+private [ "_items", "_return", "_attendant" ];
+
+params [[ "_unit", objNull, [ objNull ]]];
+if ( isNull _unit ) exitWith { false };
+
+_return		= false;
+_items		= items _unit;
+_attendant	= getNumber ( configfile >> "CfgVehicles" >> ( typeOf _unit ) >> "attendant" );
 
 switch ( FAR_ReviveMode ) do 
 { 
-	case 0:	
-	{
-		_return = if ( "Medikit" in _items AND { "ASC_MediKit" in _items } ) then { true } else { false };
-	};
-	
-	case 1:
+	case 0:
 	{
 		_return = true;
 	};
 	
-	case 2:
+	case 1:
 	{
 		_return = if ( "Medikit" in _items ) then { true } else { false };
 	};
 	
+	case 2:
+	{
+
+		_return = if ( _attendant == 1 ) then { true } else { false };
+	};
+	
 	case 3:
 	{
-		_attendant = getNumber (configfile >> "CfgVehicles" >> typeOf _this >> "attendant");
-		_return = if ( "Medikit" in _items AND { _attendant == 1 } ) then { true } else { false };
+		_return = if ( "Medikit" in _items AND { _attendant == 1 }) then { true } else { false };
 	};
 	
 	default { _return = false; };

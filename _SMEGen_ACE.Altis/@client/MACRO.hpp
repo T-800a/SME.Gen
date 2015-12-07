@@ -11,7 +11,7 @@
 */
 
 // #define __DEBUG(FILE,TEXT,VAR)
-#define __DEBUG(FILE,TEXT,VAR)			[FILE,TEXT,VAR] call T8RMG_fnc_debug
+#define __DEBUG(FILE,TEXT,VAR)			[FILE,TEXT,VAR] call T8C_fnc_debug
 #define __DEBUGCON(TEXT)				"debug_console" callExtension (TEXT + "~0000")
 
 #define __GetMVAR(VAR,VAL)				missionNamespace getVariable [ VAR, VAL ]

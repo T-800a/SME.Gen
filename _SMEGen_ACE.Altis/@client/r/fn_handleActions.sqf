@@ -21,21 +21,23 @@
  =======================================================================================================================
 */
 
-private [ "_action", "_target" ];
+params [
+	[ "_action", "", [""]],
+	[ "_target", objNull, [objNull]]
+];
 
-_action		= [ _this, 0, "", [ "" ] ] call BIS_fnc_param;
-_target		= [ _this, 1, objNull, [ objNull ] ] call BIS_fnc_param;
 if ( isNull _target ) then { _target = cursorTarget; };
 
 ////////////////////////////////////////////////
 // Handle actions
 ////////////////////////////////////////////////
-if (_action == "action_revive") then
+if ( _action == "action_revive" ) then
 {
+	if ( isNull _target ) exitWith { false };
 	[ _target ] spawn FAR_fnc_handleRevive;
 };
 
-if (_action == "action_suicide") then
+if ( _action == "action_suicide" ) then
 {
 	player enableSimulation true;
 	player allowDamage true;
@@ -43,17 +45,19 @@ if (_action == "action_suicide") then
 	player setDamage 1;
 };
 
-if (_action == "action_drag") then
+if ( _action == "action_drag" ) then
 {
+	if ( isNull _target ) exitWith { false };
 	[ _target ] spawn FAR_fnc_drag;
 };
 
-if (_action == "action_carry") then
+if ( _action == "action_carry" ) then
 {
+	if ( isNull _target ) exitWith { false };
 	[ _target ] spawn FAR_fnc_carry;
 };
 
-if (_action == "action_release") then
+if ( _action == "action_release" ) then
 {
-	[] spawn FAR_fnc_release;
+	[] call FAR_fnc_release;
 };
