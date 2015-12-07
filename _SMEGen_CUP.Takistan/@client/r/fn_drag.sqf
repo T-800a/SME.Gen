@@ -25,7 +25,8 @@ private ["_target", "_id"];
 
 FAR_isDragging = true;
 
-_target = _this select 0;
+params [[ "_target", objNull, [ objNull ]]];
+if ( isNull _target ) exitWith { false };
 
 
 player playAction "grabDrag";

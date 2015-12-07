@@ -21,11 +21,10 @@
  =======================================================================================================================
 */
 
-private[ "_unit", "_killer", "_buttonSUI" ];
 disableSerialization;
 
-_unit = _this select 0;
-_killer = _this select 1;
+private[ "_buttonSUI" ];
+params [ "_unit", "_killer" ];
 
 _unit allowDamage false;
 _unit setCaptive true;

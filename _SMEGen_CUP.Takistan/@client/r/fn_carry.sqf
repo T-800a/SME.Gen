@@ -25,9 +25,8 @@
  =======================================================================================================================
 */
 
-private [ "_target", "_id", "_pos", "_blockRelaodKEY" ];
-
-_target = _this select 0;
+private [ "_id", "_pos", "_blockRelaodKEY" ];
+params [ "_target" ];
 
  if ( primaryWeapon player == "" ) exitWith { titleText [ "YOU NEED A PRIMARY WEAPON! (otherwise the animation will make you Stuck)", "PLAIN"]; false };
 player selectWeapon ( primaryWeapon player );

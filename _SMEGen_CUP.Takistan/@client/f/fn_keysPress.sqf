@@ -69,6 +69,19 @@ switch ( _key ) do
 		
 			_return = true;
 		};
+		
+		if ( ! _shift AND { ! _ctrl } AND { _alt }) then 
+		{
+			__DEBUG( __FILE__, "DRAG", _reviveTarget );
+		
+			if ( !isNull _reviveTarget AND { [ _reviveTarget ] call FAR_fnc_checkCarrying } ) then
+			{
+				__DEBUG( __FILE__, "DRAG", "SUCCESS" );
+				[ "action_carry", _reviveTarget ] call FAR_fnc_handleActions;
+			};
+		
+			_return = true;
+		};
 	};
 
 	// F3

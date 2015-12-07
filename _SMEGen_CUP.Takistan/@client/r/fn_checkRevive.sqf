@@ -21,10 +21,12 @@
  =======================================================================================================================
 */
 
-private [ "_target", "_return", "_isPlayerUnconscious", "_isMedic", "_isTargetUnconscious", "_isTargetDragged", "_isTargetCarried"];
+private [ "_return", "_isPlayerUnconscious", "_isMedic", "_isTargetUnconscious", "_isTargetDragged", "_isTargetCarried"];
 
-_target		= [ _this, 0, objNull, [ objNull ] ] call BIS_fnc_param;
+params [[ "_target", objNull, [ objNull ]]];
+
 if ( isNull _target ) then { _target = cursorTarget; };
+if ( isNull _target ) exitWith { false };
 
 _return = false;
 

@@ -21,10 +21,9 @@
  =======================================================================================================================
 */
 
-if(count _this < 2) exitWith {};
+if( count _this < 2 ) exitWith {};
 
-_EH  = _this select 0;
-_target = _this select 1;
+params [ "_EH", "_target" ];
 
 // FAR_isDragging
 if (_EH == "FAR_isDragging_EH") then

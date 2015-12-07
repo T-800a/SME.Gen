@@ -22,7 +22,11 @@
 */
 
 private [ "_items", "_return" ];
-_items = items _this;
+
+params [[ "_unit", objNull, [ objNull ]]];
+if ( isNull _unit ) exitWith { false };
+
+_items = items _unit;
 
 switch ( FAR_RequireFAK ) do 
 { 

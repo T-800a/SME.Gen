@@ -62,4 +62,20 @@ class Params
 		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT" };
 		default		= 999;
 	};
+	
+	class param06 { title = "-"; };
+	class param07 { title = "-"; };
+	class param08 { title = "-"; };
+	class param09 { title = "-"; };
+	class param10 { title = "-"; };
+	class param11 { title = "-"; };
+	class param12 { title = "-"; };
+	class param13 { title = "-"; };
+	class param14 { title = "-"; };
+	class param15 { title = "-"; };
+	class param16 { title = "-"; };
+	class param17 { title = "-"; };
+	class param18 { title = "-"; };
+	class param19 { title = "-"; };
+	class param20 { title = "-"; };
 };

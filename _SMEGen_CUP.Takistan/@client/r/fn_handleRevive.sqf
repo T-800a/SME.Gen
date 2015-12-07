@@ -21,9 +21,8 @@
  =======================================================================================================================
 */
 
-private ["_target"];
-
-_target = _this select 0;
+params [[ "_target", objNull, [ objNull ]]];
+if ( isNull _target ) exitWith { false };
 
 if ( alive _target ) then
 {
