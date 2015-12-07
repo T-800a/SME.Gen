@@ -51,7 +51,16 @@ _skip = false;
 if ((( isNull T8RMG_var_objectReward01 ) AND ( isNull T8RMG_var_objectReward02 ) AND ( isNull T8RMG_var_objectReward03 )) OR { !alive T8RMG_var_objectReward01 }) then
 {
 	if ( !isNull T8RMG_var_objectReward01 ) then { deleteVehicle T8RMG_var_objectReward01; };
+	
+	{
+		if ( _x isKindOf "Man" )			then { _x setPos ( getMarkerPos "respawn_civilian" ); };
+		if ( _x isKindOf "LandVehicle" )	then { _x setPos [0,0,0]; _x setDamage 1; };
+		if ( _x isKindOf "Air" )			then { _x setPos [0,0,0]; _x setDamage 1; };
+		if ( _x isKindOf "Ship" )			then { _x setPos [0,0,0]; _x setDamage 1; };
 		
+		false
+	} count (( getPos mission_reward_spawn_01 ) nearObjects 20 );
+	
 	T8RMG_var_objectReward01 = createVehicle [ _classReward01, getPos mission_reward_spawn_01, [], 0, "NONE" ];
 	T8RMG_var_objectReward01 setdir ( getDir mission_reward_spawn_01);
 	{ _x addCuratorEditableObjects [ [ T8RMG_var_objectReward01 ], true ]; false } count allCurators;
@@ -67,7 +76,16 @@ if ((( isNull T8RMG_var_objectReward01 ) AND ( isNull T8RMG_var_objectReward02 )
 if (((( !isNull T8RMG_var_objectReward01 ) AND ( isNull T8RMG_var_objectReward02 ) AND ( isNull T8RMG_var_objectReward03 )) OR { !alive T8RMG_var_objectReward02 }) AND !_skip ) then
 {
 	if ( !isNull T8RMG_var_objectReward02 ) then { deleteVehicle T8RMG_var_objectReward02; };
+
+	{
+		if ( _x isKindOf "Man" )			then { _x setPos ( getMarkerPos "respawn_civilian" ); };
+		if ( _x isKindOf "LandVehicle" )	then { _x setPos [0,0,0]; _x setDamage 1; };
+		if ( _x isKindOf "Air" )			then { _x setPos [0,0,0]; _x setDamage 1; };
+		if ( _x isKindOf "Ship" )			then { _x setPos [0,0,0]; _x setDamage 1; };
 		
+		false
+	} count (( getPos mission_reward_spawn_02 ) nearObjects 20 );
+
 	T8RMG_var_objectReward02 = createVehicle [ _classReward02, getPos mission_reward_spawn_02, [], 0, "NONE" ];
 	T8RMG_var_objectReward02 setdir ( getDir mission_reward_spawn_02);
 	{ _x addCuratorEditableObjects [ [ T8RMG_var_objectReward02 ], true ]; false } count allCurators;
@@ -82,7 +100,16 @@ if (((( !isNull T8RMG_var_objectReward01 ) AND ( isNull T8RMG_var_objectReward02
 if (((( !isNull T8RMG_var_objectReward01 ) AND ( !isNull T8RMG_var_objectReward02 ) AND ( isNull T8RMG_var_objectReward03 )) OR { !alive T8RMG_var_objectReward03 }) AND !_skip ) then
 {
 	if ( !isNull T8RMG_var_objectReward03 ) then { deleteVehicle T8RMG_var_objectReward03; };
+
+	{
+		if ( _x isKindOf "Man" )			then { _x setPos ( getMarkerPos "respawn_civilian" ); };
+		if ( _x isKindOf "LandVehicle" )	then { _x setPos [0,0,0]; _x setDamage 1; };
+		if ( _x isKindOf "Air" )			then { _x setPos [0,0,0]; _x setDamage 1; };
+		if ( _x isKindOf "Ship" )			then { _x setPos [0,0,0]; _x setDamage 1; };
 		
+		false
+	} count (( getPos mission_reward_spawn_03 ) nearObjects 20 );
+
 	T8RMG_var_objectReward03 = createVehicle [ _classReward03, getPos mission_reward_spawn_03, [], 0, "NONE" ];
 	T8RMG_var_objectReward03 setdir ( getDir mission_reward_spawn_03);
 	{ _x addCuratorEditableObjects [ [ T8RMG_var_objectReward03 ], true ]; false } count allCurators;

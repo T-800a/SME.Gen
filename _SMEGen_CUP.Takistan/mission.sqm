@@ -1020,7 +1020,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={8186.4541,296.04001,2025.5331};
+			position[]={8190.9272,296.04001,2018.6377};
 			name="mission_marker_rewards";
 			text=" Vehicle Rewards";
 			type="o_support";
