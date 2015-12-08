@@ -14,7 +14,14 @@ Author						= "T-800a";
 onLoadName					= "SME.Gen X CUP | V.031";
 OnLoadMission				= "Small Military Encounter Genenerator";
 loadScreen					= "images\sme_logo.paa";
-overviewPicture				= "";
+
+
+class Header
+{
+	gameType		= COOP;
+	minPlayers		= 1;
+	maxPlayers		= 20;
+};
 
 enableDebugConsole			= 1;
 disabledAI					= true;
@@ -51,13 +58,6 @@ class CfgTaskEnhancements
    3dDrawDist   = 1500;
    share        = 1; 
    propagate    = 1;
-};
-
-class Header
-{
-	gameType		= COOP;
-	minPlayers		= 1;
-	maxPlayers		= 20;
 };
 
 // --------------------------------------------------------------

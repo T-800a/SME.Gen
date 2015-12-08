@@ -25,7 +25,8 @@
 
 mission_obj_arsenal_sign	setObjectTextureGlobal [ 0, "images\vr-arsenal.paa" ];
 mission_obj_usoc_sign		setObjectTextureGlobal [ 0, "images\usoc.paa" ];
-mission_obj_repair_sign		setObjectTextureGlobal [ 0, "images\service_station.paa" ];
+mission_obj_repair_sign		setObjectTextureGlobal [ 0, "images\repair_sign.paa" ];
+mission_obj_repair_button	setObjectTextureGlobal [ 0, "images\repair_button.paa" ];
 
 mission_obj_billboard_02	setObjectTextureGlobal [ 0, "images\chart_base.paa" ];
 mission_obj_billboard_03	setObjectTextureGlobal [ 0, "images\chart_medic.paa" ];

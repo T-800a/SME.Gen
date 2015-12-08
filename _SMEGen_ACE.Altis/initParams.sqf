@@ -84,7 +84,7 @@ switch ( paramsArray select 21 ) do
 {
 	case 0 :	{ FAR_isEnabled = true; };
 	case 1 :	{ FAR_isEnabled = false; };
-	default		{ FAR_isEnabled = true; };
+	default		{ FAR_isEnabled = false; };
 };
 
 // FAR_ReviveMode

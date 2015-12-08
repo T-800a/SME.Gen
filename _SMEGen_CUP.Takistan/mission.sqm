@@ -783,7 +783,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			position[]={8258.8506,296.04001,2127.8921};
@@ -883,7 +883,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={8334.0127,296.04001,2034.364};
+			position[]={8331.9277,296.04001,2032.6184};
 			id=36;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
@@ -892,7 +892,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={8337.417,296.04001,2030.5872};
+			position[]={8324.9111,296.04001,2031.1777};
 			id=37;
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
@@ -932,7 +932,7 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={8333.7686,296.04001,2030.6277};
+			position[]={8330.8604,296.04001,2031.1847};
 			id=41;
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
@@ -954,7 +954,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={8342.0049,296.04001,2030.4342};
+			position[]={8333.4492,296.04001,2031.2338};
 			id=43;
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
@@ -973,6 +973,16 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="mission_helipad";
+		};
+		class Item17
+		{
+			position[]={8324.9492,296.04001,2030.71};
+			id=45;
+			side="EMPTY";
+			vehicle="SignAd_Sponsor_ION_F";
+			skill=0.60000002;
+			text="mission_obj_repair_button";
+			init="this allowDamage false; this enableSimulation false;";
 		};
 	};
 	class Markers

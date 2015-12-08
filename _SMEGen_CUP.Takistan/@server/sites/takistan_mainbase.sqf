@@ -247,6 +247,7 @@ _cFnc =
 ["SignAd_Sponsor_F","[8284.643555,2122.780029,0]",104.907,-100,1,0,[],[0,0],	mission_obj_arsenal_sign ] call _cFnc;
 ["SignAd_Sponsor_F","[8283.12207,2116.537354,0]",104.907,-100,1,0,[],[0,0],		mission_obj_usoc_sign ] call _cFnc;
 ["SignAd_Sponsor_F","[8220.408203,2120.770264,0]",155.089,-100,1,0,[],[0,0],	mission_obj_repair_sign ] call _cFnc;
+["SignAd_Sponsor_F","[8215.243164,2091.0183105,0]",151.246,-100,1,0,[],[0,0],	mission_obj_repair_button ] call _cFnc;
 
 
 // Billboard Objects
