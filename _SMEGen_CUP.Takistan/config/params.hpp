@@ -15,7 +15,7 @@
 
 class Params 
 {
-	class enemyFaction
+	class param00
 	{
 		title		= "Enemy Faction";
 		values[]	= { 0,      1,            2,               3,     4,                5,                		999 };
@@ -23,7 +23,7 @@ class Params
 		default		= 999;
 	};
 	
-	class rewardSet
+	class param01
 	{
 		title		= "Reward Set";
 		values[]	= { 0,        1,				2,				900,				999 };
@@ -31,7 +31,7 @@ class Params
 		default		= 999;
 	};
 	
-	class amountMissionSites
+	class param02
 	{
 		title		= "Simultaneous Mission Sites";
 		values[]	= { 0,          1,			2,			3,			999 };
@@ -39,7 +39,7 @@ class Params
 		default		= 999;
 	};
 	
-	class AISkill
+	class param03
 	{
 		title		= "AI Skill";
 		values[]	= { 0,          1,			2,					999 };
@@ -47,7 +47,7 @@ class Params
 		default		= 999;
 	};
 	
-	class RespawnLoadout
+	class param04
 	{
 		title		= "Keep Loadout After Respawn";
 		values[]	= { 0,		1,		999 };
@@ -55,7 +55,7 @@ class Params
 		default		= 999;
 	};
 	
-	class allowMapMarker
+	class param05
 	{
 		title		= "Show Map Marker for Players and Vehicles";
 		values[]	= { 0,			1,			999 };
