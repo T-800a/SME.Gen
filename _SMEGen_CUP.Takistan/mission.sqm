@@ -3,12 +3,10 @@ class Mission
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F_Multiplayer",
 		"A3_Structures_F_Mil_Helipads",
 		"a3_weapons_f_gamma_ammoboxes",
-		"A3_Structures_F_Civ_Camping",
 		"A3_Modules_F_StrategicMap",
 		"A3_Soft_F_Gamma_TruckHeavy",
 		"A3_Soft_F_MRAP_03",
@@ -1094,7 +1092,6 @@ class Intro
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"aia_takistan_config"
 	};
 	addOnsAuto[]=
@@ -1125,7 +1122,6 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"aia_takistan_config"
 	};
 	addOnsAuto[]=
@@ -1156,7 +1152,6 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"aia_takistan_config"
 	};
 	addOnsAuto[]=
