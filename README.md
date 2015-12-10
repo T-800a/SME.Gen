@@ -43,7 +43,14 @@ The missions uss various vanilla systems:
 - BIS dynamic groups
 - BIS virtual arsenal
 - BIS respawn menu
-- BIS revive (not the ACE mission)
+- ~~BIS revive~~ (why you so broken?! stopped working for me after 1.54)
+
+
+#### Additional Scrips
+And the mission uses some other scripts:
+- [T8-Units Script](https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/)
+- [FAR Revive](https://github.com/farooqaaa/far_revive) (but in my own 'flavour' with some of the later sqf improvments, because BIS revie broke)
+- [download data script](https://forums.bistudio.com/topic/157241-script-snippet-downlad-data-from-a-laptop/?hl=download%20data) (a bit updated version of my script)
 
 
 #### Available tasks
@@ -91,10 +98,6 @@ After completing two mission one vehicle will be spawned, starting with the MHQ.
 #### Time Acceleration
 The time is accelerated: 4h IRL = 24h in game. If you want to change this, there is a module placed in the mission.
 
-
-#### MISC
-AI is spawned by my script:
-- [T8-Units Script](https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/)
 
 
 #### Singleplayer
