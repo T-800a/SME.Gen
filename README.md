@@ -49,7 +49,7 @@ The missions uss various vanilla systems:
 #### Additional Scrips
 And the mission uses some other scripts:
 - [T8-Units Script](https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/)
-- [FAR Revive](https://github.com/farooqaaa/far_revive) (but in my own 'flavour' with some of the later sqf improvments, because BIS revie broke)
+- [FAR Revive](https://github.com/farooqaaa/far_revive) (but in [my own 'flavour'](https://forums.bistudio.com/topic/146926-farooqs-revive/?p=2526375) with some of the later sqf improvments, because BIS revie broke)
 - [download data script](https://forums.bistudio.com/topic/157241-script-snippet-downlad-data-from-a-laptop/?hl=download%20data) (a bit updated version of my script)
 
 
