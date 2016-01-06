@@ -1,7 +1,6 @@
 /*
  =======================================================================================================================
 
-	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
 	File:		params.hpp

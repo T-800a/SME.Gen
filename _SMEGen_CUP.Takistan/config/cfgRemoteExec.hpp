@@ -1,7 +1,6 @@
 /*
  =======================================================================================================================
 
-	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
 	File:		cfgRemoteExec.hpp
@@ -48,8 +47,8 @@ class CfgRemoteExec
 ----------------- */
 
 		class T8C_fnc_hintProcess { allowedTargets = 1; };
-		class T8C_fnc_handleReward { allowedTargets = 1; };
-		class T8C_fnc_addActionIntel { allowedTargets = 0; };
+		class T8SME_client_fnc_handleReward { allowedTargets = 1; };
+		class T8SME_client_fnc_addActionIntel { allowedTargets = 0; };
 		
 	// downloadData / Laptop	
 		class T8L_fnc_addActionLaptop { allowedTargets = 0; };

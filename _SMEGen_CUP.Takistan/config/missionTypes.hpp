@@ -1,7 +1,6 @@
 /*
  =======================================================================================================================
 
-	@randomMission
 	SME.Gen - Small Military Encounter Genenerator
  
 	File:		missionTypes.hpp
@@ -170,7 +169,7 @@ class missionTypes
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 		};
@@ -202,7 +201,7 @@ class missionTypes
 			class followup
 			{
 				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
-				function	= "T8RMG_fnc_handleFollowingTask";
+				function	= "T8SME_server_fnc_handleFollowingTask";
 				isFinal		= 0;
 			};
 
@@ -216,7 +215,7 @@ class missionTypes
 			class surrender
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities 50 )) > 0 )";
-				function	= "T8RMG_fnc_surrenderHVT";
+				function	= "T8SME_server_fnc_surrenderHVT";
 				isFinal		= 0;
 			};
 		};
@@ -333,7 +332,7 @@ class missionTypes
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 		};
@@ -360,7 +359,7 @@ class missionTypes
 			class followup
 			{
 				condition	= "(( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND {( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]})";
-				function	= "T8RMG_fnc_handleFollowingTask";
+				function	= "T8SME_server_fnc_handleFollowingTask";
 				isFinal		= 0;
 			};
 
@@ -374,14 +373,14 @@ class missionTypes
 			class blowIED
 			{
 				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
-				function	= "T8RMG_fnc_blowIED";
+				function	= "T8SME_server_fnc_blowIED";
 				isFinal		= 0;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 0 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 		};
@@ -472,7 +471,7 @@ class missionTypes
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 		};
@@ -513,21 +512,21 @@ class missionTypes
 			class unlockUGV
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 0.1 ))) >=  1 )";
-				function	= "T8RMG_fnc_unlockUGV";
+				function	= "T8SME_server_fnc_unlockUGV";
 				isFinal		= 0;
 			};
 			
 			class support
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 3 ))) > 3 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# * 0.4 ))) > 3 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 		};
@@ -567,14 +566,14 @@ class missionTypes
 			class support
 			{
 				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 2 )) > 3 )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 			
 			class counter_attack
 			{
 				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ] ) getVariable [ 'T8L_pvar_inUse', false ] )";
-				function	= "T8RMG_fnc_createAttack";
+				function	= "T8SME_server_fnc_createAttack";
 				isFinal		= 0;
 			};
 		};
@@ -601,7 +600,7 @@ class missionTypes
 			class followup
 			{
 				condition	= "(( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND {( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]})";
-				function	= "T8RMG_fnc_handleFollowingTask";
+				function	= "T8SME_server_fnc_handleFollowingTask";
 				isFinal		= 0;
 			};
 			

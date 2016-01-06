@@ -425,7 +425,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="[ _this select 0, ""whitelistHelicopter"" ] remoteExec [ ""T8C_fnc_handleVehicle"", 0, ""JIPID_restrictMissionHeli01"" ];";
+							value="[ _this select 0, ""whitelistHelicopter"" ] remoteExec [ ""T8SME_client_fnc_handleVehicle"", 0, ""JIPID_restrictMissionHeli01"" ];";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="Init";
 						};
@@ -537,7 +537,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="[ _this select 0 ] remoteExec [ ""T8C_fnc_handleVehicle"", 0, ""JIPID_restrictMissionVeh01"" ];";
+							value="[ _this select 0 ] remoteExec [ ""T8SME_client_fnc_handleVehicle"", 0, ""JIPID_restrictMissionVeh01"" ];";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="Init";
 						};
@@ -642,7 +642,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="[ _this select 0 ] remoteExec [ ""T8C_fnc_handleVehicle"", 0, ""JIPID_restrictMissionVeh02"" ];";
+							value="[ _this select 0 ] remoteExec [ ""T8SME_client_fnc_handleVehicle"", 0, ""JIPID_restrictMissionVeh02"" ];";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="Init";
 						};
@@ -726,7 +726,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="[ _this select 0 ] remoteExec [ ""T8C_fnc_handleVehicle"", 0, ""JIPID_restrictMissionVeh03"" ];";
+							value="[ _this select 0 ] remoteExec [ ""T8SME_client_fnc_handleVehicle"", 0, ""JIPID_restrictMissionVeh03"" ];";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="Init";
 						};

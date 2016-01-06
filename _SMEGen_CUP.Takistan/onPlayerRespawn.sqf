@@ -19,10 +19,10 @@ if ( !isNil "_oldUnit" AND { !isNull _oldUnit }) then { deleteVehicle _oldUnit; 
 
 if ( isMultiplayer ) then 
 {
-	if ( isNil "T8C_var_welcomeOnFirstSpawn" ) then
+	if ( isNil "T8SME_client_var_welcomeOnFirstSpawn" ) then
 	{
-		[] spawn T8C_fnc_welcome;
-		T8C_var_welcomeOnFirstSpawn = true;
+		[] spawn T8SME_client_fnc_welcome;
+		T8SME_client_var_welcomeOnFirstSpawn = true;
 			
 		// clear players inventory
 		removeVest _newUnit;
@@ -35,10 +35,10 @@ if ( isMultiplayer ) then
 		_newUnit unlinkItem "NVGoggles_INDEP";
 	} else {
 	
-		if ( T8RMG_var_keepRespawnLoadout AND { !isNil "T8C_var_playerLoadout" }) then 
+		if ( T8SME_server_var_keepRespawnLoadout AND { !isNil "T8SME_client_var_playerLoadout" }) then 
 		{
-			[ _newUnit, T8C_var_playerLoadout ] call T8C_fnc_setGear;
-			T8C_var_playerLoadout = nil;
+			[ _newUnit, T8SME_client_var_playerLoadout ] call T8C_fnc_setGear;
+			T8SME_client_var_playerLoadout = nil;
 		} else {
 		
 			// clear players inventory
