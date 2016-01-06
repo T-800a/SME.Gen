@@ -87,8 +87,6 @@
 			addFunction(drawMapIcons);
 			addFunction(handleReward);
 			addFunction(handleVehicle);
-			addFunction(hintProcess);
-			addFunction(hintShow);
 			addFunction(keysAdd);
 			addFunction(keysPress);
 			addFunction(restricVehicle);

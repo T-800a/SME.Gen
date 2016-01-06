@@ -13,11 +13,13 @@
  =======================================================================================================
 */ 
 
+// CLIENT
 
 T8SME_client_var_drawVehiclesMap = [];
 T8SME_client_var_initDONE = true;
 
 
+// SERVER
 
 if ( isNil "T8SME_server_var_arraySitesBlacklist" )		then { T8SME_server_var_arraySitesBlacklist = []; };
 if ( isNil "T8SME_server_var_objectReward01" )			then { T8SME_server_var_objectReward01 = objNull; };
@@ -28,6 +30,4 @@ T8SME_server_var_arrayConditions	= [];
 T8SME_server_var_arraySites			= [];
 T8SME_server_var_arrayCleanup		= [];
 T8SME_server_var_arrayTypes			= [];
-
-
 

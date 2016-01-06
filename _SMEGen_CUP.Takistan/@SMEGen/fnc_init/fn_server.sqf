@@ -15,9 +15,11 @@ if !(isServer) exitWith {};
 
 #include <..\MACRO.hpp>
 
+// wait for Parameters
+waitUntil { !isNil "T8SME_server_var_INITparams" };
+
 // we need T8Units to be initializes for SME.Gen
 waitUntil { !isNil "T8U_var_InitDONE" };
-
 
 if ( !isMultiplayer ) then { "debug_console" callExtension ("C"); }; 
 __DEBUG( __FILE__, "=======================================================================================================================", "" );

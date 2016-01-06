@@ -35,7 +35,7 @@ switch ( T8SME_client_var_playerRank ) do
 {
 	case "COLONEL" :		{ T8SME_client_var_playerRank = "GENERAL";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa"; };
 	case "MAJOR" :			{ T8SME_client_var_playerRank = "COLONEL";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\colonel_gs.paa"; };
-	case "CAPTAIN" :		{ T8SME_client_var_playerRank = "MAJOR";			_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\major_gs.paa"; };
+	case "CAPTAIN" :		{ T8SME_client_var_playerRank = "MAJOR";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\major_gs.paa"; };
 	case "LIEUTENANT" :		{ T8SME_client_var_playerRank = "CAPTAIN";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\captain_gs.paa"; };
 	case "SERGEANT" :		{ T8SME_client_var_playerRank = "LIEUTENANT";	_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\lieutenant_gs.paa"; };
 	case "CORPORAL" :		{ T8SME_client_var_playerRank = "SERGEANT";		_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; };

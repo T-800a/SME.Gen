@@ -46,7 +46,7 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	__DEBUG( __FILE__, "MAIN WHILE", "___" );
 	private [ "_first", "_firstSitePos", "_firstSiteType", "_siteMaxDist" ];
 	
-	_siteMaxDist = 1750;
+	_siteMaxDist = 1500;
 	
 	// build useable sites
 	{
@@ -90,8 +90,8 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	{
 		__DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
 		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
-		_siteMaxDist = _siteMaxDist + 1000;
-		sleep 30;
+		_siteMaxDist = _siteMaxDist + 500;
+		sleep 20;
 	};
 };
 

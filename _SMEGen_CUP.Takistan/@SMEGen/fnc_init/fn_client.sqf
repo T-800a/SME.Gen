@@ -15,6 +15,9 @@ if !(hasInterface) exitWith {};
 
 #include <..\MACRO.hpp>
 
+// wait for Parameters
+waitUntil { !isNil "T8SME_server_var_INITparams" };
+
 
 // check slots restrictions
 [] call T8SME_client_fnc_checkSlots;
@@ -41,4 +44,4 @@ if ( T8SME_server_var_allowMapMarker ) then
 
 
 // debug add keys for missionSites export
-if !( isMultiplayer ) exitWith { waitUntil { !isNil "T8SME_server_var_arraycleanup" }; [] spawn T8C_fnc_debugKeysAdd; [] spawn T8C_fnc_debugSiteMarkers; };
+if !( isMultiplayer ) exitWith { waitUntil { !isNil "T8SME_server_var_arrayCleanup" }; [] spawn T8SME_client_fnc_debugKeysAdd; [] spawn T8SME_client_fnc_debugSiteMarkers; };

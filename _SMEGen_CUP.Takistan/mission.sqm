@@ -26,7 +26,8 @@ class Mission
 		"CUP_AirVehciles_UH1Y",
 		"CUP_Creatures_Military_USMC",
 		"CUP_AirVehicles_UH60",
-		"3DEN"
+		"3DEN",
+		"cup_takistan_config"
 	};
 	addOnsAuto[]=
 	{
@@ -42,7 +43,7 @@ class Mission
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Signs_F_AD",
-		"aia_takistan_config"
+		"cup_takistan_config"
 	};
 	randomSeed=5609333;
 	class Intel
@@ -1092,11 +1093,12 @@ class Intro
 {
 	addOns[]=
 	{
-		"aia_takistan_config"
+		"aia_takistan_config",
+		"cup_takistan_config"
 	};
 	addOnsAuto[]=
 	{
-		"aia_takistan_config"
+		"cup_takistan_config"
 	};
 	randomSeed=4537483;
 	class Intel
@@ -1122,11 +1124,12 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"aia_takistan_config"
+		"aia_takistan_config",
+		"cup_takistan_config"
 	};
 	addOnsAuto[]=
 	{
-		"aia_takistan_config"
+		"cup_takistan_config"
 	};
 	randomSeed=2096346;
 	class Intel
@@ -1152,11 +1155,12 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"aia_takistan_config"
+		"aia_takistan_config",
+		"cup_takistan_config"
 	};
 	addOnsAuto[]=
 	{
-		"aia_takistan_config"
+		"cup_takistan_config"
 	};
 	randomSeed=5170623;
 	class Intel
