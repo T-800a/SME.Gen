@@ -26,10 +26,12 @@ class Mission
 		"CUP_AirVehciles_UH1Y",
 		"CUP_Creatures_Military_USMC",
 		"CUP_AirVehicles_UH60",
-		"cup_takistan_config"
+		"cup_takistan_config",
+		"3DEN"
 	};
 	addOnsAuto[]=
 	{
+		"3DEN",
 		"a3_modules_f_curator_curator",
 		"CUP_Creatures_Military_USMC",
 		"A3_Modules_F_Multiplayer",
