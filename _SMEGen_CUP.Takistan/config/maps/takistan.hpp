@@ -504,8 +504,8 @@ class Takistan : base_map
 		scope = 1;
 		name = "Road SW of Shukurkalay";
 		marker = "site_road_shukurkalay_SW";
-		position[] = { 1108.42, 3215.93, 0 };
-		angle = 143;
+		position[] = { 1189.47, 3287.67, 0 };
+		angle = 318;
 	};
 
 	class road_saresangpass_SSE : base_road 

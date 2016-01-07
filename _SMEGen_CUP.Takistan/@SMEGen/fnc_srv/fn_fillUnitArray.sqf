@@ -16,7 +16,7 @@ if !(isServer) exitWith {};
 #include <..\MACRO.hpp>
 
 params [
-	[ "_unitsArray", [], [[]]]
+	[ "_unitsArray", [], [[]]],
 	[ "_fillerArray", [], [[]]]
 ];
 

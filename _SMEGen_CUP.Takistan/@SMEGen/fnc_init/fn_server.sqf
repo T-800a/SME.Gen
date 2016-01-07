@@ -35,6 +35,8 @@ __DEBUG( __FILE__, "============================================================
 [] spawn T8SME_server_fnc_handleConditions;
 
 
+if ( isMultiplayer ) then { waitUntil {( count allPlayers ) > 0 }; };
+
 // start initial tasks set
 [] call T8SME_server_fnc_handleNewTasks;
 
@@ -51,11 +53,6 @@ __DEBUG( __FILE__, "============================================================
 
 // remove disco bodies
 addMissionEventHandler [ "HandleDisconnect", { _this spawn { sleep 2; deleteVehicle ( _this select 0 ); }; } ];
-
-T8SME_server_var_INITDONE = true;
-publicVariable "T8SME_server_var_INITDONE";
-
-
 
 
 

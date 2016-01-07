@@ -271,7 +271,7 @@ _index = 0;
 	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "task" );
 	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "units" );
 	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "unitsFiller" );
-	_vehicleGroup	= [ _missionType, _x ] call T8SME_server_fnc_getVehicleGroup;
+	_vehicleGroup	= [ _type, _x ] call T8SME_server_fnc_getVehicleGroup;
 	
 	_units = [ _units, _filler ] call T8SME_server_fnc_fillUnitArray;
 	_units = [ _units ] call T8SME_server_fnc_buildUnitArray;

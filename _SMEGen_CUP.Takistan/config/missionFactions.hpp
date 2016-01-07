@@ -48,9 +48,9 @@ class missionFactions
 			OFFROAD				= "O_MRAP_02_F";
 			OFFROAD_A			= "O_MRAP_02_hmg_F";
 			
-			APC_SMALL			= "O_MRAP_02_hmg_F":
-			APC_MEDIUM			= "O_APC_Wheeled_02_rcws_F":
-			APC_HEAVY			= "O_APC_Tracked_02_cannon_F":
+			APC_SMALL			= "O_MRAP_02_hmg_F";
+			APC_MEDIUM			= "O_APC_Wheeled_02_rcws_F";
+			APC_HEAVY			= "O_APC_Tracked_02_cannon_F";
 		};
 		
 		class vehicles
@@ -134,9 +134,9 @@ class missionFactions
 			OFFROAD		 		= "I_MRAP_03_F";
 			OFFROAD_A	 		= "I_MRAP_03_hmg_F";
 			
-			APC_SMALL			= "I_MRAP_03_hmg_F":
-			APC_MEDIUM			= "I_APC_Wheeled_03_cannon_F":
-			APC_HEAVY			= "I_APC_tracked_03_cannon_F":
+			APC_SMALL			= "I_MRAP_03_hmg_F";
+			APC_MEDIUM			= "I_APC_Wheeled_03_cannon_F";
+			APC_HEAVY			= "I_APC_tracked_03_cannon_F";
 		};
 		
 		class vehicles : vehicles
@@ -204,9 +204,9 @@ class missionFactions
 			OFFROAD		 		= "CUP_O_UAZ_Open_TKA";
 			OFFROAD_A	 		= "CUP_O_UAZ_MG_TKA";
 			
-			APC_SMALL			= "CUP_O_BRDM2_TKA":
-			APC_MEDIUM			= "CUP_O_BTR90_TKA":
-			APC_HEAVY			= "CUP_O_BMP2_TKA":
+			APC_SMALL			= "CUP_O_BRDM2_TKA";
+			APC_MEDIUM			= "CUP_O_BTR60_TK";
+			APC_HEAVY			= "CUP_O_BMP1P_TKA";
 		};
 		
 		class vehicles : vehicles

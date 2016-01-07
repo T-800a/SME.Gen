@@ -25,8 +25,8 @@
 			file = "@SMEGen\fnc_init";
 			
 			addFunctionPre(vars);
-			addFunctionPost(server);
-			addFunctionPost(client);
+			addFunction(server);
+			addFunction(client);
 		};
 	};
 	

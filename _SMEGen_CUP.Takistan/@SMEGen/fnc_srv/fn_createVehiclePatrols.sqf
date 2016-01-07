@@ -27,7 +27,16 @@ if ( count _sites < 1 ) exitWith { false };
 private _markerArray	= [];
 private _players		= if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
 
-{ _markerArray pushBack ( getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "marker" )); false } count _sites;
+{
+	private _sitePos	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "position" );
+	private _siteSize	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "size" );
+	private _siteAngle	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "angle" );
+	private _marker		= format [ "%1_veh", ( getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "marker" )) ];
+	[ _marker, _sitePos, "", _siteSize, _siteAngle, "ELLIPSE", "empty", "ColorBlue", 0.2 ] call T8SME_server_fnc_createMarker;
+
+	_markerArray pushBack _marker;
+	false
+} count _sites;
 
 __DEBUG( __FILE__, "_markerArray", _markerArray );
 

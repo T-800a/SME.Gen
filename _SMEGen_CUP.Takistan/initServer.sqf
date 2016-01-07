@@ -17,6 +17,7 @@
 waitUntil { !isNil "bis_fnc_init" };
 [ "Initialize" ] call BIS_fnc_dynamicGroups; 
 
+[] spawn T8SME_INIT_fnc_server;
 
 // initialize locations ( mostly build BLUFOR HQ structures )
 [] execVM "locations\init.sqf";

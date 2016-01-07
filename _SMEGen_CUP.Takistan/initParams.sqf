@@ -10,10 +10,9 @@
  =======================================================================================================================
 */
 
-private [ "_AIskill" ];
 
 // faction used to spawn enemy units
-switch ( paramsArray select 0 ) do
+switch ( paramsArray select 1 ) do
 {
 	case 0 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR"; };
 	case 1 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR_URBAN"; };
@@ -25,7 +24,7 @@ switch ( paramsArray select 0 ) do
 };
 
 // reward / gearset
-switch ( paramsArray select 1 ) do
+switch ( paramsArray select 2 ) do
 {
 	case 0 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR"; };
 	case 1 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR_ACE"; };
@@ -36,7 +35,7 @@ switch ( paramsArray select 1 ) do
 };
 
 // Simultaneous Mission Sites
-switch ( paramsArray select 2 ) do
+switch ( paramsArray select 3 ) do
 {
 	case 0 :	{ T8SME_param_amountSites = 1; };
 	case 1 :	{ T8SME_param_amountSites = 2; };
@@ -47,7 +46,8 @@ switch ( paramsArray select 2 ) do
 
 // AI Skill
 // overwrite T8U base settings
-switch ( paramsArray select 3 ) do
+private [ "_AIskill" ];
+switch ( paramsArray select 4 ) do
 {
 	case 0 :	{ _AIskill = 0; };
 	case 1 :	{ _AIskill = 1; };
@@ -57,7 +57,7 @@ switch ( paramsArray select 3 ) do
 T8U_var_Presets = [[ _AIskill, 1 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];
 
 // Keep Loadout After Respawn
-switch ( paramsArray select 4 ) do
+switch ( paramsArray select 5 ) do
 {
 	case 0 :	{ T8SME_param_keepRespawnLoadout = true; };
 	case 1 :	{ T8SME_param_keepRespawnLoadout = false; };
@@ -65,7 +65,7 @@ switch ( paramsArray select 4 ) do
 };
 
 // Show Map Marker for Players and Vehicles
-switch ( paramsArray select 5 ) do
+switch ( paramsArray select 6 ) do
 {
 	case 0 :	{ T8SME_param_allowMapMarker = true; };
 	case 1 :	{ T8SME_param_allowMapMarker = false; };
@@ -73,7 +73,7 @@ switch ( paramsArray select 5 ) do
 };
 
 // Allow Vehicle Patrols
-switch ( paramsArray select 6 ) do
+switch ( paramsArray select 7 ) do
 {
 	case 0 :	{ T8SME_param_allowVehiclePatrols = true; };
 	case 1 :	{ T8SME_param_allowVehiclePatrols = false; };

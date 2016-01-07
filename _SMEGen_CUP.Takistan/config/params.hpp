@@ -14,7 +14,9 @@
 
 class Params 
 {
-	class param00
+	class param00 { title = "----- SME.Gen Settings -----"; values[] = {0}; texts[] = {""}; default = 0; };	
+
+	class param01
 	{
 		title		= "Enemy Faction";
 		values[]	= { 0,      1,            2,               3,     4,                5,                		999 };
@@ -22,7 +24,7 @@ class Params
 		default		= 999;
 	};
 	
-	class param01
+	class param02
 	{
 		title		= "Reward Set";
 		values[]	= { 0,        1,				2,				900,				999 };
@@ -30,7 +32,7 @@ class Params
 		default		= 999;
 	};
 	
-	class param02
+	class param03
 	{
 		title		= "Simultaneous Mission Sites";
 		values[]	= { 0,          1,			2,			3,			999 };
@@ -38,7 +40,7 @@ class Params
 		default		= 999;
 	};
 	
-	class param03
+	class param04
 	{
 		title		= "AI Skill";
 		values[]	= { 0,          1,			2,					999 };
@@ -46,7 +48,7 @@ class Params
 		default		= 999;
 	};
 	
-	class param04
+	class param05
 	{
 		title		= "Keep Loadout After Respawn";
 		values[]	= { 0,		1,		999 };
@@ -54,7 +56,7 @@ class Params
 		default		= 999;
 	};
 	
-	class param05
+	class param06
 	{
 		title		= "Show Map Marker for Players and Vehicles";
 		values[]	= { 0,			1,			999 };
@@ -62,7 +64,7 @@ class Params
 		default		= 999;
 	};
 	
-	class param06
+	class param07
 	{
 		title		= "Allow Vehicle Patrols";
 		values[]	= { 0,			1,			999 };
@@ -70,22 +72,21 @@ class Params
 		default		= 999;
 	};
 	
-	class param07 { title = "-"; };
-	class param08 { title = "-"; };
-	class param09 { title = "-"; };
-	class param10 { title = "-"; };
-	class param11 { title = "-"; };
-	class param12 { title = "-"; };
-	class param13 { title = "-"; };
-	class param14 { title = "-"; };
-	class param15 { title = "-"; };
-	class param16 { title = "-"; };
-	class param17 { title = "-"; };
-	class param18 { title = "-"; };
-	class param19 { title = "-"; };
+	class param08 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param09 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param10 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param11 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param12 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param13 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param14 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param15 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param16 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param17 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param18 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param19 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
 
 	
-	class param20 { title = "----- FAR Revive Settings -----"; };
+	class param20 { title = "----- FAR Revive Settings -----"; values[] = {0}; texts[] = {""}; default = 0; };
 	class param21 
 	{
 		title		= "enable/disable FAR Revive";
@@ -126,9 +127,9 @@ class Params
 		default		= 999;	
 	};
 
-	class param26 { title = "-"; };
-	class param27 { title = "-"; };
-	class param28 { title = "-"; };
-	class param29 { title = "-"; };
-	class param30 { title = "-"; };
+	class param26 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param27 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param28 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param29 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
+	class param30 { title = "-"; values[] = {0}; texts[] = {""}; default = 0; };
 };

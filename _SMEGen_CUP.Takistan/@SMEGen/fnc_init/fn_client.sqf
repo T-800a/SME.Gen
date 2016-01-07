@@ -11,9 +11,11 @@
  =======================================================================================================
 */ 
 
-if !(hasInterface) exitWith {};
-
 #include <..\MACRO.hpp>
+
+if !(hasInterface) exitWith {};
+waitUntil { !isNull player AND { isPlayer player } AND { alive player }};
+
 
 // wait for Parameters
 waitUntil { !isNil "T8SME_param_INIT" };

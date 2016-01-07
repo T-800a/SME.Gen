@@ -10,9 +10,9 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen X CUP | V.031";
+onLoadName					= "SME.Gen X CUP | V.040";
 OnLoadMission				= "Small Military Encounter Genenerator";
-loadScreen					= "images\sme_logo.paa";
+loadScreen					= "images\loadingscreen.paa";
 
 
 class Header

@@ -2,7 +2,7 @@
 <h2 align="center">SmallMilitaryEncounter Generator</h2>
 <p align="center">
     <a href="#">
-        <img src="https://img.shields.io/badge/SME.Gen-V.030-green.svg?style=flat-square" alt="SME.Gen: V.024">
+        <img src="https://img.shields.io/badge/SME.Gen-V.040-green.svg?style=flat-square" alt="SME.Gen: V.040">
     </a>
     <a href="#">
         <img src="http://img.shields.io/badge/Author-T--800a-blue.svg?style=flat-square" alt="Author: T-800a">
@@ -20,13 +20,6 @@ The intent of the mission is to have something similiar to an Domination / Invad
 ##### _SMEGen_CUP.Takistan
 - Default Enemy: CUP Takistan Army
 - Default Gear Set: CUP USMC
-- no ACE modules placed
-
-
-##### _SMEGen_ACE.Altis		
-- Default Enemy: Vanilla OPFOR Guerillas
-- Default Gear Set: Vanilla BLUFOR with ACE itmes
-- ACE modules placed in the Mission
 
 
 #### Mission Parameters
@@ -34,7 +27,8 @@ The intent of the mission is to have something similiar to an Domination / Invad
 - select a reward set
 - select the amount of simultaneous mission sites
 - select the AI skill level ( militia / regular / special forces ( for details check T8/config.hpp ))
-- seelct if you want to keep your gear after respawning
+- select if you want to keep your gear after respawning
+- select if you want vehicle patrols between objectives
 
 
 #### Vanilla Systems
@@ -43,13 +37,12 @@ The missions uss various vanilla systems:
 - BIS dynamic groups
 - BIS virtual arsenal
 - BIS respawn menu
-- ~~BIS revive~~ (why you so broken?! stopped working for me after 1.54)
 
 
 #### Additional Scrips
 And the mission uses some other scripts:
 - [T8-Units Script](https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/)
-- [FAR Revive](https://github.com/farooqaaa/far_revive) (but in [my own 'flavour'](https://forums.bistudio.com/topic/146926-farooqs-revive/?p=2526375) with some of the later sqf improvments, because BIS revie broke)
+- [FAR Revive](https://github.com/farooqaaa/far_revive) (but in [my own 'flavour'](https://forums.bistudio.com/topic/146926-farooqs-revive/?p=2526375) with some of the later sqf improvments)
 - [download data script](https://forums.bistudio.com/topic/157241-script-snippet-downlad-data-from-a-laptop/?hl=download%20data) (a bit updated version of my script)
 
 
@@ -89,8 +82,8 @@ A player ranks up with every succesfully completed task. With every new Rank the
 ##### Vehicles
 for completing a set of missions:
 - mobile HQ / mobile respawn
-- armed MRAP
-- armed (light) helicopter
+- armed light APC
+- armed light helicopter
 
 After completing two mission one vehicle will be spawned, starting with the MHQ. If one vehichle gets destoryed it will be respawned instead of spawning the next tiers vehicle. There won't be multiple iterations of the same vehicle. The reward vehicles can be found outside the Base in the Hangars.
 

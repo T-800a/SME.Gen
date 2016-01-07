@@ -26,12 +26,10 @@ class Mission
 		"CUP_AirVehciles_UH1Y",
 		"CUP_Creatures_Military_USMC",
 		"CUP_AirVehicles_UH60",
-		"3DEN",
 		"cup_takistan_config"
 	};
 	addOnsAuto[]=
 	{
-		"3DEN",
 		"a3_modules_f_curator_curator",
 		"CUP_Creatures_Military_USMC",
 		"A3_Modules_F_Multiplayer",
@@ -48,7 +46,7 @@ class Mission
 	randomSeed=5609333;
 	class Intel
 	{
-		briefingName="CO20 | SME.Gen X CUP | infantry focused COOP | V.031";
+		briefingName="CO20 | SME.Gen X CUP | infantry focused COOP | V.040";
 		overviewText="T-800a";
 		resistanceWest=0;
 		resistanceEast=1;

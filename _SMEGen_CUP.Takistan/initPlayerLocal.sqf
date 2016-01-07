@@ -16,7 +16,8 @@
 // initialize BIS Dynamic Groups
 waitUntil { !isNil "bis_fnc_init" };
 waitUntil { !isNull player AND { isPlayer player } AND { alive player }};
+
 [ "InitializePlayer", [ player ]] call BIS_fnc_dynamicGroups;  
 
-
+[] spawn T8SME_INIT_fnc_client;
 

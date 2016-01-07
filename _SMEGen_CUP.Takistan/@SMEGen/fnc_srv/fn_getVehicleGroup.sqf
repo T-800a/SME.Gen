@@ -20,16 +20,16 @@ params [[ "_type", "ERROR", [""]], [ "_group", "ERROR", [""]]];
 if ( _type isEqualTo "ERROR" ) exitWith { nil };
 if ( _group isEqualTo "ERROR" ) exitWith { nil };
 
-private _return			= false;
+private _return			= true;
 private _vehicleGroup	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _group >> "vehicleGroup" );
 
 if ( _type isEqualTo "ERROR" ) exitWith { _return };
 
 switch ( _vehicleGroup ) do
 {
-	case 0 :	{ _return = false; };
-	case 1 :	{ _return = true; };
-	default		{ _return = false; };
+	case 0 :	{ _return = true; };
+	case 1 :	{ _return = false; };
+	default		{ _return = true; };
 };
 
 // return
