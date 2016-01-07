@@ -24,7 +24,7 @@
  =======================================================================================================================
 */
 
-waitUntil { sleep 0.5; !isNil "T8SME_server_var_INITparams" };
+waitUntil { sleep 0.5; !isNil "T8SME_param_INIT" };
 
 if !( FAR_isEnabled ) exitWith {};
 
@@ -35,7 +35,7 @@ if !( FAR_isEnabled ) exitWith {};
 // FAR_RequireFAK				= false;
 
 FAR_ReviveAllowCAM				= true;
-FAR_SaveGearWhenUnconscious		= T8SME_server_var_keepRespawnLoadout;
+FAR_SaveGearWhenUnconscious		= T8SME_param_keepRespawnLoadout;
 FAR_EnableDeathMessages			= true;
 FAR_AllowSUICIDE				= true;
 FAR_DamageModifier				= 0.80;

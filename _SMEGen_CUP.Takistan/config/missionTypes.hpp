@@ -45,6 +45,7 @@ class missionTypes
 				units[] 		= { "SQUADLEADER", "LIGHTMG", "LIGHTMG", "HEAVYMG", "CORPSMAN", "ANTITANK", "CORPSMAN", "ANTIPERSON", "GRENADIER", "RIFLEMAN", "RIFLEMAN" };
 				unitsFiller[] 	= { "RIFLEMAN", "RIFLEMAN", "RIFLEMAN", "GRENADIER" };
 				task			= "GARRISON";
+				vehicleGroup	= 0;
 			};
 			
 			class base_defend 
@@ -53,6 +54,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "CORPSMAN", "HEAVYMG", "LIGHTMG", "LIGHTMG", "RIFLEMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND";
+				vehicleGroup	= 0;
 			};
 			
 			class base_defend_small
@@ -61,6 +63,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "CORPSMAN", "RIFLEMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND";
+				vehicleGroup	= 0;
 			};
 			
 			class base_defendBase
@@ -69,6 +72,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "SQUADLEADER", "CORPSMAN", "CORPSMAN", "HEAVYMG", "LIGHTMG", "LIGHTMG", "MARKSMAN", "ANTITANK", "ANTIPERSON", "GRENADIER", "GRENADIER", "RIFLEMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND_BASE";
+				vehicleGroup	= 0;
 			};
 			
 			class base_defendBase_small 
@@ -77,6 +81,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "CORPSMAN", "RIFLEMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "DEFEND_BASE";
+				vehicleGroup	= 0;
 			};
 			
 			class base_squad 
@@ -85,6 +90,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "HEAVYMG", "LIGHTMG", "CORPSMAN", "ANTIPERSON", "MARKSMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "PATROL";
+				vehicleGroup	= 0;
 			};
 			
 			class base_fireteam 
@@ -93,6 +99,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "LIGHTMG", "ANTIPERSON" };
 				unitsFiller[] 	= {  "GRENADIER", "CORPSMAN", "CORPSMAN", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "PATROL";
+				vehicleGroup	= 0;
 			};
 			
 			class base_vehicle 
@@ -101,6 +108,34 @@ class missionTypes
 				units[]			= { "OFFROAD_A", "OFFROAD_A" };
 				unitsFiller[] 	= {};
 				task			= "PATROL";
+				vehicleGroup	= 1;
+			};
+			
+			class base_APC_small 
+			{
+				scope			= 0;
+				units[]			= { "APC_SMALL" };
+				unitsFiller[] 	= {};
+				task			= "PATROL_URBAN";
+				vehicleGroup	= 1;
+			};
+			
+			class base_APC_medium 
+			{
+				scope			= 0;
+				units[]			= { "APC_MEDIUM" };
+				unitsFiller[] 	= {};
+				task			= "PATROL_URBAN";
+				vehicleGroup	= 1;
+			};
+			
+			class base_APC_heavy 
+			{
+				scope			= 0;
+				units[]			= { "APC_HEAVY" };
+				unitsFiller[] 	= {};
+				task			= "PATROL_URBAN";
+				vehicleGroup	= 1;
 			};
 			
 			class base_attackFireteam 
@@ -109,6 +144,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "LIGHTMG", "ANTITANK" };
 				unitsFiller[] 	= {  "GRENADIER", "CORPSMAN", "CORPSMAN", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "ATTACK";
+				vehicleGroup	= 0;
 			};
 			
 			class base_attackSquad 
@@ -117,6 +153,7 @@ class missionTypes
 				units[]			= { "SQUADLEADER", "HEAVYMG", "LIGHTMG", "CORPSMAN", "ANTITANK", "MARKSMAN" };
 				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "ATTACK";
+				vehicleGroup	= 0;
 			};
 		};
 	};
@@ -627,7 +664,7 @@ class missionTypes
 
 	class attack : base_type
 	{
-		scope		= 1;
+		scope		= 0;
 		name		= "Attack";
 		task		= "Attack";
 		taskShort	= "Attack";
@@ -639,6 +676,54 @@ class missionTypes
 			class group01 : base_attackFireteam { scope = 1; };
 			class group02 : base_attackFireteam { scope = 1; };
 			class group03 : base_attackFireteam { scope = 1; };
+		};
+	};
+	
+	class vehicle_patrol_small : base_type
+	{
+		scope		= 0;
+		name		= "Vehicle Patrol Small";
+		task		= "Vehicle Patrol Small";
+		taskShort	= "Vehicle Patrol Small";
+		
+		class conditions {};
+
+		class groups : groups
+		{
+			class group01 : base_APC_small { scope = 1; };
+			class group02 : base_APC_small { scope = 1; };
+		};
+	};
+	
+	class vehicle_patrol_medium : base_type
+	{
+		scope		= 0;
+		name		= "Vehicle Patrol Medium";
+		task		= "Vehicle Patrol Medium";
+		taskShort	= "Vehicle Patrol Medium";
+		
+		class conditions {};
+
+		class groups : groups
+		{
+			class group01 : base_APC_small { scope = 1; };
+			class group02 : base_APC_medium { scope = 1; };
+		};
+	};
+	
+	class vehicle_patrol_heavy : base_type
+	{
+		scope		= 0;
+		name		= "Vehicle Patrol Heavy";
+		task		= "Vehicle Patrol Heavy";
+		taskShort	= "Vehicle Patrol Heavy";
+		
+		class conditions {};
+
+		class groups : groups
+		{
+			class group01 : base_APC_medium { scope = 1; };
+			class group02 : base_APC_heavy { scope = 1; };
 		};
 	};
 };

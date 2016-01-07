@@ -56,9 +56,12 @@
 			addFunction(createRoadblock);
 			addFunction(createRoadblockHouse);
 			addFunction(createSmallCamp);
+			addFunction(createVehiclePatrols);
+			addFunction(fillUnitArray);
 			addFunction(findObjectivePos);
 			addFunction(findObjectivePositions);
 			addFunction(getVehicleClass);
+			addFunction(getVehicleGroup);
 			addFunction(handleConditions);
 			addFunction(handleDisplays);
 			addFunction(handleFollowingTask);

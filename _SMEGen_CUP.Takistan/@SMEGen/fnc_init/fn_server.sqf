@@ -16,7 +16,7 @@ if !(isServer) exitWith {};
 #include <..\MACRO.hpp>
 
 // wait for Parameters
-waitUntil { !isNil "T8SME_server_var_INITparams" };
+waitUntil { !isNil "T8SME_param_INIT" };
 
 // we need T8Units to be initializes for SME.Gen
 waitUntil { !isNil "T8U_var_InitDONE" };

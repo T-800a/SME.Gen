@@ -74,7 +74,7 @@ _varName		= "NO_VAR_SET";
 _varName02		= "NO_VAR_SET";
 
 // get the faction
-_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_server_var_enemyFaction >> "spawnUnitsSide" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_param_enemyFaction >> "spawnUnitsSide" );
 
 switch ( _missionSideN ) do
 {
@@ -84,7 +84,7 @@ switch ( _missionSideN ) do
 	default		{ _missionSide = WEST;			_missionSideString = "WEST" };
 };
 
-switch ( T8SME_server_var_playerFaction ) do
+switch ( T8SME_param_playerFaction ) do
 {
 	case 0 :	{ _missionPlayerSide = EAST;		_missionPlayerSideString = "EAST"; };
 	case 1 :	{ _missionPlayerSide = WEST;		_missionPlayerSideString = "WEST"; };
@@ -267,39 +267,13 @@ __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 _index = 0;
 
 {
-	private [ "_task", "_units", "_unitsFiller", "_subArray" ];
+	private [ "_task", "_units", "_filler", "_subArray", "_vehicleGroup" ];
 	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "task" );
 	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "units" );
-	_unitsFiller	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "unitsFiller" );
+	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "unitsFiller" );
+	_vehicleGroup	= [ _missionType, _x ] call T8SME_server_fnc_getVehicleGroup;
 	
-	// if filler units available adjust groupsize on playercount
-	if ( count _unitsFiller > 0 ) then 
-	{
-		private [ "_playerCount", "_groupCount", "_mod" ];
-		_playerCount = if ( isMultiplayer ) then { count allPlayers } else { count ( units ( group player ))};
-		_groupCount = count _units;
-		_mod = ceil(((( _playerCount /_modPlayer ) * 2 ) * (( _groupCount / _modGroup ) * 2 )) * 2 );
-		
-		/*
-			__DEBUG( __FILE__, "MOD GROUP SIZE: _playerCount", _playerCount );
-			__DEBUG( __FILE__, "MOD GROUP SIZE: _modPlayer", _modPlayer );
-			__DEBUG( __FILE__, "MOD GROUP SIZE: _groupCount", _groupCount );
-			__DEBUG( __FILE__, "MOD GROUP SIZE: _modGroup", _modGroup );
-			__DEBUG( __FILE__, "MOD GROUP SIZE: _mod", _mod );
-		*/
-		
-		for "_i" from 1 to _mod do
-		{
-			if ( _i > 32 ) exitWith {};
-			private [ "_filler" ];
-			_filler = _unitsFiller call BIS_fnc_selectRandom;
-			_units pushBack _filler;
-			__DEBUG( __FILE__, "ADD UNIT TO GROUP", _filler );
-		};
-		
-		__DEBUG( __FILE__, "____________NEW GROUP SIZE: _groupCount", count _units );
-	};
-	
+	_units = [ _units, _filler ] call T8SME_server_fnc_fillUnitArray;
 	_units = [ _units ] call T8SME_server_fnc_buildUnitArray;
 	
 	switch ( _task ) do
@@ -317,12 +291,12 @@ _index = 0;
 				_marker = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
 			};
 		
-			_subArray = [ [ _units,  _marker, _missionSide ], [ _task ], [ true, false, false ] ];	
+			_subArray = [[ _units,  _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]];	
 		};
 		
-		case "DEFEND" :			{ _subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ]; };
-		case "GARRISON" :		{ _subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ], [ true, false, false ] ]; };
-		default					{ _subArray = [ [ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide ], [ _task ] ]; };
+		case "DEFEND" :			{ _subArray = [[ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
+		case "GARRISON" :		{ _subArray = [[ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
+		default					{ _subArray = [[ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide, _vehicleGroup ], [ _task ]]; };
 	};
 	
 	__DEBUG( __FILE__, "GROUP ARRAY", _subArray );

@@ -35,7 +35,7 @@ _officer			= objNull;
 _i					= 0;
 
 // get the faction
-_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_server_var_enemyFaction >> "spawnUnitsSide" );
+_missionSideN	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_param_enemyFaction >> "spawnUnitsSide" );
 
 switch ( _missionSideN ) do
 {

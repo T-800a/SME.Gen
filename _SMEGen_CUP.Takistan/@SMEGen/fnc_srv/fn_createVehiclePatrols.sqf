@@ -4,7 +4,7 @@
 	SME.Gen - Small Military Encounter Genenerator
 	SERVER
 
-	File:		fn_createAttack.sqf
+	File:		fn_createVehiclePatrols.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 	
@@ -15,35 +15,29 @@ if !(isServer) exitWith {};
 
 #include <..\MACRO.hpp>
 
-private [	"_attackMarkerPos", "_objectPos", "_n", "_players", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
+private [	"_missionType", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
 			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN" ];
 
-params [ "_attackMarker" ];
+params [[ "_sites", [], [[]]]];
 
-_attackMarkerPos	= getMarkerPos _attackMarker;
-_objectPos			= [];
-_n					= 1;
-_players			= if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
+__DEBUG( __FILE__, "INIT", _this );
 
-__DEBUG( __FILE__, "_this", _this );
+if ( count _sites < 1 ) exitWith { false };
 
-while { count _objectPos < 1 } do
+private _markerArray	= [];
+private _players		= if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
+
+{ _markerArray pushBack ( getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "marker" )); false } count _sites;
+
+__DEBUG( __FILE__, "_markerArray", _markerArray );
+
+switch ( true ) do
 {
-	private [ "_relPos", "_tmpPos" ];
-	
-	_relPos = [ _attackMarkerPos, 1100, random 360 ] call BIS_fnc_relPos;
-	_tmpPos = _relPos findEmptyPosition [ 5, 50, "Land_VR_Block_02_F" ];
-	
-	if ( count _tmpPos > 1 AND { !surfaceIsWater _tmpPos } AND { ({( _tmpPos distance ( getPos _x )) < 900 } count _players ) < 1 } ) then { _objectPos = _tmpPos; };
-	if ( _n > 100 ) exitWith {};
-	_n = _n + 1;
+	case (( count _players ) <= 5 ):								{ _missionType = "vehicle_patrol_small"; };
+	case (( count _players ) > 5 AND ( count _players ) <= 10 ):	{ _missionType = "vehicle_patrol_medium"; };
+	case (( count _players ) > 10 ):								{ _missionType = "vehicle_patrol_heavy"; };
+	default															{ _missionType = "vehicle_patrol_small"; };
 };
-
-
-_markerName = format [ "%2_attack_%2", _attackMarker, diag_tickTime ];
-_spawnMarker = [ _markerName, _objectPos, "", [1,1], 0, "ICON", "empty" ] call T8SME_server_fnc_createMarker;
-T8SME_server_var_arrayCleanup pushBack _spawnMarker;
-
 
 
 // build unit array
@@ -51,7 +45,7 @@ _inf			= [];
 _arrayGroups	= [];
 _modPlayer		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModPlayer" );
 _modGroup		= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnModGroup" );
-_configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" );
+_configArrayGroups = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" );
 { _arrayGroups pushback ( configName _x ); false } count _configArrayGroups;
 
 // get the faction
@@ -69,15 +63,15 @@ __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 
 {
 	private [ "_task", "_units", "_filler", "_subArray", "_vehicleGroup" ];
-	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" >> _x >> "task" );
-	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" >> _x >> "units" );
-	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" >> _x >> "unitsFiller" );
+	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "task" );
+	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "units" );
+	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "unitsFiller" );
 	_vehicleGroup	= [ _missionType, _x ] call T8SME_server_fnc_getVehicleGroup;
-	
+
 	_units = [ _units, _filler ] call T8SME_server_fnc_fillUnitArray;
 	_units = [ _units ] call T8SME_server_fnc_buildUnitArray;
 	
-	_subArray = [ [ _units, _spawnMarker, _missionSide, _vehicleGroup ], [ _task, _attackMarker ]];
+	_subArray = [ [ _units, _markerArray, _missionSide, _vehicleGroup ], [ _task ]];
 	
 	_inf pushBack _subArray;
 

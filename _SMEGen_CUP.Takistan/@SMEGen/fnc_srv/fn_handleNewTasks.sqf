@@ -23,7 +23,7 @@ _arraySites			= [];
 _arraySitesFree		= [];
 _arraySitesUsed		= [];
 
-_amountSites = if ( _returnSite ) then { 1 } else { T8SME_server_var_amountSites; };
+_amountSites = if ( _returnSite ) then { 1 } else { T8SME_param_amountSites; };
 
 _configArraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName );
 
@@ -111,6 +111,8 @@ if ( _returnSite ) exitWith {( _arraySitesUsed select 0 )};
 	
 	false
 } count _arraySitesUsed;
+
+if ( T8SME_param_allowVehiclePatrols ) then { [ _arraySitesUsed ] call T8SME_server_fnc_createVehiclePatrols; };
 
 // return
 true

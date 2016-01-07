@@ -67,7 +67,7 @@ while { true } do
 	__DEBUG( __FILE__, "_allTasks > DONE", ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks ));
 
 	// start new tasks if needed	
-	if ( T8SME_server_var_amountSites isEqualTo  ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks )) then 
+	if ( T8SME_param_amountSites isEqualTo  ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks )) then 
 	{
 		// handle rewards
 		[] call T8SME_server_fnc_handleReward;

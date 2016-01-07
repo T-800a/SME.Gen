@@ -16,7 +16,7 @@ if !(hasInterface) exitWith {};
 #include <..\MACRO.hpp>
 
 // wait for Parameters
-waitUntil { !isNil "T8SME_server_var_INITparams" };
+waitUntil { !isNil "T8SME_param_INIT" };
 
 
 // check slots restrictions
@@ -36,7 +36,7 @@ waitUntil { !isNil "T8SME_server_var_INITparams" };
 
 
 // start map markers if enabled
-if ( T8SME_server_var_allowMapMarker ) then
+if ( T8SME_param_allowMapMarker ) then
 {
 	waitUntil {sleep 0.1; !(isNull (findDisplay 12))};
 	( ( findDisplay 12 ) displayCtrl 51 ) ctrlAddEventHandler [ "Draw", T8SME_client_fnc_drawMapIcons ];

@@ -30,7 +30,7 @@ switch ( _switch ) do
 	default				{ _class = "vehicles"; };
 };
 
-_return = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_server_var_enemyFaction >> _class >> _type );
+_return = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_param_enemyFaction >> _class >> _type );
 
 
 // return

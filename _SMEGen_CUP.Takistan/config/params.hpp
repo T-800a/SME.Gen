@@ -62,7 +62,14 @@ class Params
 		default		= 999;
 	};
 	
-	class param06 { title = "-"; };
+	class param06
+	{
+		title		= "Allow Vehicle Patrols";
+		values[]	= { 0,			1,			999 };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT" };
+		default		= 999;
+	};
+	
 	class param07 { title = "-"; };
 	class param08 { title = "-"; };
 	class param09 { title = "-"; };

@@ -64,7 +64,7 @@ if ( FAR_EnableDeathMessages ) then { [ [ _unit ], "FAR_fnc_broadcastDeath" ] sp
 // Save Loadout aeroson function
 if ( FAR_SaveGearWhenUnconscious ) then 
 {
-	if ( T8SME_server_var_keepRespawnLoadout AND { isNil "T8SME_client_var_playerLoadout" }) then 
+	if ( T8SME_param_keepRespawnLoadout AND { isNil "T8SME_client_var_playerLoadout" }) then 
 	{
 		T8SME_client_var_playerLoadout = ( _this select 0 ) call T8C_fnc_getGear;
 	};

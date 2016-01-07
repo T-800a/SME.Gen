@@ -16,7 +16,7 @@ if !(hasInterface) exitWith {};
 #include <..\MACRO.hpp>
 
 private [ "_itemSet" ];
-params [[ "_rank", T8SME_server_var_playerRewardSet, [""]]];
+params [[ "_rank", T8SME_param_playerRewardSet, [""]]];
 
 switch ( _rank ) do
 {
@@ -24,12 +24,12 @@ switch ( _rank ) do
 	default			{ _itemSet = T8SME_client_var_playerRank; };
 };
 
-_backpackCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_server_var_playerRewardSet >> _itemSet >> "BackpackReward" );
-_itemCargo		= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_server_var_playerRewardSet >> _itemSet >> "ItemReward" );
-_magazineCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_server_var_playerRewardSet >> _itemSet >> "MagazineReward" );
-_weaponCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_server_var_playerRewardSet >> _itemSet >> "WeaponReward" );
+_backpackCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> _itemSet >> "BackpackReward" );
+_itemCargo		= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> _itemSet >> "ItemReward" );
+_magazineCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> _itemSet >> "MagazineReward" );
+_weaponCargo	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> _itemSet >> "WeaponReward" );
 
-__DEBUG( __FILE__,"T8SME_server_var_playerRewardSet", T8SME_server_var_playerRewardSet );
+__DEBUG( __FILE__,"T8SME_param_playerRewardSet", T8SME_param_playerRewardSet );
 __DEBUG( __FILE__,"_itemSet", _itemSet );
 __DEBUG( __FILE__,"_backpackCargo", _backpackCargo );
 __DEBUG( __FILE__,"_itemCargo", _itemCargo );

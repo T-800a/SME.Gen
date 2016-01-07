@@ -44,8 +44,13 @@ class missionFactions
 			ANTIAIR				= "O_Soldier_AA_F";
 			GRENADIER			= "O_Soldier_GL_F";
 			RIFLEMAN			= "O_Soldier_F";
+			
 			OFFROAD				= "O_MRAP_02_F";
 			OFFROAD_A			= "O_MRAP_02_hmg_F";
+			
+			APC_SMALL			= "O_MRAP_02_hmg_F":
+			APC_MEDIUM			= "O_APC_Wheeled_02_rcws_F":
+			APC_HEAVY			= "O_APC_Tracked_02_cannon_F":
 		};
 		
 		class vehicles
@@ -66,7 +71,7 @@ class missionFactions
 	
 	class vanilla_OPFOR : base_faction {};
 	
-	class vanilla_OPFOR_URBAN : base_faction
+	class vanilla_OPFOR_URBAN : vanilla_OPFOR
 	{
 		class units : units
 		{
@@ -84,7 +89,7 @@ class missionFactions
 		};
 	};	
 	
-	class vanilla_OPFOR_GUER : base_faction
+	class vanilla_OPFOR_GUER : vanilla_OPFOR
 	{
 		class units : units
 		{
@@ -125,8 +130,13 @@ class missionFactions
 			ANTIAIR		 		= "I_Soldier_AA_F";
 			GRENADIER	 		= "I_Soldier_GL_F";
 			RIFLEMAN	 		= "I_Soldier_F";
+			
 			OFFROAD		 		= "I_MRAP_03_F";
 			OFFROAD_A	 		= "I_MRAP_03_hmg_F";
+			
+			APC_SMALL			= "I_MRAP_03_hmg_F":
+			APC_MEDIUM			= "I_APC_Wheeled_03_cannon_F":
+			APC_HEAVY			= "I_APC_tracked_03_cannon_F":
 		};
 		
 		class vehicles : vehicles
@@ -137,7 +147,7 @@ class missionFactions
 		};
 	};
 	
-	class vanilla_INDEP_GUER : base_faction
+	class vanilla_INDEP_GUER : vanilla_INDEP
 	{
 		spawnUnitsSide = GRNFOR;
 		
@@ -155,6 +165,7 @@ class missionFactions
 			ANTIAIR		 		= "I_G_Soldier_LAT_F";
 			GRENADIER	 		= "I_G_Soldier_GL_F";
 			RIFLEMAN	 		= "I_G_Soldier_F";
+			
 			OFFROAD		 		= "I_G_Offroad_01_F";
 			OFFROAD_A	 		= "I_G_Offroad_01_armed_F";
 		};
@@ -189,8 +200,13 @@ class missionFactions
 			ANTIAIR		 		= "CUP_O_TK_Soldier_AA";
 			GRENADIER	 		= "CUP_O_TK_Soldier_GL";
 			RIFLEMAN	 		= "CUP_O_TK_Soldier";
+			
 			OFFROAD		 		= "CUP_O_UAZ_Open_TKA";
 			OFFROAD_A	 		= "CUP_O_UAZ_MG_TKA";
+			
+			APC_SMALL			= "CUP_O_BRDM2_TKA":
+			APC_MEDIUM			= "CUP_O_BTR90_TKA":
+			APC_HEAVY			= "CUP_O_BMP2_TKA":
 		};
 		
 		class vehicles : vehicles

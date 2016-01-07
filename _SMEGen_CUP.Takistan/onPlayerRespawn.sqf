@@ -35,7 +35,7 @@ if ( isMultiplayer ) then
 		_newUnit unlinkItem "NVGoggles_INDEP";
 	} else {
 	
-		if ( T8SME_server_var_keepRespawnLoadout AND { !isNil "T8SME_client_var_playerLoadout" }) then 
+		if ( T8SME_param_keepRespawnLoadout AND { !isNil "T8SME_client_var_playerLoadout" }) then 
 		{
 			[ _newUnit, T8SME_client_var_playerLoadout ] call T8C_fnc_setGear;
 			T8SME_client_var_playerLoadout = nil;

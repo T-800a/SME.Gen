@@ -15,34 +15,34 @@ private [ "_AIskill" ];
 // faction used to spawn enemy units
 switch ( paramsArray select 0 ) do
 {
-	case 0 :	{ T8SME_server_var_enemyFaction = "vanilla_OPFOR"; };
-	case 1 :	{ T8SME_server_var_enemyFaction = "vanilla_OPFOR_URBAN"; };
-	case 2 :	{ T8SME_server_var_enemyFaction = "vanilla_OPFOR_GUER"; };
-	case 3 :	{ T8SME_server_var_enemyFaction = "vanilla_INDEP"; };
-	case 4 :	{ T8SME_server_var_enemyFaction = "vanilla_INDEP_GUER"; };
-	case 5 :	{ T8SME_server_var_enemyFaction = "CUP_OPFOR_TAKarmy"; };
-	default		{ T8SME_server_var_enemyFaction = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" ); };
+	case 0 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR"; };
+	case 1 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR_URBAN"; };
+	case 2 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR_GUER"; };
+	case 3 :	{ T8SME_param_enemyFaction = "vanilla_INDEP"; };
+	case 4 :	{ T8SME_param_enemyFaction = "vanilla_INDEP_GUER"; };
+	case 5 :	{ T8SME_param_enemyFaction = "CUP_OPFOR_TAKarmy"; };
+	default		{ T8SME_param_enemyFaction = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" ); };
 };
 
 // reward / gearset
 switch ( paramsArray select 1 ) do
 {
-	case 0 :	{ T8SME_server_var_playerRewardSet = "vanilla_BLUFOR"; };
-	case 1 :	{ T8SME_server_var_playerRewardSet = "vanilla_BLUFOR_ACE"; };
-	case 2 :	{ T8SME_server_var_playerRewardSet = "CUP_BLUFOR_USMC"; };
+	case 0 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR"; };
+	case 1 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR_ACE"; };
+	case 2 :	{ T8SME_param_playerRewardSet = "CUP_BLUFOR_USMC"; };
 
-	case 900 :	{ T8SME_server_var_playerRewardSet = "vanilla_fullArsenal"; };
-	default		{ T8SME_server_var_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
+	case 900 :	{ T8SME_param_playerRewardSet = "vanilla_fullArsenal"; };
+	default		{ T8SME_param_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
 };
 
 // Simultaneous Mission Sites
 switch ( paramsArray select 2 ) do
 {
-	case 0 :	{ T8SME_server_var_amountSites = 1; };
-	case 1 :	{ T8SME_server_var_amountSites = 2; };
-	case 2 :	{ T8SME_server_var_amountSites = 3; };
-	case 3 :	{ T8SME_server_var_amountSites = 4; };
-	default		{ T8SME_server_var_amountSites = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" ); };
+	case 0 :	{ T8SME_param_amountSites = 1; };
+	case 1 :	{ T8SME_param_amountSites = 2; };
+	case 2 :	{ T8SME_param_amountSites = 3; };
+	case 3 :	{ T8SME_param_amountSites = 4; };
+	default		{ T8SME_param_amountSites = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" ); };
 };
 
 // AI Skill
@@ -59,21 +59,29 @@ T8U_var_Presets = [[ _AIskill, 1 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];
 // Keep Loadout After Respawn
 switch ( paramsArray select 4 ) do
 {
-	case 0 :	{ T8SME_server_var_keepRespawnLoadout = true; };
-	case 1 :	{ T8SME_server_var_keepRespawnLoadout = false; };
-	default		{ T8SME_server_var_keepRespawnLoadout = true; };
+	case 0 :	{ T8SME_param_keepRespawnLoadout = true; };
+	case 1 :	{ T8SME_param_keepRespawnLoadout = false; };
+	default		{ T8SME_param_keepRespawnLoadout = true; };
 };
 
 // Show Map Marker for Players and Vehicles
 switch ( paramsArray select 5 ) do
 {
-	case 0 :	{ T8SME_server_var_allowMapMarker = true; };
-	case 1 :	{ T8SME_server_var_allowMapMarker = false; };
-	default		{ T8SME_server_var_allowMapMarker = true; };
+	case 0 :	{ T8SME_param_allowMapMarker = true; };
+	case 1 :	{ T8SME_param_allowMapMarker = false; };
+	default		{ T8SME_param_allowMapMarker = true; };
+};
+
+// Allow Vehicle Patrols
+switch ( paramsArray select 6 ) do
+{
+	case 0 :	{ T8SME_param_allowVehiclePatrols = true; };
+	case 1 :	{ T8SME_param_allowVehiclePatrols = false; };
+	default		{ T8SME_param_allowVehiclePatrols = true; };
 };
 
 // faction used by the players (set in the cfgRandomMissions.hpp)
-T8SME_server_var_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
+T8SME_param_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
 
 
 
@@ -127,4 +135,4 @@ switch ( paramsArray select 25 ) do
 };
 
 // other scripts can check this 
-T8SME_server_var_INITparams = true;
+T8SME_param_INIT = true;

@@ -22,7 +22,7 @@ _returnArray	= [];
 
 {
 	private [ "_class" ];
-	_class = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_server_var_enemyFaction >> "units" >> _x );
+	_class = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionFactions" >> T8SME_param_enemyFaction >> "units" >> _x );
 	_returnArray pushBack _class;
 	false
 } count _originArray;
