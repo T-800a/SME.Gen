@@ -29,24 +29,6 @@ CIVILIAN setFriend [ WEST, 1 ];
 CIVILIAN setFriend [ EAST, 1 ];
 CIVILIAN setFriend [ RESISTANCE, 1 ];
 
-// Hide markers
-// { _x setMarkerAlpha 0; } count [ "opfor_kata", "opfor_poli", "opfor_ther" ];
-
-waitUntil { !isNil "bis_fnc_init" };
-waitUntil { !isNil "ASC_NH_var_initDONE" };
-
-
-////// ONLY Client
-//if ( ! isDedicated  ) then { [] execVM "init_client.sqf"; };
-// NEW -> initPlayerLocal.sqf
-
-////// ONLY Server
-// if ( isServer ) then { [] execVM "init_server.sqf"; };
-// NEW -> initServer.sqf
-
-
-////// Client AND Server
-
 
 
 
