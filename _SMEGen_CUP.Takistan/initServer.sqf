@@ -12,18 +12,16 @@
 
 #include <initParams.sqf>
 
+
+// initialize BIS Dynamic Groups
 waitUntil { !isNil "bis_fnc_init" };
+[ "Initialize" ] call BIS_fnc_dynamicGroups; 
 
 
-// initialize BIS Dynamic Groups 
-["Initialize"] call BIS_fnc_dynamicGroups; 
-
-
-// initialize locations (mostly build BLUFOR HQ)
+// initialize locations ( mostly build BLUFOR HQ structures )
 [] execVM "locations\init.sqf";
 
 
-
 // initialize garbage collecting ( bodies / wrecks now handled via BIS/description )
-sleep 60; [] execVM "scripts\garbageCollector.sqf";
+[] execVM "scripts\garbageCollector.sqf";
 

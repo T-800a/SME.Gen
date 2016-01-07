@@ -97,7 +97,6 @@ while { true } do
 	};
 
 // remove EmptyDetector (-dead- triggers)
-	
 	{
 		{
 			if (( _x distance [ 0, 0, 0 ] ) < 1 ) then { deleteVehicle _x; };
