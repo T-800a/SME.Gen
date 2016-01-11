@@ -72,7 +72,7 @@ __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" >> _x >> "task" );
 	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" >> _x >> "units" );
 	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> "attack" >> "groups" >> _x >> "unitsFiller" );
-	_vehicleGroup	= [ _missionType, _x ] call T8SME_server_fnc_getVehicleGroup;
+	_vehicleGroup	= [ "attack", _x ] call T8SME_server_fnc_getVehicleGroup;
 	
 	_units = [ _units, _filler ] call T8SME_server_fnc_fillUnitArray;
 	_units = [ _units ] call T8SME_server_fnc_buildUnitArray;

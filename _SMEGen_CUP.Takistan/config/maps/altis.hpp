@@ -644,4 +644,178 @@ class Altis : base_map
 		position[]	= { 12996.3, 18187.1, 0 };
 	};
 
+
+
+// --------------------------------------------------------------
+// missionSites - FIELD POSITIONS
+	
+	class field_katalakibay_SSE : base_field 
+	{
+		scope = 1;
+		name = "SSE of Katalaki Bay";
+		marker = "site_field_katalakibay_SSE";
+		position[] = { 12391.9, 13270.5, 0 };
+	};
+
+	class field_therisa_ENE : base_field 
+	{
+		scope = 1;
+		name = "ENE of Therisa";
+		marker = "site_field_therisa_ENE";
+		position[] = { 11222.9, 12423.2, 0 };
+	};
+
+	class field_poliakko_SW : base_field 
+	{
+		scope = 1;
+		name = "SW of Poliakko";
+		marker = "site_field_poliakko_SW";
+		position[] = { 10480.9, 13030.2, 0 };
+	};
+
+	class field_poliakko_N : base_field 
+	{
+		scope = 1;
+		name = "N of Poliakko";
+		marker = "site_field_poliakko_N";
+		position[] = { 10933.9, 13968.5, 0 };
+	};
+
+	class field_alikampos_NNW : base_field 
+	{
+		scope = 1;
+		name = "NNW of Alikampos";
+		marker = "site_field_alikampos_NNW";
+		position[] = { 10973.4, 15233.4, 0 };
+	};
+
+	class field_factory_WNW : base_field 
+	{
+		scope = 1;
+		name = "WNW of factory";
+		marker = "site_field_factory_WNW";
+		position[] = { 11935.5, 16524.3, 0 };
+	};
+
+	class field_orino_SSE : base_field 
+	{
+		scope = 1;
+		name = "SSE of Orino";
+		marker = "site_field_orino_SSE";
+		position[] = { 10678.3, 16579.8, 0 };
+	};
+
+	class field_orino_NNE : base_field 
+	{
+		scope = 1;
+		name = "NNE of Orino";
+		marker = "site_field_orino_NNE";
+		position[] = { 10739.8, 17956.3, 0 };
+	};
+
+	class field_koroni_WNW : base_field 
+	{
+		scope = 1;
+		name = "WNW of Koroni";
+		marker = "site_field_koroni_WNW";
+		position[] = { 11131.3, 18573.1, 0 };
+	};
+
+	class field_ifestiona_WSW : base_field 
+	{
+		scope = 1;
+		name = "WSW of Ifestiona";
+		marker = "site_field_ifestiona_WSW";
+		position[] = { 12339.1, 19405.9, 0 };
+	};
+
+	class field_frini_WNW : base_field 
+	{
+		scope = 1;
+		name = "WNW of Frini";
+		marker = "site_field_frini_WNW";
+		position[] = { 13583.7, 21472.6, 0 };
+	};
+
+	class field_frini_N : base_field 
+	{
+		scope = 1;
+		name = "N of Frini";
+		marker = "site_field_frini_N";
+		position[] = { 14568, 21523.1, 0 };
+	};
+
+	class field_agiatriada_WSW : base_field 
+	{
+		scope = 1;
+		name = "WSW of Agia Triada";
+		marker = "site_field_agiatriada_WSW";
+		position[] = { 15535.3, 19852.9, 0 };
+	};
+
+	class field_kalithea_SSW : base_field 
+	{
+		scope = 1;
+		name = "SSW of Kalithea";
+		marker = "site_field_kalithea_SSW";
+		position[] = { 17602.2, 17691.1, 0 };
+	};
+
+	class field_anthrakia_ESE : base_field 
+	{
+		scope = 1;
+		name = "ESE of Anthrakia";
+		marker = "site_field_anthrakia_ESE";
+		position[] = { 17275.2, 15906.1, 0 };
+	};
+
+	class field_mine_WNW : base_field 
+	{
+		scope = 1;
+		name = "WNW of mine";
+		marker = "site_field_mine_WNW";
+		position[] = { 18310.9, 14383.6, 0 };
+	};
+
+	class field_dorida_SW : base_field 
+	{
+		scope = 1;
+		name = "SW of Dorida";
+		marker = "site_field_dorida_SW";
+		position[] = { 18984.5, 12804.6, 0 };
+	};
+
+	class field_dorida_ENE : base_field 
+	{
+		scope = 1;
+		name = "ENE of Dorida";
+		marker = "site_field_dorida_ENE";
+		position[] = { 20300.7, 13596.3, 0 };
+	};
+
+	class field_limni_ENE : base_field 
+	{
+		scope = 1;
+		name = "ENE of Limni";
+		marker = "site_field_limni_ENE";
+		position[] = { 21246.2, 14894.4, 0 };
+	};
+
+	class field_kalochori_WSW : base_field 
+	{
+		scope = 1;
+		name = "WSW of Kalochori";
+		marker = "site_field_kalochori_WSW";
+		position[] = { 20803.2, 16011.8, 0 };
+	};
+
+	class field_agiospetros_SE : base_field 
+	{
+		scope = 1;
+		name = "SE of Agios Petros";
+		marker = "site_field_agiospetros_SE";
+		position[] = { 19862.4, 17113.3, 0 };
+	};
+
+	// END
 };

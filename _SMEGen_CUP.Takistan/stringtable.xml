@@ -291,6 +291,16 @@
 		<Key ID="STR_SMEGen_type_getIntel_desc">
 			<Original>We have located a enemie surveillance camp in the #__LOCATION__#. Your task is to get into the camp and download all gathered data for our intelligence service.</Original>
 		</Key>
+		
+		<Key ID="STR_SMEGen_type_heliCrash_shrt">
+			<Original>Investigate Crashsite</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_heliCrash_task">
+			<Original>Investigate the Helicopter Crashsite</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_heliCrash_desc">
+			<Original>Investigate the helicopter crashsite near #__LOCATION__#. Your task is to find the helicopters black-box.</Original>
+		</Key>
 	</Package>
 	
 	

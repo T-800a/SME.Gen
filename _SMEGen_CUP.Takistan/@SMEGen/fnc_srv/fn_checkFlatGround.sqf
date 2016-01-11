@@ -15,15 +15,22 @@ if !(isServer) exitWith {};
 
 #include <..\MACRO.hpp>
 
-private [ "_normal", "_check", "_return" ];
+private [ "_check", "_return" ];
 
-params [ "_pos" ];
+params [
+	[ "_pos", [], [[]]],
+	[ "_level", "FLAT", [""]]
+];
 
-_normal		= surfaceNormal _pos;
-_check		= ( _normal select 2 ) * 1000;
+_check		= (( surfaceNormal _pos ) select 2 ) * 1000;
 
-
-_return = if ( _check > 985 ) then { true } else { false };
+switch ( _level ) do
+{
+	case "STEEP" :	{ _return = if ( _check > 900 ) then { true } else { false }; };
+	case "LIGHT" :	{ _return = if ( _check > 950 ) then { true } else { false }; };
+	case "FLAT" :	{ _return = if ( _check > 985 ) then { true } else { false }; };
+	default			{ _return = if ( _check > 985 ) then { true } else { false }; };
+};
 
 
 // Return

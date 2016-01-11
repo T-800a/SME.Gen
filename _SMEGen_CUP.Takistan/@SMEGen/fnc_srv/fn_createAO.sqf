@@ -241,6 +241,17 @@ switch ( _type ) do
 		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
+	case "heliCrash":
+	{
+		private [ "_obj" ];
+		_obj = [ _sitePos, _range ] call T8SME_server_fnc_createHeliCrash; 
+		
+		[ _obj ] remoteExec [ "T8SME_client_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_heliCrash_actionID_%1", _siteMkr ]) ];
+
+		_varName = format [ "OBJECTIVE_heliCrash_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
 	default {};
 };
 

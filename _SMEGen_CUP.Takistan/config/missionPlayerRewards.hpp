@@ -81,7 +81,7 @@ class missionPlayerRewards
 		};
 	};
 	
-	class vanilla_fullArsenal : vanilla_BLUFOR { fullArsenal = 0; };
+	class vanilla_fullArsenal : vanilla_BLUFOR { fullArsenal = 1; };
 
 
 

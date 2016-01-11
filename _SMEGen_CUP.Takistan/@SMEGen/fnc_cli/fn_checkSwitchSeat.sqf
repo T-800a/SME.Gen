@@ -33,10 +33,11 @@ hint str _this;
 if ( isNull _unit1 AND isNull _unit2 ) exitWith {};
 if ( isNull _vehicle ) exitWith {};
 
-_type = _vehicle getVariable [ "T8SME_client_var_isRestrictedVehicle", "" ];
+_type		= _vehicle getVariable [ "T8SME_client_var_isRestrictedVehicle", "" ];
+_classes	= getArray	( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> _type );
+
 if ( _type isEqualTo "" ) exitWith {};
-_classes = getArray	( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> _type );
-if ( count _classes < 1 ) exitWith {};
+if (( count _classes ) isEqualTo 0 ) exitWith {};
 
 if (( _unit1 isEqualTo player ) OR ( _unit2 isEqualTo player )) then
 {
@@ -45,6 +46,7 @@ if (( _unit1 isEqualTo player ) OR ( _unit2 isEqualTo player )) then
 	if ( _whiteListCheck ) exitWith {};
 
 	_position = assignedVehicleRole player;
+	
 	if ( _position isEqualTo "cargo" ) exitWith {};
 
 	_msg = localize "STR_SMEGen_vehicleRestricted";

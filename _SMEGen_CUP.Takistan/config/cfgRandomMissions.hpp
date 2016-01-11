@@ -30,17 +30,20 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "vanilla_OPFOR_GUER";
-		
+		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
+
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "vanilla_BLUFOR_ACE";
+		playerRewardSet				= "CUP_BLUFOR_USMC";
+
+
+	// missions "won" needed for new vehicle 
+		serverRewardSuccesses		= 3;
 
 
 	// amount of spawned mission AOs
-
 		spawnedSitesCount			= 2;
 
 
@@ -55,7 +58,7 @@ class cfgRandomMissions
 	//
 	// _mod = ceil(((( _playerCount / !spawnModPlayer! ) * 2 ) * (( _groupCount / !spawnModGroup! ) * 2 )) * 2 );
 	//
-	
+
 		spawnModPlayer				= 5;
 		spawnModGroup				= 15;
 

@@ -30,15 +30,23 @@ if !(isServer) exitWith {};
 
 #include <..\MACRO.hpp>
 
-private [ "_skip", "_classReward01", "_classReward02", "_classReward03", "_restrictionReward01", "_restrictionReward02", "_restrictionReward03" ];
+private _amount					= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "serverRewardSuccesses" );
+private _succsesses				= __GetMVAR( "T8SME_server_var_missionSuccesses", 1 );
 
-_classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward01" );
-_classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward02" );
-_classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward03" );
+__DEBUG( __FILE__, "_succsesses", _succsesses );
+__DEBUG( __FILE__, "_amount", _amount );
 
-_restrictionReward01	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction01" );
-_restrictionReward02	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction02" );
-_restrictionReward03	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
+if ( _succsesses < _amount ) exitWith { __SetMVAR( "T8SME_server_var_missionSuccesses", ( _succsesses + 1 )); };
+
+__SetMVAR( "T8SME_server_var_missionSuccesses", 1 );
+
+private _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward01" );
+private _classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward02" );
+private _classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward03" );
+
+private _restrictionReward01	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction01" );
+private _restrictionReward02	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction02" );
+private _restrictionReward03	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
 
 __DEBUG( __FILE__, "_classReward01", _classReward01 );
 __DEBUG( __FILE__, "_classReward02", _classReward02 );
@@ -48,7 +56,7 @@ __DEBUG( __FILE__, "_restrictionReward01", _restrictionReward01 );
 __DEBUG( __FILE__, "_restrictionReward02", _restrictionReward02 );
 __DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
 
-_skip = false;
+private _skip = false;
 
 if ((( isNull T8SME_server_var_objectReward01 ) AND ( isNull T8SME_server_var_objectReward02 ) AND ( isNull T8SME_server_var_objectReward03 )) OR { !alive T8SME_server_var_objectReward01 }) then
 {

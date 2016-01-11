@@ -35,9 +35,10 @@ _arraySites = "(( getNumber ( _x >> 'scope' )) > 0 )" configClasses ( missionCon
 	switch ( _siteType ) do
 	{
 		case "town" :		{ _icon = "loc_Fuelstation"; _color = "colorCivilian"; _siteAngle = -90; };
-		case "military" :	{ _icon = "loc_Fortress"; _color = "colorOPFOR"; _siteAngle = -90;  };
-		case "compound" :	{ _icon = "loc_Bunker"; _color = "colorBLUFOR"; _siteAngle = -90;  };
+		case "military" :	{ _icon = "loc_Fortress"; _color = "colorOPFOR"; _siteAngle = -90; };
+		case "compound" :	{ _icon = "loc_Bunker"; _color = "colorBLUFOR"; _siteAngle = -90; };
 		case "road" :		{ _icon = "mil_arrow2_noShadow"; _color = "ColorOrange"; };
+		case "field" :		{ _icon = "loc_Ruin"; _color = "ColorGreen"; _siteAngle = -90; };
 	};
 	
 	[ _siteMkr, _sitePos, _siteName, [1,1], ( _siteAngle + 90 ), "ICON", _icon, _color, 1 ] call T8SME_server_fnc_createMarker;

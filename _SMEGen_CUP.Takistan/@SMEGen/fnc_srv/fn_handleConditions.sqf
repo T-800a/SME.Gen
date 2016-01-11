@@ -53,8 +53,12 @@ while { true } do
 
 				if !( [ ( _x select 1 ) ] call BIS_fnc_taskCompleted ) then { _arg spawn ( missionNamespace getVariable [ ( _x select 3 ), "T8C_fnc_debug" ]); };
 
-				// if condition is a win > communicate a !player! reward / levelup
-				if ( toUpper ( _x select 0 ) isEqualTo "WIN" AND ( _x select 4 )) then { remoteExec [ "T8SME_client_fnc_handleReward", 0 ]; };
+				// if condition is a win > communicate a rewards ( player / server )
+				if ( toUpper ( _x select 0 ) isEqualTo "WIN" AND ( _x select 4 )) then 
+				{
+					remoteExec [ "T8SME_client_fnc_handleReward", 0 ];
+					[] call T8SME_server_fnc_handleReward;
+				};
 				
 				_x set [ 3, true ];
 			};
@@ -66,12 +70,10 @@ while { true } do
 //	__DEBUG( __FILE__, "_allTasks", _allTasks );
 	__DEBUG( __FILE__, "_allTasks > DONE", ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks ));
 
+
 	// start new tasks if needed	
 	if ( T8SME_param_amountSites isEqualTo  ({[ _x ] call BIS_fnc_taskCompleted } count _allTasks )) then 
 	{
-		// handle rewards
-		[] call T8SME_server_fnc_handleReward;
-
 		[ 1, 3, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
 
 		sleep ( _cleanDelay * _baseTime );

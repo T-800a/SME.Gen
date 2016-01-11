@@ -37,7 +37,7 @@ params [
 	[ "_inputPos",		[],		[[]]],
 	[ "_areaSize",		200,	[123]],
 	[ "_amount", 		2,		[123]],
-	[ "_level", 		"ALL",	[""]],
+	[ "_level", 		"FLAT",	[""]],
 	[ "_useRoad",		false,	[true]],
 	[ "_distance",		50,		[123]]
 ];
@@ -107,7 +107,7 @@ while { _loop } do
 _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 
 {
-	if ([ _x ] call T8SME_server_fnc_checkFlatGround ) then {
+	if ([ _x, _level ] call T8SME_server_fnc_checkFlatGround ) then {
 
 		private [ "_no", "_nod", "_nbd", "_skip" ];
 		_no = nearestObject _x;

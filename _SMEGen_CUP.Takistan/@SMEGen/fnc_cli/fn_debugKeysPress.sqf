@@ -117,6 +117,13 @@ _exportSite =
 			( text format [_str, ( _locTextStr ), _locText, ( _pos select 0 ), ( _pos select 1 ), _dirN ]) call _fnc_makeFile;
 			hint format [ "COMP: %1", ( str _locText )];
 		};
+		
+		case "FIELD" : 
+		{
+			_str = 'class field_%1_%5 : base_field \n{\nscope = 1;\nname = "%5 of %2";\nmarker = "site_field_%1_%5";\nposition[] = { %3, %4, 0 };\n};\n';
+			( text format [_str, ( _locTextStr ), _locText, ( _pos select 0 ), ( _pos select 1 ), _dirN ]) call _fnc_makeFile;
+			hint format [ "FIELD: %1", ( str _locText )];
+		};
 	};
 };
 
@@ -182,7 +189,13 @@ switch ( _key ) do
 	// F8
 	case 66 : 
 	{
-		[ "COMP" ] call _exportSite;
+		if ( _shift OR _ctrl OR _alt ) then
+		{
+			if ( _alt ) then { [ "FIELD" ] call _exportSite; };
+		} else {
+			[ "COMP" ] call _exportSite;
+		};
+		
 		_return = true;
 	};
 	

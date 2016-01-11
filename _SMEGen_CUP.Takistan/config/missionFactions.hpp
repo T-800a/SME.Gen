@@ -62,6 +62,7 @@ class missionFactions
 			EMPTY_TRUCK_FUEL	= "O_Truck_02_fuel_F";
 			EMPTY_MORTAR		= "B_G_Mortar_01_F";
 			EMPTY_HMG_HIGH		= "O_HMG_01_high_F";
+			EMPTY_HELI_TRANS	= "O_Heli_Light_02_F";
 		};
 	};
 
@@ -144,6 +145,8 @@ class missionFactions
 			EMPTY_TRUCK			= "I_Truck_02_transport_F";
 			EMPTY_TRUCK_AMMO	= "I_Truck_02_ammo_F";
 			EMPTY_TRUCK_FUEL	= "I_Truck_02_fuel_F";
+			
+			EMPTY_HELI_TRANS	= "I_Heli_Transport_02_F";
 		};
 	};
 	
@@ -215,8 +218,9 @@ class missionFactions
 			EMPTY_OFFROAD_A		= "CUP_O_UAZ_MG_TKA";
 			EMPTY_TRUCK			= "CUP_O_Ural_TKA";
 			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_TKA";
-			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_TKA";			
-			
+			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_TKA";
+
+			EMPTY_HELI_TRANS	= "CUP_O_Mi17_TK";
 		};
 	};
 };

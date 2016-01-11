@@ -20,7 +20,7 @@ class Params
 	{
 		title		= "Enemy Faction";
 		values[]	= { 0,      1,            2,               3,     4,                5,                		999 };
-		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"DEFAULT" };
+		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"DEFAULT: CUP - Takistan Army" };
 		default		= 999;
 	};
 	
@@ -28,7 +28,7 @@ class Params
 	{
 		title		= "Reward Set";
 		values[]	= { 0,        1,				2,				900,				999 };
-		texts[]		= { "BLUFOR", "BLUFOR - ACE",	"CUP - USMC",	"full Arsenal",		"DEFAULT" };
+		texts[]		= { "BLUFOR", "BLUFOR - ACE",	"CUP - USMC",	"full Arsenal",		"DEFAULT: CUP - USMC" };
 		default		= 999;
 	};
 	
@@ -36,7 +36,7 @@ class Params
 	{
 		title		= "Simultaneous Mission Sites";
 		values[]	= { 0,          1,			2,			3,			999 };
-		texts[]		= { "1 Site",	"2 Sites",	"3 Sites",	"4 Sites",	"DEFAULT" };
+		texts[]		= { "1 Site",	"2 Sites",	"3 Sites",	"4 Sites",	"DEFAULT: 2 Sites" };
 		default		= 999;
 	};
 	
@@ -44,7 +44,7 @@ class Params
 	{
 		title		= "AI Skill";
 		values[]	= { 0,          1,			2,					999 };
-		texts[]		= { "Militia",	"Army",		"Special Forces",	"DEFAULT" };
+		texts[]		= { "Militia",	"Army",		"Special Forces",	"DEFAULT: Militia" };
 		default		= 999;
 	};
 	
@@ -52,7 +52,7 @@ class Params
 	{
 		title		= "Keep Loadout After Respawn";
 		values[]	= { 0,		1,		999 };
-		texts[]		= { "YES",	"NO",	"DEFAULT" };
+		texts[]		= { "YES",	"NO",	"DEFAULT: Yes" };
 		default		= 999;
 	};
 	
@@ -60,7 +60,7 @@ class Params
 	{
 		title		= "Show Map Marker for Players and Vehicles";
 		values[]	= { 0,			1,			999 };
-		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT" };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT: ENABLED" };
 		default		= 999;
 	};
 	
@@ -68,7 +68,7 @@ class Params
 	{
 		title		= "Allow Vehicle Patrols";
 		values[]	= { 0,			1,			999 };
-		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT" };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT: ENABLED" };
 		default		= 999;
 	};
 	
@@ -91,7 +91,7 @@ class Params
 	{
 		title		= "enable/disable FAR Revive";
 		values[]	= { 0,			1,			999 };
-		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT (ENABLED)" };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT: ENABLED" };
 		default		= 999;
 	};
 	
@@ -99,7 +99,7 @@ class Params
 	{
 		title		= "Who can revive?";
 		values[]	= { 0,			1,							2,			3,						999 };
-		texts[]		= { "everyone",	"everyone with Medikit",	"medics",	"medics with medikit",	"DEFAULT (everyone with Medikit)" };
+		texts[]		= { "everyone",	"everyone with Medikit",	"medics",	"medics with medikit",	"DEFAULT: everyone with Medikit" };
 		default		= 999;
 	};
 	
@@ -115,7 +115,7 @@ class Params
 	{
 		title		= "Who long can a player be unconcious?";
 		values[]	= { 0,		1,		2,		3,		4,		5,		999 };
-		texts[]		= { "60s",	"120s",	"180s",	"240s",	"300s", "360s", "DEFAULT (240s)" };
+		texts[]		= { "60s",	"120s",	"180s",	"240s",	"300s", "360s", "DEFAULT: 240s" };
 		default		= 999;	
 	};
 
@@ -123,7 +123,7 @@ class Params
 	{
 		title		= "How much health does a player have after reviving?";
 		values[]	= { 0,		1,		2,		3,		999 };
-		texts[]		= { "100%",	"75%",	"50%",	"25%",	"DEFAULT (50%)" };
+		texts[]		= { "100%",	"75%",	"50%",	"25%",	"DEFAULT: 50%" };
 		default		= 999;	
 	};
 

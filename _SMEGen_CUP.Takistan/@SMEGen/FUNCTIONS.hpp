@@ -47,6 +47,7 @@
 			addFunction(createConvoy);
 			addFunction(createFuelDump);
 			addFunction(createGetIntel);
+			addFunction(createHeliCrash);
 			addFunction(createHVT);
 			addFunction(createMarker);
 			addFunction(createMortarPos);
@@ -67,6 +68,7 @@
 			addFunction(handleFollowingTask);
 			addFunction(handleNewTasks);
 			addFunction(handleReward);
+			addFunction(markBlackBox);
 			addFunction(surrenderHVT);
 			addFunction(testFnc);
 			addFunction(unlockUGV);

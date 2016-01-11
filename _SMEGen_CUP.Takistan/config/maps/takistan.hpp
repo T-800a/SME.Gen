@@ -791,4 +791,244 @@ class Takistan : base_map
 		marker = "site_mil_lalezar";
 		position[] = { 4651.88, 9454.6, 0 };
 	};
+
+
+	// --------------------------------------------------------------
+	// missionSites - FIELDS
+	
+
+	class field_huzrutimam_NNW : base_field 
+	{
+		scope = 1;
+		name = "NNW of Huzrutimam";
+		marker = "site_field_huzrutimam_NNW";
+		position[] = { 5798.87, 1587.73, 0 };
+	};
+
+	class field_ahmaday_E : base_field 
+	{
+		scope = 1;
+		name = "E of Ahmaday";
+		marker = "site_field_ahmaday_E";
+		position[] = { 4078.94, 1346.53, 0 };
+	};
+
+	class field_ahmaday_WSW : base_field 
+	{
+		scope = 1;
+		name = "WSW of Ahmaday";
+		marker = "site_field_ahmaday_WSW";
+		position[] = { 2769.17, 944.563, 0 };
+	};
+
+	class field_sar_esangpass_ESE : base_field 
+	{
+		scope = 1;
+		name = "ESE of Sar_e Sang pass";
+		marker = "site_field_sar_esangpass_ESE";
+		position[] = { 4579.05, 2807.84, 0 };
+	};
+
+	class field_sakhe_WSW : base_field 
+	{
+		scope = 1;
+		name = "WSW of Sakhe";
+		marker = "site_field_sakhe_WSW";
+		position[] = { 3243.83, 4107.03, 0 };
+	};
+
+	class field_jilavur_NW : base_field 
+	{
+		scope = 1;
+		name = "NW of Jilavur";
+		marker = "site_field_jilavur_NW";
+		position[] = { 2205.67, 5377.2, 0 };
+	};
+
+	class field_nagara_SE : base_field 
+	{
+		scope = 1;
+		name = "SE of Nagara";
+		marker = "site_field_nagara_SE";
+		position[] = { 3467.26, 9380.88, 0 };
+	};
+
+	class field_nagara_NNW : base_field 
+	{
+		scope = 1;
+		name = "NNW of Nagara";
+		marker = "site_field_nagara_NNW";
+		position[] = { 2933.75, 10076, 0 };
+	};
+
+	class field_nagara_1oilfield_SSW : base_field 
+	{
+		scope = 1;
+		name = "SSW of Nagara_1 oilfield";
+		marker = "site_field_nagara_1oilfield_SSW";
+		position[] = { 3484.92, 10555.2, 0 };
+	};
+
+	class field_nagara_1oilfield_SE : base_field 
+	{
+		scope = 1;
+		name = "SE of Nagara_1 oilfield";
+		marker = "site_field_nagara_1oilfield_SE";
+		position[] = { 4173.45, 10381.4, 0 };
+	};
+
+	class field_shamali_SSE : base_field 
+	{
+		scope = 1;
+		name = "SSE of Shamali";
+		marker = "site_field_shamali_SSE";
+		position[] = { 4253.81, 11290.2, 0 };
+	};
+
+	class field_nagara_1oilfield_WNW : base_field 
+	{
+		scope = 1;
+		name = "WNW of Nagara_1 oilfield";
+		marker = "site_field_nagara_1oilfield_WNW";
+		position[] = { 3182.22, 11169.2, 0 };
+	};
+
+	class field_safidab_S : base_field 
+	{
+		scope = 1;
+		name = "S of Safid Ab";
+		marker = "site_field_safidab_S";
+		position[] = { 6713.26, 11379.4, 0 };
+	};
+
+	class field_rasman_SE : base_field 
+	{
+		scope = 1;
+		name = "SE of Rasman";
+		marker = "site_field_rasman_SE";
+		position[] = { 7006.41, 10321.3, 0 };
+	};
+
+	class field_nar_W : base_field 
+	{
+		scope = 1;
+		name = "W of Nar";
+		marker = "site_field_nar_W";
+		position[] = { 7345.81, 9223.15, 0 };
+	};
+
+	class field_ravanay_SSE : base_field 
+	{
+		scope = 1;
+		name = "SSE of Ravanay";
+		marker = "site_field_ravanay_SSE";
+		position[] = { 11768.4, 7611.86, 0 };
+	};
+
+	class field_ravanay_N : base_field 
+	{
+		scope = 1;
+		name = "N of Ravanay";
+		marker = "site_field_ravanay_N";
+		position[] = { 11324.3, 9468.71, 0 };
+	};
+
+	class field_zavarak_SSE : base_field 
+	{
+		scope = 1;
+		name = "SSE of Zavarak";
+		marker = "site_field_zavarak_SSE";
+		position[] = { 10279.8, 10724, 0 };
+	};
+
+	class field_sagram_S : base_field 
+	{
+		scope = 1;
+		name = "S of Sagram";
+		marker = "site_field_sagram_S";
+		position[] = { 9272.45, 9210.61, 0 };
+	};
+
+	class field_imarat_WNW : base_field 
+	{
+		scope = 1;
+		name = "WNW of Imarat";
+		marker = "site_field_imarat_WNW";
+		position[] = { 7552.27, 8133.71, 0 };
+	};
+
+	class field_garmarud_SE : base_field 
+	{
+		scope = 1;
+		name = "SE of Garmarud";
+		marker = "site_field_garmarud_SE";
+		position[] = { 9501.71, 6365.14, 0 };
+	};
+
+	class field_garmsar_W : base_field 
+	{
+		scope = 1;
+		name = "W of Garmsar";
+		marker = "site_field_garmsar_W";
+		position[] = { 10185.7, 6423.32, 0 };
+	};
+	
+	class field_darbangpass_S : base_field 
+	{
+		scope = 1;
+		name = "S of Darbang pass";
+		marker = "site_field_darbangpass_S";
+		position[] = { 5335.13, 3238.03, 0 };
+	};
+
+	class field_kakaru_E : base_field 
+	{
+		scope = 1;
+		name = "E of Kakaru";
+		marker = "site_field_kakaru_E";
+		position[] = { 6079, 4741.95, 0 };
+	};
+
+	class field_kakaru_ENE : base_field 
+	{
+		scope = 1;
+		name = "ENE of Kakaru";
+		marker = "site_field_kakaru_ENE";
+		position[] = { 5474.48, 4835.36, 0 };
+	};
+
+	class field_feruzabad_SW : base_field 
+	{
+		scope = 1;
+		name = "SW of Feruz Abad";
+		marker = "site_field_feruzabad_SW";
+		position[] = { 4844.58, 5845.48, 0 };
+	};
+
+	class field_falar_SSW : base_field 
+	{
+		scope = 1;
+		name = "SSW of Falar";
+		marker = "site_field_falar_SSW";
+		position[] = { 5889.97, 6692.82, 0 };
+	};
+
+	class field_falar_SE : base_field 
+	{
+		scope = 1;
+		name = "SE of Falar";
+		marker = "site_field_falar_SE";
+		position[] = { 6910.62, 6461.85, 0 };
+	};
+
+	class field_timurkalay_WSW : base_field 
+	{
+		scope = 1;
+		name = "WSW of Timurkalay";
+		marker = "site_field_timurkalay_WSW";
+		position[] = { 8358.9, 4909.46, 0 };
+	};
+
+
+	// END
 };

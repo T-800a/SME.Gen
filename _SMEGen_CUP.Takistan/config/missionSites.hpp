@@ -71,6 +71,18 @@ class missionSites
 			angle			= 0;
 		};
 		
+		class base_field
+		{
+			scope			= 0;
+			name			= "";
+			type			= "field";
+			allowedTypes[]	= { "heliCrash" };
+			marker			= "";
+			position[]		= { 0, 0, 0 };
+			size[]			= { 300, 300 };
+			angle			= 0;
+		};
+		
 		class base_road
 		{
 			scope			= 0;

@@ -321,6 +321,16 @@ class missionTypes
 		task			= "$STR_SMEGen_type_roadblock_task";
 		description		= "$STR_SMEGen_type_roadblock_desc";
 
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 2 ) AND (({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities 75 )) > 0 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
+
 		class groups : groups
 		{
 			class group01 : base_defend_small { scope = 1; };
@@ -334,10 +344,20 @@ class missionTypes
 	{
 		scope			= 1;
 		name			= "Roadblock";
-		
+
 		taskShort		= "$STR_SMEGen_type_roadblock_shrt";
 		task			= "$STR_SMEGen_type_roadblock_task";
 		description		= "$STR_SMEGen_type_roadblock_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 2 ) AND (({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities 75 )) > 0 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
 
 		class groups : groups
 		{
@@ -656,6 +676,49 @@ class missionTypes
 			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};
+
+	class heliCrash : base_type
+	{
+		scope			= 1;
+		name			= "heliCrash";
+		
+		taskShort		= "$STR_SMEGen_type_heliCrash_shrt";
+		task			= "$STR_SMEGen_type_heliCrash_task";
+		description		= "$STR_SMEGen_type_heliCrash_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ])";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+
+			class fail
+			{
+				condition	= "(!( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) AND !(( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]) getVariable [ 'OBJECTIVE_intel_gathered', false ]))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+			
+			class mark
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getPos ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])) nearEntities 100 )) > 0 )";
+				function	= "T8SME_server_fnc_markBlackBox";
+				isFinal		= 0;
+			};
+		};
+		
+		class groups : groups
+		{
+			class group01 : base_garrison { scope = 1; };
+			class group02 : base_defend { scope = 1; };
+			class group03 : base_fireteam { scope = 1; };
+			class group04 : base_fireteam { scope = 1; };
+		};
+	};
+
 
 
 
