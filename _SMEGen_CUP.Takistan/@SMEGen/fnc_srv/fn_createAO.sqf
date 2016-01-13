@@ -278,7 +278,7 @@ __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 _index = 0;
 
 {
-	private [ "_task", "_units", "_filler", "_subArray", "_vehicleGroup" ];
+	private [ "_task", "_units", "_marker", "_filler", "_subArray", "_vehicleGroup" ];
 	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "task" );
 	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "units" );
 	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "groups" >> _x >> "unitsFiller" );
@@ -287,11 +287,12 @@ _index = 0;
 	_units = [ _units, _filler ] call T8SME_server_fnc_fillUnitArray;
 	_units = [ _units ] call T8SME_server_fnc_buildUnitArray;
 	
+	_marker = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" );
+	
 	switch ( _task ) do
 	{
 		case "DEFEND_BASE" :
 		{ 
-			private [ "_marker" ];
 			if ( count _objPos > 0 AND { _index < ( count _objPos )}) then
 			{
 				_marker = format [ "%1_%2", _siteMkr, _index ];
@@ -305,9 +306,10 @@ _index = 0;
 			_subArray = [[ _units,  _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]];	
 		};
 		
-		case "DEFEND" :			{ _subArray = [[ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
-		case "GARRISON" :		{ _subArray = [[ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
-		default					{ _subArray = [[ _units, getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "marker" ), _missionSide, _vehicleGroup ], [ _task ]]; };
+		case "DEFEND" :			{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
+		case "GARRISON" :		{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
+		case "OCCUPY" :			{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
+		default					{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ]]; };
 	};
 	
 	__DEBUG( __FILE__, "GROUP ARRAY", _subArray );

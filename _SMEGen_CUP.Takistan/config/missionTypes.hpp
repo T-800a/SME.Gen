@@ -48,6 +48,15 @@ class missionTypes
 				vehicleGroup	= 0;
 			};
 			
+			class base_occupy 
+			{
+				scope			= 0;
+				units[] 		= { "SQUADLEADER", "LIGHTMG", "LIGHTMG", "HEAVYMG", "CORPSMAN", "ANTITANK", "CORPSMAN", "ANTIPERSON", "GRENADIER", "RIFLEMAN", "RIFLEMAN" };
+				unitsFiller[] 	= { "RIFLEMAN", "RIFLEMAN", "RIFLEMAN", "GRENADIER" };
+				task			= "OCCUPY";
+				vehicleGroup	= 0;
+			};
+			
 			class base_defend 
 			{
 				scope			= 0;
@@ -174,8 +183,8 @@ class missionTypes
 
 		class groups : groups
 		{
-			class group01 : base_garrison { scope = 1; };
-			class group02 : base_garrison { scope = 1; };
+			class group01 : base_occupy { scope = 1; };
+			class group02 : base_occupy { scope = 1; };
 			class group03 : base_fireteam { scope = 1; };
 			class group04 : base_fireteam { scope = 1; };
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
@@ -214,7 +223,7 @@ class missionTypes
 		class groups : groups
 		{
 			class group01 : base_garrison { scope = 1; };
-			class group03 : base_fireteam { scope = 1; };
+			class group03 : base_occupy { scope = 1; };
 			class group04 : base_fireteam { scope = 1; };
 		};
 	};
@@ -260,7 +269,7 @@ class missionTypes
 		class groups : groups
 		{
 			class group01 : base_garrison { scope = 1; };
-			class group03 : base_fireteam { scope = 1; };
+			class group03 : base_occupy { scope = 1; };
 			class group04 : base_fireteam { scope = 1; };
 		};
 	};
@@ -277,7 +286,7 @@ class missionTypes
 		class groups : groups
 		{
 			class group01 : base_defendBase { scope = 1; };
-			class group02 : base_fireteam { scope = 1; };
+			class group02 : base_occupy { scope = 1; };
 			class group03 : base_fireteam { scope = 1; };
 			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
