@@ -17,7 +17,11 @@ if !(isServer) exitWith {};
 
 private [ "_playerDir", "_objectPos", "_object", "_debug", "_minDis" ];
 
-params [ "_pos", "_range" ];
+params [
+	[ "_pos",	[],		[[]]],
+	[ "_range",	200,	[123]],
+	[ "_level", "FLAT",	[""]]
+];
 
 _objectPos = [];
 _n = 1;
@@ -35,7 +39,7 @@ while { count _objectPos < 1 } do
 			AND { !isOnRoad _tmpPos }
 			AND { !surfaceIsWater _tmpPos }
 			AND { ( _tmpPos distance ( nearestObject _tmpPos )) > _minDis }
-			AND { [ _tmpPos ] call T8SME_server_fnc_checkFlatGround }
+			AND { [ _tmpPos, _level ] call T8SME_server_fnc_checkFlatGround }
 			AND { !([ _tmpPos ] call T8SME_server_fnc_checkOutside )}
 	) then { _objectPos = _tmpPos; };
 	
