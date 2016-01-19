@@ -19,16 +19,27 @@ class Params
 	class param01
 	{
 		title		= "Enemy Faction";
-		values[]	= { 0,      1,            2,               3,     4,                5,                		999 };
-		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"DEFAULT: CUP - Takistan Army" };
+		values[]	= { 0,      1,            2,               3,     4,                5,                		20,					999 };
+		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"RHS EAST militia",	"DEFAULT: CUP - Takistan Army" };
 		default		= 999;
 	};
 	
+/*
+// alternative params set if you want to play against BLUFOR
+	class param01
+	{
+		title		= "Enemy Faction";
+		values[]	= { 100,			110,			120,					999 };
+		texts[]		= { "NATO Vanilla",	"CUP: USMC"		"RHS: US ARMY OCP",		"DEFAULT" };
+		default		= 999;
+	};
+*/
+
 	class param02
 	{
 		title		= "Reward Set";
-		values[]	= { 0,        1,				2,				900,				999 };
-		texts[]		= { "BLUFOR", "BLUFOR - ACE",	"CUP - USMC",	"full Arsenal",		"DEFAULT: CUP - USMC" };
+		values[]	= { 0,        1,				2,				20,					900,						901,						902,								999 };
+		texts[]		= { "BLUFOR", "BLUFOR - ACE",	"CUP: USMC",	"RHS: Independent",	"Vanilla - full Arsenal",	"CUP: USMC - full Arsenal",	"RHS: Independent - full Arsenal",	"DEFAULT: CUP - USMC" };
 		default		= 999;
 	};
 	
