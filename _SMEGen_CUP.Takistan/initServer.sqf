@@ -10,14 +10,15 @@
  =======================================================================================================================
 */
 
+waitUntil { !isNil "bis_fnc_init" };
+
+
 #include <initParams.sqf>
 
 
-// initialize BIS Dynamic Groups
-waitUntil { !isNil "bis_fnc_init" };
-[ "Initialize" ] call BIS_fnc_dynamicGroups; 
-
+// initialize SME.Gen server
 [] spawn T8SME_INIT_fnc_server;
+
 
 // initialize locations ( mostly build BLUFOR HQ structures )
 [] execVM "locations\init.sqf";
@@ -26,3 +27,6 @@ waitUntil { !isNil "bis_fnc_init" };
 // initialize garbage collecting ( bodies / wrecks now handled via BIS/description )
 [] execVM "scripts\garbageCollector.sqf";
 
+
+// initialize BIS Dynamic Groups
+[ "Initialize" ] spawn BIS_fnc_dynamicGroups; 
