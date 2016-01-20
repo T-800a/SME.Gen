@@ -21,7 +21,7 @@ _cFnc =
 	{
 		_obj = _this select 8;
 	} else {
-		_obj = createVehicle [(_this select 0), call compile (_this select 1), [], 0, "CAN_COLLIDE" ];
+		_obj = createVehicle [(_this select 0), [0,0,0], [], 0, "CAN_COLLIDE" ];
 	};
 	
 	_obj allowDamage false;
