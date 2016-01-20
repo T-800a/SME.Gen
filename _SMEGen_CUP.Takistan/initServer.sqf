@@ -10,8 +10,6 @@
  =======================================================================================================================
 */
 
-waitUntil { !isNil "bis_fnc_init" };
-
 
 #include <initParams.sqf>
 
@@ -28,5 +26,3 @@ waitUntil { !isNil "bis_fnc_init" };
 [] execVM "scripts\garbageCollector.sqf";
 
 
-// initialize BIS Dynamic Groups
-[ "Initialize" ] spawn BIS_fnc_dynamicGroups; 

@@ -10,10 +10,10 @@
  =======================================================================================================================
 */
 
-// GLOBAL Settings
 
 // TFAR Settings
 tf_no_auto_long_range_radio		= true;
+
 // set all TFAR radios to same encryption
 tf_west_radio_code				= "encrypt_alliance";
 tf_east_radio_code				= "encrypt_alliance";
@@ -30,6 +30,8 @@ CIVILIAN setFriend [ EAST, 1 ];
 CIVILIAN setFriend [ RESISTANCE, 1 ];
 
 
-
+// initialize BIS Dynamic Groups
+if ( isServer ) then { [ "Initialize" ] spawn BIS_fnc_dynamicGroups; };
+if ( hasInterface ) then { [ "InitializePlayer", [ player ]] spawn BIS_fnc_dynamicGroups; };
 
 

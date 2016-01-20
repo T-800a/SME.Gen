@@ -51,7 +51,10 @@ if (( _unit1 isEqualTo player ) OR ( _unit2 isEqualTo player )) then
 
 	_msg = localize "STR_SMEGen_vehicleRestricted";
 	[ 1, _msg, 0 ] spawn T8C_fnc_hintProcess;
-	player action [ "GetOut", vehicle player ];
+
+	// player action [ "GetOut", vehicle player ];
+	// player action [ "getInCargo", vehicle player ];
+	player moveInCargo ( vehicle player );
 };
 
 
