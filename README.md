@@ -47,7 +47,7 @@ And the mission uses some other scripts:
 
 
 #### Available tasks
-Currently there are 4 types of mission-sites with different tasks available:
+Currently there are 5 types of mission-sites with different tasks available:
 
 ##### Towns
 - clear occupied town
@@ -73,6 +73,8 @@ Currently there are 4 types of mission-sites with different tasks available:
 - recover UGV and return it to base (stomper)
 - download INTEL in a compound
 
+##### Open Fields
+- investigate a helicopter crash site
 
 #### Rewards
 ##### Player Gear
