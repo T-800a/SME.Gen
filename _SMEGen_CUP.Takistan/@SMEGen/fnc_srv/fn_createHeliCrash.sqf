@@ -40,9 +40,11 @@ __DEBUG( __FILE__, "_objArray", _objArray );
 {
 	__DEBUG( __FILE__, "_objArray > _x", _x );
 	
-	if (( count ( _x select 1 )) > 2 ) then
+	private _posChecked = if (( typeName ( _x select 1 )) isEqualTo ( typeName true )) then { [ _pos, 100 ] call T8SME_server_fnc_findObjectivePos } else {( _x select 1 )};
+	
+	if (( count _posChecked ) > 2 ) then
 	{
-		_obj = createVehicle [( _x select 0 ), ( _x select 1 ), [], 0, "NONE"];
+		_obj = createVehicle [( _x select 0 ), _posChecked, [], 0, "NONE"];
 		_obj setDir ( random 360 );
 		_obj setVehicleLock "LOCKED";
 

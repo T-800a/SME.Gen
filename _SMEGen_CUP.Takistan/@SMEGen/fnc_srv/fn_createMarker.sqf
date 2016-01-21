@@ -33,6 +33,7 @@ params [
 
 if ( _mn isEqualTo "" ) exitWith { false };
 if ( _mp isEqualTo [0,0,0] ) exitWith { false };
+if ( isMultiplayer ) then { _ma = 0; };
 
 _m = createMarkerLocal [ _mn, _mp ];
 _m setMarkerShapeLocal _ms;

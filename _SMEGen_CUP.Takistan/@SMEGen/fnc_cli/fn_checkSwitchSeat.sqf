@@ -28,8 +28,6 @@ params [
 	[ "_unit2",		objNull, [ objNull ]]
 ];
 
-hint str _this;
-
 if ( isNull _unit1 AND isNull _unit2 ) exitWith {};
 if ( isNull _vehicle ) exitWith {};
 
@@ -46,15 +44,21 @@ if (( _unit1 isEqualTo player ) OR ( _unit2 isEqualTo player )) then
 	if ( _whiteListCheck ) exitWith {};
 
 	_position = assignedVehicleRole player;
-	
-	if ( _position isEqualTo "cargo" ) exitWith {};
+		
+	if ( toLower ( _position select 0 ) isEqualTo "cargo" ) exitWith {};
+	if ( toLower ( _position select 0 ) isEqualTo "turret" AND {(( _position select 1 ) select 0 ) > 0 }) exitWith {};
 
 	_msg = localize "STR_SMEGen_vehicleRestricted";
 	[ 1, _msg, 0 ] spawn T8C_fnc_hintProcess;
 
-	// player action [ "GetOut", vehicle player ];
-	// player action [ "getInCargo", vehicle player ];
-	player moveInCargo ( vehicle player );
+	_vehicle spawn 
+	{
+		player allowDamage false;
+		player action [ "GetOut", _this ];
+		sleep 0.5;
+		player action [ "GetInCargo", _this, 0 ];
+		player allowDamage true;
+	};
 };
 
 

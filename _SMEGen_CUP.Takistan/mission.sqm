@@ -13,7 +13,6 @@ class Mission
 		"A3_Soft_F_HEMTT",
 		"a3_soft_f_beta_quadbike",
 		"A3_Characters_F_INDEP",
-		"A3_Air_F_Heli_Heli_Transport_03",
 		"A3_Armor_F_EPB_MBT_03",
 		"A3_armor_f_beta_APC_Tracked_02",
 		"A3_Modules_F_Curator_Environment",
@@ -25,9 +24,9 @@ class Mission
 		"CUP_WheeledVehicles_HMMWV",
 		"CUP_AirVehciles_UH1Y",
 		"CUP_Creatures_Military_USMC",
-		"CUP_AirVehicles_UH60",
 		"cup_takistan_config",
-		"3DEN"
+		"3DEN",
+		"CUP_AirVehicles_UH60"
 	};
 	addOnsAuto[]=
 	{
