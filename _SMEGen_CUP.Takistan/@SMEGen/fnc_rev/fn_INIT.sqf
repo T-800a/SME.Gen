@@ -61,25 +61,31 @@ FAR_moduleLoaded			= true;
 
 if ( isDedicated ) exitWith {};	
 	
-[] spawn
-{
-	waitUntil { sleep 1; !isNull player AND { isPlayer player } AND { time > 0 } };
+waitUntil { !isNull player AND { isPlayer player } AND { time > 0 } };
 
-	// Public event handlers
-	"FAR_isDragging_EH" addPublicVariableEventHandler FAR_fnc_publicEH;
-	"FAR_deathMessage" addPublicVariableEventHandler FAR_fnc_publicEH;
+// Public event handlers
+"FAR_isDragging_EH" addPublicVariableEventHandler FAR_fnc_publicEH;
+"FAR_deathMessage" addPublicVariableEventHandler FAR_fnc_publicEH;
 
-	[] spawn FAR_fnc_playerINIT;
+[] spawn FAR_fnc_playerINIT;
 
-	// Event Handlers
-	player addEventHandler 
-	[
-		"Respawn", 
-		{ 
-			[] spawn FAR_fnc_playerINIT;
+
+// clear HandleDamage event handler before adding it
+player removeAllEventHandlers "HandleDamage";
+
+// add event handlers
+player addEventHandler [ "Respawn", FAR_fnc_playerINIT ];
+player addEventHandler [ "HandleDamage", FAR_fnc_HandleDamage ];
+player addEventHandler [ "Killed",
+	{
+		// remove dead body of player
+		[ _this select 0 ] spawn 
+		{
+			waitUntil { alive player };
+			deleteVehicle ( _this select 0 );
 		}
-	];
-};
+	}
+];
 
 ////////////////////////////////////////////////
 // [Debugging] Add revive to playable AI units

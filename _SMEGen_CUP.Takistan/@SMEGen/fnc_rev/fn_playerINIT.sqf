@@ -24,27 +24,6 @@
 // Cache player's side
 FAR_PlayerSide = side player;
 
-// Clear event handler before adding it
-player removeAllEventHandlers "HandleDamage";
-
-player addEventHandler [ "HandleDamage", FAR_fnc_HandleDamage ];
-player addEventHandler 
-[
-	"Killed",
-	{
-		// Remove dead body of player (for missions with respawn enabled)
-		_body = _this select 0;
-		
-		[ _body ] spawn 
-		{
-		
-			waitUntil { alive player };
-			_body = _this select 0;
-			deleteVehicle _body;
-		}
-	}
-];
-
 player setVariable [ "FAR_isUnconscious", 0, true ];
 player setVariable [ "FAR_isDragged", 0, true ];
 player setVariable [ "FAR_isCarried", 0, true ];

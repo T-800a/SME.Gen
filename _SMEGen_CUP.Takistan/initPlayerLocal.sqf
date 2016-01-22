@@ -17,4 +17,5 @@
 // initialize SME.Gen client
 [] spawn T8SME_INIT_fnc_client;
 
-
+// initialize FAR revive
+[] spawn FAR_fnc_INIT;

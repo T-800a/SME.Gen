@@ -107,8 +107,9 @@
 		{
 			file = "@SMEGen\fnc_rev";
 			
-			addFunctionPost(INIT);
-
+			addFunction(INIT);
+			addFunction(playerINIT);
+			
 			addFunction(broadcastDeath);
 			addFunction(carry);
 			addFunction(checkCarrying);
@@ -127,7 +128,6 @@
 			addFunction(isFriendlyMedic);
 			addFunction(killMe);
 			addFunction(playerActions);
-			addFunction(playerINIT);
 			addFunction(playerUnconscious);
 			addFunction(publicEH);
 			addFunction(release);
