@@ -14,7 +14,6 @@ onLoadName					= "SME.Gen X CUP | V.041";
 OnLoadMission				= "Small Military Encounter Genenerator";
 loadScreen					= "images\loadingscreen.paa";
 
-
 class Header
 {
 	gameType		= COOP;
@@ -78,11 +77,11 @@ class CfgDebriefing
 //	include CONFIGs
 //
 
+// include params
+#include <config\params.hpp>
+
 // main mission config
 #include <config\cfgRandomMissions.hpp>
-
-// include mission parameter
-#include <config\params.hpp>
 
 // include cfgFunctions
 #include <config\cfgFunctions.hpp>

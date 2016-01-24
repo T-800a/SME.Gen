@@ -24,7 +24,7 @@ class cfgFunctions
 	#include <..\T8\FUNCTIONS.hpp>
 
 	// SME.Gen
-	#include <..\@SMEGen\FUNCTIONS.hpp>	
+	#include <..\@SMEGen\FUNCTIONS.hpp>
 	
 	class T8L
 	{

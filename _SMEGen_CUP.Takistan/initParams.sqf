@@ -12,7 +12,7 @@
 
 
 // faction used to spawn enemy units
-switch ( paramsArray select 1 ) do
+switch ( "param_enemy" call BIS_fnc_getParamValue ) do
 {
 	case   0 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR"; };
 	case   1 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR_URBAN"; };
@@ -30,7 +30,7 @@ switch ( paramsArray select 1 ) do
 };
 
 // reward / gearset
-switch ( paramsArray select 2 ) do
+switch ( "param_reward" call BIS_fnc_getParamValue ) do
 {
 	case   0 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR"; };
 	case   1 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR_ACE"; };
@@ -46,7 +46,7 @@ switch ( paramsArray select 2 ) do
 };
 
 // Simultaneous Mission Sites
-switch ( paramsArray select 3 ) do
+switch ( "param_sites" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ T8SME_param_amountSites = 1; };
 	case 1 :	{ T8SME_param_amountSites = 2; };
@@ -58,7 +58,7 @@ switch ( paramsArray select 3 ) do
 // AI Skill
 // overwrite T8U base settings
 private [ "_AIskill" ];
-switch ( paramsArray select 4 ) do
+switch ( "param_skill" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ _AIskill = 0; };
 	case 1 :	{ _AIskill = 1; };
@@ -68,7 +68,7 @@ switch ( paramsArray select 4 ) do
 T8U_var_Presets = [[ _AIskill, 1 ], [ _AIskill, 1 ], [ _AIskill, 1 ]];
 
 // Keep Loadout After Respawn
-switch ( paramsArray select 5 ) do
+switch ( "param_loadout" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ T8SME_param_keepRespawnLoadout = true; };
 	case 1 :	{ T8SME_param_keepRespawnLoadout = false; };
@@ -76,7 +76,7 @@ switch ( paramsArray select 5 ) do
 };
 
 // Show Map Marker for Players and Vehicles
-switch ( paramsArray select 6 ) do
+switch ( "param_mapmarker" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ T8SME_param_allowMapMarker = true; };
 	case 1 :	{ T8SME_param_allowMapMarker = false; };
@@ -84,7 +84,7 @@ switch ( paramsArray select 6 ) do
 };
 
 // Allow Vehicle Patrols
-switch ( paramsArray select 7 ) do
+switch ( "param_vehiclepatrols" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ T8SME_param_allowVehiclePatrols = true; };
 	case 1 :	{ T8SME_param_allowVehiclePatrols = false; };
@@ -98,7 +98,7 @@ T8SME_param_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions"
 
 // REVIVE SETTINGS
 // global on/off for revive
-switch ( paramsArray select 21 ) do
+switch ( "param_FAR_enable" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ FAR_isEnabled = true; };
 	case 1 :	{ FAR_isEnabled = false; };
@@ -106,7 +106,7 @@ switch ( paramsArray select 21 ) do
 };
 
 // FAR_ReviveMode
-switch ( paramsArray select 22 ) do
+switch ( "param_FAR_medic" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ FAR_ReviveMode	= 0; };
 	case 1 :	{ FAR_ReviveMode	= 1; };
@@ -116,7 +116,7 @@ switch ( paramsArray select 22 ) do
 };
 
 // FAR_RequireFAK
-switch ( paramsArray select 23 ) do
+switch ( "param_FAR_needfak" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ FAR_RequireFAK	= true; };
 	case 1 :	{ FAR_RequireFAK	= false; };
@@ -124,7 +124,7 @@ switch ( paramsArray select 23 ) do
 };
 
 // FAR_BleedOut
-switch ( paramsArray select 24 ) do
+switch ( "param_FAR_bleedout" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ FAR_BleedOut	= 60; };
 	case 1 :	{ FAR_BleedOut	= 120; };
@@ -136,7 +136,7 @@ switch ( paramsArray select 24 ) do
 };
 
 // FAR_ReviveDamage
-switch ( paramsArray select 25 ) do
+switch ( "param_FAR_health" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ FAR_ReviveDamage	= 0.00; };
 	case 1 :	{ FAR_ReviveDamage	= 0.25; };
