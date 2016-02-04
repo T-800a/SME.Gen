@@ -31,6 +31,7 @@ class cfgRandomMissions
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
 		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
+		
 		spawnUnitsFactionFriendly	= "CUP_BLUFOR_USMC";
 
 

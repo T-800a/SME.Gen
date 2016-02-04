@@ -2,3 +2,66 @@
 # A dynamic mission for ARMA3 that generates small military encounters.
 # Copyright (C)  2015  Hauke Sven "T-800a" Fischbach
 
+
+[b]How to bring SME.Gen to your desired map:[/b]
+
+If you start the mission in singleplayer / via the singleplayer editor some keys will be bound to a function. This function will [b]log the current player position[/b] as one of the used types of side in the SME.Gen. If you then export this file, it will be formated in arma config syntax, and you just need to copy paste it in the right file(s).
+
+[b]You will need:[/b]
+KillzoneKids MakeFile extension: http://killzonekid.com/arma-extension-make_file-dll-v1-0/ (you may need to start without battleye, the extension may be blocked)
+Your preferred way to teleport your player around (I use Zeus + the Ares mod which has some teleport options)
+
+[b]The following Keys are assigned:[/b]
+[F5]: log current player position as 'town'
+[F6]: log current player position as 'military base'
+[F7]: log current player position as 'road'
+[F8]: log current player position as 'compound'
+[F8]+[ALT]: log current player position as 'field'
+[F9]: exports the logged positions to a file with arma-config formating. (via MakeFile extension)
+
+[b]Road positions[/b] need the correct direction, the players direction is used to determine the roads direction. So please turn your player look down the roads path before logging road positions.
+[b]Compund positions[/b] require a open field with some free space. I would recommend flat, free areas of about 75m x 75m
+[b]Field positions[/b] do not require a completly open field, but it's better to use only barley populated areas which are not to steep.
+
+[b]What to do:[/b]
+1. Port your mission to the desired map, as you would do with any other mission.
+
+2. go to ...\SMEGen.DesiredMap\config\maps\
+
+3. copy one of the existing maps (eg. altis.hpp) and rename it to "desiredmap.hpp" and open the file
+
+4. clear the file of all sites and rename the class accoring to you desired map, should look sth. like this:
+[code]/*
+ =======================================================================================================================
+
+	SME.Gen - Small Military Encounter Genenerator
+ 
+	File:		desiredmap.hpp
+	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
+
+ =======================================================================================================================
+*/
+
+class DesiredMap : base_map
+{
+
+};[/code]
+
+5. open the file ...\SMEGen.DesiredMap\config\missionSites.hpp and scroll to the end. (Please don't change the base_map class.)
+
+6. include the file for your desired map:
+[code]#include <maps\desiredmap.hpp>[/code]
+
+7. open your mission in the Arma 3 singleplayer editor.
+
+8. log you positions and export them.
+
+9. open the exported file. (you should find it in your Arma Root directory) and copy the created config classes.
+
+10. paste them inside the <DesiredMap> class in your <desiredmap.hpp> and save.
+
+11. open your mission again in the editor. if you preview the mission it should create map markers for all your imported positions
+
+If it shows mission config errors while saving the map in the editor you may have a syntax error in your desiredmap.hpp or a doubled class name. also class names with "-" in it require a manual edit, these wont work.
+
