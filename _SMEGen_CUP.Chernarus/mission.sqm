@@ -882,7 +882,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={4832.1772,8.9290342,2492.9573};
+			position[]={4832.001,8.9266844,2492.9573};
 			id=36;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
