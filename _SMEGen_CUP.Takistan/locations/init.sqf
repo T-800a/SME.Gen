@@ -61,6 +61,12 @@ if ( worldName isEqualTo "Takistan" ) then {
 	#include <sites\takistan_mainbase.sqf>
 };
 
+if ( worldName isEqualTo "Chernarus" ) then {
+	#include <sites\chernarus_mainbase.sqf>
+};
+
+
+
 T8_locations_var_initDONE = true;
 
 

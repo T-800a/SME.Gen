@@ -168,9 +168,9 @@ class missionPlayerRewards
 	class CUP_BLUFOR_USMC
 	{
 		fullArsenal			= 0;	
-		missionReward01		= "CUP_M1133_MEV_Desert_Slat";
-		missionReward02		= "CUP_B_HMMWV_Crows_MK19_USA";
-		missionReward03		= "CUP_B_UH1Y_GUNSHIP_F";
+		missionReward01		= "CUP_B_M1133_MEV_Desert_Slat";
+		missionReward02		= "CUP_RG31_M2";
+		missionReward03		= "CUP_B_UH60L_FFV_US";
 		
 		class base_reward 
 		{

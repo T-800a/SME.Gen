@@ -170,7 +170,7 @@ class missionPlayerRewards
 		fullArsenal			= 0;	
 		missionReward01		= "CUP_B_M1133_MEV_Woodland_Slat";
 		missionReward02		= "CUP_RG31_M2_OD";
-		missionReward03		= "CUP_B_UH1Y_GUNSHIP_F";
+		missionReward03		= "CUP_B_UH60L_FFV_US";
 		
 		class base_reward 
 		{
