@@ -20,6 +20,9 @@ switch ( "param_enemy" call BIS_fnc_getParamValue ) do
 	case   3 :	{ T8SME_param_enemyFaction = "vanilla_INDEP"; };
 	case   4 :	{ T8SME_param_enemyFaction = "vanilla_INDEP_GUER"; };
 	case   5 :	{ T8SME_param_enemyFaction = "CUP_OPFOR_TAKarmy"; };
+	case   6 :	{ T8SME_param_enemyFaction = "CUP_GRNFOR_TAKlocals"; };
+	case   7 :	{ T8SME_param_enemyFaction = "CUP_GRNFOR_NAPA"; };
+	
 	case  20 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_GUER"; };
 	
 	case 100 :	{ T8SME_param_enemyFaction = "vanilla_BLUFOR"; };

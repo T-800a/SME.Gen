@@ -367,7 +367,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="";
+							value="2000";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="DesertedDistance";
 						};
@@ -479,7 +479,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="";
+							value="1000";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="DesertedDistance";
 						};
@@ -584,7 +584,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="";
+							value="1000";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="DesertedDistance";
 						};
@@ -668,7 +668,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="";
+							value="1000";
 							parentCls="ModuleRespawnVehicle_F";
 							typeName="DesertedDistance";
 						};

@@ -25,8 +25,8 @@ class Params
 	class param_enemy
 	{
 		title		= "Enemy Faction";
-		values[]	= { 0,      1,            2,               3,     4,                5,                		20,					999 };
-		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"RHS EAST militia",	"DEFAUL - CUP Takistan Army" };
+		values[]	= { 0,      1,            2,               3,     4,                5,                		6,							7,				20,					999 };
+		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"CUP - Takistan Locals",	"CUP - NAPA",	"RHS EAST militia",	"DEFAUL - CUP NAPA" };
 		default		= 999;
 	};
 

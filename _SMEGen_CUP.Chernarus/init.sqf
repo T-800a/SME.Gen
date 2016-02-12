@@ -32,7 +32,7 @@ CIVILIAN setFriend [ RESISTANCE, 1 ];
 
 // initialize BIS Dynamic Groups
 waitUntil { time > 5 };
-if ( isServer ) then { [ "Initialize" ] spawn BIS_fnc_dynamicGroups; };
-if ( hasInterface ) then { [ "InitializePlayer", [ player ]] spawn BIS_fnc_dynamicGroups; };
+if ( isServer ) then { [ "Initialize", [ true ]] spawn BIS_fnc_dynamicGroups; };
+if ( hasInterface ) then { [ "InitializePlayer", [ player, true ]] spawn BIS_fnc_dynamicGroups; };
 
 
