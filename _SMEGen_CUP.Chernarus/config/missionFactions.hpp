@@ -262,7 +262,8 @@ class missionFactions
 			EMPTY_TRUCK			= "CUP_O_Ural_TKA";
 			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_TKA";
 			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_TKA";
-			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
+			EMPTY_MORTAR		= "CUP_O_2b14_82mm_TK";
+			EMPTY_HMG_HIGH		= "CUP_O_DSHKM_TK_INS";
 			EMPTY_HELI_TRANS	= "CUP_O_Mi17_TK";
 		};
 	};
@@ -302,10 +303,11 @@ class missionFactions
 		{
 			EMPTY_OFFROAD		= "CUP_C_Datsun_Tubeframe";
 			EMPTY_OFFROAD_A		= "CUP_O_UAZ_MG_TKA";
-			EMPTY_TRUCK			= "CUP_O_Ural_TKA";
-			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_TKA";
-			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_TKA";
-			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
+			EMPTY_TRUCK			= "CUP_O_Ural_SLA";
+			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_SLA";
+			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_SLA";
+			EMPTY_MORTAR		= "CUP_I_2b14_82mm_TK_GUE";
+			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_TK_GUE";
 			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
 		};
 	};
@@ -340,11 +342,12 @@ class missionFactions
 		class vehicles : vehicles
 		{
 			EMPTY_OFFROAD		= "CUP_C_Datsun_Tubeframe";
-			EMPTY_OFFROAD_A		= "CUP_O_UAZ_MG_TKA";
-			EMPTY_TRUCK			= "CUP_O_Ural_TKA";
-			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_TKA";
-			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_TKA";
-			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
+			EMPTY_OFFROAD_A		= "CUP_B_UAZ_MG_CDF";
+			EMPTY_TRUCK			= "CUP_O_Ural_SLA";
+			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_SLA";
+			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_SLA";
+			EMPTY_MORTAR		= "CUP_B_2b14_82mm_CDF";
+			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_NAPA";
 			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
 		};
 	};
