@@ -29,14 +29,15 @@ private [ "_wpArray", "_cycle" ];
 
 params [
 	[ "_group", grpNull, [grpNull]],
-	[ "_marker", "NO-MARKER-SET", [""]],
+	[ "_marker", "NO-MARKER-SET", ["",[]]],
 	[ "_immobile", false, [true]]
 ];
-
 
 __DEBUG( __FILE__, "INIT", _this );
 
 if ( isNull _group ) exitWith { false };
+if ((( typeName _marker ) isEqualTo "ARRAY" ) AND {( count _marker ) isEqualTo 0 }) exitWith { false };
+if (( typeName _marker ) isEqualTo "ARRAY" ) then { _marker = _marker call BIS_fnc_selectRandom; };
 if (( typeName _marker ) isEqualTo ( typeName "" ) AND {( getMarkerPos _marker ) isEqualTo [0,0,0] }) exitWith { false };
 
 private _formation	= ["STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "DIAMOND"] call BIS_fnc_selectRandom;
@@ -59,8 +60,8 @@ _wpArray = _wpArray call BIS_fnc_arrayShuffle;
 __DEBUG( __FILE__, "_wpArray", _wpArray );
 
 private _firstWP = [ _marker ] call T8U_fnc_createSpawnPos;
-[ _group, _firstWP, "MOVE", "SAFE", _statementArrive, _range, _speedMode, [ 0, 0, 0 ]] call T8U_fnc_CreateWaypoint;
-[ _group, _firstWP, "MOVE", "SAFE", _statementOccupy, _range, _speedMode, [ 5, 5, 5 ]] call T8U_fnc_CreateWaypoint;
+[ _group, _firstWP, "MOVE", "SAFE", _statementArrive, _range, _speedMode, [ 15, 15, 15 ]] call T8U_fnc_CreateWaypoint;
+[ _group, _firstWP, "MOVE", "SAFE", _statementOccupy, _range, _speedMode, [ 15, 15, 15 ]] call T8U_fnc_CreateWaypoint;
 
 {
 	if ( count _x > 0 ) then 

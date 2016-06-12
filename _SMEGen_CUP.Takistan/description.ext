@@ -32,12 +32,17 @@ respawnDialog				= 1;
 respawnOnStart				= 0;
 respawnButton				= 1;
 
-respawnTemplates[]			= { "MenuPosition" };
-respawnTemplatesWest[]		= { "MenuPosition" };
-respawnTemplatesEast[]		= { "MenuPosition" };
-respawnTemplatesGuer[]		= { "MenuPosition" };
-respawnTemplatesCiv[]		= { "MenuPosition" };
-respawnTemplatesVirtual[]	= { "MenuPosition" };
+respawnTemplates[]			= { "MenuPosition", "Spectator" };
+respawnTemplatesWest[]		= { "MenuPosition", "Spectator" };
+respawnTemplatesEast[]		= { "MenuPosition", "Spectator" };
+respawnTemplatesGuer[]		= { "MenuPosition", "Spectator" };
+respawnTemplatesCiv[]		= { "MenuPosition", "Spectator" };
+respawnTemplatesVirtual[]	= { "MenuPosition", "Spectator" };
+
+// BIS Revive
+reviveDelay					= 6;
+reviveForceRespawnDelay		= 3;
+reviveBleedOutDelay			= 120;
 
 corpseManagerMode			= 1;
 corpseLimit					= 25;
@@ -96,3 +101,10 @@ class CfgDebriefing
 // inlcude downloadData dialog for intel tasks
 #include <scripts\downloadData\dialog.hpp>
 
+
+// --------------------------------------------------------------
+//	T8 Units 
+//	include CONFIGs
+//
+
+#include <T8\CONFIG.hpp>
