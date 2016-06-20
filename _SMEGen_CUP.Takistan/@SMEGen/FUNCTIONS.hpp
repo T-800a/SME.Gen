@@ -70,6 +70,8 @@
 			addFunction(handleReward);
 			addFunction(markBlackBox);
 			addFunction(objectsMapper);
+			addFunction(selectRandom);
+			addFunction(shuffleArray);
 			addFunction(surrenderHVT);
 			addFunction(testFnc);
 			addFunction(unlockUGV);

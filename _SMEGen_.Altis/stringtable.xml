@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SMEGen">
+
+	<Package name="welcome">
+		<Key ID="STR_SMEGen_welcome_titel">
+			<Original>SME.Gen - infantry focused COOP</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_welcome_text">
+			<Original>Find more information about the SME.Gen mission in your diary!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_welcome_signature">
+			<Original>   Cheers, T-800a</Original>
+		</Key>
+	</Package>
+	
+
+
+	<Package name="diary">
+		<Key ID="STR_SMEGen_diary_desc_titel">
+			<Original>Description</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_desc_text">
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;SME.Gen - infantry focused COOP&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt;SME.Gen is a infantry focused mission generator for COOP gameplay. &lt;br /&gt;When a set of active missions is completed a new set will be genereated after some time. After completing a set of mission, you will be rewarded with a vehicle. There a three types of vehicle available (MobileHQ, MRAP, light attach Helicopter). Only one of those vehicles will be spawned on completion of a mission set. There won't be multiple instances of the same vehicle. Helicopters may have slot restirctions (admin decission). Completing a task will level up your rank. This will make better gear available in the Arsenal (if not disabled in the mission params).</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_keys_titel">
+			<Original>Keys</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_keys_text">
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;Overview of special keys used by SME.Gen&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F1 ]&lt;/font&gt; pressing F1 near a unconscious player will revive him  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F2 ]&lt;/font&gt; pressing F2 near a unconscious player will start dragging him  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ ALT + F2 ]&lt;/font&gt; pressing ALT + F2 near a unconscious player will start carrying him  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F3 ]&lt;/font&gt; pressing F3 in the &lt;marker name="mission_marker_arsenal"&gt;arsenal area&lt;/marker&gt; will open the arsenal  &lt;br /&gt; &lt;br /&gt; &lt;font color="#00FF00"&gt;[ F4 ]&lt;/font&gt; pressing F4 in the &lt;marker name="mission_marker_service"&gt;service area&lt;/marker&gt; will start a full vehicle service</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_server_titel">
+			<Original>Server</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_diary_server_text">
+			<Original>&lt;br /&gt;&lt;font size="20" face="PuristaBold"&gt;1PARA - public SME.Gen COOP server&lt;/font&gt;  &lt;br /&gt; &lt;br /&gt;Welcome to the 1PARA Public server running the SME.Gen COOP mission for infantry focused teamplay.&lt;br /&gt;&lt;br /&gt;you are welcome to join our Teamspeak for communication with TFAR: &lt;font color="#00FF00"&gt;ts.1para.com:10017&lt;/font&gt;&lt;br /&gt;visit our Homepage: &lt;font color="#00FF00"&gt;www.hq1para.co.uk&lt;/font&gt;&lt;br /&gt;</Original>
+		</Key>		
+	</Package>
+
+
+
+	<Package name="Main">
+		<Key ID="STR_SMEGen_vehicleRestricted">
+			<Original>This vehicle is restricted.&lt;br /&gt;&lt;t size='0.95'&gt;You can only get in a cargo slot.&lt;/t&gt;</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_upcommingCleanUp">
+			<Original>New mission sites will be created in %1 minutes!&lt;br /&gt;&lt;br /&gt;Cleanup will start in %2 miuntes!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_unlockUGV">
+			<Original>Found wirless connection to the UGV, you should be ablte to connect to it now.</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_upcommingNewTasks">
+			<Original>New mission sites will be created in %1 minutes!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_errorNewTasks">
+			<Original>ERROR:&lt;br /&gt;Could not create new tasks!&lt;br /&gt;Players please return to the main base to clrea possible positions.&lt;br /&gt;If this does not help contact a admin.</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_addActionIntel">
+			<Original>## Search for Intel ##</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_hint_intelProcess">
+			<Original>&lt;br /&gt;Captured INTEL recieved.&lt;br /&gt;&lt;br /&gt;U.SOC will now evaluate the INTEL.</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_hint_followingTask">
+			<Original>&lt;br /&gt;U.SOC has evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You recieved a new task.</Original>
+		</Key>
+	</Package>
+	
+
+
+	<Package name="Rewards">
+		<Key ID="STR_SMEGen_hint_playerRankUp">
+			<Original>&lt;img color='#FAAC58' size='3.0' align='center' image='%1' /&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1' color='#E6E6E6' align='center'&gt;Congratulations you ranked up!&lt;br /&gt;Your new rank is:&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t size='1.5' color='#FAAC58' align='center'&gt;%2&lt;/t&gt;</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_hint_Reward01">
+			<Original>U.SOC provided you with a Mobile HQ!&lt;br /&gt;&lt;br /&gt;This vehicle is a mobile respawn position.</Original>
+		</Key>
+		<Key ID="STR_SMEGen_hint_Reward02">
+			<Original>U.SOC provided you with a MRAP!</Original>
+		</Key>
+		<Key ID="STR_SMEGen_hint_Reward03">
+			<Original>U.SOC provided you with a Armed Recon Helicopter!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_mapName_Reward01">
+			<Original> MobileHQ</Original>
+		</Key>
+		<Key ID="STR_SMEGen_mapName_Reward02">
+			<Original> MRAP</Original>
+		</Key>
+		<Key ID="STR_SMEGen_mapName_Reward03">
+			<Original> ARH</Original>
+		</Key>
+	</Package>
+
+	<Package name="downloadData">
+		<Key ID="STR_downloadData_01">
+			<Original>Download aborted!</Original>
+			<German>Download abgebrochen!</German>
+		</Key>
+		<Key ID="STR_downloadData_02">
+			<Original>Download already in progress by someone else!</Original>
+			<German>Wird bereits ausgefuehrt!</German>
+		</Key>
+		<Key ID="STR_downloadData_03">
+			<Original>Download started!</Original>
+			<German>Download gestarted!</German>
+		</Key>
+		<Key ID="STR_downloadData_04">
+			<Original>Download finished!</Original>
+			<German>Download abgeschlossen!</German>
+		</Key>
+		<Key ID="STR_downloadData_05">
+			<Original>##  Download INTEL  ##</Original>
+			<German>##  Download INTEL  ##</German>
+		</Key>
+		<Key ID="STR_downloadData_06">
+			<Original>Connecting ...</Original>
+			<German>Verbinden ...</German>
+		</Key>
+		<Key ID="STR_downloadData_07">
+			<Original>Connected:</Original>
+			<German>Verbunden:</German>
+		</Key>
+	</Package>
+	
+	<Package name="vehicleService">
+		<Key ID="STR_SMEGen_init">
+			<Original>initalize full service ...</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_servicetime">
+			<Original>full service will take %1 seconds</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_progress">
+			<Original>full service: %1%2</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_abort">
+			<Original>full service aborted!</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_finish">
+			<Original>full service finished!</Original>
+		</Key>
+	</Package>
+	
+	<Package name="missionTypes">
+		<Key ID="STR_SMEGen_type_occupy_shrt">
+			<Original>Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_task">
+			<Original>Search and Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_desc">
+			<Original>Enemy forces have occupied #__LOCATION__#. Search #__LOCATION__# for all enemies and clear them out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_occupy_mil_shrt">
+			<Original>Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_mil_task">
+			<Original>Search and Secure</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_occupy_mil_desc">
+			<Original>Enemy forces have occupied #__LOCATION__#. Search #__LOCATION__# for all enemies and clear them out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_killHVT_shrt">
+			<Original>Kill the HVT</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_killHVT_task">
+			<Original>Kill the HVT and his guards</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_killHVT_desc">
+			<Original>An enemy officer has been loacted near #__LOCATION__#. Your task is to take him, and his guards out.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_intelHVT_shrt">
+			<Original>Collect INTEL</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_intelHVT_task">
+			<Original>Collect INTEL from a HVT</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_intelHVT_desc">
+			<Original>An enemy officer has been loacted near #__LOCATION__#. Your task is to secure him and take the INTEL he has.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_convoy_shrt">
+			<Original>Raid Convoy</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_convoy_task">
+			<Original>Destroy the Transports</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_convoy_desc">
+			<Original>A borken down convoy hasb been located near #__LOCATION__#. Your task is to destroy the transport trucks.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_roadblock_shrt">
+			<Original>Clear Roadblock</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadblock_task">
+			<Original>Clear the Roadblock</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadblock_desc">
+			<Original>The enemy has set up a Roadblock at the #__LOCATION__#. Your task is to clear the roadblock of enemies.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_roadIED_shrt">
+			<Original>Roadside IEDs</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadIED_task">
+			<Original>Clear the roadside IEDs</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_roadIED_desc">
+			<Original>The enemy is planting roadside IEDs at the #__LOCATION__#. Your task is to clear the roadside IEDs or find further INTEL.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_mortars_shrt">
+			<Original>Destroy Mortars</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_mortars_task">
+			<Original>Destroy the Mortars</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_mortars_desc">
+			<Original>The enemy has set up two mortar pits at #__LOCATION__#. Your task is to find and destroy the two mortar pits.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_resupplies_shrt">
+			<Original>Destroy Resupplies</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_resupplies_task">
+			<Original>Destroy the Resupply Positions</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_resupplies_desc">
+			<Original>The enemy has set up two resupply positions at #__LOCATION__#. Your task is to find and destroy the two resupply positions.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_radiotower_shrt">
+			<Original>Destroy Radiotower</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radiotower_task">
+			<Original>Destroy the Radiotower</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radiotower_desc">
+			<Original>The enemy has set up a fortified communication base in the #__LOCATION__#. Your task is to destroy the radiotower and its transformator.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_recoverUGV_shrt">
+			<Original>Recover a UGV</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_recoverUGV_task">
+			<Original>Recover a UGV and return it to our Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_recoverUGV_desc">
+			<Original>The enemy has captured an unarmed UGV. Your task is to find the UGV at #__LOCATION__# and bring it back to our base safely.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_getIntel_shrt">
+			<Original>Get the Intel</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_getIntel_task">
+			<Original>Download the Intel</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_getIntel_desc">
+			<Original>We have located a enemie surveillance camp in the #__LOCATION__#. Your task is to get into the camp and download all gathered data for our intelligence service.</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_type_heliCrash_shrt">
+			<Original>Investigate Crashsite</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_heliCrash_task">
+			<Original>Investigate the Helicopter Crashsite</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_heliCrash_desc">
+			<Original>Investigate the helicopter crashsite near #__LOCATION__#. Your task is to find the helicopters black-box.</Original>
+		</Key>
+	</Package>
+	
+	
+	<Package name="FAR_Revive">
+		<Key ID="STR_FAR_revive">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;REVIVING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;</Original>
+		</Key>
+		
+		<Key ID="STR_FAR_drag">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;DRAGGING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;You can only drag backwards!&lt;br /&gt;Press [ C ] if you can not move.</Original>
+		</Key>
+		
+		<Key ID="STR_FAR_carry">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;CARRYING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;YOU NEED A PRIMARY WEAPON!&lt;br /&gt;(otherwise the animation will make you stuck)</Original>
+		</Key>
+		
+		<Key ID="STR_FAR_released">
+			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;RELEASED&lt;/t&gt;</Original>
+		</Key>
+	</Package>
+</Project>

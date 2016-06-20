@@ -33,10 +33,9 @@ __DEBUG( __FILE__, "T8SME_server_var_arraySitesBlacklist", T8SME_server_var_arra
 __DEBUG( __FILE__, "_amountSites", _amountSites );
 __DEBUG( __FILE__, "_arraySites", _arraySites );
 
-_arraySites = _arraySites - T8SME_server_var_arraySitesBlacklist;
 __DEBUG( __FILE__, "_arraySites", _arraySites );
 
-_arrayShuff = _arraySites call BIS_fnc_arrayShuffle;	
+_arrayShuff = [ _arraySites ] call T8SME_server_fnc_shuffleArray;	
 __DEBUG( __FILE__, "_arrayShuff", _arrayShuff );
 
 _players = if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
@@ -54,16 +53,17 @@ while {( count _arraySitesUsed ) < _amountSites } do
 		_site = _x;
 		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
 		
-		if ( !( _site in _arraySitesFree ) AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
+		if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
 		
 		false
 	} count _arrayShuff; 
 
 	__DEBUG( __FILE__, "_arraySitesFree", _arraySitesFree );
 	
-	_first = _arraySitesFree select 0;
-	_arraySitesFree deleteAt 0;
+	_first = selectRandom _arraySitesFree;
+	_arraySitesFree deleteAt ( _arraySitesFree find _first );
 	_arraySitesUsed pushBack _first;
+
 	_firstSitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "position" );
 	_firstSiteType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _first >> "type" );
 	
@@ -99,8 +99,12 @@ while {( count _arraySitesUsed ) < _amountSites } do
 
 // resize to defined (in config) amount of targets
 _arraySitesUsed resize _amountSites;
-T8SME_server_var_arraySitesBlacklist = _arraySitesUsed;
-__DEBUG( __FILE__, "_arraySitesUsed", _arraySitesUsed );
+
+if (( count T8SME_server_var_arraySitesBlacklist ) > (( count _arrayShuff ) / 3 )) then { T8SME_server_var_arraySitesBlacklist = []; };
+
+__DEBUG( __FILE__, "T8SME_server_var_arraySitesBlacklist", T8SME_server_var_arraySitesBlacklist );
+T8SME_server_var_arraySitesBlacklist append _arraySitesUsed;
+__DEBUG( __FILE__, "T8SME_server_var_arraySitesBlacklist", T8SME_server_var_arraySitesBlacklist );
 
 // return site if _returnSite (used for multistage objectives follow ups)
 if ( _returnSite ) exitWith {( _arraySitesUsed select 0 )}; 

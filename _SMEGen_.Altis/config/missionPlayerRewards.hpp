@@ -1,0 +1,343 @@
+/*
+ =======================================================================================================================
+
+	SME.Gen - Small Military Encounter Genenerator
+ 
+	File:		missionPlayerRewards.hpp
+	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
+
+ =======================================================================================================================
+*/
+
+class missionPlayerRewards 
+{	
+	class vanilla_BLUFOR
+	{
+		fullArsenal			= 0;	
+		missionReward01		= "B_Truck_01_medical_F";
+		missionReward02		= "B_MRAP_01_hmg_F";
+		missionReward03		= "B_Heli_Light_01_armed_F";
+		
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class startingGear : base_reward
+		{
+			BackpackReward[]	= { "B_AssaultPack_khk","B_AssaultPack_dgtl","B_AssaultPack_rgr","B_AssaultPack_sgg","B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_mcamo","B_AssaultPack_ocamo" };
+			ItemReward[]		= { "optic_Aco_smg","optic_ACO_grn_smg","optic_Aco","optic_ACO_grn","U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_worn","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_HeliPilotCoveralls","U_B_PilotCoveralls","V_Rangemaster_belt","V_BandollierB_khk","V_BandollierB_rgr","V_BandollierB_cbr","V_BandollierB_blk","V_BandollierB_oli","H_Booniehat_khk","H_Booniehat_mcamo","H_Booniehat_tan","H_Booniehat_dgtl","H_Cap_tan","H_Cap_tan_specops_US","H_Cap_khaki_specops_UK","H_Cap_grn","H_Cap_grn_BI","H_Cap_blk_ION","H_Cap_headphones","H_MilCap_mcamo","H_MilCap_gry","H_MilCap_blue","H_Bandanna_khk","H_Bandanna_cbr","H_Bandanna_sgg","H_Bandanna_gry","H_Bandanna_camo","H_Bandanna_mcamo","H_ShemagOpen_tan","H_Beret_blk","H_Watchcap_blk","H_Watchcap_khk","H_Watchcap_camo","H_Shemag_olive_hs","H_Shemag_olive","H_Booniehat_oli","H_Bandanna_sand","H_Watchcap_cbr","H_Cap_usblack","B_UavTerminal","ItemWatch","ItemCompass","ItemGPS","ItemRadio","ItemMap","Binocular","NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","ToolKit","FirstAidKit","Medikit" };
+			MagazineReward[]	= { "16Rnd_9x21_Mag","30Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","3Rnd_HE_Grenade_shell","Laserbatteries","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","30Rnd_65x39_caseless_mag_Tracer","11Rnd_45ACP_Mag","30Rnd_45ACP_Mag_SMG_01","100Rnd_65x39_caseless_mag_Tracer","CUP_HandGrenade_M67","SmokeShellYellow","SmokeShellRed","SmokeShellPurple","SmokeShellOrange","SmokeShellBlue","B_IR_Grenade","O_IR_Grenade","I_IR_Grenade","DemoCharge_Remote_Mag","SatchelCharge_Remote_Mag" };
+			WeaponReward[]		= { "SMG_01_F","hgun_P07_F","launch_NLAW_F","arifle_MX_F","arifle_MX_SW_F","arifle_MXC_F" };
+		};
+		
+		class CORPORAL : base_reward 
+		{
+			ItemReward[]		= { "H_HelmetSpecB_blk", "H_HelmetSpecB_paint2", "H_HelmetSpecB_paint1", "H_HelmetSpecB", "H_HelmetB_plain_blk", "H_HelmetB_plain_mcamo", "optic_Holosight", "optic_Holosight_smg", "muzzle_snds_acp", "muzzle_snds_H", "muzzle_snds_L" };
+			WeaponReward[]		= { "arifle_MX_Black_F", "arifle_MXC_Black_F", "arifle_MX_SW_Black_F" };		
+		};
+		
+		class SERGEANT : base_reward 
+		{
+			ItemReward[]		= { "bipod_01_F_snd", "bipod_01_F_mtp", "bipod_01_F_blk" };
+			MagazineReward[]	= { "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell" };
+			WeaponReward[]		= { "arifle_MXM_Black_F", "arifle_MXM_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F" };		
+		};
+		
+		class LIEUTENANT : base_reward 
+		{
+			ItemReward[]		= { "B_Bergen_blk", "B_Bergen_sgg", "B_Bergen_rgr", "B_Bergen_mcamo", "optic_MRCO", "optic_Hamr", "optic_Arco", "V_Chestrig_khk", "V_Chestrig_oli", "V_Chestrig_blk", "V_Chestrig_rgr" };
+		};
+		
+		class CAPTAIN : base_reward
+		{
+			ItemReward[]		= { "muzzle_snds_B", "optic_DMS", "H_HelmetB_light_grass", "H_HelmetB_light_snakeskin", "H_HelmetB_light_desert", "H_HelmetB_light_black", "H_HelmetB_light_sand" };
+			MagazineReward[]	= { "20Rnd_762x51_Mag" };
+			WeaponReward[]		= { "srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F", "srifle_DMR_03_tan_F", "srifle_DMR_03_khaki_F", "srifle_DMR_03_F" };
+		};
+		
+		class MAJOR : base_reward
+		{
+			ItemReward[]		= { "muzzle_snds_338_sand", "optic_AMS_snd" };
+			MagazineReward[]	= { "10Rnd_338_Mag" };
+			WeaponReward[]		= { "srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F" };
+
+		};
+		
+		class COLONEL : base_reward
+		{
+			MagazineReward[]	= { "130Rnd_338_Mag" };
+			WeaponReward[]		= { "MMG_02_camo_F", "MMG_02_black_F", "MMG_02_sand_F" };
+			ItemReward[]		= { "V_PlateCarrier1_rgr", "V_PlateCarrier2_rgr", "V_PlateCarrierSpec_rgr", "V_PlateCarrier1_blk", "V_PlateCarrierGL_rgr", "V_PlateCarrier3_rgr" };
+		};
+		
+		class GENERAL : base_reward
+		{
+			ItemReward[]		= { "V_PlateCarrierGL_blk", "V_PlateCarrierGL_mtp", "V_PlateCarrierSpec_blk", "V_PlateCarrierGL_mtp" };
+		};
+	};
+	
+	class vanilla_fullArsenal : vanilla_BLUFOR { fullArsenal = 1; };
+
+
+
+	// --------------------------------------------------------------
+	//	vanilla BLUFOR + ACE
+	//	
+
+	class vanilla_BLUFOR_ACE
+	{
+		fullArsenal			= 0;	
+		missionReward01		= "B_Truck_01_medical_F";
+		missionReward02		= "B_MRAP_01_hmg_F";
+		missionReward03		= "B_Heli_Light_01_armed_F";
+		
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class startingGear : base_reward
+		{
+			BackpackReward[]	= { "B_AssaultPack_khk","B_AssaultPack_dgtl","B_AssaultPack_rgr","B_AssaultPack_sgg","B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_mcamo","B_AssaultPack_ocamo" };
+			ItemReward[]		= { "ACE_SpareBarrel","ACE_EarPlugs","optic_Aco_smg","optic_ACO_grn_smg","optic_Aco","optic_ACO_grn","U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_worn","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_HeliPilotCoveralls","U_B_PilotCoveralls","V_Rangemaster_belt","V_BandollierB_khk","V_BandollierB_rgr","V_BandollierB_cbr","V_BandollierB_blk","V_BandollierB_oli","H_Booniehat_khk","H_Booniehat_mcamo","H_Booniehat_tan","H_Booniehat_dgtl","H_Cap_tan","H_Cap_tan_specops_US","H_Cap_khaki_specops_UK","H_Cap_grn","H_Cap_grn_BI","H_Cap_blk_ION","H_Cap_headphones","H_MilCap_mcamo","H_MilCap_gry","H_MilCap_blue","H_Bandanna_khk","H_Bandanna_cbr","H_Bandanna_sgg","H_Bandanna_gry","H_Bandanna_camo","H_Bandanna_mcamo","H_ShemagOpen_tan","H_Beret_blk","H_Watchcap_blk","H_Watchcap_khk","H_Watchcap_camo","H_Shemag_olive_hs","H_Shemag_olive","H_Booniehat_oli","H_Bandanna_sand","H_Watchcap_cbr","H_Cap_usblack","B_UavTerminal","ItemWatch","ItemCompass","ItemGPS","ItemRadio","ItemMap","Binocular","NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","ToolKit","ACE_wirecutter","ACE_MapTools","ACE_fieldDressing","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_microDAGR","ACE_RangeTable_82mm","ACE_NVG_Gen1","ACE_NVG_Gen2","ACE_NVG_Gen4","ACE_NVG_Wide","ACE_SpottingScope","ACE_Tripod","ACE_key_west","ACE_ATragMX","ACE_IR_Strobe_Item","ACE_CableTie","ACE_DAGR","ACE_Clacker","ACE_DefusalKit","ACE_M26_Clacker","ACE_DeadManSwitch","ACE_Kestrel4500","ACE_RangeCard","FirstAidKit", "Medikit" };
+			MagazineReward[]	= { "16Rnd_9x21_Mag","30Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","3Rnd_HE_Grenade_shell","Laserbatteries","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","30Rnd_65x39_caseless_mag_Tracer","11Rnd_45ACP_Mag","30Rnd_45ACP_Mag_SMG_01","100Rnd_65x39_caseless_mag_Tracer","CUP_HandGrenade_M67","SmokeShellYellow","SmokeShellRed","SmokeShellPurple","SmokeShellOrange","SmokeShellBlue","B_IR_Grenade","O_IR_Grenade","I_IR_Grenade","ACE_HandFlare_White","ACE_HandFlare_Red","ACE_HandFlare_Green","ACE_HandFlare_Yellow","ACE_M84","DemoCharge_Remote_Mag", "ACE_HandFlare_White", "ACE_HandFlare_Green", "ACE_HandFlare_Red", "ACE_HandFlare_Yellow", "SatchelCharge_Remote_Mag" };
+			WeaponReward[]		= { "SMG_01_F","hgun_P07_F","launch_NLAW_F","arifle_MX_F","arifle_MX_SW_F","arifle_MXC_F" };
+		};
+		
+		class CORPORAL : base_reward 
+		{
+			ItemReward[]		= { "H_HelmetSpecB_blk", "H_HelmetSpecB_paint2", "H_HelmetSpecB_paint1", "H_HelmetSpecB", "H_HelmetB_plain_blk", "H_HelmetB_plain_mcamo", "optic_Holosight", "optic_Holosight_smg", "muzzle_snds_acp", "muzzle_snds_H", "muzzle_snds_L" };
+			WeaponReward[]		= { "arifle_MX_Black_F", "arifle_MXC_Black_F", "arifle_MX_SW_Black_F" };		
+		};
+		
+		class SERGEANT : base_reward 
+		{
+			ItemReward[]		= { "bipod_01_F_snd", "bipod_01_F_mtp", "bipod_01_F_blk", "ACE_HuntIR_monitor" };
+			MagazineReward[]	= { "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell", "ACE_HuntIR_M203" };
+			WeaponReward[]		= { "arifle_MXM_Black_F", "arifle_MXM_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F" };		
+		};
+		
+		class LIEUTENANT : base_reward 
+		{
+			ItemReward[]		= { "ACE_acc_pointer_green_IR", "ACE_acc_pointer_green", "ACE_acc_pointer_red", "B_Bergen_blk", "B_Bergen_sgg", "B_Bergen_rgr", "B_Bergen_mcamo", "optic_MRCO", "optic_Hamr", "optic_Arco", "V_Chestrig_khk", "V_Chestrig_oli", "V_Chestrig_blk", "V_Chestrig_rgr" };
+		};
+		
+		class CAPTAIN : base_reward
+		{
+			ItemReward[]		= { "muzzle_snds_B", "optic_DMS", "H_HelmetB_light_grass", "H_HelmetB_light_snakeskin", "H_HelmetB_light_desert", "H_HelmetB_light_black", "H_HelmetB_light_sand" };
+			MagazineReward[]	= { "20Rnd_762x51_Mag" };
+			WeaponReward[]		= { "srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F", "srifle_DMR_03_tan_F", "srifle_DMR_03_khaki_F", "srifle_DMR_03_F" };
+		};
+		
+		class MAJOR : base_reward
+		{
+			ItemReward[]		= { "muzzle_snds_338_sand", "optic_AMS_snd" };
+			MagazineReward[]	= { "10Rnd_338_Mag" };
+			WeaponReward[]		= { "srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F" };
+
+		};
+		
+		class COLONEL : base_reward
+		{
+			MagazineReward[]	= { "130Rnd_338_Mag" };
+			WeaponReward[]		= { "MMG_02_camo_F", "MMG_02_black_F", "MMG_02_sand_F" };
+			ItemReward[]		= { "V_PlateCarrier1_rgr", "V_PlateCarrier2_rgr", "V_PlateCarrierSpec_rgr", "V_PlateCarrier1_blk", "V_PlateCarrierGL_rgr", "V_PlateCarrier3_rgr" };
+		};
+		
+		class GENERAL : base_reward
+		{
+			ItemReward[]		= { "V_PlateCarrierGL_blk", "V_PlateCarrierGL_mtp", "V_PlateCarrierSpec_blk", "V_PlateCarrierGL_mtp" };
+		};
+	};
+
+
+
+
+	// --------------------------------------------------------------
+	//	CUP Rewards
+	//
+	
+	class CUP_BLUFOR_USMC
+	{
+		fullArsenal			= 0;	
+		missionReward01		= "CUP_B_M1133_MEV_Woodland_Slat";
+		missionReward02		= "CUP_RG31_M2_OD";
+		missionReward03		= "CUP_B_UH60L_FFV_US";
+		
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class startingGear : base_reward
+		{
+			BackpackReward[]	= { "CUP_B_AssaultPack_Coyote" };
+			ItemReward[]		= {	"B_UavTerminal","ItemWatch","ItemCompass","ItemGPS","ItemRadio","ItemMap","Binocular","NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","ToolKit","FirstAidKit","Medikit",
+									"V_Rangemaster_belt","V_BandollierB_khk","V_BandollierB_rgr","V_BandollierB_cbr","V_BandollierB_blk","V_BandollierB_oli",
+									"H_Booniehat_khk","H_Booniehat_mcamo","H_Booniehat_tan","H_Booniehat_dgtl","H_Cap_tan","H_Cap_tan_specops_US","H_Cap_khaki_specops_UK","H_Cap_grn","H_Cap_grn_BI","H_Cap_blk_ION","H_Cap_headphones","H_MilCap_mcamo","H_MilCap_gry","H_MilCap_blue","H_Bandanna_khk","H_Bandanna_cbr","H_Bandanna_sgg","H_Bandanna_gry","H_Bandanna_camo","H_Bandanna_mcamo","H_ShemagOpen_tan","H_Beret_blk","H_Watchcap_blk","H_Watchcap_khk","H_Watchcap_camo","H_Shemag_olive_hs","H_Shemag_olive","H_Booniehat_oli","H_Bandanna_sand","H_Watchcap_cbr","H_Cap_usblack",
+									"CUP_H_FR_Bandana_Headset", "CUP_H_FR_BandanaGreen", "CUP_H_FR_BandanaWdl", "CUP_H_FR_BeanieGreen", "CUP_H_FR_BoonieMARPAT", "CUP_H_FR_BoonieWDL", "CUP_H_FR_Cap_Headset_Green", "CUP_H_FR_Cap_Officer_Headset", "CUP_H_USMC_Officer_Cap", "CUP_H_FR_Headband_Headset", "CUP_H_FR_Headset",
+									"CUP_U_B_USMC_MARPAT_WDL_Kneepad", "CUP_U_B_USMC_MARPAT_WDL_RolledUp", "CUP_U_B_USMC_MARPAT_WDL_RollUpKneepad", "CUP_U_B_USMC_MARPAT_WDL_Sleeves", "CUP_U_B_USMC_MARPAT_WDL_TwoKneepads", "CUP_U_B_USMC_Officer", "CUP_U_B_USMC_PilotOverall"
+								};
+			MagazineReward[]	= { "CUP_M136_M", "CUP_7Rnd_45ACP_1911", "CUP_17Rnd_9x19_glock17", "CUP_15Rnd_9x19_M9", "CUP_30Rnd_9x19_MP5",
+									"CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_G36","CUP_30Rnd_TE1_Red_Tracer_556x45_G36","CUP_30Rnd_TE1_Green_Tracer_556x45_G36","CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36","CUP_100Rnd_556x45_BetaCMag","CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag","CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag","CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Green","30Rnd_556x45_Stanag_Tracer_Yellow","CUP_20Rnd_556x45_Stanag",
+									"CUP_HandGrenade_M67","B_IR_Grenade","Chemlight_green","Chemlight_red","Chemlight_yellow","Chemlight_blue","SmokeShell","SmokeShellYellow","SmokeShellRed","SmokeShellGreen","SmokeShellPurple","SmokeShellBlue","SmokeShellOrange","CUP_TimeBomb_M","CUP_PipeBomb_M","DemoCharge_Remote_Mag"
+								};
+			WeaponReward[]		= { "CUP_launch_M136", "CUP_hgun_Colt1911", "CUP_hgun_Glock17", "CUP_hgun_M9", "CUP_smg_MP5A5", "CUP_arifle_M16A2", "CUP_glaunch_M79" };
+		};
+		
+		class CORPORAL : base_reward 
+		{
+			ItemReward[]		= { "CUP_V_B_MTV", "CUP_V_B_RRV_Light" };
+			MagazineReward[]	= { "CUP_1Rnd_StarCluster_White_M203","CUP_1Rnd_StarCluster_Red_M203","CUP_1Rnd_StarCluster_Green_M203","CUP_1Rnd_StarFlare_White_M203","CUP_1Rnd_StarFlare_Red_M203","CUP_1Rnd_StarFlare_Green_M203","CUP_1Rnd_HE_M203","CUP_1Rnd_HEDP_M203","CUP_FlareWhite_M203","CUP_FlareGreen_M203","CUP_FlareRed_M203","CUP_FlareYellow_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_SmokeRed_M203","CUP_1Rnd_SmokeGreen_M203","CUP_1Rnd_SmokeYellow_M203","1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell" };
+			WeaponReward[]		= { "CUP_arifle_M16A2_GL" };
+		};
+
+		class SERGEANT : base_reward 
+		{
+			BackpackReward[]	= { "CUP_B_USMC_AssaultPack" };
+			ItemReward[]		= { "CUP_optic_Eotech533", "CUP_optic_CompM2_Black", "CUP_optic_CompM4", "CUP_optic_TrijiconRx01_black", "CUP_optic_RCO",
+									"CUP_muzzle_snds_M16", "CUP_bipod_Harris_1A2_L", "bipod_01_F_snd", "bipod_01_F_mtp", "bipod_01_F_blk",									
+									"CUP_V_B_RRV_Medic", "CUP_V_B_RRV_MG", "CUP_V_B_RRV_Officer", "CUP_V_B_RRV_Scout", "CUP_V_B_RRV_Scout2", "CUP_V_B_RRV_Scout3", "CUP_V_B_RRV_TL"
+								};
+			WeaponReward[]		= { "CUP_arifle_M16A4_GL", "CUP_arifle_M16A4_Base", "CUP_srifle_Mk12SPR" };		
+		};
+		
+		class LIEUTENANT : base_reward 
+		{
+			ItemReward[]		= {"CUP_optic_SMAW_Scope","CUP_H_USMC_Crew_Helmet", "CUP_H_USMC_Goggles_HelmetWDL", "CUP_H_USMC_Headset_GoggleW_HelmetWDL", "CUP_H_USMC_Headset_HelmetWDL", "CUP_H_USMC_Helmet_Pilot", "CUP_H_USMC_HelmetWDL" };
+			MagazineReward[]	= {	"CUP_SMAW_HEAA_M","CUP_SMAW_HEDP_M", "CUP_200Rnd_TE4_Red_Tracer_556x45_M249","CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249","CUP_200Rnd_TE4_Green_Tracer_556x45_M249","CUP_200Rnd_TE1_Red_Tracer_556x45_M249","CUP_100Rnd_TE4_Green_Tracer_556x45_M249","CUP_100Rnd_TE4_Red_Tracer_556x45_M249","CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249","CUP_200Rnd_TE4_Green_Tracer_556x45_L110A1","CUP_200Rnd_TE4_Red_Tracer_556x45_L110A1","CUP_200Rnd_TE4_Yellow_Tracer_556x45_L110A1","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_G36","30Rnd_556x45_STANAG",
+									"CUP_6Rnd_HE_M203","CUP_6Rnd_Smoke_M203","CUP_6Rnd_SmokeRed_M203","CUP_6Rnd_SmokeGreen_M203","CUP_6Rnd_SmokeYellow_M203"
+								};
+			WeaponReward[]		= { "CUP_launch_Mk153Mod0", "CUP_lmg_M249", "CUP_glaunch_M32" };
+		};
+		
+		class CAPTAIN : base_reward
+		{
+			ItemReward[]		= { "CUP_V_B_PilotVest", "CUP_V_B_MTV_LegPouch", "CUP_V_B_MTV_Marksman", "CUP_V_B_MTV_MG", "CUP_V_B_MTV_Mine", "CUP_V_B_MTV_noCB", "CUP_V_B_MTV_Patrol", "CUP_V_B_MTV_PistolBlack", "CUP_V_B_MTV_Pouches", "CUP_V_B_MTV_TL",
+									 "CUP_optic_ACOG", "CUP_optic_ElcanM145", "CUP_optic_SB_11_4x20_PM", "CUP_H_FR_ECH"
+								};
+			MagazineReward[]	= { "CUP_20Rnd_762x51_DMR","CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR","CUP_20Rnd_TE1_Red_Tracer_762x51_DMR","CUP_20Rnd_TE1_Green_Tracer_762x51_DMR","CUP_20Rnd_TE1_White_Tracer_762x51_DMR","20Rnd_762x51_Mag" };
+			WeaponReward[]		= { "CUP_srifle_M14", "CUP_arifle_M4A1_BUIS_GL", "CUP_arifle_M4A1_black" };
+		};
+		
+		class MAJOR : base_reward
+		{
+			BackpackReward[]	= { "CUP_B_USPack_Coyote", "CUP_B_USMC_MOLLE", "CUP_B_USMC_MOLLE_WDL" };
+			ItemReward[]		= { "CUP_optic_LeupoldMk4_CQ_T", "CUP_optic_LeupoldMk4", "CUP_optic_Leupold_VX3" };
+			MagazineReward[]	= { "CUP_20Rnd_762x51_B_M110","CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110","CUP_20Rnd_TE1_Red_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_White_Tracer_762x51_M110"};
+			WeaponReward[]		= { "CUP_srifle_M110", "CUP_srifle_DMR" };
+
+		};
+		
+		class COLONEL : base_reward
+		{
+			MagazineReward[]	= { "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M" };
+			WeaponReward[]		= { "CUP_lmg_M240" };
+			ItemReward[]		= { "CUP_optic_ELCAN_SpecterDR", "V_PlateCarrier1_rgr", "V_PlateCarrier2_rgr", "V_PlateCarrierSpec_rgr", "V_PlateCarrier1_blk", "V_PlateCarrierGL_rgr", "V_PlateCarrier3_rgr" };
+		};
+		
+		class GENERAL : base_reward
+		{
+			ItemReward[]		= { "CUP_optic_LeupoldMk4_10x40_LRT_Desert", "CUP_bipod_VLTOR_Modpod", "CUP_V_B_RRV_DA1", "CUP_V_B_RRV_DA2" };
+			MagazineReward[]	= { "CUP_5Rnd_762x51_M24", "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M", "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M" };
+			WeaponReward[]		= { "CUP_srifle_M24_des", "CUP_lmg_M60A4" };
+		};
+	};
+
+	class CUP_BLUFOR_USMC_fullArsenal : CUP_BLUFOR_USMC { fullArsenal = 1; };
+
+
+	// --------------------------------------------------------------
+	//	RHS Rewards
+	//
+
+	class RHS_INDEP
+	{
+		fullArsenal			= 0;	
+		missionReward01		= "rhs_gaz66_ap2_vdv";
+		missionReward02		= "rhs_btr60_vdv";
+		missionReward03		= "RHS_Mi24P_CAS_vdv";
+		
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class startingGear : base_reward
+		{
+			BackpackReward[]	= { "rhs_assault_umbts" };
+			ItemReward[]		= {	"ACE_SpareBarrel","ACE_EarPlugs","ToolKit","ACE_wirecutter","ACE_MapTools","ACE_fieldDressing","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_microDAGR","ACE_RangeTable_82mm","ACE_NVG_Gen1","ACE_NVG_Gen2","ACE_NVG_Gen4","ACE_NVG_Wide","ACE_SpottingScope","ACE_Tripod","ACE_key_west","ACE_ATragMX","ACE_IR_Strobe_Item","ACE_CableTie","ACE_DAGR","ACE_Clacker","ACE_DefusalKit","ACE_M26_Clacker","ACE_DeadManSwitch","ACE_Kestrel4500","ACE_RangeCard","FirstAidKit", "Medikit""B_UavTerminal","ItemWatch","ItemCompass","ItemGPS","ItemRadio","ItemMap","Binocular","NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","ToolKit","FirstAidKit","Medikit",
+									"rhs_vydra_3m","rhs_6sh92_digi","rhs_6sh92","V_BandollierB_cbr","V_BandollierB_blk","V_BandollierB_oli",
+									"H_Booniehat_khk","H_Booniehat_mcamo","H_Booniehat_tan","H_Booniehat_dgtl","rhs_beanie_green","rhs_acc_1p29",
+									"rhs_Booniehat_flora", "CUP_H_FR_BandanaGreen", 
+									"rhs_uniform_gorka_r_y", "rhs_uniform_gorka_r_g", "rhs_uniform_flora_patchless", "rhs_uniform_flora_patchless_alt", "U_BG_Guerrilla_6_1", "U_BG_Guerilla2_3", "rhs_uniform_df15"
+								};
+			MagazineReward[]	= { "rhs_weap_rshg2", "rhs_mag_9x18_12_57N181S",
+									"rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_7N10_AK","rhs_30Rnd_545x39_AK_green",
+									"rhs_mag_rgo","B_IR_Grenade","Chemlight_green","Chemlight_red","Chemlight_yellow","Chemlight_blue","SmokeShell","SmokeShellYellow","SmokeShellRed","SmokeShellGreen","SmokeShellPurple","SmokeShellBlue","SmokeShellOrange","DemoCharge_Remote_Mag"
+								};
+			WeaponReward[]		= { "rhs_weap_rshg2", "rhs_weap_makarov_pmm", "rhs_weap_ak74m_2mag_camo" };
+		};
+		
+		class CORPORAL : base_reward 
+		{
+			ItemReward[]		= { "H_HelmetSpecB_blk", "H_HelmetSpecB_paint2", "H_HelmetSpecB_paint1", "H_HelmetSpecB", "H_HelmetB_plain_blk", "H_HelmetB_plain_mcamo", "optic_Holosight", "optic_Holosight_smg", "muzzle_snds_acp", "muzzle_snds_H", "muzzle_snds_L" };
+			WeaponReward[]		= { "arifle_MX_Black_F", "arifle_MXC_Black_F", "arifle_MX_SW_Black_F" };		
+		};
+		
+		class SERGEANT : base_reward 
+		{
+			ItemReward[]		= { "bipod_01_F_snd", "bipod_01_F_mtp", "bipod_01_F_blk", "ACE_HuntIR_monitor" };
+			MagazineReward[]	= { "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell", "ACE_HuntIR_M203" };
+			WeaponReward[]		= { "arifle_MXM_Black_F", "arifle_MXM_F", "arifle_MX_GL_F", "arifle_MX_GL_Black_F" };		
+		};
+		
+		class LIEUTENANT : base_reward 
+		{
+			ItemReward[]		= { "ACE_acc_pointer_green_IR", "ACE_acc_pointer_green", "ACE_acc_pointer_red", "B_Bergen_blk", "B_Bergen_sgg", "B_Bergen_rgr", "B_Bergen_mcamo", "optic_MRCO", "optic_Hamr", "optic_Arco", "V_Chestrig_khk", "V_Chestrig_oli", "V_Chestrig_blk", "V_Chestrig_rgr" };
+		};
+		
+		class CAPTAIN : base_reward
+		{
+			ItemReward[]		= { "muzzle_snds_B", "optic_DMS", "H_HelmetB_light_grass", "H_HelmetB_light_snakeskin", "H_HelmetB_light_desert", "H_HelmetB_light_black", "H_HelmetB_light_sand" };
+			MagazineReward[]	= { "20Rnd_762x51_Mag" };
+			WeaponReward[]		= { "srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F", "srifle_DMR_03_tan_F", "srifle_DMR_03_khaki_F", "srifle_DMR_03_F" };
+		};
+		
+		class MAJOR : base_reward
+		{
+			ItemReward[]		= { "muzzle_snds_338_sand", "optic_AMS_snd" };
+			MagazineReward[]	= { "10Rnd_338_Mag" };
+			WeaponReward[]		= { "srifle_DMR_02_F", "srifle_DMR_02_camo_F", "srifle_DMR_02_sniper_F" };
+
+		};
+		
+		class COLONEL : base_reward
+		{
+			MagazineReward[]	= { "130Rnd_338_Mag" };
+			WeaponReward[]		= { "MMG_02_camo_F", "MMG_02_black_F", "MMG_02_sand_F" };
+			ItemReward[]		= { "V_PlateCarrier1_rgr", "V_PlateCarrier2_rgr", "V_PlateCarrierSpec_rgr", "V_PlateCarrier1_blk", "V_PlateCarrierGL_rgr", "V_PlateCarrier3_rgr" };
+		};
+		
+		class GENERAL : base_reward
+		{
+			ItemReward[]		= { "V_PlateCarrierGL_blk", "V_PlateCarrierGL_mtp", "V_PlateCarrierSpec_blk", "V_PlateCarrierGL_mtp" };
+		};
+	};
+	
+	class RHS_INDEP_fullArsenal : RHS_INDEP { fullArsenal = 1; };
+};

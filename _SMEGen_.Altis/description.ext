@@ -1,0 +1,106 @@
+/*
+ =======================================================================================================================
+
+	SME.Gen - Small Military Encounter Genenerator
+ 
+	File:		description.ext
+	Author:		T-800a	E-Mail:		t-800a@gmx.net
+	
+ =======================================================================================================================
+*/
+
+Author						= "T-800a";
+onLoadName					= "SME.Gen | V.044";
+OnLoadMission				= "Small Military Encounter Generator";
+loadScreen					= "images\loadingscreen.paa";
+
+
+class Header
+{
+	gameType		= COOP;
+	minPlayers		= 1;
+	maxPlayers		= 20;
+};
+
+enableDebugConsole			= 1;
+disabledAI					= true;
+disableChannels[]			= { 0, 4, 5, 6 };
+
+respawn						= 3;
+respawnDelay				= 20;
+respawnVehicleDelay			= 30;
+respawnDialog				= 1;
+respawnOnStart				= 0;
+respawnButton				= 1;
+
+respawnTemplates[]			= { "MenuPosition" };
+respawnTemplatesWest[]		= { "MenuPosition" };
+respawnTemplatesEast[]		= { "MenuPosition" };
+respawnTemplatesGuer[]		= { "MenuPosition" };
+respawnTemplatesCiv[]		= { "MenuPosition" };
+respawnTemplatesVirtual[]	= { "MenuPosition" };
+
+corpseManagerMode			= 1;
+corpseLimit					= 25;
+corpseRemovalMinTime		= 300;
+corpseRemovalMaxTime		= 600;
+
+wreckManagerMode			= 1;
+wreckLimit					= 10;
+wreckRemovalMinTime			= 600;
+wreckRemovalMaxTime			= 1200;
+
+class CfgTaskEnhancements
+{
+   enable       = 1;
+   3d           = 1;
+   3dDrawDist   = 1500;
+   share        = 1; 
+   propagate    = 1;
+};
+
+class CfgDebriefing
+{  
+	class RestrictedSlot
+	{
+		title				= "SLOT RESTRICTION";
+		subtitle			= "you selected a restricted player slot";
+		description			= "";
+		pictureBackground	= "";
+		picture				= "o_inf";
+		pictureColor[]		= { 1, 0.2, 0.2, 0.8 };
+	};
+};
+
+
+// --------------------------------------------------------------
+//	SME.Gen 
+//	include CONFIGs
+//
+
+// include params
+#include <config\params.hpp>
+
+// main mission config
+#include <config\cfgRandomMissions.hpp>
+
+// include cfgFunctions
+#include <config\cfgFunctions.hpp>
+
+// include CfgRemoteExec
+#include <config\cfgRemoteExec.hpp>
+
+// include ui elements
+#include <config\ui.hpp>
+#include <config\ui_r.hpp>
+
+// inlcude downloadData dialog for intel tasks
+#include <scripts\downloadData\dialog.hpp>
+
+
+// --------------------------------------------------------------
+//	T8 Units 
+//	include CONFIGs
+//
+
+#include <T8\CONFIG.hpp>
