@@ -59,6 +59,7 @@
 			addFunction(createSmallCamp);
 			addFunction(createVehiclePatrols);
 			addFunction(fillUnitArray);
+			addFunction(findCenter);
 			addFunction(findObjectivePos);
 			addFunction(findObjectivePositions);
 			addFunction(getVehicleClass);

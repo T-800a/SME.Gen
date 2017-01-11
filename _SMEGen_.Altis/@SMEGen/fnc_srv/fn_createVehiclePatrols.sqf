@@ -15,8 +15,7 @@ if !(isServer) exitWith {};
 
 #include <..\MACRO.hpp>
 
-private [	"_missionType", "_markerName", "_spawnMarker", "_inf", "_arrayGroups", "_configArrayGroups", 
-			"_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN" ];
+private [	"_missionType", "_inf", "_arrayGroups", "_configArrayGroups", "_spawnedUnits", "_modPlayer", "_modGroup", "_missionSide", "_missionSideN" ];
 
 params [[ "_sites", [], [[]]]];
 
@@ -70,17 +69,19 @@ switch ( _missionSideN ) do
 
 __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 
+private _center = [ _markerArray ] call T8SME_server_fnc_findCenter;
+
 {
-	private [ "_task", "_units", "_filler", "_subArray", "_vehicleGroup" ];
-	_task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "task" );
-	_units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "units" );
-	_filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "unitsFiller" );
-	_vehicleGroup	= [ _missionType, _x ] call T8SME_server_fnc_getVehicleGroup;
+	private _task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "task" );
+	private _units			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "units" );
+	private _filler			= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "unitsFiller" );
+	private _vehicleGroup	= [ _missionType, _x ] call T8SME_server_fnc_getVehicleGroup;
 
 	_units = [ _units, _filler ] call T8SME_server_fnc_fillUnitArray;
 	_units = [ _units ] call T8SME_server_fnc_buildUnitArray;
 	
-	_subArray = [ [ _units, _markerArray, _missionSide, _vehicleGroup ], [ _task ]];
+	// 	[[ UNITS, TASK MARKER ], [ TASK ], [ COMM ], [], [ SPAWN POS ]]
+	private _subArray = [[ _units, _markerArray, _missionSide, _vehicleGroup ], [ _task ], [], [], _center ];
 	
 	_inf pushBack _subArray;
 
