@@ -30,20 +30,20 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
+		spawnUnitsFaction			= "IFA3_OPFOR_SOV";
 		
-		spawnUnitsFactionFriendly	= "CUP_BLUFOR_USMC";
+		spawnUnitsFactionFriendly	= "IFA3_BLUFOR_WEHR";
 
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "CUP_BLUFOR_USMC_fullArsenal";
+		playerRewardSet				= "IFA3_BLUFOR_WEHR";
 
 
 	// missions "won" needed for new vehicle 
 
-		serverRewardSuccesses		= 3;
+		serverRewardSuccesses		= 2;
 
 
 	// amount of spawned mission AOs
@@ -71,7 +71,7 @@ class cfgRandomMissions
 
 		adminWhitelist[]			= { "76561197962343988" }; // T-800a
 		pilotWhitelist01[]			= {};
-		pilotWhitelist02[]			= {	"76561197962343988"	};
+		pilotWhitelist02[]			= {};
 
 
 	// vehicle restrictions
