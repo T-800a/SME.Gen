@@ -125,4 +125,15 @@ class Params
 		texts[]		= { "100%",	"75%",	"50%",	"25%",	"DEFAULT - 50%" };
 		default		= 999;	
 	};
+
+
+	class param_titleBISrevive
+	{
+		title		= "----- BIS Revive Settings -----";
+		values[]	= {0};
+		texts[]		= {"-----"};
+		default		= 0;
+	};	
+ 
+	#include "\a3\Functions_F\Params\paramRevive.hpp"
 };

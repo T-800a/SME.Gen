@@ -10,7 +10,7 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen X CUP | V.044";
+onLoadName					= "SME.Gen X IFA3 | V.045.pre";
 OnLoadMission				= "Small Military Encounter Generator";
 loadScreen					= "images\loadingscreen.paa";
 
@@ -39,10 +39,21 @@ respawnTemplatesGuer[]		= { "MenuPosition", "Spectator" };
 respawnTemplatesCiv[]		= { "MenuPosition", "Spectator" };
 respawnTemplatesVirtual[]	= { "MenuPosition", "Spectator" };
 
+
 // BIS Revive
-reviveDelay					= 6;
-reviveForceRespawnDelay		= 3;
-reviveBleedOutDelay			= 120;
+
+ReviveMode = 1;							//0: disabled, 1: enabled, 2: controlled by player attributes
+ReviveUnconsciousStateMode = 0;			//0: basic, 1: advanced, 2: realistic
+ReviveRequiredTrait = 0;				//0: none, 1: medic trait is required
+ReviveRequiredItems = 1;				//0: none, 1: medkit, 2: medkit or first aid kit
+ReviveRequiredItemsFakConsumed = 0;		//0: first aid kit is not consumed upon revive, 1: first aid kit is consumed
+ReviveDelay = 20;						//time needed to revive someone (in secs)
+ReviveMedicSpeedMultiplier = 2;			//speed multiplier for revive performed by medic
+ReviveForceRespawnDelay = 6;			//time needed to perform force respawn (in secs)
+ReviveBleedOutDelay = 300;				//unconscious state duration (in secs)
+
+
+// BIS Garbage Collection
 
 corpseManagerMode			= 1;
 corpseLimit					= 25;
@@ -54,6 +65,7 @@ wreckLimit					= 10;
 wreckRemovalMinTime			= 600;
 wreckRemovalMaxTime			= 1200;
 
+
 class CfgTaskEnhancements
 {
    enable       = 1;
@@ -62,6 +74,7 @@ class CfgTaskEnhancements
    share        = 1; 
    propagate    = 1;
 };
+
 
 class CfgDebriefing
 {  
