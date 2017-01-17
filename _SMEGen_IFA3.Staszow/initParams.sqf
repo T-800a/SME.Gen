@@ -102,7 +102,7 @@ switch ( "param_FAR_enable" call BIS_fnc_getParamValue ) do
 {
 	case 0 :	{ FAR_isEnabled = true; };
 	case 1 :	{ FAR_isEnabled = false; };
-	default		{ FAR_isEnabled = true; };
+	default		{ FAR_isEnabled = false; };
 };
 
 // FAR_ReviveMode

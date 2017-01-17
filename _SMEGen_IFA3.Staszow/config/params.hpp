@@ -90,7 +90,7 @@ class Params
 	{
 		title		= "enable/disable FAR Revive";
 		values[]	= { 0,			1,			999 };
-		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT - ENABLED" };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT - DISABLED" };
 		default		= 999;
 	};
 	
