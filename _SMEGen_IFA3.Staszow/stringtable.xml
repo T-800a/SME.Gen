@@ -260,6 +260,17 @@
 		</Key>
 
 
+		<Key ID="STR_SMEGen_type_ammobase_shrt">
+			<Original>Destroy Ammunition Resupply</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_ammobase_task">
+			<Original>Destroy the Ammunition Resupply Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_ammobase_desc">
+			<Original>The enemy has set up a fortified ammunition resupply base in the #__LOCATION__#. Your task is to destroy the stored ammunition.</Original>
+		</Key>
+
+
 		<Key ID="STR_SMEGen_type_resupplies_shrt">
 			<Original>Destroy Resupplies</Original>
 		</Key>

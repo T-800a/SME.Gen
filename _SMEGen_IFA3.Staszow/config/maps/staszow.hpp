@@ -13,24 +13,6 @@
 
 class Staszow : base_map
 {
-	class base_field_IFA3 : base_field
-	{
-		size[]			= { 150, 150 };
-		allowedTypes[]	= { "IFA3_flak", "IFA3_mortars" };
-	};
-	
-	class base_town_IFA3 : base_town
-	{
-		size[]			= { 300, 300 };
-		allowedTypes[]	= { "occupy", "IFA3_mortars", "resupplies", "killHVT", "intelHVT" };
-	};
-
-	class base_mil_IFA3 : base_mil
-	{
-		size[]			= { 200, 200 };
-		allowedTypes[]	= { "occupy_mil", "IFA3_mortars", "resupplies", "killHVT", "intelHVT" };
-	};	
-	
 	// --------------------------------------------------------------
 	// missionSites - TOWNS
 
@@ -154,6 +136,62 @@ class Staszow : base_map
 		position[] = { 4692.48, 9237.61, 0 };
 	};
 
+	class town_mokre : base_town_IFA3
+	{
+		scope = 1;
+		name = "Mokre";
+		marker = "site_town_mokre";
+		position[] = { 5749.99, 10556.1, 0 };
+	};
+
+	class town_kucow : base_town_IFA3
+	{
+		scope = 1;
+		name = "Kucow";
+		marker = "site_town_kucow";
+		position[] = { 4112, 10133.1, 0 };
+	};
+
+	class town_gacki : base_town_IFA3
+	{
+		scope = 1;
+		name = "Gacki";
+		marker = "site_town_gacki";
+		position[] = { 3857.07, 9749.66, 0 };
+	};
+
+	class town_kotuszow : base_town_IFA3
+	{
+		scope = 1;
+		name = "Kotuszow";
+		marker = "site_town_kotuszow";
+		position[] = { 7281.9, 13798.4, 0 };
+	};
+
+	class town_korytnica : base_town_IFA3
+	{
+		scope = 1;
+		name = "Korytnica";
+		marker = "site_town_korytnica";
+		position[] = { 6434.68, 15362.5, 0 };
+	};
+
+	class town_jasien : base_town_IFA3
+	{
+		scope = 1;
+		name = "Jasien";
+		marker = "site_town_jasien";
+		position[] = { 8067.89, 15460.7, 0 };
+	};
+
+	class town_staszow : base_town_IFA3
+	{
+		scope = 1;
+		name = "STASZOW";
+		marker = "site_town_staszow";
+		position[] = { 14176.8, 8973.64, 0 };
+	};
+
 
 
 	// --------------------------------------------------------------
@@ -165,6 +203,110 @@ class Staszow : base_map
 
 	// --------------------------------------------------------------
 	// missionSites - COMPOUND POSITIONS
+
+	class comp_gackinw_E : base_comp_IFA3
+	{
+		scope = 1;
+		name = "E of Gacki Nw";
+		marker = "site_comp_gackinw_E";
+		position[] = { 3409.11, 8804.05, 0 };
+	};
+
+	class comp_poduchowna_N : base_comp_IFA3
+	{
+		scope = 1;
+		name = "N of Poduchowna";
+		marker = "site_comp_poduchowna_N";
+		position[] = { 1363.16, 11115.7, 0 };
+	};
+
+	class comp_mokre_NNW : base_comp_IFA3
+	{
+		scope = 1;
+		name = "NNW of Mokre";
+		marker = "site_comp_mokre_NNW";
+		position[] = { 5160.89, 11882.7, 0 };
+	};
+
+	class comp_kurozweki_WSW : base_comp_IFA3
+	{
+		scope = 1;
+		name = "WSW of KUROZWEKI";
+		marker = "site_comp_kurozweki_WSW";
+		position[] = { 8931.22, 11595.2, 0 };
+	};
+
+	class comp_kotuszow_SE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "SE of Kotuszow";
+		marker = "site_comp_kotuszow_SE";
+		position[] = { 7395.94, 13446.6, 0 };
+	};
+
+	class comp_ogledow_N : base_comp_IFA3
+	{
+		scope = 1;
+		name = "N of Ogledow";
+		marker = "site_comp_ogledow_N";
+		position[] = { 11037.9, 9505.62, 0 };
+	};
+
+	class comp_osowkastara_S : base_comp_IFA3
+	{
+		scope = 1;
+		name = "S of Osowka Stara";
+		marker = "site_comp_osowkastara_S";
+		position[] = { 1821.27, 13397.9, 0 };
+	};
+
+	class comp_brzeziny_NE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "NE of Brzeziny";
+		marker = "site_comp_brzeziny_NE";
+		position[] = { 1029.35, 14689.3, 0 };
+	};
+
+	class comp_osowka_SE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "SE of Osowka";
+		marker = "site_comp_osowka_SE";
+		position[] = { 2754.51, 13488.8, 0 };
+	};
+
+	class comp_yablonica_NNE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "NNE of Yablonica";
+		marker = "site_comp_yablonica_NNE";
+		position[] = { 7510.86, 12682.7, 0 };
+	};
+
+	class comp_ponik_NNE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "NNE of Ponik";
+		marker = "site_comp_ponik_NNE";
+		position[] = { 8732.05, 10484.9, 0 };
+	};
+
+	class comp_ziemblice_ENE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "ENE of Ziemblice";
+		marker = "site_comp_ziemblice_ENE";
+		position[] = { 10701.9, 7995.01, 0 };
+	};
+
+	class comp_krzewiny_ENE : base_comp_IFA3
+	{
+		scope = 1;
+		name = "ENE of Krzewiny";
+		marker = "site_comp_krzewiny_ENE";
+		position[] = { 13119.6, 7866.1, 0 };
+	};
 
 
 
@@ -179,7 +321,7 @@ class Staszow : base_map
 	// missionSites - FIELDS
 	
 
-	class field_osowkastara_WNW : base_field_IFA3 
+	class field_osowkastara_WNW : base_field_IFA3
 	{
 		scope = 1;
 		name = "WNW of Osowka Stara";

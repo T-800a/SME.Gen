@@ -277,6 +277,14 @@ switch ( _type ) do
 		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
+	case "IFA3_ammobase":
+	{
+		private _obj = [ _sitePos ] call T8SME_server_fnc_IFA3_createAmmoBase; 
+		
+		_varName = format [ "OBJECTIVE_IFA3_ammobase_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
 	default {};
 };
 
