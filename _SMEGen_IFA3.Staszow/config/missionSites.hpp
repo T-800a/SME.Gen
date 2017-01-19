@@ -94,7 +94,7 @@ class missionSites
 			position[]		= { 0, 0, 0 };
 			size[]			= { 200, 80 };
 			angle			= 0;
-		};	
+		};
 		
 		
 	// IFA3 base locations
@@ -120,7 +120,7 @@ class missionSites
 		class base_comp_IFA3 : base_comp
 		{
 			size[]			= { 200, 200 };
-			allowedTypes[]	= { "IFA3_ammobase" };
+			allowedTypes[]	= { "IFA3_ammobase", "IFA3_radarbase" };
 		};
 	};
 

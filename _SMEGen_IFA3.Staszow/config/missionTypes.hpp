@@ -819,11 +819,47 @@ class missionTypes
 		class groups : groups
 		{
 			class group01 : base_defendBase_small { scope = 1; };
-			class group02 : base_garrison { scope = 1; };
-			class group03 : base_fireteam { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
 		};
 	};	
+
+
+	class IFA3_radarbase : base_type
+	{
+		scope			= 1;
+		name			= "radarBase";
+		
+		taskShort		= "$STR_SMEGen_type_radarbase_shrt";
+		task			= "$STR_SMEGen_type_radarbase_task";
+		description		= "$STR_SMEGen_type_radarbase_desc";
+		
+		class conditions
+		{
+			class win
+			{
+				condition	= "(!( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+			
+			class counter_attack
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
+				function	= "T8SME_server_fnc_createAttack";
+				isFinal		= 0;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
 
 
 // --------------------------------------------------------------

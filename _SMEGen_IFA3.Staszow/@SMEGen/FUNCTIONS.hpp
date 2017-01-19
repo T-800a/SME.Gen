@@ -76,10 +76,11 @@
 			addFunction(surrenderHVT);
 			addFunction(testFnc);
 			addFunction(unlockUGV);
-			
+
 			addFunction(IFA3_createAmmoBase);
 			addFunction(IFA3_createFlakPos);
 			addFunction(IFA3_createMortarPos);
+			addFunction(IFA3_createRadarBase);
 		};
 	};
 

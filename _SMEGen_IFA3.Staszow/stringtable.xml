@@ -271,6 +271,17 @@
 		</Key>
 
 
+		<Key ID="STR_SMEGen_type_radarbase_shrt">
+			<Original>Destroy Radar Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radarbase_task">
+			<Original>Destroy the Radar Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radarbase_desc">
+			<Original>The enemy has set up a fortified radar base in the #__LOCATION__#. Your task is to destroy the radar.</Original>
+		</Key>
+
+
 		<Key ID="STR_SMEGen_type_resupplies_shrt">
 			<Original>Destroy Resupplies</Original>
 		</Key>
