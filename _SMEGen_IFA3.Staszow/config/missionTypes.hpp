@@ -48,6 +48,15 @@ class missionTypes
 				vehicleGroup	= 0;
 			};
 			
+			class base_garrison_small
+			{
+				scope			= 0;
+				units[]			= { "SQUADLEADER", "CORPSMAN", "RIFLEMAN" };
+				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
+				task			= "GARRISON";
+				vehicleGroup	= 0;
+			};
+			
 			class base_occupy 
 			{
 				scope			= 0;
@@ -731,7 +740,37 @@ class missionTypes
 
 // --------------------------------------------------------------
 // Iron Front A3 - specific TASKS
-	
+
+
+	class IFA3_roadblock : base_type
+	{
+		scope			= 1;
+		name			= "Roadblock";
+		
+		taskShort		= "$STR_SMEGen_type_roadblock_shrt";
+		task			= "$STR_SMEGen_type_roadblock_task";
+		description		= "$STR_SMEGen_type_roadblock_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 2 ) AND (({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities 75 )) > 0 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defend_small { scope = 1; };
+			class group02 : base_garrison_small { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
+
+
 	class IFA3_mortars : base_type
 	{
 		scope			= 1;

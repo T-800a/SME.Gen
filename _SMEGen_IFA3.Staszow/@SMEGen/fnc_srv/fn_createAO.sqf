@@ -255,6 +255,11 @@ switch ( _type ) do
 // --------------------------------------------------------------
 // Iron Front A3 - specific AOs
 
+	case "IFA3_roadblock":
+	{
+		[ _sitePos, _siteAngle ] call T8SME_server_fnc_IFA3_createRoadblock;
+	};
+
 	case "IFA3_mortars":
 	{
 		while { count _objPos < 2 } do 

@@ -52,19 +52,19 @@ private _objArray =
 	["Land_fort_bagfence_round",[4.01465,-0.627441,0],177.799,1,0,[0,-0],"","",true,false], 
 	["Paleta1",[10.7295,6.55176,0],195.878,1,0,[0,0],"","",true,false], 
 	
-	["VR_3DSelector_01_default_F",[-11.8427,-7.79053,0],192.782,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[-15.2295,-3.42236,0],239.798,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[-15.3495,6.79199,0],269.704,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[-15.3581,1.47803,0],275.876,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[-3.14771,11.5894,0],0.504888,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[-9.56232,14.8584,0],357.404,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[0.423584,-7.69385,0],169.144,1,0,[0,-0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[14.8651,1.61572,0],85.4774,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[14.8878,6.39014,0],69.49,1,0,[0,0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[15.0688,-3.11963,0],115.709,1,0,[0,-0],"","",true,false], 
-	["VR_3DSelector_01_default_F",[2.81915,11.6685,0],1.02176,1,0,[0,0],"","",true,false],
-	["VR_3DSelector_01_default_F",[8.64789,14.6694,0],0.00180266,1,0,[0,0],"","",true,false],
-	["VR_3DSelector_01_default_F",[8.65808,-7.54102,0],173.922,1,0,[0,-0],"","",true,false]
+	["VR_3DSelector_01_default_F",[-11.8427,-7.79053,0.3],192.782,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[-15.2295,-3.42236,0.3],239.798,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[-15.3495,6.79199,0.3],269.704,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[-15.3581,1.47803,0.3],275.876,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[-3.14771,11.5894,0.3],0.504888,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[-9.56232,14.8584,0.3],357.404,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[0.423584,-7.69385,0.3],169.144,1,0,[0,-0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[14.8651,1.61572,0.3],85.4774,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[14.8878,6.39014,0.3],69.49,1,0,[0,0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[15.0688,-3.11963,0.3],115.709,1,0,[0,-0],"","",true,false], 
+	["VR_3DSelector_01_default_F",[2.81915,11.6685,0.3],1.02176,1,0,[0,0],"","",true,false],
+	["VR_3DSelector_01_default_F",[8.64789,14.6694,0.3],0.00180266,1,0,[0,0],"","",true,false],
+	["VR_3DSelector_01_default_F",[8.65808,-7.54102,0.3],173.922,1,0,[0,-0],"","",true,false]
 
 
 	// [( "EMPTY_OFFROAD" call T8SME_server_fnc_getVehicleClass ),[16.1133,0.494385,0.013546],0.0128864,1,0,[-1.44623,2.15437],"","",true,false] 

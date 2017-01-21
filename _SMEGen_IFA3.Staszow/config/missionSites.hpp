@@ -105,6 +105,11 @@ class missionSites
 			allowedTypes[]	= { "IFA3_flak", "IFA3_mortars" };
 		};
 		
+		class base_road_IFA3 : base_road
+		{
+			allowedTypes[]	= { "convoy", "IFA3_roadblock" };
+		};
+		
 		class base_town_IFA3 : base_town
 		{
 			size[]			= { 300, 300 };

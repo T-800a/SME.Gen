@@ -197,7 +197,266 @@ class Staszow : base_map
 	// --------------------------------------------------------------
 	// missionSites - ROADS
 
+	class road_szydlow_SSW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road SSW of SZYDLOW";
+		marker = "site_road_szydlow_SSW";
+		position[] = { 2251.39, 11374.1, 0 };
+		angle = 115;
+	};
 
+	class road_szydlow_ENE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road ENE of SZYDLOW";
+		marker = "site_road_szydlow_ENE";
+		position[] = { 3240.12, 12365.5, 0 };
+		angle = 154;
+	};
+
+	class road_osowkanowa_NE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NE of Osowka Nowa";
+		marker = "site_road_osowkanowa_NE";
+		position[] = { 3656.2, 15458.8, 0 };
+		angle = 134;
+	};
+
+	class road_osowka_NW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NW of Osowka";
+		marker = "site_road_osowka_NW";
+		position[] = { 1734.95, 14852.9, 0 };
+		angle = 203;
+	};
+
+	class road_gacki_W : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road W of Gacki";
+		marker = "site_road_gacki_W";
+		position[] = { 3004.15, 9843.26, 0 };
+		angle = 301;
+	};
+
+	class road_zyzna_NNE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NNE of Zyzna";
+		marker = "site_road_zyzna_NNE";
+		position[] = { 2108.34, 9217.91, 0 };
+		angle = 313;
+	};
+
+	class road_kurozweki_E : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road E of KUROZWEKI";
+		marker = "site_road_kurozweki_E";
+		position[] = { 10583.6, 11972.1, 0 };
+		angle = 272;
+	};
+
+	class road_ponik_N : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road N of Ponik";
+		marker = "site_road_ponik_N";
+		position[] = { 8361.31, 10435.7, 0 };
+		angle = 267;
+	};
+
+	class road_zaraz_ESE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road ESE of Zaraz";
+		marker = "site_road_zaraz_ESE";
+		position[] = { 9831.21, 9350.2, 0 };
+		angle = 379;
+	};
+
+	class road_ogledow_S : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road S of Ogledow";
+		marker = "site_road_ogledow_S";
+		position[] = { 10927.1, 8433, 0 };
+		angle = 447;
+	};
+	
+	class road_staszow_NNE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NNE of STASZOW";
+		marker = "site_road_staszow_NNE";
+		position[] = { 14315.6, 9591.42, 0 };
+		angle = 113;
+	};
+
+	class road_staszow_NW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NW of STASZOW";
+		marker = "site_road_staszow_NW";
+		position[] = { 13514.3, 9721.98, 0 };
+		angle = 419;
+	};
+
+	class road_krzewiny_NNE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NNE of Krzewiny";
+		marker = "site_road_krzewiny_NNE";
+		position[] = { 12494.9, 8746.1, 0 };
+		angle = 370;
+	};
+
+	class road_ogledow_WSW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road WSW of Ogledow";
+		marker = "site_road_ogledow_WSW";
+		position[] = { 10092.6, 8787.68, 0 };
+		angle = 366;
+	};
+
+	class road_ponik_WSW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road WSW of Ponik";
+		marker = "site_road_ponik_WSW";
+		position[] = { 7796, 9203.44, 0 };
+		angle = 293;
+	};
+
+	class road_mokre_S : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road S of Mokre";
+		marker = "site_road_mokre_S";
+		position[] = { 5865.17, 9746.94, 0 };
+		angle = 198;
+	};
+
+	class road_kucow_NNE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NNE of Kucow";
+		marker = "site_road_kucow_NNE";
+		position[] = { 4314.02, 10854.9, 0 };
+		angle = 226;
+	};
+
+	class road_kurozweki_WSW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road WSW of KUROZWEKI";
+		marker = "site_road_kurozweki_WSW";
+		position[] = { 8505.14, 11297.9, 0 };
+		angle = 104;
+	};
+
+	class road_kotuszow_ESE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road ESE of Kotuszow";
+		marker = "site_road_kotuszow_ESE";
+		position[] = { 8182.04, 13347.9, 0 };
+		angle = 224;
+	};
+
+	class road_kotuszow_SW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road SW of Kotuszow";
+		marker = "site_road_kotuszow_SW";
+		position[] = { 6898.9, 13485.3, 0 };
+		angle = 143;
+	};
+
+	class road_korytnica_SE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road SE of Korytnica";
+		marker = "site_road_korytnica_SE";
+		position[] = { 7125.66, 14855.5, 0 };
+		angle = 446;
+	};
+
+	class road_korytnica_SW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road SW of Korytnica";
+		marker = "site_road_korytnica_SW";
+		position[] = { 5723.89, 14926, 0 };
+		angle = 146;
+	};
+
+	class road_korytnica_ENE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road ENE of Korytnica";
+		marker = "site_road_korytnica_ENE";
+		position[] = { 6925.7, 15729.7, 0 };
+		angle = 447;
+	};
+
+	class road_jasien_ESE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road ESE of Jasien";
+		marker = "site_road_jasien_ESE";
+		position[] = { 8632.09, 15232.6, 0 };
+		angle = 93;
+	};
+
+	class road_krzewiny_ENE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road ENE of Krzewiny";
+		marker = "site_road_krzewiny_ENE";
+		position[] = { 12859.8, 7775.49, 0 };
+		angle = 405;
+	};
+
+	class road_tuczepy_NNE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NNE of Tuczepy";
+		marker = "site_road_tuczepy_NNE";
+		position[] = { 2318.89, 7797.14, 0 };
+		angle = 117;
+	};
+
+	class road_zyzna_WSW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road WSW of Zyzna";
+		marker = "site_road_zyzna_WSW";
+		position[] = { 1610.85, 8612.06, 0 };
+		angle = 131;
+	};
+
+	class road_osowkastara_SSW : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road SSW of Osowka Stara";
+		marker = "site_road_osowkastara_SSW";
+		position[] = { 1377.86, 13031.5, 0 };
+		angle = 225;
+	};
+
+	class road_szydlow_NE : base_road_IFA3
+	{
+		scope = 1;
+		name = "Road NE of SZYDLOW";
+		marker = "site_road_szydlow_NE";
+		position[] = { 3309.56, 12954.3, 0 };
+		angle = 143;
+	};
 
 
 

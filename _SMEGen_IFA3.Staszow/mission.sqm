@@ -13,9 +13,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={800.50964,109.21466,5632.2207};
-		dir[]={0.83796632,-0.52730894,-0.14114645};
-		up[]={0.52003866,0.84963429,-0.087596975};
-		aside[]={-0.1661128,3.219975e-007,-0.9861809};
+		dir[]={0.75023532,-0.42271689,0.50854892};
+		up[]={0.34996516,0.90622407,0.23722248};
+		aside[]={0.5611338,1.7730054e-007,-0.82781351};
 	};
 };
 binarizationWanted=0;
@@ -137,6 +137,63 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="ReviveForceRespawnDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=5;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ReviveBleedOutDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=300;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="ReviveDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=15.000001;
+				};
+			};
+		};
+		class Attribute3
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -199,7 +256,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute1
+		class Attribute4
 		{
 			property="ReviveMode";
 			expression="false";
@@ -215,63 +272,6 @@ class CustomAttributes
 						};
 					};
 					value=1;
-				};
-			};
-		};
-		class Attribute2
-		{
-			property="ReviveForceRespawnDelay";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=5;
-				};
-			};
-		};
-		class Attribute3
-		{
-			property="ReviveBleedOutDelay";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=300;
-				};
-			};
-		};
-		class Attribute4
-		{
-			property="ReviveDelay";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=15.000001;
 				};
 			};
 		};
@@ -294,7 +294,6 @@ class CustomAttributes
 				};
 			};
 		};
-
 		nAttributes=6;
 	};
 };
@@ -350,7 +349,6 @@ class Mission
 					type="LIB_GER_unterofficer";
 					atlOffset=7.6293945e-006;
 				};
-				
 				class Item1
 				{
 					dataType="Object";
@@ -740,7 +738,7 @@ class Mission
 					};
 					id=44;
 					type="LIB_CIV_Priest";
-					atlOffset=3.8146973e-006;				
+					atlOffset=3.8146973e-006;
 				};
 			};
 			class Attributes
