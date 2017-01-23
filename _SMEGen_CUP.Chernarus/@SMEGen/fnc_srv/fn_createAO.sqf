@@ -154,7 +154,7 @@ switch ( _type ) do
 		_varName = format [ "OBJECTIVE_mortars_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
 	};
-	
+		
 	case "resupplies":
 	{
 		private [ "_relPos", "_obj01", "_obj02" ];
@@ -249,6 +249,52 @@ switch ( _type ) do
 		[ _obj ] remoteExec [ "T8SME_client_fnc_addActionIntel", 0, ( format [ "OBJECTIVE_heliCrash_actionID_%1", _siteMkr ]) ];
 
 		_varName = format [ "OBJECTIVE_heliCrash_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
+// --------------------------------------------------------------
+// Iron Front A3 - specific AOs
+
+	case "IFA3_roadblock":
+	{
+		[ _sitePos, _siteAngle ] call T8SME_server_fnc_IFA3_createRoadblock;
+	};
+
+	case "IFA3_mortars":
+	{
+		while { count _objPos < 2 } do 
+		{
+			private _relPos = [ _sitePos, ( _range * 0.25 ), random 360 ] call BIS_fnc_relPos;
+			_objPos = [ _relPos, ( _range * 0.8 )] call T8SME_server_fnc_findObjectivePositions;
+		};
+		
+		private _obj01 = [ _objPos select 0 ] call T8SME_server_fnc_IFA3_createMortarPos;
+		private _obj02 = [ _objPos select 1 ] call T8SME_server_fnc_IFA3_createMortarPos;
+		
+		_varName = format [ "OBJECTIVE_IFA3_mortars_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, [ _obj01, _obj02 ]];
+	};
+	
+	case "IFA3_flak":
+	{
+		private _obj = [ _sitePos ] call T8SME_server_fnc_IFA3_createFlakPos; 
+		_varName = format [ "OBJECTIVE_IFA3_flak_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
+	case "IFA3_ammobase":
+	{
+		private _obj = [ _sitePos ] call T8SME_server_fnc_IFA3_createAmmoBase; 
+		
+		_varName = format [ "OBJECTIVE_IFA3_ammobase_%1", _siteMkr ];	
+		missionNamespace setVariable [ _varName, _obj ];
+	};
+	
+	case "IFA3_radarbase":
+	{
+		private _obj = [ _sitePos ] call T8SME_server_fnc_IFA3_createRadarBase; 
+		
+		_varName = format [ "OBJECTIVE_IFA3_radarbase_%1", _siteMkr ];	
 		missionNamespace setVariable [ _varName, _obj ];
 	};
 	
@@ -365,7 +411,7 @@ _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >>
 	__DEBUG( __FILE__, "_conditions > _con", _con );
 	
 	_fin = if ( getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "isFinal" ) isEqualTo 1 ) then { true } else { false };
-	T8SME_server_var_arrayConditions pushBack [ configName ( _x ), _siteMkr, _con, _fnc, _fin ];
+	T8SME_server_var_arrayConditions pushBack [ _name, _siteMkr, _con, _fnc, _fin, _type ];
 	
 	false
 } count _conditions;

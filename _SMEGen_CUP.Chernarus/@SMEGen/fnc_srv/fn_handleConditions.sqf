@@ -27,34 +27,41 @@ while { true } do
 {
 	sleep 10;
 	
-	private [ "_allTasks" ];
-	_allTasks		= [];
+	private _allTasks = [];
 
 	{
-		private [ "_debugArray" ];
-		_debugArray = [( _x select 0 ), ( _x select 1 ), ( _x select 3 ), ( _x select 4 ), ( _x select 2 )];
+//
+//		private _debugArray = [( _x select 0 ), ( _x select 1 ), ( _x select 3 ), ( _x select 4 ), ( _x select 2 )];
 //		__DEBUG( __FILE__, "T8SME_server_var_arrayConditions > _x", _debugArray );
-		
-		if !(( typeName ( _x select 3 )) isEqualTo ( typeName true )) then
+//					0					1		 		2				3				4			5		
+		_x params [	"_conditonName",	"_taskMarker",	"_conditon",	"_conditonFnc",	"_isFinal",	"_taskType" ];
+
+		if !(( typeName _conditonFnc ) isEqualTo ( typeName true )) then
 		{
-			if ( call compile ( _x select 2 )) then 
+			if ( call compile _conditon ) then 
 			{
 				private [ "_arg" ];
-				switch ( toUpper ( _x select 0 )) do 
+				switch ( toUpper _conditonName ) do 
 				{ 
-					case "WIN":		{ _arg = [ ( _x select 1 ), "SUCCEEDED", true ]; };
-					case "FAIL":	{ _arg = [ ( _x select 1 ), "FAILED", true ]; };
-					default			{ _arg = [ ( _x select 1 ) ]; };
+					case "WIN":		{ _arg = [ _taskMarker, "SUCCEEDED", true ]; };
+					case "FAIL":	{ _arg = [ _taskMarker, "FAILED", true ]; };
+					default			{ _arg = [ _taskMarker, _taskType, _conditonName ]; };
 				};
 
 //				__DEBUG( __FILE__, "CONDITION __TRUE__ > _arg", _arg );
 
 				// spawn the function defined in the condition
 
-				if !( [ ( _x select 1 ) ] call BIS_fnc_taskCompleted ) then { _arg spawn ( missionNamespace getVariable [ ( _x select 3 ), "T8C_fnc_debug" ]); };
+				if !( [ _taskMarker ] call BIS_fnc_taskCompleted ) then 
+				{
+					_arg spawn ( missionNamespace getVariable [ _conditonFnc, "T8C_fnc_debug" ]);
+					
+//					_fnc = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "function" );
+				
+				};
 
 				// if condition is a win > communicate a rewards ( player / server )
-				if ( toUpper ( _x select 0 ) isEqualTo "WIN" AND ( _x select 4 )) then 
+				if (( toUpper _conditonName ) isEqualTo "WIN" AND _isFinal ) then 
 				{
 					remoteExec [ "T8SME_client_fnc_handleReward", 0 ];
 					[] call T8SME_server_fnc_handleReward;
@@ -64,7 +71,7 @@ while { true } do
 			};
 		};
 		
-		if (( _x select 4 ) AND {( typeName ( _x select 3 )) isEqualTo ( typeName true )} AND {[( _x select 1 )] call BIS_fnc_taskCompleted } AND { !(( _x select 1 ) in _allTasks )}) then { _allTasks pushBack ( _x select 1 ); };
+		if ( _isFinal AND {( typeName _conditonFnc ) isEqualTo ( typeName true )} AND {[ _taskMarker ] call BIS_fnc_taskCompleted } AND { !( _taskMarker in _allTasks )}) then { _allTasks pushBack _taskMarker; };
 	} forEach T8SME_server_var_arrayConditions;
 	
 //	__DEBUG( __FILE__, "_allTasks", _allTasks );

@@ -17,7 +17,10 @@ if !(isServer) exitWith {};
 
 private [ "_configArraySites", "_arraySites", "_arrayShuff", "_arraySitesAvailable", "_arraySitesFree", "_arraySitesUsed", "_amountSites", "_players" ];
 
-params [[ "_returnSite", false, [true]]];
+params [
+	[ "_returnSite", false, [true]],
+	[ "_whitListType", "any", [""]]
+];
 
 _arraySites			= [];
 _arraySitesFree		= [];
@@ -49,11 +52,17 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	
 	// build useable sites
 	{
-		private [ "_site", "_sitePos" ];
-		_site = _x;
-		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
+		private _site		= _x;
+		private _sitePos	= getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
+		private _siteType	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "type" );
 		
-		if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
+		if ( _whitListType isEqualTo "any" ) then
+		{
+			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
+		} else {
+			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND { _siteType isEqualTo _whitListType }  AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
+		};
+		
 		
 		false
 	} count _arrayShuff; 

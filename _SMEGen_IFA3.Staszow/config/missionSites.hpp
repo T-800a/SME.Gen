@@ -113,6 +113,7 @@ class missionSites
 		class base_town_IFA3 : base_town
 		{
 			size[]			= { 300, 300 };
+//			allowedTypes[]	= { "intelHVT" };
 			allowedTypes[]	= { "occupy", "IFA3_mortars", "resupplies", "killHVT", "intelHVT" };
 		};
 

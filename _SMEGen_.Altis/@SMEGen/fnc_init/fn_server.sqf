@@ -41,10 +41,11 @@ if ( isMultiplayer ) then { waitUntil {( count allPlayers ) > 0 }; };
 [] call T8SME_server_fnc_handleNewTasks;
 
 // Init Vehicles
-[ mission_veh_01 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh01" ];
-[ mission_veh_02 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh02" ];
-[ mission_veh_03 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh03" ];
-[ mission_heli_01, "whitelistHelicopter" ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionHeli01" ];
+if !( isNil "mission_veh_01" ) then {[ mission_veh_01 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh01" ];};
+if !( isNil "mission_veh_02" ) then {[ mission_veh_02 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh02" ];};
+if !( isNil "mission_veh_03" ) then {[ mission_veh_03 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh03" ];};
+if !( isNil "mission_veh_04" ) then {[ mission_veh_04 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionVeh04" ];};
+if !( isNil "mission_heli_01" ) then {[ mission_heli_01, "whitelistHelicopter" ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictMissionHeli01" ];};
 
 
 // automatically register all units with all curators

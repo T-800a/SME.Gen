@@ -63,6 +63,8 @@ class missionFactions
 			EMPTY_MORTAR		= "B_G_Mortar_01_F";
 			EMPTY_HMG_HIGH		= "O_HMG_01_high_F";
 			EMPTY_HELI_TRANS	= "O_Heli_Light_02_F";
+			EMPTY_HELI_WRECK	= "Land_Wreck_Heli_Attack_02_F";
+			EMPTY_FLAK			= "";
 		};
 	};
 
@@ -147,6 +149,8 @@ class missionFactions
 			EMPTY_TRUCK_FUEL	= "I_Truck_02_fuel_F";
 			
 			EMPTY_HELI_TRANS	= "I_Heli_Transport_02_F";
+			EMPTY_HELI_WRECK	= "Land_Wreck_Heli_Attack_02_F";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -222,6 +226,8 @@ class missionFactions
 			EMPTY_MORTAR		= "B_Mortar_01_F";
 			EMPTY_HMG_HIGH		= "B_HMG_01_high_F";
 			EMPTY_HELI_TRANS	= "B_Heli_Transport_01_F";
+			EMPTY_HELI_WRECK	= "Land_Wreck_Heli_Attack_02_F";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -265,6 +271,8 @@ class missionFactions
 			EMPTY_MORTAR		= "CUP_O_2b14_82mm_TK";
 			EMPTY_HMG_HIGH		= "CUP_O_DSHKM_TK_INS";
 			EMPTY_HELI_TRANS	= "CUP_O_Mi17_TK";
+			EMPTY_HELI_WRECK	= "Mi8Wreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -309,6 +317,8 @@ class missionFactions
 			EMPTY_MORTAR		= "CUP_I_2b14_82mm_TK_GUE";
 			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_TK_GUE";
 			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
+			EMPTY_HELI_WRECK	= "Mi8Wreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -349,6 +359,8 @@ class missionFactions
 			EMPTY_MORTAR		= "CUP_B_2b14_82mm_CDF";
 			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_NAPA";
 			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
+			EMPTY_HELI_WRECK	= "Mi8Wreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -393,6 +405,8 @@ class missionFactions
 	//		EMPTY_MORTAR		= "";
 			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
 			EMPTY_HELI_TRANS	= "CUP_B_MH60S_USMC";
+			EMPTY_HELI_WRECK	= "BlackhawkWreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 
@@ -436,8 +450,7 @@ class missionFactions
 			EMPTY_OFFROAD_A		= "rhs_uaz_dshkm_chdkz";
 			EMPTY_TRUCK			= "rhs_ural_chdkz";
 			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vmf";
-			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";			
-			
+			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";	
 		};
 	};
 	
@@ -523,7 +536,8 @@ class missionFactions
 			EMPTY_TRUCK_FUEL	= "LIB_zis5v_fuel";
 			EMPTY_MORTAR		= "LIB_BM37";
 			EMPTY_HMG_HIGH		= "LIB_Maxim_M30";
-			EMPTY_HELI_TRANS	= "LIB_Zis3";
+			EMPTY_HELI_TRANS	= "";
+			EMPTY_HELI_WRECK	= "";
 			EMPTY_FLAK			= "LIB_61k";
 		};
 	};
@@ -568,7 +582,8 @@ class missionFactions
 			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_SLA";
 			EMPTY_MORTAR		= "CUP_I_2b14_82mm_TK_GUE";
 			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_TK_GUE";
-			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
+			EMPTY_HELI_TRANS	= "";
+			EMPTY_HELI_WRECK	= "";
 			EMPTY_FLAK			= "LIB_61k";
 		};
 	};
@@ -614,10 +629,14 @@ class missionFactions
 	//		EMPTY_TRUCK_FUEL	= "";
 	//		EMPTY_MORTAR		= "";
 			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
-			EMPTY_HELI_TRANS	= "CUP_B_MH60S_USMC";
+			EMPTY_HELI_TRANS	= "";
+			EMPTY_HELI_WRECK	= "";
 			EMPTY_FLAK			= "LIB_61k";
 		};
 	};
 
 
+
+
+	// END OF FILE
 };

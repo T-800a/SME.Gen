@@ -63,6 +63,8 @@ class missionFactions
 			EMPTY_MORTAR		= "B_G_Mortar_01_F";
 			EMPTY_HMG_HIGH		= "O_HMG_01_high_F";
 			EMPTY_HELI_TRANS	= "O_Heli_Light_02_F";
+			EMPTY_HELI_WRECK	= "Land_Wreck_Heli_Attack_02_F";
+			EMPTY_FLAK			= "";
 		};
 	};
 
@@ -147,6 +149,8 @@ class missionFactions
 			EMPTY_TRUCK_FUEL	= "I_Truck_02_fuel_F";
 			
 			EMPTY_HELI_TRANS	= "I_Heli_Transport_02_F";
+			EMPTY_HELI_WRECK	= "Land_Wreck_Heli_Attack_02_F";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -222,6 +226,8 @@ class missionFactions
 			EMPTY_MORTAR		= "B_Mortar_01_F";
 			EMPTY_HMG_HIGH		= "B_HMG_01_high_F";
 			EMPTY_HELI_TRANS	= "B_Heli_Transport_01_F";
+			EMPTY_HELI_WRECK	= "Land_Wreck_Heli_Attack_02_F";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -265,6 +271,8 @@ class missionFactions
 			EMPTY_MORTAR		= "CUP_O_2b14_82mm_TK";
 			EMPTY_HMG_HIGH		= "CUP_O_DSHKM_TK_INS";
 			EMPTY_HELI_TRANS	= "CUP_O_Mi17_TK";
+			EMPTY_HELI_WRECK	= "Mi8Wreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -309,6 +317,8 @@ class missionFactions
 			EMPTY_MORTAR		= "CUP_I_2b14_82mm_TK_GUE";
 			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_TK_GUE";
 			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
+			EMPTY_HELI_WRECK	= "Mi8Wreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -349,6 +359,8 @@ class missionFactions
 			EMPTY_MORTAR		= "CUP_B_2b14_82mm_CDF";
 			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_NAPA";
 			EMPTY_HELI_TRANS	= "CUP_I_UH1H_TK_GUE";
+			EMPTY_HELI_WRECK	= "Mi8Wreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 	
@@ -393,6 +405,8 @@ class missionFactions
 	//		EMPTY_MORTAR		= "";
 			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
 			EMPTY_HELI_TRANS	= "CUP_B_MH60S_USMC";
+			EMPTY_HELI_WRECK	= "BlackhawkWreck";
+			EMPTY_FLAK			= "";
 		};
 	};
 
@@ -436,8 +450,7 @@ class missionFactions
 			EMPTY_OFFROAD_A		= "rhs_uaz_dshkm_chdkz";
 			EMPTY_TRUCK			= "rhs_ural_chdkz";
 			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vmf";
-			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";			
-			
+			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";	
 		};
 	};
 	
@@ -480,4 +493,150 @@ class missionFactions
 			EMPTY_HELI_TRANS	= "RHS_UH60M_d";
 		};
 	};
+
+
+
+
+	
+	// --------------------------------------------------------------
+	//	IFA3 Factions: OPFOR
+	//
+	
+	class IFA3_OPFOR_SOV : base_faction
+	{
+		class units : units
+		{
+			OFFICER		 		= "LIB_SOV_captain";
+			SQUADLEADER  		= "LIB_SOV_lieutenant";
+			TEAMLEADER	 		= "LIB_SOV_first_lieutenant";
+			CORPSMAN	 		= "LIB_SOV_medic";
+			MARKSMAN	 		= "LIB_SOV_scout_sniper";
+			HEAVYMG		 		= "LIB_SOV_mgunner";
+			LIGHTMG		 		= "LIB_SOV_smgunner";
+			ANTITANK	 		= "LIB_SOV_AT_grenadier";
+			ANTIPERSON	 		= "LIB_SOV_AT_soldier";
+			ANTIAIR		 		= "LIB_SOV_soldier_PPSH41";
+			GRENADIER	 		= "LIB_SOV_sergeant_PPSH41_0";
+			RIFLEMAN	 		= "LIB_SOV_rifleman";
+			
+			OFFROAD		 		= "LIB_zis5v";
+			OFFROAD_A	 		= "LIB_Scout_M3_FFV";
+			
+			APC_SMALL			= "LIB_Scout_M3_FFV";
+			APC_MEDIUM			= "LIB_SdKfz251_captured_FFV";
+			APC_HEAVY			= "LIB_T34_76";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "LIB_zis5v";
+			EMPTY_OFFROAD_A		= "LIB_Scout_M3_FFV";
+			EMPTY_TRUCK			= "LIB_zis5v";
+			EMPTY_TRUCK_AMMO	= "LIB_zis6_parm";
+			EMPTY_TRUCK_FUEL	= "LIB_zis5v_fuel";
+			EMPTY_MORTAR		= "LIB_BM37";
+			EMPTY_HMG_HIGH		= "LIB_Maxim_M30";
+			EMPTY_HELI_TRANS	= "";
+			EMPTY_HELI_WRECK	= "";
+			EMPTY_FLAK			= "LIB_61k";
+		};
+	};
+	
+	// --------------------------------------------------------------
+	//	IFA3 Factions: GRNFOR
+	//
+	
+	class IFA3_GRNFOR_USA : base_faction
+	{
+		spawnUnitsSide = GRNFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "CUP_I_TK_GUE_Commander";
+			SQUADLEADER  		= "CUP_I_TK_GUE_Soldier_TL";
+			TEAMLEADER	 		= "CUP_I_TK_GUE_Soldier_TL";
+			CORPSMAN	 		= "CUP_I_TK_GUE_Guerilla_Medic";
+			MARKSMAN	 		= "CUP_I_TK_GUE_Sniper";
+			HEAVYMG		 		= "CUP_I_TK_GUE_Soldier_MG";
+			LIGHTMG		 		= "CUP_I_TK_GUE_Soldier_AR";
+			ANTITANK	 		= "CUP_I_TK_GUE_Soldier_HAT";
+			ANTIPERSON	 		= "CUP_I_TK_GUE_Soldier_AT";
+			ANTIAIR		 		= "CUP_I_TK_GUE_Soldier_AA";
+			GRENADIER	 		= "CUP_I_TK_GUE_Soldier_GL";
+			RIFLEMAN	 		= "CUP_I_TK_GUE_Soldier";
+			
+			OFFROAD		 		= "CUP_C_Datsun_Tubeframe";
+			OFFROAD_A	 		= "CUP_I_Datsun_PK_TK";
+			
+			APC_SMALL			= "CUP_I_BRDM2_HQ_TK_Gue";
+			APC_MEDIUM			= "CUP_I_BRDM2_TK_Gue";
+			APC_HEAVY			= "CUP_I_BMP1_TK_GUE";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "CUP_C_Datsun_Tubeframe";
+			EMPTY_OFFROAD_A		= "CUP_O_UAZ_MG_TKA";
+			EMPTY_TRUCK			= "CUP_O_Ural_SLA";
+			EMPTY_TRUCK_AMMO	= "CUP_O_Ural_Reammo_SLA";
+			EMPTY_TRUCK_FUEL	= "CUP_O_Ural_Refuel_SLA";
+			EMPTY_MORTAR		= "CUP_I_2b14_82mm_TK_GUE";
+			EMPTY_HMG_HIGH		= "CUP_I_DSHKM_TK_GUE";
+			EMPTY_HELI_TRANS	= "";
+			EMPTY_HELI_WRECK	= "";
+			EMPTY_FLAK			= "LIB_61k";
+		};
+	};
+	
+	
+	// --------------------------------------------------------------
+	//	IFA3 Factions: BLUFOR
+	//
+	
+	class IFA3_BLUFOR_WEHR : vanilla_BLUFOR
+	{
+		spawnUnitsSide	= BLUFOR;
+		
+		class units : units
+		{
+			OFFICER				= "CUP_B_USMC_Officer";
+			SQUADLEADER			= "CUP_B_USMC_Soldier_SL";
+			TEAMLEADER			= "CUP_B_USMC_Soldier_TL";
+			CORPSMAN			= "CUP_B_USMC_Medic";
+			MARKSMAN			= "CUP_B_USMC_Soldier_Marksman";
+			HEAVYMG				= "CUP_B_USMC_Soldier_MG";
+			LIGHTMG				= "CUP_B_USMC_Soldier_AR";
+			ANTITANK			= "CUP_B_USMC_Soldier_AT";
+			ANTIPERSON			= "CUP_B_USMC_Soldier_LAT";
+			ANTIAIR				= "CUP_B_USMC_Soldier_AA";
+			GRENADIER			= "CUP_B_USMC_Soldier_GL";
+			RIFLEMAN			= "CUP_B_USMC_Soldier";
+			
+			OFFROAD				= "CUP_B_HMMWV_Unarmed_USMC";
+			OFFROAD_A			= "CUP_B_HMMWV_M1114_USMC";
+			
+			APC_SMALL			= "CUP_B_HMMWV_MK19_USMC";
+			APC_MEDIUM			= "CUP_B_LAV25_USMC";
+			APC_HEAVY			= "CUP_B_LAV25M240_USMC";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "CUP_B_HMMWV_Unarmed_USMC";
+			EMPTY_OFFROAD_A		= "CUP_B_HMMWV_M1114_USMC";
+	//		EMPTY_TRUCK			= "";
+	//		EMPTY_TRUCK_AMMO	= "";
+	//		EMPTY_TRUCK_FUEL	= "";
+	//		EMPTY_MORTAR		= "";
+			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
+			EMPTY_HELI_TRANS	= "";
+			EMPTY_HELI_WRECK	= "";
+			EMPTY_FLAK			= "LIB_61k";
+		};
+	};
+
+
+
+
+	// END OF FILE
 };

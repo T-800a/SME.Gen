@@ -34,9 +34,17 @@ class missionTypes
 		//		if 1 then task will count against tasks needed to complete a mission
 		//		if 0 then wont count against it
 				isFinal		= 1;
+
+		//		if you want to force a (specific) follow up task
+		//		function	= "T8SME_server_fnc_handleFollowingTask";
+		//		isFinal		= 0;
+		//
+		//		site and task are optional, but if wanted/needed, define both according to your task/site type combo!
+		//		site		= "compound"
+		//		task		= "IFA3_radarbase";
 			};
 		};
-		
+
 		class groups
 		{
 			class base_garrison 

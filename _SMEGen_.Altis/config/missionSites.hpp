@@ -94,7 +94,40 @@ class missionSites
 			position[]		= { 0, 0, 0 };
 			size[]			= { 200, 80 };
 			angle			= 0;
+		};
+		
+		
+	// IFA3 base locations
+	
+		class base_field_IFA3 : base_field
+		{
+			size[]			= { 150, 150 };
+			allowedTypes[]	= { "IFA3_flak", "IFA3_mortars" };
+		};
+		
+		class base_road_IFA3 : base_road
+		{
+			allowedTypes[]	= { "convoy", "IFA3_roadblock" };
+		};
+		
+		class base_town_IFA3 : base_town
+		{
+			size[]			= { 300, 300 };
+//			allowedTypes[]	= { "intelHVT" };
+			allowedTypes[]	= { "occupy", "IFA3_mortars", "resupplies", "killHVT", "intelHVT" };
+		};
+
+		class base_mil_IFA3 : base_mil
+		{
+			size[]			= { 200, 200 };
+			allowedTypes[]	= { "occupy_mil", "IFA3_mortars", "resupplies", "killHVT", "intelHVT" };
 		};	
+		
+		class base_comp_IFA3 : base_comp
+		{
+			size[]			= { 200, 200 };
+			allowedTypes[]	= { "IFA3_ammobase", "IFA3_radarbase" };
+		};
 	};
 
 	// --------------------------------------------------------------
@@ -108,5 +141,7 @@ class missionSites
 	#include <maps\takistan.hpp>
 	
 	#include <maps\chernarus.hpp>
+	
+	#include <maps\staszow.hpp>
 
 };

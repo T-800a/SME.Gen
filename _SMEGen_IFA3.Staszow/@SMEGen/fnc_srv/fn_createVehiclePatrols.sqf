@@ -70,6 +70,8 @@ switch ( _missionSideN ) do
 __DEBUG( __FILE__, "_arrayGroups", _arrayGroups );
 
 private _center = [ _markerArray ] call T8SME_server_fnc_findCenter;
+private _road = [ _center, 1000 ] call BIS_fnc_nearestRoad;
+_center = if ( isNull _road ) then { _center } else { getpos _road };
 
 {
 	private _task			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _missionType >> "groups" >> _x >> "task" );

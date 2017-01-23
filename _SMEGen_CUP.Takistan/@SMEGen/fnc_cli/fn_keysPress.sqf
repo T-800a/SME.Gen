@@ -18,7 +18,7 @@ if !(hasInterface) exitWith {};
 
 private [ "_return", "_helipadObj", "_reviveTargets", "_reviveTarget", "_fnc_getNearest", "_msg" ];
 
-params [ "_dispaly", "_key", "_shift", "_ctrl", "_alt" ];
+params [ "_key", "_shift", "_ctrl", "_alt" ];
 
 _return		= false;
 

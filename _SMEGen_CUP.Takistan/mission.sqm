@@ -1,4 +1,4 @@
-version=53;
+version=52;
 class EditorData
 {
 	moveGridStep=1;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8223.7734,315.10178,2145.5103};
-		dir[]={-0.0096180374,-0.39619136,-0.91825271};
-		up[]={-0.0041487878,0.91812408,-0.39625123};
-		aside[]={-1.0000471,1.9400322e-006,0.01047982};
+		pos[]={8253.5332,349.97501,1915.0522};
+		dir[]={0.20775771,-0.3704344,0.90546185};
+		up[]={0.082860813,0.92881709,0.36113656};
+		aside[]={0.97477061,1.8003193e-006,-0.22366421};
 	};
 };
 binarizationWanted=0;
@@ -48,7 +48,7 @@ class AddonsMetaData
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 		class Item1
 		{
@@ -65,28 +65,28 @@ class AddonsMetaData
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 		class Item4
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 		class Item5
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 		class Item6
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 		class Item7
 		{
@@ -98,14 +98,14 @@ class AddonsMetaData
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 		class Item9
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			url="http://www.arma3.com";
 		};
 	};
 };
@@ -126,25 +126,6 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -177,6 +158,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
 				};
 			};
 		};

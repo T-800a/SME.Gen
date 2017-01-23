@@ -411,7 +411,7 @@ _conditions = "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >>
 	__DEBUG( __FILE__, "_conditions > _con", _con );
 	
 	_fin = if ( getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionTypes" >> _type >> "conditions" >> _name >> "isFinal" ) isEqualTo 1 ) then { true } else { false };
-	T8SME_server_var_arrayConditions pushBack [ configName ( _x ), _siteMkr, _con, _fnc, _fin ];
+	T8SME_server_var_arrayConditions pushBack [ _name, _siteMkr, _con, _fnc, _fin, _type ];
 	
 	false
 } count _conditions;

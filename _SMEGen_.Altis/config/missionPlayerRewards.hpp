@@ -168,8 +168,8 @@ class missionPlayerRewards
 	class CUP_BLUFOR_USMC
 	{
 		fullArsenal			= 0;	
-		missionReward01		= "CUP_B_M1133_MEV_Woodland_Slat";
-		missionReward02		= "CUP_RG31_M2_OD";
+		missionReward01		= "CUP_B_LAV25_HQ_USMC";
+		missionReward02		= "CUP_B_RG31_M2_OD_USMC";
 		missionReward03		= "CUP_B_UH60L_FFV_US";
 		
 		class base_reward 
@@ -340,4 +340,21 @@ class missionPlayerRewards
 	};
 	
 	class RHS_INDEP_fullArsenal : RHS_INDEP { fullArsenal = 1; };
+
+
+
+
+
+
+	// --------------------------------------------------------------
+	//	IFA3 Rewards
+	//	
+	
+	class IFA3_BLUFOR_WEHR : vanilla_fullArsenal
+	{
+		fullArsenal			= 1;	
+		missionReward01		= "LIB_SdKfz251_FFV";
+		missionReward02		= "LIB_StuG_III_G";
+		missionReward03		= "LIB_PzKpfwIV_H";
+	};
 };

@@ -34,9 +34,17 @@ class missionTypes
 		//		if 1 then task will count against tasks needed to complete a mission
 		//		if 0 then wont count against it
 				isFinal		= 1;
+
+		//		if you want to force a (specific) follow up task
+		//		function	= "T8SME_server_fnc_handleFollowingTask";
+		//		isFinal		= 0;
+		//
+		//		site and task are optional, but if wanted/needed, define both according to your task/site type combo!
+		//		site		= "compound"
+		//		task		= "IFA3_radarbase";
 			};
 		};
-		
+
 		class groups
 		{
 			class base_garrison 
@@ -44,6 +52,15 @@ class missionTypes
 				scope			= 0;
 				units[] 		= { "SQUADLEADER", "LIGHTMG", "LIGHTMG", "HEAVYMG", "CORPSMAN", "ANTITANK", "CORPSMAN", "ANTIPERSON", "GRENADIER", "RIFLEMAN", "RIFLEMAN" };
 				unitsFiller[] 	= { "RIFLEMAN", "RIFLEMAN", "RIFLEMAN", "GRENADIER" };
+				task			= "GARRISON";
+				vehicleGroup	= 0;
+			};
+			
+			class base_garrison_small
+			{
+				scope			= 0;
+				units[]			= { "SQUADLEADER", "CORPSMAN", "RIFLEMAN" };
+				unitsFiller[] 	= { "GRENADIER", "RIFLEMAN", "RIFLEMAN", "RIFLEMAN" };
 				task			= "GARRISON";
 				vehicleGroup	= 0;
 			};
@@ -729,6 +746,167 @@ class missionTypes
 	};
 
 
+// --------------------------------------------------------------
+// Iron Front A3 - specific TASKS
+
+
+	class IFA3_roadblock : base_type
+	{
+		scope			= 1;
+		name			= "Roadblock";
+		
+		taskShort		= "$STR_SMEGen_type_roadblock_shrt";
+		task			= "$STR_SMEGen_type_roadblock_task";
+		description		= "$STR_SMEGen_type_roadblock_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEAI__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities ( #__MARKER_SIZE__# ) * 1.3 )) < 2 ) AND (({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities 75 )) > 0 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defend_small { scope = 1; };
+			class group02 : base_garrison_small { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
+
+
+	class IFA3_mortars : base_type
+	{
+		scope			= 1;
+		name			= "Mortars";
+
+		taskShort		= "$STR_SMEGen_type_mortars_shrt";
+		task			= "$STR_SMEGen_type_mortars_task";
+		description		= "$STR_SMEGen_type_mortars_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_defendBase_small { scope = 1; };
+			class group03 : base_garrison { scope = 1; };
+			class group04 : base_fireteam { scope = 1; };
+			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
+	
+	class IFA3_flak : base_type
+	{
+		scope			= 1;
+		name			= "Flak";
+
+		taskShort		= "$STR_SMEGen_type_flak_shrt";
+		task			= "$STR_SMEGen_type_flak_task";
+		description		= "$STR_SMEGen_type_flak_desc";
+
+		class conditions
+		{
+			class win
+			{
+				condition	= "(!( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_garrison { scope = 1; };
+			class group03 : base_fireteam { scope = 1; };
+			class group04 : base_fireteam { scope = 1; };
+			class group05 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
+
+	class IFA3_ammobase : base_type
+	{
+		scope			= 1;
+		name			= "ammoBase";
+		
+		taskShort		= "$STR_SMEGen_type_ammobase_shrt";
+		task			= "$STR_SMEGen_type_ammobase_task";
+		description		= "$STR_SMEGen_type_ammobase_desc";
+		
+		class conditions
+		{
+			class win
+			{
+				condition	= "(({ alive _x } count ( missionNamespace getVariable [ '#__VARIABLE__#', []])) < 1 )";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+			
+			class counter_attack
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
+				function	= "T8SME_server_fnc_createAttack";
+				isFinal		= 0;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};	
+
+
+	class IFA3_radarbase : base_type
+	{
+		scope			= 1;
+		name			= "radarBase";
+		
+		taskShort		= "$STR_SMEGen_type_radarbase_shrt";
+		task			= "$STR_SMEGen_type_radarbase_task";
+		description		= "$STR_SMEGen_type_radarbase_desc";
+		
+		class conditions
+		{
+			class win
+			{
+				condition	= "(!( alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ])))";
+				function	= "BIS_fnc_taskSetState";
+				isFinal		= 1;
+			};
+			
+			class counter_attack
+			{
+				condition	= "(({ side _x isEqualTo #__SIDEPLAYER__# } count (( getMarkerPos '#__MARKER_NAME__#' ) nearEntities #__MARKER_SIZE__# )) > 3 )";
+				function	= "T8SME_server_fnc_createAttack";
+				isFinal		= 0;
+			};
+		};
+
+		class groups : groups
+		{
+			class group01 : base_defendBase_small { scope = 1; };
+			class group02 : base_fireteam { scope = 1; };
+			class group03 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+			class group04 : base_fireteam { scope = 1; task = "PATROL_AROUND"; };
+		};
+	};
 
 
 // --------------------------------------------------------------
