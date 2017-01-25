@@ -19,7 +19,7 @@ if !(hasInterface) exitWith {};
 
 private [ "_cursor", "_return", "_exportSite", "_exportVehicle" ];
 
-params [ "_dispaly", "_key", "_shift", "_ctrl", "_alt" ];
+params [ "_display", "_key", "_shift", "_ctrl", "_alt" ];
 
 _cursor		= cursorTarget;
 _return		= false;

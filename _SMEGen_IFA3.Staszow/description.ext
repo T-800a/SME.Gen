@@ -10,7 +10,7 @@
 */
 
 Author						= "T-800a";
-onLoadName					= "SME.Gen X IFA3 | V.045.pre";
+onLoadName					= "SME.Gen X IFA3 | V.045";
 OnLoadMission				= "Small Military Encounter Generator";
 loadScreen					= "images\loadingscreen.paa";
 

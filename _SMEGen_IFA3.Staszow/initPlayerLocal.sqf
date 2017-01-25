@@ -20,6 +20,10 @@
 // initialize FAR revive
 [] spawn FAR_fnc_INIT;
 
+// switch player side according to reward set
+private _newGroup = createGroup T8SME_param_playerFaction;
+[ player ] joinSilent _newGroup;
+
 if ( isMultiplayer ) then 
 {
 	if ( isNil "T8SME_client_var_welcomeOnFirstSpawn" ) then

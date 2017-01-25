@@ -49,13 +49,6 @@ _cFnc =
 };
 
 // build base via SQF (XCam export)
-if ( worldName isEqualTo "Altis" ) then {
-	#include <sites\altis_mainbase.sqf>
-};
-
-if ( worldName isEqualTo "mske" ) then {
-//	#include <sites\mske_mainbase.sqf>
-};
 
 if ( worldName isEqualTo "Takistan" ) then {
 	#include <sites\takistan_mainbase.sqf>

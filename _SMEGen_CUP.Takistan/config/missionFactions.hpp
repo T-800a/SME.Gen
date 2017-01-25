@@ -417,6 +417,8 @@ class missionFactions
 	//	RHS Factions
 	//
 	
+	//	REDFOR
+	
 	class RHS_OPFOR_GUER : base_faction
 	{
 		spawnUnitsSide	= REDFOR;
@@ -453,6 +455,288 @@ class missionFactions
 			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";	
 		};
 	};
+	
+	class RHS_OPFOR_VMF : base_faction
+	{
+		spawnUnitsSide	= REDFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhs_vmf_recon_officer";
+			SQUADLEADER  		= "rhs_vmf_recon_officer_armored";
+			TEAMLEADER	 		= "rhs_vmf_recon_sergeant";
+			CORPSMAN	 		= "rhs_vmf_recon_medic";
+			MARKSMAN	 		= "rhs_vmf_recon_marksman";
+			HEAVYMG		 		= "rhs_vmf_recon_arifleman";
+			LIGHTMG		 		= "rhs_vmf_recon_machinegunner_assistant";
+			ANTITANK	 		= "rhs_vmf_recon_rifleman_lat";
+			ANTIPERSON	 		= "rhs_vmf_recon_rifleman_l";
+			ANTIAIR		 		= "rhs_msv_emr_aa";
+			GRENADIER	 		= "rhs_vmf_recon_grenadier";
+			RIFLEMAN	 		= "rhs_vmf_recon_rifleman";
+			
+			OFFROAD		 		= "rhs_tigr_ffv_vmf";
+			OFFROAD_A	 		= "rhs_tigr_sts_vmf";
+			
+			APC_SMALL			= "rhs_uaz_dshkm_chdkz";
+			APC_MEDIUM			= "rhs_btr70_vmf";
+			APC_HEAVY			= "rhs_bmp1d_vmf";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhs_tigr_ffv_3camo_vmf";
+			EMPTY_OFFROAD_A		= "rhs_tigr_sts_vmf";
+			EMPTY_TRUCK			= "rhs_kamaz5350_vmf";
+			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vmf";
+			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";			
+			EMPTY_HMG_HIGH		= "rhs_KORD_high_VMF";
+			EMPTY_HELI_TRANS	= "RHS_Mi8mt_Cargo_vvs";	//RHS_Mi8AMTSh_vvs
+		};
+	};
+	
+	class RHS_OPFOR_VDV : base_faction
+	{
+		spawnUnitsSide	= REDFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhs_vdv_officer";
+			SQUADLEADER  		= "rhs_vdv_sergeant";
+			TEAMLEADER	 		= "rhs_vdv_junior_sergeant";
+			CORPSMAN	 		= "rhs_vdv_medic";
+			MARKSMAN	 		= "rhs_vdv_marksman";
+			HEAVYMG		 		= "rhs_vdv_machinegunner";
+			LIGHTMG		 		= "rhs_vdv_machinegunner_assistant";
+			ANTITANK	 		= "rhs_vdv_at";
+			ANTIPERSON	 		= "rhs_vdv_RSHG2";
+			ANTIAIR		 		= "rhs_vdv_aa";
+			GRENADIER	 		= "rhs_vdv_grenadier";
+			RIFLEMAN	 		= "rhs_vdv_rifleman";
+			
+			OFFROAD		 		= "rhs_tigr_ffv_vdv";
+			OFFROAD_A	 		= "rhs_tigr_sts_vdv";
+			
+			APC_SMALL			= "rhs_tigr_sts_vdv";
+			APC_MEDIUM			= "rhs_btr70_vdv";
+			APC_HEAVY			= "rhs_bmp2_vdv";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhs_tigr_ffv_vdv";
+			EMPTY_OFFROAD_A		= "rhs_tigr_sts_vdv";
+			EMPTY_TRUCK			= "rhs_kamaz5350_vdv";
+			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vdv";
+			EMPTY_TRUCK_FUEL	= "rhs_gaz66_r142_vdv";		//not sure this is correct class		
+			EMPTY_HMG_HIGH		= "rhs_KORD_high_VDV";
+			EMPTY_HELI_TRANS	= "RHS_Mi8mt_Cargo_vdv";	//RHS_Mi8AMTSh_vvs
+		};
+	};
+	
+	//	GRNFOR
+	
+	class RHS_GREF_CHDKZ : base_faction
+	{
+		spawnUnitsSide	= GRNFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhsgref_ins_g_commander";
+			SQUADLEADER  		= "rhsgref_ins_g_squadleader";
+			TEAMLEADER	 		= "rhsgref_ins_g_rifleman_aksu";
+			CORPSMAN	 		= "rhsgref_ins_g_medic";
+			MARKSMAN	 		= "rhsgref_ins_g_militiaman_mosin";
+			HEAVYMG		 		= "rhsgref_ins_g_machinegunner";
+			LIGHTMG		 		= "rhsgref_ins_g_militiaman_mosin";
+			ANTITANK	 		= "rhsgref_ins_g_grenadier_rpg";
+			ANTIPERSON	 		= "rhsgref_ins_g_rifleman_aks74";
+			ANTIAIR		 		= "rhsgref_ins_g_specialist_aa";
+			GRENADIER	 		= "rhsgref_ins_g_grenadier";
+			RIFLEMAN	 		= "rhsgref_ins_g_rifleman_aks74";
+			
+			OFFROAD		 		= "rhsgref_ins_g_uaz";
+			OFFROAD_A	 		= "rhsgref_ins_g_uaz_dshkm_chdkz";
+			
+			APC_SMALL			= "rhsgref_ins_g_uaz_spg9";
+			APC_MEDIUM			= "rhsgref_ins_g_btr60";
+			APC_HEAVY			= "rhsgref_ins_g_bmd1p";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhsgref_ins_g_uaz_open";
+			EMPTY_OFFROAD_A		= "rhsgref_ins_g_uaz_dshkm_chdkz";
+			EMPTY_TRUCK			= "rhsgref_ins_g_ural_open";
+			EMPTY_TRUCK_AMMO	= "rhsgref_ins_g_gaz66_ammo";
+			EMPTY_TRUCK_FUEL	= "RHS_Ural_Fuel_VMF_01";
+			EMPTY_HMG_HIGH		= "rhsgref_ins_g_DSHKM";
+			EMPTY_HELI_TRANS	= "rhsgref_ins_g_Mi8amt";
+			
+		};
+	};
+	
+	class RHS_GREF_CDF : base_faction
+	{
+		spawnUnitsSide	= GRNFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhsgref_cdf_reg_general";
+			SQUADLEADER  		= "rhsgref_cdf_reg_officer";
+			TEAMLEADER	 		= "rhsgref_cdf_reg_squadleader";
+			CORPSMAN	 		= "rhsgref_cdf_reg_medic";
+			MARKSMAN	 		= "rhsgref_cdf_reg_marksman";
+			HEAVYMG		 		= "rhsgref_cdf_reg_machinegunner";
+			LIGHTMG		 		= "rhsgref_cdf_reg_rifleman_lite";
+			ANTITANK	 		= "rhsgref_cdf_reg_grenadier_rpg";
+			ANTIPERSON	 		= "rhsgref_cdf_reg_engineer";
+			ANTIAIR		 		= "rhsgref_cdf_reg_specialist_aa";
+			GRENADIER	 		= "rhsgref_cdf_reg_grenadier";
+			RIFLEMAN	 		= "rhsgref_cdf_reg_rifleman";
+			
+			OFFROAD		 		= "rhsgref_cdf_reg_uaz_open";
+			OFFROAD_A	 		= "rhsgref_cdf_reg_uaz_dshkm";
+			
+			APC_SMALL			= "rhsgref_cdf_reg_uaz_ags";
+			APC_MEDIUM			= "rhsgref_cdf_btr60";
+			APC_HEAVY			= "rhsgref_cdf_bmp1d";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhsgref_cdf_reg_uaz_open";
+			EMPTY_OFFROAD_A		= "rhsgref_cdf_reg_uaz_dshkm";
+			EMPTY_TRUCK			= "rhsgref_cdf_ural_open";
+			EMPTY_TRUCK_AMMO	= "rhsgref_cdf_gaz66_ammo";
+			EMPTY_TRUCK_FUEL	= "rhsgref_cdf_ural_fuel";
+			EMPTY_HMG_HIGH		= "rhsgref_cdf_DSHKM";
+			EMPTY_HELI_TRANS	= "rhsgref_cdf_reg_Mi17Sh";
+			
+		};
+	};
+	
+	class RHS_GREF_UN : base_faction
+	{
+		spawnUnitsSide	= GRNFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhsgref_cdf_un_general";
+			SQUADLEADER  		= "rhsgref_cdf_un_officer";
+			TEAMLEADER	 		= "rhsgref_cdf_un_squadleader";
+			CORPSMAN	 		= "rhsgref_cdf_un_medic";
+			MARKSMAN	 		= "rhsgref_un_ru_msv_emr_marksman";
+			HEAVYMG		 		= "rhsgref_cdf_un_machinegunner";
+			LIGHTMG		 		= "rhsgref_cdf_un_rifleman_lite";
+			ANTITANK	 		= "rhsgref_cdf_un_grenadier_rpg";
+			ANTIPERSON	 		= "rhsgref_cdf_un_engineer";
+			ANTIAIR		 		= "rhs_msv_emr_aa";
+			GRENADIER	 		= "rhsgref_cdf_un_grenadier";
+			RIFLEMAN	 		= "rhsgref_cdf_un_rifleman";
+			
+			OFFROAD		 		= "rhsgref_un_uaz";
+			OFFROAD_A	 		= "rhsgref_un_m1117";
+			
+			APC_SMALL			= "rhsgref_un_uaz";
+			APC_MEDIUM			= "rhsgref_un_m1117";
+			APC_HEAVY			= "rhsgref_un_btr70";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhs_tigr_ffv_3camo_vmf";
+			EMPTY_OFFROAD_A		= "rhs_tigr_sts_vmf";
+			EMPTY_TRUCK			= "rhsgref_un_ural";
+			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vmf";
+			EMPTY_TRUCK_FUEL	= "rhsgref_cdf_ural_fuel";
+			EMPTY_HMG_HIGH		= "rhsgref_cdf_DSHKM";
+			EMPTY_HELI_TRANS	= "rhsgref_un_Mi8amt";
+			
+		};
+	};
+	
+	class RHS_SAF_ARMY : base_faction
+	{
+		spawnUnitsSide	= GRNFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhssaf_army_m10_digital_officer";
+			SQUADLEADER  		= "rhssaf_army_m10_digital_sq_lead";
+			TEAMLEADER	 		= "rhssaf_army_m10_digital_ft_lead";
+			CORPSMAN	 		= "rhssaf_army_m10_digital_medic";
+			MARKSMAN	 		= "rhssaf_army_m10_digital_sniper_m76";
+			HEAVYMG		 		= "rhssaf_army_m10_digital_mgun_m84";
+			LIGHTMG		 		= "rhssaf_army_m10_digital_asst_mgun";
+			ANTITANK	 		= "rhssaf_army_m10_digital_rifleman_at";
+			ANTIPERSON	 		= "rhssaf_army_m10_digital_engineer";
+			ANTIAIR		 		= "rhssaf_army_m10_digital_spec_aa";
+			GRENADIER	 		= "rhssaf_army_m10_digital_gl";
+			RIFLEMAN	 		= "rhssaf_army_m10_digital_rifleman_m21";
+			
+			OFFROAD		 		= "rhssaf_m1025_olive";
+			OFFROAD_A	 		= "rhssaf_m1025_olive_m2";
+			
+			APC_SMALL			= "rhssaf_m1025_olive_m2";
+			APC_MEDIUM			= "rhsgref_ins_btr60";
+			APC_HEAVY			= "rhsgref_ins_bmp1p";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhs_uaz_open_chdkz";
+			EMPTY_OFFROAD_A		= "rhs_uaz_dshkm_chdkz";
+			EMPTY_TRUCK			= "rhssaf_army_ural";
+			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vmf";
+			EMPTY_TRUCK_FUEL	= "rhssaf_army_ural_fuel";
+			EMPTY_HMG_HIGH		= "rhssaf_army_nsv_tripod";
+			EMPTY_HELI_TRANS	= "rhssaf_airforce_ht48";
+			
+		};
+	};
+
+	class RHS_SAF_PARA : base_faction
+	{
+		spawnUnitsSide	= GRNFOR;
+		
+		class units : units
+		{
+			OFFICER		 		= "rhssaf_army_m10_digital_officer";
+			SQUADLEADER  		= "rhssaf_army_m10_para_sq_lead";
+			TEAMLEADER	 		= "rhssaf_army_m10_para_ft_lead";
+			CORPSMAN	 		= "rhssaf_army_m10_para_medic";
+			MARKSMAN	 		= "rhssaf_army_m10_para_sniper_m82a1";
+			HEAVYMG		 		= "rhssaf_army_m10_para_mgun_minimi";
+			LIGHTMG		 		= "rhssaf_army_m10_para_asst_mgun_minimi";
+			ANTITANK	 		= "rhssaf_army_m10_para_rifleman_at";
+			ANTIPERSON	 		= "rhssaf_army_m10_para_rifleman_hk416";
+			ANTIAIR		 		= "rhssaf_army_m10_para_spec_aa";
+			GRENADIER	 		= "rhssaf_army_m10_para_gl_ag36";
+			RIFLEMAN	 		= "rhssaf_army_m10_para_rifleman_g36";
+			
+			OFFROAD		 		= "rhssaf_m1025_olive";
+			OFFROAD_A	 		= "rhssaf_m1025_olive_m2";
+			
+			APC_SMALL			= "rhssaf_m1025_olive_m2";
+			APC_MEDIUM			= "rhsgref_ins_btr60";
+			APC_HEAVY			= "rhsgref_ins_bmp1p";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "rhs_uaz_open_chdkz";
+			EMPTY_OFFROAD_A		= "rhs_uaz_dshkm_chdkz";
+			EMPTY_TRUCK			= "rhssaf_army_ural";
+			EMPTY_TRUCK_AMMO	= "rhs_gaz66_ammo_vmf";
+			EMPTY_TRUCK_FUEL	= "rhssaf_army_ural_fuel";
+			EMPTY_HMG_HIGH		= "rhssaf_army_nsv_tripod";
+			EMPTY_HELI_TRANS	= "rhssaf_airforce_ht48";
+			
+		};
+	};
+	
+	//	BLUFOR
 	
 	class RHS_BLUFOR_ARMY_OCP : vanilla_BLUFOR
 	{

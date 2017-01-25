@@ -25,17 +25,44 @@ class Params
 	class param_enemy
 	{
 		title		= "Enemy Faction";
-		values[]	= { 0,      1,            2,               3,     4,                5,                		6,							7,				20,					999 };
-		texts[]		= { "CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "CUP - Takistan Army",	"CUP - Takistan Locals",	"CUP - NAPA",	"RHS EAST militia",	"DEFAUL - CUP Takistan Army" };
 		default		= 999;
+		values[]	=
+		{
+			0, 1, 2, 3, 4, 5,
+			20, 21, 22, 23,
+			50, 51, 52, 53, 54, 55, 56, 57, 58,
+			999
+		};
+		
+		texts[]		=
+		{
+			"CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "NATO",
+			"CUP - Takistan Army", "CUP - Takistan Locals", "CUP - NAPA", "CUP - USMC",
+			"RHS AFRF militia", "RHS AFRF VMF", "RHS AFRF VDV", "RHS GREF CHDKZ", "RHS GREF CDF", "RHS GREF UN", "RHS SAF Army", "RHS SAF militia", "RHS US Army OCP",
+			"DEFAULT"
+		};
 	};
 
 	class param_reward
 	{
 		title		= "Reward Set";
-		values[]	= { 0,        1,				2,				20,				900,					901,						902,							999 };
-		texts[]		= { "BLUFOR", "BLUFOR - ACE",	"CUP USMC",	"RHS Independent",	"Vanilla full Arsenal",	"CUP USMC full Arsenal",	"RHS Independent full Arsenal",	"DEFAULT - CUP USMC" };
 		default		= 999;
+		values[]	=
+		{
+			0, 1, 2, 3,
+			20, 21,
+			50, 51, 52,
+			900,
+			999
+		};
+		texts[]		=
+		{
+			"BLUFOR", "BLUFOR full Arsenal", "GRNFOR full Arsenal", "REDFOR full Arsenal",
+			"CUP USMC", "CUP USMC full Arsenal",
+			"RHS Independent", "RHS Independent full Arsenal", "RHS USMC", 
+			"BLUFOR - ACE",
+			"DEFAULT"
+		};
 	};
 	
 	class param_sites
@@ -90,7 +117,7 @@ class Params
 	{
 		title		= "enable/disable FAR Revive";
 		values[]	= { 0,			1,			999 };
-		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT - ENABLED" };
+		texts[]		= { "ENABLED",	"DISABLED",	"DEFAULT - FALSE" };
 		default		= 999;
 	};
 	
@@ -125,4 +152,16 @@ class Params
 		texts[]		= { "100%",	"75%",	"50%",	"25%",	"DEFAULT - 50%" };
 		default		= 999;	
 	};
+
+
+
+	class param_titleBISrevive
+	{
+		title		= "----- BIS Revive Settings -----";
+		values[]	= {0};
+		texts[]		= {"-----"};
+		default		= 0;
+	};	
+ 
+	#include "\a3\Functions_F\Params\paramRevive.hpp"
 };

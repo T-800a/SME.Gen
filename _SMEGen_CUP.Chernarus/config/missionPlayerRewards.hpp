@@ -10,11 +10,16 @@
  =======================================================================================================================
 */
 
+#define REDFOR 0
+#define BLUFOR 1
+#define GRNFOR 2
+
 class missionPlayerRewards 
 {	
 	class vanilla_BLUFOR
 	{
-		fullArsenal			= 0;	
+		fullArsenal			= 0;
+		playerSide			= BLUFOR;
 		missionReward01		= "B_Truck_01_medical_F";
 		missionReward02		= "B_MRAP_01_hmg_F";
 		missionReward03		= "B_Heli_Light_01_armed_F";
@@ -81,7 +86,23 @@ class missionPlayerRewards
 		};
 	};
 	
-	class vanilla_fullArsenal : vanilla_BLUFOR { fullArsenal = 1; };
+	class vanilla_BLUFOR_fullArsenal : vanilla_BLUFOR
+	{
+		fullArsenal			= 1;
+		playerSide			= BLUFOR;
+	};
+	
+	class vanilla_REDFOR_fullArsenal : vanilla_BLUFOR
+	{
+		fullArsenal			= 1;
+		playerSide			= REDFOR;
+	};
+	
+	class vanilla_GRNFOR_fullArsenal : vanilla_BLUFOR
+	{
+		fullArsenal			= 1;
+		playerSide			= GRNFOR;
+	};
 
 
 
@@ -91,7 +112,8 @@ class missionPlayerRewards
 
 	class vanilla_BLUFOR_ACE
 	{
-		fullArsenal			= 0;	
+		fullArsenal			= 0;
+		playerSide			= BLUFOR;
 		missionReward01		= "B_Truck_01_medical_F";
 		missionReward02		= "B_MRAP_01_hmg_F";
 		missionReward03		= "B_Heli_Light_01_armed_F";
@@ -167,7 +189,8 @@ class missionPlayerRewards
 	
 	class CUP_BLUFOR_USMC
 	{
-		fullArsenal			= 0;	
+		fullArsenal			= 0;
+		playerSide			= BLUFOR;
 		missionReward01		= "CUP_B_LAV25_HQ_USMC";
 		missionReward02		= "CUP_B_RG31_M2_OD_USMC";
 		missionReward03		= "CUP_B_UH60L_FFV_US";
@@ -264,7 +287,8 @@ class missionPlayerRewards
 
 	class RHS_INDEP
 	{
-		fullArsenal			= 0;	
+		fullArsenal			= 0;
+		playerSide			= REDFOR;
 		missionReward01		= "rhs_gaz66_ap2_vdv";
 		missionReward02		= "rhs_btr60_vdv";
 		missionReward03		= "RHS_Mi24P_CAS_vdv";
@@ -342,6 +366,146 @@ class missionPlayerRewards
 	class RHS_INDEP_fullArsenal : RHS_INDEP { fullArsenal = 1; };
 
 
+	// --------------------------------------------------------------
+	//	RHS USMC Rewards
+	//
+
+	class RHS_USMC
+	{
+		fullArsenal			= 0;
+		playerSide			= BLUFOR;
+		missionReward01		= "rhsusf_M1232_usarmy_wd";
+		missionReward02		= "rhsusf_rg33_m2_usmc_wd";
+		missionReward03		= "RHS_MELB_AH6M_H";
+		
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class startingGear : base_reward
+		{
+			BackpackReward[]	= { 
+			//BACKPACK
+			"rhsusf_assault_eagleaiii_coy"
+                     			};
+			ItemReward[]		= {	
+			//MISC
+			"FirstAidKit",
+			"Medikit",
+			"ToolKit",
+			"ItemWatch",
+			"ItemCompass",
+			"ItemGPS",
+			"ItemRadio",
+			"ItemMap",
+			"Binocular",
+			"MineDetector",
+			"B_UavTerminal",
+			"rhsusf_ANPVS_15",
+			//UNIFORM
+			"rhsusf_lwh_helmet_marpatwd_headset_blk",
+			"rhs_uniform_FROG01_wd",
+			"rhsusf_spc_squadleader",
+			"rhsusf_spc_rifleman",
+			"rhsusf_spc_light",
+			"rhsusf_spc_marksman",
+			"rhs_booniehat2_marpatwd",
+			"rhsusf_lwh_helmet_marpatwd",
+			"rhsusf_lwh_helmet_marpatwd_blk_ess",
+			"rhsusf_mich_helmet_marpatwd_norotos_arc",
+			"rhs_googles_black",
+			"rhs_googles_clear",
+			"rhs_ess_black",
+			//ATTACHMENTS
+			"rhsusf_acc_eotech_552",
+			"rhsusf_acc_compm4",
+			"rhsusf_acc_ACOG",
+			"rhsusf_acc_M8541",
+			"rhsusf_acc_grip3",
+								};
+			MagazineReward[]	= { 
+			//MAGAZINES
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag",
+			"rhs_mag_M441_HE",
+			"rhs_200rnd_556x45_M_SAW",
+			"rhsusf_5Rnd_762x51_m118_special_Mag",
+			"rhs_m136_mag","rhs_mag_m67",
+			"rhsusf_mag_15Rnd_9x19_JHP"
+								};
+			WeaponReward[]		= { 
+			//WEAPONS
+			"rhs_weap_m4a1_carryhandle",
+			"rhs_weap_m249_pip_S",
+			"rhs_weap_m24sws_blk",
+			"rhs_weap_M136",
+			"rhsusf_weap_m9"
+                    			};
+		};
+		
+		class CORPORAL : base_reward 
+		{
+			ItemReward[]		= { 
+			"rhsusf_acc_harris_bipod",
+			"rhsusf_acc_premier"
+                    			};
+			MagazineReward[]    = { 
+			"rhsusf_20Rnd_762x51_m118_special_Mag",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_smaw_HEDP" 
+			                    };
+			WeaponReward[]		= { 
+			"rhs_weap_m16a4",
+			"rhs_weap_smaw_green",
+			"rhs_weap_sr25"
+                    			};		
+		};
+		
+		class SERGEANT : base_reward 
+		{
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};		
+		};
+		
+		class LIEUTENANT : base_reward 
+		{
+			ItemReward[]		= {};
+		};
+		
+		class CAPTAIN : base_reward
+		{
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class MAJOR : base_reward
+		{
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+
+		};
+		
+		class COLONEL : base_reward
+		{
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+			ItemReward[]		= {};
+		};
+		
+		class GENERAL : base_reward
+		{
+			ItemReward[]		= {};
+		};
+	};
+	
+	class RHS_USMC_fullArsenal : RHS_USMC { fullArsenal = 1; };
+
 
 
 
@@ -350,9 +514,10 @@ class missionPlayerRewards
 	//	IFA3 Rewards
 	//	
 	
-	class IFA3_BLUFOR_WEHR : vanilla_fullArsenal
+	class IFA3_BLUFOR_WEHR : vanilla_BLUFOR
 	{
-		fullArsenal			= 1;	
+		fullArsenal			= 1;
+		playerSide			= BLUFOR;		
 		missionReward01		= "LIB_SdKfz251_FFV";
 		missionReward02		= "LIB_StuG_III_G";
 		missionReward03		= "LIB_PzKpfwIV_H";

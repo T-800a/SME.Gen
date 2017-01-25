@@ -38,7 +38,7 @@ class cfgRandomMissions
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "CUP_BLUFOR_USMC_fullArsenal";
+		playerRewardSet				= "CUP_BLUFOR_USMC";
 
 
 	// missions "won" needed for new vehicle 

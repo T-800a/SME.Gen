@@ -35,8 +35,7 @@ addons[]=
 	"CUP_Creatures_Military_USMC",
 	"A3_Modules_F_Multiplayer",
 	"A3_Modules_F_Curator_Environment",
-	"A3_Characters_F",
-	"cba_xeh"
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {

@@ -74,7 +74,7 @@ if ((( isNull T8SME_server_var_objectReward01 ) AND ( isNull T8SME_server_var_ob
 	T8SME_server_var_objectReward01 = createVehicle [ _classReward01, getPos mission_reward_spawn_01, [], 0, "NONE" ];
 	T8SME_server_var_objectReward01 setdir ( getDir mission_reward_spawn_01);
 	{ _x addCuratorEditableObjects [ [ T8SME_server_var_objectReward01 ], true ]; false } count allCurators;
-	[ WEST, T8SME_server_var_objectReward01, "Mobile HQ" ] call BIS_fnc_addRespawnPosition;
+	[ T8SME_param_playerFaction, T8SME_server_var_objectReward01, "Mobile HQ" ] call BIS_fnc_addRespawnPosition;
 	
 	missionNamespace setVariable [ "T8SME_server_var_objectReward01", T8SME_server_var_objectReward01, true ];
 	[ 1, 0, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];

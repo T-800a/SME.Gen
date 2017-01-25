@@ -19,12 +19,22 @@ switch ( "param_enemy" call BIS_fnc_getParamValue ) do
 	case   2 :	{ T8SME_param_enemyFaction = "vanilla_OPFOR_GUER"; };
 	case   3 :	{ T8SME_param_enemyFaction = "vanilla_INDEP"; };
 	case   4 :	{ T8SME_param_enemyFaction = "vanilla_INDEP_GUER"; };
-	case   5 :	{ T8SME_param_enemyFaction = "CUP_OPFOR_TAKarmy"; };
-	case  20 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_GUER"; };
+	case   5 :	{ T8SME_param_enemyFaction = "vanilla_BLUFOR"; };
 	
-	case 100 :	{ T8SME_param_enemyFaction = "vanilla_BLUFOR"; };
-	case 110 :	{ T8SME_param_enemyFaction = "CUP_BLUFOR_USMC"; };
-	case 120 :	{ T8SME_param_enemyFaction = "RHS_BLUFOR_ARMY_OCP"; };
+	case  20 :	{ T8SME_param_enemyFaction = "CUP_OPFOR_TAKarmy"; };
+	case  21 :	{ T8SME_param_enemyFaction = "CUP_GRNFOR_TAKlocals"; };
+	case  22 :	{ T8SME_param_enemyFaction = "CUP_GRNFOR_NAPA"; };
+	case  23 :	{ T8SME_param_enemyFaction = "CUP_BLUFOR_USMC"; };
+	
+	case  50 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_GUER"; };
+	case  51 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_VMF"; };
+	case  52 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_VDV"; };
+	case  53 :	{ T8SME_param_enemyFaction = "RHS_GREF_CHDKZ"; };
+	case  54 :	{ T8SME_param_enemyFaction = "RHS_GREF_CDF"; };
+	case  55 :	{ T8SME_param_enemyFaction = "RHS_GREF_UN"; };
+	case  56 :	{ T8SME_param_enemyFaction = "RHS_SAF_ARMY"; };
+	case  57 :	{ T8SME_param_enemyFaction = "RHS_SAF_PARA"; };
+	case  58 :	{ T8SME_param_enemyFaction = "RHS_BLUFOR_ARMY_OCP"; };
 	
 	default		{ T8SME_param_enemyFaction = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnUnitsFaction" ); };
 };
@@ -33,14 +43,18 @@ switch ( "param_enemy" call BIS_fnc_getParamValue ) do
 switch ( "param_reward" call BIS_fnc_getParamValue ) do
 {
 	case   0 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR"; };
-	case   1 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR_ACE"; };
-	case   2 :	{ T8SME_param_playerRewardSet = "CUP_BLUFOR_USMC"; };
-
-	case  20 :	{ T8SME_param_playerRewardSet = "RHS_INDEP"; };	
+	case   1 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR_fullArsenal"; };
+	case   2 :	{ T8SME_param_playerRewardSet = "vanilla_GRNFOR_fullArsenal"; };
+	case   3 :	{ T8SME_param_playerRewardSet = "vanilla_REDFOR_fullArsenal"; };
 	
-	case 900 :	{ T8SME_param_playerRewardSet = "vanilla_fullArsenal"; };
-	case 901 :	{ T8SME_param_playerRewardSet = "CUP_BLUFOR_USMC_fullArsenal"; };
-	case 902 :	{ T8SME_param_playerRewardSet = "RHS_INDEP_fullArsenal"; };
+	case  20 :	{ T8SME_param_playerRewardSet = "CUP_BLUFOR_USMC"; };
+	case  21 :	{ T8SME_param_playerRewardSet = "CUP_BLUFOR_USMC_fullArsenal"; };
+	
+	case  50 :	{ T8SME_param_playerRewardSet = "RHS_INDEP"; };
+	case  51 :	{ T8SME_param_playerRewardSet = "RHS_INDEP_fullArsenal"; };
+	case  52 :	{ T8SME_param_playerRewardSet = "RHS_USMC"; };
+
+	case 900 :	{ T8SME_param_playerRewardSet = "vanilla_BLUFOR_ACE"; };
 	
 	default		{ T8SME_param_playerRewardSet = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerRewardSet" ); };
 };
@@ -143,6 +157,17 @@ switch ( "param_FAR_health" call BIS_fnc_getParamValue ) do
 	case 2 :	{ FAR_ReviveDamage	= 0.50; };
 	case 3 :	{ FAR_ReviveDamage	= 0.75; };
 	default		{ FAR_ReviveDamage	= 0.50; };
+};
+
+
+// SET PLAYER Side accroding to Reward/Gear Set
+private _side = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "playerSide" );
+switch ( _side ) do
+{
+	case   0 :	{ T8SME_param_playerFaction = EAST; };
+	case   1 :	{ T8SME_param_playerFaction = WEST; };
+	case   2 :	{ T8SME_param_playerFaction = INDEPENDENT; };
+	default		{ T8SME_param_playerFaction = WEST; };
 };
 
 // other scripts can check this 
