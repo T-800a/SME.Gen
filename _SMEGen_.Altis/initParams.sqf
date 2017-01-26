@@ -105,10 +105,6 @@ switch ( "param_vehiclepatrols" call BIS_fnc_getParamValue ) do
 	default		{ T8SME_param_allowVehiclePatrols = true; };
 };
 
-// faction used by the players (set in the cfgRandomMissions.hpp)
-T8SME_param_playerFaction	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" );
-
-
 
 // REVIVE SETTINGS
 // global on/off for revive

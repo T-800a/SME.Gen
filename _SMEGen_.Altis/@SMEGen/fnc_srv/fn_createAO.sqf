@@ -21,7 +21,7 @@ __DEBUG( __FILE__, "INIT: _this", _this );
 
 private [	"_type", "_configArrayGroups", "_arrayGroups", "_inf", "_siteMkr", "_sitePos", "_taskPos", "_siteName", "_siteSize", "_siteAngle", "_typeDesc",
 			"_typeDescNew", "_typeTask", "_range", "_typeTaskShort", "_typeName", "_setTaskName", "_setTaskDesc", "_spawnedUnits", "_modPlayer", "_modGroup", "_conditions",
-			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSide", "_missionPlayerSideString", "_varName", "_varName02", "_index", "_objPos" ];
+			"_missionSideN", "_missionSide", "_missionSideString", "_missionPlayerSideString", "_varName", "_varName02", "_index", "_objPos" ];
 
 params [
 	[ "_site", "NO-SITE", [""]],
@@ -86,10 +86,10 @@ switch ( _missionSideN ) do
 
 switch ( T8SME_param_playerFaction ) do
 {
-	case 0 :	{ _missionPlayerSide = EAST;		_missionPlayerSideString = "EAST"; };
-	case 1 :	{ _missionPlayerSide = WEST;		_missionPlayerSideString = "WEST"; };
-	case 2 :	{ _missionPlayerSide = INDEPENDENT;	_missionPlayerSideString = "INDEPENDENT" };
-	default		{ _missionPlayerSide = WEST;		_missionPlayerSideString = "WEST" };
+	case EAST :			{ _missionPlayerSideString = "EAST"; };
+	case WEST :			{ _missionPlayerSideString = "WEST"; };
+	case INDEPENDENT :	{ _missionPlayerSideString = "INDEPENDENT" };
+	default				{ _missionPlayerSideString = "WEST" };
 };
 
 
@@ -381,7 +381,9 @@ T8SME_server_var_arrayCleanup pushBack _spawnedUnits;
 	true, 
 	"Attack",
 	true	
-] call BIS_fnc_setTask; 
+] call BIS_fnc_setTask;
+
+T8SME_server_var_arrayCurrentTasks pushBack [ _siteMkr, _setTaskDesc, _setTaskName, _taskPos ];
 
 
 // add conditions to handle

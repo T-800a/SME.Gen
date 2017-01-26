@@ -10,8 +10,14 @@
  =======================================================================================================================
 */
 
+params [
+	[ "_player", objNull, [ objNull ]],
+	[ "_JIP", false, [ true ]]
+];
+
 
 #include <initParams.sqf>
+
 
 
 // initialize SME.Gen client
@@ -42,3 +48,7 @@ if ( isMultiplayer ) then
 		player unlinkItem "NVGoggles_INDEP";
 	};
 };
+
+if ( _JIP ) then { sleep 5; };
+
+remoteExec [ "T8SME_server_fnc_publishTasks", 2 ]; 

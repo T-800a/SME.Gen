@@ -71,6 +71,7 @@
 			addFunction(handleReward);
 			addFunction(markBlackBox);
 			addFunction(objectsMapper);
+			addFunction(publishTasks);
 			addFunction(selectRandom);
 			addFunction(shuffleArray);
 			addFunction(surrenderHVT);
