@@ -1,7 +1,7 @@
 /*
  =======================================================================================================
 
-	SME.Gen - Small Military Encounter Genenerator
+	SME.Gen - Small Military Encounter Genenerator LOL
 	INIT Client
 	
 	File:		init.sqf

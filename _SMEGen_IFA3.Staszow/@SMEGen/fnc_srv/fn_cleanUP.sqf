@@ -63,10 +63,11 @@ __DEBUG( __FILE__, "INIT", "INIT" );
 { [ _x select 1 ] call BIS_fnc_deleteTask; false } count T8SME_server_var_arrayConditions;
 
 // reset variables
-T8SME_server_var_arrayCleanup		= [];
-T8SME_server_var_arrayConditions	= [];
-T8SME_server_var_arraySites			= [];
-T8SME_server_var_arrayTypes			= [];
+T8SME_server_var_arrayCleanup			= [];
+T8SME_server_var_arrayConditions		= [];
+T8SME_server_var_arrayCurrentTasks		= [];
+T8SME_server_var_arraySites				= [];
+T8SME_server_var_arrayTypes				= [];
 
 
 // return

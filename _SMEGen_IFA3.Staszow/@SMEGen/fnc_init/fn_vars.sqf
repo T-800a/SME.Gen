@@ -26,6 +26,7 @@ T8SME_server_var_objectReward02			= objNull;
 T8SME_server_var_objectReward03			= objNull;
 
 T8SME_server_var_arrayConditions		= [];
+T8SME_server_var_arrayCurrentTasks		= [];
 T8SME_server_var_arraySites				= [];
 T8SME_server_var_arrayCleanup			= [];
 T8SME_server_var_arrayTypes				= [];

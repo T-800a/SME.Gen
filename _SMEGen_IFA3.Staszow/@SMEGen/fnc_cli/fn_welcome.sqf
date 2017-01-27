@@ -12,6 +12,8 @@
 */
 
 if !(hasInterface) exitWith {};
+waitUntil { !isNull player AND { isPlayer player } AND { alive player }};
+waitUntil { sleep 1; !isNull ( findDisplay 46 ) };
 
 #include <..\MACRO.hpp>
 
