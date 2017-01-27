@@ -29,7 +29,7 @@ private _returnArray = [];
 
 private _objArray =
 [
-	[( "EMPTY_HELI_TRANS" call T8SME_server_fnc_getVehicleClass ),	( _posArray select 0 )], 
+	[( "EMPTY_HELI_WRECK" call T8SME_server_fnc_getVehicleClass ),	( _posArray select 0 )], 
 	[( "EMPTY_OFFROAD_A" call T8SME_server_fnc_getVehicleClass ),	( _posArray select 1 )], 
 	[( "EMPTY_OFFROAD_A" call T8SME_server_fnc_getVehicleClass ),	( _posArray select 2 )],
 	[ "Land_SatellitePhone_F", _posBox ]
@@ -57,8 +57,6 @@ __DEBUG( __FILE__, "_objArray", _objArray );
 __DEBUG( __FILE__, "_returnArray", _returnArray );
 { _x addCuratorEditableObjects [ _returnArray, true ]; false } count allCurators;
 T8SME_server_var_arrayCleanup pushBack _returnArray;
-
-( _returnArray select 0 ) setDamage 1;
 
 // return
 ( _returnArray select 3 )

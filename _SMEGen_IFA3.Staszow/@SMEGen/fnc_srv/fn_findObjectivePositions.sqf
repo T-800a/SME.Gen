@@ -18,6 +18,8 @@
 	The function is intended to find a safe, flat and empty spawn positon for objects / small object compilations 
 	without the risk of spawning these objects in other map objects.
 	
+	[ getPos player, 200, 1, "FLAT", true, 50, true] spawn T8SME_server_fnc_findObjectivePositions;
+	
  =======================================================================================================================
 */
 
@@ -39,7 +41,8 @@ params [
 	[ "_amount", 		2,		[123]],
 	[ "_level", 		"FLAT",	[""]],
 	[ "_useRoad",		false,	[true]],
-	[ "_distance",		50,		[123]]
+	[ "_distance",		50,		[123]],
+	[ "_debug",			false,	[false]]
 ];
 
 _return		= [];
@@ -130,9 +133,11 @@ _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 	false
 } count _arrayBasePos;
 
-/*
+// DEBUG OUTPUT
+if ( _debug ) then
+{
 	_posTime = diag_tickTime;
-	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "1" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8SME_server_fnc_createMarker; false } count _arrayRoadPos;
+	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "1" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorGrey",		0.75 ] call T8SME_server_fnc_createMarker; false } count _arrayRoadPos;
 	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "2" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorCivilian",	0.75 ] call T8SME_server_fnc_createMarker; false } count _arrayBuildingPos;
 	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "3" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorGreen",		0.75 ] call T8SME_server_fnc_createMarker; false } count _arrayPosGRN;
 	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "4" ]), _x, "", [1,1], 0, "ICON", "mil_dot", "ColorYellow",		0.75 ] call T8SME_server_fnc_createMarker; false } count _arrayPosYEL;
@@ -141,7 +146,7 @@ _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 
 	_msg = format [ " START: %1 ~~~ POSITIONS: %2 ~~~ END: %3 ~~~ RUNTIME: %4", _startTime, _posTime, diag_tickTime, ( _posTime - _startTime )];
 	__DEBUG( __FILE__, _msg, _this );
-*/
+};
 
 {
 	private [ "_arr" ];
@@ -165,9 +170,10 @@ _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 	false
 } count [ _arrayPosGRN, _arrayPosYEL, _arrayPosORA, _arrayPosRED, _arrayRoadPos ];
 
-/*
+if ( _debug ) then
+{
 	{ [( format [ "%1_%2_%3", ( _x select 0 ), ( _x select 1 ), "RETURN" ]), _x, "", [1,1], 0, "ICON", "mil_circle", "ColorPink", 0.75 ] call T8SME_server_fnc_createMarker; [ _x ] call T8SME_server_fnc_createSmallCamp; false } count _return;
-*/
+};
 
 // return
 _return

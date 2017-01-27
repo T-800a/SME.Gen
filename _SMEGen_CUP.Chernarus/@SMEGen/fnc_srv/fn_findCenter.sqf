@@ -42,7 +42,7 @@ private _count		= 0;
 	false
 } count _array;
 
-_return = [( _xPos / _count ), ( _yPos / _count ), 0 ];
+_return = [(( _xPos / _count ) - 100 + random 200 ), (( _yPos / _count ) - 100 + random 200 ), 0 ];
 
 __DEBUG( __FILE__, "_return", _return );
 

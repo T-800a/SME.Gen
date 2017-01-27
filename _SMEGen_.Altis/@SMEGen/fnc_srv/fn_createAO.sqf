@@ -355,6 +355,10 @@ _index = 0;
 		case "DEFEND" :			{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
 		case "GARRISON" :		{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
 		case "OCCUPY" :			{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [ true, false, false ]]; };
+		
+		case "PATROL" :			{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [], true ]; };
+		case "PATROL_AROUND" :	{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ], [], true ]; };
+		
 		default					{ _subArray = [[ _units, _marker, _missionSide, _vehicleGroup ], [ _task ]]; };
 	};
 	
