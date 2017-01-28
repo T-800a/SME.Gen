@@ -115,7 +115,7 @@ class Params
 
 
 	//
-	//	BIS Revive
+	//	FAR Revive
 	//
 	
 	class param_FAR_enable 

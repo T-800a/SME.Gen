@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=253;
+		nextID=272;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8267.2305,336.6781,2079.5667};
-		dir[]={-0.60411853,-0.50346488,0.6177851};
-		up[]={-0.35202664,0.8639943,0.35999042};
-		aside[]={0.71500558,-8.0093741e-008,0.69918686};
+		pos[]={8182.2192,312.57538,1946.2583};
+		dir[]={0.18215905,-0.34020132,0.92261964};
+		up[]={0.065911919,0.94032437,0.33384025};
+		aside[]={0.9811303,1.4159014e-007,-0.19371177};
 	};
 };
 binarizationWanted=0;
@@ -211,25 +211,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -261,6 +242,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
 				};
 			};
 		};
@@ -313,7 +313,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=195;
+		items=209;
 		class Item0
 		{
 			dataType="Marker";
@@ -469,7 +469,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8199.2207,296.04001,2051.6772};
+				position[]={8201.0693,296.04001,2045.1533};
 				angles[]={0,2.6179938,0};
 			};
 			side="Empty";
@@ -486,7 +486,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8155.9097,296.04001,2028.134};
+				position[]={8158.7969,296.04001,2021.2493};
 				angles[]={0,2.6179938,0};
 			};
 			side="Empty";
@@ -3096,7 +3096,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8268.2324,296.49011,2146.0654};
+				position[]={8271.9346,296.49011,2147.115};
 				angles[]={0,2.9729369,0};
 			};
 			side="Empty";
@@ -3523,8 +3523,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8211.4824,297.12381,1971.1799};
-				angles[]={0,2.0762703,0};
+				position[]={8211.5059,297.12381,1976.9398};
+				angles[]={0,1.7103482,0};
 			};
 			side="Empty";
 			flags=5;
@@ -3539,8 +3539,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8214.5264,297.12381,1972.8799};
-				angles[]={0,3.0423086,0};
+				position[]={8214.4971,297.12381,1978.5033};
+				angles[]={0,3.5805509,0};
 			};
 			side="Empty";
 			flags=5;
@@ -3555,7 +3555,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8210.3994,296.42569,1970.8013};
+				position[]={8210.3701,296.42569,1976.4247};
 				angles[]={0,4.2336626,0};
 			};
 			side="Empty";
@@ -3571,7 +3571,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8215.3711,296.42569,1973.738};
+				position[]={8215.3418,296.42569,1979.3615};
 				angles[]={0,4.2336626,0};
 			};
 			side="Empty";
@@ -3587,7 +3587,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8210.9326,296.43234,1972.868};
+				position[]={8210.9033,296.43234,1978.4915};
 				angles[]={0,2.6412377,0};
 			};
 			side="Empty";
@@ -3604,7 +3604,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8213.3916,296.42569,1974.2292};
+				position[]={8213.3623,296.42569,1979.8527};
 				angles[]={0,2.6412377,0};
 			};
 			side="Empty";
@@ -3620,7 +3620,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8212.2559,296.42569,1969.9386};
+				position[]={8212.2266,296.42569,1975.562};
 				angles[]={0,2.573493,0};
 			};
 			side="Empty";
@@ -3636,7 +3636,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8214.6182,296.42569,1971.4634};
+				position[]={8214.5889,296.42569,1977.0868};
 				angles[]={0,2.573493,0};
 			};
 			side="Empty";
@@ -4872,6 +4872,230 @@ class Mission
 			id=252;
 			type="Land_HBarrier_Big_F";
 			atlOffset=0.0084533691;
+		};
+		class Item195
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8267.9355,297.12381,2154.1833};
+				angles[]={0,1.6244658,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=253;
+			type="Land_PortableLight_single_F";
+		};
+		class Item196
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8266.9336,296.42569,2154.3145};
+				angles[]={0,1.6906642,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=254;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item197
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8268.5332,296.42569,2155.0378};
+				angles[]={0,3.7785215,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=255;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item198
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8268.3369,296.42569,2153.3022};
+				angles[]={0,5.9037561,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=256;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item199
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8190.5957,297.12381,2035.9435};
+				angles[]={0,3.9172337,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=257;
+			type="Land_PortableLight_single_F";
+		};
+		class Item200
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8191.3564,296.42569,2036.6089};
+				angles[]={0,3.9834321,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=258;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item201
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8190.8433,296.42569,2034.9285};
+				angles[]={0,6.0712891,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=259;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item202
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8189.6694,296.42569,2036.2233};
+				angles[]={0,1.9133382,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=260;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item203
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8173.7534,297.12381,2025.6809};
+				angles[]={0,1.1891556,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=261;
+			type="Land_PortableLight_single_F";
+		};
+		class Item204
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8172.7896,296.42569,2025.3772};
+				angles[]={0,1.2553539,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=262;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item205
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8173.9351,296.42569,2026.7089};
+				angles[]={0,3.3432112,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=263;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item206
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8174.4897,296.42569,2025.0521};
+				angles[]={0,5.4684448,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=264;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item207
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8267.2998,297.12381,2146.2612};
+				angles[]={0,5.2200537,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=269;
+			type="Land_PortableLight_single_F";
+		};
+		class Item208
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8281.9229,297.12381,2124.4243};
+				angles[]={0,2.655535,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=270;
+			type="Land_PortableLight_single_F";
 		};
 	};
 	class Connections

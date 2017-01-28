@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=230;
+		nextID=241;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4632.3389,73.821281,2429.5535};
-		dir[]={0.53647625,-0.41873777,0.7327984};
-		up[]={0.24739769,0.90807199,0.33793101};
-		aside[]={0.80693614,-2.1234155e-007,-0.59075314};
+		pos[]={4710.5439,31.39802,2497.2063};
+		dir[]={0.82220894,-0.42278987,0.38134107};
+		up[]={0.38365442,0.90616924,0.17794125};
+		aside[]={0.42078701,-7.6115248e-007,-0.90726388};
 	};
 };
 binarizationWanted=0;
@@ -247,12 +247,14 @@ class Mission
 		forecastWaves=0;
 		year=2018;
 		month=12;
+		hour=8;
+		minute=-21;
 		startFogDecay=0.0049999999;
 		forecastFogDecay=0.0049999999;
 	};
 	class Entities
 	{
-		items=186;
+		items=196;
 		class Item0
 		{
 			dataType="Marker";
@@ -443,7 +445,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4780.0112,8.6999998,2556.6267};
+				position[]={4781.3154,8.6999998,2555.906};
 				angles[]={0,3.6651914,0};
 			};
 			side="Empty";
@@ -664,8 +666,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4769.1943,8.9999142,2475.7986};
-				angles[]={6.2698536,0,0.013332055};
+				position[]={4779.5806,9,2480.5369};
 			};
 			name="zeus_t800a";
 			id=31;
@@ -1201,7 +1202,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4717.7246,9,2542.239};
+				position[]={4719.9536,8.9880466,2543.3965};
+				angles[]={0.013327583,0,0};
 			};
 			id=55;
 			type="ModuleRespawnVehicle_F";
@@ -1405,7 +1407,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4775.0879,9,2476.978};
+				position[]={4787.1191,9,2482.8086};
 			};
 			id=56;
 			type="ModuleTimeMultiplier_F";
@@ -2088,8 +2090,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4763.9429,8.9192438,2474.6594};
-				angles[]={0,0,0.013327583};
+				position[]={4773.0293,9,2478.8608};
 			};
 			name="zeus_sp";
 			id=62;
@@ -3317,7 +3318,7 @@ class Mission
 			};
 			id=144;
 			type="Land_Cargo10_sand_F";
-			atlOffset=-0.00012111664;
+			atlOffset=-0.00012016296;
 		};
 		class Item106
 		{
@@ -3375,7 +3376,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4709.2402,9.3801603,2577.7461};
+				position[]={4710.3828,9.3898458,2577.0195};
 				angles[]={0.013327583,1.9895511,0};
 			};
 			side="Empty";
@@ -3392,7 +3393,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4709.6333,9.549511,2579.5264};
+				position[]={4709.5405,9.5556116,2579.0688};
 				angles[]={0.013327583,1.9439815,0};
 			};
 			side="Empty";
@@ -3441,7 +3442,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4710.4854,9.5636559,2576.2683};
+				position[]={4711.1045,9.571969,2575.6448};
 				angles[]={0.013327583,0,0};
 			};
 			side="Empty";
@@ -4527,6 +4528,7 @@ class Mission
 			};
 			id=222;
 			type="Land_HBarrier_Big_F";
+			atlOffset=9.5367432e-007;
 		};
 		class Item179
 		{
@@ -4646,6 +4648,166 @@ class Mission
 			};
 			id=229;
 			type="Land_Cargo_Patrol_V1_F";
+		};
+		class Item186
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4725.6616,10.06517,2571.1016};
+				angles[]={0,2.8582222,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=230;
+			type="Land_PortableLight_single_F";
+		};
+		class Item187
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4708.8384,10.01839,2577.4067};
+				angles[]={0,4.3730965,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=231;
+			type="Land_PortableLight_single_F";
+		};
+		class Item188
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4750.2905,9.9721746,2558.821};
+				angles[]={0,2.8385973,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=232;
+			type="Land_PortableLight_single_F";
+		};
+		class Item189
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4750.0635,9.2831163,2559.8057};
+				angles[]={0,2.9047956,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=234;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item190
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4751.3008,9.2336407,2558.5593};
+				angles[]={0,4.9926529,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=235;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item191
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4749.606,9.3014269,2558.1367};
+				angles[]={0,0.83470178,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=236;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item192
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4763.0581,9.9461365,2553.4419};
+				angles[]={0,4.5810118,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=237;
+			type="Land_PortableLight_single_F";
+		};
+		class Item193
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4764.0674,9.2457714,2553.4973};
+				angles[]={0,4.6472101,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=238;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item194
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4762.6274,9.2860365,2552.4907};
+				angles[]={0,0.45188189,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=239;
+			type="Land_CncBarrier_stripes_F";
+		};
+		class Item195
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4762.501,9.2163191,2554.2336};
+				angles[]={0,2.5771163,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=240;
+			type="Land_CncBarrier_stripes_F";
 		};
 	};
 	class Connections

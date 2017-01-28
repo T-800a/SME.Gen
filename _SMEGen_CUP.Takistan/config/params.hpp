@@ -112,6 +112,11 @@ class Params
 		texts[]		= {"-----"};
 		default		= 0;
 	};
+
+
+	//
+	//	FAR Revive
+	//
 	
 	class param_FAR_enable 
 	{
@@ -154,14 +159,21 @@ class Params
 	};
 
 
-
+	//
+	//	BIS Revive
+	//
+	
 	class param_titleBISrevive
 	{
 		title		= "----- BIS Revive Settings -----";
 		values[]	= {0};
 		texts[]		= {"-----"};
 		default		= 0;
-	};	
- 
-	#include "\a3\Functions_F\Params\paramRevive.hpp"
+	};
+
+//	FUCKED FOR MP ...
+//	#include "\A3\Functions_F\Params\paramRevive.inc"
+	
+	#include <paramsBisRevive.hpp>
+
 };

@@ -19,42 +19,31 @@ class cfgRandomMissions
 	//	missionConfig - BASE MISSION CONFIG
 	//
 
-	// player faction
-	// 0 - East 
-	// 1 - West 
-	// 2 - Indep
-
-		playerFaction				= 1;
-
 
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "IFA3_OPFOR_SOV";
+		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
+		spawnUnitsFactionFriendly	= "CUP_BLUFOR_USMC";
 		
-		spawnUnitsFactionFriendly	= "IFA3_BLUFOR_WEHR";
-
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "IFA3_BLUFOR_WEHR";
-
-
+		playerRewardSet				= "CUP_BLUFOR_USMC";
+		
 	// missions "won" needed for new vehicle 
-
-		serverRewardSuccesses		= 2;
+		serverRewardSuccesses		= 3;
 
 
 	// amount of spawned mission AOs
-
 		spawnedSitesCount			= 2;
 
 
 	// delays in minutes between a finished set of AOs will be cleanded, 
 	// and a new set will be spawned
 
-		missionCleanDelay			= 5;	// minutes
+		missionCleanDelay			= 4;	// minutes
 		missionSpawnDelay			= 2;	// minutes
 
 
@@ -62,7 +51,7 @@ class cfgRandomMissions
 	//
 	// _mod = ceil(((( _playerCount / !spawnModPlayer! ) * 2 ) * (( _groupCount / !spawnModGroup! ) * 2 )) * 2 );
 	//
-
+	
 		spawnModPlayer				= 5;
 		spawnModGroup				= 15;
 
@@ -78,10 +67,10 @@ class cfgRandomMissions
 
 		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
 		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
-		whitelistCar[]				= {  };
-		whitelistAPC[]				= {  };
-		whitelistTruck[]			= {  };
-		whitelistArmor[]			= {  };
+		whitelistCar[]				= {};
+		whitelistAPC[]				= {};
+		whitelistTruck[]			= {};
+		whitelistArmor[]			= {};
 
 
 	// rewards vehicle restriction
@@ -97,7 +86,7 @@ class cfgRandomMissions
 	//	MISSION PLAYER REWARDS
 	//
 	
-	#include <missionPlayerRewards.hpp>
+	#include <config\missionPlayerRewards.hpp>
 
 
 	// --------------------------------------------------------------
@@ -105,7 +94,7 @@ class cfgRandomMissions
 	//	MISSION SITES
 	//
 
-	#include <missionSites.hpp>
+	#include <config\missionSites.hpp>
 
 
 
@@ -114,7 +103,7 @@ class cfgRandomMissions
 	//	MISSION TYPES	
 	//
 
-	#include <missionTypes.hpp>
+	#include <config\missionTypes.hpp>
 
 
 
@@ -123,7 +112,7 @@ class cfgRandomMissions
 	//	MISSION FACTIONS
 	//
 
-	#include <missionFactions.hpp>
+	#include <config\missionFactions.hpp>
 
 
 

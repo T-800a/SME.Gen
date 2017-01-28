@@ -82,11 +82,11 @@ class CfgDebriefing
 //	include CONFIGs
 //
 
+// main mission config
+#include <cfgRandomMissions.hpp>
+
 // include params
 #include <config\params.hpp>
-
-// main mission config
-#include <config\cfgRandomMissions.hpp>
 
 // include cfgFunctions
 #include <config\cfgFunctions.hpp>

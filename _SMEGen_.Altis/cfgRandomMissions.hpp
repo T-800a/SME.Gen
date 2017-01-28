@@ -30,31 +30,27 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "CUP_OPFOR_TAKarmy";
+		spawnUnitsFaction			= "vanilla_OPFOR_URBAN";
+		spawnUnitsFactionFriendly	= "vanilla_BLUFOR";
 		
-		spawnUnitsFactionFriendly	= "CUP_BLUFOR_USMC";
-
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "CUP_BLUFOR_USMC";
-
-
+		playerRewardSet				= "vanilla_BLUFOR";
+		
 	// missions "won" needed for new vehicle 
-
 		serverRewardSuccesses		= 3;
 
 
 	// amount of spawned mission AOs
-
 		spawnedSitesCount			= 2;
 
 
 	// delays in minutes between a finished set of AOs will be cleanded, 
 	// and a new set will be spawned
 
-		missionCleanDelay			= 5;	// minutes
+		missionCleanDelay			= 4;	// minutes
 		missionSpawnDelay			= 2;	// minutes
 
 
@@ -62,7 +58,7 @@ class cfgRandomMissions
 	//
 	// _mod = ceil(((( _playerCount / !spawnModPlayer! ) * 2 ) * (( _groupCount / !spawnModGroup! ) * 2 )) * 2 );
 	//
-
+	
 		spawnModPlayer				= 5;
 		spawnModGroup				= 15;
 
@@ -71,17 +67,17 @@ class cfgRandomMissions
 
 		adminWhitelist[]			= { "76561197962343988" }; // T-800a
 		pilotWhitelist01[]			= {};
-		pilotWhitelist02[]			= {	"76561197962343988"	};
+		pilotWhitelist02[]			= {};
 
 
 	// vehicle restrictions
 
 		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
 		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
-		whitelistCar[]				= {  };
-		whitelistAPC[]				= {  };
-		whitelistTruck[]			= {  };
-		whitelistArmor[]			= {  };
+		whitelistCar[]				= {};
+		whitelistAPC[]				= {};
+		whitelistTruck[]			= {};
+		whitelistArmor[]			= {};
 
 
 	// rewards vehicle restriction
@@ -97,7 +93,7 @@ class cfgRandomMissions
 	//	MISSION PLAYER REWARDS
 	//
 	
-	#include <missionPlayerRewards.hpp>
+	#include <config\missionPlayerRewards.hpp>
 
 
 	// --------------------------------------------------------------
@@ -105,7 +101,7 @@ class cfgRandomMissions
 	//	MISSION SITES
 	//
 
-	#include <missionSites.hpp>
+	#include <config\missionSites.hpp>
 
 
 
@@ -114,7 +110,7 @@ class cfgRandomMissions
 	//	MISSION TYPES	
 	//
 
-	#include <missionTypes.hpp>
+	#include <config\missionTypes.hpp>
 
 
 
@@ -123,7 +119,7 @@ class cfgRandomMissions
 	//	MISSION FACTIONS
 	//
 
-	#include <missionFactions.hpp>
+	#include <config\missionFactions.hpp>
 
 
 

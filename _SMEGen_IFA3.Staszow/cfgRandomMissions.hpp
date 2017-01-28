@@ -19,25 +19,18 @@ class cfgRandomMissions
 	//	missionConfig - BASE MISSION CONFIG
 	//
 
-	// player faction
-	// 0 - East 
-	// 1 - West 
-	// 2 - Indep
-
-		playerFaction				= 1;
-
 
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "vanilla_OPFOR_URBAN";
-		spawnUnitsFactionFriendly	= "vanilla_BLUFOR";
+		spawnUnitsFaction			= "IFA3_OPFOR_SOV";
+		spawnUnitsFactionFriendly	= "IFA3_BLUFOR_WEHR";
 		
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "vanilla_BLUFOR";
+		playerRewardSet				= "IFA3_BLUFOR_WEHR";
 		
 	// missions "won" needed for new vehicle 
 		serverRewardSuccesses		= 3;
@@ -93,7 +86,7 @@ class cfgRandomMissions
 	//	MISSION PLAYER REWARDS
 	//
 	
-	#include <missionPlayerRewards.hpp>
+	#include <config\missionPlayerRewards.hpp>
 
 
 	// --------------------------------------------------------------
@@ -101,7 +94,7 @@ class cfgRandomMissions
 	//	MISSION SITES
 	//
 
-	#include <missionSites.hpp>
+	#include <config\missionSites.hpp>
 
 
 
@@ -110,7 +103,7 @@ class cfgRandomMissions
 	//	MISSION TYPES	
 	//
 
-	#include <missionTypes.hpp>
+	#include <config\missionTypes.hpp>
 
 
 
@@ -119,7 +112,7 @@ class cfgRandomMissions
 	//	MISSION FACTIONS
 	//
 
-	#include <missionFactions.hpp>
+	#include <config\missionFactions.hpp>
 
 
 
