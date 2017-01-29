@@ -16,15 +16,17 @@ params [
 ];
 
 
-#include <initParams.sqf>
-
+// load SME.Gen mission params
+[] call T8SME_INIT_fnc_params;
 
 
 // initialize SME.Gen client
 [] spawn T8SME_INIT_fnc_client;
 
+
 // initialize FAR revive
 [] spawn FAR_fnc_INIT;
+
 
 // switch player side according to reward set
 private _newGroup = createGroup T8SME_param_playerFaction;

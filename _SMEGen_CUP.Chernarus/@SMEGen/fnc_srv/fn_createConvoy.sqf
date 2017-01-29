@@ -23,13 +23,13 @@ _dirCor = if ( random 100 > 50 ) then { 270 } else { 90 };
 
 _convoyObj =
 [
-	[( "EMPTY_TRUCK" call T8SME_server_fnc_getVehicleClass ),[2.78223,-6.03442,0.0148301],359.746,1,0,[-1.46491,-1.97464],"","",true,false],
+	[( "EMPTY_TRUCK" call T8SME_server_fnc_getVehicleClass ),[4.0,-6.03442,0.0148301],359.746,1,0,[-1.46491,-1.97464],"","",true,false],
 	[( "EMPTY_TRUCK" call T8SME_server_fnc_getVehicleClass ),[3.21216,6.7041,0.0133648],14.028,1,0,[-1.46265,2.16254],"","",true,false],
 	[( "EMPTY_TRUCK_FUEL" call T8SME_server_fnc_getVehicleClass ),[2.85547,-15.8306,-0.0207224],8.61804,1,0,[-0.723469,0.00459397],"","",true,false],
 	[( "EMPTY_OFFROAD_A" call T8SME_server_fnc_getVehicleClass ),[0.455811,19.5078,-0.0298858],314.806,1,0,[-0.483479,-0.062224],"","",true,false],
 	[( "EMPTY_OFFROAD_A" call T8SME_server_fnc_getVehicleClass ),[0.279053,-26.8953,-0.030436],144.135,1,0,[-0.479337,-0.114638],"","",true,false],
-	["Land_WoodenBox_F",[0.844971,-7.72144,1.43051e-006],237.941,1,0,[-0.000906356,0.00101578],"","",true,false],
-	["Land_WoodenCrate_01_F",[1.03149,-6.2605,-2.38419e-006],5.4917,1,0,[-0.00087274,0.00152293],"","",true,false]
+	["Land_WoodenBox_F",[0.344971,-7.72144,1.43051e-006],237.941,1,0,[-0.000906356,0.00101578],"","",true,false],
+	["Land_WoodenCrate_01_F",[0.53149,-6.2605,-2.38419e-006],5.4917,1,0,[-0.00087274,0.00152293],"","",true,false]
 ];
 
 _mappedObj = [ _pos, ( _dir + _dirCor ), _convoyObj ] call T8SME_server_fnc_objectsMapper;

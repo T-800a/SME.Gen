@@ -3,7 +3,7 @@
 
 	SME.Gen - Small Military Encounter Genenerator
  
-	File:		initParams.sqf
+	File:		fn_params.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
  
@@ -25,6 +25,7 @@ switch ( "param_enemy" call BIS_fnc_getParamValue ) do
 	case  21 :	{ T8SME_param_enemyFaction = "CUP_GRNFOR_TAKlocals"; };
 	case  22 :	{ T8SME_param_enemyFaction = "CUP_GRNFOR_NAPA"; };
 	case  23 :	{ T8SME_param_enemyFaction = "CUP_BLUFOR_USMC"; };
+	case  24 :	{ T8SME_param_enemyFaction = "CUP_BLUFOR_USA"; };
 	
 	case  50 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_GUER"; };
 	case  51 :	{ T8SME_param_enemyFaction = "RHS_OPFOR_VMF"; };

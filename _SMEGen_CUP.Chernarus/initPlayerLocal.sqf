@@ -10,15 +10,23 @@
  =======================================================================================================================
 */
 
+params [
+	[ "_player", objNull, [ objNull ]],
+	[ "_JIP", false, [ true ]]
+];
 
-#include <initParams.sqf>
+
+// load SME.Gen mission params
+[] call T8SME_INIT_fnc_params;
 
 
 // initialize SME.Gen client
 [] spawn T8SME_INIT_fnc_client;
 
+
 // initialize FAR revive
 [] spawn FAR_fnc_INIT;
+
 
 // switch player side according to reward set
 private _newGroup = createGroup T8SME_param_playerFaction;
@@ -42,3 +50,7 @@ if ( isMultiplayer ) then
 		player unlinkItem "NVGoggles_INDEP";
 	};
 };
+
+if ( _JIP ) then { sleep 5; };
+
+remoteExec [ "T8SME_server_fnc_publishTasks", 2 ]; 

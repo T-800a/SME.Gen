@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=272;
+		nextID=332;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8182.2192,312.57538,1946.2583};
-		dir[]={0.18215905,-0.34020132,0.92261964};
-		up[]={0.065911919,0.94032437,0.33384025};
-		aside[]={0.9811303,1.4159014e-007,-0.19371177};
+		pos[]={8349.3457,322.25162,1998.6121};
+		dir[]={-0.89672691,-0.26454863,0.35516104};
+		up[]={-0.24607299,0.96433532,0.097459808};
+		aside[]={0.36827284,-1.6915146e-007,0.92982322};
 	};
 };
 binarizationWanted=0;
@@ -58,13 +58,16 @@ addons[]=
 	"A3_Structures_F_EPA_Civ_Constructions",
 	"A3_Structures_F_Items_Vessels",
 	"A3_Structures_F_Mil_Fortification",
-	"achilles_data_f_achilles"
+	"achilles_data_f_achilles",
+	"CUP_Misc_e_Config",
+	"CUP_CAMisc_E_WF",
+	"CUP_CAStructures_E_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=22;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -191,6 +194,21 @@ class AddonsMetaData
 			name="achilles_data_f_achilles";
 			author="Kex";
 		};
+		class Item19
+		{
+			className="CUP_Misc_e_Config";
+			name="CUP_Misc_e_Config";
+		};
+		class Item20
+		{
+			className="CUP_CAMisc_E_WF";
+			name="CUP_CAMisc_E_WF";
+		};
+		class Item21
+		{
+			className="CUP_CAStructures_E_Misc";
+			name="CUP_CAStructures_E_Misc";
+		};
 	};
 };
 randomSeed=7447283;
@@ -313,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=209;
+		items=218;
 		class Item0
 		{
 			dataType="Marker";
@@ -690,8 +708,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8217.6553,297.08105,2092.5618};
-				angles[]={0,2.679616,0};
+				position[]={8217.2891,297.08105,2092.6794};
+				angles[]={0,2.7182264,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5096,6 +5114,151 @@ class Mission
 			};
 			id=270;
 			type="Land_PortableLight_single_F";
+		};
+		class Item209
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8303.8008,314.80103,2107.8037};
+				angles[]={0,5.3640327,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=316;
+			type="76n6ClamShell_EP1";
+			atlOffset=3.0517578e-005;
+		};
+		class Item210
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8218.6035,297.16269,2090.9675};
+				angles[]={0,6.0154386,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=322;
+			type="Land_CamoNetVar_NATO_EP1";
+		};
+		class Item211
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8237.2383,296.09158,2175.1287};
+				angles[]={0.0032018756,2.2199225,0.030390549};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=323;
+			type="Land_fort_rampart_EP1";
+		};
+		class Item212
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8231.0645,295.90402,2169.5232};
+				angles[]={0,2.6093776,0.031984717};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=324;
+			type="Land_fort_rampart_EP1";
+		};
+		class Item213
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8226.6504,297.56549,2100.7993};
+				angles[]={0,2.7866821,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=325;
+			type="PowGen_Big_EP1";
+		};
+		class Item214
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8292.8848,297.56549,2109.5166};
+				angles[]={0,4.6094108,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=326;
+			type="PowGen_Big_EP1";
+		};
+		class Item215
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8200.3145,297.7403,2140.2307};
+				angles[]={0.0032018756,1.2365038,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=328;
+			type="US_WarfareBUAVterminal_Base_EP1";
+		};
+		class Item216
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8204.2344,297.08112,2084.1494};
+				angles[]={0,1.9028294,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=330;
+			type="US_WarfareBVehicleServicePoint_Base_EP1";
+		};
+		class Item217
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8285.5361,311.4664,2082.6338};
+				angles[]={0,2.6026075,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=331;
+			type="Land_Com_tower_ep1";
 		};
 	};
 	class Connections

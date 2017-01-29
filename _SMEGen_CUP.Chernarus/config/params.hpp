@@ -29,7 +29,7 @@ class Params
 		values[]	=
 		{
 			0, 1, 2, 3, 4, 5,
-			20, 21, 22, 23,
+			20, 21, 22, 23, 24,
 			50, 51, 52, 53, 54, 55, 56, 57, 58,
 			999
 		};
@@ -37,7 +37,7 @@ class Params
 		texts[]		=
 		{
 			"CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "NATO",
-			"CUP - Takistan Army", "CUP - Takistan Locals", "CUP - NAPA", "CUP - USMC",
+			"CUP - Takistan Army", "CUP - Takistan Locals", "CUP - NAPA", "CUP - USMC", "CUP - US Army",
 			"RHS AFRF militia", "RHS AFRF VMF", "RHS AFRF VDV", "RHS GREF CHDKZ", "RHS GREF CDF", "RHS GREF UN", "RHS SAF Army", "RHS SAF militia", "RHS US Army OCP",
 			"DEFAULT"
 		};

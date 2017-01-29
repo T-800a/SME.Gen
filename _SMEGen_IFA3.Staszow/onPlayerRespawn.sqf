@@ -17,13 +17,6 @@ params [
 
 if ( !isNull _oldUnit ) then { deleteVehicle _oldUnit; };
 
-// wait for Parameters
-waitUntil { !isNil "T8SME_param_INIT" };
-
-
-// switch player side according to reward set
-private _newGroup = createGroup T8SME_param_playerFaction;
-[ player ] joinSilent _newGroup;
 
 if ( isMultiplayer ) then 
 {

@@ -11,7 +11,8 @@
 */
 
 
-#include <initParams.sqf>
+// load SME.Gen mission params
+[] call T8SME_INIT_fnc_params;
 
 
 // initialize SME.Gen server

@@ -23,8 +23,9 @@
 		class init
 		{
 			file = "@SMEGen\fnc_init";
-			
+
 			addFunctionPre(vars);
+			addFunction(params);
 			addFunction(server);
 			addFunction(client);
 		};

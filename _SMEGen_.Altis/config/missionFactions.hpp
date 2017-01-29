@@ -399,14 +399,56 @@ class missionFactions
 		{
 			EMPTY_OFFROAD		= "CUP_B_HMMWV_Unarmed_USMC";
 			EMPTY_OFFROAD_A		= "CUP_B_HMMWV_M1114_USMC";
-	//		EMPTY_TRUCK			= "";
-	//		EMPTY_TRUCK_AMMO	= "";
-	//		EMPTY_TRUCK_FUEL	= "";
-	//		EMPTY_MORTAR		= "";
+			EMPTY_TRUCK			= "CUP_B_MTVR_USMC";
+			EMPTY_TRUCK_AMMO	= "CUP_B_MTVR_Ammo_USMC";
+			EMPTY_TRUCK_FUEL	= "CUP_B_MTVR_Refuel_USMC";
+			EMPTY_MORTAR		= "CUP_B_M252_USMC";
 			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_USMC";
 			EMPTY_HELI_TRANS	= "CUP_B_MH60S_USMC";
 			EMPTY_HELI_WRECK	= "BlackhawkWreck";
-			EMPTY_FLAK			= "";
+			EMPTY_FLAK			= "CUP_B_HMMWV_Avenger_USMC";
+		};
+	};
+	
+	class CUP_BLUFOR_USA : vanilla_BLUFOR
+	{
+		spawnUnitsSide	= BLUFOR;
+		
+		class units : units
+		{
+			OFFICER				= "CUP_B_US_Officer";
+			SQUADLEADER			= "CUP_B_US_Soldier_SL";
+			TEAMLEADER			= "CUP_B_US_Soldier_TL";
+			CORPSMAN			= "CUP_B_US_Medic";
+			MARKSMAN			= "CUP_B_US_Soldier_Marksman";
+			HEAVYMG				= "CUP_B_US_Soldier_MG";
+			LIGHTMG				= "CUP_B_US_Soldier_AR";
+			ANTITANK			= "CUP_B_US_Soldier_AT";
+			ANTIPERSON			= "CUP_B_US_Soldier_LAT";
+			ANTIAIR				= "CUP_B_US_Soldier_AA";
+			GRENADIER			= "CUP_B_US_Soldier_GL";
+			RIFLEMAN			= "CUP_B_US_Soldier";
+			
+			OFFROAD				= "CUP_B_HMMWV_Unarmed_USA";
+			OFFROAD_A			= "CUP_B_HMMWV_M2_USA";
+			
+			APC_SMALL			= "CUP_B_HMMWV_M2_GPK_USA";
+			APC_MEDIUM			= "CUP_B_M1126_ICV_M2_Desert";
+			APC_HEAVY			= "CUP_B_M2Bradley_USA_D";
+		};
+		
+		class vehicles : vehicles
+		{
+			EMPTY_OFFROAD		= "CUP_B_HMMWV_Unarmed_USA";
+			EMPTY_OFFROAD_A		= "CUP_B_HMMWV_M2_USA";
+			EMPTY_TRUCK			= "CUP_B_MTVR_USA";
+			EMPTY_TRUCK_AMMO	= "CUP_B_MTVR_Ammo_USA";
+			EMPTY_TRUCK_FUEL	= "CUP_B_MTVR_Refuel_USA";
+			EMPTY_MORTAR		= "CUP_B_M252_US";
+			EMPTY_HMG_HIGH		= "CUP_B_M2StaticMG_US";
+			EMPTY_HELI_TRANS	= "CUP_B_UH60L_FFV_US";
+			EMPTY_HELI_WRECK	= "BlackhawkWreck";
+			EMPTY_FLAK			= "CUP_B_HMMWV_Avenger_USA";
 		};
 	};
 
