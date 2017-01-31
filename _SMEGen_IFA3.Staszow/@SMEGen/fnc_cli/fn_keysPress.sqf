@@ -137,7 +137,7 @@ switch ( _key ) do
 			{
 				// Prepare VR-Ammobox
 				private [ "_arsenalAccess" ];
-				_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "fullArsenal" );
+				_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
 				__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
 
 				if ( _arsenalAccess isEqualTo 1 ) then 

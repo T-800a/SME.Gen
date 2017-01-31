@@ -19,26 +19,19 @@ class cfgRandomMissions
 	//	missionConfig - BASE MISSION CONFIG
 	//
 
-	// player faction
-	// 0 - East 
-	// 1 - West 
-	// 2 - Indep
-
-		playerFaction				= 1;
-
 
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "vanilla_OPFOR_URBAN";
-		spawnUnitsFactionFriendly	= "vanilla_BLUFOR";
-		
+		enemyFaction				= "vanilla_OPFOR_URBAN";
+
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "vanilla_BLUFOR";
-		
+		playerFaction				= "vanilla_BLUFOR";
+
+
 	// missions "won" needed for new vehicle 
 		serverRewardSuccesses		= 3;
 
@@ -63,14 +56,16 @@ class cfgRandomMissions
 		spawnModGroup				= 15;
 
 
-	// slot restrictions	
+	// slot restrictions
+	// player ID's that can enter specific slots
 
 		adminWhitelist[]			= { "76561197962343988" }; // T-800a
 		pilotWhitelist01[]			= {};
 		pilotWhitelist02[]			= {};
 
-
+	
 	// vehicle restrictions
+	// classes that can enter specific vehicles
 
 		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
 		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
@@ -88,12 +83,6 @@ class cfgRandomMissions
 
 	};
 
-	// --------------------------------------------------------------
-	//
-	//	MISSION PLAYER REWARDS
-	//
-	
-	#include <config\missionPlayerRewards.hpp>
 
 
 	// --------------------------------------------------------------
@@ -120,6 +109,15 @@ class cfgRandomMissions
 	//
 
 	#include <config\missionFactions.hpp>
+
+
+
+	// --------------------------------------------------------------
+	//
+	//	MISSION PLAYER FACTIONS
+	//
+	
+	#include <config\missionPlayerFactions.hpp>
 
 
 

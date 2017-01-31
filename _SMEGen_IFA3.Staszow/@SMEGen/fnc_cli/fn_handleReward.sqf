@@ -18,7 +18,7 @@ if !(hasInterface) exitWith {};
 private [ "_icon", "_arsenalAccess" ];
 
 // no need for Rewards if full arsenal
-_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "fullArsenal" );
+_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
 if ( _arsenalAccess isEqualTo 1 ) exitWith {};
 
 // _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionReward01" );

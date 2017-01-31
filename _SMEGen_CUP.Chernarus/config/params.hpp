@@ -31,6 +31,7 @@ class Params
 			0, 1, 2, 3, 4, 5,
 			20, 21, 22, 23, 24,
 			50, 51, 52, 53, 54, 55, 56, 57, 58,
+			70, 71, 72,
 			999
 		};
 		
@@ -39,6 +40,7 @@ class Params
 			"CSAT", "CSAT Urban", "CSAT Guerilla", "AAF", "AAF - Guerilla", "NATO",
 			"CUP - Takistan Army", "CUP - Takistan Locals", "CUP - NAPA", "CUP - USMC", "CUP - US Army",
 			"RHS AFRF militia", "RHS AFRF VMF", "RHS AFRF VDV", "RHS GREF CHDKZ", "RHS GREF CDF", "RHS GREF UN", "RHS SAF Army", "RHS SAF militia", "RHS US Army OCP",
+			"IFA3_OPFOR_SOV", "IFA3_GRNFOR_USA", "IFA3_BLUFOR_WEHR",
 			"DEFAULT"
 		};
 	};
@@ -52,6 +54,7 @@ class Params
 			0, 1, 2, 3,
 			20, 21,
 			50, 51, 52,
+			70, 71,
 			900,
 			999
 		};
@@ -60,6 +63,7 @@ class Params
 			"BLUFOR", "BLUFOR full Arsenal", "GRNFOR full Arsenal", "REDFOR full Arsenal",
 			"CUP USMC", "CUP USMC full Arsenal",
 			"RHS Independent", "RHS Independent full Arsenal", "RHS USMC", 
+			"IFA3 Wehrmacht", "IFA3 Wehrmacht full Arsenal",
 			"BLUFOR - ACE",
 			"DEFAULT"
 		};

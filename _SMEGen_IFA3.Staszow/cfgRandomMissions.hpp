@@ -23,15 +23,15 @@ class cfgRandomMissions
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
-		spawnUnitsFaction			= "IFA3_OPFOR_SOV";
-		spawnUnitsFactionFriendly	= "IFA3_BLUFOR_WEHR";
-		
+		enemyFaction				= "IFA3_OPFOR_SOV";
+
 
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerRewardSet				= "IFA3_BLUFOR_WEHR";
-		
+		playerFaction				= "IFA3_BLUFOR_WEHR";
+
+
 	// missions "won" needed for new vehicle 
 		serverRewardSuccesses		= 3;
 
@@ -81,12 +81,6 @@ class cfgRandomMissions
 
 	};
 
-	// --------------------------------------------------------------
-	//
-	//	MISSION PLAYER REWARDS
-	//
-	
-	#include <config\missionPlayerRewards.hpp>
 
 
 	// --------------------------------------------------------------
@@ -113,6 +107,15 @@ class cfgRandomMissions
 	//
 
 	#include <config\missionFactions.hpp>
+
+
+
+	// --------------------------------------------------------------
+	//
+	//	MISSION PLAYER FACTIONS
+	//
+
+	#include <config\missionPlayerFactions.hpp>
 
 
 

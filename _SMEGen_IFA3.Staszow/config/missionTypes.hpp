@@ -580,14 +580,14 @@ class missionTypes
 		{
 			class win
 			{
-				condition	= "( missionNamespace getVariable [ '#__VARIABLE__#', mission_homebase ] distance mission_homebase < 50 )";
+				condition	= "( missionNamespace getVariable [ '#__VARIABLE__#', objNull ] distance mission_homebase < 50 )";
 				function	= "BIS_fnc_taskSetState";
 				isFinal		= 1;
 			};
 			
 			class fail
 			{
-				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', mission_homebase ]))";
+				condition	= "(! alive ( missionNamespace getVariable [ '#__VARIABLE__#', objNull ]))";
 				function	= "BIS_fnc_taskSetState";
 				isFinal		= 1;
 			};

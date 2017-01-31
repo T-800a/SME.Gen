@@ -3,7 +3,7 @@
 
 	SME.Gen - Small Military Encounter Genenerator
  
-	File:		missionPlayerRewards.hpp
+	File:		missionPlayerFactions.hpp
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
@@ -14,12 +14,13 @@
 #define BLUFOR 1
 #define GRNFOR 2
 
-class missionPlayerRewards 
+class missionPlayerFactions 
 {	
 	class vanilla_BLUFOR
 	{
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
+		friendlyFaction		= "vanilla_BLUFOR";
 		missionReward01		= "B_Truck_01_medical_F";
 		missionReward02		= "B_MRAP_01_hmg_F";
 		missionReward03		= "B_Heli_Light_01_armed_F";
@@ -96,12 +97,14 @@ class missionPlayerRewards
 	{
 		fullArsenal			= 1;
 		playerSide			= REDFOR;
+		friendlyFaction		= "vanilla_OPFOR";
 	};
 	
 	class vanilla_GRNFOR_fullArsenal : vanilla_BLUFOR
 	{
 		fullArsenal			= 1;
 		playerSide			= GRNFOR;
+		friendlyFaction		= "vanilla_INDEP";
 	};
 
 
@@ -110,10 +113,11 @@ class missionPlayerRewards
 	//	vanilla BLUFOR + ACE
 	//	
 
-	class vanilla_BLUFOR_ACE
+	class vanilla_BLUFOR_ACE : vanilla_BLUFOR
 	{
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
+		friendlyFaction		= "vanilla_BLUFOR";
 		missionReward01		= "B_Truck_01_medical_F";
 		missionReward02		= "B_MRAP_01_hmg_F";
 		missionReward03		= "B_Heli_Light_01_armed_F";
@@ -191,6 +195,7 @@ class missionPlayerRewards
 	{
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
+		friendlyFaction		= "CUP_BLUFOR_USMC";
 		missionReward01		= "CUP_B_LAV25_HQ_USMC";
 		missionReward02		= "CUP_B_RG31_M2_OD_USMC";
 		missionReward03		= "CUP_B_UH60L_FFV_US";
@@ -289,6 +294,7 @@ class missionPlayerRewards
 	{
 		fullArsenal			= 0;
 		playerSide			= REDFOR;
+		friendlyFaction		= "RHS_OPFOR_GUER";
 		missionReward01		= "rhs_gaz66_ap2_vdv";
 		missionReward02		= "rhs_btr60_vdv";
 		missionReward03		= "RHS_Mi24P_CAS_vdv";
@@ -374,6 +380,7 @@ class missionPlayerRewards
 	{
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
+		friendlyFaction		= "RHS_BLUFOR_ARMY_OCP";
 		missionReward01		= "rhsusf_M1232_usarmy_wd";
 		missionReward02		= "rhsusf_rg33_m2_usmc_wd";
 		missionReward03		= "RHS_MELB_AH6M_H";
@@ -516,10 +523,32 @@ class missionPlayerRewards
 	
 	class IFA3_BLUFOR_WEHR : vanilla_BLUFOR
 	{
-		fullArsenal			= 1;
-		playerSide			= BLUFOR;		
+		fullArsenal			= 0;
+		playerSide			= BLUFOR;
+		friendlyFaction		= "IFA3_BLUFOR_WEHR";		
 		missionReward01		= "LIB_SdKfz251_FFV";
 		missionReward02		= "LIB_StuG_III_G";
 		missionReward03		= "LIB_PzKpfwIV_H";
+		
+		class base_reward 
+		{
+			BackpackReward[]	= {};
+			ItemReward[]		= {};
+			MagazineReward[]	= {};
+			WeaponReward[]		= {};
+		};
+		
+		class startingGear : base_reward
+		{
+			BackpackReward[]	= { "B_LIB_GER_A_frame","B_LIB_GER_A_frame_AT","B_LIB_GER_A_frame_Gef","B_LIB_GER_Backpack","B_LIB_GER_Bag","B_LIB_GER_ExplosivesBag","B_LIB_GER_GrenadesBag","B_LIB_GER_K89AmmoBag","B_LIB_GER_LW_Paradrop","B_LIB_GER_MGAmmoBag","B_LIB_GER_MedicBackpack","B_LIB_GER_MedicBackpack_Empty","B_LIB_GER_MineBag","B_LIB_GER_Panzer","B_LIB_GER_Panzer_Empty","B_LIB_GER_Radio","B_LIB_GER_SapperBackpack","B_LIB_GER_SapperBackpack2","B_LIB_GER_Tonister34_cowhide" };
+			ItemReward[]		= { "ItemWatch","ItemCompass","ItemMap","ToolKit","FirstAidKit","Medikit","LIB_ToolKit","LIB_ACC_K98_Bayo","LIB_Binocular_GER","U_LIB_GER_Soldier_camo","H_LIB_GER_Cap","H_LIB_GER_Cap_w","H_LIB_GER_Fieldcap","H_LIB_GER_Helmet","H_LIB_GER_HelmetCamo","H_LIB_GER_HelmetCamo2","H_LIB_GER_HelmetCamo_w","H_LIB_GER_Helmet_net","H_LIB_GER_Helmet_net_painted","H_LIB_GER_Helmet_ns","H_LIB_GER_Helmet_ns_painted","H_LIB_GER_Helmet_painted","H_LIB_GER_Helmet_w","H_LIB_GER_LW_PilotHelmet","H_LIB_GER_LW_PilotHelmet_w","H_LIB_GER_OfficerCap","H_LIB_GER_OfficerCap_w","H_LIB_GER_SPGPrivateCap","H_LIB_GER_SPGPrivateCap_w","H_LIB_GER_TankOfficerCap","H_LIB_GER_TankOfficerCap2","H_LIB_GER_TankOfficerCap_w","H_LIB_GER_TankPrivateCap","H_LIB_GER_TankPrivateCap2","H_LIB_GER_TankPrivateCap_w","H_LIB_GER_Ushanka","U_LIB_GER_Art_leutnant","U_LIB_GER_Art_leutnant_w","U_LIB_GER_Art_schutze","U_LIB_GER_Art_schutze_w","U_LIB_GER_Art_unterofficer","U_LIB_GER_Art_unterofficer_w","U_LIB_GER_Funker","U_LIB_GER_Funker_w","U_LIB_GER_Gefreiter","U_LIB_GER_Gefreiter_w","U_LIB_GER_Hauptmann","U_LIB_GER_Hauptmann_w","U_LIB_GER_LW_pilot","U_LIB_GER_LW_pilot_w","U_LIB_GER_Leutnant","U_LIB_GER_Leutnant_w","U_LIB_GER_MG_schutze","U_LIB_GER_MG_schutze_w","U_LIB_GER_Medic","U_LIB_GER_Medic_w","U_LIB_GER_Oberleutnant","U_LIB_GER_Oberleutnant_w","U_LIB_GER_Oberschutze","U_LIB_GER_Oberschutze_w","U_LIB_GER_Oberst","U_LIB_GER_Oberst_w","U_LIB_GER_Officer_camo","U_LIB_GER_Officer_camo_w","U_LIB_GER_Pionier","U_LIB_GER_Pionier_w","U_LIB_GER_Recruit","U_LIB_GER_Recruit_w","U_LIB_GER_Scharfschutze","U_LIB_GER_Scharfschutze_w","U_LIB_GER_Schutze","U_LIB_GER_Schutze_w","U_LIB_GER_Soldier","U_LIB_GER_Soldier2","U_LIB_GER_Soldier3","U_LIB_GER_Soldier_camo","U_LIB_GER_Soldier_camo3","U_LIB_GER_Soldier_camo4","U_LIB_GER_Soldier_camo5","U_LIB_GER_Soldier_camo_w","U_LIB_GER_Spg_crew_leutnant","U_LIB_GER_Spg_crew_leutnant_w","U_LIB_GER_Spg_crew_private","U_LIB_GER_Spg_crew_private_w","U_LIB_GER_Spg_crew_unterofficer","U_LIB_GER_Spg_crew_unterofficer_w","U_LIB_GER_Tank_crew_leutnant","U_LIB_GER_Tank_crew_leutnant_w","U_LIB_GER_Tank_crew_private","U_LIB_GER_Tank_crew_private_w","U_LIB_GER_Tank_crew_unterofficer","U_LIB_GER_Tank_crew_unterofficer_w","U_LIB_GER_Unterofficer","U_LIB_GER_Unterofficer_w","V_LIB_GER_FieldOfficer","V_LIB_GER_FieldOfficer_w","V_LIB_GER_OfficerBelt","V_LIB_GER_OfficerBelt_w","V_LIB_GER_OfficerVest","V_LIB_GER_OfficerVest_w","V_LIB_GER_PioneerVest","V_LIB_GER_PrivateBelt","V_LIB_GER_PrivateBelt_w","V_LIB_GER_SniperBelt","V_LIB_GER_SniperBelt_w","V_LIB_GER_TankPrivateBelt","V_LIB_GER_TankPrivateBelt_w","V_LIB_GER_VestG43","V_LIB_GER_VestG43_w","V_LIB_GER_VestKar98","V_LIB_GER_VestKar98_w","V_LIB_GER_VestMG","V_LIB_GER_VestMG_w","V_LIB_GER_VestMP4","V_LIB_GER_VestMP40_w","V_LIB_GER_VestSTG","V_LIB_GER_VestSTG_w","V_LIB_GER_VestUnterofficer","V_LIB_GER_VestUnterofficer_w" };
+			MagazineReward[]	= { "LIB_8Rnd_9x19","LIB_32Rnd_9x19","LIB_5Rnd_792x57","LIB_10Rnd_792x57","LIB_30Rnd_792x33","LIB_47Rnd_762x54","LIB_50Rnd_792x57","LIB_nb39","LIB_5Rnd_792x57_t","LIB_5Rnd_792x57_sS","LIB_5Rnd_792x57_SMK","LIB_10Rnd_792x57_T","LIB_10Rnd_792x57_T2","LIB_10Rnd_792x57_sS","LIB_10Rnd_792x57_SMK","LIB_50Rnd_792x57_sS","LIB_50Rnd_792x57_SMK","LIB_shg24","LIB_shg24x7","LIB_1Rnd_flare_white","LIB_1Rnd_flare_green","LIB_1Rnd_flare_red","LIB_1Rnd_flare_yellow","LIB_1Rnd_RPzB","LIB_1Rnd_PzFaust_30m","LIB_STMI_MINE_mag","LIB_shumine_42_MINE_mag","LIB_Ladung_Small_MINE_mag","LIB_Ladung_Big_MINE_mag","LIB_Ladung_PM_MINE_mag" };
+			WeaponReward[]		= { "LIB_P38","LIB_MP40","LIB_K98","LIB_G3340","LIB_G43","LIB_MG42","LIB_K98ZF39","LIB_PzFaust_30m","LIB_RPzB","LIB_RPzB_w" };
+		};
+	};
+
+	class IFA3_BLUFOR_WEHR_fullArsenal : IFA3_BLUFOR_WEHR
+	{
+		fullArsenal			= 0;
 	};
 };

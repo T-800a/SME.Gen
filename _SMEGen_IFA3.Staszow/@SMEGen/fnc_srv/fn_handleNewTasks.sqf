@@ -38,6 +38,19 @@ __DEBUG( __FILE__, "_arraySites", _arraySites );
 
 __DEBUG( __FILE__, "_arraySites", _arraySites );
 
+
+// max distance for first set of sites (7500m)
+if ( T8SME_server_var_firstSite ) then
+{
+	T8SME_server_var_firstSite = false;
+	
+	{
+		private _sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "position" );
+		if (( _sitePos distance2D mission_homebase ) > 7500 ) then { _arraySites deleteAt _forEachIndex; };
+	} forEach _arraySites;
+};
+
+
 _arrayShuff = [ _arraySites ] call T8SME_server_fnc_shuffleArray;	
 __DEBUG( __FILE__, "_arrayShuff", _arrayShuff );
 
@@ -58,9 +71,9 @@ while {( count _arraySitesUsed ) < _amountSites } do
 		
 		if ( _whitListType isEqualTo "any" ) then
 		{
-			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
+			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance2D ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
 		} else {
-			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND { _siteType isEqualTo _whitListType }  AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
+			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND { _siteType isEqualTo _whitListType }  AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance2D ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
 		};
 		
 		
@@ -87,7 +100,7 @@ while {( count _arraySitesUsed ) < _amountSites } do
 		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
 		_firstType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "type" );
 		
-		if ( !( _site in _arraySitesUsed ) AND {( _sitePos distance _firstSitePos ) < _siteMaxDist } AND { !(_firstSiteType isEqualTo _firstType )}) then { _arraySitesUsed pushBack _site; };
+		if ( !( _site in _arraySitesUsed ) AND {( _sitePos distance2D _firstSitePos ) < _siteMaxDist } AND { !(_firstSiteType isEqualTo _firstType )}) then { _arraySitesUsed pushBack _site; };
 		
 		false
 	} count _arraySitesFree; 

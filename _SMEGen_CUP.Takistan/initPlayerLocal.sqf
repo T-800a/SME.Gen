@@ -29,7 +29,7 @@ params [
 
 
 // switch player side according to reward set
-private _newGroup = createGroup T8SME_param_playerFaction;
+private _newGroup = createGroup T8SME_param_playerSide;
 [ player ] joinSilent _newGroup;
 
 if ( isMultiplayer ) then 

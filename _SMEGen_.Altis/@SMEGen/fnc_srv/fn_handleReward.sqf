@@ -40,9 +40,9 @@ if ( _succsesses < _amount ) exitWith { __SetMVAR( "T8SME_server_var_missionSucc
 
 __SetMVAR( "T8SME_server_var_missionSuccesses", 1 );
 
-private _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward01" );
-private _classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward02" );
-private _classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerRewards" >> T8SME_param_playerRewardSet >> "missionReward03" );
+private _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionReward01" );
+private _classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionReward02" );
+private _classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionReward03" );
 
 private _restrictionReward01	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction01" );
 private _restrictionReward02	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction02" );
@@ -74,7 +74,7 @@ if ((( isNull T8SME_server_var_objectReward01 ) AND ( isNull T8SME_server_var_ob
 	T8SME_server_var_objectReward01 = createVehicle [ _classReward01, getPos mission_reward_spawn_01, [], 0, "NONE" ];
 	T8SME_server_var_objectReward01 setdir ( getDir mission_reward_spawn_01);
 	{ _x addCuratorEditableObjects [ [ T8SME_server_var_objectReward01 ], true ]; false } count allCurators;
-	[ T8SME_param_playerFaction, T8SME_server_var_objectReward01, "Mobile HQ" ] call BIS_fnc_addRespawnPosition;
+	[ T8SME_param_playerSide, T8SME_server_var_objectReward01, "Mobile HQ" ] call BIS_fnc_addRespawnPosition;
 	
 	missionNamespace setVariable [ "T8SME_server_var_objectReward01", T8SME_server_var_objectReward01, true ];
 	[ 1, 0, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];

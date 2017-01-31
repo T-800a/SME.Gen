@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=158;
+		nextID=172;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14753.756,115.47729,16632.871};
-		dir[]={0.54315573,-0.47565114,0.69207048};
-		up[]={0.29373822,0.87957132,0.37427372};
-		aside[]={0.78674406,-6.0349703e-007,-0.6174593};
+		pos[]={14242.283,39.903923,16200.488};
+		dir[]={-0.88130844,-0.46290061,-0.096254572};
+		up[]={-0.46030402,0.88634253,-0.050275479};
+		aside[]={-0.10858384,-4.7601497e-007,0.99420214};
 	};
 };
 binarizationWanted=0;
@@ -285,7 +285,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=116;
+		items=119;
 		class Item0
 		{
 			dataType="Marker";
@@ -3547,6 +3547,59 @@ class Mission
 			};
 			id=157;
 			type="Land_CncBarrier_stripes_F";
+		};
+		class Item116
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14189.848,20.743156,16171.437};
+				angles[]={0.012000273,0,6.2805333};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="mission_vehiclepad_01";
+			};
+			id=169;
+			type="Land_JumpTarget_F";
+		};
+		class Item117
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14194,20.605778,16183.457};
+				angles[]={0.010663962,0,6.2805324};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="mission_vehiclepad_02";
+			};
+			id=170;
+			type="Land_JumpTarget_F";
+			atlOffset=1.9073486e-006;
+		};
+		class Item118
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14197.102,20.502562,16195.432};
+				angles[]={0.0066671576,0,6.2778621};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="mission_vehiclepad_03";
+			};
+			id=171;
+			type="Land_JumpTarget_F";
+			atlOffset=-1.9073486e-006;
 		};
 	};
 	class Connections

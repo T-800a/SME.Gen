@@ -4,7 +4,7 @@
 	SME.Gen - Small Military Encounter Genenerator
 	INIT Vars
 	
-	File:		hintConfig.sqf
+	File:		fn_vars.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
@@ -31,3 +31,4 @@ T8SME_server_var_arraySites				= [];
 T8SME_server_var_arrayCleanup			= [];
 T8SME_server_var_arrayTypes				= [];
 
+T8SME_server_var_firstSite				= true;

@@ -84,7 +84,7 @@ switch ( _missionSideN ) do
 	default		{ _missionSide = WEST;			_missionSideString = "WEST" };
 };
 
-switch ( T8SME_param_playerFaction ) do
+switch ( T8SME_param_playerSide ) do
 {
 	case EAST :			{ _missionPlayerSideString = "EAST"; };
 	case WEST :			{ _missionPlayerSideString = "WEST"; };
