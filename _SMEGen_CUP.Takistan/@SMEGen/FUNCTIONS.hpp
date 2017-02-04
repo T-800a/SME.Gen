@@ -70,6 +70,7 @@
 			addFunction(handleFollowingTask);
 			addFunction(handleNewTasks);
 			addFunction(handleReward);
+			addFunction(handleVehicles);
 			addFunction(markBlackBox);
 			addFunction(objectsMapper);
 			addFunction(publishTasks);

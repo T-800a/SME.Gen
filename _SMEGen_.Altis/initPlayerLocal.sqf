@@ -20,6 +20,11 @@ params [
 [] call T8SME_INIT_fnc_params;
 
 
+// switch player side according to reward set
+private _newGroup = createGroup T8SME_param_playerSide;
+[ player ] joinSilent _newGroup;
+
+
 // initialize SME.Gen client
 [] spawn T8SME_INIT_fnc_client;
 
@@ -28,10 +33,7 @@ params [
 [] spawn FAR_fnc_INIT;
 
 
-// switch player side according to reward set
-private _newGroup = createGroup T8SME_param_playerSide;
-[ player ] joinSilent _newGroup;
-
+// roll the intro
 if ( isMultiplayer ) then 
 {
 	if ( isNil "T8SME_client_var_welcomeOnFirstSpawn" ) then
@@ -51,6 +53,13 @@ if ( isMultiplayer ) then
 	};
 };
 
-if ( _JIP ) then { sleep 5; };
 
-remoteExec [ "T8SME_server_fnc_publishTasks", 2 ]; 
+// republish tasks 
+if ( _JIP ) then { sleep 5; };
+remoteExec [ "T8SME_server_fnc_publishTasks", 2 ];
+
+
+
+
+
+// END

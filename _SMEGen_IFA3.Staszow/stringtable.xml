@@ -77,6 +77,11 @@
 		<Key ID="STR_SMEGen_hint_followingTask">
 			<Original>&lt;br /&gt;U.SOC has evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You recieved a new task.</Original>
 		</Key>
+		
+		<Key ID="STR_SMEGen_hint_vehicleRespawn">
+			<Original>%1&lt;br /&gt;Vehicle was re-spawned!</Original>
+		</Key>		
+		
 	</Package>
 	
 

@@ -95,6 +95,10 @@ while { true } do
 		// start new tasks set
 		[] call T8SME_server_fnc_handleNewTasks;
 	};
+	
+	
+	// handle mission vehicles
+	[] call T8SME_server_fnc_handleVehicles;
 };
 
 

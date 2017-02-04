@@ -16,7 +16,7 @@ if !(hasInterface) exitWith {};
 #include <..\MACRO.hpp>
 
 private [ "_itemSet" ];
-params [[ "_rank", T8SME_param_playerFaction, [""]]];
+params [[ "_rank", "", [""]]];
 
 switch ( _rank ) do
 {

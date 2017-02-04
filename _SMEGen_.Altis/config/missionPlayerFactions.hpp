@@ -25,6 +25,41 @@ class missionPlayerFactions
 		missionReward02		= "B_MRAP_01_hmg_F";
 		missionReward03		= "B_Heli_Light_01_armed_F";
 		
+		class missionVehicles
+		{
+			class mission_vehicle_01
+			{
+				type			= "B_Truck_01_medical_F";
+				spawn			= "mission_marker_vehicle_01_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;				
+			};
+
+			class mission_vehicle_02
+			{
+				type			= "B_MRAP_01_F";
+				spawn			= "mission_marker_vehicle_02_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+
+			class mission_vehicle_03
+			{
+				type			= "B_MRAP_01_F";
+				spawn			= "mission_marker_vehicle_03_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+			
+			class mission_vehicle_04
+			{
+				type			= "B_Heli_Transport_03_unarmed_F";
+				spawn			= "mission_marker_vehicle_04_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+		};
+		
 		class base_reward 
 		{
 			BackpackReward[]	= {};
@@ -90,14 +125,48 @@ class missionPlayerFactions
 	class vanilla_BLUFOR_fullArsenal : vanilla_BLUFOR
 	{
 		fullArsenal			= 1;
-		playerSide			= BLUFOR;
 	};
 	
 	class vanilla_REDFOR_fullArsenal : vanilla_BLUFOR
 	{
 		fullArsenal			= 1;
 		playerSide			= REDFOR;
-		friendlyFaction		= "vanilla_OPFOR";
+		friendlyFaction		= "vanilla_OPFOR";	
+
+		class missionVehicles
+		{
+			class mission_vehicle_01
+			{
+				type			= "O_Truck_03_medical_F";
+				spawn			= "mission_marker_vehicle_01_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;
+			};
+
+			class mission_vehicle_02
+			{
+				type			= "O_MRAP_02_F";
+				spawn			= "mission_marker_vehicle_02_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;
+			};
+
+			class mission_vehicle_03
+			{
+				type			= "O_MRAP_02_F";
+				spawn			= "mission_marker_vehicle_03_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;
+			};
+
+			class mission_vehicle_04
+			{
+				type			= "O_Heli_Light_02_unarmed_F";
+				spawn			= "mission_marker_vehicle_04_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};			
+		};
 	};
 	
 	class vanilla_GRNFOR_fullArsenal : vanilla_BLUFOR
@@ -105,6 +174,41 @@ class missionPlayerFactions
 		fullArsenal			= 1;
 		playerSide			= GRNFOR;
 		friendlyFaction		= "vanilla_INDEP";
+
+		class missionVehicles
+		{
+			class mission_vehicle_01
+			{
+				type			= "I_Truck_02_medical_F";
+				spawn			= "mission_marker_vehicle_01_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;
+			};
+
+			class mission_vehicle_02
+			{
+				type			= "I_MRAP_03_F";
+				spawn			= "mission_marker_vehicle_02_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;
+			};
+
+			class mission_vehicle_03
+			{
+				type			= "I_MRAP_03_F";
+				spawn			= "mission_marker_vehicle_03_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;
+			};
+
+			class mission_vehicle_04
+			{
+				type			= "I_Heli_Transport_02_F";
+				spawn			= "mission_marker_vehicle_04_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+		};
 	};
 
 
@@ -114,14 +218,7 @@ class missionPlayerFactions
 	//	
 
 	class vanilla_BLUFOR_ACE : vanilla_BLUFOR
-	{
-		fullArsenal			= 0;
-		playerSide			= BLUFOR;
-		friendlyFaction		= "vanilla_BLUFOR";
-		missionReward01		= "B_Truck_01_medical_F";
-		missionReward02		= "B_MRAP_01_hmg_F";
-		missionReward03		= "B_Heli_Light_01_armed_F";
-		
+	{	
 		class base_reward 
 		{
 			BackpackReward[]	= {};
@@ -199,6 +296,41 @@ class missionPlayerFactions
 		missionReward01		= "CUP_B_LAV25_HQ_USMC";
 		missionReward02		= "CUP_B_RG31_M2_OD_USMC";
 		missionReward03		= "CUP_B_UH60L_FFV_US";
+
+		class missionVehicles
+		{
+			class mission_vehicle_01
+			{
+				type			= "CUP_B_HMMWV_Ambulance_USA";
+				spawn			= "mission_marker_vehicle_01_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;
+			};
+
+			class mission_vehicle_02
+			{
+				type			= "CUP_B_HMMWV_M2_USA";
+				spawn			= "mission_marker_vehicle_02_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;
+			};
+
+			class mission_vehicle_03
+			{
+				type			= "CUP_B_HMMWV_Unarmed_USA";
+				spawn			= "mission_marker_vehicle_03_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;
+			};
+
+			class mission_vehicle_04
+			{
+				type			= "CUP_B_UH60L_Unarmed_FFV_US";
+				spawn			= "mission_marker_vehicle_04_spawn";
+				whiteList		= "whitelistHelicopter";
+				mobileRespawn	= 0;
+			};
+		};
 		
 		class base_reward 
 		{
@@ -299,6 +431,8 @@ class missionPlayerFactions
 		missionReward02		= "rhs_btr60_vdv";
 		missionReward03		= "RHS_Mi24P_CAS_vdv";
 		
+		class missionVehicles {};
+		
 		class base_reward 
 		{
 			BackpackReward[]	= {};
@@ -384,6 +518,8 @@ class missionPlayerFactions
 		missionReward01		= "rhsusf_M1232_usarmy_wd";
 		missionReward02		= "rhsusf_rg33_m2_usmc_wd";
 		missionReward03		= "RHS_MELB_AH6M_H";
+		
+		class missionVehicles {};
 		
 		class base_reward 
 		{
@@ -521,11 +657,74 @@ class missionPlayerFactions
 	//	IFA3 Rewards
 	//	
 	
-	class IFA3_BLUFOR_WEHR : vanilla_BLUFOR
+	class IFA3_BLUFOR_WEHR
 	{
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
-		friendlyFaction		= "IFA3_BLUFOR_WEHR";		
+		friendlyFaction		= "IFA3_BLUFOR_WEHR";	
+
+		class missionVehicles
+		{
+			class mission_vehicle_01
+			{
+				type			= "LIB_opelblitz_open_y_camo";
+				spawn			= "mission_marker_vehicle_01_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;				
+			};
+			
+			class mission_vehicle_02
+			{
+				type			= "LIB_opelblitz_tent_y_camo";
+				spawn			= "mission_marker_vehicle_02_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;				
+			};
+
+			class mission_vehicle_03
+			{
+				type			= "LIB_Kfz1_MG42";
+				spawn			= "mission_marker_vehicle_03_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+			
+			class mission_vehicle_04
+			{
+				type			= "LIB_Kfz1_MG42";
+				spawn			= "mission_marker_vehicle_04_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};			
+		}
+		
+		class missionRewardVehicles
+		{
+			class mission_reward_vehicle_01
+			{
+				type			= "LIB_SdKfz251_FFV";
+				spawn			= "mission_marker_reward_vehicle_01_spawn";
+				whiteList		= "";
+				mobileRespawn	= 1;				
+			};
+			
+			class mission_reward_vehicle_02
+			{
+				type			= "LIB_StuG_III_G";
+				spawn			= "mission_marker_reward_vehicle_02_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+
+			class mission_reward_vehicle_03
+			{
+				type			= "LIB_PzKpfwIV_H";
+				spawn			= "mission_marker_reward_vehicle_03_spawn";
+				whiteList		= "";
+				mobileRespawn	= 0;				
+			};
+		};
+		
 		missionReward01		= "LIB_SdKfz251_FFV";
 		missionReward02		= "LIB_StuG_III_G";
 		missionReward03		= "LIB_PzKpfwIV_H";
@@ -545,10 +744,18 @@ class missionPlayerFactions
 			MagazineReward[]	= { "LIB_8Rnd_9x19","LIB_32Rnd_9x19","LIB_5Rnd_792x57","LIB_10Rnd_792x57","LIB_30Rnd_792x33","LIB_47Rnd_762x54","LIB_50Rnd_792x57","LIB_nb39","LIB_5Rnd_792x57_t","LIB_5Rnd_792x57_sS","LIB_5Rnd_792x57_SMK","LIB_10Rnd_792x57_T","LIB_10Rnd_792x57_T2","LIB_10Rnd_792x57_sS","LIB_10Rnd_792x57_SMK","LIB_50Rnd_792x57_sS","LIB_50Rnd_792x57_SMK","LIB_shg24","LIB_shg24x7","LIB_1Rnd_flare_white","LIB_1Rnd_flare_green","LIB_1Rnd_flare_red","LIB_1Rnd_flare_yellow","LIB_1Rnd_RPzB","LIB_1Rnd_PzFaust_30m","LIB_STMI_MINE_mag","LIB_shumine_42_MINE_mag","LIB_Ladung_Small_MINE_mag","LIB_Ladung_Big_MINE_mag","LIB_Ladung_PM_MINE_mag" };
 			WeaponReward[]		= { "LIB_P38","LIB_MP40","LIB_K98","LIB_G3340","LIB_G43","LIB_MG42","LIB_K98ZF39","LIB_PzFaust_30m","LIB_RPzB","LIB_RPzB_w" };
 		};
+		
+		class CORPORAL : base_reward {};
+		class SERGEANT : base_reward {};
+		class LIEUTENANT : base_reward {};
+		class CAPTAIN : base_reward {};
+		class MAJOR : base_reward {};
+		class COLONEL : base_reward {};
+		class GENERAL : base_reward {};
 	};
 
 	class IFA3_BLUFOR_WEHR_fullArsenal : IFA3_BLUFOR_WEHR
 	{
-		fullArsenal			= 0;
+		fullArsenal			= 1;
 	};
 };

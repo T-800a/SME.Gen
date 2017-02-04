@@ -77,6 +77,11 @@
 		<Key ID="STR_SMEGen_hint_followingTask">
 			<Original>&lt;br /&gt;U.SOC has evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You recieved a new task.</Original>
 		</Key>
+		
+		<Key ID="STR_SMEGen_hint_vehicleRespawn">
+			<Original>%1&lt;br /&gt;Vehicle was re-spawned!</Original>
+		</Key>		
+		
 	</Package>
 	
 
@@ -257,6 +262,28 @@
 		</Key>
 		<Key ID="STR_SMEGen_type_flak_desc">
 			<Original>The enemy has set up a anti air gun placement at #__LOCATION__#. Your task is to find and destroy it.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_ammobase_shrt">
+			<Original>Destroy Ammunition Resupply</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_ammobase_task">
+			<Original>Destroy the Ammunition Resupply Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_ammobase_desc">
+			<Original>The enemy has set up a fortified ammunition resupply base in the #__LOCATION__#. Your task is to destroy the stored ammunition.</Original>
+		</Key>
+
+
+		<Key ID="STR_SMEGen_type_radarbase_shrt">
+			<Original>Destroy Radar Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radarbase_task">
+			<Original>Destroy the Radar Base</Original>
+		</Key>
+		<Key ID="STR_SMEGen_type_radarbase_desc">
+			<Original>The enemy has set up a fortified radar base in the #__LOCATION__#. Your task is to destroy the radar.</Original>
 		</Key>
 
 
