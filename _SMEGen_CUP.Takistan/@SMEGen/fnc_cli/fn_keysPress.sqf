@@ -16,13 +16,13 @@ if !(hasInterface) exitWith {};
 #include <..\MACRO.hpp>
 
 
-private [ "_return", "_helipadObj", "_reviveTargets", "_reviveTarget", "_fnc_getNearest", "_msg" ];
+private [ "_msg" ];
 
 params [ "_display", "_key", "_shift", "_ctrl", "_alt" ];
 
-_return		= false;
+private _return		= false;
 
-_fnc_getNearest = 
+private _fnc_getNearest = 
 {
 	params [ "_base", "_array", "_dis", "_return" ];
 	_dis	= 1e39;
@@ -31,9 +31,10 @@ _fnc_getNearest =
 	_return
 };
 
-_helipadObj		= nearestObject [ player, "Helipad_base_F" ];
-_reviveTargets	= ( player nearEntities [ "Man", 5 ] ) - [ player ];
-_reviveTarget	= [ player, _reviveTargets ] call _fnc_getNearest;
+private _helipadObj		= nearestObject [ player, "Helipad_base_F" ];
+private _vehicleObj		= nearestObject [ player, "LandVehicle" ];
+private _reviveTargets	= ( player nearEntities [ "Man", 5 ] ) - [ player ];
+private _reviveTarget	= [ player, _reviveTargets ] call _fnc_getNearest;
 
 if ( T8SME_client_var_inAction ) exitWith {};
 
@@ -130,16 +131,17 @@ switch ( _key ) do
 	{
 		if ( T8SME_client_var_keySpam > ( diag_tickTime - 0.50 )) exitWith { __DEBUG( __FILE__, "KEYSPAM", "" ); };
 		T8SME_client_var_keySpam = diag_ticktime;
-		
+
 		if ( ! _shift AND { ! _ctrl } AND { ! _alt }) then 
 		{
+			// Prepare VR-Ammobox
+			private [ "_arsenalAccess" ];
+			_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
+			__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
+
+	// stand installed in base
 			if ( !isnull mission_obj_arsenal_post AND {( player distance mission_obj_arsenal_post ) < 10 } AND {( vehicle player ) isEqualTo player }) then 
 			{
-				// Prepare VR-Ammobox
-				private [ "_arsenalAccess" ];
-				_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
-				__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
-
 				if ( _arsenalAccess isEqualTo 1 ) then 
 				{
 					[ "Open", true	] spawn BIS_fnc_arsenal;
@@ -147,6 +149,18 @@ switch ( _key ) do
 					[ "Open", false	] spawn BIS_fnc_arsenal;
 				};
 			};
+
+	// mobile arsenal vehicle
+			if ( __GetOVAR( _vehicleObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _vehicleObj ) < 10 } AND {( vehicle player ) isEqualTo player }) then 
+			{
+				if ( _arsenalAccess isEqualTo 1 ) then 
+				{
+					[ "Open", true	] spawn BIS_fnc_arsenal;
+				} else {
+					[ "Open", false	] spawn BIS_fnc_arsenal;
+				};
+			};
+
 			_return = true;
 		};
 	};

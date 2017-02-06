@@ -55,6 +55,8 @@ switch ( "param_reward" call BIS_fnc_getParamValue ) do
 	
 	case  20 :	{ T8SME_param_playerFaction = "CUP_BLUFOR_USMC"; };
 	case  21 :	{ T8SME_param_playerFaction = "CUP_BLUFOR_USMC_fullArsenal"; };
+	case  22 :	{ T8SME_param_playerFaction = "CUP_BLUFOR_USA"; };
+	case  23 :	{ T8SME_param_playerFaction = "CUP_BLUFOR_USA_fullArsenal"; };
 	
 	case  50 :	{ T8SME_param_playerFaction = "RHS_INDEP"; };
 	case  51 :	{ T8SME_param_playerFaction = "RHS_INDEP_fullArsenal"; };

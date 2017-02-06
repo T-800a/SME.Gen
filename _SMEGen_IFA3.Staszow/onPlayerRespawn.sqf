@@ -29,13 +29,15 @@ if ( isMultiplayer ) then
 	
 		// clear players inventory
 		removeVest _newUnit;
+		removeUniform _newUnit;
 		removeHeadgear _newUnit;
+		removeGoggles _newUnit;
 		removeBackpack _newUnit;
 		removeAllWeapons _newUnit:
 		removeAllItems _newUnit;
-		_newUnit unlinkItem "NVGoggles";
-		_newUnit unlinkItem "NVGoggles_OPFOR";
-		_newUnit unlinkItem "NVGoggles_INDEP";		
+		removeAllAssignedItems _newUnit;
+
+		_newUnit forceAddUniform "U_LIB_GER_Schutze";	
 	};
 };
 

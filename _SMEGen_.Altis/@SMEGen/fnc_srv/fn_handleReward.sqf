@@ -40,97 +40,75 @@ if ( _succsesses < _amount ) exitWith { __SetMVAR( "T8SME_server_var_missionSucc
 
 __SetMVAR( "T8SME_server_var_missionSuccesses", 1 );
 
-private _classReward01			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionReward01" );
-private _classReward02			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionReward02" );
-private _classReward03			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionReward03" );
+private _rewardSpawned	= false;
+private _arrayVehicles	= [];
+private _players		= if ( isMultiplayer ) then { allPlayers } else { units ( group player )};
+private _configArray	= "true" configClasses ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionRewardVehicles" );
 
-private _restrictionReward01	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction01" );
-private _restrictionReward02	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction02" );
-private _restrictionReward03	= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "missionRewardRestriction03" );
+{ _arrayVehicles pushback ( configName _x ); false } count _configArray;
 
-__DEBUG( __FILE__, "_classReward01", _classReward01 );
-__DEBUG( __FILE__, "_classReward02", _classReward02 );
-__DEBUG( __FILE__, "_classReward03", _classReward03 );
-
-__DEBUG( __FILE__, "_restrictionReward01", _restrictionReward01 );
-__DEBUG( __FILE__, "_restrictionReward02", _restrictionReward02 );
-__DEBUG( __FILE__, "_restrictionReward03", _restrictionReward03 );
-
-private _skip = false;
-
-if ((( isNull T8SME_server_var_objectReward01 ) AND ( isNull T8SME_server_var_objectReward02 ) AND ( isNull T8SME_server_var_objectReward03 )) OR { !alive T8SME_server_var_objectReward01 }) then
 {
-	if ( !isNull T8SME_server_var_objectReward01 ) then { deleteVehicle T8SME_server_var_objectReward01; };
+	private _respawn		= false;
+	private _vehicle		= _x;
+	private _type			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionRewardVehicles" >> _vehicle >> "type" );
+	private _spawn			= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionRewardVehicles" >> _vehicle >> "spawn" );
+	private _whiteList		= getText ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionRewardVehicles" >> _vehicle >> "whiteList" );
+	private _mobileRespawn	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionRewardVehicles" >> _vehicle >> "mobileRespawn" );
+	private _mobileArsenal	= getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "missionRewardVehicles" >> _vehicle >> "mobileArsenal" );
+
+	_mobileRespawn = if ( _mobileRespawn > 0 ) then { true } else { false };
+	_mobileArsenal = if ( _mobileArsenal > 0 ) then { true } else { false };
 	
+	private _missionVehicle = __GetMVAR( _vehicle, objNull );
+
+	__DEBUG( __FILE__, "CHECK", _vehicle );
+
+	// check if "dead"
+	if ( !alive _missionVehicle ) then { _respawn = true; };
+
+	// try to re-spawn the vehicle
+	if ( _respawn ) then
 	{
-		if ( _x isKindOf "Man" )			then { _x setPos ( getMarkerPos "respawn_civilian" ); };
-		if ( _x isKindOf "LandVehicle" )	then { _x setPos [0,0,0]; _x setDamage 1; };
-		if ( _x isKindOf "Air" )			then { _x setPos [0,0,0]; _x setDamage 1; };
-		if ( _x isKindOf "Ship" )			then { _x setPos [0,0,0]; _x setDamage 1; };
-		
-		false
-	} count (( getPos mission_reward_spawn_01 ) nearObjects 20 );
+		if !( isNull _missionVehicle ) then { deleteVehicle _missionVehicle; sleep 0.5; };
+				
+		if ( !( getMarkerPos _spawn isEqualTo [0,0,0]) AND { count (( getMarkerPos _spawn ) nearObjects [ "AllVehicles", 7 ] ) < 1 }) then
+		{
+			private _vehicleObj = createVehicle [ _type, getMarkerPos _spawn, [], 0, "NONE" ];
+			_vehicleObj setdir ( markerDir _spawn );
+			{ _x addCuratorEditableObjects [ [ _vehicleObj ], true ]; false } count allCurators;
+
+			if ( _mobileRespawn ) then { [ T8SME_param_playerSide, _vehicleObj, "" ] call BIS_fnc_addRespawnPosition; };
+			if ( _mobileArsenal ) then { __SetOVARG( _vehicleObj, "T8SME_object_var_isArsenal", true );};
+			
+			__SetMVAR( _vehicle, _vehicleObj );
+			
+			[ __GetMVAR( _vehicle, objNull ), _whiteList ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, format [ "JIPID_%1", _vehicle ]];
+			
+			// parse hint
+			private _displayName = getText ( configfile >> "CfgVehicles" >> _type >> "displayName" );
+			private _text = "";
+
+			switch true do
+			{
+				case ( _mobileRespawn AND !_mobileArsenal ):	{ _text = localize "STR_SMEGen_hint_vehicleRewardRespawn_HQ"; };
+				case ( !_mobileRespawn AND _mobileArsenal ):	{ _text = localize "STR_SMEGen_hint_vehicleRewardRespawn_AR" };
+				case ( _mobileRespawn AND _mobileArsenal ):		{ _text = localize "STR_SMEGen_hint_vehicleRewardRespawn_HQAR" };
+				default											{ _text = localize "STR_SMEGen_hint_vehicleRewardRespawn"; };
+			};
+
+			private _hint = format [ _text, _displayName ];	
+			[ 1, _hint, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
+			
+			_rewardSpawned = true;
+			
+			__DEBUG( __FILE__, "SPAWNED", _vehicle );
+		} else { [ 1, "##### ERROR #####<br/>RESPAWNING a VEHICLE!<br/>Respawn Position may be blocked!", 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; };
+	};
+
+	if ( _rewardSpawned ) exitWith {};
 	
-	T8SME_server_var_objectReward01 = createVehicle [ _classReward01, getPos mission_reward_spawn_01, [], 0, "NONE" ];
-	T8SME_server_var_objectReward01 setdir ( getDir mission_reward_spawn_01);
-	{ _x addCuratorEditableObjects [ [ T8SME_server_var_objectReward01 ], true ]; false } count allCurators;
-	[ T8SME_param_playerSide, T8SME_server_var_objectReward01, "Mobile HQ" ] call BIS_fnc_addRespawnPosition;
-	
-	missionNamespace setVariable [ "T8SME_server_var_objectReward01", T8SME_server_var_objectReward01, true ];
-	[ 1, 0, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
-	
-	if !( _restrictionReward01 isEqualTo "" ) then { [ T8SME_server_var_objectReward01, _restrictionReward01 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictReward03" ]; };
-	_skip = true;
-};
-
-if (((( !isNull T8SME_server_var_objectReward01 ) AND ( isNull T8SME_server_var_objectReward02 ) AND ( isNull T8SME_server_var_objectReward03 )) OR { !alive T8SME_server_var_objectReward02 }) AND !_skip ) then
-{
-	if ( !isNull T8SME_server_var_objectReward02 ) then { deleteVehicle T8SME_server_var_objectReward02; };
-
-	{
-		if ( _x isKindOf "Man" )			then { _x setPos ( getMarkerPos "respawn_civilian" ); };
-		if ( _x isKindOf "LandVehicle" )	then { _x setPos [0,0,0]; _x setDamage 1; };
-		if ( _x isKindOf "Air" )			then { _x setPos [0,0,0]; _x setDamage 1; };
-		if ( _x isKindOf "Ship" )			then { _x setPos [0,0,0]; _x setDamage 1; };
-		
-		false
-	} count (( getPos mission_reward_spawn_02 ) nearObjects 20 );
-
-	T8SME_server_var_objectReward02 = createVehicle [ _classReward02, getPos mission_reward_spawn_02, [], 0, "NONE" ];
-	T8SME_server_var_objectReward02 setdir ( getDir mission_reward_spawn_02);
-	{ _x addCuratorEditableObjects [ [ T8SME_server_var_objectReward02 ], true ]; false } count allCurators;
-	
-	missionNamespace setVariable [ "T8SME_server_var_objectReward02", T8SME_server_var_objectReward02, true ];
-	[ 1, 1, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
-	
-	if !( _restrictionReward02 isEqualTo "" ) then { [ T8SME_server_var_objectReward02, _restrictionReward02 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictReward03" ]; };
-	_skip = true;
-};
-
-if (((( !isNull T8SME_server_var_objectReward01 ) AND ( !isNull T8SME_server_var_objectReward02 ) AND ( isNull T8SME_server_var_objectReward03 )) OR { !alive T8SME_server_var_objectReward03 }) AND !_skip ) then
-{
-	if ( !isNull T8SME_server_var_objectReward03 ) then { deleteVehicle T8SME_server_var_objectReward03; };
-
-	{
-		if ( _x isKindOf "Man" )			then { _x setPos ( getMarkerPos "respawn_civilian" ); };
-		if ( _x isKindOf "LandVehicle" )	then { _x setPos [0,0,0]; _x setDamage 1; };
-		if ( _x isKindOf "Air" )			then { _x setPos [0,0,0]; _x setDamage 1; };
-		if ( _x isKindOf "Ship" )			then { _x setPos [0,0,0]; _x setDamage 1; };
-		
-		false
-	} count (( getPos mission_reward_spawn_03 ) nearObjects 20 );
-
-	T8SME_server_var_objectReward03 = createVehicle [ _classReward03, getPos mission_reward_spawn_03, [], 0, "NONE" ];
-	T8SME_server_var_objectReward03 setdir ( getDir mission_reward_spawn_03);
-	{ _x addCuratorEditableObjects [ [ T8SME_server_var_objectReward03 ], true ]; false } count allCurators;
-	
-	missionNamespace setVariable [ "T8SME_server_var_objectReward03", T8SME_server_var_objectReward03, true ];
-	[ 1, 2, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ];
-	
-	if !( _restrictionReward03 isEqualTo "" ) then { [ T8SME_server_var_objectReward03, _restrictionReward03 ] remoteExec [ "T8SME_client_fnc_handleVehicle", 0, "JIPID_restrictReward03" ]; };
-};
-
-
+	false
+} count _arrayVehicles;
 
 
 // or bool

@@ -368,6 +368,7 @@ class missionFactions
 	//	CUP Factions: BLUFOR
 	//
 	
+	// US Marine Core
 	class CUP_BLUFOR_USMC : vanilla_BLUFOR
 	{
 		spawnUnitsSide	= BLUFOR;
@@ -410,6 +411,7 @@ class missionFactions
 		};
 	};
 	
+	// US Army
 	class CUP_BLUFOR_USA : vanilla_BLUFOR
 	{
 		spawnUnitsSide	= BLUFOR;

@@ -29,7 +29,7 @@ class cfgRandomMissions
 	// default gear/reward set ( if not overwritten by mission Params )
 	// find in < missionPlayerRewards.hpp > to change
 
-		playerFaction				= "CUP_BLUFOR_USMC";
+		playerFaction				= "CUP_BLUFOR_USA";
 
 
 	// missions "won" needed for new vehicle 
@@ -65,8 +65,8 @@ class cfgRandomMissions
 
 	// vehicle restrictions
 
-		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
-		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
+		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot", "CUP_B_US_Pilot" };
+		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot", "CUP_B_US_Pilot" };
 		whitelistCar[]				= {};
 		whitelistAPC[]				= {};
 		whitelistTruck[]			= {};

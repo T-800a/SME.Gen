@@ -33,7 +33,7 @@ class cfgRandomMissions
 
 
 	// missions "won" needed for new vehicle 
-		serverRewardSuccesses		= 3;
+		serverRewardSuccesses		= 2;
 
 
 	// amount of spawned mission AOs
@@ -65,8 +65,8 @@ class cfgRandomMissions
 
 	// vehicle restrictions
 
-		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
-		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot" };
+		whitelistHelicopter[]		= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot", "CUP_B_US_Pilot" };
+		whitelistJet[]				= { "B_Helipilot_F", "B_helicrew_F", "B_Pilot_F", "CUP_B_USMC_Pilot", "CUP_B_US_Pilot" };
 		whitelistCar[]				= {};
 		whitelistAPC[]				= {};
 		whitelistTruck[]			= {};

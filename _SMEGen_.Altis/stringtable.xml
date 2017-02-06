@@ -69,19 +69,47 @@
 		<Key ID="STR_SMEGen_addActionIntel">
 			<Original>## Search for Intel ##</Original>
 		</Key>
-		
+
 		<Key ID="STR_SMEGen_hint_intelProcess">
 			<Original>&lt;br /&gt;Captured INTEL recieved.&lt;br /&gt;&lt;br /&gt;U.SOC will now evaluate the INTEL.</Original>
 		</Key>
-		
+
 		<Key ID="STR_SMEGen_hint_followingTask">
 			<Original>&lt;br /&gt;U.SOC has evaluate the captured INTEL.&lt;br /&gt;&lt;br /&gt;You recieved a new task.</Original>
 		</Key>
-		
+
 		<Key ID="STR_SMEGen_hint_vehicleRespawn">
-			<Original>%1&lt;br /&gt;Vehicle was re-spawned!</Original>
-		</Key>		
-		
+			<Original>&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was re-spawned!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRespawn_HQ">
+			<Original>&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was re-spawned!&lt;br /&gt;&lt;br /&gt;This Vehicle is a mobile Respawn!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRespawn_AR">
+			<Original>&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was re-spawned!&lt;br /&gt;&lt;br /&gt;This Vehicle is a mobile Arsenal!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRespawn_HQAR">
+			<Original>&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was re-spawned!&lt;br /&gt;&lt;br /&gt;This Vehicle is a mobile Respawn and Arsenal!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRewardRespawn">
+			<Original>Mission Vehicle Reward:&lt;br /&gt;&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was spawned!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRewardRespawn_HQ">
+			<Original>Mission Vehicle Reward:&lt;br /&gt;&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was spawned!&lt;br /&gt;&lt;br /&gt;This Vehicle is a mobile Respawn!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRewardRespawn_AR">
+			<Original>Mission Vehicle Reward:&lt;br /&gt;&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was spawned!&lt;br /&gt;&lt;br /&gt;This Vehicle is a mobile Arsenal!</Original>
+		</Key>
+
+		<Key ID="STR_SMEGen_hint_vehicleRewardRespawn_HQAR">
+			<Original>Mission Vehicle Reward:&lt;br /&gt;&lt;t size='1.2'&gt;%1&lt;/t&gt;&lt;br /&gt;Vehicle was spawned!&lt;br /&gt;&lt;br /&gt;This Vehicle is a mobile Respawn and Arsenal!</Original>
+		</Key>
+
 	</Package>
 	
 

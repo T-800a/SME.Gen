@@ -52,7 +52,7 @@ class Params
 		values[]	=
 		{
 			0, 1, 2, 3,
-			20, 21,
+			20, 21, 22, 23,
 			50, 51, 52,
 			70, 71,
 			900,
@@ -61,7 +61,7 @@ class Params
 		texts[]		=
 		{
 			"BLUFOR", "BLUFOR full Arsenal", "GRNFOR full Arsenal", "REDFOR full Arsenal",
-			"CUP USMC", "CUP USMC full Arsenal",
+			"CUP USMC", "CUP USMC full Arsenal", "CUP US Army", "CUP US Army full Arsenal",
 			"RHS Independent", "RHS Independent full Arsenal", "RHS USMC", 
 			"IFA3 Wehrmacht", "IFA3 Wehrmacht full Arsenal",
 			"BLUFOR - ACE",
