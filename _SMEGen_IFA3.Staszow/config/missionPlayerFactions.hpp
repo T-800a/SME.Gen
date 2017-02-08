@@ -727,7 +727,7 @@ class missionPlayerFactions
 		{
 			class mission_vehicle_01
 			{
-				type			= "B_Truck_01_medical_F";
+				type			= "rhs_kamaz5350_vdv";
 				spawn			= "mission_marker_vehicle_01_spawn";
 				whiteList		= "";
 				mobileRespawn	= 1;
@@ -736,7 +736,7 @@ class missionPlayerFactions
 
 			class mission_vehicle_02
 			{
-				type			= "B_MRAP_01_F";
+				type			= "rhs_tigr_ffv_vdv";
 				spawn			= "mission_marker_vehicle_02_spawn";
 				whiteList		= "";
 				mobileRespawn	= 0;
@@ -745,7 +745,7 @@ class missionPlayerFactions
 
 			class mission_vehicle_03
 			{
-				type			= "B_MRAP_01_F";
+				type			= "rhs_tigr_sts_vdv";
 				spawn			= "mission_marker_vehicle_03_spawn";
 				whiteList		= "";
 				mobileRespawn	= 0;
@@ -754,7 +754,7 @@ class missionPlayerFactions
 			
 			class mission_vehicle_04
 			{
-				type			= "B_Heli_Transport_03_unarmed_F";
+				type			= "RHS_Mi8mt_Cargo_vdv";
 				spawn			= "mission_marker_vehicle_04_spawn";
 				whiteList		= "whitelistHelicopter";
 				mobileRespawn	= 0;
@@ -880,7 +880,7 @@ class missionPlayerFactions
 		{
 			class mission_vehicle_01
 			{
-				type			= "B_Truck_01_medical_F";
+				type			= "rhsusf_m1025_d";
 				spawn			= "mission_marker_vehicle_01_spawn";
 				whiteList		= "";
 				mobileRespawn	= 1;
@@ -889,7 +889,7 @@ class missionPlayerFactions
 
 			class mission_vehicle_02
 			{
-				type			= "B_MRAP_01_F";
+				type			= "rhsusf_M1232_usarmy_d";
 				spawn			= "mission_marker_vehicle_02_spawn";
 				whiteList		= "";
 				mobileRespawn	= 0;
@@ -898,7 +898,7 @@ class missionPlayerFactions
 
 			class mission_vehicle_03
 			{
-				type			= "B_MRAP_01_F";
+				type			= "rhsusf_M1232_M2_usarmy_d";
 				spawn			= "mission_marker_vehicle_03_spawn";
 				whiteList		= "";
 				mobileRespawn	= 0;
@@ -907,7 +907,7 @@ class missionPlayerFactions
 			
 			class mission_vehicle_04
 			{
-				type			= "B_Heli_Transport_03_unarmed_F";
+				type			= "RHS_UH60M_d";
 				spawn			= "mission_marker_vehicle_04_spawn";
 				whiteList		= "whitelistHelicopter";
 				mobileRespawn	= 0;
