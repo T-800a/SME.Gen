@@ -47,7 +47,7 @@ class Params
 
 	class param_reward
 	{
-		title		= "Reward Set";
+		title		= "Player Faction";
 		default		= 999;
 		values[]	=
 		{

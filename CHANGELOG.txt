@@ -1,0 +1,30 @@
+# SME.Gen - SmallMilitaryEncounter Generator
+# A dynamic mission for ARMA3 that generates small military encounters.
+# Copyright (C)  2015  Hauke Sven "T-800a" Fischbach
+
+
+## Version V.050 - 09.02.2017
+# added IFA3 variant: _SMEGen_IFA3.Staszow
+- IFA3 specific Tasks
+- IFA3 specific Factions
+
+# main changes
+- moved cfgRandomMissions.hpp to mission root (easier to sync after changes)
+- moved initParams.sqf to fn_params.sqf (easier to sync after changes)
+- missionFactions.hpp and missionPlayerFactions.hpp overhaul
+- player side affected by selected player faction
+- spawned vehicles can now be defined in playerFaction (new class missionVehicles)
+- vehicles in player faction can also be defined to be mobile arsenal
+- spawn positions based on markers defined in the config (make sure NO! objects are near those positons (10m radius))
+- added RHS configs by Bek & Mashroom
+- added CUP US Army Faction
+- added / changed Params accroding
+
+# minor changes
+- vehicle patrols are spawned in a central location
+- JIP task publish (hopefully)
+- fixed BIS revive params include error (WTFBISOMG)
+- small positioning impro. in fn_createConvoy.sqf
+- added simpe addon check
+- removed 'scrippted' mainbases in missions (all in 3DEN now)
+- basic respawn system for the defined vehicles

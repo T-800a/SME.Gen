@@ -208,7 +208,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="CO20 | SME.Gen X CUP | infantry focused COOP | V.045";
+		briefingName="CO20 | SME.Gen X CUP | infantry focused COOP | V.050";
 		overviewText="T-800a";
 		resistanceWest=0;
 		timeOfChanges=7200;

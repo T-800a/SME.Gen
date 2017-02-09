@@ -182,7 +182,9 @@ class ReviveBleedOutDuration
 		45,
 		60,
 		90,
-		180
+		180,
+		210,
+		240
 	};
 	texts[] = {
 		$STR_A3_MissionDefault,
@@ -193,7 +195,9 @@ class ReviveBleedOutDuration
 		45,
 		60,
 		90,
-		180
+		180,
+		210,
+		240
 	};
 	default = -100;
 	function = "bis_fnc_paramReviveBleedOutDuration";

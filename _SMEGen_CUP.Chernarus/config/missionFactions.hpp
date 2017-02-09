@@ -29,6 +29,7 @@ class missionFactions
 	class base_faction
 	{
 		spawnUnitsSide	= REDFOR;
+		addon			= "";
 		
 		class units
 		{
@@ -238,6 +239,8 @@ class missionFactions
 	
 	class CUP_OPFOR_TAKarmy : base_faction
 	{
+		addon			= "CUP_Creatures_Military_Taki";
+		
 		class units : units
 		{
 			OFFICER		 		= "CUP_O_TK_Officer";
@@ -282,7 +285,8 @@ class missionFactions
 	
 	class CUP_GRNFOR_TAKlocals : base_faction
 	{
-		spawnUnitsSide = GRNFOR;
+		addon			= "CUP_Creatures_Military_Taki";
+		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
 		{
@@ -324,7 +328,8 @@ class missionFactions
 	
 	class CUP_GRNFOR_NAPA : base_faction
 	{
-		spawnUnitsSide = GRNFOR;
+		addon			= "CUP_Creatures_Military_NAPA";
+		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
 		{
@@ -371,6 +376,7 @@ class missionFactions
 	// US Marine Core
 	class CUP_BLUFOR_USMC : vanilla_BLUFOR
 	{
+		addon			= "CUP_Creatures_Military_USMC";
 		spawnUnitsSide	= BLUFOR;
 		
 		class units : units
@@ -414,6 +420,7 @@ class missionFactions
 	// US Army
 	class CUP_BLUFOR_USA : vanilla_BLUFOR
 	{
+		addon			= "CUP_Creatures_Military_USArmy";
 		spawnUnitsSide	= BLUFOR;
 		
 		class units : units
@@ -465,6 +472,7 @@ class missionFactions
 	
 	class RHS_OPFOR_GUER : base_faction
 	{
+		addon			= "rhs_c_troops";
 		spawnUnitsSide	= REDFOR;
 		
 		class units : units
@@ -502,6 +510,7 @@ class missionFactions
 	
 	class RHS_OPFOR_VMF : base_faction
 	{
+		addon			= "rhs_c_troops";
 		spawnUnitsSide	= REDFOR;
 		
 		class units : units
@@ -541,6 +550,7 @@ class missionFactions
 	
 	class RHS_OPFOR_VDV : base_faction
 	{
+		addon			= "rhs_c_troops";
 		spawnUnitsSide	= REDFOR;
 		
 		class units : units
@@ -582,6 +592,7 @@ class missionFactions
 	
 	class RHS_GREF_CHDKZ : base_faction
 	{
+		addon			= "";
 		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
@@ -622,6 +633,7 @@ class missionFactions
 	
 	class RHS_GREF_CDF : base_faction
 	{
+		addon			= "";
 		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
@@ -662,6 +674,7 @@ class missionFactions
 	
 	class RHS_GREF_UN : base_faction
 	{
+		addon			= "";
 		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
@@ -702,6 +715,7 @@ class missionFactions
 	
 	class RHS_SAF_ARMY : base_faction
 	{
+		addon			= "";
 		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
@@ -742,6 +756,7 @@ class missionFactions
 
 	class RHS_SAF_PARA : base_faction
 	{
+		addon			= "";
 		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
@@ -784,6 +799,7 @@ class missionFactions
 	
 	class RHS_BLUFOR_ARMY_OCP : vanilla_BLUFOR
 	{
+		addon			= "rhsusf_c_troops";
 		spawnUnitsSide	= BLUFOR;
 		
 		class units : units
@@ -832,6 +848,7 @@ class missionFactions
 	
 	class IFA3_OPFOR_SOV : base_faction
 	{
+		addon			= "WW2_Assets_c_Characters_Soviets_c_SOV_RKKA";
 		class units : units
 		{
 			OFFICER		 		= "LIB_SOV_captain";
@@ -876,7 +893,8 @@ class missionFactions
 	
 	class IFA3_GRNFOR_USA : base_faction
 	{
-		spawnUnitsSide = GRNFOR;
+		addon			= "WW2_Assets_c_Characters_Americans_c_US_Army";
+		spawnUnitsSide	= GRNFOR;
 		
 		class units : units
 		{
@@ -923,6 +941,7 @@ class missionFactions
 	
 	class IFA3_BLUFOR_WEHR : vanilla_BLUFOR
 	{
+		addon			= "WW2_Assets_c_Characters_Germans_c_GER_Wehrmacht";
 		spawnUnitsSide	= BLUFOR;
 		
 		class units : units

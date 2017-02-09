@@ -328,7 +328,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="SME.Gen - IFA3";
+		briefingName="CO20 | SME.Gen X IFA3 | infantry focused COOP | V.050";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.43000001;

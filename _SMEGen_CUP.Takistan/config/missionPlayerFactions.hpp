@@ -21,6 +21,7 @@ class missionPlayerFactions
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
 		friendlyFaction		= "vanilla_BLUFOR";
+		addon				= "";
 		
 	// always available vehicles
 		class missionVehicles
@@ -396,6 +397,7 @@ class missionPlayerFactions
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
 		friendlyFaction		= "CUP_BLUFOR_USMC";
+		addon				= "CUP_Creatures_Military_USMC";
 
 		class missionVehicles
 		{
@@ -555,6 +557,7 @@ class missionPlayerFactions
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
 		friendlyFaction		= "CUP_BLUFOR_USA";
+		addon				= "CUP_Creatures_Military_USArmy";
 
 		class missionVehicles
 		{
@@ -721,6 +724,7 @@ class missionPlayerFactions
 		fullArsenal			= 0;
 		playerSide			= REDFOR;
 		friendlyFaction		= "RHS_OPFOR_GUER";
+		addon				= "rhs_c_troops";
 		
 	// always available vehicles
 		class missionVehicles
@@ -874,6 +878,7 @@ class missionPlayerFactions
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
 		friendlyFaction		= "RHS_BLUFOR_ARMY_OCP";
+		addon				= "rhsusf_c_troops";
 		
 	// always available vehicles
 		class missionVehicles
@@ -1085,7 +1090,8 @@ class missionPlayerFactions
 	{
 		fullArsenal			= 0;
 		playerSide			= BLUFOR;
-		friendlyFaction		= "IFA3_BLUFOR_WEHR";	
+		friendlyFaction		= "IFA3_BLUFOR_WEHR";
+		addon				= "WW2_Assets_c_Characters_Germans_c_GER_Wehrmacht";
 
 		class missionVehicles
 		{

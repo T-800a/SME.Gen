@@ -15,6 +15,10 @@
 [] call T8SME_INIT_fnc_params;
 
 
+// check for missing addons
+if ( call T8SME_server_fnc_checkAddons ) exitWith {};
+
+
 // initialize SME.Gen server
 [] spawn T8SME_INIT_fnc_server;
 

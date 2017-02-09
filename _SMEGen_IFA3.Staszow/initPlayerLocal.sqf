@@ -20,6 +20,10 @@ params [
 [] call T8SME_INIT_fnc_params;
 
 
+// check for missing addons
+if ( call T8SME_client_fnc_checkAddons ) exitWith {};
+
+
 // switch player side according to reward set
 private _newGroup = createGroup T8SME_param_playerSide;
 [ player ] joinSilent _newGroup;

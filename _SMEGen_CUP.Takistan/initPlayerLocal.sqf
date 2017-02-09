@@ -20,6 +20,10 @@ params [
 [] call T8SME_INIT_fnc_params;
 
 
+// check for missing addons
+if ( call T8SME_client_fnc_checkAddons ) exitWith {};
+
+
 // switch player side according to reward set
 private _newGroup = createGroup T8SME_param_playerSide;
 [ player ] joinSilent _newGroup;
@@ -43,13 +47,15 @@ if ( isMultiplayer ) then
 			
 		// clear players inventory
 		removeVest player;
+		removeUniform player;
 		removeHeadgear player;
+		removeGoggles player;
 		removeBackpack player;
 		removeAllWeapons player:
 		removeAllItems player;
-		player unlinkItem "NVGoggles";
-		player unlinkItem "NVGoggles_OPFOR";
-		player unlinkItem "NVGoggles_INDEP";
+		removeAllAssignedItems player;
+
+		player forceAddUniform "U_LIB_GER_Schutze";
 	};
 };
 

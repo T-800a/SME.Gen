@@ -18,7 +18,7 @@
 
 if ( isMultiplayer ) exitWith {};
 
-private [ "_o" ];
+private _o = "";
 
 params [
 	[ "_f", "___no_file_!!___" ],
@@ -29,6 +29,12 @@ params [
 _f = _f splitString "\";
 reverse _f;
 
-_o = format [ "T8RMG >> %1 >> %2 >>>>> %3 >> %4", ( round diag_fps ), ( _f select 0 ), _t, _v ]; 
+if ( _v isEqualTo "" ) then
+{
+	_o = format [ "%1 > %2 ##  %3", ( round time ), ( _f select 0 ), _t ]; 
+} else {
+	_o = format [ "%1 > %2 ##  %3 >> %4", ( round time ), ( _f select 0 ), _t, _v ]; 
+};
+
 
 __DEBUGCON( _o );

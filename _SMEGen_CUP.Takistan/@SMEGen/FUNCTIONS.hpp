@@ -39,6 +39,7 @@
 						
 			addFunction(blowIED);
 			addFunction(buildUnitArray);
+			addFunction(checkAddons);
 			addFunction(checkFlatGround);
 			addFunction(checkOutside);
 			addFunction(cleanUP);
@@ -96,6 +97,7 @@
 			
 			addFunction(addActionIntel);
 			addFunction(addDiary);
+			addFunction(checkAddons);
 			addFunction(checkGetIn);
 			addFunction(checkSlots);
 			addFunction(checkSwitchSeat);
