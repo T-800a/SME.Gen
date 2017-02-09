@@ -17,18 +17,31 @@ The intent of the mission is to have something similiar to an Domination / Invad
 
 
 #### Missions:
+##### _SMEGen_.Altis
+- default Enemy Faction:	CSAT
+- default Player Faction:	NATO
+
+##### _SMEGen_CUP.Chernarus
+- default Enemy Faction:	CUP NAPA
+- default Player Faction:	CUP USMC
+
 ##### _SMEGen_CUP.Takistan
-- Default Enemy: CUP Takistan Army
-- Default Gear Set: CUP USMC
+- default Enemy Faction:	CUP Takistan Army
+- default Player Faction:	CUP US Army
+
+##### _SMEGen_IFA3.Staszow
+- default Enemy Faction:	IFA3 Soviet Forces
+- default Player Faction:	IFA3 Wehrmacht
 
 
 #### Mission Parameters
 - select the enemy faction
-- select a reward set
+- select the player faction
 - select the amount of simultaneous mission sites
 - select the AI skill level ( militia / regular / special forces ( for details check T8/config.hpp ))
 - select if you want to keep your gear after respawning
 - select if you want vehicle patrols between objectives
+- select and set revive (BIS or FAR)
 
 
 #### Vanilla Systems
@@ -37,13 +50,14 @@ The missions uss various vanilla systems:
 - BIS dynamic groups
 - BIS virtual arsenal
 - BIS respawn menu
+- BIS revive
 
 
 #### Additional Scrips
 And the mission uses some other scripts:
 - [T8-Units Script](https://forums.bistudio.com/topic/172795-release-t8-units-a-less-dynamic-ai-creator/)
-- [FAR Revive](https://github.com/farooqaaa/far_revive) (but in [my own 'flavour'](https://forums.bistudio.com/topic/146926-farooqs-revive/?p=2526375) with some of the later sqf improvments)
 - [download data script](https://forums.bistudio.com/topic/157241-script-snippet-downlad-data-from-a-laptop/?hl=download%20data) (a bit updated version of my script)
+- (optional)[FAR Revive](https://github.com/farooqaaa/far_revive) (but in [my own 'flavour'](https://forums.bistudio.com/topic/146926-farooqs-revive/?p=2526375) with some of the later sqf improvments)
 
 
 #### Available tasks
