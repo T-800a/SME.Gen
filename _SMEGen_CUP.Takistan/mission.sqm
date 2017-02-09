@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8263.3105,392.55841,2064.7009};
-		dir[]={0.12542157,-0.79817045,0.58936942};
-		up[]={0.16613579,0.60244471,0.78068978};
-		aside[]={0.97816563,1.5509431e-007,-0.20816317};
+		pos[]={8274.7412,354.59387,2027.5192};
+		dir[]={-0.22638302,-0.63569391,0.73811102};
+		up[]={-0.1864094,0.77192765,0.60777926};
+		aside[]={0.95611107,-5.7622674e-007,0.29324168};
 	};
 };
 binarizationWanted=0;
@@ -33,6 +33,7 @@ addons[]=
 	"CUP_Creatures_Military_USArmy",
 	"A3_Modules_F_Curator_Environment",
 	"A3_Characters_F",
+	"cba_xeh",
 	"A3_Structures_F_Walls",
 	"A3_Structures_F_Bootcamp_Ind_Cargo",
 	"A3_Structures_F_Bootcamp_VR_Helpers",
@@ -3820,7 +3821,7 @@ class Mission
 			position[]={8238.1738,1.2361573e+026,2164.9297};
 			name="mission_marker_vehicle_01_spawn";
 			type="Empty";
-			angle=218.88187;
+			angle=218.88184;
 			id=333;
 			atlOffset=1.2361573e+026;
 		};
@@ -3830,7 +3831,7 @@ class Mission
 			position[]={8244.709,6.6483561e+022,2158.8184};
 			name="mission_marker_vehicle_02_spawn";
 			type="Empty";
-			angle=218.88187;
+			angle=218.88184;
 			id=334;
 			atlOffset=6.6483561e+022;
 		};
@@ -3840,7 +3841,7 @@ class Mission
 			position[]={8252.1924,6.6483561e+022,2152.9294};
 			name="mission_marker_vehicle_03_spawn";
 			type="Empty";
-			angle=218.88187;
+			angle=218.88184;
 			id=336;
 			atlOffset=6.6483561e+022;
 		};

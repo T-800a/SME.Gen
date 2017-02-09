@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14302.908,40.837635,16258.628};
-		dir[]={-0.20845288,-0.51658064,0.83048594};
-		up[]={-0.12576246,0.85623759,0.50104278};
-		aside[]={0.96992064,-1.3725366e-007,0.24345225};
+		pos[]={14307.986,28.498562,16273.372};
+		dir[]={-0.97754103,-0.17951129,-0.11062399};
+		up[]={-0.17839012,0.98375887,-0.020187594};
+		aside[]={-0.11245155,2.001907e-007,0.9936856};
 	};
 };
 binarizationWanted=0;
@@ -1143,8 +1143,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14213.938,19.620562,16268.828};
-						angles[]={0.013332055,0,6.2805333};
+						position[]={14180.786,19.224459,16301.346};
+						angles[]={0.0026520467,0,0.0039967569};
 					};
 					side="West";
 					flags=6;
@@ -1157,15 +1157,14 @@ class Mission
 					};
 					id=52;
 					type="B_Helipilot_F";
-					atlOffset=2.6702881e-005;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14217.219,19.600607,16269.668};
-						angles[]={0.013332055,0,6.2805333};
+						position[]={14184.066,19.233253,16302.186};
+						angles[]={0.0026520467,0,0.0026520467};
 					};
 					side="West";
 					flags=4;
@@ -1185,7 +1184,6 @@ class Mission
 			{
 			};
 			id=51;
-			atlOffset=2.6702881e-005;
 		};
 		class Item23
 		{
@@ -2765,6 +2763,7 @@ class Mission
 			};
 			id=191;
 			type="PortableHelipadLight_01_white_F";
+			atlOffset=-0.00010108948;
 		};
 		class Item118
 		{
@@ -2781,7 +2780,7 @@ class Mission
 			};
 			id=192;
 			type="PortableHelipadLight_01_white_F";
-			atlOffset=1.9073486e-006;
+			atlOffset=-8.7738037e-005;
 		};
 		class Item119
 		{
@@ -2798,6 +2797,7 @@ class Mission
 			};
 			id=193;
 			type="PortableHelipadLight_01_white_F";
+			atlOffset=-1.1444092e-005;
 		};
 		class Item120
 		{
@@ -2814,6 +2814,7 @@ class Mission
 			};
 			id=194;
 			type="PortableHelipadLight_01_white_F";
+			atlOffset=-0.00019073486;
 		};
 		class Item121
 		{
@@ -2840,6 +2841,7 @@ class Mission
 			};
 			id=196;
 			type="PortableHelipadLight_01_white_F";
+			atlOffset=-0.0001411438;
 		};
 		class Item123
 		{
@@ -2856,7 +2858,7 @@ class Mission
 			};
 			id=197;
 			type="PortableHelipadLight_01_white_F";
-			atlOffset=1.9073486e-006;
+			atlOffset=-0.00026702881;
 		};
 		class Item124
 		{
@@ -2873,6 +2875,7 @@ class Mission
 			};
 			id=198;
 			type="PortableHelipadLight_01_white_F";
+			atlOffset=-8.9645386e-005;
 		};
 		class Item125
 		{
@@ -2889,7 +2892,7 @@ class Mission
 			};
 			id=199;
 			type="PortableHelipadLight_01_white_F";
-			atlOffset=0.00028038025;
+			atlOffset=0.00020980835;
 		};
 		class Item126
 		{
