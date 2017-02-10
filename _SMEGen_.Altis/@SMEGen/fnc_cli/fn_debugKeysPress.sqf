@@ -120,7 +120,7 @@ _exportSite =
 		
 		case "FIELD" : 
 		{
-			_str = 'class field_%1_%5 : base_field \n{\nscope = 1;\nname = "%5 of %2";\nmarker = "site_field_%1_%5";\nposition[] = { %3, %4, 0 };\n};\n';
+			_str = 'class field_%1_%5 : base_field_IFA3 \n{\nscope = 1;\nname = "%5 of %2";\nmarker = "site_field_%1_%5";\nposition[] = { %3, %4, 0 };\n};\n';
 			( text format [_str, ( _locTextStr ), _locText, ( _pos select 0 ), ( _pos select 1 ), _dirN ]) call _fnc_makeFile;
 			hint format [ "FIELD: %1", ( str _locText )];
 		};

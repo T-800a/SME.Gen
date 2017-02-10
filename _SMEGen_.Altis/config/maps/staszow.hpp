@@ -192,6 +192,230 @@ class Staszow : base_map
 		position[] = { 14176.8, 8973.64, 0 };
 	};
 
+	class town_wierzbica : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Wierzbica";
+		marker = "site_town_wierzbica";
+		position[] = { 3404, 5237.1, 0 };
+	};
+
+	class town_zapusty : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Zapusty";
+		marker = "site_town_zapusty";
+		position[] = { 2873.66, 4411.01, 0 };
+	};
+
+	class town_tuczepy : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Tuczepy";
+		marker = "site_town_tuczepy";
+		position[] = { 1915.24, 3822.5, 0 };
+	};
+
+	class town_niecieslawice : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Niecieslawice";
+		marker = "site_town_niecieslawice";
+		position[] = { 3466.64, 1944.22, 0 };
+	};
+
+	class town_gora : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Gora";
+		marker = "site_town_gora";
+		position[] = { 3608.94, 3754.24, 0 };
+	};
+
+	class town_januszkowice : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Januszkowice";
+		marker = "site_town_januszkowice";
+		position[] = { 5299.75, 3241.09, 0 };
+	};
+
+	class town_jaroslawice : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Jaroslawice";
+		marker = "site_town_jaroslawice";
+		position[] = { 5108.47, 1578.3, 0 };
+	};
+
+	class town_nizny : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Nizny";
+		marker = "site_town_nizny";
+		position[] = { 7317.09, 2229.5, 0 };
+	};
+
+	class town_krzczonowice : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Krzczonowice";
+		marker = "site_town_krzczonowice";
+		position[] = { 9421.65, 3067.75, 0 };
+	};
+
+	class town_brzezina : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Brzezina";
+		marker = "site_town_brzezina";
+		position[] = { 7936.28, 4951.25, 0 };
+	};
+
+	class town_grzybow : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Grzybow";
+		marker = "site_town_grzybow";
+		position[] = { 8708.08, 5549.33, 0 };
+	};
+
+	class town_kolrzedow : base_town_IFA3 
+	{
+		scope = 1;
+		name = "KolRzedow";
+		marker = "site_town_kolrzedow";
+		position[] = { 6561.16, 7227.91, 0 };
+	};
+
+	class town_podlesie : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Podlesie";
+		marker = "site_town_podlesie";
+		position[] = { 7174.46, 7006.26, 0 };
+	};
+
+	class town_krzywolecz : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Krzywolecz";
+		marker = "site_town_krzywolecz";
+		position[] = { 8492.9, 6825.27, 0 };
+	};
+
+	class town_nowy : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Nowy";
+		marker = "site_town_nowy";
+		position[] = { 9275.75, 6883.14, 0 };
+	};
+
+	class town_wadoty : base_town_IFA3 
+	{
+		scope = 1;
+		name = "-Wadoty";
+		marker = "site_town_wadoty";
+		position[] = { 9143.53, 6265.98, 0 };
+	};
+
+	class town_lenartwoice : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Lenartwoice";
+		marker = "site_town_lenartwoice";
+		position[] = { 8633.5, 2219.93, 0 };
+	};
+
+	class town_dobrow : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Dobrow";
+		marker = "site_town_dobrow";
+		position[] = { 5539.34, 5980.95, 0 };
+	};
+
+	class town_rzedow : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Rzedow";
+		marker = "site_town_rzedow";
+		position[] = { 6435.1, 5891.07, 0 };
+	};
+
+	class town_sielec : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Sielec";
+		marker = "site_town_sielec";
+		position[] = { 11312.4, 6613.6, 0 };
+	};
+
+	class town_stefanowek : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Stefanowek";
+		marker = "site_town_stefanowek";
+		position[] = { 12282.1, 6127.74, 0 };
+	};
+
+	class town_koniemloty : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Koniemloty";
+		marker = "site_town_koniemloty";
+		position[] = { 10558.8, 4025.8, 0 };
+	};
+
+	class town_gajkoniemlocki : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Gaj Koniemlocki";
+		marker = "site_town_gajkoniemlocki";
+		position[] = { 12054.7, 4625.34, 0 };
+	};
+
+	class town_pacanowka : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Pacanowka";
+		marker = "site_town_pacanowka";
+		position[] = { 11671.3, 2592.66, 0 };
+	};
+
+	class town_sichowduzy : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Sichow Duzy";
+		marker = "site_town_sichowduzy";
+		position[] = { 13044.8, 961.876, 0 };
+	};
+
+	class town_podborek : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Podborek";
+		marker = "site_town_podborek";
+		position[] = { 10857, 912.105, 0 };
+	};
+
+	class town_krzewiny : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Krzewiny";
+		marker = "site_town_krzewiny";
+		position[] = { 12001.8, 7296.65, 0 };
+	};
+
+	class town_ziemblice : base_town_IFA3 
+	{
+		scope = 1;
+		name = "Ziemblice";
+		marker = "site_town_ziemblice";
+		position[] = { 10147.1, 7695.45, 0 };
+	};
+
 
 
 	// --------------------------------------------------------------
@@ -690,6 +914,206 @@ class Staszow : base_map
 		name = "NNE of Mokre";
 		marker = "site_field_mokre_NNE";
 		position[] = { 6162.31, 11573.5, 0 };
+	};
+
+	class field_wierzbica_NE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NE of Wierzbica";
+		marker = "site_field_wierzbica_NE";
+		position[] = { 3783.21, 5774.53, 0 };
+	};
+
+	class field_gora_NNE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NNE of Gora";
+		marker = "site_field_gora_NNE";
+		position[] = { 3948.55, 4452.8, 0 };
+	};
+
+	class field_zapusty_S : base_field_IFA3 
+	{
+		scope = 1;
+		name = "S of Zapusty";
+		marker = "site_field_zapusty_S";
+		position[] = { 2732.5, 3618.57, 0 };
+	};
+
+	class field_tuczepy_S : base_field_IFA3 
+	{
+		scope = 1;
+		name = "S of Tuczepy";
+		marker = "site_field_tuczepy_S";
+		position[] = { 1821.67, 3066.55, 0 };
+	};
+
+	class field_gora_S : base_field_IFA3 
+	{
+		scope = 1;
+		name = "S of Gora";
+		marker = "site_field_gora_S";
+		position[] = { 3629.65, 2922.78, 0 };
+	};
+
+	class field_jaroslawice_NNW : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NNW of Jaroslawice";
+		marker = "site_field_jaroslawice_NNW";
+		position[] = { 4809, 2148.98, 0 };
+	};
+
+	class field_januszkowice_NNW : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NNW of Januszkowice";
+		marker = "site_field_januszkowice_NNW";
+		position[] = { 5175.43, 3852.78, 0 };
+	};
+
+	class field_dobrow_NE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NE of Dobrow";
+		marker = "site_field_dobrow_NE";
+		position[] = { 5957.72, 6530.01, 0 };
+	};
+
+	class field_pieczonogigacki_SW : base_field_IFA3 
+	{
+		scope = 1;
+		name = "SW of Pieczonogi-Gacki";
+		marker = "site_field_pieczonogigacki_SW";
+		position[] = { 4247.26, 8672.29, 0 };
+	};
+
+	class field_wadoty_E : base_field_IFA3 
+	{
+		scope = 1;
+		name = "E of Wadoty";
+		marker = "site_field_wadoty_E";
+		position[] = { 9758.69, 6212.16, 0 };
+	};
+
+	class field_krzczonowice_NNE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NNE of Krzczonowice";
+		marker = "site_field_krzczonowice_NNE";
+		position[] = { 9626.64, 3826.16, 0 };
+	};
+
+	class field_lenartwoice_E : base_field_IFA3 
+	{
+		scope = 1;
+		name = "E of Lenartwoice";
+		marker = "site_field_lenartwoice_E";
+		position[] = { 9523.56, 2185.63, 0 };
+	};
+
+	class field_podborek_ESE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "ESE of Podborek";
+		marker = "site_field_podborek_ESE";
+		position[] = { 11750.9, 622.018, 0 };
+	};
+
+	class field_sichowduzy_NNE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NNE of Sichow Duzy";
+		marker = "site_field_sichowduzy_NNE";
+		position[] = { 13088.7, 1562.44, 0 };
+	};
+
+	class field_gajkoniemlocki_S : base_field_IFA3 
+	{
+		scope = 1;
+		name = "S of Gaj Koniemlocki";
+		marker = "site_field_gajkoniemlocki_S";
+		position[] = { 12163.3, 3690.67, 0 };
+	};
+
+	class field_stefanowek_SW : base_field_IFA3 
+	{
+		scope = 1;
+		name = "SW of Stefanowek";
+		marker = "site_field_stefanowek_SW";
+		position[] = { 11858.8, 5859.34, 0 };
+	};
+
+	class field_sielec_NNW : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NNW of Sielec";
+		marker = "site_field_sielec_NNW";
+		position[] = { 11062.9, 7496.9, 0 };
+	};
+
+	class field_nizny_SSE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "SSE of Nizny";
+		marker = "site_field_nizny_SSE";
+		position[] = { 7567.52, 1765.48, 0 };
+	};
+
+	class field_lenartwoice_N : base_field_IFA3 
+	{
+		scope = 1;
+		name = "N of Lenartwoice";
+		marker = "site_field_lenartwoice_N";
+		position[] = { 8555.39, 2684.64, 0 };
+	};
+
+	class field_pacanowka_W : base_field_IFA3 
+	{
+		scope = 1;
+		name = "W of Pacanowka";
+		marker = "site_field_pacanowka_W";
+		position[] = { 11080.4, 2701.12, 0 };
+	};
+
+	class field_podlesie_S : base_field_IFA3 
+	{
+		scope = 1;
+		name = "S of Podlesie";
+		marker = "site_field_podlesie_S";
+		position[] = { 7108.32, 6401.35, 0 };
+	};
+
+	class field_rzedow_S : base_field_IFA3 
+	{
+		scope = 1;
+		name = "S of Rzedow";
+		marker = "site_field_rzedow_S";
+		position[] = { 6515.42, 4604.85, 0 };
+	};
+
+	class field_grzybow_SE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "SE of Grzybow";
+		marker = "site_field_grzybow_SE";
+		position[] = { 9375.84, 4635.37, 0 };
+	};
+
+	class field_stefanowek_ENE : base_field_IFA3 
+	{
+		scope = 1;
+		name = "ENE of Stefanowek";
+		marker = "site_field_stefanowek_ENE";
+		position[] = { 13268.8, 6751.65, 0 };
+	};
+
+	class field_krzywolecz_NW : base_field_IFA3 
+	{
+		scope = 1;
+		name = "NW of Krzywolecz";
+		marker = "site_field_krzywolecz_NW";
+		position[] = { 7939.63, 7446.83, 0 };
 	};
 
 

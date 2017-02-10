@@ -43,11 +43,16 @@ __DEBUG( __FILE__, "_arraySites", _arraySites );
 if ( T8SME_server_var_firstSite ) then
 {
 	T8SME_server_var_firstSite = false;
+	private _tempSites = [];
 	
 	{
 		private _sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "position" );
-		if (( _sitePos distance2D mission_homebase ) > 7500 ) then { _arraySites deleteAt _forEachIndex; };
-	} forEach _arraySites;
+		if (( _sitePos distance2D mission_homebase ) < 7500 ) then { _tempSites pushBack _x; };
+		
+		false
+	} count _arraySites;
+	
+	_arraySites = _tempSites;
 };
 
 
