@@ -12,14 +12,11 @@
 
 class cfgRandomMissions 
 {
+// --------------------------------------------------------------
+//	missionConfig - BASE MISSION CONFIG
+//
 	class missionConfig
 	{
-		
-	// --------------------------------------------------------------
-	//	missionConfig - BASE MISSION CONFIG
-	//
-
-
 	// default faction ( if not overwritten by mission Params )
 	// find in < missionFactions.hpp > to change spawned units / add factions
 
@@ -38,6 +35,10 @@ class cfgRandomMissions
 
 	// amount of spawned mission AOs
 		spawnedSitesCount			= 2;
+
+
+	// minimum distance between mission sites
+		spawnedSitesMinDist			= 1500;
 
 
 	// delays in minutes between a finished set of AOs will be cleanded, 

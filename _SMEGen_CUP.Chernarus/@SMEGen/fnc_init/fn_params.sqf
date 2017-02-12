@@ -70,15 +70,16 @@ switch ( "param_reward" call BIS_fnc_getParamValue ) do
 	default		{ T8SME_param_playerFaction = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "playerFaction" ); };
 };
 
-// Simultaneous Mission Sites
-switch ( "param_sites" call BIS_fnc_getParamValue ) do
-{
-	case 0 :	{ T8SME_param_amountSites = 1; };
-	case 1 :	{ T8SME_param_amountSites = 2; };
-	case 2 :	{ T8SME_param_amountSites = 3; };
-	case 3 :	{ T8SME_param_amountSites = 4; };
-	default		{ T8SME_param_amountSites = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" ); };
-};
+
+// simultaneous mission sites
+T8SME_param_amountSites = "param_sites" call BIS_fnc_getParamValue;
+if ( T8SME_param_amountSites < 0 ) then { T8SME_param_amountSites = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesCount" ); };
+
+
+// minimum distance between mission sites
+T8SME_param_sitesMinDist = "param_sitesMinDist" call BIS_fnc_getParamValue;
+if ( T8SME_param_sitesMinDist < 0 ) then { T8SME_param_sitesMinDist = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionConfig" >> "spawnedSitesMinDist" ); };
+
 
 // AI Skill
 // overwrite T8U base settings

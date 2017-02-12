@@ -47,7 +47,7 @@ if ( T8SME_server_var_firstSite ) then
 	
 	{
 		private _sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "position" );
-		if (( _sitePos distance2D mission_homebase ) < 7500 ) then { _tempSites pushBack _x; };
+		if (( _sitePos distance2D mission_homebase ) < 5000 ) then { _tempSites pushBack _x; };
 		
 		false
 	} count _arraySites;
@@ -66,7 +66,7 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	__DEBUG( __FILE__, "MAIN WHILE", "___" );
 	private [ "_first", "_firstSitePos", "_firstSiteType", "_siteMaxDist" ];
 	
-	_siteMaxDist = 1500;
+	_siteMaxDist = T8SME_param_sitesMinDist + 1500;
 	
 	// build useable sites
 	{
@@ -80,8 +80,7 @@ while {( count _arraySitesUsed ) < _amountSites } do
 		} else {
 			if ( !( _site in T8SME_server_var_arraySitesBlacklist ) AND { _siteType isEqualTo _whitListType }  AND {!( _site in _arraySitesFree )} AND {({( _sitePos distance2D ( getPos _x )) < 600 } count _players ) < 1 }) then { _arraySitesFree pushBack _site; };
 		};
-		
-		
+
 		false
 	} count _arrayShuff; 
 
@@ -100,12 +99,16 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	
 	
 	{
-		private [ "_site", "_sitePos", "_firstType" ];
-		_site = _x;
-		_sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
-		_firstType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "type" );
-		
-		if ( !( _site in _arraySitesUsed ) AND {( _sitePos distance2D _firstSitePos ) < _siteMaxDist } AND { !(_firstSiteType isEqualTo _firstType )}) then { _arraySitesUsed pushBack _site; };
+		private _site = _x;
+		private _sitePos = getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "position" );
+		private _siteType = getText ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _site >> "type" );
+
+		if (
+			!( _site in _arraySitesUsed )
+			AND {( _sitePos distance2D _firstSitePos ) < _siteMaxDist }
+			AND { !(_firstSiteType isEqualTo _siteType )}
+			AND {({( _sitePos distance2D getArray ( missionConfigFile >> "cfgRandomMissions" >> "missionSites" >> worldName >> _x >> "position" )) < T8SME_param_sitesMinDist } count _arraySitesUsed ) < 1 }
+		) then { _arraySitesUsed pushBack _site; };
 		
 		false
 	} count _arraySitesFree; 
@@ -117,7 +120,7 @@ while {( count _arraySitesUsed ) < _amountSites } do
 	{
 		__DEBUG( __FILE__, "_arraySitesUsed", "____________EXTENDET WAIT" );
 		[ 1, 5, 0 ] remoteExec [ "T8C_fnc_hintProcess", 0 ]; 
-		_siteMaxDist = _siteMaxDist + 500;
+		_siteMaxDist = _siteMaxDist + 1000;
 		sleep 20;
 	};
 };

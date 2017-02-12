@@ -41,7 +41,7 @@ class Params
 			"CUP - Takistan Army", "CUP - Takistan Locals", "CUP - NAPA", "CUP - USMC", "CUP - US Army",
 			"RHS AFRF militia", "RHS AFRF VMF", "RHS AFRF VDV", "RHS GREF CHDKZ", "RHS GREF CDF", "RHS GREF UN", "RHS SAF Army", "RHS SAF militia", "RHS US Army OCP",
 			"IFA3_OPFOR_SOV", "IFA3_GRNFOR_USA", "IFA3_BLUFOR_WEHR",
-			"DEFAULT"
+			"DEFAULT (from config)"
 		};
 	};
 
@@ -65,16 +65,24 @@ class Params
 			"RHS Independent", "RHS Independent full Arsenal", "RHS USMC", 
 			"IFA3 Wehrmacht", "IFA3 Wehrmacht full Arsenal",
 			"BLUFOR - ACE",
-			"DEFAULT"
+			"DEFAULT (from config)"
 		};
 	};
 	
 	class param_sites
 	{
 		title		= "Simultaneous Mission Sites";
-		values[]	= { 0,          1,			2,			3,			999 };
-		texts[]		= { "1 Site",	"2 Sites",	"3 Sites",	"4 Sites",	"DEFAULT - 2 Sites" };
-		default		= 999;
+		values[]	= { 1,          2,			3,			4,			-1 };
+		texts[]		= { "1 Site",	"2 Sites",	"3 Sites",	"4 Sites",	"DEFAULT (from config)" };
+		default		= -1;
+	};
+	
+	class param_sitesMinDist
+	{
+		title		= "Minimum Distance Between Mission Sites";
+		values[]	= { 500,	1000,		1500,		2000,		3000,		4000,		-1 };
+		texts[]		= { "500m",	"1000m",	"1500m",	"2000m",	"3000m",	"4000m",	"DEFAULT (from config)" };
+		default		= -1;
 	};
 	
 	class param_skill
