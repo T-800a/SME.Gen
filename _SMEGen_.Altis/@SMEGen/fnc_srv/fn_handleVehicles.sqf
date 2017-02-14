@@ -39,14 +39,24 @@ private _configArray	= "true" configClasses ( missionConfigFile >> "cfgRandomMis
 	private _nearPlayer1000 = ({( _missionVehicle distance2D ( getPos _x )) < 1000 } count _players );
 	private _nearPlayer2000 = ({( _missionVehicle distance2D ( getPos _x )) < 2000 } count _players );
 	private _nearBase = if ( _missionVehicle distance2D mission_homebase < 1000 ) then { true } else { false };
-	
+		
 	__DEBUG( __FILE__, "CHECK", _vehicle );
-//	__DEBUG( __FILE__, "CHECK 1000", _nearPlayer1000 );
-//	__DEBUG( __FILE__, "CHECK 2000", _nearPlayer2000 );
-//	__DEBUG( __FILE__, "CHECK _nearBase", _nearBase );
+	__DEBUG( __FILE__, "CHECK 1000", _nearPlayer1000 );
+	__DEBUG( __FILE__, "CHECK 2000", _nearPlayer2000 );
+	__DEBUG( __FILE__, "CHECK _nearBase", _nearBase );
+
 
 	// check if left behind
-	if ( ! _nearBase AND { _nearPlayer2000 < 1 }) then { _respawn = true };
+	if ( ! _nearBase AND { _nearPlayer2000 < 1 }) then 
+	{
+		__DEBUG( __FILE__, "CHECK T8SME_object_var_leftBehindTime", __GetOVAR( _missionVehicle, "T8SME_object_var_leftBehindTime", -1 ));
+		
+		if ( __GetOVAR( _missionVehicle, "T8SME_object_var_leftBehindTime", -1 ) < 0 ) then { __SetOVAR( _missionVehicle, "T8SME_object_var_leftBehindTime", time ); };
+		if ( __GetOVAR( _missionVehicle, "T8SME_object_var_leftBehindTime", -1 ) < ( time - 60 )) then { _respawn = true };
+
+	} else {
+		__SetOVAR( _missionVehicle, "T8SME_object_var_leftBehindTime", -1 );
+	};
 
 	// check if "disabled and left behind"
 	if ( !( canMove _missionVehicle ) AND { _nearPlayer1000 < 1 }) then { _respawn = true };
