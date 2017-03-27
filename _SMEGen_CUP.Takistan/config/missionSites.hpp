@@ -143,5 +143,7 @@ class missionSites
 	#include <maps\chernarus.hpp>
 	
 	#include <maps\staszow.hpp>
+	
+	#include <maps\taunus.hpp>
 
 };

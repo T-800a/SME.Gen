@@ -15,7 +15,6 @@ if !(hasInterface) exitWith {};
 
 #include <..\MACRO.hpp>
 
-
 private [ "_msg" ];
 
 params [ "_display", "_key", "_shift", "_ctrl", "_alt" ];
@@ -33,6 +32,7 @@ private _fnc_getNearest =
 
 private _helipadObj		= nearestObject [ player, "Helipad_base_F" ];
 private _vehicleObj		= nearestObject [ player, "LandVehicle" ];
+private _infoStandObj	= nearestObject [ player, "Infostand_base_F" ];
 private _reviveTargets	= ( player nearEntities [ "Man", 5 ] ) - [ player ];
 private _reviveTarget	= [ player, _reviveTargets ] call _fnc_getNearest;
 
@@ -178,10 +178,30 @@ switch ( _key ) do
 			_return = true;
 		};
 	};
+
+
+	// WIN Left
+	case 219 : 
+	{
+		if ( T8SME_client_var_keySpam > ( diag_tickTime - 0.50 )) exitWith { __DEBUG( __FILE__, "KEYSPAM", "" ); };
+		T8SME_client_var_keySpam = diag_ticktime;
+
+		__DEBUG( __FILE__, "_infoStandObj", _infoStandObj );
+		
+		// this setVariable [ "T8SME_object_var_isTeleport", true ];		
+		if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isTeleport", false ) AND {( player distance _infoStandObj ) < 7 }) then 
+		{
+			if !( dialog ) then 
+			{
+				[ "open_menu", _infoStandObj ] spawn T8SME_client_fnc_teleport;
+			};
+		};
+		_return = true;
+	};
 	
+
 	default {};
 };
-
 
 // RETURN: true/false (needed for keyevent!)
 _return

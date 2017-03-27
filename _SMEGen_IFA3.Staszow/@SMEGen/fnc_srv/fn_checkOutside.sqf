@@ -15,14 +15,11 @@ if !(isServer) exitWith {};
 
 #include <..\MACRO.hpp>
 
-private [ "_posGroundASL", "_posSkyASL", "_return" ];
-
 params [ "_pos" ];
 
-_posGroundASL	= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 0.2 ];
-_posSkyASL		= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 40 ];
-
-_return = lineIntersects [ _posGroundASL, _posSkyASL ];
+private _posGroundASL	= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 0.1 ];
+private _posSkyASL		= ATLToASL [( _pos select 0 ), ( _pos select 1 ), 200 ];
+private _return			= lineIntersects [ _posGroundASL, _posSkyASL ];
 
 // Return
 _return

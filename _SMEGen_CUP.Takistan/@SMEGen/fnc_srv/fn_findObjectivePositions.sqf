@@ -114,6 +114,20 @@ _arrayBasePos = _arrayBasePos - _arrayBuildingPos;
 
 		private [ "_no", "_nod", "_nbd", "_skip" ];
 		_no = nearestObject _x;
+
+// https://community.bistudio.com/wiki/nearestObject		
+// https://community.bistudio.com/wiki/nearestTerrainObjects
+/*
+[] spawn { while { true } do { 
+private _amo = allMissionObjects "";
+private _omo = [];
+private _ot = nearestTerrainObjects [player, [], 20];
+private _om = nearestObjects [player, ["All"], 20]; 
+_om = _om - [player];
+{ if ( _x in _amo AND !( _x isEqualTo player )) then { _omo pushBack _x }; false } count _om;
+hint parseText format [ "%1<br /><br />%2", _omo, _ot ]; sleep 0.5; };};
+*/
+		
 		
 		if ( !isNull _no ) then
 		{
@@ -177,3 +191,4 @@ if ( _debug ) then
 
 // return
 _return
+

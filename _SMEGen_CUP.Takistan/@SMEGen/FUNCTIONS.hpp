@@ -111,6 +111,7 @@
 			addFunction(keysPress);
 			addFunction(restricVehicle);
 			addFunction(serviceVehicle);
+			addFunction(teleport);
 			addFunction(updateArsenal);
 			addFunction(welcome);
 		};

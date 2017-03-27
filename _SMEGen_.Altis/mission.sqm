@@ -1,4 +1,4 @@
-version=52;
+version=53;
 class EditorData
 {
 	moveGridStep=1;
@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=205;
+		nextID=207;
 	};
 	class MarkerIDProvider
 	{
@@ -16,17 +16,16 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14173.895,199.57451,15918.769};
-		dir[]={0.16636325,-0.43491098,0.88501042};
-		up[]={0.080354035,0.900464,0.42745695};
-		aside[]={0.98282075,-2.248853e-007,-0.18474947};
+		pos[]={14194.811,37.382847,16264.775};
+		dir[]={-0.82021534,-0.55554456,-0.13674742};
+		up[]={-0.54801184,0.83147132,-0.09136384};
+		aside[]={-0.16445725,-4.9709342e-007,0.986426};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
 	"A3_Ui_F",
-	"WW2_Core_c_Gui_c",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Signs_F_Signs_Ad",
@@ -51,88 +50,83 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=11;
 		class Item0
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item1
-		{
-			className="WW2_Core_c_Gui_c";
-			name="WW2_Core_c_Gui_c";
-		};
-		class Item2
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item2
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item3
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item4
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item6
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item7
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item8
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item9
 		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -268,7 +262,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=127;
+		items=128;
 		class Item0
 		{
 			dataType="Marker";
@@ -845,6 +839,7 @@ class Mission
 					};
 					id=35;
 					type="B_medic_F";
+					atlOffset=-1.335144e-005;
 				};
 				class Item4
 				{
@@ -903,6 +898,7 @@ class Mission
 					};
 					id=38;
 					type="B_soldier_LAT_F";
+					atlOffset=-3.8146973e-006;
 				};
 				class Item7
 				{
@@ -1241,8 +1237,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14183.303,19.989107,16236.348};
-						angles[]={0.045302324,0,0.0039967569};
+						position[]={14183.688,19.619883,16249.799};
+						angles[]={0.0039967569,0,0.014664836};
 					};
 					side="Civilian";
 					flags=6;
@@ -2912,6 +2908,25 @@ class Mission
 			type="Empty";
 			angle=211.88965;
 			id=200;
+		};
+		class Item127
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14180.216,20.16543,16252.483};
+				angles[]={0.0039967569,4.2719727,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				skill=0.60000002;
+				init="this setVariable [ ""T8SME_object_var_isTeleport"", true ];";
+			};
+			id=206;
+			type="Land_InfoStand_V1_F";
+			atlOffset=-1.9073486e-006;
 		};
 	};
 };
