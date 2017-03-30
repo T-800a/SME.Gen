@@ -84,6 +84,30 @@ class cfgRandomMissions
 
 	};
 
+	
+	class missionBases
+	{
+		class hq
+		{
+			name				= "Headquarter";
+			vehicleTeleport		= "mission_marker_vehTel";
+			playerTeleport		= "mission_marker_plaTel";
+		};
+		
+		class fob1
+		{
+			name				= "FOB: Tomatin";
+			vehicleTeleport		= "mission_marker_vehTel_fob1";
+			playerTeleport		= "mission_marker_plaTel_fob1";
+		};
+		
+		class fob2
+		{
+			name				= "FOB: Talisker";
+			vehicleTeleport		= "mission_marker_vehTel_fob2";
+			playerTeleport		= "mission_marker_plaTel_fob2";
+		};
+	};
 
 
 	// --------------------------------------------------------------

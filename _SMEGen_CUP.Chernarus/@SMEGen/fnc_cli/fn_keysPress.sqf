@@ -36,6 +36,11 @@ private _infoStandObj	= nearestObject [ player, "Infostand_base_F" ];
 private _reviveTargets	= ( player nearEntities [ "Man", 5 ] ) - [ player ];
 private _reviveTarget	= [ player, _reviveTargets ] call _fnc_getNearest;
 
+// Prepare VR-Ammobox
+private [ "_arsenalAccess" ];
+_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
+__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
+
 if ( T8SME_client_var_inAction ) exitWith {};
 
 switch ( _key ) do 
@@ -134,10 +139,6 @@ switch ( _key ) do
 
 		if ( ! _shift AND { ! _ctrl } AND { ! _alt }) then 
 		{
-			// Prepare VR-Ammobox
-			private [ "_arsenalAccess" ];
-			_arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
-			__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
 
 	// stand installed in base
 			if ( !isnull mission_obj_arsenal_post AND {( player distance mission_obj_arsenal_post ) < 10 } AND {( vehicle player ) isEqualTo player }) then 
@@ -179,28 +180,56 @@ switch ( _key ) do
 		};
 	};
 
+	default {};
+};
 
-	// WIN Left
-	case 219 : 
+if ( _key in ( actionKeys "Action" )) then
+{
+	if ( T8SME_client_var_keySpam > ( diag_tickTime - 0.50 )) exitWith { __DEBUG( __FILE__, "KEYSPAM", "" ); };
+	T8SME_client_var_keySpam = diag_ticktime;
+
+	__DEBUG( __FILE__, "_infoStandObj", _infoStandObj );
+	
+	// this setVariable [ "T8SME_object_var_isTeleport", true ];		
+	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isTeleport", false ) AND {( player distance _infoStandObj ) < 3 }  AND { !_return }) then 
 	{
-		if ( T8SME_client_var_keySpam > ( diag_tickTime - 0.50 )) exitWith { __DEBUG( __FILE__, "KEYSPAM", "" ); };
-		T8SME_client_var_keySpam = diag_ticktime;
-
-		__DEBUG( __FILE__, "_infoStandObj", _infoStandObj );
-		
-		// this setVariable [ "T8SME_object_var_isTeleport", true ];		
-		if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isTeleport", false ) AND {( player distance _infoStandObj ) < 7 }) then 
+		if !( dialog ) then 
 		{
-			if !( dialog ) then 
-			{
-				[ "open_menu", _infoStandObj ] spawn T8SME_client_fnc_teleport;
-			};
+			[ "open_menu", _infoStandObj ] spawn T8SME_client_fnc_teleport;
 		};
+		
 		_return = true;
 	};
 	
-
-	default {};
+	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _infoStandObj ) < 3 } AND { !_return }) then 
+	{
+		if !( dialog ) then 
+		{
+			if ( _arsenalAccess isEqualTo 1 ) then 
+			{
+				[ "Open", true	] spawn BIS_fnc_arsenal;
+			} else {
+				[ "Open", false	] spawn BIS_fnc_arsenal;
+			};
+		};
+		
+		_return = true;
+	};
+	
+	if ( __GetOVAR( _vehicleObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _vehicleObj ) < 3 } AND {( vehicle player ) isEqualTo player }  AND { !_return }) then 
+	{
+		if !( dialog ) then 
+		{
+			if ( _arsenalAccess isEqualTo 1 ) then 
+			{
+				[ "Open", true	] spawn BIS_fnc_arsenal;
+			} else {
+				[ "Open", false	] spawn BIS_fnc_arsenal;
+			};
+		};
+		
+		_return = true;
+	};
 };
 
 // RETURN: true/false (needed for keyevent!)

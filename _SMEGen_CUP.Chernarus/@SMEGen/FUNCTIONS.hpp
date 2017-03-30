@@ -104,6 +104,7 @@
 			addFunction(debugKeysAdd);
 			addFunction(debugKeysPress);
 			addFunction(debugSiteMarkers);
+			addFunction(drawIcons);
 			addFunction(drawMapIcons);
 			addFunction(handleReward);
 			addFunction(handleVehicle);

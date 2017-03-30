@@ -287,7 +287,7 @@ class SME_teleportMenu
 		y = 0.45 - (1 / 25);
 		w = 0.318;
 		h = (1 / 25);
-		onButtonClick = "";
+		onButtonClick = "[ 'teleport' ] spawn T8SME_client_fnc_teleport;";
 	};
 
 	class SME_Close : SME_RscButton

@@ -32,7 +32,7 @@ class missionPlayerFactions
 				spawn			= "mission_marker_vehicle_01_spawn";
 				whiteList		= "";
 				mobileRespawn	= 1;
-				mobileArsenal	= 0;
+				mobileArsenal	= 1;
 			};
 
 			class mission_vehicle_02

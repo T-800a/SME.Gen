@@ -370,6 +370,17 @@
 	</Package>
 	
 	
+	<Package name="teleport">
+		<Key ID="STR_SMEGen_teleport">
+			<Original>- R E L O C A T I N G -</Original>
+		</Key>
+		
+		<Key ID="STR_SMEGen_teleport_blocked">
+			<Original>- CAN NOT RELOCATE - POSITION BLOCKED -</Original>
+		</Key>
+	</Package>
+	
+	
 	<Package name="FAR_Revive">
 		<Key ID="STR_FAR_revive">
 			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;REVIVING:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.5' align='center'&gt;%1&lt;/t&gt;</Original>
@@ -387,4 +398,5 @@
 			<Original>&lt;t size='1.5' color='#990000' align='center'&gt;RELEASED&lt;/t&gt;</Original>
 		</Key>
 	</Package>
+	
 </Project>
