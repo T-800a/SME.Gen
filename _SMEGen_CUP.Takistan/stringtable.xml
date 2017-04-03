@@ -370,7 +370,11 @@
 	</Package>
 	
 	
-	<Package name="teleport">
+	<Package name="interactions">
+		<Key ID="STR_SMEGen_interact">
+			<Original>press %1 to interact</Original>
+		</Key>
+			
 		<Key ID="STR_SMEGen_teleport">
 			<Original>- R E L O C A T I N G -</Original>
 		</Key>

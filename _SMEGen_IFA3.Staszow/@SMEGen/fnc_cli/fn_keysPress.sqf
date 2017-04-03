@@ -188,10 +188,10 @@ if ( _key in ( actionKeys "Action" )) then
 	if ( T8SME_client_var_keySpam > ( diag_tickTime - 0.50 )) exitWith { __DEBUG( __FILE__, "KEYSPAM", "" ); };
 	T8SME_client_var_keySpam = diag_ticktime;
 
-	__DEBUG( __FILE__, "_infoStandObj", _infoStandObj );
+	private _distance 	= if ( player isEqualTo ( vehicle player )) then { 3 } else { 5 };
 	
-	// this setVariable [ "T8SME_object_var_isTeleport", true ];		
-	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isTeleport", false ) AND {( player distance _infoStandObj ) < 3 }  AND { !_return }) then 
+// Teleport from Infostand
+	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isTeleport", false ) AND {( player distance _infoStandObj ) < _distance }  AND { !_return }) then 
 	{
 		if !( dialog ) then 
 		{
@@ -200,8 +200,9 @@ if ( _key in ( actionKeys "Action" )) then
 		
 		_return = true;
 	};
-	
-	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _infoStandObj ) < 3 } AND { !_return }) then 
+
+// Arsenal from Infostand
+	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _infoStandObj ) < _distance } AND { !_return }) then 
 	{
 		if !( dialog ) then 
 		{
@@ -215,8 +216,20 @@ if ( _key in ( actionKeys "Action" )) then
 		
 		_return = true;
 	};
-	
-	if ( __GetOVAR( _vehicleObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _vehicleObj ) < 3 } AND {( vehicle player ) isEqualTo player }  AND { !_return }) then 
+
+// Repair from Infostand
+	if ( __GetOVAR( _infoStandObj, "T8SME_object_var_isRepair", false ) AND {( player distance _infoStandObj ) < _distance } AND { !_return }) then 
+	{
+		if !( dialog ) then 
+		{
+			 [ _infoStandObj ] spawn T8SME_client_fnc_serviceVehicle; 
+		};
+		
+		_return = true;
+	};
+
+// Arsenal from Vehicle	
+	if ( __GetOVAR( _vehicleObj, "T8SME_object_var_isArsenal", false ) AND {( player distance _vehicleObj ) < _distance } AND {( vehicle player ) isEqualTo player }  AND { !_return }) then 
 	{
 		if !( dialog ) then 
 		{
@@ -234,4 +247,5 @@ if ( _key in ( actionKeys "Action" )) then
 
 // RETURN: true/false (needed for keyevent!)
 _return
+
 

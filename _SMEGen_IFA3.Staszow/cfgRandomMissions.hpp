@@ -82,7 +82,36 @@ class cfgRandomMissions
 
 	};
 
-
+	class missionBases
+	{
+		class hq
+		{
+			name				= "Hauptquartier";
+			vehicleTeleport		= "mission_marker_hq_veh";
+			playerTeleport		= "mission_marker_hq";
+		};
+		
+		class fob1
+		{
+			name				= "Feldlager: Aberlour";
+			vehicleTeleport		= "mission_marker_vehTel_fob1";
+			playerTeleport		= "mission_marker_plaTel_fob1";
+		};
+		
+		class fob2
+		{
+			name				= "Feldlager: Bowmore";
+			vehicleTeleport		= "mission_marker_vehTel_fob2";
+			playerTeleport		= "mission_marker_plaTel_fob2";
+		};
+		
+		class fob3
+		{
+			name				= "Feldlager: Caol Ila";
+			vehicleTeleport		= "mission_marker_vehTel_fob3";
+			playerTeleport		= "mission_marker_plaTel_fob3";
+		};
+	};
 
 	// --------------------------------------------------------------
 	//
