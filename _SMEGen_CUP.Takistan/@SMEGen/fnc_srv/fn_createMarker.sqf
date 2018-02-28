@@ -28,21 +28,35 @@ params [
 	[ "_ms",	"ELLIPSE",		[""]],
 	[ "_mt",	"waypoint",		[""]],
 	[ "_mc",	"ColorOrange",	[""]],
-	[ "_ma",	0.50,			[123]]
+	[ "_ma",	0.50,			[123]],
+	[ "_local",	true,			[true]]
 ];
 
 if ( _mn isEqualTo "" ) exitWith { false };
 if ( _mp isEqualTo [0,0,0] ) exitWith { false };
 if ( isMultiplayer ) then { _ma = 0; };
 
-_m = createMarkerLocal [ _mn, _mp ];
-_m setMarkerShapeLocal _ms;
-_m setMarkerTypeLocal _mt;
-_m setMarkerSizeLocal _mg;
-_m setMarkerColorLocal _mc;
-_m setMarkerAlphaLocal _ma;
-_m setMarkerTextLocal _mtxt;
-_m setMarkerDirLocal _mdir;
+if ( _local ) then 
+{
+	_m = createMarkerLocal [ _mn, _mp ];
+	_m setMarkerShapeLocal _ms;
+	_m setMarkerTypeLocal _mt;
+	_m setMarkerSizeLocal _mg;
+	_m setMarkerColorLocal _mc;
+	_m setMarkerAlphaLocal _ma;
+	_m setMarkerTextLocal _mtxt;
+	_m setMarkerDirLocal _mdir;
+} else {
+	_m = createMarker [ _mn, _mp ];
+	_m setMarkerShape _ms;
+	_m setMarkerType _mt;
+	_m setMarkerSize _mg;
+	_m setMarkerColor _mc;
+	_m setMarkerAlpha _ma;
+	_m setMarkerText _mtxt;
+	_m setMarkerDir _mdir;
+};
+
 
 T8SME_server_var_arrayCleanup pushBack _m;
 

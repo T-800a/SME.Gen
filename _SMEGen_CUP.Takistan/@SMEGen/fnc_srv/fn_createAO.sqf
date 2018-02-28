@@ -302,7 +302,11 @@ switch ( _type ) do
 };
 
 // create markers (local to server only)
-[ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8SME_server_fnc_createMarker;
+// [ _siteMkr, _sitePos, "", _siteSize, _siteAngle ] call T8SME_server_fnc_createMarker;
+
+// for {GodFather}
+[ _siteMkr, _sitePos, "", _siteSize, _siteAngle, "ELLIPSE", "waypoint", "ColorOrange", 0.50, false ] call T8SME_server_fnc_createMarker;
+
 __DEBUG( __FILE__, "MARKER", _siteMkr );
 
 if ( count _objPos > 0 ) then
