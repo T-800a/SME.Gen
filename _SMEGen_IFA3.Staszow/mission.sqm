@@ -5686,6 +5686,7 @@ class Mission
 			};
 			id=397;
 			type="LIB_AmmoCrates_NoInteractive_Large";
+			atlOffset=-1.9073486e-005;
 		};
 		class Item280
 		{
@@ -5702,6 +5703,7 @@ class Mission
 			};
 			id=398;
 			type="Land_tent_east";
+			atlOffset=1.9073486e-005;
 		};
 		class Item281
 		{

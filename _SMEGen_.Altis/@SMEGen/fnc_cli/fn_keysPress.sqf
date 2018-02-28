@@ -39,7 +39,6 @@ private _reviveTarget	= [ player, _reviveTargets ] call _fnc_getNearest;
 // Prepare VR-Ammobox
 private [ "_arsenalAccess" ];
 _arsenalAccess = getNumber ( missionConfigFile >> "cfgRandomMissions" >> "missionPlayerFactions" >> T8SME_param_playerFaction >> "fullArsenal" );
-__DEBUG( __FILE__, "_arsenalAccess", _arsenalAccess );
 
 if ( T8SME_client_var_inAction ) exitWith {};
 
